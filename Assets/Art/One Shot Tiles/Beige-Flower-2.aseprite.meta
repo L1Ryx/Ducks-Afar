@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0ad672f32f738493db61d47ed36214bb
+guid: fb5845eb265ba4846a8d835f5130af7e
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -98,7 +98,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 639043496116829120
+  platformSettingsDirtyTick: 639043496116829810
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,7 +123,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Blue-Flower-3
+  - name: Blue-Flower-2
     originalName: 
     pivot: {x: 0.5, y: 0.5}
     alignment: 0
@@ -134,8 +134,8 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 4
-      height: 4
-    spriteID: 64bd1a4eddf3f4ee4a3740c2c7bbc42e
+      height: 3
+    spriteID: 9a662cc5520f64d7eb7b3955c27e4783
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -147,21 +147,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 78358566
-    name: Blue-Flower-3
+    guid: 78358565
+    name: Blue-Flower-2
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Blue-Flower-3
+    - name: Beige-Flower-2
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 6
         y: 6
         width: 4
-        height: 4
-      spriteId: 64bd1a4eddf3f4ee4a3740c2c7bbc42e
+        height: 3
+      spriteId: 9a662cc5520f64d7eb7b3955c27e4783
     linkedCells: []
     parentIndex: -1
   platformSettings:
