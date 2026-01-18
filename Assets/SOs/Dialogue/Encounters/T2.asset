@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
-    text: This is a single line dialogue encounter.
+    text: I have nothing else to say, go away!
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}
