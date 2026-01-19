@@ -720,7 +720,7 @@ GameObject:
   - component: {fileID: 2098797308}
   - component: {fileID: 2098797310}
   m_Layer: 0
-  m_Name: pixil-frame-0_2_0
+  m_Name: tofu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
