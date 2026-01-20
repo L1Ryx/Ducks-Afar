@@ -35,6 +35,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/addHW3", "Try adds 3-Hardworm Pack", DebugAddHardwormThree);
         DebugLogConsole.AddCommand("/addHW4", "Try adds 4-Hardworm Pack", DebugAddHardwormFour);
         DebugLogConsole.AddCommand("/addHW5", "Try adds 5-Hardworm Pack", DebugAddHardwormFive);
+        DebugLogConsole.AddCommand("/addKeycard", "Try adds Keycard", DebugAddKeycard);
         DebugLogConsole.AddCommand("/clearInven", "Clears Inventory", ClearInventory);
     }
 
@@ -92,6 +93,11 @@ public class DebugDummy : MonoBehaviour
     {
         Debug.Log("Debug Dummy: Call #" + callCount.ToString());
         callCount++;
+    }
+
+    public void DebugAddKeycard()
+    {
+        Game.Ctx.Inventory.TryAdd("012", 1);
     }
 
     public void DoSceneResets()

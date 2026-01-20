@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5cfc888496fc60140a62931237503c47
+guid: f774cca663d804ef58280fd3c84b4cbd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8177658316587566755
-    second: mcRocketSprite_0
+      213: 4651728198650005456
+    second: rocket32_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,10 +49,10 @@ TextureImporter:
   spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
-  spriteBorder: {x: 24, y: 0, z: 24, w: 4}
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.25}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mcRocketSprite_0
+      name: rocket32_0
       rect:
         serializedVersion: 2
-        x: 23
-        y: 3
-        width: 82
-        height: 122
+        x: 5
+        y: 0
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a688be69e0ec7170800000000000000
-      internalID: 8177658316587566755
+      spriteID: 0d7833896224e8040800000000000000
+      internalID: 4651728198650005456
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      mcRocketSprite_0: 8177658316587566755
+      rocket32_0: 4651728198650005456
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

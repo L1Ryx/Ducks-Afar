@@ -47,8 +47,9 @@ MonoBehaviour:
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "Now, onward, I say! To the ship! I will be right behind, Cap\u2019n."
+    text: "Now, onward, I say! To the ship! Keycard's here. I will be right behind,
+      Cap\u2019n."
     lineCue: {fileID: 0}
-    afterLineEvent: {fileID: 0}
+    afterLineEvent: {fileID: 11400000, guid: 58ecc7241eacb4df58cfdf2a6792521d, type: 2}
   nextEncounter: {fileID: 0}
   onEncounterEnd: {fileID: 0}
