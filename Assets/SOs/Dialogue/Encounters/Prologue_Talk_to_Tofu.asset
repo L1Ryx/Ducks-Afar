@@ -18,11 +18,36 @@ MonoBehaviour:
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: 
+    text: 'I was just taking my nightly nap, and when I woke up, all our duck friends
+      have vanished. '
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 0}
-    text: 
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I can\u2019t believe it. ASTER, BUBBLES, CODA, all three of them, vanished
+      like the wind. They must\u2019ve been plotting this for some time."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: To leave you and me behind on this perfect beaut of a planet!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I should\u2019ve never trusted that one, ASTER\u2026 His words were bound
+      to have led our friends astray."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Well, no use crying about it now. We need \u2018em back, and I don\u2019t
+      think they\u2019ve escaped far\u2026 for now. "
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I say we head to the SOLARIS planet first. ASTER\u2019s always talking
+      about taking a vacation there, and he never shuts up about it."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Now, onward, I say! To the ship! I will be right behind, Cap\u2019n."
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}

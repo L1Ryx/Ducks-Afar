@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6740304711734820113}
   - component: {fileID: 2584225283957164615}
   - component: {fileID: 4190532035395194895}
+  - component: {fileID: 4922568616279258368}
   m_Layer: 6
   m_Name: NPC_Base
   m_TagString: Untagged
@@ -224,6 +225,28 @@ MonoBehaviour:
   loopLastEncounter: 1
   onInteractCue: {fileID: 0}
   currentEncounterIndex: 0
+--- !u!95 &4922568616279258368
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2552845638729653399}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2285e92a0167544dfabc476b8ab3d4f6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4259479174058020081
 GameObject:
   m_ObjectHideFlags: 0
