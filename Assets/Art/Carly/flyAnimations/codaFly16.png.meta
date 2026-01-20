@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      codaFly16_0: -938536915038411231
+      codaFly16_1: -1953771921575982129
+      codaFly16_2: -2303333872549401276
+      codaFly16_3: -2117905876956001607
+      codaFly16_4: -3921777768401073481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

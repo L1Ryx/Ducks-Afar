@@ -50,6 +50,6 @@ MonoBehaviour:
     text: "Now, onward, I say! To the ship! Keycard's here. I will be right behind,
       Cap\u2019n."
     lineCue: {fileID: 0}
-    afterLineEvent: {fileID: 11400000, guid: 58ecc7241eacb4df58cfdf2a6792521d, type: 2}
+    afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}
-  onEncounterEnd: {fileID: 0}
+  onEncounterEnd: {fileID: 11400000, guid: 58ecc7241eacb4df58cfdf2a6792521d, type: 2}

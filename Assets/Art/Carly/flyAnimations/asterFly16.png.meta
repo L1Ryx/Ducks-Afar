@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      asterFly16_0: 2512759790628419778
+      asterFly16_1: -8935592767335596566
+      asterFly16_2: -6716755832913463175
+      asterFly16_3: 7423826286667363988
+      asterFly16_4: -1573862990147973129
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

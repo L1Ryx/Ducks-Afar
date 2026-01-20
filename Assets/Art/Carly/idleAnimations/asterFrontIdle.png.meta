@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 0a862aa7785bf49048fde36fc5d086f9
+guid: ac1e447909cf249428df7dfcf80dc1c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -427101481495244111
-    second: bubblesFly16_0
+      213: 5208986076481452938
+    second: asterFrontIdle_0
   - first:
-      213: 8412701892542171331
-    second: bubblesFly16_1
+      213: -1918203120464878394
+    second: asterFrontIdle_1
   - first:
-      213: 6120196491370391940
-    second: bubblesFly16_2
+      213: 8684274467068750827
+    second: asterFrontIdle_2
   - first:
-      213: 3497360254430908784
-    second: bubblesFly16_3
+      213: 6819224530020615797
+    second: asterFrontIdle_3
   - first:
-      213: 6631141867967514933
-    second: bubblesFly16_4
+      213: 3419838415671048215
+    second: asterFrontIdle_4
+  - first:
+      213: -5183152236941251098
+    second: asterFrontIdle_5
+  - first:
+      213: -3631588278865416316
+    second: asterFrontIdle_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -49,7 +55,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -63,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,7 +93,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bubblesFly16_0
+      name: asterFrontIdle_0
       rect:
         serializedVersion: 2
         x: 0
@@ -127,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1b2de682771a21af0800000000000000
-      internalID: -427101481495244111
+      spriteID: a8bf1a8fc390a4840800000000000000
+      internalID: 5208986076481452938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubblesFly16_1
+      name: asterFrontIdle_1
       rect:
         serializedVersion: 2
         x: 16
@@ -149,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3c88b328ccbefb470800000000000000
-      internalID: 8412701892542171331
+      spriteID: 6c425adcc6c2165e0800000000000000
+      internalID: -1918203120464878394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubblesFly16_2
+      name: asterFrontIdle_2
       rect:
         serializedVersion: 2
         x: 32
@@ -171,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 48969bf584e4fe450800000000000000
-      internalID: 6120196491370391940
+      spriteID: beba0a5dd9db48870800000000000000
+      internalID: 8684274467068750827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubblesFly16_3
+      name: asterFrontIdle_3
       rect:
         serializedVersion: 2
         x: 48
@@ -193,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0719ce02f9e198030800000000000000
-      internalID: 3497360254430908784
+      spriteID: 576428b8490c2ae50800000000000000
+      internalID: 6819224530020615797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bubblesFly16_4
+      name: asterFrontIdle_4
       rect:
         serializedVersion: 2
         x: 64
@@ -215,8 +221,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5398c67456c860c50800000000000000
-      internalID: 6631141867967514933
+      spriteID: 718be438be4b57f20800000000000000
+      internalID: 3419838415671048215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asterFrontIdle_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ed6854808eb118b0800000000000000
+      internalID: -5183152236941251098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: asterFrontIdle_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f21cb83b10a9dc0800000000000000
+      internalID: -3631588278865416316
       vertices: []
       indices: 
       edges: []
@@ -235,11 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      bubblesFly16_0: -427101481495244111
-      bubblesFly16_1: 8412701892542171331
-      bubblesFly16_2: 6120196491370391940
-      bubblesFly16_3: 3497360254430908784
-      bubblesFly16_4: 6631141867967514933
+      asterFrontIdle_0: 5208986076481452938
+      asterFrontIdle_1: -1918203120464878394
+      asterFrontIdle_2: 8684274467068750827
+      asterFrontIdle_3: 6819224530020615797
+      asterFrontIdle_4: 3419838415671048215
+      asterFrontIdle_5: -5183152236941251098
+      asterFrontIdle_6: -3631588278865416316
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

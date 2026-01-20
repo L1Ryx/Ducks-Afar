@@ -234,7 +234,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      tofuFly16_0: 2358058554954175189
+      tofuFly16_1: -7263185600131178613
+      tofuFly16_2: -3401006012888403215
+      tofuFly16_3: 5702256003043769555
+      tofuFly16_4: 7163862188403718487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

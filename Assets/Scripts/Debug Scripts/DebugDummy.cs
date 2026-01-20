@@ -41,6 +41,8 @@ public class DebugDummy : MonoBehaviour
 
     void Update()
     {
+        // Debug.Log(Time.deltaTime.ToString("F2"));
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             ReloadSameScene();
