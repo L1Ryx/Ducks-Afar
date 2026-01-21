@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Bubbles
       objectReference: {fileID: 0}
+    - target: {fileID: 5109932334157281970, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6cc3f103a87bc4da5994ac7b14a6738c, type: 2}
     - target: {fileID: 6740304711734820113, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
       propertyPath: title
       value: BUBBLES
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8153565272360314714, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2472618789196261654, guid: 1721ab9877fd94fc2a83e9b42618b025, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

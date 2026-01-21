@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Coda
       objectReference: {fileID: 0}
+    - target: {fileID: 5109932334157281970, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 43b3d09044d1f4bd28954708587be337, type: 2}
     - target: {fileID: 6740304711734820113, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
       propertyPath: title
       value: CODA
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8153565272360314714, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -698195244404628816, guid: 694c809ce1b314b85ab39636a9b49fa5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
