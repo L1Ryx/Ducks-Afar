@@ -21184,6 +21184,10 @@ PrefabInstance:
       propertyPath: worldCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4740144722654797839, guid: 05d4ab59016d645e2a491bd8e693bb10, type: 3}
+      propertyPath: finishPosition.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7797971762429385848, guid: 05d4ab59016d645e2a491bd8e693bb10, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
