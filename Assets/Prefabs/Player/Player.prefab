@@ -50,6 +50,8 @@ GameObject:
   - component: {fileID: 3997802306353227098}
   - component: {fileID: 2783205123832518923}
   - component: {fileID: 639971575764862898}
+  - component: {fileID: 4740144722654797839}
+  - component: {fileID: 8003263194374641682}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -353,6 +355,47 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4740144722654797839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594191218331837241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 849ed1168370e45beaba9701bf7e3e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finishPosition: {x: -0.5, y: 5.5, z: 0}
+--- !u!114 &8003263194374641682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594191218331837241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 6e683ea88589d4b708d82cee5bb5e24e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4740144722654797839}
+        m_TargetAssemblyTypeName: TeleportToFinish, Assembly-CSharp
+        m_MethodName: Teleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4502289513991459696
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +542,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
