@@ -10122,6 +10122,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1577685429 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3210262262112039414, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
+  m_PrefabInstance: {fileID: 874578968643859558}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577685437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577685429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55d4105e6d55469db48c1b83f32569b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darknessTime: 5
+--- !u!114 &1577685438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577685429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bf294f3b562f541f59154cf2ed6a81ac, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1577685437}
+        m_TargetAssemblyTypeName: NaiveCurtainFadeSequencer, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1577685439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577685429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1577685437}
+        m_TargetAssemblyTypeName: NaiveCurtainFadeSequencer, Assembly-CSharp
+        m_MethodName: ToggleDarknessTimeReadiness
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1580105671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1525412839750645111, guid: cfbd47cfd102d4764aa3a9f791025d2c, type: 3}
@@ -14140,7 +14214,16 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3210262262112039414, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577685438}
+    - targetCorrespondingSourceObject: {fileID: 3210262262112039414, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577685437}
+    - targetCorrespondingSourceObject: {fileID: 3210262262112039414, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577685439}
   m_SourcePrefab: {fileID: 100100000, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
 --- !u!1001 &1146525114746983365
 PrefabInstance:
