@@ -78,6 +78,8 @@ public class TitleCardSequencer : MonoBehaviour
     [Tooltip("Extra delay (seconds) after punctuation like .,!?:;")]
     [Min(0f)]
     [SerializeField] private float extraDelayAfterPunctuation = 0.05f;
+    
+    [Header("Events")] [SerializeField] UnityEvent onTitleCardFadeOutStarted;
 
     [Header("Audio")] [SerializeField] private AudioCue ac;
 
@@ -298,6 +300,7 @@ public class TitleCardSequencer : MonoBehaviour
         if (canvasGroup == null)
             yield break;
 
+        onTitleCardFadeOutStarted?.Invoke();
         float alpha = canvasGroup.alpha;
         while (alpha > 0f)
         {

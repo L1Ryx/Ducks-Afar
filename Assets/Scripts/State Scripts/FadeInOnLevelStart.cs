@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class FadeInOnLevelStart : MonoBehaviour
@@ -13,6 +14,8 @@ public class FadeInOnLevelStart : MonoBehaviour
 
     [Header("Behavior")]
     [SerializeField] private bool disableAfterFade = true;
+
+    [Header("Events")] [SerializeField] private UnityEvent onFadeIn;
 
     private Coroutine fadeRoutine;
 
@@ -60,6 +63,7 @@ public class FadeInOnLevelStart : MonoBehaviour
 
         SetAlpha(0f);
         overlayImage.raycastTarget = false;
+        onFadeIn?.Invoke();
 
         if (disableAfterFade)
             gameObject.SetActive(false);

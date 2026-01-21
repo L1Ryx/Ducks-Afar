@@ -204,14 +204,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 39549210327346559}
   lines:
-  - {fileID: 7371699525491306705}
-  - {fileID: 179087568332599830}
-  - {fileID: 4909809793095987823}
-  - {fileID: 3935263260330774335}
+  - text: {fileID: 0}
+    onLineCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+    delayAfterLineOverride: -1
+  - text: {fileID: 0}
+    onLineCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+    delayAfterLineOverride: -1
+  - text: {fileID: 0}
+    onLineCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+    delayAfterLineOverride: -1
+  - text: {fileID: 0}
+    onLineCompleted:
+      m_PersistentCalls:
+        m_Calls: []
+    delayAfterLineOverride: -1
   delayAfterLine: 0.75
   typeSpeedCps: 12
-  delayAfterLastLine: 2.5
+  delayAfterLastLine: 1.5
   fadeOutRate: 1.5
+  fadeOutAtEnd: 1
   useUnscaledTime: 1
   disableOnFinish: 0
   perCharTimeJitter: 0.769
@@ -220,6 +237,21 @@ MonoBehaviour:
   enableHumanPauses: 1
   extraDelayAfterSpace: 0.015
   extraDelayAfterPunctuation: 0.05
+  onTitleCardFadeOutStarted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: cfa49f5683f8e45ed8cfbec2e37e5c8d, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   ac: {fileID: 11400000, guid: 70cc6b54e64b7494495e12fcd95d4a61, type: 2}
 --- !u!114 &435278278314893410
 MonoBehaviour:

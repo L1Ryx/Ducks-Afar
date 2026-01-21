@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6bebd60ac1e8046699874f0105f70988, type: 3}
-  m_Name: OnPlayHiddenSounds
+  m_Name: OnTitleCardFadeOutStarted
   m_EditorClassIdentifier: 
-  description: Play an audio cue while in the dark.
+  description: When the title card starts fading out.
   isImportant: 0

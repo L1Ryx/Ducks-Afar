@@ -117,6 +117,9 @@ GameObject:
   - component: {fileID: 3124526927761813317}
   - component: {fileID: 1927480333845152737}
   - component: {fileID: 978010055287441542}
+  - component: {fileID: 4329201611737309857}
+  - component: {fileID: 1492310456517525199}
+  - component: {fileID: 4327136443626211329}
   m_Layer: 5
   m_Name: Dark Overlay
   m_TagString: Untagged
@@ -220,6 +223,21 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   disableAfterFade: 0
+  onFadeIn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 2775f44017887468c912098a157b9e64, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3124526927761813317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,6 +326,75 @@ MonoBehaviour:
       - m_Target: {fileID: 1927480333845152737}
         m_TargetAssemblyTypeName: FadeOutOnLevelEnd, Assembly-CSharp
         m_MethodName: PlayFadeToBlack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4329201611737309857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210262262112039414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: bf294f3b562f541f59154cf2ed6a81ac, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1492310456517525199}
+        m_TargetAssemblyTypeName: NaiveCurtainFadeSequencer, Assembly-CSharp
+        m_MethodName: Begin
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1492310456517525199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210262262112039414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e55d4105e6d55469db48c1b83f32569b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darknessTime: 5
+--- !u!114 &4327136443626211329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210262262112039414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1492310456517525199}
+        m_TargetAssemblyTypeName: NaiveCurtainFadeSequencer, Assembly-CSharp
+        m_MethodName: ToggleDarknessTimeReadiness
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

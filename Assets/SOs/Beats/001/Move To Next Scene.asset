@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b61717f94839c4b7f810f2d2404e74d4, type: 3}
   m_Name: Move To Next Scene
   m_EditorClassIdentifier: 
-  beatId: 004
+  beatId: 007
   description: Move into next level. Sends a debug message for now until multi-scene
     features are implemented.
   onEnterEvents:

@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b61717f94839c4b7f810f2d2404e74d4, type: 3}
-  m_Name: Play Hidden Sounds and Teleport NPCs
+  m_Name: Ending Dialogue
   m_EditorClassIdentifier: 
-  beatId: 005
-  description: Play hidden sounds and teleport NPCs.
+  beatId: 009
+  description: Ending dialogue for a level.
   onEnterEvents:
-  - {fileID: 11400000, guid: 122853cd8babb43c4909bcb027b82578, type: 2}
-  - {fileID: 11400000, guid: 6e683ea88589d4b708d82cee5bb5e24e, type: 2}
-  advanceEvent: {fileID: 11400000, guid: 2775f44017887468c912098a157b9e64, type: 2}
+  - {fileID: 11400000, guid: 5152338ff918c48e0952964b5c87351b, type: 2}
+  advanceEvent: {fileID: 11400000, guid: a4973288ca4e146689fd8aa503a6832a, type: 2}

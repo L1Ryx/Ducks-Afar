@@ -15,7 +15,7 @@ public sealed class NPCMover2D : MonoBehaviour
     [Tooltip("Waypoint transform to move to when MoveToDestination() is called.")]
     [SerializeField] private Transform destination;
 
-    [Header("Movement")]
+    [Header("Movement")] [SerializeField] private float startDelay = 0f;
     [SerializeField, Min(0.01f)] private float moveSpeed = 0.75f;
     [SerializeField, Min(0f)] private float arriveDistance = 0.02f;
 
@@ -51,6 +51,12 @@ public sealed class NPCMover2D : MonoBehaviour
             return;
         }
 
+        StartCoroutine(MoveToCoroutine());
+    }
+
+    IEnumerator MoveToCoroutine()
+    {
+        yield return new WaitForSeconds(startDelay);
         MoveTo(destination.position);
     }
 
@@ -62,6 +68,7 @@ public sealed class NPCMover2D : MonoBehaviour
         if (moveRoutine != null)
             StopCoroutine(moveRoutine);
 
+        visualRoot.gameObject.SetActive(true);
         moveRoutine = StartCoroutine(MoveRoutine(worldPosition));
     }
 
