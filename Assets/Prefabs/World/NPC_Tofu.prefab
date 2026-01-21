@@ -10,15 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2552845638729653399, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
       propertyPath: m_Name
-      value: NPC_Base
+      value: NPC_Tofu
       objectReference: {fileID: 0}
+    - target: {fileID: 4190532035395194895, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
+      propertyPath: 'encounters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e52696c46a29c48759428cb7cd5d4dae, type: 2}
+    - target: {fileID: 4190532035395194895, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
+      propertyPath: 'encounters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 622f321eec7ce444699e771c6efca3ad, type: 2}
     - target: {fileID: 7011716258594006948, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.5
       objectReference: {fileID: 0}
     - target: {fileID: 7011716258594006948, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7011716258594006948, guid: 5b8abccbfbcd74968bcc87263f855772, type: 3}
       propertyPath: m_LocalPosition.z

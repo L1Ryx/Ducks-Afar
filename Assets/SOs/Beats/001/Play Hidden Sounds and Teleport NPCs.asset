@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b61717f94839c4b7f810f2d2404e74d4, type: 3}
-  m_Name: End Puzzle
+  m_Name: Play Hidden Sounds and Teleport NPCs
   m_EditorClassIdentifier: 
-  beatId: 003
-  description: Lock Interactions. Player should be done with the puzzle to end the
-    level soon. Fade out of level. Stop ambience.
+  beatId: 004
+  description: Start the Naive Curtain Fade
   onEnterEvents:
-  - {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
-  - {fileID: 11400000, guid: b20667fc295a749b8911426858fc6b11, type: 2}
-  - {fileID: 11400000, guid: 2e35741ec84e34699ae1793886edf514, type: 2}
+  - {fileID: 11400000, guid: bf294f3b562f541f59154cf2ed6a81ac, type: 2}
   advanceEvent: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}

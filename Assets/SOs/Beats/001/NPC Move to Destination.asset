@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61717f94839c4b7f810f2d2404e74d4, type: 3}
+  m_Name: NPC Move to Destination
+  m_EditorClassIdentifier: 
+  beatId: 003
+  description: Lock Interactions. Duck should fly in.
+  onEnterEvents:
+  - {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
+  - {fileID: 11400000, guid: dd8c6c995c3f74aa68e39edb830228f9, type: 2}
+  advanceEvent: {fileID: 11400000, guid: 98a819b7d03c34d0a8566822917ae97d, type: 2}
