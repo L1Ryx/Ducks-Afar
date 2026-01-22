@@ -736,6 +736,14 @@ PrefabInstance:
       propertyPath: shouldTeleportToFinish
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3454250878766659147, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
+      propertyPath: 'encounters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8453cae9b88134bf08218489cacbebb6, type: 2}
+    - target: {fileID: 3454250878766659147, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
+      propertyPath: 'encounters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: bdde83ed93cce46f4a2f2490e0fb3ed8, type: 2}
     - target: {fileID: 3897081818990390275, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
       propertyPath: night
       value: 1
@@ -3703,6 +3711,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4856526934458897477, guid: 2c69e2c1574e34371ac755e967559ea0, type: 3}
+      propertyPath: 'encounters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 38f2bbd9b72824bbabcfbc42ea56f277, type: 2}
+    - target: {fileID: 4856526934458897477, guid: 2c69e2c1574e34371ac755e967559ea0, type: 3}
+      propertyPath: 'encounters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b7b0b20033c874409a246539b37d3e57, type: 2}
     - target: {fileID: 6498585127877662941, guid: 2c69e2c1574e34371ac755e967559ea0, type: 3}
       propertyPath: m_Name
       value: NPC_Bubbles
@@ -10796,6 +10812,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelDialogueTriggers
       objectReference: {fileID: 0}
+    - target: {fileID: 7724349963202264722, guid: a37962db0b2874254a73e07d4ebaa0cb, type: 3}
+      propertyPath: 'encounters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 58cddfe51c6504109b5a6fdc3d5c1e57, type: 2}
+    - target: {fileID: 7724349963202264722, guid: a37962db0b2874254a73e07d4ebaa0cb, type: 3}
+      propertyPath: 'encounters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 645f60260c9da46f2846396cbf929b8e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11361,6 +11385,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5538806256239278037, guid: e00799bf5b4e449dfb08f9764cbec7f3, type: 3}
+      propertyPath: 'encounters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e55ef9816a08436b95df50ab5a0ba44, type: 2}
+    - target: {fileID: 5538806256239278037, guid: e00799bf5b4e449dfb08f9764cbec7f3, type: 3}
+      propertyPath: 'encounters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b89f05f5d85a04e89b7ad1f3303b3886, type: 2}
     - target: {fileID: 6135885569603136925, guid: e00799bf5b4e449dfb08f9764cbec7f3, type: 3}
       propertyPath: night
       value: 1

@@ -1745,7 +1745,7 @@
 								</Property>
 								<Property Name="Pitch" Type="int32">
 									<ValueList>
-										<Value>-1000</Value>
+										<Value>-1200</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>

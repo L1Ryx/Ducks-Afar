@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3467d0579a0c940a194cdf5dc73bd25e, type: 3}
+  m_Name: Night_Starting
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Land ho! Looks like CODA\u2019s food bowl is over there!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Eurgh\u2026 it\u2019s so dark now\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "CODA better have a good reason for being all the way out here so late\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Cap\u2019n! Make sure to find a way to bring CODA back quickly! It can\u2019t
+      be too safe out there now that it\u2019s this dark."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: bb231da6cad654c88939f84e4915d049, type: 2}
+    text: It looks like there are lots of hardworms here too!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: bb231da6cad654c88939f84e4915d049, type: 2}
+    text: "I\u2019m sure CODA must be super hungry after all his nonsense about that
+      secret to happiness~"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "After all the traveling he\u2019s done today, let\u2019s make sure that
+      he can fuel back up with a big bowl of hardworms!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: '!!!'
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "It looks like this island has way more FRAGILE BRIDGES! Be careful Cap\u2019n!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "BUBBLES, ASTER, and I will stay watch by the ship! Cap\u2019n, I\u2019m
+      sure you\u2019ll be able to use the island to whip up a tasty meal!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  nextEncounter: {fileID: 0}
+  onEncounterEnd: {fileID: 0}
