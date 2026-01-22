@@ -14,15 +14,159 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: Explain yourself, Aster!
+    text: ASTER! There you are! Where are the others?
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
     text: ...
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Our friends, where did you take them?
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
-    text: This was a test.
+    text: ...
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "\u2026ASTER?"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Quit running that mouth, TOFU. Look at what you\u2019ve done."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: What?
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: What could you possibly mean, ASTER?
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: Do you even know how it felt to see BUBBLES and CODA missing?
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "I woke up all alone with you sleeping like a dumb sack\u2019a potatoes
+      all morning, and now you\u2019re all up in a fuss?"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "You mean BUBBLES and CODA didn\u2019t come with you????"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: Huh?!??
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "I woke up this morning and they were both already gone. I tried to wake
+      you, ya\u2019know."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: You were sleeping like a chick! I almost dropped a hammer on ya.
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: I had to go look for them before they went too far, so I had to leave you
+      guys.
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "They shoulda turned you into a nugget with that birdbrain of yours\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "ASTER! I\u2019m sure now that we\u2019re together, we\u2019ll find them
+      for sure!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "And next time, I\u2019ll make sure to time my nightly naps better!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Although, I\u2019m a bit worried\u2026 I thought for sure they\u2019d
+      be with you\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Why in the flipper would I do that to our friends? You and I both know
+      it\u2019s not safe out here."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "I\u2019m sure it's because they couldn\u2019t handle all your bossing
+      around anymore. Honestly I would be doing that too, if it wasn\u2019t for \u2013"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: ASTER!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: You know I must do whatever is necessary for the research! BUBBLES and
+      CODA definitely understand that!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I\u2019m sure they wouldn\u2019t leave on their own. Somebody must\u2019ve
+      kidnapped them, we must hurry!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Wait.
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "If you tried to wake me up, surely you must also have\u2013"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: Shut it, TOFU.
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: ...
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "We gotta go. Now. We\u2019ll travel much faster with the ship, so it\u2019s
+      good you\u2019re here, Captain."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Good to have someone who isn\u2019t Birdbrains here, too. The next island\u2019s
+      not too far to the east. We gotta keep looking."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Cap\u2019n, I think ASTER needs a big hug! He always runs to you when
+      he\u2019s scared. "
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "ASTER: HEY! I\u2019m not a little chick anymore!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Hmmhmm~
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Cap\u2019n, let\u2019s go! We haven\u2019t got a moment to lose!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}

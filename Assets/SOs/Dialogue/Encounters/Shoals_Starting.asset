@@ -14,15 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: Cap'n, the bowl is there, let's go!
+    text: "Cap\u2019n, look! That\u2019s ASTER\u2019s pet bowl up there."
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: Let's not waste any time!
+    text: "All the juicy hardworms on this island, hmm\u2026"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: This was a test.
+    text: "I have an idea, cap\u2019n! ASTER will surely come running towards a fat
+      bowl of hardworms!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "But be careful now\u2026 remember your research! These hardworms are very
+      magnetic."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "You won\u2019t be able to break packs of them apart by hand, or combine
+      them by hand for that matter."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "And we all like our hardworms portioned exactly, not one more or one less.
+      What to do, what to do\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Cap\u2019n, go look around and see if there\u2019s anything lying around
+      that can help prepare a hardworm meal. I\u2019ll be thinking here."
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}

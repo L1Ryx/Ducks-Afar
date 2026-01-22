@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{401A5946-0B05-034C-21AD-B55C2203C346}",
+    "Hash": "{8E56B73A-CC3D-376D-6038-AC200ED35754}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -286,6 +286,14 @@
       "Location": "Memory",
       "ShortName": "Add-B-3.wav",
       "CachePath": "29/{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem"
+     },
+     {
+      "Id": "730796043",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "481067-Small_Bush_Foliage_Rustle_5.wav",
+      "CachePath": "FE/{FEE1DF9F-879F-E2EC-5A40-3A222B69870B}.wem"
      },
      {
       "Id": "744795544",
@@ -590,8 +598,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_BubblesGabble",
       "GUID": "{5F238490-8655-4332-98F6-296A556C36F0}",
       "DurationType": "OneShot",
-      "DurationMin": "0.94693285",
-      "DurationMax": "1.6075346",
+      "DurationMin": "1.0940413",
+      "DurationMax": "1.8572694",
       "MediaRefs": [
        {
         "Id": "26245636"
@@ -604,6 +612,28 @@
        },
        {
         "Id": "794129864"
+       }
+      ]
+     },
+     {
+      "Id": "3224218195",
+      "Name": "Play_BushRustle",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_BushRustle",
+      "GUID": "{E68FBB6B-2DCA-4ED6-9392-02DDE8F83E64}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0566666",
+      "DurationMax": "1.0566666",
+      "MediaRefs": [
+       {
+        "Id": "730796043"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
        }
       ]
      },
@@ -813,8 +843,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_TofuGabble",
       "GUID": "{D66DF366-FA5A-4816-BE2C-DFB06B746875}",
       "DurationType": "OneShot",
-      "DurationMin": "1.0761281",
-      "DurationMax": "1.361201",
+      "DurationMin": "1.2433076",
+      "DurationMax": "1.5726672",
       "MediaRefs": [
        {
         "Id": "43087032"
@@ -882,6 +912,6 @@
     ]
    }
   ],
-  "FileHash": "{7F90CE8B-FAE8-5034-9182-1CBEC882EED6}"
+  "FileHash": "{6B43C277-59D2-008A-5A75-CFBF9FB0FA20}"
  }
 }

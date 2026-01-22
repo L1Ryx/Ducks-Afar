@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3467d0579a0c940a194cdf5dc73bd25e, type: 3}
+  m_Name: Dusk_Starting
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Good job spotting BUBBLE\u2019s food bowl from the skies ASTER! "
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Hmph, of course I\u2019d recognize BUBBLE\u2019s bowl\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: I shine it just the way he likes after every meal!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Yup! You always do a great job!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Hey! There are lots of hardworms on this island too!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: '!!!'
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "BUBBLES loves hardworms! I\u2019m gonna collect the most for \u2018im!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Hmm\u2026it looks like the sun is setting though\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Hah?? You think I can\u2019t handle a little darkness?!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: '!!!'
+    lineCue: {fileID: 11400000, guid: 0f77e29d72e9a47a0982f5f2bdcc0f00, type: 2}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: EEK!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Ahem! Whatever! It\u2019s not like your birdbrain can handle it either!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Haha, of course not! A leader knows his limits!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Cap\u2019n! Let\u2019s see if we can make another hardworms meal for BUBBLES!
+      I\u2019m sure we\u2019ll be able to use what\u2019s on this island to help
+      us!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  nextEncounter: {fileID: 0}
+  onEncounterEnd: {fileID: 0}

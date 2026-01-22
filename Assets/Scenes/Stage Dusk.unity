@@ -8307,6 +8307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pet Bowl
       objectReference: {fileID: 0}
+    - target: {fileID: 9221882878028826644, guid: 962f730bac8314f6492513131099954e, type: 3}
+      propertyPath: description
+      value: Summon BUBBLES the Duck.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

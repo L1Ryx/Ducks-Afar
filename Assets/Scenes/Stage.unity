@@ -5384,6 +5384,14 @@ PrefabInstance:
       propertyPath: shouldTeleportToFinish
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3454250878766659147, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
+      propertyPath: 'encounters.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2ec29fed53fc2489d801a79011985ca8, type: 2}
+    - target: {fileID: 3454250878766659147, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
+      propertyPath: 'encounters.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 88347aea0d8a4429292dbb85a65129ad, type: 2}
     - target: {fileID: 3937751246587656915, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
       propertyPath: m_Name
       value: NPC_Tofu

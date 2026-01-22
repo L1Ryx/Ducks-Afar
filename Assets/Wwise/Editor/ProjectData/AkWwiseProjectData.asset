@@ -179,7 +179,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584325534360368575
+    m_lastTime: -8584325502098910722
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -336,8 +336,28 @@ MonoBehaviour:
         guid: 9084235f5586324398f6296a556c36f0
       Path: Events/Default Work Unit/WORLD/Play_BubblesGabble
       maxAttenuation: 0
-      maxDuration: 1.6075346
-      minDuration: 0.94693285
+      maxDuration: 1.8572694
+      minDuration: 1.0940413
+    - name: Play_BushRustle
+      guid: 6bbb8fe6ca2dd64e939202dde8f83e64
+      id: 3224218195
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_BushRustle
+        ObjectType: 3
+        guid: 6bbb8fe6ca2dd64e939202dde8f83e64
+      Path: Events/Default Work Unit/WORLD/Play_BushRustle
+      maxAttenuation: 0
+      maxDuration: 1.0566666
+      minDuration: 1.0566666
     - name: Play_CodaGabble
       guid: 9dc77b16ef25a3438093d24ecf1aa0bf
       id: 1194190264
@@ -516,8 +536,8 @@ MonoBehaviour:
         guid: 66f36dd65afa1648be2cdfb06b746875
       Path: Events/Default Work Unit/WORLD/Play_TofuGabble
       maxAttenuation: 0
-      maxDuration: 1.361201
-      minDuration: 1.0761281
+      maxDuration: 1.5726672
+      minDuration: 1.2433076
     - name: Play_TypewriterClack
       guid: 527adedbbc4a4f4cac48294ddbdaae1a
       id: 928013289

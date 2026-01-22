@@ -20,6 +20,7 @@ namespace AK
         static const AkUniqueID PLAY_BEACHAMBIENCE = 283495111U;
         static const AkUniqueID PLAY_BRIDGESPLASH = 573339928U;
         static const AkUniqueID PLAY_BUBBLESGABBLE = 3863193186U;
+        static const AkUniqueID PLAY_BUSHRUSTLE = 3224218195U;
         static const AkUniqueID PLAY_CODAGABBLE = 1194190264U;
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;

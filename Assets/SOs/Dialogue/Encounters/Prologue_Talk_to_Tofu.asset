@@ -14,41 +14,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "Finally awake now, are we? Look at what\u2019s happened."
+    text: "Cap\u2019n! You\u2019re finally awake! You\u2019ve got to see what\u2019s
+      happened!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: 'I was just taking my nightly nap, and when I woke up, all our duck friends
-      have vanished. '
+    text: "I was just taking my nightly nap, and when I woke up, everyone was gone\u2026"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I can\u2019t believe it. ASTER, BUBBLES, CODA, all three of them, vanished
-      like the wind. They must\u2019ve been plotting this for some time."
+    text: "I just can\u2019t believe it. ASTER, BUBBLES, CODA, all three of them,
+      vanished like the wind!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: To leave you and me behind on this perfect beaut of a planet!
+    text: Do you think they planned this?? To leave you and me behind on this perfect
+      beaut of a planet??
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I should\u2019ve never trusted that one, ASTER\u2026 His words were bound
-      to have led our friends astray."
+    text: "I\u2019m sure ASTER got everyone super fired up\u2026he\u2019s always
+      had a way with words\u2026and being loud\u2026"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "Well, no use crying about it now. We need \u2018em back, and I don\u2019t
-      think they\u2019ve escaped far\u2026 for now. "
+    text: "We need \u2018em back, and I don\u2019t think they\u2019ve escaped far
+      for now. With the two of us, I\u2019m sure we\u2019ve got it!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: "I say we head to the SOLARIS planet first. ASTER\u2019s always talking
-      about taking a vacation there, and he never shuts up about it."
+      about taking a vacation there\u2013nearly talked my feathers off about it once!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "Now, onward, I say! To the ship! Keycard's here. I will be right behind,
-      Cap\u2019n."
+    text: "Now, onward, I say! To the ship! Keycard\u2019s here. I will be right
+      behind, Cap\u2019n."
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}

@@ -15,6 +15,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1545776884	Play_SubCadenceC			\Default Work Unit\WORLD\Play_SubCadenceC	
 	1545776886	Play_SubCadenceA			\Default Work Unit\WORLD\Play_SubCadenceA	
 	2435079182	Play_AsterGabble			\Default Work Unit\WORLD\Play_AsterGabble	
+	3224218195	Play_BushRustle			\Default Work Unit\WORLD\Play_BushRustle	
 	3860455926	Play_PickUp			\Default Work Unit\WORLD\Play_PickUp	
 	3863193186	Play_BubblesGabble			\Default Work Unit\WORLD\Play_BubblesGabble	
 
@@ -56,6 +57,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	672181511	Typewriter 3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\AC\{ACD0530F-7C0D-117F-30AE-EBB1B4DDA025}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 3		166982
 	679306726	Add-A-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D2\{D23F7EAA-01E1-D720-BCF8-5A8390157F3A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-5		768160
 	683992905	Add-B-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\29\{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_B_Blend\Add-B-3		768144
+	730796043	481067-Small_Bush_Foliage_Rustle_5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\FE\{FEE1DF9F-879F-E2EC-5A40-3A222B69870B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BushRustle_Blend\481067-Small_Bush_Foliage_Rustle_5		186492
 	744795544	Add-B-2	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\8C\{8C34FC63-E508-7AD1-A175-08936223CC11}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_B_Blend\Add-B-2		768144
 	757572227	Add-B-1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\F6\{F6FC2138-D1AA-9DF9-27ED-E3E3A933CEA7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_B_Blend\Add-B-1		768208
 	783888783	Add-C-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\8F\{8F2CC53C-A171-1D2B-9770-2ADEE1C036E6}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_C_Blend\Add-C-3		1152144

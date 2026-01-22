@@ -842,7 +842,7 @@ MonoBehaviour:
   dialogueText: {fileID: 452810778896275635}
   nextIndicator: {fileID: 174330322490991169}
   canvasGroup: {fileID: 8125001449852397574}
-  charactersPerSecond: 30
+  charactersPerSecond: 25
   OnDialogueStarted:
     m_PersistentCalls:
       m_Calls:

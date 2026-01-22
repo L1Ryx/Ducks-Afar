@@ -159,6 +159,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_BushRustle" ID="{E68FBB6B-2DCA-4ED6-9392-02DDE8F83E64}">
+							<ChildrenList>
+								<Action Name="" ID="{ECF04D67-32CC-472C-8E35-41E53A17B7FD}" ShortID="9543034">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_BushRustle_Blend" ID="{6540AF7B-725D-459E-86BE-C9C7F7565707}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">
