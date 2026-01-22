@@ -115,6 +115,50 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_TofuGabble" ID="{D66DF366-FA5A-4816-BE2C-DFB06B746875}">
+							<ChildrenList>
+								<Action Name="" ID="{ED8A4770-EE84-4DDC-A70A-6E8D6BC0A112}" ShortID="949096660">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_TofuGabble_Random" ID="{D4EFD69C-1C80-4C42-B9A4-C6CFB4BCC5D8}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AsterGabble" ID="{6076EF09-A6C0-4228-98DF-3AC49956AB30}">
+							<ChildrenList>
+								<Action Name="" ID="{2294E971-CE14-4331-BEE9-E95DC0B2B1AD}" ShortID="204353970">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_AsterGabble_Random" ID="{C761B51B-54AE-4B5B-B3CE-A3AC93A3B50F}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_BubblesGabble" ID="{5F238490-8655-4332-98F6-296A556C36F0}">
+							<ChildrenList>
+								<Action Name="" ID="{25D81515-426A-447C-A4B4-01091B8CCAB4}" ShortID="1009339174">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_BubblesGabble_Random" ID="{51D7012D-C735-4D0B-B89F-E0523C07E1DB}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_CodaGabble" ID="{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}">
+							<ChildrenList>
+								<Action Name="" ID="{D627A301-9E50-48B6-9BC8-5ECB313700F4}" ShortID="100550425">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_CodaGabble_Random" ID="{2DA088F4-754C-4A3D-98AD-724AB1270BAC}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">

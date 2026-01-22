@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{AAD115BC-54CE-00DF-6454-3B89E17E30F2}",
+    "Hash": "{401A5946-0B05-034C-21AD-B55C2203C346}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
     "Media": [
+     {
+      "Id": "20419067",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Aster-Gabble-A.wav",
+      "CachePath": "E0/{E004E231-7697-1DE3-24C9-92A848188DFF}.wem"
+     },
      {
       "Id": "21795085",
       "Language": "SFX",
@@ -24,12 +32,28 @@
       "CachePath": "03/{03D451A0-198D-9092-2929-CAF8D78ABFA0}.wem"
      },
      {
+      "Id": "26245636",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bubbles-Gabble-B.wav",
+      "CachePath": "8A/{8A00A841-C267-1124-D26A-405D60269E59}.wem"
+     },
+     {
       "Id": "42124371",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Add-C-4.wav",
       "CachePath": "C4/{C42F2206-337C-3844-7FE8-3C838F0371D0}.wem"
+     },
+     {
+      "Id": "43087032",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Tofu-Gabble-C.wav",
+      "CachePath": "F8/{F824FD36-0DB2-2DB7-37B8-7EF19EC7C96B}.wem"
      },
      {
       "Id": "81657979",
@@ -72,6 +96,14 @@
       "CachePath": "EF/{EF9BEC3D-6A54-7999-1699-4F8EFE901020}.wem"
      },
      {
+      "Id": "139384931",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Aster-Gabble-B.wav",
+      "CachePath": "6E/{6EF50129-3377-ED50-2C87-AB11D682FD42}.wem"
+     },
+     {
       "Id": "159984069",
       "Language": "SFX",
       "Streaming": "false",
@@ -80,12 +112,36 @@
       "CachePath": "CC/{CCA8FFF8-97DC-BB43-B79C-44BD4F7DEB72}.wem"
      },
      {
+      "Id": "170487895",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Coda-Gabble-D.wav",
+      "CachePath": "59/{5903CC31-7939-62DA-4618-CC341521334C}.wem"
+     },
+     {
       "Id": "207193044",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Add-A-2.wav",
       "CachePath": "C7/{C75BEE7E-EE1B-7E5F-32A4-29B1BFC49C6A}.wem"
+     },
+     {
+      "Id": "252938679",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Aster-Gabble-C.wav",
+      "CachePath": "12/{12CEFA5C-9108-57B1-F612-7E19E94F4B09}.wem"
+     },
+     {
+      "Id": "271830612",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Tofu-Gabble-D.wav",
+      "CachePath": "B3/{B3D8B8D9-0CE7-58F6-C647-D027C345CCB0}.wem"
      },
      {
       "Id": "294326928",
@@ -120,6 +176,14 @@
       "CachePath": "22/{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem"
      },
      {
+      "Id": "464117777",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Coda-Gabble-B.wav",
+      "CachePath": "D6/{D6E71F49-B03D-596F-D894-B246C615BAFF}.wem"
+     },
+     {
       "Id": "504985255",
       "Language": "SFX",
       "Streaming": "false",
@@ -128,12 +192,36 @@
       "CachePath": "5A/{5A36CFCA-A047-45C6-FCD8-210B895F28B7}.wem"
      },
      {
+      "Id": "523726839",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Tofu-Gabble-B.wav",
+      "CachePath": "64/{647395FF-7C9E-E3CB-CF10-8D91D322F433}.wem"
+     },
+     {
       "Id": "523787390",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sub-C-4.wav",
       "CachePath": "9E/{9E22334B-F30B-0208-1EB3-B1664A51E742}.wem"
+     },
+     {
+      "Id": "548699161",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bubbles-Gabble-C.wav",
+      "CachePath": "B6/{B6B1A4AF-0849-F71C-8A6A-8C536F299297}.wem"
+     },
+     {
+      "Id": "577419295",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Coda-Gabble-A.wav",
+      "CachePath": "A5/{A54652FF-32ED-9DD6-3370-3A4F79710C70}.wem"
      },
      {
       "Id": "606799659",
@@ -166,6 +254,14 @@
       "Location": "Memory",
       "ShortName": "Sub-A-2.wav",
       "CachePath": "7B/{7B3B3255-04F3-D8B4-9520-FA150A51ED7B}.wem"
+     },
+     {
+      "Id": "653346114",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bubbles-Gabble-D.wav",
+      "CachePath": "9B/{9BCA514E-8DF0-598A-53D9-9BF9ACCCAFE0}.wem"
      },
      {
       "Id": "672181511",
@@ -224,6 +320,14 @@
       "CachePath": "EB/{EB0D708E-F9AC-44AF-3D67-F2E95F12B15C}.wem"
      },
      {
+      "Id": "794129864",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Bubbles-Gabble-A.wav",
+      "CachePath": "8E/{8E28E824-F4C9-5F85-576B-1857126AADE2}.wem"
+     },
+     {
       "Id": "798440518",
       "Language": "SFX",
       "Streaming": "false",
@@ -240,12 +344,28 @@
       "CachePath": "48/{486DD6BA-72A6-A864-BF26-5FD55A01A34C}.wem"
      },
      {
+      "Id": "819499791",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Tofu-Gabble-A.wav",
+      "CachePath": "04/{04FA6224-CBC2-D8B7-D297-61277CFA2116}.wem"
+     },
+     {
       "Id": "842882810",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sub-A-1.wav",
       "CachePath": "48/{488C4879-8034-4458-18EB-A4A14EC92BE0}.wem"
+     },
+     {
+      "Id": "849723551",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Coda-Gabble-C.wav",
+      "CachePath": "B9/{B9108094-8506-32AF-20F0-9CA2C3F83EAD}.wem"
      },
      {
       "Id": "855146624",
@@ -326,6 +446,14 @@
       "Location": "Memory",
       "ShortName": "Typewriter 4.wav",
       "CachePath": "F1/{F1989F5B-7EBB-3E3A-D026-3F6EF9B0A4FD}.wem"
+     },
+     {
+      "Id": "1044412427",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Aster-Gabble-D.wav",
+      "CachePath": "14/{14BF26EB-2EAD-A3F0-B248-56ED16565DEB}.wem"
      }
     ],
     "Events": [
@@ -408,6 +536,29 @@
       ]
      },
      {
+      "Id": "2435079182",
+      "Name": "Play_AsterGabble",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_AsterGabble",
+      "GUID": "{6076EF09-A6C0-4228-98DF-3AC49956AB30}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9650846",
+      "DurationMax": "1.0524322",
+      "MediaRefs": [
+       {
+        "Id": "20419067"
+       },
+       {
+        "Id": "139384931"
+       },
+       {
+        "Id": "252938679"
+       },
+       {
+        "Id": "1044412427"
+       }
+      ]
+     },
+     {
       "Id": "283495111",
       "Name": "Play_BeachAmbience",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_BeachAmbience",
@@ -430,6 +581,52 @@
       "MediaRefs": [
        {
         "Id": "966557403"
+       }
+      ]
+     },
+     {
+      "Id": "3863193186",
+      "Name": "Play_BubblesGabble",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_BubblesGabble",
+      "GUID": "{5F238490-8655-4332-98F6-296A556C36F0}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.94693285",
+      "DurationMax": "1.6075346",
+      "MediaRefs": [
+       {
+        "Id": "26245636"
+       },
+       {
+        "Id": "548699161"
+       },
+       {
+        "Id": "653346114"
+       },
+       {
+        "Id": "794129864"
+       }
+      ]
+     },
+     {
+      "Id": "1194190264",
+      "Name": "Play_CodaGabble",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_CodaGabble",
+      "GUID": "{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9512482",
+      "DurationMax": "1.0815353",
+      "MediaRefs": [
+       {
+        "Id": "170487895"
+       },
+       {
+        "Id": "464117777"
+       },
+       {
+        "Id": "577419295"
+       },
+       {
+        "Id": "849723551"
        }
       ]
      },
@@ -611,6 +808,29 @@
       ]
      },
      {
+      "Id": "1339931719",
+      "Name": "Play_TofuGabble",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_TofuGabble",
+      "GUID": "{D66DF366-FA5A-4816-BE2C-DFB06B746875}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0761281",
+      "DurationMax": "1.361201",
+      "MediaRefs": [
+       {
+        "Id": "43087032"
+       },
+       {
+        "Id": "271830612"
+       },
+       {
+        "Id": "523726839"
+       },
+       {
+        "Id": "819499791"
+       }
+      ]
+     },
+     {
       "Id": "928013289",
       "Name": "Play_TypewriterClack",
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_TypewriterClack",
@@ -662,6 +882,6 @@
     ]
    }
   ],
-  "FileHash": "{E2CC945A-86E8-96D7-F371-EF51300B906A}"
+  "FileHash": "{E71A953C-EF5E-7E6A-013E-79D6DE68A289}"
  }
 }

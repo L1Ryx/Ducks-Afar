@@ -1462,6 +1462,557 @@
 								</Sound>
 							</ChildrenList>
 						</BlendContainer>
+						<RandomSequenceContainer Name="SFX_TofuGabble_Random" ID="{D4EFD69C-1C80-4C42-B9A4-C6CFB4BCC5D8}" ShortID="778756640">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-750</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{48E99B06-E2A5-4BF3-9368-475B4055E490}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="150"/>
+													<Property Name="Min" Type="Real64" Value="-150"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Tofu-Gabble-A" ID="{515C16CD-DE38-4622-BD93-A5B02142C817}" ShortID="192639248">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tofu-Gabble-A" ID="{EF5311F8-8E1E-4097-B88E-E414D576D009}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Tofu-Gabble-A.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="819499791"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tofu-Gabble-A" ID="{EF5311F8-8E1E-4097-B88E-E414D576D009}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Tofu-Gabble-B" ID="{53B1C195-A958-45D2-B124-8ECDF1B1B4C4}" ShortID="478531133">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tofu-Gabble-B" ID="{4F2089A5-D5EA-4CEA-AE37-26E3B8447403}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Tofu-Gabble-B.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="523726839"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tofu-Gabble-B" ID="{4F2089A5-D5EA-4CEA-AE37-26E3B8447403}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Tofu-Gabble-C" ID="{A8E23B17-09DB-4045-862F-F03DBA1B89F5}" ShortID="669742346">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tofu-Gabble-C" ID="{498D3D2F-8827-4C57-BB47-7F36416F2D5A}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Tofu-Gabble-C.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="43087032"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tofu-Gabble-C" ID="{498D3D2F-8827-4C57-BB47-7F36416F2D5A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Tofu-Gabble-D" ID="{204E5154-CC27-402C-989D-D97060A809C3}" ShortID="102918957">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Tofu-Gabble-D" ID="{B6FA339C-833C-4F90-A003-964AC31222A5}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Tofu-Gabble-D.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="271830612"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Tofu-Gabble-D" ID="{B6FA339C-833C-4F90-A003-964AC31222A5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="SFX_AsterGabble_Random" ID="{C761B51B-54AE-4B5B-B3CE-A3AC93A3B50F}" ShortID="417963587">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>30</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{2A5728BA-ACB5-4AFD-86C1-21E6D53699C2}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="75"/>
+													<Property Name="Min" Type="Real64" Value="-75"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Aster-Gabble-A" ID="{2F046698-02C7-4954-B962-53C85247F580}" ShortID="332650461">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Aster-Gabble-A" ID="{DC391293-E0A7-4473-99FB-D6A192CB8B6E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Aster-Gabble-A.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="20419067"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Aster-Gabble-A" ID="{DC391293-E0A7-4473-99FB-D6A192CB8B6E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Aster-Gabble-B" ID="{C6F16AAD-6DF2-4B22-AE6A-4C7E14F964E9}" ShortID="286212126">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Aster-Gabble-B" ID="{901E7120-758E-4E8E-B78F-410342EE1295}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Aster-Gabble-B.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="139384931"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Aster-Gabble-B" ID="{901E7120-758E-4E8E-B78F-410342EE1295}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Aster-Gabble-C" ID="{7DFE29AA-51E5-45E4-A696-14DC80B73E5F}" ShortID="942667832">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Aster-Gabble-C" ID="{BB1BF900-7753-4B23-A644-4AA740C0A7DB}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Aster-Gabble-C.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="252938679"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Aster-Gabble-C" ID="{BB1BF900-7753-4B23-A644-4AA740C0A7DB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Aster-Gabble-D" ID="{CC74163B-BA74-4A93-8E53-7900A208577C}" ShortID="1042536002">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Aster-Gabble-D" ID="{CB02A870-2A56-4B86-AE01-55AFD9E27F83}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Aster-Gabble-D.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1044412427"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Aster-Gabble-D" ID="{CB02A870-2A56-4B86-AE01-55AFD9E27F83}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="SFX_BubblesGabble_Random" ID="{51D7012D-C735-4D0B-B89F-E0523C07E1DB}" ShortID="407919885">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>15</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-750</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{126FCF8F-0CA2-4503-872B-FBE4FCA355E6}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Bubbles-Gabble-A" ID="{9B9E5F3F-6661-4C85-9B4A-4644D0BDBF05}" ShortID="735103943">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Bubbles-Gabble-A" ID="{75B2AC25-0A5A-4CFA-83F9-8D471D0104D9}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Bubbles-Gabble-A.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="794129864"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Bubbles-Gabble-A" ID="{75B2AC25-0A5A-4CFA-83F9-8D471D0104D9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Bubbles-Gabble-B" ID="{39DA25F1-A594-4D94-A5A7-8062372CAA46}" ShortID="646095199">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Bubbles-Gabble-B" ID="{334119ED-6FE7-4691-A636-FA3A5E0FED23}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Bubbles-Gabble-B.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="26245636"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Bubbles-Gabble-B" ID="{334119ED-6FE7-4691-A636-FA3A5E0FED23}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Bubbles-Gabble-C" ID="{AB2D7835-E54C-48EF-9B96-3606FB5E3BB0}" ShortID="179530860">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Bubbles-Gabble-C" ID="{7C9755E6-F208-49DE-B537-0C1A2C94BFE2}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Bubbles-Gabble-C.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="548699161"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Bubbles-Gabble-C" ID="{7C9755E6-F208-49DE-B537-0C1A2C94BFE2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Bubbles-Gabble-D" ID="{C6DC7D4B-BBD7-4341-9DD5-B5DEF4B85F0E}" ShortID="266096144">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Bubbles-Gabble-D" ID="{A400897D-CC32-4861-AA3E-759CFAEA6864}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Bubbles-Gabble-D.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="653346114"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Bubbles-Gabble-D" ID="{A400897D-CC32-4861-AA3E-759CFAEA6864}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="SFX_CodaGabble_Random" ID="{2DA088F4-754C-4A3D-98AD-724AB1270BAC}" ShortID="60650463">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{651CE67A-9D05-4950-AE3F-7B0F425AC45C}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="100"/>
+													<Property Name="Min" Type="Real64" Value="-100"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Coda-Gabble-A" ID="{F68ADDD3-D6BE-4C9F-8167-704A0A64546A}" ShortID="525193893">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Coda-Gabble-A" ID="{04F65439-A2DB-4CF2-8F78-BE1E31EBD4F5}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Coda-Gabble-A.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="577419295"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Coda-Gabble-A" ID="{04F65439-A2DB-4CF2-8F78-BE1E31EBD4F5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Coda-Gabble-B" ID="{2C448F97-6A4A-4D15-B39F-22023AEBAEE9}" ShortID="571627611">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Coda-Gabble-B" ID="{BFAF88FF-9C48-4C65-9F4C-F2788FC58672}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Coda-Gabble-B.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="464117777"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Coda-Gabble-B" ID="{BFAF88FF-9C48-4C65-9F4C-F2788FC58672}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Coda-Gabble-C" ID="{EDF44DA7-B306-4198-8C15-30B484ECFFAF}" ShortID="961168138">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Coda-Gabble-C" ID="{0A2A8299-D935-4907-BE1E-7A4AFD59DD49}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Coda-Gabble-C.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="849723551"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Coda-Gabble-C" ID="{0A2A8299-D935-4907-BE1E-7A4AFD59DD49}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Coda-Gabble-D" ID="{74BDAC90-1971-437C-BC08-02C00519963D}" ShortID="498163155">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Coda-Gabble-D" ID="{B4173B8D-A92B-40B4-BCE3-A1EEDC9EE549}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.01"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Coda-Gabble-D.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="170487895"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Coda-Gabble-D" ID="{B4173B8D-A92B-40B4-BCE3-A1EEDC9EE549}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="AMBIENCE" ID="{601EBDA4-BE38-4BB9-A38C-B95DF2765927}" ShortID="529818581">

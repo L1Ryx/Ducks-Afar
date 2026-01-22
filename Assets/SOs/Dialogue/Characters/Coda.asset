@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: CODA
   portrait: {fileID: 21300000, guid: 4a5bef33fe5664ce8afa75234643ac3c, type: 3}
-  typingCue: {fileID: 0}
+  typingCue: {fileID: 11400000, guid: a5fb02baf6dbf479792bfb752984b81a, type: 2}
   lineStartCue: {fileID: 0}

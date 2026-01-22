@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: TOFU
   portrait: {fileID: 21300000, guid: 6fddc4d92477f4fb7b5bb2b466fce698, type: 3}
-  typingCue: {fileID: 0}
+  typingCue: {fileID: 11400000, guid: 609dfefac90934ef3b2ccf0b5e49b5dd, type: 2}
   lineStartCue: {fileID: 0}

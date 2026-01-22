@@ -151,7 +151,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584327405769119661
+    m_lastTime: -8584325534360330668
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -179,7 +179,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584327405771453561
+    m_lastTime: -8584325534360368575
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -258,6 +258,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 6
       minDuration: 6
+    - name: Play_AsterGabble
+      guid: 09ef7660c0a6284298df3ac49956ab30
+      id: 2435079182
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_AsterGabble
+        ObjectType: 3
+        guid: 09ef7660c0a6284298df3ac49956ab30
+      Path: Events/Default Work Unit/WORLD/Play_AsterGabble
+      maxAttenuation: 0
+      maxDuration: 1.0524322
+      minDuration: 0.9650846
     - name: Play_BeachAmbience
       guid: d34da3ee0f31d84cbb3c16ce25ef91a1
       id: 283495111
@@ -298,6 +318,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 3.716272
       minDuration: 2.6278014
+    - name: Play_BubblesGabble
+      guid: 9084235f5586324398f6296a556c36f0
+      id: 3863193186
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_BubblesGabble
+        ObjectType: 3
+        guid: 9084235f5586324398f6296a556c36f0
+      Path: Events/Default Work Unit/WORLD/Play_BubblesGabble
+      maxAttenuation: 0
+      maxDuration: 1.6075346
+      minDuration: 0.94693285
+    - name: Play_CodaGabble
+      guid: 9dc77b16ef25a3438093d24ecf1aa0bf
+      id: 1194190264
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_CodaGabble
+        ObjectType: 3
+        guid: 9dc77b16ef25a3438093d24ecf1aa0bf
+      Path: Events/Default Work Unit/WORLD/Play_CodaGabble
+      maxAttenuation: 0
+      maxDuration: 1.0815353
+      minDuration: 0.9512482
     - name: Play_CraftingComplete
       guid: 0d6f326e36a9d14bb5ccc3a4ff6d5438
       id: 1504944989
@@ -438,6 +498,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 6
       minDuration: 6
+    - name: Play_TofuGabble
+      guid: 66f36dd65afa1648be2cdfb06b746875
+      id: 1339931719
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_TofuGabble
+        ObjectType: 3
+        guid: 66f36dd65afa1648be2cdfb06b746875
+      Path: Events/Default Work Unit/WORLD/Play_TofuGabble
+      maxAttenuation: 0
+      maxDuration: 1.361201
+      minDuration: 1.0761281
     - name: Play_TypewriterClack
       guid: 527adedbbc4a4f4cac48294ddbdaae1a
       id: 928013289

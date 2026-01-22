@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: ASTER
   portrait: {fileID: 21300000, guid: 3f0972f86919e420aa0e1dc7d48ca94d, type: 3}
-  typingCue: {fileID: 0}
+  typingCue: {fileID: 11400000, guid: 2903a5241b68648eba6edcde4f9b849f, type: 2}
   lineStartCue: {fileID: 0}
