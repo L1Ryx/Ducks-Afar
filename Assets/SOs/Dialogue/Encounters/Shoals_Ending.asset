@@ -157,8 +157,8 @@ MonoBehaviour:
       he\u2019s scared. "
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "ASTER: HEY! I\u2019m not a little chick anymore!"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "HEY! I\u2019m not a little chick anymore!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}

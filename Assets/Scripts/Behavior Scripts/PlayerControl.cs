@@ -34,6 +34,12 @@ public class PlayerControl : MonoBehaviour
     public bool IsNoclipEnabled { get; private set; }
     public bool IsHyperspeedEnabled { get; private set; }
     [SerializeField] private float hyperspeedMultiplier = 3f;
+    // Add near other fields:
+    [Header("Events")]
+    [SerializeField] private UnityEvent OnPlayerMoved;
+    [SerializeField] private bool invokeOnPlayerMovedEveryFrameWhileMoving = false;
+
+    private bool wasMovingLastFrame = false;
     
 
     private void Awake()
@@ -115,6 +121,23 @@ public class PlayerControl : MonoBehaviour
         bool isMoving = rb.linearVelocity.sqrMagnitude > movingVelocityThreshold;
         animator.SetBool("IsMoving", isMoving);
         animator.SetInteger("Facing", facing);
+
+        if (OnPlayerMoved != null)
+        {
+            if (invokeOnPlayerMovedEveryFrameWhileMoving)
+            {
+                if (isMoving)
+                    OnPlayerMoved.Invoke();
+            }
+            else
+            {
+                // Invoke once when movement begins (not every frame)
+                if (isMoving && !wasMovingLastFrame)
+                    OnPlayerMoved.Invoke();
+            }
+        }
+
+        wasMovingLastFrame = isMoving;
     }
 
     public void OnMove(InputAction.CallbackContext context)

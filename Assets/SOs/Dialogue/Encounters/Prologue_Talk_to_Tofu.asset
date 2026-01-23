@@ -28,13 +28,13 @@ MonoBehaviour:
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: Do you think they planned this?? To leave you and me behind on this perfect
-      beaut of a planet??
+    text: Do you think they planned this? To leave you and me behind on this perfect
+      beaut of a planet?
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I\u2019m sure ASTER got everyone super fired up\u2026he\u2019s always
-      had a way with words\u2026and being loud\u2026"
+    text: "I\u2019m sure ASTER got everyone super fired up\u2026 he\u2019s always
+      had a way with words\u2026 and being loud\u2026"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
