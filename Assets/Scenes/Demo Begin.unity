@@ -2353,7 +2353,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.58197, y: 12.86377}
+  m_AnchoredPosition: {x: -20.582031, y: 12.86377}
   m_SizeDelta: {x: 407.5259, y: 254.7036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008022224
@@ -3153,7 +3153,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  nextScene: Stage
+  encounter: {fileID: 0}
+  nextScene: Stage Home
 --- !u!114 &1535081830
 MonoBehaviour:
   m_ObjectHideFlags: 0
