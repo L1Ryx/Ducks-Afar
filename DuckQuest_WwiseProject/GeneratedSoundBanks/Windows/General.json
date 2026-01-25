@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{0A2593D0-9F9C-9616-1939-881F764BDEF4}",
+    "Hash": "{667D4914-A6FB-D646-AD59-88CDFEF70F4D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -819,6 +819,15 @@
        {
         "Id": "736026174"
        }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "3241088250",
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
       ]
      },
      {
@@ -983,9 +992,55 @@
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
       "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
      }
+    ],
+    "StateGroups": [
+     {
+      "Id": "3241088250",
+      "Name": "PuzzleKey",
+      "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey",
+      "GUID": "{1D8A6052-12EB-4267-92D1-FDF460F7D308}",
+      "States": [
+       {
+        "Id": "84696440",
+        "Name": "G",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\G",
+        "GUID": "{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"
+       },
+       {
+        "Id": "84696441",
+        "Name": "F",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\F",
+        "GUID": "{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"
+       },
+       {
+        "Id": "84696444",
+        "Name": "C",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\C",
+        "GUID": "{83171017-102C-4889-BFCE-F02B63E17E43}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\None",
+        "GUID": "{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"
+       },
+       {
+        "Id": "1836525772",
+        "Name": "Dm",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Dm",
+        "GUID": "{16321D5B-776F-48AD-9DD5-4816E220DBC0}"
+       },
+       {
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{95336464-7FCB-5550-18AF-BA93ABF7B1F3}"
+  "FileHash": "{0138707B-FF28-ADB6-370A-5CE394049FC9}"
  }
 }

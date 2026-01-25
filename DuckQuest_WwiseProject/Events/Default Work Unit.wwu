@@ -237,8 +237,19 @@
 					<ChildrenList>
 						<Event Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}">
 							<ChildrenList>
+								<Action Name="" ID="{74FA8B94-D4E1-4036-9872-E96024168CC4}" ShortID="919440033">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}" WorkUnitID="{432DD7BA-AC87-405A-B0A0-2B15AFFD5B55}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{0117260B-FFE3-4DDA-BF1E-202BD98F8BF6}" ShortID="322790930">
 									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
 										<Property Name="FadeInCurve" Type="int16" Value="7"/>
 										<Property Name="FadeTime" Type="Real64" Value="1"/>
 									</PropertyList>
