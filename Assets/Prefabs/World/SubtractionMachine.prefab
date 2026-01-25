@@ -15712,7 +15712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3960845128400593456}
   - component: {fileID: 5183239793769702398}
-  - component: {fileID: 7948318983909491483}
+  - component: {fileID: 1231583048765371281}
   m_Layer: 0
   m_Name: SubtractionMachine
   m_TagString: Untagged
@@ -15756,7 +15756,7 @@ MonoBehaviour:
   slotB: {fileID: 7716558062712808172}
   isSubtractionMachine: 1
   isAdditionMachine: 0
---- !u!114 &7948318983909491483
+--- !u!114 &1231583048765371281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15765,13 +15765,58 @@ MonoBehaviour:
   m_GameObject: {fileID: 7521267314466566475}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 773822db9b8b24037b572080f916cd97, type: 3}
+  m_Script: {fileID: 11500000, guid: 69c4939a36435488ab512873ad1ae9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   notesCountRtpc: {fileID: 11400000, guid: 96774fe904200440395ea58f24838390, type: 2}
-  cueA_Dm9: {fileID: 11400000, guid: 1335ce6b6c9ef47f5b3128ed280aef8a, type: 2}
+  cueA_F9: {fileID: 11400000, guid: 1335ce6b6c9ef47f5b3128ed280aef8a, type: 2}
   cueB_G9: {fileID: 11400000, guid: ed3a3c9d32fd146319c90cf6c16a0192, type: 2}
-  cueC_C9: {fileID: 11400000, guid: 15dd37277fb5d4eb8836806c3a3be88b, type: 2}
+  cueC_Am9: {fileID: 11400000, guid: 15dd37277fb5d4eb8836806c3a3be88b, type: 2}
+  onSwitchToF:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: adcdccc45e79b4863be0cdf5a3cf8e39, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSwitchToG:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3aa8a61110d59452bb3f896c619f0afe, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSwitchToAm:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 9e45e05ce0ef843cfa4a03767aea30c3, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7739041916555665889
 GameObject:
   m_ObjectHideFlags: 0

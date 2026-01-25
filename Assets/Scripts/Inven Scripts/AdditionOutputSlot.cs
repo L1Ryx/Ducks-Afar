@@ -59,6 +59,9 @@ public class AdditionOutputSlot : MonoBehaviour, IInteractable
 
         var cadenceSfx = machine.GetComponent<AdditionMachineCadenceSfx>();
         cadenceSfx?.PlayOutputPickup(result);
+        
+        var cadenceSfxSub = machine.GetComponent<SubtractionMachineCadenceSfx>();
+        cadenceSfxSub?.PlayOutputPickup(result);
 
         if (clearInputsAfterSuccess)
             machine.ClearInputs();

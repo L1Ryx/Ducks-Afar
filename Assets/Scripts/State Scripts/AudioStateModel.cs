@@ -14,6 +14,7 @@ public sealed class AudioStateModel
     private AudioCue _currentAmbienceCue;
 
     private GameObject _globalEmitter;
+    private AudioCue _currentMusicCue;
 
     // Track "current music" to prevent accidental restarts.
     private string _currentMusicEventName;
@@ -104,6 +105,130 @@ public sealed class AudioStateModel
 
         _currentMusicEventName = null;
     }
+    
+    // -------------------------
+// Wwise State helpers
+// -------------------------
+
+    /// <summary>
+    /// Set a Wwise State using SOs (preferred).
+    /// Enforces: group/value validity + optional whitelist validation.
+    /// </summary>
+    public void SetState(AudioStateGroup group, AudioStateValue value)
+    {
+        EnsureInitialized();
+
+        if (group == null || !group.IsValid)
+            return;
+
+        // Coalesce null to default if provided.
+        var v = (value != null) ? value : group.defaultValue;
+        if (v == null || !v.IsValid)
+            return;
+
+        // Ensure the value actually belongs to the group.
+        // (Prevents authoring mistakes and accidental cross-group values.)
+        if (!string.Equals(v.groupName, group.groupName, StringComparison.Ordinal))
+            return;
+
+        // Optional whitelist enforcement.
+        if (!group.IsAllowed(v))
+            return;
+
+        AkSoundEngine.SetState(group.groupName, v.valueName);
+    }
+
+    /// <summary>
+    /// Convenience overload if you want to set a state value directly.
+    /// Validates the value asset itself.
+    /// </summary>
+    public void SetState(AudioStateValue value)
+    {
+        EnsureInitialized();
+
+        if (value == null || !value.IsValid)
+            return;
+
+        AkSoundEngine.SetState(value.groupName, value.valueName);
+    }
+
+    /// <summary>
+    /// String-based fallback (useful for quick probes or debugging).
+    /// Prefer SetState(AudioStateGroup, AudioStateValue) for production.
+    /// </summary>
+    public void SetState(string groupName, string valueName)
+    {
+        EnsureInitialized();
+
+        if (string.IsNullOrWhiteSpace(groupName) || string.IsNullOrWhiteSpace(valueName))
+            return;
+
+        AkSoundEngine.SetState(groupName, valueName);
+    }
+    
+    /// <summary>
+    /// Applies a default state value (if set) for a given group.
+    /// </summary>
+    public void ApplyDefaultState(AudioStateGroup group)
+    {
+        EnsureInitialized();
+
+        if (group == null || !group.IsValid)
+            return;
+
+        if (group.defaultValue == null || !group.defaultValue.IsValid)
+            return;
+
+        SetState(group, group.defaultValue);
+    }
+    
+    public void SetGlobalMusic(AudioCue musicCue)
+    {
+        EnsureInitialized();
+
+        if (musicCue == null || !musicCue.HasPlayEvent)
+            return;
+
+        // Idempotent: same cue already playing.
+        if (_currentMusicCue == musicCue && _currentMusicPlayingId != 0)
+            return;
+
+        StopGlobalMusic(immediate: false);
+
+        _currentMusicCue = musicCue;
+        _currentMusicEventName = musicCue.playEvent;
+
+        ApplyCueRtpcs(musicCue, emitter: null);
+        _currentMusicPlayingId = AkSoundEngine.PostEvent(musicCue.playEvent, _globalEmitter);
+    }
+
+    public void StopGlobalMusic(bool immediate)
+    {
+        EnsureInitialized();
+
+        if (immediate)
+        {
+            if (_currentMusicPlayingId != 0)
+                AkSoundEngine.StopPlayingID(_currentMusicPlayingId);
+
+            _currentMusicCue = null;
+            _currentMusicEventName = null;
+            _currentMusicPlayingId = 0;
+            return;
+        }
+
+        // Graceful stop prefers stopEvent.
+        if (_currentMusicCue != null && _currentMusicCue.HasStopEvent)
+            AkSoundEngine.PostEvent(_currentMusicCue.stopEvent, _globalEmitter);
+        else if (_currentMusicPlayingId != 0)
+            AkSoundEngine.StopPlayingID(_currentMusicPlayingId);
+
+        _currentMusicCue = null;
+        _currentMusicEventName = null;
+        _currentMusicPlayingId = 0;
+    }
+
+
 
     // -------------------------
     // RTPC helpers

@@ -265,6 +265,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
@@ -749,6 +751,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
@@ -1227,6 +1231,8 @@ MonoBehaviour:
   outerRadius: 3
   overrideColor: 0
   lightColor: {r: 1, g: 1, b: 1, a: 1}
+  overrideIntensity: 0
+  intensity: 1
   shouldFlicker: 0
   radiusFlickerAmount: 0.05
   intensityFlickerAmount: 0.05
@@ -1336,6 +1342,51 @@ MonoBehaviour:
   cueA_Dm9: {fileID: 11400000, guid: c710893c394674686a92bd4df4de10de, type: 2}
   cueB_G9: {fileID: 11400000, guid: ed3a3c9d32fd146319c90cf6c16a0192, type: 2}
   cueC_C9: {fileID: 11400000, guid: 3e043b1984339453585803b649f1012e, type: 2}
+  onSwitchToDm:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: fb7585d4f36a84030ae15951ec6518ff, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSwitchToG:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3aa8a61110d59452bb3f896c619f0afe, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onSwitchToC:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 3e6365812bd3d4465a752100b3a2e528, type: 2}
+        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
+        m_MethodName: Raise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7775772886794668079
 GameObject:
   m_ObjectHideFlags: 0

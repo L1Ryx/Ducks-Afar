@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584327405770435402
+    m_lastTime: -8584322964750020424
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -105,6 +105,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus
+    - name: MX Bus
+      guid: 5465a027aa99c446aa21ddbbab3d95fe
+      id: 3027868960
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3b285fafa3b13043963f7baa8242bcfd
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: MX Bus
+        ObjectType: 2
+        guid: 5465a027aa99c446aa21ddbbab3d95fe
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/MX Bus
     - name: SFX Bus
       guid: a1ec96729fcefd46bc1bafe26e131159
       id: 1502772432
@@ -179,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584325502098910722
+    m_lastTime: -8584322969867984877
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -195,6 +212,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: 48c35fd5762956438c1cf171a3fe1b0c
       Path: Events/Default Work Unit/AMBIENCE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: MUS
+      guid: 383387e9486de54296205dd6617aaaad
+      id: 712897226
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      Path: Events/Default Work Unit/MUS
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -458,6 +492,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.06926526
       minDuration: 0.031719707
+    - name: Play_PuzzleTheme
+      guid: d0a7dac8be5ff942a21b4be3629c5804
+      id: 3803220377
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Play_PuzzleTheme
+        ObjectType: 3
+        guid: d0a7dac8be5ff942a21b4be3629c5804
+      Path: Events/Default Work Unit/MUS/Play_PuzzleTheme
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_RockBreak
       guid: a2898c247fedf145adcbf628cbfc4f0f
       id: 1119824134
@@ -578,6 +632,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_PuzzleTheme
+      guid: f7656bd86bec364a984c39d617f44b50
+      id: 1200236291
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Stop_PuzzleTheme
+        ObjectType: 3
+        guid: f7656bd86bec364a984c39d617f44b50
+      Path: Events/Default Work Unit/MUS/Stop_PuzzleTheme
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: UI
       guid: d080ff677bd29c40abb3609187abda0e
       id: 1551306167
@@ -669,8 +743,122 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: bad72d4387ac5a40b0a02b15affd5b55
     GuidInternal: 
-    m_lastTime: -8584327405769117487
-    List: []
+    m_lastTime: -8584322969867952138
+    List:
+    - name: PuzzleKey
+      guid: 52608a1deb12674292d1fdf460f7d308
+      id: 3241088250
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: bad72d4387ac5a40b0a02b15affd5b55
+      - ElementName: PuzzleKey
+        ObjectType: 9
+        guid: 52608a1deb12674292d1fdf460f7d308
+      Path: States/Default Work Unit/PuzzleKey
+      values:
+      - name: Am
+        guid: 371a57d58018e640be3447f837672ca9
+        id: 1886858551
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: bad72d4387ac5a40b0a02b15affd5b55
+        - ElementName: PuzzleKey
+          ObjectType: 9
+          guid: 52608a1deb12674292d1fdf460f7d308
+        - ElementName: Am
+          ObjectType: 8
+          guid: 371a57d58018e640be3447f837672ca9
+      - name: C
+        guid: 171017832c108948bfcef02b63e17e43
+        id: 84696444
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: bad72d4387ac5a40b0a02b15affd5b55
+        - ElementName: PuzzleKey
+          ObjectType: 9
+          guid: 52608a1deb12674292d1fdf460f7d308
+        - ElementName: C
+          ObjectType: 8
+          guid: 171017832c108948bfcef02b63e17e43
+      - name: Dm
+        guid: 5b1d32166f77ad489dd54816e220dbc0
+        id: 1836525772
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: bad72d4387ac5a40b0a02b15affd5b55
+        - ElementName: PuzzleKey
+          ObjectType: 9
+          guid: 52608a1deb12674292d1fdf460f7d308
+        - ElementName: Dm
+          ObjectType: 8
+          guid: 5b1d32166f77ad489dd54816e220dbc0
+      - name: F
+        guid: 93e4baac4c99744586c7ade45ca3bf14
+        id: 84696441
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: bad72d4387ac5a40b0a02b15affd5b55
+        - ElementName: PuzzleKey
+          ObjectType: 9
+          guid: 52608a1deb12674292d1fdf460f7d308
+        - ElementName: F
+          ObjectType: 8
+          guid: 93e4baac4c99744586c7ade45ca3bf14
+      - name: G
+        guid: 1a7407bed2ace04a82f9962e0c780d4c
+        id: 84696440
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: bad72d4387ac5a40b0a02b15affd5b55
+        - ElementName: PuzzleKey
+          ObjectType: 9
+          guid: 52608a1deb12674292d1fdf460f7d308
+        - ElementName: G
+          ObjectType: 8
+          guid: 1a7407bed2ace04a82f9962e0c780d4c
+      - name: None
+        guid: ea0bec9d7799d54fa662b5e9f23ba1c7
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: bad72d4387ac5a40b0a02b15affd5b55
+        - ElementName: PuzzleKey
+          ObjectType: 9
+          guid: 52608a1deb12674292d1fdf460f7d308
+        - ElementName: None
+          ObjectType: 8
+          guid: ea0bec9d7799d54fa662b5e9f23ba1c7
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   SwitchWwu:
   - PhysicalPath: Switches/Default Work Unit.wwu
     PathAndIcons:

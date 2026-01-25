@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class AdditionSlot : MonoBehaviour, IInteractable
@@ -24,6 +25,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
     
     [SerializeField] private AdditionMachine machine;
     private AdditionMachineCadenceSfx cadenceSfx;
+    private SubtractionMachineCadenceSfx cadenceSfxSub;
 
 
     private Tween iconTween;
@@ -42,6 +44,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         if (machine != null)
         {
             cadenceSfx = machine.GetComponent<AdditionMachineCadenceSfx>();
+            cadenceSfxSub = machine.GetComponent<SubtractionMachineCadenceSfx>();
         }
         SetIconHiddenImmediate();
     }
@@ -155,6 +158,7 @@ public class AdditionSlot : MonoBehaviour, IInteractable
         ShowIcon(def.icon);
         
         cadenceSfx?.PlayPlacement(this, hwDef.packSize);
+        cadenceSfxSub?.PlayPlacement(this, hwDef.packSize);
 
 
         UpdateVisual();

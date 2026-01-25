@@ -2,19 +2,19 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AdditionMachine))]
-public sealed class AdditionMachineCadenceSfx : MonoBehaviour
+public sealed class SubtractionMachineCadenceSfx : MonoBehaviour
 {
     [Header("Wwise Routing (Global 2D)")]
     [SerializeField] private AudioRtpc notesCountRtpc;
 
     [Header("Cadence Cues (ii–V–I)")]
-    [SerializeField] private AudioCue cueA_Dm9; // first placement when both empty
+    [SerializeField] private AudioCue cueA_F9; // first placement when both empty
     [SerializeField] private AudioCue cueB_G9;  // second placement when other already filled
-    [SerializeField] private AudioCue cueC_C9;  // output pickup
+    [SerializeField] private AudioCue cueC_Am9;  // output pickup
 
-    [Header("Events")] [SerializeField] private UnityEvent onSwitchToDm;
+    [Header("Events")] [SerializeField] private UnityEvent onSwitchToF;
     [SerializeField] private UnityEvent onSwitchToG;
-    [SerializeField] private UnityEvent onSwitchToC;
+    [SerializeField] private UnityEvent onSwitchToAm;
 
     private AdditionMachine _machine;
 
@@ -32,10 +32,10 @@ public sealed class AdditionMachineCadenceSfx : MonoBehaviour
 
         // Decide A vs B based on whether both inputs were empty before this placement.
         bool wasBothEmpty = _machine != null && _machine.WereBothInputsEmptyBeforePlacing(placingSlot);
-        var cue = wasBothEmpty ? cueA_Dm9 : cueB_G9;
-        if (cue != null && cue == cueA_Dm9)
+        var cue = wasBothEmpty ? cueA_F9 : cueB_G9;
+        if (cue != null && cue == cueA_F9)
         {
-            onSwitchToDm?.Invoke();
+            onSwitchToF?.Invoke();
         } else if (cue != null && cue == cueB_G9)
         {
             onSwitchToG?.Invoke();
@@ -51,8 +51,8 @@ public sealed class AdditionMachineCadenceSfx : MonoBehaviour
         int notes = ClampNotes(sum);
         SetNotesRtpc(notes);
 
-        onSwitchToC?.Invoke();
-        Game.Ctx.Audio.PlayCueGlobal(cueC_C9);
+        onSwitchToAm?.Invoke();
+        Game.Ctx.Audio.PlayCueGlobal(cueC_Am9);
     }
 
     private int ClampNotes(int raw)
