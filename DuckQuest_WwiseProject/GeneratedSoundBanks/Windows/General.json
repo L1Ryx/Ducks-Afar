@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{ADB816AC-5D45-612D-AC9B-DC8413E59913}",
+    "Hash": "{0A2593D0-9F9C-9616-1939-881F764BDEF4}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -38,6 +38,14 @@
       "Location": "Memory",
       "ShortName": "Bubbles-Gabble-B.wav",
       "CachePath": "8A/{8A00A841-C267-1124-D26A-405D60269E59}.wem"
+     },
+     {
+      "Id": "35540017",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Night-Am-72-44.wav",
+      "CachePath": "13/{13B6D989-3A29-6A6A-2DE5-E99C7243FBA9}.wem"
      },
      {
       "Id": "42124371",
@@ -184,6 +192,14 @@
       "CachePath": "D6/{D6E71F49-B03D-596F-D894-B246C615BAFF}.wem"
      },
      {
+      "Id": "476220816",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Night-C-72-44.wav",
+      "CachePath": "98/{98F383A0-27B0-159C-6CF9-4A4A44C303D6}.wem"
+     },
+     {
       "Id": "504985255",
       "Language": "SFX",
       "Streaming": "false",
@@ -256,6 +272,14 @@
       "CachePath": "7B/{7B3B3255-04F3-D8B4-9520-FA150A51ED7B}.wem"
      },
      {
+      "Id": "650713914",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Night-G-72-44.wav",
+      "CachePath": "BB/{BBB49F58-62FD-9BAD-2D0D-194AC978D501}.wem"
+     },
+     {
       "Id": "653346114",
       "Language": "SFX",
       "Streaming": "false",
@@ -280,6 +304,14 @@
       "CachePath": "D2/{D23F7EAA-01E1-D720-BCF8-5A8390157F3A}.wem"
      },
      {
+      "Id": "682665517",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Night-Dm-72-44.wav",
+      "CachePath": "C9/{C9E39092-0DE3-F0CE-2F0C-5EFCA61479AB}.wem"
+     },
+     {
       "Id": "683992905",
       "Language": "SFX",
       "Streaming": "false",
@@ -294,6 +326,14 @@
       "Location": "Memory",
       "ShortName": "481067-Small_Bush_Foliage_Rustle_5.wav",
       "CachePath": "FE/{FEE1DF9F-879F-E2EC-5A40-3A222B69870B}.wem"
+     },
+     {
+      "Id": "736026174",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Night-F-72-44.wav",
+      "CachePath": "BF/{BF8FC69E-2015-A661-EA72-FDD32A837CE7}.wem"
      },
      {
       "Id": "744795544",
@@ -758,6 +798,30 @@
       ]
      },
      {
+      "Id": "3803220377",
+      "Name": "Play_PuzzleTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_PuzzleTheme",
+      "GUID": "{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "35540017"
+       },
+       {
+        "Id": "476220816"
+       },
+       {
+        "Id": "650713914"
+       },
+       {
+        "Id": "682665517"
+       },
+       {
+        "Id": "736026174"
+       }
+      ]
+     },
+     {
       "Id": "1119824134",
       "Name": "Play_RockBreak",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_RockBreak",
@@ -900,6 +964,16 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "1200236291",
+      "Name": "Stop_PuzzleTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_PuzzleTheme",
+      "GUID": "{D86B65F7-EC6B-4A36-984C-39D617F44B50}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "GameParameters": [
@@ -912,6 +986,6 @@
     ]
    }
   ],
-  "FileHash": "{5B42F419-106B-557D-27F5-CD6796322CB1}"
+  "FileHash": "{95336464-7FCB-5550-18AF-BA93ABF7B1F3}"
  }
 }

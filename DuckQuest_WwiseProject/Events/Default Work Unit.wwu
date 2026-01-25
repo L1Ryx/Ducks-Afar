@@ -233,6 +233,41 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="MUS" ID="{E9873338-6D48-42E5-9620-5DD6617AAAAD}" ShortID="22515018">
+					<ChildrenList>
+						<Event Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}">
+							<ChildrenList>
+								<Action Name="" ID="{0117260B-FFE3-4DDA-BF1E-202BD98F8BF6}" ShortID="322790930">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_NightTheme_Playlist" ID="{76A78F2D-5E42-4467-8E08-E427B0C4476B}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}">
+							<ChildrenList>
+								<Action Name="" ID="{B4BE4746-E269-4B26-A9AF-0FF837501550}" ShortID="967465267">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_NightTheme_Playlist" ID="{76A78F2D-5E42-4467-8E08-E427B0C4476B}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -26,13 +26,34 @@ namespace AK
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
+        static const AkUniqueID PLAY_PUZZLETHEME = 3803220377U;
         static const AkUniqueID PLAY_ROCKBREAK = 1119824134U;
         static const AkUniqueID PLAY_SUBCADENCEA = 1545776886U;
         static const AkUniqueID PLAY_SUBCADENCEC = 1545776884U;
         static const AkUniqueID PLAY_TOFUGABBLE = 1339931719U;
         static const AkUniqueID PLAY_TYPEWRITERCLACK = 928013289U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
+        static const AkUniqueID STOP_PUZZLETHEME = 1200236291U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace PUZZLEKEY
+        {
+            static const AkUniqueID GROUP = 3241088250U;
+
+            namespace STATE
+            {
+                static const AkUniqueID AM = 1886858551U;
+                static const AkUniqueID C = 84696444U;
+                static const AkUniqueID DM = 1836525772U;
+                static const AkUniqueID F = 84696441U;
+                static const AkUniqueID G = 84696440U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace PUZZLEKEY
+
+    } // namespace STATES
 
     namespace GAME_PARAMETERS
     {
@@ -49,6 +70,7 @@ namespace AK
     {
         static const AkUniqueID AMB_BUS = 1313057045U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID MX_BUS = 3027868960U;
         static const AkUniqueID SFX_BUS = 1502772432U;
         static const AkUniqueID UI_BUS = 3600729941U;
     } // namespace BUSSES

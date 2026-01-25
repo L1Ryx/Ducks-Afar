@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{432DD7BA-AC87-405A-B0A0-2B15AFFD5B55}" SchemaVersion="123">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{432DD7BA-AC87-405A-B0A0-2B15AFFD5B55}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{432DD7BA-AC87-405A-B0A0-2B15AFFD5B55}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="1.5"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+						<State Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+						<State Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+						<State Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+						<State Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+						<State Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

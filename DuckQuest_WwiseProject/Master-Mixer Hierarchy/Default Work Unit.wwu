@@ -47,6 +47,19 @@
 								</ObjectList>
 							</ObjectLists>
 						</AuxBus>
+						<Bus Name="MX Bus" ID="{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}">
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="AMB Bus" ID="{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"/>
+									<DuckingParam>
+										<Volume>-6</Volume>
+										<FadeInTime>3</FadeInTime>
+										<FadeOutTime>1</FadeOutTime>
+										<FadeCurve>FadeExp2</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

@@ -1,6 +1,891 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}" SchemaVersion="123">
 	<InteractiveMusic>
-		<WorkUnit Name="Default Work Unit" ID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="MX_NightTheme_Playlist" ID="{76A78F2D-5E42-4467-8E08-E427B0C4476B}" ShortID="716281918">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="72"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-18</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="MX Bus" ID="{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{C7204B7A-2B40-4BC7-A3F3-E27A04D1896B}" ShortID="1059902958">
+									<PropertyList>
+										<Property Name="LoopCount" Type="int16" Value="0"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{E7CF8EDD-7E3E-4667-A474-34B4F11A798D}" ShortID="481019011">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="MX_NightTheme_Segment" ID="{EBA57BE5-26E7-4F73-8285-6D6BA8710C28}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{D52DE063-9709-47DD-A77D-E0B1EC1DDC3E}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{674A36EA-57AF-4BDD-AD5E-75B6F0713ECA}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="MX_NightTheme_Segment" ID="{EBA57BE5-26E7-4F73-8285-6D6BA8710C28}" ShortID="947813325">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="86811.5406261791"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="Ducks-Afar-Night-Am-72-44" ID="{4A3E16B4-5256-44EB-9974-501FE42C3C05}" ShortID="140090105">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{144936BD-9A3C-42BF-A917-012DFFD71C37}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ducks-Afar-Night-Am-72-44" ID="{CA830A49-6409-4A98-8540-D7E5B1F0F191}">
+											<Language>SFX</Language>
+											<AudioFile>Ducks-Afar-Night-Am-72-44.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="35540017"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+												<CustomState Name="" ID="{7E92123E-CD92-4AE9-BB53-5113FE4FD4B4}" ShortID="20025741"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+												<CustomState Name="" ID="{041E086C-2FE4-46A6-AFA8-8E523ADDAC4B}" ShortID="586487340">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+												<CustomState Name="" ID="{6342E65F-9660-4ED0-B12A-973587FFD8D3}" ShortID="206891986">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+												<CustomState Name="" ID="{0E36CD55-0CB6-4EB5-8835-44E8931D3795}" ShortID="374835848">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+												<CustomState Name="" ID="{9E5688C3-1093-4613-B74B-07AF4D6E3B51}" ShortID="721333982">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{6A0200D4-742D-4441-801B-E80B55434C40}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Ducks-Afar-Night-Am-72-44" ID="{DCF20318-AC23-47D2-9B5F-6821B94A6ED8}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="3333.33333333333"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="80000"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-3333.33333333333"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Ducks-Afar-Night-Am-72-44" ID="{CA830A49-6409-4A98-8540-D7E5B1F0F191}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{8F6C7B11-4B8B-416D-B615-ABBF9F885BE2}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{FCE3DBE1-D7EF-4963-A0EE-D5F5D070FADC}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{0A062E77-FCAE-46E6-A73A-EFEDCF6F272D}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="Ducks-Afar-Night-C-72-44" ID="{E644F03D-97CD-4068-9BEF-94112F4B4AB7}" ShortID="779459162">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{68A43295-507C-4E19-A190-DD26EC2DB7B3}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ducks-Afar-Night-C-72-44" ID="{D16F3EB9-C320-4EB2-9B22-631B77998114}">
+											<Language>SFX</Language>
+											<AudioFile>Ducks-Afar-Night-C-72-44.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="476220816"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+												<CustomState Name="" ID="{2853EA4C-9F08-4786-8902-F7ED3AD4E0CE}" ShortID="128163450">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+												<CustomState Name="" ID="{77868CD0-600D-4DDD-83FB-3A6F6E48E91F}" ShortID="649781350">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+												<CustomState Name="" ID="{6BB9D471-BBB2-4F87-B44F-E30C4A8DA76D}" ShortID="839555037"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+												<CustomState Name="" ID="{6EA68F64-C9D3-4390-A5CF-FF4DC9C9880B}" ShortID="1047016493">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+												<CustomState Name="" ID="{75961990-5A98-4DC5-B1E5-B89371FB7E74}" ShortID="7059337">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{A1D69A44-334F-494F-8549-BDE2344B1D80}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Ducks-Afar-Night-C-72-44" ID="{DBA1AC7E-33ED-439D-AAA3-FA5BA86F2C6D}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="3333.33333333333"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="80000"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-3333.33333333333"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Ducks-Afar-Night-C-72-44" ID="{D16F3EB9-C320-4EB2-9B22-631B77998114}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{69DA599C-5B07-43F0-A2C1-3C0A5D3F4E9F}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{DEBDFB61-438D-4AEA-8CDD-A1A29DFC93A4}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{2BEECED6-7749-4071-AF3D-AC1B38CCA741}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="Ducks-Afar-Night-Dm-72-44" ID="{E4487B2B-A641-428E-BD4D-47ACE613E8FE}" ShortID="640051690">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{DA038586-CEA0-4B8B-AAE2-9AE699CD16F3}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ducks-Afar-Night-Dm-72-44" ID="{88D59434-52ED-464E-BC4C-4F2DD25ABE24}">
+											<Language>SFX</Language>
+											<AudioFile>Ducks-Afar-Night-Dm-72-44.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="682665517"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+												<CustomState Name="" ID="{A0894BC9-6AEC-428C-A6D6-B42B599A769C}" ShortID="347697335">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+												<CustomState Name="" ID="{DF03F400-5BFD-4860-855F-41AFF38C1A16}" ShortID="396504398">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+												<CustomState Name="" ID="{E3E33667-8696-4AE5-917E-6A1D250FC7E9}" ShortID="457024329">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+												<CustomState Name="" ID="{F7DAC3DA-D1E6-4697-BD54-C1B10D2C77A8}" ShortID="976392775"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+												<CustomState Name="" ID="{584C3C41-2654-4B98-A6B8-1DDBB30C5335}" ShortID="82950126">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{89CA8EBB-A7D7-46CF-BF25-189F32B07AD6}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Ducks-Afar-Night-Dm-72-44" ID="{BEF41A38-CFF8-423C-88D3-68EE324E9584}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="3333.33333333333"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="80000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-3333.33333333333"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Ducks-Afar-Night-Dm-72-44" ID="{88D59434-52ED-464E-BC4C-4F2DD25ABE24}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{081E90FB-3AE3-400F-AE08-FEE7F41C65B6}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{C1352C54-E934-4A6E-9312-78D8A512A328}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{B5B528F1-CE02-4B7C-A8A6-8D0FAB63D86B}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="Ducks-Afar-Night-F-72-44" ID="{FA8F4187-B891-46E6-A135-AF71D4C57946}" ShortID="811970595">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{86ED6EF5-DC21-4097-8FE8-9C7EF2E2A116}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ducks-Afar-Night-F-72-44" ID="{F0DFCC57-9E59-421F-89F3-B0788699F06A}">
+											<Language>SFX</Language>
+											<AudioFile>Ducks-Afar-Night-F-72-44.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="736026174"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+												<CustomState Name="" ID="{1465025A-32F7-40EF-B318-010C3018E7BD}" ShortID="1002596616">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+												<CustomState Name="" ID="{15287F4B-9B44-496E-A941-E30F4B50D7AD}" ShortID="105571356"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+												<CustomState Name="" ID="{E8021C29-0C85-4441-8001-A8CB9A5B5438}" ShortID="817490077">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+												<CustomState Name="" ID="{C2A68D12-4524-4DC4-88F5-0DA5577627D1}" ShortID="509221716">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+												<CustomState Name="" ID="{041442DD-32D9-42CE-BC43-FE920D7C6C5F}" ShortID="825920328">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{679C8F18-4A36-4469-AC71-990CC7B3DC92}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Ducks-Afar-Night-F-72-44" ID="{C27191BE-97F0-495A-940B-AC65CD9F14D5}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="3333.33333333333"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="80000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-3333.33333333333"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Ducks-Afar-Night-F-72-44" ID="{F0DFCC57-9E59-421F-89F3-B0788699F06A}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{A03D0E35-8781-44E3-ADAF-09443BC19E4B}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{BE96F75D-5C4D-487D-BFD5-7C01E98CF401}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{A04D75B9-893A-4AA3-A0E0-5A5FC9B9DA56}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+								<MusicTrack Name="Ducks-Afar-Night-G-72-44" ID="{2D6E49EA-04A4-4634-8847-1D17CCFD679B}" ShortID="416969409">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{1CE93EE1-EC47-4274-B7C0-755F996CC8A8}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Ducks-Afar-Night-G-72-44" ID="{24BF15BB-ADD8-4E7D-AEEE-F27DD528C606}">
+											<Language>SFX</Language>
+											<AudioFile>Ducks-Afar-Night-G-72-44.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="650713914"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+												<CustomState Name="" ID="{57E2C87E-ADDC-4DCA-B3B2-30F14D5675EE}" ShortID="712462503">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+												<CustomState Name="" ID="{ADFE0ECA-9DBD-4408-9F54-A167C79B654C}" ShortID="939313180">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+												<CustomState Name="" ID="{5BD66D05-8EE2-4461-91C6-01F614EAC4DA}" ShortID="514296969">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+												<CustomState Name="" ID="{57982E91-427C-42CF-B2D4-D0CF94264052}" ShortID="903641774">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+												<CustomState Name="" ID="{29655737-34C8-4750-9862-F93E038D44D6}" ShortID="227417448"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{DBD07010-84F9-4238-836E-456D4CD40525}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Ducks-Afar-Night-G-72-44" ID="{CB501B12-8818-4F14-A0AA-7E7C39BAB072}">
+																			<PropertyList>
+																				<Property Name="BeginTrimOffset" Type="Real64" Value="3333.33333333333"/>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="80000"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																				<Property Name="PlayAt" Type="Real64" Value="-3333.33333333333"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Ducks-Afar-Night-G-72-44" ID="{24BF15BB-ADD8-4E7D-AEEE-F27DD528C606}"/>
+																			<PropertyCurveList>
+																				<PropertyCurve PropertyName="Highpass">
+																					<Curve Name="" ID="{C700A775-1CF2-4835-B577-0CB43C9BB9BF}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Lowpass">
+																					<Curve Name="" ID="{C83904B7-2B83-400A-B2E1-09E1F9E48311}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="1"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																				<PropertyCurve PropertyName="Volume">
+																					<Curve Name="" ID="{B96C999B-5AFF-4CC7-8B57-41A44F6C2126}">
+																						<PropertyList>
+																							<Property Name="Flags" Type="int32" Value="3"/>
+																						</PropertyList>
+																						<PointList>
+																							<Point>
+																								<XPos>3.33333</XPos>
+																								<YPos>0</YPos>
+																								<Flags>5</Flags>
+																							</Point>
+																							<Point>
+																								<XPos>80</XPos>
+																								<YPos>0</YPos>
+																								<Flags>37</Flags>
+																							</Point>
+																						</PointList>
+																					</Curve>
+																				</PropertyCurve>
+																			</PropertyCurveList>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{CB91FB0B-3751-46BA-88BD-7ECB8A6A2244}">
+												<PropertyList>
+													<Property Name="TimeMs" Type="Real64" Value="6666.66666666667"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{234E214F-E243-45A3-999B-A82F7C715BE7}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="70000"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
 	</InteractiveMusic>
 </WwiseDocument>

@@ -74,6 +74,14 @@
 							<Position X="4" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="4" Y="3"/>
 						</Module>
@@ -84,7 +92,9 @@
 							<Value>5</Value>
 						</RTPCValue>
 					</RTPCValueList>
-					<CurrentStateList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>
