@@ -1,16 +1,18 @@
 using UnityEngine;
 
-public class GameContext : MonoBehaviour
+public class GameContext : MonoBehaviour // // 👈 PERSISTENT/INITIALIZED ONCE
 {
     [Header("State References")]
     public PlayerData PlayerData { get; private set; }
 
-    public ItemDatabase ItemDb => itemDatabase;
+    public AudioStateModel Audio { get; private set; } // 👈 AUDIO MODEL IS HERE
+    
     public InventoryModel Inventory { get; private set; }
     public InventorySelectionModel InventorySelection { get; private set; }
     public LevelStateModel LevelState { get; private set; }
     public InteractionLockModel InteractionLock { get; private set; }
-    public AudioStateModel Audio { get; private set; }
+    public ItemDatabase ItemDb => itemDatabase;
+    
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
     public DialogueRunner Dialogue { get; private set; }
     

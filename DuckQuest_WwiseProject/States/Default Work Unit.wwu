@@ -15,6 +15,14 @@
 						<State Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
 						<State Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
 					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+							<EndState Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+							<Time>0</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
 				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>

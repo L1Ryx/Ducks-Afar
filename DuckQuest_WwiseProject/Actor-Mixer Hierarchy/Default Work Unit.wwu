@@ -1137,7 +1137,7 @@
 										</Sound>
 									</ChildrenList>
 									<BlendTrackList>
-										<BlendTrack Name="New Blend Track" ID="{D9EFB17D-42B7-422D-A4FA-BD62AE682AB2}" ShortID="857219599">
+										<BlendTrack Name="Subtraction F9 Blend Track" ID="{D9EFB17D-42B7-422D-A4FA-BD62AE682AB2}" ShortID="857219599">
 											<PropertyList>
 												<Property Name="EnableCrossFading" Type="bool" Value="True"/>
 											</PropertyList>
