@@ -18,4 +18,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
   - {fileID: 11400000, guid: dd8c6c995c3f74aa68e39edb830228f9, type: 2}
   - {fileID: 11400000, guid: 2ff7dbed57d57438a8fa35d6cc52a778, type: 2}
+  - {fileID: 11400000, guid: 6925630dcd3ce432a9054a55a6847fb8, type: 2}
   advanceEvent: {fileID: 11400000, guid: 98a819b7d03c34d0a8566822917ae97d, type: 2}

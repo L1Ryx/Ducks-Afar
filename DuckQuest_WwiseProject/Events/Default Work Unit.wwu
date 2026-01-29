@@ -237,16 +237,6 @@
 					<ChildrenList>
 						<Event Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}">
 							<ChildrenList>
-								<Action Name="" ID="{74FA8B94-D4E1-4036-9872-E96024168CC4}" ShortID="919440033">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}" WorkUnitID="{432DD7BA-AC87-405A-B0A0-2B15AFFD5B55}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
 								<Action Name="" ID="{0117260B-FFE3-4DDA-BF1E-202BD98F8BF6}" ShortID="322790930">
 									<PropertyList>
 										<Property Name="Delay" Type="Real64" Value="0.5"/>
@@ -272,6 +262,37 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MX_NightTheme_Playlist" ID="{76A78F2D-5E42-4467-8E08-E427B0C4476B}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_HomeTheme" ID="{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}">
+							<ChildrenList>
+								<Action Name="" ID="{3A36DE14-9868-41FC-BC2C-4E38090FF38D}" ShortID="234862519">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_HomeTheme_Playlist" ID="{3015E271-F8FF-45D0-A95E-DE8B2208F437}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_HomeTheme" ID="{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}">
+							<ChildrenList>
+								<Action Name="" ID="{E3209FF1-72D4-4648-B04E-BF5EF3452EC1}" ShortID="33952070">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_HomeTheme_Playlist" ID="{3015E271-F8FF-45D0-A95E-DE8B2208F437}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

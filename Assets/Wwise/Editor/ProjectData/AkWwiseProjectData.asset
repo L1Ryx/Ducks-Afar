@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584322922960951935
+    m_lastTime: -8584318803558474018
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -432,6 +432,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.3135277
       minDuration: 0.98403394
+    - name: Play_HomeTheme
+      guid: f9203b4ac7277b49b9d242e39f9d28d4
+      id: 141146378
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Play_HomeTheme
+        ObjectType: 3
+        guid: f9203b4ac7277b49b9d242e39f9d28d4
+      Path: Events/Default Work Unit/MUS/Play_HomeTheme
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_PetBowlComplete
       guid: b06cbe7272732e4b8a8e8216ac3a79d6
       id: 654680740
@@ -632,6 +652,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_HomeTheme
+      guid: c3d97e65e86f1749bb17d56b46bcde8e
+      id: 1788876160
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Stop_HomeTheme
+        ObjectType: 3
+        guid: c3d97e65e86f1749bb17d56b46bcde8e
+      Path: Events/Default Work Unit/MUS/Stop_HomeTheme
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_PuzzleTheme
       guid: f7656bd86bec364a984c39d617f44b50
       id: 1200236291
@@ -743,7 +783,7 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: bad72d4387ac5a40b0a02b15affd5b55
     GuidInternal: 
-    m_lastTime: -8584322778637035407
+    m_lastTime: -8584318902992741458
     List:
     - name: PuzzleKey
       guid: 52608a1deb12674292d1fdf460f7d308

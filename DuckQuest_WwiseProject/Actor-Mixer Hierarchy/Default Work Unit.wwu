@@ -349,6 +349,11 @@
 							<ChildrenList>
 								<Sound Name="Rock Break" ID="{045E84CA-9787-42FB-B5C1-DAB1A86BB98D}" ShortID="692631518">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 										<Property Name="UserAuxSendVolume0" Type="Real64">
 											<ValueList>

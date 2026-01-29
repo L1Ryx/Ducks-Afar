@@ -89,12 +89,51 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}"/>
-							<Value>5</Value>
+							<Value>3</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+						<CurrentStateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
 					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Music Test" ID="{914FDA53-635B-4F76-B1AA-1ED7C0B8D066}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_HomeTheme" ID="{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_BeachAmbience" ID="{9C7CA0C5-8775-4E88-B40D-01568C42AC25}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_HomeTheme" ID="{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>

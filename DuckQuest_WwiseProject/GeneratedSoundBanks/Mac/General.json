@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{667D4914-A6FB-D646-AD59-88CDFEF70F4D}",
+    "Hash": "{003CF7A9-DF7A-3419-6A06-7DE9D3050DD8}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -440,6 +440,14 @@
       "CachePath": "4F/{4FD0AA40-2294-01D1-4DA5-028956805C5F}.wem"
      },
      {
+      "Id": "908157081",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Home-Cm-112-44.wav",
+      "CachePath": "F0/{F0D7D2B7-05BB-A99F-2A37-987034FD20C3}.wem"
+     },
+     {
       "Id": "914958189",
       "Language": "SFX",
       "Streaming": "false",
@@ -723,6 +731,18 @@
       ]
      },
      {
+      "Id": "141146378",
+      "Name": "Play_HomeTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_HomeTheme",
+      "GUID": "{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "908157081"
+       }
+      ]
+     },
+     {
       "Id": "654680740",
       "Name": "Play_PetBowlComplete",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PetBowlComplete",
@@ -818,15 +838,6 @@
        },
        {
         "Id": "736026174"
-       }
-      ],
-      "ActionSetState": [
-       {
-        "GroupId": "3241088250",
-        "Id": "1886858551",
-        "Name": "Am",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
-        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
        }
       ]
      },
@@ -975,6 +986,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "1788876160",
+      "Name": "Stop_HomeTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_HomeTheme",
+      "GUID": "{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1200236291",
       "Name": "Stop_PuzzleTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_PuzzleTheme",
@@ -992,55 +1013,9 @@
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
       "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
      }
-    ],
-    "StateGroups": [
-     {
-      "Id": "3241088250",
-      "Name": "PuzzleKey",
-      "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey",
-      "GUID": "{1D8A6052-12EB-4267-92D1-FDF460F7D308}",
-      "States": [
-       {
-        "Id": "84696440",
-        "Name": "G",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\G",
-        "GUID": "{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"
-       },
-       {
-        "Id": "84696441",
-        "Name": "F",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\F",
-        "GUID": "{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"
-       },
-       {
-        "Id": "84696444",
-        "Name": "C",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\C",
-        "GUID": "{83171017-102C-4889-BFCE-F02B63E17E43}"
-       },
-       {
-        "Id": "748895195",
-        "Name": "None",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\None",
-        "GUID": "{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"
-       },
-       {
-        "Id": "1836525772",
-        "Name": "Dm",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Dm",
-        "GUID": "{16321D5B-776F-48AD-9DD5-4816E220DBC0}"
-       },
-       {
-        "Id": "1886858551",
-        "Name": "Am",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
-        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
-       }
-      ]
-     }
     ]
    }
   ],
-  "FileHash": "{DC0E4C84-CC36-AC2C-809E-7FFC708A7947}"
+  "FileHash": "{34C01069-BAC6-9572-4230-19E3838C2CFC}"
  }
 }
