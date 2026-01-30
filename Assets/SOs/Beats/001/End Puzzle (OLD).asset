@@ -17,4 +17,5 @@ MonoBehaviour:
   onEnterEvents:
   - {fileID: 11400000, guid: b20667fc295a749b8911426858fc6b11, type: 2}
   - {fileID: 11400000, guid: 2e35741ec84e34699ae1793886edf514, type: 2}
+  - {fileID: 11400000, guid: be99eb3006b6048f083c103df9949a3b, type: 2}
   advanceEvent: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}

@@ -13,9 +13,13 @@
 						<ObjectRef Name="Play_BubblesGabble" ID="{5F238490-8655-4332-98F6-296A556C36F0}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PhoneTap" ID="{DF6DF94B-B470-4339-9041-D723A0643C33}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CodaGabble" ID="{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_ReunionTheme" ID="{7358471E-4068-447A-B5A7-F3D03A26ABC6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TofuGabble" ID="{D66DF366-FA5A-4816-BE2C-DFB06B746875}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_HomeTheme" ID="{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_HomeTheme" ID="{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_ReunionTheme" ID="{991B9C5E-7E14-4A2D-89AD-315234BAC114}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceB" ID="{5869A825-FD8D-4A5C-9197-EFE04B7D8693}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceC" ID="{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>

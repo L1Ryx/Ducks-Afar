@@ -16,4 +16,5 @@ MonoBehaviour:
   description: Ending dialogue for a level.
   onEnterEvents:
   - {fileID: 11400000, guid: 5152338ff918c48e0952964b5c87351b, type: 2}
+  - {fileID: 11400000, guid: e98d4b93d5a5f4de1880b1a7690590f0, type: 2}
   advanceEvent: {fileID: 11400000, guid: a4973288ca4e146689fd8aa503a6832a, type: 2}

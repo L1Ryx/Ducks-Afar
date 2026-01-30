@@ -298,6 +298,43 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_ReunionTheme" ID="{7358471E-4068-447A-B5A7-F3D03A26ABC6}">
+							<ChildrenList>
+								<Action Name="" ID="{867732C5-1C95-465C-9ABD-855E9621DEC1}" ShortID="10031543">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}" WorkUnitID="{432DD7BA-AC87-405A-B0A0-2B15AFFD5B55}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{91884F03-A103-41EF-943A-83A7E884F61E}" ShortID="908961303">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_ReunionTheme_Playlist" ID="{A6846691-15F5-4A91-A4CA-E30678C53BFB}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_ReunionTheme" ID="{991B9C5E-7E14-4A2D-89AD-315234BAC114}">
+							<ChildrenList>
+								<Action Name="" ID="{7B47EB82-C105-4FBC-B4E6-1A33482AA00A}" ShortID="370407987">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_ReunionTheme_Playlist" ID="{A6846691-15F5-4A91-A4CA-E30678C53BFB}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	141146378	Play_HomeTheme			\Default Work Unit\MUS\Play_HomeTheme	
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
+	353900719	Stop_ReunionTheme			\Default Work Unit\MUS\Stop_ReunionTheme	
 	573339928	Play_BridgeSplash			\Default Work Unit\WORLD\Play_BridgeSplash	
 	625749573	Play_PhoneTap			\Default Work Unit\UI\Play_PhoneTap	
 	654680740	Play_PetBowlComplete			\Default Work Unit\WORLD\Play_PetBowlComplete	
@@ -17,6 +18,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	1545776884	Play_SubCadenceC			\Default Work Unit\WORLD\Play_SubCadenceC	
 	1545776886	Play_SubCadenceA			\Default Work Unit\WORLD\Play_SubCadenceA	
 	1788876160	Stop_HomeTheme			\Default Work Unit\MUS\Stop_HomeTheme	
+	2345769801	Play_ReunionTheme			\Default Work Unit\MUS\Play_ReunionTheme	
 	2435079182	Play_AsterGabble			\Default Work Unit\WORLD\Play_AsterGabble	
 	3224218195	Play_BushRustle			\Default Work Unit\WORLD\Play_BushRustle	
 	3803220377	Play_PuzzleTheme			\Default Work Unit\MUS\Play_PuzzleTheme	
@@ -59,6 +61,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	322555041	Add-A-4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D5\{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-4		768160
 	393017442	Sub-C-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\40\{40A830E3-A98E-D289-65F5-6B31F2B5C540}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_C_Blend\Sub-C-3		1152144
 	402495002	Pop 1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\22\{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 1		9988
+	413626875	Duck-Game-Reunion	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\5D\{5DA4012F-AB01-0BC8-10BD-E736C740C701}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_ReunionTheme_Playlist\MX_ReunionTheme_Segment\Duck-Game-Reunion		12392820
 	464117777	Coda-Gabble-B	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D6\{D6E71F49-B03D-596F-D894-B246C615BAFF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-B		196096
 	476220816	Ducks-Afar-Night-C-72-44	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\98\{98F383A0-27B0-159C-6CF9-4A4A44C303D6}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_NightTheme_Playlist\MX_NightTheme_Segment\Ducks-Afar-Night-C-72-44		14112096
 	504985255	Sub-C-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\5A\{5A36CFCA-A047-45C6-FCD8-210B895F28B7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_C_Blend\Sub-C-5		1152144
