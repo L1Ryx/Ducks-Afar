@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_CUTSCENETHEME = 3171580813U;
         static const AkUniqueID PLAY_HOMETHEME = 141146378U;
+        static const AkUniqueID PLAY_KEYCARDUNLOCK = 3034243397U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;

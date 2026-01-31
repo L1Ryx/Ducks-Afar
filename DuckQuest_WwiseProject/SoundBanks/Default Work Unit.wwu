@@ -7,6 +7,7 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_PickUp" ID="{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SubCadenceA" ID="{FC39306B-D960-4169-94A7-51FA4DC2D5BB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_CutsceneTheme" ID="{62E73EA1-6B55-418E-AC49-5EAFE53889ED}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AsterGabble" ID="{6076EF09-A6C0-4228-98DF-3AC49956AB30}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -16,9 +17,11 @@
 						<ObjectRef Name="Play_ReunionTheme" ID="{7358471E-4068-447A-B5A7-F3D03A26ABC6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CutsceneTheme" ID="{D5BE17D1-D7B8-471C-B7DF-FF829E598096}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TofuGabble" ID="{D66DF366-FA5A-4816-BE2C-DFB06B746875}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_HomeTheme" ID="{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_HomeTheme" ID="{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_KeycardUnlock" ID="{643CA4ED-B61F-49A9-95A7-11FB757B94CB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_ReunionTheme" ID="{991B9C5E-7E14-4A2D-89AD-315234BAC114}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceB" ID="{5869A825-FD8D-4A5C-9197-EFE04B7D8693}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>

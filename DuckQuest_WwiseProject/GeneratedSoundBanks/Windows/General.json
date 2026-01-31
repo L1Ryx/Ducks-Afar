@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{793ED945-12C1-F47B-AB30-B9CB6473170F}",
+    "Hash": "{3B859533-98A9-CBD7-4E41-3C41B5831987}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -142,6 +142,14 @@
       "Location": "Memory",
       "ShortName": "Ducks-Afar-Demo-Cutscene-All.wav",
       "CachePath": "BC/{BC3710AA-0399-E9DE-6784-432C8CB4EBDD}.wem"
+     },
+     {
+      "Id": "228594327",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Keycard Unlock.wav",
+      "CachePath": "C5/{C5495128-6260-D2E4-6DB8-608096F096AE}.wem"
      },
      {
       "Id": "252938679",
@@ -773,6 +781,28 @@
       ]
      },
      {
+      "Id": "3034243397",
+      "Name": "Play_KeycardUnlock",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_KeycardUnlock",
+      "GUID": "{643CA4ED-B61F-49A9-95A7-11FB757B94CB}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8033958",
+      "DurationMax": "0.8033958",
+      "MediaRefs": [
+       {
+        "Id": "228594327"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
       "Id": "654680740",
       "Name": "Play_PetBowlComplete",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_PetBowlComplete",
@@ -1133,6 +1163,6 @@
     ]
    }
   ],
-  "FileHash": "{DC4A2948-7557-5ED9-5661-77C42219EA8F}"
+  "FileHash": "{05933FAF-115E-1CDE-BF42-4F16A18E25A8}"
  }
 }

@@ -1241,7 +1241,20 @@
 						</Reference>
 						<Reference Name="PlaylistRoot">
 							<Custom>
-								<MusicPlaylistItem Name="" ID="{F8CA6EFB-A2F2-4EA1-BE61-269490C8756B}" ShortID="133332113"/>
+								<MusicPlaylistItem Name="" ID="{F8CA6EFB-A2F2-4EA1-BE61-269490C8756B}" ShortID="133332113">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{A97DAD3A-0D72-4CAF-857A-95CE16231A8B}" ShortID="191901190">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="MX_CutsceneTheme_Segment" ID="{421A949C-80CA-4B82-997A-1D469875116B}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
 							</Custom>
 						</Reference>
 						<Reference Name="TransitionRoot">
@@ -1264,6 +1277,11 @@
 						<MusicSegment Name="MX_CutsceneTheme_Segment" ID="{421A949C-80CA-4B82-997A-1D469875116B}" ShortID="142924028">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="39421.9001610306"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">

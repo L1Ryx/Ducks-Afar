@@ -170,6 +170,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_KeycardUnlock" ID="{643CA4ED-B61F-49A9-95A7-11FB757B94CB}">
+							<ChildrenList>
+								<Action Name="" ID="{AC37EB8C-5EA9-4AAB-9460-DFA8BE568362}" ShortID="688861963">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_KeycardUnlock_Blend" ID="{5C86347D-8AF5-4A81-94BE-A4B8A36EA1A9}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">
