@@ -14195,10 +14195,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtains Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 1492310456517525199, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
-      propertyPath: darknessTime
-      value: 6.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2111216482251531199, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
