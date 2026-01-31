@@ -335,6 +335,33 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_CutsceneTheme" ID="{D5BE17D1-D7B8-471C-B7DF-FF829E598096}">
+							<ChildrenList>
+								<Action Name="" ID="{6E803B7B-4AF0-4763-8212-ECA1EF1E46BC}" ShortID="131115845">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_CutsceneTheme_Playlist" ID="{3D4E73ED-1CF1-415E-B358-9433C464F8FA}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_CutsceneTheme" ID="{62E73EA1-6B55-418E-AC49-5EAFE53889ED}">
+							<ChildrenList>
+								<Action Name="" ID="{9171B7ED-7FCA-472D-A9FA-105F684AAD93}" ShortID="463397316">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_CutsceneTheme_Playlist" ID="{3D4E73ED-1CF1-415E-B358-9433C464F8FA}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

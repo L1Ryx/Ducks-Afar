@@ -20,10 +20,12 @@ Event	ID	Name			Wwise Object Path	Notes
 	1788876160	Stop_HomeTheme			\Default Work Unit\MUS\Stop_HomeTheme	
 	2345769801	Play_ReunionTheme			\Default Work Unit\MUS\Play_ReunionTheme	
 	2435079182	Play_AsterGabble			\Default Work Unit\WORLD\Play_AsterGabble	
+	3171580813	Play_CutsceneTheme			\Default Work Unit\MUS\Play_CutsceneTheme	
 	3224218195	Play_BushRustle			\Default Work Unit\WORLD\Play_BushRustle	
 	3803220377	Play_PuzzleTheme			\Default Work Unit\MUS\Play_PuzzleTheme	
 	3860455926	Play_PickUp			\Default Work Unit\WORLD\Play_PickUp	
 	3863193186	Play_BubblesGabble			\Default Work Unit\WORLD\Play_BubblesGabble	
+	4235903127	Stop_CutsceneTheme			\Default Work Unit\MUS\Stop_CutsceneTheme	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	3241088250	PuzzleKey			\Default Work Unit\PuzzleKey	
@@ -55,6 +57,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	159984069	Pop 3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\CC\{CCA8FFF8-97DC-BB43-B79C-44BD4F7DEB72}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 3		11632
 	170487895	Coda-Gabble-D	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\59\{5903CC31-7939-62DA-4618-CC341521334C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-D		193596
 	207193044	Add-A-2	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\C7\{C75BEE7E-EE1B-7E5F-32A4-29B1BFC49C6A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-2		768160
+	216209671	Ducks-Afar-Demo-Cutscene-All	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\BC\{BC3710AA-0399-E9DE-6784-432C8CB4EBDD}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_CutsceneTheme_Playlist\MX_CutsceneTheme_Segment\Ducks-Afar-Demo-Cutscene-All		7233648
 	252938679	Aster-Gabble-C	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\12\{12CEFA5C-9108-57B1-F612-7E19E94F4B09}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_AsterGabble_Random\Aster-Gabble-C		193596
 	271830612	Tofu-Gabble-D	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B3\{B3D8B8D9-0CE7-58F6-C647-D027C345CCB0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_TofuGabble_Random\Tofu-Gabble-D		155496
 	294326928	Add-C-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B2\{B231BE4C-5DD8-A94D-64ED-7CF70168485D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_C_Blend\Add-C-5		1152144

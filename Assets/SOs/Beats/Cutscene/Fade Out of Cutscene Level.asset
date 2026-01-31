@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61717f94839c4b7f810f2d2404e74d4, type: 3}
+  m_Name: Fade Out of Cutscene Level
+  m_EditorClassIdentifier: 
+  beatId: 003
+  description: Fade out of the scene.
+  onEnterEvents:
+  - {fileID: 11400000, guid: b20667fc295a749b8911426858fc6b11, type: 2}
+  advanceEvent: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}

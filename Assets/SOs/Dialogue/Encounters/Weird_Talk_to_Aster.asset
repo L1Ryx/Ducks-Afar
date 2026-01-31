@@ -13,44 +13,41 @@ MonoBehaviour:
   m_Name: Weird_Talk_to_Aster
   m_EditorClassIdentifier: 
   lines:
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "Cap\u2019n! You\u2019re finally awake! You\u2019ve got to see what\u2019s
-      happened!"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "You\u2019re finally awake! It\u2019s urgent!!!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I was just taking my nightly nap, and when I woke up, everyone was gone\u2026"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: EVERYONE is gone!!!!
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I just can\u2019t believe it. ASTER, BUBBLES, CODA, all three of them,
-      vanished like the wind!"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "I just can\u2019t believe it. TOFU, BUBBLES, CODA, all three of them,
+      GONE!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: Do you think they planned this? To leave you and me behind on this perfect
-      beaut of a planet?
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "I\u2019m sure TOFU had some seriously unprofessional leadership idea and
+      dragged BUBBLES and CODA into it!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I\u2019m sure ASTER got everyone super fired up\u2026 he\u2019s always
-      had a way with words\u2026 and being loud\u2026"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "Ugh. BUBBLES is the only one that appreciates my hard work! We\u2019ve
+      got to get \u2018im back!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "We need \u2018em back, and I don\u2019t think they\u2019ve escaped far
-      for now. With the two of us, I\u2019m sure we\u2019ve got it!"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "\u2026I guess the other two are important too\u2026"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "I say we head to the SOLARIS planet first. ASTER\u2019s always talking
-      about taking a vacation there\u2013nearly talked my feathers off about it once!"
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "I say we head to the SOLARIS planet first. TOFU\u2019s always talking
+      about taking a vacation there. Honestly, he never stops!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
-    text: "Now, onward, I say! To the ship! Keycard\u2019s here. I will be right
-      behind, Cap\u2019n."
+  - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
+    text: "C\u2019mon Captain! Take the keycard and let\u2019s go!"
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}
-  onEncounterEnd: {fileID: 11400000, guid: 58ecc7241eacb4df58cfdf2a6792521d, type: 2}
+  onEncounterEnd: {fileID: 11400000, guid: 7c4a54690bd0241ac951545f43856084, type: 2}

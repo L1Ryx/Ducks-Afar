@@ -3173,6 +3173,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   disableAfterFade: 0
+  onFadeIn:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1242814564
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,7 +3731,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  nextScene: Stage
+  encounter: {fileID: 0}
+  nextScene: Demo Begin
 --- !u!114 &1535081830
 MonoBehaviour:
   m_ObjectHideFlags: 0

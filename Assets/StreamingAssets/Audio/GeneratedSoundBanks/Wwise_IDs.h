@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID PLAY_BUSHRUSTLE = 3224218195U;
         static const AkUniqueID PLAY_CODAGABBLE = 1194190264U;
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
+        static const AkUniqueID PLAY_CUTSCENETHEME = 3171580813U;
         static const AkUniqueID PLAY_HOMETHEME = 141146378U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
@@ -35,6 +36,7 @@ namespace AK
         static const AkUniqueID PLAY_TOFUGABBLE = 1339931719U;
         static const AkUniqueID PLAY_TYPEWRITERCLACK = 928013289U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
+        static const AkUniqueID STOP_CUTSCENETHEME = 4235903127U;
         static const AkUniqueID STOP_HOMETHEME = 1788876160U;
         static const AkUniqueID STOP_PUZZLETHEME = 1200236291U;
         static const AkUniqueID STOP_REUNIONTHEME = 353900719U;

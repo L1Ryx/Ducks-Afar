@@ -23,6 +23,7 @@
 				<Property Name="Event Action List\{9C7CA0C5-8775-4E88-B40D-01568C42AC25}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9D829611-4CB3-4B85-911E-A424FB1504B4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{D5BE17D1-D7B8-471C-B7DF-FF829E598096}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D66DF366-FA5A-4816-BE2C-DFB06B746875}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{D86B65F7-EC6B-4A36-984C-39D617F44B50}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}\x64_Expand States" Type="string" Value=""/>
@@ -54,6 +55,7 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="R0u6DJE7UUKcAOCAv+QkyA=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
 				<Property Name="Interactive Music\x64_{0F355571-9496-43B0-A9BE-ED4DE56DA4DC} - SegmentEditorZoomInfo" Type="string" Value="fCkY45T9uT8AAAAAAADwPwAAAAAAaGNAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{421A949C-80CA-4B82-997A-1D469875116B} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAAAAaGNAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{59FCF180-50EA-4AE3-A80E-808C5213BAF2} - SegmentEditorZoomInfo" Type="string" Value="8ZdQVWva0D8AAAAAAADwPwAAAAAAaGNAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{5F29FBD0-520A-4180-8F09-B4C5D70523C0} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP2ZmZmZmBiJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{80648776-D78E-4B5E-8C71-AA060488063B} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP2ZmZmZmBiJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
@@ -69,8 +71,12 @@
 				<Property Name="Music Transition List\{2D6E49EA-04A4-4634-8847-1D17CCFD679B}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{3015E271-F8FF-45D0-A95E-DE8B2208F437}\Scroll Position" Type="int32" Value="0"/>
 				<Property Name="Music Transition List\{3015E271-F8FF-45D0-A95E-DE8B2208F437}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{3D4E73ED-1CF1-415E-B358-9433C464F8FA}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{3D4E73ED-1CF1-415E-B358-9433C464F8FA}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{4A3E16B4-5256-44EB-9974-501FE42C3C05}\Scroll Position" Type="int32" Value="0"/>
 				<Property Name="Music Transition List\{4A3E16B4-5256-44EB-9974-501FE42C3C05}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{5F55DB14-E0BA-474D-85C3-6BBBC8A31102}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{5F55DB14-E0BA-474D-85C3-6BBBC8A31102}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{76A78F2D-5E42-4467-8E08-E427B0C4476B}\Scroll Position" Type="int32" Value="0"/>
 				<Property Name="Music Transition List\{76A78F2D-5E42-4467-8E08-E427B0C4476B}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Music Transition List\{874B3AF9-A34B-49AB-9197-AB57F275C16E}\Scroll Position" Type="int32" Value="0"/>
@@ -160,7 +166,7 @@
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{F44C83F2-4EDE-4FDA-A4B6-CA2ECF348EDB}3611086733"/>
+				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{F44C83F2-4EDE-4FDA-A4B6-CA2ECF348EDB}4108245726"/>
 				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{E41A3CA1-53FA-4598-9DC5-B1E503951BC8}"/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\CurrentSearch" Type="string" Value=""/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\RecentCategoriesTopCount" Type="int32" Value="0"/>

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{AFBB901D-1B1B-41B0-8435-A26005D120D2}",
+    "Hash": "{793ED945-12C1-F47B-AB30-B9CB6473170F}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -134,6 +134,14 @@
       "Location": "Memory",
       "ShortName": "Add-A-2.wav",
       "CachePath": "C7/{C75BEE7E-EE1B-7E5F-32A4-29B1BFC49C6A}.wem"
+     },
+     {
+      "Id": "216209671",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Demo-Cutscene-All.wav",
+      "CachePath": "BC/{BC3710AA-0399-E9DE-6784-432C8CB4EBDD}.wem"
      },
      {
       "Id": "252938679",
@@ -739,6 +747,20 @@
       ]
      },
      {
+      "Id": "3171580813",
+      "Name": "Play_CutsceneTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_CutsceneTheme",
+      "GUID": "{D5BE17D1-D7B8-471C-B7DF-FF829E598096}",
+      "DurationType": "OneShot",
+      "DurationMin": "37.67442",
+      "DurationMax": "37.67442",
+      "MediaRefs": [
+       {
+        "Id": "216209671"
+       }
+      ]
+     },
+     {
       "Id": "141146378",
       "Name": "Play_HomeTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_HomeTheme",
@@ -1015,6 +1037,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "4235903127",
+      "Name": "Stop_CutsceneTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_CutsceneTheme",
+      "GUID": "{62E73EA1-6B55-418E-AC49-5EAFE53889ED}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1788876160",
       "Name": "Stop_HomeTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_HomeTheme",
@@ -1101,6 +1133,6 @@
     ]
    }
   ],
-  "FileHash": "{F6D2AFC7-4270-50D9-0888-DBBC250189B3}"
+  "FileHash": "{C0252921-4020-B5E6-3324-25A92D8487E5}"
  }
 }

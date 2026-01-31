@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Stage Night.unity
     guid: 7ec27d7ec2ead4d93a0563f59a54dc82
   - enabled: 1
+    path: Assets/Scenes/animation.unity
+    guid: 60dc6935ba025e04e9cd6f3e775ef3f5
+  - enabled: 1
     path: Assets/Scenes/Demo Reset.unity
     guid: 09ef6d5ed06494e789bf5713d2e4d23d
   - enabled: 1

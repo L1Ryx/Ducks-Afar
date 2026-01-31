@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Play Hidden Sounds and Teleport NPCs
   m_EditorClassIdentifier: 
   beatId: 005
-  description: Play hidden sounds and teleport NPCs.
+  description: Play hidden sounds (through timed callback) and teleport NPCs.
   onEnterEvents:
-  - {fileID: 11400000, guid: 122853cd8babb43c4909bcb027b82578, type: 2}
+  - {fileID: 11400000, guid: be7fedd0320634025a7ba36d8626f520, type: 2}
   - {fileID: 11400000, guid: 6e683ea88589d4b708d82cee5bb5e24e, type: 2}
   advanceEvent: {fileID: 11400000, guid: 2775f44017887468c912098a157b9e64, type: 2}
