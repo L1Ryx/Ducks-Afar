@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stage Rest.unity
     guid: 681056f6a5a96473cbec0b8e46514ac0
+  - enabled: 1
+    path: Assets/Scenes/Stage Weird.unity
+    guid: ebdd6997f72234da8b271145df29a091
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

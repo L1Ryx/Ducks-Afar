@@ -877,7 +877,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c3be0dc6b286f45879ba9d9cb09dcc63, type: 2}
     - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
       propertyPath: nextScene
-      value: Stage
+      value: Stage Weird
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

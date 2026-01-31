@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3467d0579a0c940a194cdf5dc73bd25e, type: 3}
+  m_Name: Weird_Talk_to_Aster
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Cap\u2019n! You\u2019re finally awake! You\u2019ve got to see what\u2019s
+      happened!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I was just taking my nightly nap, and when I woke up, everyone was gone\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I just can\u2019t believe it. ASTER, BUBBLES, CODA, all three of them,
+      vanished like the wind!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Do you think they planned this? To leave you and me behind on this perfect
+      beaut of a planet?
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I\u2019m sure ASTER got everyone super fired up\u2026 he\u2019s always
+      had a way with words\u2026 and being loud\u2026"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "We need \u2018em back, and I don\u2019t think they\u2019ve escaped far
+      for now. With the two of us, I\u2019m sure we\u2019ve got it!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I say we head to the SOLARIS planet first. ASTER\u2019s always talking
+      about taking a vacation there\u2013nearly talked my feathers off about it once!"
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Now, onward, I say! To the ship! Keycard\u2019s here. I will be right
+      behind, Cap\u2019n."
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  nextEncounter: {fileID: 0}
+  onEncounterEnd: {fileID: 11400000, guid: 58ecc7241eacb4df58cfdf2a6792521d, type: 2}

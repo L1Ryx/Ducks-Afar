@@ -12282,6 +12282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Debug Dummy
       objectReference: {fileID: 0}
+    - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
+      propertyPath: nextScene
+      value: Stage Rest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
