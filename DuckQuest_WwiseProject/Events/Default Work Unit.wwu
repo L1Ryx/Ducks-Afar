@@ -181,6 +181,61 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Glitch" ID="{81B1F43F-02AF-4AD4-B3BC-7F280C38BE79}">
+							<ChildrenList>
+								<Action Name="" ID="{2CF7EDC2-A507-4318-9FB9-B5527E4BC830}" ShortID="912140863">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Glitch_Blend" ID="{80B289CD-BC12-4B5E-9D86-FE3F80FD8393}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_RocketLaunch" ID="{E6CBCE9C-04DC-44D2-A6DC-5F976CAE4AF7}">
+							<ChildrenList>
+								<Action Name="" ID="{EF14D014-AE82-4B48-82AF-A11F0F4B3613}" ShortID="597343559">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_RocketLaunch_Blend" ID="{0B009F93-96FF-4BDF-8298-2205B12224BC}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Eating" ID="{049E8BD5-3A51-4E92-B556-C4069EA88628}">
+							<ChildrenList>
+								<Action Name="" ID="{E4CAEB67-518C-40E4-BCEA-39F00750667F}" ShortID="225285967">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Eating_Blend" ID="{5D2E0EFD-A0A4-4B83-854E-6E170D804410}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SingleTing" ID="{8487E95F-C24D-4C5F-AE4F-8E90BA90BAEC}">
+							<ChildrenList>
+								<Action Name="" ID="{74E42F26-7E0D-4F44-A1B2-F3052EED98F4}" ShortID="950336878">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SingleTing_Blend" ID="{28544559-7DE5-4323-A250-8A4BD9D7E36B}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_CloseDoor" ID="{38C89D1A-7265-4309-AA41-A9A15B7BD669}">
+							<ChildrenList>
+								<Action Name="" ID="{B319D4B9-BFD3-434F-B4BB-C735F8B43173}" ShortID="18865872">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_DoorClose_Blend" ID="{52BB42F2-80A7-4F2E-BE8F-8CDDDF10A0F3}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">

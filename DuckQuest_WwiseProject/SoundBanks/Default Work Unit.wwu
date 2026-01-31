@@ -16,6 +16,7 @@
 						<ObjectRef Name="Play_CodaGabble" ID="{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ReunionTheme" ID="{7358471E-4068-447A-B5A7-F3D03A26ABC6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_RocketLaunch" ID="{E6CBCE9C-04DC-44D2-A6DC-5F976CAE4AF7}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CutsceneTheme" ID="{D5BE17D1-D7B8-471C-B7DF-FF829E598096}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TofuGabble" ID="{D66DF366-FA5A-4816-BE2C-DFB06B746875}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -25,13 +26,16 @@
 						<ObjectRef Name="Stop_ReunionTheme" ID="{991B9C5E-7E14-4A2D-89AD-315234BAC114}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceB" ID="{5869A825-FD8D-4A5C-9197-EFE04B7D8693}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Glitch" ID="{81B1F43F-02AF-4AD4-B3BC-7F280C38BE79}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceC" ID="{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PetBowlComplete" ID="{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceA" ID="{9D829611-4CB3-4B85-911E-A424FB1504B4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CraftingComplete" ID="{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TypewriterClack" ID="{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_SingleTing" ID="{8487E95F-C24D-4C5F-AE4F-8E90BA90BAEC}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_BeachAmbience" ID="{9C7CA0C5-8775-4E88-B40D-01568C42AC25}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Eating" ID="{049E8BD5-3A51-4E92-B556-C4069EA88628}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BushRustle" ID="{E68FBB6B-2DCA-4ED6-9392-02DDE8F83E64}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

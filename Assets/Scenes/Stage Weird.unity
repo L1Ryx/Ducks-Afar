@@ -3598,7 +3598,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[0].waitTime
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: timedCallbacks.Array.data[0].audioCuesToPlay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: 'timedCallbacks.Array.data[0].audioCuesToPlay.Array.data[0]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4657903782974952162, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: m_Name
@@ -3935,6 +3943,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1525412839750645111, guid: cfbd47cfd102d4764aa3a9f791025d2c, type: 3}
   m_PrefabInstance: {fileID: 974523003}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &989035116 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6941759273879316752, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+  m_PrefabInstance: {fileID: 7172055867435242642}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bb766219df4f4dcda199d7659f9abfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &999849218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74809,6 +74828,66 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 989035116}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 989035116}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayGlitchSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: StopLevelMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameObjectActiveSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: GameObjectActiveSetter, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3081803461340763062, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: Response.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6941759273879316752, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: glitchAc
+      value: 
+      objectReference: {fileID: 11400000, guid: 372480c2111f24048bc99b40c2d19d10, type: 2}
+    - target: {fileID: 6941759273879316752, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
+      propertyPath: stopLevelMusicEvent
+      value: 
+      objectReference: {fileID: 11400000, guid: 6925630dcd3ce432a9054a55a6847fb8, type: 2}
     - target: {fileID: 6941759273879316752, guid: c8244d54e15fe4fb1a023c10a431a1d1, type: 3}
       propertyPath: 'targetObjects.Array.data[0]'
       value: 

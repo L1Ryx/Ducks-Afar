@@ -2317,6 +2317,404 @@
 								</Sound>
 							</ChildrenList>
 						</BlendContainer>
+						<BlendContainer Name="SFX_Glitch_Blend" ID="{80B289CD-BC12-4B5E-9D86-FE3F80FD8393}" ShortID="835227617">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Glitch" ID="{9438F385-0E96-4C08-8FE8-7F91F73CFE27}" ShortID="489043773">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>40</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume1" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="ForestVerb" ID="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="ImpactDelay" ID="{75E8FF73-24F3-4021-830E-DBCB32EE9C07}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Glitch" ID="{50307C9B-7AA4-42FE-AA26-D1665E4CDD22}">
+											<Language>SFX</Language>
+											<AudioFile>Glitch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="881715182"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Glitch" ID="{50307C9B-7AA4-42FE-AA26-D1665E4CDD22}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
+						<BlendContainer Name="SFX_RocketLaunch_Blend" ID="{0B009F93-96FF-4BDF-8298-2205B12224BC}" ShortID="791237278">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{4BA2897A-F38A-4AE5-B1E8-8977EA31BADD}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BE7230AE-1084-423D-BA00-8E6B8D379010}"/>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="ForestVerb" ID="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="ImpactDelay" ID="{75E8FF73-24F3-4021-830E-DBCB32EE9C07}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Rocket Launch" ID="{3B055C7E-BE70-47AE-824C-2E96705731B7}" ShortID="168389837">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-24</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket Launch" ID="{FC461DF3-6D41-4B07-BB66-B1DC08FF9686}">
+											<Language>SFX</Language>
+											<AudioFile>Rocket Launch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="376303260"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket Launch" ID="{FC461DF3-6D41-4B07-BB66-B1DC08FF9686}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Rocket Rumble" ID="{6A413489-97B9-4A0B-A5B4-51D4CDE41ED6}" ShortID="1026681175">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-21</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Rocket Rumble" ID="{4A7F1A89-4473-48E8-BF84-3E64987E20BF}">
+											<Language>SFX</Language>
+											<AudioFile>Rocket Rumble.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="342883699"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Rocket Rumble" ID="{4A7F1A89-4473-48E8-BF84-3E64987E20BF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
+						<BlendContainer Name="SFX_Eating_Blend" ID="{5D2E0EFD-A0A4-4B83-854E-6E170D804410}" ShortID="88481042">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>0.5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Eating" ID="{03C61E29-0C04-4A8F-9F12-87E2E93B63B9}" ShortID="350665695">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Eating" ID="{64B4CF8A-954E-4C34-ABD2-1828E984D594}">
+											<Language>SFX</Language>
+											<AudioFile>Eating.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="456100030"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Eating" ID="{64B4CF8A-954E-4C34-ABD2-1828E984D594}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
+						<BlendContainer Name="SFX_SingleTing_Blend" ID="{28544559-7DE5-4323-A250-8A4BD9D7E36B}" ShortID="525013965">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>200</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{FCED2A80-BAD7-498B-A8FD-A263715D51BE}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="ForestVerb" ID="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="ImpactDelay" ID="{75E8FF73-24F3-4021-830E-DBCB32EE9C07}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Single Ting" ID="{39F1D0A5-C015-4413-80AD-4640A36BB7BB}" ShortID="325391238">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Single Ting" ID="{771AFB50-40CB-4443-B75F-EFFD1F6F70B2}">
+											<Language>SFX</Language>
+											<AudioFile>Single Ting.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="583587143"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Single Ting" ID="{771AFB50-40CB-4443-B75F-EFFD1F6F70B2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
+						<BlendContainer Name="SFX_DoorClose_Blend" ID="{52BB42F2-80A7-4F2E-BE8F-8CDDDF10A0F3}" ShortID="243097488">
+							<PropertyList>
+								<Property Name="InitialDelay" Type="Real64">
+									<ValueList>
+										<Value>0.5</Value>
+									</ValueList>
+								</Property>
+								<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<ValueList>
+										<Value>-96</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="ForestVerb" ID="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="ImpactDelay" ID="{75E8FF73-24F3-4021-830E-DBCB32EE9C07}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Door Close" ID="{06D55ECE-C0FC-46E9-94E5-28321365C253}" ShortID="667028980">
+									<PropertyList>
+										<Property Name="InitialDelay" Type="Real64">
+											<ValueList>
+												<Value>1.5</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Door Close" ID="{D4A86A57-CEE6-49D5-91F5-22FCDE5EA5BC}">
+											<Language>SFX</Language>
+											<AudioFile>Door Close.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="492240537"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Door Close" ID="{D4A86A57-CEE6-49D5-91F5-22FCDE5EA5BC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Door Open" ID="{BB806753-A94E-4C7F-9C25-90A6588C5E1E}" ShortID="238292382">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Door Open" ID="{B90EF408-1558-4E55-BDFE-6091812E0563}">
+											<Language>SFX</Language>
+											<AudioFile>Door Open.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="331087142"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Door Open" ID="{B90EF408-1558-4E55-BDFE-6091812E0563}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</BlendContainer>
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="AMBIENCE" ID="{601EBDA4-BE38-4BB9-A38C-B95DF2765927}" ShortID="529818581">

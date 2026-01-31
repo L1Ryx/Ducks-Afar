@@ -24,6 +24,9 @@ namespace AK
         static const AkUniqueID PLAY_CODAGABBLE = 1194190264U;
         static const AkUniqueID PLAY_CRAFTINGCOMPLETE = 1504944989U;
         static const AkUniqueID PLAY_CUTSCENETHEME = 3171580813U;
+        static const AkUniqueID PLAY_DOORCLOSE = 2721379730U;
+        static const AkUniqueID PLAY_EATING = 225053596U;
+        static const AkUniqueID PLAY_GLITCH = 1576299337U;
         static const AkUniqueID PLAY_HOMETHEME = 141146378U;
         static const AkUniqueID PLAY_KEYCARDUNLOCK = 3034243397U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
@@ -32,6 +35,8 @@ namespace AK
         static const AkUniqueID PLAY_PUZZLETHEME = 3803220377U;
         static const AkUniqueID PLAY_REUNIONTHEME = 2345769801U;
         static const AkUniqueID PLAY_ROCKBREAK = 1119824134U;
+        static const AkUniqueID PLAY_ROCKETLAUNCH = 2095930195U;
+        static const AkUniqueID PLAY_SINGLETING = 3963294118U;
         static const AkUniqueID PLAY_SUBCADENCEA = 1545776886U;
         static const AkUniqueID PLAY_SUBCADENCEC = 1545776884U;
         static const AkUniqueID PLAY_TOFUGABBLE = 1339931719U;

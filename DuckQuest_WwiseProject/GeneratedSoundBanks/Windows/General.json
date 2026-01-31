@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{3B859533-98A9-CBD7-4E41-3C41B5831987}",
+    "Hash": "{E26906CB-121E-876D-7D23-20CC32F28111}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -184,6 +184,30 @@
       "CachePath": "D5/{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem"
      },
      {
+      "Id": "331087142",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Door Open.wav",
+      "CachePath": "A6/{A6CE7098-906A-9AF5-15C4-6F96218ACB32}.wem"
+     },
+     {
+      "Id": "342883699",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket Rumble.wav",
+      "CachePath": "D4/{D44CBC66-1D3B-8ED4-9E0D-0C9CBF8415EA}.wem"
+     },
+     {
+      "Id": "376303260",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Rocket Launch.wav",
+      "CachePath": "4E/{4EBB4472-6117-DB83-09DF-CB86A42A293D}.wem"
+     },
+     {
       "Id": "393017442",
       "Language": "SFX",
       "Streaming": "false",
@@ -208,6 +232,14 @@
       "CachePath": "5D/{5DA4012F-AB01-0BC8-10BD-E736C740C701}.wem"
      },
      {
+      "Id": "456100030",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Eating.wav",
+      "CachePath": "3E/{3EFE407E-BA29-19EA-6B9D-246F301BE9F9}.wem"
+     },
+     {
       "Id": "464117777",
       "Language": "SFX",
       "Streaming": "false",
@@ -222,6 +254,14 @@
       "Location": "Memory",
       "ShortName": "Ducks-Afar-Night-C-72-44.wav",
       "CachePath": "98/{98F383A0-27B0-159C-6CF9-4A4A44C303D6}.wem"
+     },
+     {
+      "Id": "492240537",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Door Close.wav",
+      "CachePath": "8B/{8B5F6C77-D471-195F-99D6-8534FD7B9483}.wem"
      },
      {
       "Id": "504985255",
@@ -262,6 +302,14 @@
       "Location": "Memory",
       "ShortName": "Coda-Gabble-A.wav",
       "CachePath": "A5/{A54652FF-32ED-9DD6-3370-3A4F79710C70}.wem"
+     },
+     {
+      "Id": "583587143",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Single Ting.wav",
+      "CachePath": "85/{85C22927-D02A-372F-C9C8-3490F59EFA10}.wem"
      },
      {
       "Id": "606799659",
@@ -454,6 +502,14 @@
       "Location": "Memory",
       "ShortName": "Typewriter 1.wav",
       "CachePath": "B7/{B7844C9A-A640-97FD-D3CD-4BEFE9C73181}.wem"
+     },
+     {
+      "Id": "881715182",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Glitch.wav",
+      "CachePath": "D9/{D9838B77-5C46-7930-B6A9-74E001D0E60D}.wem"
      },
      {
       "Id": "883605110",
@@ -769,6 +825,79 @@
       ]
      },
      {
+      "Id": "2721379730",
+      "Name": "Play_DoorClose",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_DoorClose",
+      "GUID": "{38C89D1A-7265-4309-AA41-A9A15B7BD669}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.3772397",
+      "DurationMax": "3.3772397",
+      "MediaRefs": [
+       {
+        "Id": "331087142"
+       },
+       {
+        "Id": "492240537"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       },
+       {
+        "Id": "2806164392",
+        "Name": "ImpactDelay",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
+        "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
+     },
+     {
+      "Id": "225053596",
+      "Name": "Play_Eating",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_Eating",
+      "GUID": "{049E8BD5-3A51-4E92-B556-C4069EA88628}",
+      "DurationType": "OneShot",
+      "DurationMin": "5.3090415",
+      "DurationMax": "5.3090415",
+      "MediaRefs": [
+       {
+        "Id": "456100030"
+       }
+      ]
+     },
+     {
+      "Id": "1576299337",
+      "Name": "Play_Glitch",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_Glitch",
+      "GUID": "{81B1F43F-02AF-4AD4-B3BC-7F280C38BE79}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3633021",
+      "DurationMax": "1.3633021",
+      "MediaRefs": [
+       {
+        "Id": "881715182"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       },
+       {
+        "Id": "2806164392",
+        "Name": "ImpactDelay",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
+        "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
+     },
+     {
       "Id": "141146378",
       "Name": "Play_HomeTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_HomeTheme",
@@ -933,6 +1062,65 @@
       "MediaRefs": [
        {
         "Id": "914958189"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       },
+       {
+        "Id": "2806164392",
+        "Name": "ImpactDelay",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
+        "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
+     },
+     {
+      "Id": "2095930195",
+      "Name": "Play_RocketLaunch",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_RocketLaunch",
+      "GUID": "{E6CBCE9C-04DC-44D2-A6DC-5F976CAE4AF7}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.6183662",
+      "DurationMax": "5.558856",
+      "MediaRefs": [
+       {
+        "Id": "342883699"
+       },
+       {
+        "Id": "376303260"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       },
+       {
+        "Id": "2806164392",
+        "Name": "ImpactDelay",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
+        "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
+     },
+     {
+      "Id": "3963294118",
+      "Name": "Play_SingleTing",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_SingleTing",
+      "GUID": "{8487E95F-C24D-4C5F-AE4F-8E90BA90BAEC}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1768113",
+      "DurationMax": "1.5708547",
+      "MediaRefs": [
+       {
+        "Id": "583587143"
        }
       ],
       "AuxBusRefs": [
@@ -1163,6 +1351,6 @@
     ]
    }
   ],
-  "FileHash": "{05933FAF-115E-1CDE-BF42-4F16A18E25A8}"
+  "FileHash": "{FD709483-284E-CCA4-60EB-140F8F1461AC}"
  }
 }

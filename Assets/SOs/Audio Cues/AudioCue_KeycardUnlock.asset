@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e21b74c44f64e1eaa2233d78159fa4, type: 3}
   m_Name: AudioCue_KeycardUnlock
   m_EditorClassIdentifier: 
-  playEvent: 
+  playEvent: Play_KeycardUnlock
   stopEvent: 
   rtpcBindings: []

@@ -6212,12 +6212,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[0].waitTime
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[1].waitTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: timedCallbacks.Array.data[0].audioCuesToPlay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: 'timedCallbacks.Array.data[0].audioCuesToPlay.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b6dc9942bfcd34cb593555d30eb49765, type: 2}
     - target: {fileID: 4657903782974952162, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: m_Name
       value: TimedCallback
@@ -8398,6 +8406,10 @@ PrefabInstance:
       propertyPath: nextScene
       value: Stage
       objectReference: {fileID: 0}
+    - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
+      propertyPath: singleTingAc
+      value: 
+      objectReference: {fileID: 11400000, guid: 35863bd1a87b545a2a2e4da8c4d71936, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

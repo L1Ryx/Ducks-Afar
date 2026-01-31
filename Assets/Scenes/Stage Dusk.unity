@@ -12001,6 +12001,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: timedCallbacks.Array.data[0].waitTime
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: timedCallbacks.Array.data[1].waitTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: timedCallbacks.Array.data[0].audioCuesToPlay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: timedCallbacks.Array.data[1].audioCuesToPlay.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: 'timedCallbacks.Array.data[0].audioCuesToPlay.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3eda1e563920349efa44bbb274047ec8, type: 2}
+    - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
+      propertyPath: 'timedCallbacks.Array.data[1].audioCuesToPlay.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b6dc9942bfcd34cb593555d30eb49765, type: 2}
     - target: {fileID: 4657903782974952162, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: m_Name
       value: TimedCallback

@@ -168,7 +168,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584318181600512090
+    m_lastTime: -8584317571115230836
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584317635622551635
+    m_lastTime: -8584317571115250059
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -392,6 +392,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.0566666
       minDuration: 1.0566666
+    - name: Play_CloseDoor
+      guid: 1a9dc83865720943aa41a9a15b7bd669
+      id: 3498455162
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_CloseDoor
+        ObjectType: 3
+        guid: 1a9dc83865720943aa41a9a15b7bd669
+      Path: Events/Default Work Unit/WORLD/Play_CloseDoor
+      maxAttenuation: 0
+      maxDuration: 3.3772397
+      minDuration: 3.3772397
     - name: Play_CodaGabble
       guid: 9dc77b16ef25a3438093d24ecf1aa0bf
       id: 1194190264
@@ -452,6 +472,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 37.67442
       minDuration: 37.67442
+    - name: Play_Eating
+      guid: d58b9e04513a924eb556c4069ea88628
+      id: 225053596
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_Eating
+        ObjectType: 3
+        guid: d58b9e04513a924eb556c4069ea88628
+      Path: Events/Default Work Unit/WORLD/Play_Eating
+      maxAttenuation: 0
+      maxDuration: 5.3090415
+      minDuration: 5.3090415
+    - name: Play_Glitch
+      guid: 3ff4b181af02d44ab3bc7f280c38be79
+      id: 1576299337
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_Glitch
+        ObjectType: 3
+        guid: 3ff4b181af02d44ab3bc7f280c38be79
+      Path: Events/Default Work Unit/WORLD/Play_Glitch
+      maxAttenuation: 0
+      maxDuration: 1.3633021
+      minDuration: 1.3633021
     - name: Play_HomeTheme
       guid: f9203b4ac7277b49b9d242e39f9d28d4
       id: 141146378
@@ -472,6 +532,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_KeycardUnlock
+      guid: eda43c641fb6a94995a711fb757b94cb
+      id: 3034243397
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_KeycardUnlock
+        ObjectType: 3
+        guid: eda43c641fb6a94995a711fb757b94cb
+      Path: Events/Default Work Unit/WORLD/Play_KeycardUnlock
+      maxAttenuation: 0
+      maxDuration: 0.8033958
+      minDuration: 0.8033958
     - name: Play_PetBowlComplete
       guid: b06cbe7272732e4b8a8e8216ac3a79d6
       id: 654680740
@@ -592,6 +672,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.5860888
       minDuration: 0.43907046
+    - name: Play_RocketLaunch
+      guid: 9ccecbe6dc04d244a6dc5f976cae4af7
+      id: 2095930195
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_RocketLaunch
+        ObjectType: 3
+        guid: 9ccecbe6dc04d244a6dc5f976cae4af7
+      Path: Events/Default Work Unit/WORLD/Play_RocketLaunch
+      maxAttenuation: 0
+      maxDuration: 5.558856
+      minDuration: 4.6183662
+    - name: Play_SingleTing
+      guid: 5fe987844dc25f4cae4f8e90ba90baec
+      id: 3963294118
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_SingleTing
+        ObjectType: 3
+        guid: 5fe987844dc25f4cae4f8e90ba90baec
+      Path: Events/Default Work Unit/WORLD/Play_SingleTing
+      maxAttenuation: 0
+      maxDuration: 1.5708547
+      minDuration: 1.1768113
     - name: Play_SubCadenceA
       guid: 6b3039fc60d9694194a751fa4dc2d5bb
       id: 1545776886

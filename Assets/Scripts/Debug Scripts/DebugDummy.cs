@@ -13,6 +13,7 @@ public class DebugDummy : MonoBehaviour
     [SerializeField] private UnityEvent OnToggleHyperspeed;
 
     [SerializeField] private DialogueEncounter encounter;
+    [SerializeField] private AudioCue singleTingAc;
     
 
     [Header("Settings")] [SerializeField] private string nextScene = "Demo Reset";
@@ -100,6 +101,7 @@ public class DebugDummy : MonoBehaviour
     public void DebugAddKeycard()
     {
         Game.Ctx.Inventory.TryAdd("012", 1);
+        Game.Ctx.Audio.PlayCueGlobal(singleTingAc);
     }
 
     public void DoSceneResets()

@@ -9,6 +9,9 @@ public class GameObjectActiveSetter : MonoBehaviour
     [SerializeField]
     private bool setInactiveOnStart = true;
 
+    [SerializeField] private AudioCue glitchAc;
+    [SerializeField] private GameEvent stopLevelMusicEvent;
+
     private void Start()
     {
         if (setInactiveOnStart)
@@ -37,5 +40,15 @@ public class GameObjectActiveSetter : MonoBehaviour
                 obj.SetActive(false);
             }
         }
+    }
+
+    public void PlayGlitchSound()
+    {
+        Game.Ctx.Audio.PlayCueGlobal(glitchAc);
+    }
+
+    public void StopLevelMusic()
+    {
+        stopLevelMusicEvent.Raise();
     }
 }

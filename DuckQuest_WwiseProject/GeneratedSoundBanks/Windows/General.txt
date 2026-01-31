@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	141146378	Play_HomeTheme			\Default Work Unit\MUS\Play_HomeTheme	
+	225053596	Play_Eating			\Default Work Unit\WORLD\Play_Eating	
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
 	353900719	Stop_ReunionTheme			\Default Work Unit\MUS\Stop_ReunionTheme	
 	573339928	Play_BridgeSplash			\Default Work Unit\WORLD\Play_BridgeSplash	
@@ -17,15 +18,19 @@ Event	ID	Name			Wwise Object Path	Notes
 	1504944989	Play_CraftingComplete			\Default Work Unit\WORLD\Play_CraftingComplete	
 	1545776884	Play_SubCadenceC			\Default Work Unit\WORLD\Play_SubCadenceC	
 	1545776886	Play_SubCadenceA			\Default Work Unit\WORLD\Play_SubCadenceA	
+	1576299337	Play_Glitch			\Default Work Unit\WORLD\Play_Glitch	
 	1788876160	Stop_HomeTheme			\Default Work Unit\MUS\Stop_HomeTheme	
+	2095930195	Play_RocketLaunch			\Default Work Unit\WORLD\Play_RocketLaunch	
 	2345769801	Play_ReunionTheme			\Default Work Unit\MUS\Play_ReunionTheme	
 	2435079182	Play_AsterGabble			\Default Work Unit\WORLD\Play_AsterGabble	
+	2721379730	Play_DoorClose			\Default Work Unit\WORLD\Play_DoorClose	
 	3034243397	Play_KeycardUnlock			\Default Work Unit\WORLD\Play_KeycardUnlock	
 	3171580813	Play_CutsceneTheme			\Default Work Unit\MUS\Play_CutsceneTheme	
 	3224218195	Play_BushRustle			\Default Work Unit\WORLD\Play_BushRustle	
 	3803220377	Play_PuzzleTheme			\Default Work Unit\MUS\Play_PuzzleTheme	
 	3860455926	Play_PickUp			\Default Work Unit\WORLD\Play_PickUp	
 	3863193186	Play_BubblesGabble			\Default Work Unit\WORLD\Play_BubblesGabble	
+	3963294118	Play_SingleTing			\Default Work Unit\WORLD\Play_SingleTing	
 	4235903127	Stop_CutsceneTheme			\Default Work Unit\MUS\Stop_CutsceneTheme	
 
 State Group	ID	Name			Wwise Object Path	Notes
@@ -64,16 +69,22 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	271830612	Tofu-Gabble-D	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B3\{B3D8B8D9-0CE7-58F6-C647-D027C345CCB0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_TofuGabble_Random\Tofu-Gabble-D		155496
 	294326928	Add-C-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B2\{B231BE4C-5DD8-A94D-64ED-7CF70168485D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_C_Blend\Add-C-5		1152144
 	322555041	Add-A-4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D5\{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-4		768160
+	331087142	Door Open	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\A6\{A6CE7098-906A-9AF5-15C4-6F96218ACB32}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_DoorClose_Blend\Door Open		170116
+	342883699	Rocket Rumble	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D4\{D44CBC66-1D3B-8ED4-9E0D-0C9CBF8415EA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_RocketLaunch_Blend\Rocket Rumble		779900
+	376303260	Rocket Launch	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\4E\{4EBB4472-6117-DB83-09DF-CB86A42A293D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_RocketLaunch_Blend\Rocket Launch		531892
 	393017442	Sub-C-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\40\{40A830E3-A98E-D289-65F5-6B31F2B5C540}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_C_Blend\Sub-C-3		1152144
 	402495002	Pop 1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\22\{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 1		9988
 	413626875	Duck-Game-Reunion	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\5D\{5DA4012F-AB01-0BC8-10BD-E736C740C701}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_ReunionTheme_Playlist\MX_ReunionTheme_Segment\Duck-Game-Reunion		12392820
+	456100030	Eating	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\3E\{3EFE407E-BA29-19EA-6B9D-246F301BE9F9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_Eating_Blend\Eating		923432
 	464117777	Coda-Gabble-B	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D6\{D6E71F49-B03D-596F-D894-B246C615BAFF}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-B		196096
 	476220816	Ducks-Afar-Night-C-72-44	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\98\{98F383A0-27B0-159C-6CF9-4A4A44C303D6}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_NightTheme_Playlist\MX_NightTheme_Segment\Ducks-Afar-Night-C-72-44		14112096
+	492240537	Door Close	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\8B\{8B5F6C77-D471-195F-99D6-8534FD7B9483}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_DoorClose_Blend\Door Close		264524
 	504985255	Sub-C-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\5A\{5A36CFCA-A047-45C6-FCD8-210B895F28B7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_C_Blend\Sub-C-5		1152144
 	523726839	Tofu-Gabble-B	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\64\{647395FF-7C9E-E3CB-CF10-8D91D322F433}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_TofuGabble_Random\Tofu-Gabble-B		146260
 	523787390	Sub-C-4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\9E\{9E22334B-F30B-0208-1EB3-B1664A51E742}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_C_Blend\Sub-C-4		1152144
 	548699161	Bubbles-Gabble-C	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B6\{B6B1A4AF-0849-F71C-8A6A-8C536F299297}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BubblesGabble_Random\Bubbles-Gabble-C		188996
 	577419295	Coda-Gabble-A	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\A5\{A54652FF-32ED-9DD6-3370-3A4F79710C70}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-A		196096
+	583587143	Single Ting	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\85\{85C22927-D02A-372F-C9C8-3490F59EFA10}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_SingleTing_Blend\Single Ting		293112
 	606799659	Sub-A-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\0A\{0A2231B0-9D3D-EBF6-00D1-C8B963421712}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_A_Blend\Sub-A-3		768144
 	609305418	Sub-A-4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D7\{D739EB4B-9433-B579-6234-64C1078604D3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_A_Blend\Sub-A-4		768144
 	624210698	Add-C-2	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\80\{80FD37FB-F6E0-1E7E-6E2A-19C785C149F1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_C_Blend\Add-C-2		1152144
@@ -98,6 +109,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	849723551	Coda-Gabble-C	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B9\{B9108094-8506-32AF-20F0-9CA2C3F83EAD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-C		196096
 	855146624	Chisel	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\BB\{BB907DCD-5635-2DD8-C5ED-1B126493BEA1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_Chisel_Blend\Chisel		218380
 	867519653	Typewriter 1	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\B7\{B7844C9A-A640-97FD-D3CD-4BEFE9C73181}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 1		140644
+	881715182	Glitch	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\D9\{D9838B77-5C46-7930-B6A9-74E001D0E60D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_Glitch_Blend\Glitch		261848
 	883605110	Add-B-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\4F\{4FD0AA40-2294-01D1-4DA5-028956805C5F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_B_Blend\Add-B-5		768144
 	908157081	Ducks-Afar-Home-Cm-112-44	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\F0\{F0D7D2B7-05BB-A99F-2A37-987034FD20C3}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_HomeTheme_Playlist\MX_HomeTheme_Segment\Ducks-Afar-Home-Cm-112-44		11108668
 	914958189	Rock Break	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\48\{4808D398-A2D1-803F-E561-29482B58EBD8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_RockBreak_Blend\Rock Break		97492
