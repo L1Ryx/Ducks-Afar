@@ -132,7 +132,7 @@
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Stop_CutsceneTheme" ID="{62E73EA1-6B55-418E-AC49-5EAFE53889ED}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<ObjectRef Name="Play_IntroTheme" ID="{98C80F90-B01C-4F09-BCD5-1CAC993FCDD9}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="3" Y="3"/>
 						</Module>
 						<Module>

@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55d4105e6d55469db48c1b83f32569b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  darknessTime: 6.5
+  darknessTime: 8
 --- !u!114 &4327136443626211329
 MonoBehaviour:
   m_ObjectHideFlags: 0

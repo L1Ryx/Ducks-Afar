@@ -225,7 +225,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_CloseDoor" ID="{38C89D1A-7265-4309-AA41-A9A15B7BD669}">
+						<Event Name="Play_DoorClose" ID="{38C89D1A-7265-4309-AA41-A9A15B7BD669}">
 							<ChildrenList>
 								<Action Name="" ID="{B319D4B9-BFD3-434F-B4BB-C735F8B43173}" ShortID="18865872">
 									<ReferenceList>
@@ -423,6 +423,33 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MX_CutsceneTheme_Playlist" ID="{3D4E73ED-1CF1-415E-B358-9433C464F8FA}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_IntroTheme" ID="{98C80F90-B01C-4F09-BCD5-1CAC993FCDD9}">
+							<ChildrenList>
+								<Action Name="" ID="{F6AC912A-D49E-4F70-A3E0-03F27653EE79}" ShortID="451915755">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_IntroTheme_Playlist" ID="{1F1D6A62-1981-4339-A564-97ACE21F3B70}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_IntroTheme" ID="{F84F5793-C498-4D1C-92AA-C54D45F95F7C}">
+							<ChildrenList>
+								<Action Name="" ID="{9E0B0C1F-C699-4887-B6F5-28EBE30CDFFA}" ShortID="1059821583">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_IntroTheme_Playlist" ID="{1F1D6A62-1981-4339-A564-97ACE21F3B70}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

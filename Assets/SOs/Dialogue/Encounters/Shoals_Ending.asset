@@ -40,7 +40,7 @@ MonoBehaviour:
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: What?
     lineCue: {fileID: 0}
-    afterLineEvent: {fileID: 0}
+    afterLineEvent: {fileID: 11400000, guid: e98d4b93d5a5f4de1880b1a7690590f0, type: 2}
   - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: What could you possibly mean, ASTER?
     lineCue: {fileID: 0}
@@ -170,4 +170,4 @@ MonoBehaviour:
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}
-  onEncounterEnd: {fileID: 0}
+  onEncounterEnd: {fileID: 11400000, guid: be99eb3006b6048f083c103df9949a3b, type: 2}

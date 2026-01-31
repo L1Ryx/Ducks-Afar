@@ -3,9 +3,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	225053596	Play_Eating			\Default Work Unit\WORLD\Play_Eating	
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
 	353900719	Stop_ReunionTheme			\Default Work Unit\MUS\Stop_ReunionTheme	
+	446738903	Play_IntroTheme			\Default Work Unit\MUS\Play_IntroTheme	
 	573339928	Play_BridgeSplash			\Default Work Unit\WORLD\Play_BridgeSplash	
 	625749573	Play_PhoneTap			\Default Work Unit\UI\Play_PhoneTap	
 	654680740	Play_PetBowlComplete			\Default Work Unit\WORLD\Play_PetBowlComplete	
+	760977961	Stop_IntroTheme			\Default Work Unit\MUS\Stop_IntroTheme	
 	928013289	Play_TypewriterClack			\Default Work Unit\UI\Play_TypewriterClack	
 	1119824134	Play_RockBreak			\Default Work Unit\WORLD\Play_RockBreak	
 	1194190264	Play_CodaGabble			\Default Work Unit\WORLD\Play_CodaGabble	
@@ -117,6 +119,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	928791628	Sub-A-5	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\1A\{1AD20E91-9A2F-2B09-B15B-794DAF0156FB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_A_Blend\Sub-A-5		768144
 	939932267	Bell Hit	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\3A\{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BellHit_Blend\Bell Hit		720048
 	966557403	Bridge-Splash	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\C4\{C44425A2-7B28-E0E6-0024-307E9B7D4115}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_WaterSplash_Blend\Bridge-Splash		600096
+	984551375	Ducks-Afar-Intro-Cutscene	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\81\{812C8C25-5CF8-B44F-843C-9A76A9ADF9DF}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_IntroTheme_Playlist\MX_IntroTheme_Segment\Ducks-Afar-Intro-Cutscene		2400096
 	995171218	Add-A-3	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\1A\{1A198B2E-A1AC-869C-5468-149F8E2B2C2F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-3		768160
 	1017960476	Typewriter 4	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\F1\{F1989F5B-7EBB-3E3A-D026-3F6EF9B0A4FD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_TypewriterClack_Random\Typewriter 4		134826
 	1044412427	Aster-Gabble-D	Y:\Desktop\PD25\DuckQuest\DuckQuest_WwiseProject\.cache\14\{14BF26EB-2EAD-A3F0-B248-56ED16565DEB}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_AsterGabble_Random\Aster-Gabble-D		193596

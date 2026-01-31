@@ -14543,7 +14543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[1].waitTime
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[0].audioCuesToPlay.Array.size

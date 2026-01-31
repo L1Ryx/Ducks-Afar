@@ -28,6 +28,7 @@ namespace AK
         static const AkUniqueID PLAY_EATING = 225053596U;
         static const AkUniqueID PLAY_GLITCH = 1576299337U;
         static const AkUniqueID PLAY_HOMETHEME = 141146378U;
+        static const AkUniqueID PLAY_INTROTHEME = 446738903U;
         static const AkUniqueID PLAY_KEYCARDUNLOCK = 3034243397U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
@@ -44,6 +45,7 @@ namespace AK
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
         static const AkUniqueID STOP_CUTSCENETHEME = 4235903127U;
         static const AkUniqueID STOP_HOMETHEME = 1788876160U;
+        static const AkUniqueID STOP_INTROTHEME = 760977961U;
         static const AkUniqueID STOP_PUZZLETHEME = 1200236291U;
         static const AkUniqueID STOP_REUNIONTHEME = 353900719U;
     } // namespace EVENTS

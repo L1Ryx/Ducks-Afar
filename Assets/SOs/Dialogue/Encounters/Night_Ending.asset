@@ -114,7 +114,7 @@ MonoBehaviour:
     text: "Well! Whatever\u2019s happened, the only thing that matters is that we
       have everyone! Which means that everything will be fine, no matter what!"
     lineCue: {fileID: 0}
-    afterLineEvent: {fileID: 0}
+    afterLineEvent: {fileID: 11400000, guid: e98d4b93d5a5f4de1880b1a7690590f0, type: 2}
   - speaker: {fileID: 11400000, guid: 32dea8d7a505646f49b0574e65a098bc, type: 2}
     text: "Yeah! Who cares about some so-called secret to happiness! I\u2019ll be
       most happy when we\u2019re finally back home!"
@@ -146,4 +146,4 @@ MonoBehaviour:
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}
-  onEncounterEnd: {fileID: 0}
+  onEncounterEnd: {fileID: 11400000, guid: be99eb3006b6048f083c103df9949a3b, type: 2}

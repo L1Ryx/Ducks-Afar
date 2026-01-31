@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{E26906CB-121E-876D-7D23-20CC32F28111}",
+    "Hash": "{26F2DE8D-E5CD-6AA1-3442-750CB9AA8E27}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -568,6 +568,14 @@
       "CachePath": "C4/{C44425A2-7B28-E0E6-0024-307E9B7D4115}.wem"
      },
      {
+      "Id": "984551375",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Intro-Cutscene.wav",
+      "CachePath": "81/{812C8C25-5CF8-B44F-843C-9A76A9ADF9DF}.wem"
+     },
+     {
       "Id": "995171218",
       "Language": "SFX",
       "Streaming": "false",
@@ -906,6 +914,20 @@
       "MediaRefs": [
        {
         "Id": "908157081"
+       }
+      ]
+     },
+     {
+      "Id": "446738903",
+      "Name": "Play_IntroTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_IntroTheme",
+      "GUID": "{98C80F90-B01C-4F09-BCD5-1CAC993FCDD9}",
+      "DurationType": "OneShot",
+      "DurationMin": "12.5",
+      "DurationMax": "12.5",
+      "MediaRefs": [
+       {
+        "Id": "984551375"
        }
       ]
      },
@@ -1275,6 +1297,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "760977961",
+      "Name": "Stop_IntroTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_IntroTheme",
+      "GUID": "{F84F5793-C498-4D1C-92AA-C54D45F95F7C}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1200236291",
       "Name": "Stop_PuzzleTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_PuzzleTheme",
@@ -1351,6 +1383,6 @@
     ]
    }
   ],
-  "FileHash": "{D68C6AC3-C2B4-D211-CBDE-88425649D88C}"
+  "FileHash": "{40FC8196-DBD0-FF70-DF75-D6E2622636C1}"
  }
 }

@@ -6212,7 +6212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[0].waitTime
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 60752046190028754, guid: 0ad4e65fdc03740fe896d99d87b1d299, type: 3}
       propertyPath: timedCallbacks.Array.data[1].waitTime
@@ -8710,6 +8710,10 @@ PrefabInstance:
     - target: {fileID: 1442106179684469099, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
       propertyPath: m_Name
       value: Curtains Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1492310456517525199, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
+      propertyPath: darknessTime
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 2111216482251531199, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
       propertyPath: m_Pivot.x

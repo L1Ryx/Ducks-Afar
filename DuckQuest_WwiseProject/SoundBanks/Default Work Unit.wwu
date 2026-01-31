@@ -11,6 +11,7 @@
 						<ObjectRef Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AsterGabble" ID="{6076EF09-A6C0-4228-98DF-3AC49956AB30}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_DoorClose" ID="{38C89D1A-7265-4309-AA41-A9A15B7BD669}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BubblesGabble" ID="{5F238490-8655-4332-98F6-296A556C36F0}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PhoneTap" ID="{DF6DF94B-B470-4339-9041-D723A0643C33}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CodaGabble" ID="{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -34,9 +35,11 @@
 						<ObjectRef Name="Play_TypewriterClack" ID="{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SingleTing" ID="{8487E95F-C24D-4C5F-AE4F-8E90BA90BAEC}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_IntroTheme" ID="{F84F5793-C498-4D1C-92AA-C54D45F95F7C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_BeachAmbience" ID="{9C7CA0C5-8775-4E88-B40D-01568C42AC25}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Eating" ID="{049E8BD5-3A51-4E92-B556-C4069EA88628}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BushRustle" ID="{E68FBB6B-2DCA-4ED6-9392-02DDE8F83E64}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_IntroTheme" ID="{98C80F90-B01C-4F09-BCD5-1CAC993FCDD9}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

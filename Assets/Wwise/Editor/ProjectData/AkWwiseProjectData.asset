@@ -168,7 +168,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584317571115230836
+    m_lastTime: -8584317262894332510
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584317571115250059
+    m_lastTime: -8584317263645451769
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -392,26 +392,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 1.0566666
       minDuration: 1.0566666
-    - name: Play_CloseDoor
-      guid: 1a9dc83865720943aa41a9a15b7bd669
-      id: 3498455162
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: ff29494c16c08c4bb9f506dd1beab568
-      - ElementName: WORLD
-        ObjectType: 4
-        guid: 21a210147b9d364eab6d5cc6c4572afb
-      - ElementName: Play_CloseDoor
-        ObjectType: 3
-        guid: 1a9dc83865720943aa41a9a15b7bd669
-      Path: Events/Default Work Unit/WORLD/Play_CloseDoor
-      maxAttenuation: 0
-      maxDuration: 3.3772397
-      minDuration: 3.3772397
     - name: Play_CodaGabble
       guid: 9dc77b16ef25a3438093d24ecf1aa0bf
       id: 1194190264
@@ -472,6 +452,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 37.67442
       minDuration: 37.67442
+    - name: Play_DoorClose
+      guid: 1a9dc83865720943aa41a9a15b7bd669
+      id: 2721379730
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_DoorClose
+        ObjectType: 3
+        guid: 1a9dc83865720943aa41a9a15b7bd669
+      Path: Events/Default Work Unit/WORLD/Play_DoorClose
+      maxAttenuation: 0
+      maxDuration: 3.3772397
+      minDuration: 3.3772397
     - name: Play_Eating
       guid: d58b9e04513a924eb556c4069ea88628
       id: 225053596
@@ -532,6 +532,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_IntroTheme
+      guid: 900fc8981cb0094fbcd51cac993fcdd9
+      id: 446738903
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Play_IntroTheme
+        ObjectType: 3
+        guid: 900fc8981cb0094fbcd51cac993fcdd9
+      Path: Events/Default Work Unit/MUS/Play_IntroTheme
+      maxAttenuation: 0
+      maxDuration: 12.5
+      minDuration: 12.5
     - name: Play_KeycardUnlock
       guid: eda43c641fb6a94995a711fb757b94cb
       id: 3034243397
@@ -849,6 +869,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: c3d97e65e86f1749bb17d56b46bcde8e
       Path: Events/Default Work Unit/MUS/Stop_HomeTheme
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_IntroTheme
+      guid: 93574ff898c41c4d92aac54d45f95f7c
+      id: 760977961
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Stop_IntroTheme
+        ObjectType: 3
+        guid: 93574ff898c41c4d92aac54d45f95f7c
+      Path: Events/Default Work Unit/MUS/Stop_IntroTheme
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
