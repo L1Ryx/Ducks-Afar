@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{003CF7A9-DF7A-3419-6A06-7DE9D3050DD8}",
+    "Hash": "{AFBB901D-1B1B-41B0-8435-A26005D120D2}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -182,6 +182,14 @@
       "Location": "Memory",
       "ShortName": "Pop 1.wav",
       "CachePath": "22/{22EC583C-A9D2-0E6A-FB19-3B294222F97F}.wem"
+     },
+     {
+      "Id": "413626875",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Duck-Game-Reunion.wav",
+      "CachePath": "5D/{5DA4012F-AB01-0BC8-10BD-E736C740C701}.wem"
      },
      {
       "Id": "464117777",
@@ -842,6 +850,27 @@
       ]
      },
      {
+      "Id": "2345769801",
+      "Name": "Play_ReunionTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_ReunionTheme",
+      "GUID": "{7358471E-4068-447A-B5A7-F3D03A26ABC6}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "413626875"
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "3241088250",
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
+      ]
+     },
+     {
       "Id": "1119824134",
       "Name": "Play_RockBreak",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_RockBreak",
@@ -1004,6 +1033,16 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "353900719",
+      "Name": "Stop_ReunionTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_ReunionTheme",
+      "GUID": "{991B9C5E-7E14-4A2D-89AD-315234BAC114}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "GameParameters": [
@@ -1013,9 +1052,55 @@
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
       "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
      }
+    ],
+    "StateGroups": [
+     {
+      "Id": "3241088250",
+      "Name": "PuzzleKey",
+      "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey",
+      "GUID": "{1D8A6052-12EB-4267-92D1-FDF460F7D308}",
+      "States": [
+       {
+        "Id": "84696440",
+        "Name": "G",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\G",
+        "GUID": "{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"
+       },
+       {
+        "Id": "84696441",
+        "Name": "F",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\F",
+        "GUID": "{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"
+       },
+       {
+        "Id": "84696444",
+        "Name": "C",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\C",
+        "GUID": "{83171017-102C-4889-BFCE-F02B63E17E43}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\None",
+        "GUID": "{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"
+       },
+       {
+        "Id": "1836525772",
+        "Name": "Dm",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Dm",
+        "GUID": "{16321D5B-776F-48AD-9DD5-4816E220DBC0}"
+       },
+       {
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{34C01069-BAC6-9572-4230-19E3838C2CFC}"
+  "FileHash": "{F6D2AFC7-4270-50D9-0888-DBBC250189B3}"
  }
 }
