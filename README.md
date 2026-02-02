@@ -22,7 +22,7 @@
   <strong>Note:</strong> This demo encompasses the game's first act. More to come soon!</p>
 
 [Playable Demo](https://l1ryx.itch.io/ducks-afar) <img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=white" />
-<p><img width="640" alt="Completing Level" src="https://i.postimg.cc/SNhzVYys/Dusk-Sub.gif"></p>
+
 <p>
 </p>
 <h2 class="text-center">Credits</h2>
@@ -33,6 +33,20 @@
 <p class="text-center"><strong style="color: inherit; font-family: inherit; font-size: inherit;">Concept Art / Cutscenes</strong><span style="color: inherit; font-family: inherit; font-size: inherit;">: Carly Wang</span></p>
 <p class="text-center"><strong style="color: inherit; font-family: inherit; font-size: inherit;">Character Art / Additional Environments:</strong><span style="color: inherit; font-family: inherit; font-size: inherit;"> Carly Wang, Shawn Guo</span></p>
 <p class="text-center"><strong style="color: inherit; font-family: inherit; font-size: inherit;"></strong><strong>Music / Sound Design</strong><strong style="color: inherit; font-family: inherit; font-size: inherit;">:</strong><span style="color: inherit; font-family: inherit; font-size: inherit;">&nbsp;Shawn Guo</span></p>
+# v0.26.1.31
+- Release of completed first act! Featuring ~20-30 minutes of gameplay.
+- Added cutscene support.
+- Complete music and sound design.
+- Improved lighting in certain levels.
+
+[![Screenshot-2026-01-31-at-15-03-11.png](https://i.postimg.cc/BQqKzhjS/Screenshot-2026-01-31-at-15-03-11.png)](https://postimg.cc/kDpG6vNz)
+Auralis – Research Station
+
+[![Dusk-Sub.gif](https://i.postimg.cc/SsdyYGkV/Dusk-Sub.gif)](https://postimg.cc/k6VrkKVt)
+The New Twin Isles
+
+[![Ending.gif](https://i.postimg.cc/ZK7CMJkL/Ending.gif)](https://postimg.cc/GHDLBwmB)
+Cutscene Support
 
 # v0.26.1.18
 - Fixed graphics issues for common resolutions
