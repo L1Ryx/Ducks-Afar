@@ -33,6 +33,7 @@
 <p class="text-center"><strong style="color: inherit; font-family: inherit; font-size: inherit;">Concept Art / Cutscenes</strong><span style="color: inherit; font-family: inherit; font-size: inherit;">: Carly Wang</span></p>
 <p class="text-center"><strong style="color: inherit; font-family: inherit; font-size: inherit;">Character Art / Additional Environments:</strong><span style="color: inherit; font-family: inherit; font-size: inherit;"> Carly Wang, Shawn Guo</span></p>
 <p class="text-center"><strong style="color: inherit; font-family: inherit; font-size: inherit;"></strong><strong>Music / Sound Design</strong><strong style="color: inherit; font-family: inherit; font-size: inherit;">:</strong><span style="color: inherit; font-family: inherit; font-size: inherit;">&nbsp;Shawn Guo</span></p>
+
 # v0.26.1.31
 - Release of completed first act! Featuring ~20-30 minutes of gameplay.
 - Added cutscene support.
