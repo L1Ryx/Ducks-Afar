@@ -43,7 +43,7 @@
 [![Screenshot-2026-01-31-at-15-03-11.png](https://i.postimg.cc/BQqKzhjS/Screenshot-2026-01-31-at-15-03-11.png)](https://postimg.cc/kDpG6vNz)
 Auralis – Research Station
 
-[![Dusk-Sub.gif](https://i.postimg.cc/SsdyYGkV/Dusk-Sub.gif)](https://postimg.cc/k6VrkKVt)
+[![Screenshot-2026-01-31-at-15-02-16.png](https://i.postimg.cc/fLm88HJP/Screenshot-2026-01-31-at-15-02-16.png)](https://postimg.cc/5Y950S55)
 The New Twin Isles
 
 # v0.26.1.18
