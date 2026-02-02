@@ -20,9 +20,7 @@
 <p><img width="640" alt="Completing Level" src="https://i.postimg.cc/RZgHYJ2X/Ending.gif"></p>
 <p>
   <strong>Note:</strong> This demo encompasses the game's first act. More to come soon!</p>
-  
-[Playable Demo](https://l1ryx.itch.io/ducks-afar) <img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=white" />
-
+- [Playable Demo](https://l1ryx.itch.io/ducks-afar) <img src="https://img.shields.io/badge/itch.io-FA5C5C?logo=itchdotio&logoColor=white" />
 <p><img width="640" alt="Completing Level" src="https://i.postimg.cc/SNhzVYys/Dusk-Sub.gif"></p>
 <p>
 </p>
