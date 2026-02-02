@@ -45,9 +45,6 @@ Auralis – Research Station
 [![Dusk-Sub.gif](https://i.postimg.cc/SsdyYGkV/Dusk-Sub.gif)](https://postimg.cc/k6VrkKVt)
 The New Twin Isles
 
-[![Ending.gif](https://i.postimg.cc/ZK7CMJkL/Ending.gif)](https://postimg.cc/GHDLBwmB)
-Cutscene Support
-
 # v0.26.1.18
 - Fixed graphics issues for common resolutions
 - Minor UI tweaks
