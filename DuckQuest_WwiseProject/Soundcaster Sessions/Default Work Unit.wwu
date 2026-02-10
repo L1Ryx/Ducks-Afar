@@ -92,12 +92,28 @@
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}"/>
 							<Value>3</Value>
 						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="FP" ID="{8E553AFC-054B-4E8A-8897-2DA6A477286B}"/>
+							<Value>0</Value>
+						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
@@ -157,6 +173,88 @@
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="HALFTIME" ID="{86F7E3EF-F038-4B6C-8754-76A137DFE3A7}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_PGPL" ID="{8C5DA475-762E-4039-B47E-D2E5E9D719B7}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_HP" ID="{7C1A8871-E8E9-45EC-8C22-24703AF46C8D}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_FP" ID="{B39ECF82-0461-4E06-96FD-E47213779AA1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PGPH_1" ID="{C5C1FD39-E5AD-4FF9-B95F-8375F392BC88}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PGPH_2" ID="{ED7BD267-85A9-4F90-BC8B-098737B073B3}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PGPH_3" ID="{DDEB4AD7-8314-4576-9B01-D4515ED45E29}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PGPH_4" ID="{8D723EFE-D117-4DB3-8B49-EB7C13D03AA5}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_PGPH_5" ID="{78B5409F-3EAF-4D88-B486-FBE473CA7B7A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Piano_1" ID="{24769684-847B-4E38-828F-2A7B12634C2A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Piano_2" ID="{D3E68358-41E9-44D7-A1AC-761D4AC792EB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Piano_3" ID="{5E4F5C2E-A266-4BD7-8746-7B48ED652A13}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Piano_4" ID="{8134A10F-11DA-46D0-BBA2-9F6C563F327D}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Piano_5" ID="{52D98DAA-5B12-4C6E-AF15-59025115B1DE}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="4"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="PGPL" ID="{8203D6B4-856F-4060-B206-DBC354D4E7F0}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="FP" ID="{8E553AFC-054B-4E8A-8897-2DA6A477286B}"/>
+							<Value>0</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
 					</CurrentStateList>

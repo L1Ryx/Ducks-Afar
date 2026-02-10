@@ -457,6 +457,215 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="HALFTIME" ID="{3473BA29-C629-4BF3-90D0-D1B523B5F4B1}" ShortID="452026174">
+					<ChildrenList>
+						<Event Name="Play_FP" ID="{B39ECF82-0461-4E06-96FD-E47213779AA1}">
+							<ChildrenList>
+								<Action Name="" ID="{6906B90E-E5DF-4528-B291-68F3ED0E2B4C}" ShortID="980767764">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_FP_Playlist" ID="{5FC857D8-443C-43B7-9CD5-301FFCAD4DE2}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_HP" ID="{7C1A8871-E8E9-45EC-8C22-24703AF46C8D}">
+							<ChildrenList>
+								<Action Name="" ID="{E01E0B19-42ED-4260-BF24-3941216A417D}" ShortID="112338388">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_HP_Playlist" ID="{9DDE9C79-9652-4C36-9D73-8DFE38215DF1}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_PGPL" ID="{8C5DA475-762E-4039-B47E-D2E5E9D719B7}">
+							<ChildrenList>
+								<Action Name="" ID="{EEE4D2A8-5C8D-495C-A3CC-B46518319C15}" ShortID="346680759">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_PGPL_Playlist" ID="{463FEA26-E9E5-4D17-A56E-283FD18AC5B1}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_FP" ID="{068F4DF4-1045-4F8E-846C-C192590179C0}">
+							<ChildrenList>
+								<Action Name="" ID="{11DF2979-C59B-444C-A61B-1920987DCCCF}" ShortID="68184551">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_FP_Playlist" ID="{5FC857D8-443C-43B7-9CD5-301FFCAD4DE2}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_HP" ID="{9885D862-B120-4FFD-8DDE-6AFC6B46E5F2}">
+							<ChildrenList>
+								<Action Name="" ID="{848D9983-7B4D-4739-9E32-AD3E6DD17033}" ShortID="250111275">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_HP_Playlist" ID="{9DDE9C79-9652-4C36-9D73-8DFE38215DF1}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_PGPL" ID="{1313C183-07EB-4EAD-AAB7-F79D1F51F7D3}">
+							<ChildrenList>
+								<Action Name="" ID="{4FDF3301-3D2B-49FA-B8DF-7478CF83398F}" ShortID="806529617">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_PGPL_Playlist" ID="{463FEA26-E9E5-4D17-A56E-283FD18AC5B1}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="PGPH" ID="{F6FDF023-8A15-493A-B74A-88BAEDB10A22}" ShortID="790946805">
+							<ChildrenList>
+								<Event Name="Play_PGPH_1" ID="{C5C1FD39-E5AD-4FF9-B95F-8375F392BC88}">
+									<ChildrenList>
+										<Action Name="" ID="{FD487D3B-D9E7-4FFD-BE50-D1C286E64A46}" ShortID="869179088">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PGPH-1" ID="{B00F615B-A7FD-46D8-8F72-E324783F5C98}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_PGPH_2" ID="{ED7BD267-85A9-4F90-BC8B-098737B073B3}">
+									<ChildrenList>
+										<Action Name="" ID="{2E7D9F9E-062B-4774-9387-A9B0D21BBB22}" ShortID="666119568">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PGPH-2" ID="{F91EB12E-80B0-4BE4-A982-DC8136C93F5B}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_PGPH_3" ID="{DDEB4AD7-8314-4576-9B01-D4515ED45E29}">
+									<ChildrenList>
+										<Action Name="" ID="{B6CEB1F5-CB2D-47AE-B296-8DE6C71B6DC9}" ShortID="1027999925">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PGPH-3" ID="{C4310D6B-D01F-444C-BFD5-8BFB612C4C22}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_PGPH_4" ID="{8D723EFE-D117-4DB3-8B49-EB7C13D03AA5}">
+									<ChildrenList>
+										<Action Name="" ID="{3BC717C9-134E-4B6B-8682-2CA4429A6E78}" ShortID="333549174">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PGPH-4" ID="{40DC6520-FB82-488B-AE63-4C4CFBBA99AF}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_PGPH_5" ID="{78B5409F-3EAF-4D88-B486-FBE473CA7B7A}">
+									<ChildrenList>
+										<Action Name="" ID="{8AB8DC91-4F31-4B01-A324-DF364DC723CB}" ShortID="828767860">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PGPH-5" ID="{C4B0E731-F29B-4B94-9DEE-6133B2BED003}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Piano" ID="{0BDD0600-8388-4BFC-89D0-AEC8C70D4815}" ShortID="693440128">
+							<ChildrenList>
+								<Event Name="Play_Piano_1" ID="{24769684-847B-4E38-828F-2A7B12634C2A}">
+									<ChildrenList>
+										<Action Name="" ID="{BFA6D2CF-5202-4A03-80DA-AC68B1FC4240}" ShortID="789350092">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Piano-1" ID="{8746B532-5585-4A70-A756-23AE1EE624A1}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Piano_2" ID="{D3E68358-41E9-44D7-A1AC-761D4AC792EB}">
+									<ChildrenList>
+										<Action Name="" ID="{AC5B1266-3BBF-442D-B38C-113D1213F1A7}" ShortID="94522790">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Piano-2" ID="{29CD3B13-2904-4F75-AA5E-2EBE09AB0EAE}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Piano_3" ID="{5E4F5C2E-A266-4BD7-8746-7B48ED652A13}">
+									<ChildrenList>
+										<Action Name="" ID="{DC136550-7BAA-42FE-AA68-B55AA0708ACE}" ShortID="813916189">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Piano-3" ID="{D515BC2D-7207-4F70-881F-CC00B7414244}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Piano_4" ID="{8134A10F-11DA-46D0-BBA2-9F6C563F327D}">
+									<ChildrenList>
+										<Action Name="" ID="{165A1C0F-7D21-459D-AF2D-FB53D231B444}" ShortID="605801218">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Piano-4" ID="{F74D78AA-BB6E-4D71-B880-2C0EE1C255DF}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_Piano_5" ID="{52D98DAA-5B12-4C6E-AF15-59025115B1DE}">
+									<ChildrenList>
+										<Action Name="" ID="{EB6C60B3-098F-4CE1-9F92-802336B9F55E}" ShortID="240022146">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Piano-5" ID="{FCBA7D01-7BA4-45C4-9EEC-9CB684527946}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

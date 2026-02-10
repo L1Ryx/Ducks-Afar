@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D463620A-7EBF-D9A4-5DE9-B92590969396}",
+    "Hash": "{A70FFFB3-684F-21DE-F455-2528DD4D8F07}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -118,6 +118,36 @@
       "Name": "HW_PianoNotesCount",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
       "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
+     },
+     {
+      "Id": "1324340420",
+      "Name": "Piano",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\Piano",
+      "GUID": "{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"
+     },
+     {
+      "Id": "1769415205",
+      "Name": "HP",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\HP",
+      "GUID": "{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"
+     },
+     {
+      "Id": "1802970379",
+      "Name": "FP",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\FP",
+      "GUID": "{8E553AFC-054B-4E8A-8897-2DA6A477286B}"
+     },
+     {
+      "Id": "1911956882",
+      "Name": "PGPH",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\PGPH",
+      "GUID": "{B2B8AC03-CD79-486B-9804-C88A762AB68B}"
+     },
+     {
+      "Id": "1911956886",
+      "Name": "PGPL",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\PGPL",
+      "GUID": "{8203D6B4-856F-4060-B206-DBC354D4E7F0}"
      }
     ],
     "StateGroups": [
@@ -168,6 +198,6 @@
     ]
    }
   ],
-  "FileHash": "{6A3D44FA-8D11-FDD5-6E15-AF0E50E774AC}"
+  "FileHash": "{ABD386E4-D4E0-E44D-FC1F-7648996FBB1A}"
  }
 }

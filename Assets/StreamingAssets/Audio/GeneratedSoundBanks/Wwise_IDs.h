@@ -26,12 +26,25 @@ namespace AK
         static const AkUniqueID PLAY_CUTSCENETHEME = 3171580813U;
         static const AkUniqueID PLAY_DOORCLOSE = 2721379730U;
         static const AkUniqueID PLAY_EATING = 225053596U;
+        static const AkUniqueID PLAY_FP = 2262856512U;
         static const AkUniqueID PLAY_GLITCH = 1576299337U;
         static const AkUniqueID PLAY_HOMETHEME = 141146378U;
+        static const AkUniqueID PLAY_HP = 2497743178U;
         static const AkUniqueID PLAY_INTROTHEME = 446738903U;
         static const AkUniqueID PLAY_KEYCARDUNLOCK = 3034243397U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;
+        static const AkUniqueID PLAY_PGPH_1 = 3486572593U;
+        static const AkUniqueID PLAY_PGPH_2 = 3486572594U;
+        static const AkUniqueID PLAY_PGPH_3 = 3486572595U;
+        static const AkUniqueID PLAY_PGPH_4 = 3486572596U;
+        static const AkUniqueID PLAY_PGPH_5 = 3486572597U;
+        static const AkUniqueID PLAY_PGPL = 2070631809U;
         static const AkUniqueID PLAY_PHONETAP = 625749573U;
+        static const AkUniqueID PLAY_PIANO_1 = 327752721U;
+        static const AkUniqueID PLAY_PIANO_2 = 327752722U;
+        static const AkUniqueID PLAY_PIANO_3 = 327752723U;
+        static const AkUniqueID PLAY_PIANO_4 = 327752724U;
+        static const AkUniqueID PLAY_PIANO_5 = 327752725U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
         static const AkUniqueID PLAY_PUZZLETHEME = 3803220377U;
         static const AkUniqueID PLAY_REUNIONTHEME = 2345769801U;
@@ -44,8 +57,11 @@ namespace AK
         static const AkUniqueID PLAY_TYPEWRITERCLACK = 928013289U;
         static const AkUniqueID STOP_BEACHAMBIENCE = 1285050629U;
         static const AkUniqueID STOP_CUTSCENETHEME = 4235903127U;
+        static const AkUniqueID STOP_FP = 2658502842U;
         static const AkUniqueID STOP_HOMETHEME = 1788876160U;
+        static const AkUniqueID STOP_HP = 2423616176U;
         static const AkUniqueID STOP_INTROTHEME = 760977961U;
+        static const AkUniqueID STOP_PGPL = 3741038939U;
         static const AkUniqueID STOP_PUZZLETHEME = 1200236291U;
         static const AkUniqueID STOP_REUNIONTHEME = 353900719U;
     } // namespace EVENTS
@@ -71,7 +87,12 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID FP = 1802970379U;
+        static const AkUniqueID HP = 1769415205U;
         static const AkUniqueID HW_PIANONOTESCOUNT = 1071466500U;
+        static const AkUniqueID PGPH = 1911956882U;
+        static const AkUniqueID PGPL = 1911956886U;
+        static const AkUniqueID PIANO = 1324340420U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS

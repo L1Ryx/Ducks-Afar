@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{26F2DE8D-E5CD-6AA1-3442-750CB9AA8E27}",
+    "Hash": "{81F2BF30-7953-C708-CB21-656BBFC1D349}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -30,6 +30,14 @@
       "Location": "Memory",
       "ShortName": "Phone Tap.wav",
       "CachePath": "03/{03D451A0-198D-9092-2929-CAF8D78ABFA0}.wem"
+     },
+     {
+      "Id": "23608449",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPL-C.wav",
+      "CachePath": "EB/{EB22D2FE-091E-FDDF-FAD1-BEE3A1D3E722}.wem"
      },
      {
       "Id": "26245636",
@@ -88,6 +96,22 @@
       "CachePath": "80/{8097B04F-B6D5-25D7-9EC7-894D3671A97E}.wem"
      },
      {
+      "Id": "109822326",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPH-1.wav",
+      "CachePath": "5E/{5E445C92-2F7F-BD34-2286-4A9C79CD6066}.wem"
+     },
+     {
+      "Id": "120788902",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HP-D.wav",
+      "CachePath": "D9/{D91E7BC8-0D8B-27B1-082B-0ADFF69C18BF}.wem"
+     },
+     {
       "Id": "123039379",
       "Language": "SFX",
       "Streaming": "false",
@@ -112,6 +136,14 @@
       "CachePath": "6E/{6EF50129-3377-ED50-2C87-AB11D682FD42}.wem"
      },
      {
+      "Id": "158252601",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FP-F.wav",
+      "CachePath": "96/{963D5187-94D6-74CE-05B8-79E031274C86}.wem"
+     },
+     {
       "Id": "159984069",
       "Language": "SFX",
       "Streaming": "false",
@@ -126,6 +158,14 @@
       "Location": "Memory",
       "ShortName": "Coda-Gabble-D.wav",
       "CachePath": "59/{5903CC31-7939-62DA-4618-CC341521334C}.wem"
+     },
+     {
+      "Id": "192228721",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPH-5.wav",
+      "CachePath": "2B/{2BD75551-3312-0A94-C16A-79AB948DE180}.wem"
      },
      {
       "Id": "207193044",
@@ -160,6 +200,14 @@
       "CachePath": "12/{12CEFA5C-9108-57B1-F612-7E19E94F4B09}.wem"
      },
      {
+      "Id": "257541056",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HP-G.wav",
+      "CachePath": "B3/{B3F26C69-2B34-17C0-5923-75983557CAF2}.wem"
+     },
+     {
       "Id": "271830612",
       "Language": "SFX",
       "Streaming": "false",
@@ -176,12 +224,28 @@
       "CachePath": "B2/{B231BE4C-5DD8-A94D-64ED-7CF70168485D}.wem"
      },
      {
+      "Id": "307388510",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPH-2.wav",
+      "CachePath": "04/{0457C24F-9576-09C2-C99C-B9C2A7957248}.wem"
+     },
+     {
       "Id": "322555041",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Add-A-4.wav",
       "CachePath": "D5/{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem"
+     },
+     {
+      "Id": "329023967",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FP-D.wav",
+      "CachePath": "50/{50B40C57-BFFE-E5B2-E9EE-9F2F26D5E2B5}.wem"
      },
      {
       "Id": "331087142",
@@ -198,6 +262,14 @@
       "Location": "Memory",
       "ShortName": "Rocket Rumble.wav",
       "CachePath": "D4/{D44CBC66-1D3B-8ED4-9E0D-0C9CBF8415EA}.wem"
+     },
+     {
+      "Id": "346204873",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FP-G.wav",
+      "CachePath": "38/{38B1711B-3CAF-DCFB-72FB-A2B75259D555}.wem"
      },
      {
       "Id": "376303260",
@@ -232,6 +304,30 @@
       "CachePath": "5D/{5DA4012F-AB01-0BC8-10BD-E736C740C701}.wem"
      },
      {
+      "Id": "432686981",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPL-G.wav",
+      "CachePath": "E9/{E9757442-31F8-3E7A-5179-FBD255FA8E19}.wem"
+     },
+     {
+      "Id": "435631225",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HP-F.wav",
+      "CachePath": "CB/{CBF797FB-3FB4-71F3-36FA-01E8B22C53D5}.wem"
+     },
+     {
+      "Id": "452798589",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Piano-4.wav",
+      "CachePath": "56/{56F298BF-BDCB-A2C9-FE0D-0D853AD2070F}.wem"
+     },
+     {
       "Id": "456100030",
       "Language": "SFX",
       "Streaming": "false",
@@ -264,12 +360,28 @@
       "CachePath": "8B/{8B5F6C77-D471-195F-99D6-8534FD7B9483}.wem"
      },
      {
+      "Id": "495380295",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Piano-3.wav",
+      "CachePath": "79/{790C2D90-353B-7294-67AC-B9CE55B410F2}.wem"
+     },
+     {
       "Id": "504985255",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sub-C-5.wav",
       "CachePath": "5A/{5A36CFCA-A047-45C6-FCD8-210B895F28B7}.wem"
+     },
+     {
+      "Id": "515818579",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HP-A.wav",
+      "CachePath": "5E/{5E02DDAA-7D67-A74A-53E4-A7C5AFC97F3B}.wem"
      },
      {
       "Id": "523726839",
@@ -286,6 +398,14 @@
       "Location": "Memory",
       "ShortName": "Sub-C-4.wav",
       "CachePath": "9E/{9E22334B-F30B-0208-1EB3-B1664A51E742}.wem"
+     },
+     {
+      "Id": "526018396",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Piano-1.wav",
+      "CachePath": "E2/{E2E01379-21F3-7C81-5733-508C5DEECB59}.wem"
      },
      {
       "Id": "548699161",
@@ -310,6 +430,22 @@
       "Location": "Memory",
       "ShortName": "Single Ting.wav",
       "CachePath": "85/{85C22927-D02A-372F-C9C8-3490F59EFA10}.wem"
+     },
+     {
+      "Id": "593888354",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HP-C.wav",
+      "CachePath": "E6/{E62DE29F-1211-1320-EDA6-F0BAB5A87FB6}.wem"
+     },
+     {
+      "Id": "599410978",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPL-A.wav",
+      "CachePath": "2A/{2A09E343-CF54-052C-1D7F-0F7858FAC33B}.wem"
      },
      {
       "Id": "606799659",
@@ -392,6 +528,14 @@
       "CachePath": "29/{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem"
      },
      {
+      "Id": "724881649",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FP-A.wav",
+      "CachePath": "BF/{BF8E063E-52C3-77CA-43DE-3419B0E5DDEE}.wem"
+     },
+     {
       "Id": "730796043",
       "Language": "SFX",
       "Streaming": "false",
@@ -472,6 +616,14 @@
       "CachePath": "04/{04FA6224-CBC2-D8B7-D297-61277CFA2116}.wem"
      },
      {
+      "Id": "832048181",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPL-F.wav",
+      "CachePath": "E3/{E3E77FC0-DC5C-3BAD-71D9-34FB2807E1E5}.wem"
+     },
+     {
       "Id": "842882810",
       "Language": "SFX",
       "Streaming": "false",
@@ -494,6 +646,14 @@
       "Location": "Memory",
       "ShortName": "Chisel.wav",
       "CachePath": "BB/{BB907DCD-5635-2DD8-C5ED-1B126493BEA1}.wem"
+     },
+     {
+      "Id": "863366906",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPL-D.wav",
+      "CachePath": "BC/{BC6525D4-39B7-B943-21D4-18805E5B5CE7}.wem"
      },
      {
       "Id": "867519653",
@@ -536,6 +696,14 @@
       "CachePath": "48/{4808D398-A2D1-803F-E561-29482B58EBD8}.wem"
      },
      {
+      "Id": "922243161",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FP-C.wav",
+      "CachePath": "F0/{F0C4630F-E762-D5C8-A60A-FB292BE28AE8}.wem"
+     },
+     {
       "Id": "923534012",
       "Language": "SFX",
       "Streaming": "false",
@@ -560,12 +728,28 @@
       "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
      },
      {
+      "Id": "966170545",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPH-3.wav",
+      "CachePath": "31/{31BBF395-3DB1-00E0-5113-F4316A6D5052}.wem"
+     },
+     {
       "Id": "966557403",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Bridge-Splash.wav",
       "CachePath": "C4/{C44425A2-7B28-E0E6-0024-307E9B7D4115}.wem"
+     },
+     {
+      "Id": "981624485",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Piano-2.wav",
+      "CachePath": "44/{44F5FD31-2076-02CF-9134-58F5B47F88D2}.wem"
      },
      {
       "Id": "984551375",
@@ -584,6 +768,14 @@
       "CachePath": "1A/{1A198B2E-A1AC-869C-5468-149F8E2B2C2F}.wem"
      },
      {
+      "Id": "997018090",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Piano-5.wav",
+      "CachePath": "F3/{F3EA31DA-84B2-2D61-A80E-6C73F2BFFD55}.wem"
+     },
+     {
       "Id": "1017960476",
       "Language": "SFX",
       "Streaming": "false",
@@ -598,8 +790,134 @@
       "Location": "Memory",
       "ShortName": "Aster-Gabble-D.wav",
       "CachePath": "14/{14BF26EB-2EAD-A3F0-B248-56ED16565DEB}.wem"
+     },
+     {
+      "Id": "1046567477",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "PGPH-4.wav",
+      "CachePath": "D7/{D7D2F9C4-3B06-DC0E-347C-DF99C85239E5}.wem"
      }
     ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "419517790",
+       "Name": "Fast_LF_Tremolo (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_Piano_AM\\[Effect Slot [1]: (Tremolo)]\\Fast_LF_Tremolo (Custom)",
+       "GUID": "{8ABC7B2C-3C3E-40AC-AC4B-6AE984CCEE2D}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
+       "Id": "426145470",
+       "Name": "Chorus_Like (Custom)",
+       "ObjectPath": "\\Interactive Music Hierarchy\\Default Work Unit\\HalfTime\\MX_HP_Playlist\\[Effect Slot [2]: (Flanger)]\\Chorus_Like (Custom)",
+       "GUID": "{3ADD75CA-33A1-4D52-AD84-88743F8A8EAE}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
+       "Id": "440592676",
+       "Name": "Gain (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_PGPH_AM\\[Effect Slot [2]: (Gain)]\\Gain (Custom)",
+       "GUID": "{92E0BA62-78FD-4CA4-BBF6-9D90CF580571}",
+       "LibName": "Wwise Gain",
+       "LibId": "9109507"
+      },
+      {
+       "Id": "847926699",
+       "Name": "Low_Pass_20KHz (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_Piano_AM\\[Effect Slot [0]: (Parametric EQ)]\\Low_Pass_20KHz (Custom)",
+       "GUID": "{078240A5-ABB3-4182-BE88-F27371B684E9}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "851998551",
+       "Name": "New_Guitar_Distortion (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_Piano_AM\\[Effect Slot [2]: (Guitar Distortion)]\\New_Guitar_Distortion (Custom)",
+       "GUID": "{EDC65795-3D01-459F-B4A0-C976BC7001AD}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "544780433",
+       "Name": "New_Gain",
+       "ObjectPath": "\\Effects\\Default Work Unit\\New_Gain",
+       "GUID": "{D5C73990-73B1-4CFF-88D5-6C9B157D0D83}",
+       "LibName": "Wwise Gain",
+       "LibId": "9109507"
+      },
+      {
+       "Id": "819943492",
+       "Name": "Fear_no_Evil",
+       "ObjectPath": "\\Effects\\Factory Effects\\Harmonizer\\Fear_no_Evil",
+       "GUID": "{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}",
+       "LibName": "Wwise Harmonizer",
+       "LibId": "9043971"
+      },
+      {
+       "Id": "1198215643",
+       "Name": "Boomerang",
+       "ObjectPath": "\\Effects\\Factory Effects\\Tremolo\\Boomerang",
+       "GUID": "{65397B72-19EC-43DB-B2D2-EB84437B6BDC}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
+       "Id": "1674078407",
+       "Name": "Chorus_Like",
+       "ObjectPath": "\\Effects\\Factory Effects\\Flanger\\Chorus\\Chorus_Like",
+       "GUID": "{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}",
+       "LibName": "Wwise Flanger",
+       "LibId": "8192003"
+      },
+      {
+       "Id": "3354577677",
+       "Name": "Fast_LF_Tremolo",
+       "ObjectPath": "\\Effects\\Factory Effects\\Tremolo\\Fast_LF_Tremolo",
+       "GUID": "{3B09A271-D9D4-4A4E-B545-F681E8313E5F}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
+       "Id": "3435419520",
+       "Name": "New_Guitar_Distortion",
+       "ObjectPath": "\\Effects\\Default Work Unit\\New_Guitar_Distortion",
+       "GUID": "{7B456900-BE08-4B14-A833-61B1E64FA5AF}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "3851006675",
+       "Name": "Secret_message_Distant",
+       "ObjectPath": "\\Effects\\Factory Effects\\Harmonizer\\Secret_message_Distant",
+       "GUID": "{54C3F2D2-6B8D-4873-A383-2F6F7189C076}",
+       "LibName": "Wwise Harmonizer",
+       "LibId": "9043971"
+      },
+      {
+       "Id": "3948262040",
+       "Name": "Octave_Down",
+       "ObjectPath": "\\Effects\\Factory Effects\\Pitch Shifter\\Harmonize\\Octave_Down",
+       "GUID": "{062EC4B1-5372-4D1E-917B-C757293F2B42}",
+       "LibName": "Wwise Pitch Shifter",
+       "LibId": "8912899"
+      },
+      {
+       "Id": "4202347640",
+       "Name": "Repeat_after_me",
+       "ObjectPath": "\\Effects\\Factory Effects\\Harmonizer\\Repeat_after_me",
+       "GUID": "{7A0568D0-BE8B-4233-B3E8-200344DB7AE0}",
+       "LibName": "Wwise Harmonizer",
+       "LibId": "9043971"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "1331068477",
@@ -878,6 +1196,40 @@
       ]
      },
      {
+      "Id": "2262856512",
+      "Name": "Play_FP",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Play_FP",
+      "GUID": "{B39ECF82-0461-4E06-96FD-E47213779AA1}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "158252601"
+       },
+       {
+        "Id": "329023967"
+       },
+       {
+        "Id": "346204873"
+       },
+       {
+        "Id": "724881649"
+       },
+       {
+        "Id": "922243161"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1198215643"
+        },
+        {
+         "Id": "4202347640"
+        }
+       ]
+      }
+     },
+     {
       "Id": "1576299337",
       "Name": "Play_Glitch",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_Glitch",
@@ -916,6 +1268,45 @@
         "Id": "908157081"
        }
       ]
+     },
+     {
+      "Id": "2497743178",
+      "Name": "Play_HP",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Play_HP",
+      "GUID": "{7C1A8871-E8E9-45EC-8C22-24703AF46C8D}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "120788902"
+       },
+       {
+        "Id": "257541056"
+       },
+       {
+        "Id": "435631225"
+       },
+       {
+        "Id": "515818579"
+       },
+       {
+        "Id": "593888354"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "426145470"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "3435419520"
+        },
+        {
+         "Id": "3851006675"
+        }
+       ]
+      }
      },
      {
       "Id": "446738903",
@@ -976,6 +1367,188 @@
       ]
      },
      {
+      "Id": "3486572593",
+      "Name": "Play_PGPH_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\PGPH\\Play_PGPH_1",
+      "GUID": "{C5C1FD39-E5AD-4FF9-B95F-8375F392BC88}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "109822326"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "440592676"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "819943492"
+        },
+        {
+         "Id": "3354577677"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3486572594",
+      "Name": "Play_PGPH_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\PGPH\\Play_PGPH_2",
+      "GUID": "{ED7BD267-85A9-4F90-BC8B-098737B073B3}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "307388510"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "440592676"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "819943492"
+        },
+        {
+         "Id": "3354577677"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3486572595",
+      "Name": "Play_PGPH_3",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\PGPH\\Play_PGPH_3",
+      "GUID": "{DDEB4AD7-8314-4576-9B01-D4515ED45E29}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "966170545"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "440592676"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "819943492"
+        },
+        {
+         "Id": "3354577677"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3486572596",
+      "Name": "Play_PGPH_4",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\PGPH\\Play_PGPH_4",
+      "GUID": "{8D723EFE-D117-4DB3-8B49-EB7C13D03AA5}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "1046567477"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "440592676"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "819943492"
+        },
+        {
+         "Id": "3354577677"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3486572597",
+      "Name": "Play_PGPH_5",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\PGPH\\Play_PGPH_5",
+      "GUID": "{78B5409F-3EAF-4D88-B486-FBE473CA7B7A}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "192228721"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "440592676"
+        }
+       ],
+       "ShareSets": [
+        {
+         "Id": "819943492"
+        },
+        {
+         "Id": "3354577677"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "2070631809",
+      "Name": "Play_PGPL",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Play_PGPL",
+      "GUID": "{8C5DA475-762E-4039-B47E-D2E5E9D719B7}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "23608449"
+       },
+       {
+        "Id": "432686981"
+       },
+       {
+        "Id": "599410978"
+       },
+       {
+        "Id": "832048181"
+       },
+       {
+        "Id": "863366906"
+       }
+      ],
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "544780433"
+        },
+        {
+         "Id": "1674078407"
+        },
+        {
+         "Id": "3948262040"
+        }
+       ]
+      }
+     },
+     {
       "Id": "625749573",
       "Name": "Play_PhoneTap",
       "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_PhoneTap",
@@ -996,6 +1569,141 @@
         "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
        }
       ]
+     },
+     {
+      "Id": "327752721",
+      "Name": "Play_Piano_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Piano\\Play_Piano_1",
+      "GUID": "{24769684-847B-4E38-828F-2A7B12634C2A}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "526018396"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "419517790"
+        },
+        {
+         "Id": "847926699"
+        },
+        {
+         "Id": "851998551"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "327752722",
+      "Name": "Play_Piano_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Piano\\Play_Piano_2",
+      "GUID": "{D3E68358-41E9-44D7-A1AC-761D4AC792EB}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "981624485"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "419517790"
+        },
+        {
+         "Id": "847926699"
+        },
+        {
+         "Id": "851998551"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "327752723",
+      "Name": "Play_Piano_3",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Piano\\Play_Piano_3",
+      "GUID": "{5E4F5C2E-A266-4BD7-8746-7B48ED652A13}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "495380295"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "419517790"
+        },
+        {
+         "Id": "847926699"
+        },
+        {
+         "Id": "851998551"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "327752724",
+      "Name": "Play_Piano_4",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Piano\\Play_Piano_4",
+      "GUID": "{8134A10F-11DA-46D0-BBA2-9F6C563F327D}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "452798589"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "419517790"
+        },
+        {
+         "Id": "847926699"
+        },
+        {
+         "Id": "851998551"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "327752725",
+      "Name": "Play_Piano_5",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Piano\\Play_Piano_5",
+      "GUID": "{52D98DAA-5B12-4C6E-AF15-59025115B1DE}",
+      "DurationType": "OneShot",
+      "DurationMin": "10",
+      "DurationMax": "10",
+      "MediaRefs": [
+       {
+        "Id": "997018090"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "419517790"
+        },
+        {
+         "Id": "847926699"
+        },
+        {
+         "Id": "851998551"
+        }
+       ]
+      }
      },
      {
       "Id": "3860455926",
@@ -1287,6 +1995,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "2658502842",
+      "Name": "Stop_FP",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Stop_FP",
+      "GUID": "{068F4DF4-1045-4F8E-846C-C192590179C0}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1788876160",
       "Name": "Stop_HomeTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_HomeTheme",
@@ -1297,10 +2015,30 @@
       "DurationMax": "0"
      },
      {
+      "Id": "2423616176",
+      "Name": "Stop_HP",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Stop_HP",
+      "GUID": "{9885D862-B120-4FFD-8DDE-6AFC6B46E5F2}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "760977961",
       "Name": "Stop_IntroTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_IntroTheme",
       "GUID": "{F84F5793-C498-4D1C-92AA-C54D45F95F7C}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3741038939",
+      "Name": "Stop_PGPL",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Stop_PGPL",
+      "GUID": "{1313C183-07EB-4EAD-AAB7-F79D1F51F7D3}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -1333,6 +2071,36 @@
       "Name": "HW_PianoNotesCount",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Pickups\\HW_PianoNotesCount",
       "GUID": "{10C73AD9-28AA-4E2F-85B8-2856D5431666}"
+     },
+     {
+      "Id": "1324340420",
+      "Name": "Piano",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\Piano",
+      "GUID": "{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"
+     },
+     {
+      "Id": "1769415205",
+      "Name": "HP",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\HP",
+      "GUID": "{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"
+     },
+     {
+      "Id": "1802970379",
+      "Name": "FP",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\FP",
+      "GUID": "{8E553AFC-054B-4E8A-8897-2DA6A477286B}"
+     },
+     {
+      "Id": "1911956882",
+      "Name": "PGPH",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\PGPH",
+      "GUID": "{B2B8AC03-CD79-486B-9804-C88A762AB68B}"
+     },
+     {
+      "Id": "1911956886",
+      "Name": "PGPL",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\PGPL",
+      "GUID": "{8203D6B4-856F-4060-B206-DBC354D4E7F0}"
      }
     ],
     "StateGroups": [
@@ -1383,6 +2151,6 @@
     ]
    }
   ],
-  "FileHash": "{40FC8196-DBD0-FF70-DF75-D6E2622636C1}"
+  "FileHash": "{86ED5271-8C72-7BA8-A606-B3D6962768E5}"
  }
 }

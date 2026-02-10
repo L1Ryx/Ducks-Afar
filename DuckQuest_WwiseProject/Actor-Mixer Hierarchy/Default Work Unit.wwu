@@ -3039,6 +3039,580 @@
 						</BlendContainer>
 					</ChildrenList>
 				</ActorMixer>
+				<ActorMixer Name="HALFTIME" ID="{055DECC2-C270-4F8A-A626-A049843F2D7A}" ShortID="726865788">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="SFX_PGPH_AM" ID="{B269F331-C089-4ACC-AFED-9056A9676AB2}" ShortID="256121617">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="PGPH-1" ID="{B00F615B-A7FD-46D8-8F72-E324783F5C98}" ShortID="214321840">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PGPH-1" ID="{65211AE0-CEE9-4F77-92BC-9EC83BA87103}">
+											<Language>SFX</Language>
+											<AudioFile>PGPH-1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="109822326"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PGPH-1" ID="{65211AE0-CEE9-4F77-92BC-9EC83BA87103}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PGPH-2" ID="{F91EB12E-80B0-4BE4-A982-DC8136C93F5B}" ShortID="609192064">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PGPH-2" ID="{1506D55E-8B38-4471-BACA-17820C915EC9}">
+											<Language>SFX</Language>
+											<AudioFile>PGPH-2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="307388510"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PGPH-2" ID="{1506D55E-8B38-4471-BACA-17820C915EC9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PGPH-3" ID="{C4310D6B-D01F-444C-BFD5-8BFB612C4C22}" ShortID="237374085">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PGPH-3" ID="{0C8C75D3-7DB9-44E4-8502-38677EBE65B1}">
+											<Language>SFX</Language>
+											<AudioFile>PGPH-3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="966170545"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PGPH-3" ID="{0C8C75D3-7DB9-44E4-8502-38677EBE65B1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PGPH-4" ID="{40DC6520-FB82-488B-AE63-4C4CFBBA99AF}" ShortID="34992610">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PGPH-4" ID="{6E562C0D-8B4B-4E60-AAD1-CA75785024D4}">
+											<Language>SFX</Language>
+											<AudioFile>PGPH-4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1046567477"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PGPH-4" ID="{6E562C0D-8B4B-4E60-AAD1-CA75785024D4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PGPH-5" ID="{C4B0E731-F29B-4B94-9DEE-6133B2BED003}" ShortID="868010720">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PGPH-5" ID="{455AB0AA-814E-45C6-A35C-C74C8BE38CEB}">
+											<Language>SFX</Language>
+											<AudioFile>PGPH-5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="192228721"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PGPH-5" ID="{455AB0AA-814E-45C6-A35C-C74C8BE38CEB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{81395D88-66B2-419B-A962-441C073CE14D}" ShortID="71430676">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Harmonizer" CompanyID="0" PluginID="138" PluginType="3">
+														<ObjectRef Name="Fear_no_Evil" ID="{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{7B732B9B-0007-44DA-8515-0DC36DF25A92}" ShortID="308490585">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+														<ObjectRef Name="Fast_LF_Tremolo" ID="{3B09A271-D9D4-4A4E-B545-F681E8313E5F}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{2906F6D9-E69D-4B90-AC1C-9255A1C1EA46}" ShortID="705079028">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom>
+															<Effect Name="Gain (Custom)" ID="{92E0BA62-78FD-4CA4-BBF6-9D90CF580571}" ShortID="440592676" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+																<ObjectLists>
+																	<ObjectList Name="RTPC">
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{3D98906C-EFCD-4E30-990D-20AEBEF443EC}" ShortID="555157871">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="FullBandGain"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{B8C04CA4-B14B-48E3-B7F1-EAB19108E9C0}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="3"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>-0.36779</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>100</XPos>
+																											<YPos>8.14081</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</ActorMixer>
+						<ActorMixer Name="SFX_Piano_AM" ID="{6E0323E2-8A43-4235-9876-1A1F029C7FDF}" ShortID="333077114">
+							<PropertyList>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Piano-1" ID="{8746B532-5585-4A70-A756-23AE1EE624A1}" ShortID="58161939">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Piano-1" ID="{1A5279C1-9134-4AD9-893E-77991F96C237}">
+											<Language>SFX</Language>
+											<AudioFile>Piano-1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="526018396"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Piano-1" ID="{1A5279C1-9134-4AD9-893E-77991F96C237}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Piano-2" ID="{29CD3B13-2904-4F75-AA5E-2EBE09AB0EAE}" ShortID="416235047">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Piano-2" ID="{FFE5028F-A68C-402C-B1E7-19D0CDF6C34C}">
+											<Language>SFX</Language>
+											<AudioFile>Piano-2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="981624485"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Piano-2" ID="{FFE5028F-A68C-402C-B1E7-19D0CDF6C34C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Piano-3" ID="{D515BC2D-7207-4F70-881F-CC00B7414244}" ShortID="1005213000">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Piano-3" ID="{CF24D0C5-4170-4A05-8429-8FC52BFB4002}">
+											<Language>SFX</Language>
+											<AudioFile>Piano-3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="495380295"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Piano-3" ID="{CF24D0C5-4170-4A05-8429-8FC52BFB4002}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Piano-4" ID="{F74D78AA-BB6E-4D71-B880-2C0EE1C255DF}" ShortID="96850582">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Piano-4" ID="{2E3CC564-1D17-43E4-B38A-2A40E7E1245E}">
+											<Language>SFX</Language>
+											<AudioFile>Piano-4.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="452798589"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Piano-4" ID="{2E3CC564-1D17-43E4-B38A-2A40E7E1245E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Piano-5" ID="{FCBA7D01-7BA4-45C4-9EEC-9CB684527946}" ShortID="168042002">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Piano-5" ID="{648E1AD6-4E80-4036-B066-3F77DF0E6DDD}">
+											<Language>SFX</Language>
+											<AudioFile>Piano-5.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="997018090"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Piano-5" ID="{648E1AD6-4E80-4036-B066-3F77DF0E6DDD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{B71EBA95-FEA2-48DD-8B0B-358545E8A2F3}" ShortID="185631112">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom CreatedFrom="{830124FB-B9D5-4AE8-846E-E94A74652666}">
+															<Effect Name="Low_Pass_20KHz (Custom)" ID="{078240A5-ABB3-4182-BE88-F27371B684E9}" ShortID="847926699" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<PropertyList>
+																	<Property Name="FilterTypeBand1" Type="int32" Value="1"/>
+																	<Property Name="FilterTypeBand3" Type="int32" Value="0"/>
+																	<Property Name="FrequencyBand3" Type="Real32" Value="20000"/>
+																	<Property Name="OnOffBand1" Type="bool" Value="False"/>
+																	<Property Name="OnOffBand2" Type="bool" Value="False"/>
+																</PropertyList>
+																<ObjectLists>
+																	<ObjectList Name="RTPC">
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{CFF7C13C-CBF9-450F-88A0-3F3DFBC6EDFE}" ShortID="40215849">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="FrequencyBand3"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{271BA1C7-89C0-472E-9ACD-FEF9EA457FFE}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="5"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>12388.14074</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>100</XPos>
+																											<YPos>318.52563</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{59DD5732-2EE9-4A5D-9E24-5C33A68D2B78}" ShortID="994154928">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom CreatedFrom="{3B09A271-D9D4-4A4E-B545-F681E8313E5F}">
+															<Effect Name="Fast_LF_Tremolo (Custom)" ID="{8ABC7B2C-3C3E-40AC-AC4B-6AE984CCEE2D}" ShortID="419517790" PluginName="Wwise Tremolo" CompanyID="0" PluginID="131" PluginType="3">
+																<PropertyList>
+																	<Property Name="ModFrequency" Type="Real32" Value="440"/>
+																	<Property Name="ModPWM" Type="Real32" Value="4"/>
+																	<Property Name="ModPhaseOffset" Type="Real32" Value="87"/>
+																	<Property Name="ModPhaseSpread" Type="Real32" Value="121"/>
+																	<Property Name="ModSmoothing" Type="Real32" Value="100"/>
+																	<Property Name="ModWaveform" Type="int32" Value="3"/>
+																</PropertyList>
+																<ObjectLists>
+																	<ObjectList Name="RTPC">
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{923E277A-E2E1-49E3-9CC2-D52CAE684EC5}" ShortID="10598896">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="ModDepth"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{F1DDFF63-CFA0-4668-8363-580337113A19}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="1"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>-100</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>54.04157</XPos>
+																											<YPos>-100</YPos>
+																											<Flags>0</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>100</XPos>
+																											<YPos>100</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{EED4476B-BB59-4537-8C58-ABB2B39F9980}" ShortID="999171130">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom CreatedFrom="{7B456900-BE08-4B14-A833-61B1E64FA5AF}">
+															<Effect Name="New_Guitar_Distortion (Custom)" ID="{EDC65795-3D01-459F-B4A0-C976BC7001AD}" ShortID="851998551" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+																<PropertyList>
+																	<Property Name="DistortionDrive" Type="Real32" Value="61"/>
+																	<Property Name="DistortionTone" Type="Real32" Value="33"/>
+																	<Property Name="DistortionType" Type="int32" Value="3"/>
+																</PropertyList>
+																<ObjectLists>
+																	<ObjectList Name="RTPC">
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{929E4248-F086-45F9-B4D7-1FB796564A2E}" ShortID="194798896">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="WetDryMix"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{6EF4C391-6307-448A-B0AA-AD6390082984}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="1"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>-100</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>100</XPos>
+																											<YPos>0</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{2F18E65A-5AC1-4AF2-9755-42AE5403FF41}" ShortID="267755744">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="OutputLevel"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{4E4F10D5-96AD-4EA2-B477-3A0BB3BEED49}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="3"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>-3.84139</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>100</XPos>
+																											<YPos>-9.4287</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</ActorMixer>
+					</ChildrenList>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

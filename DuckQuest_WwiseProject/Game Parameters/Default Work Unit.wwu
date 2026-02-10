@@ -22,6 +22,30 @@
 								<Property Name="RTPCRamping" Type="int16" Value="1"/>
 							</PropertyList>
 						</GameParameter>
+						<GameParameter Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="FP" ID="{8E553AFC-054B-4E8A-8897-2DA6A477286B}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

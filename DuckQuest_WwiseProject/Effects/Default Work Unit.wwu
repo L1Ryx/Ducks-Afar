@@ -44,6 +44,87 @@
 						</ObjectList>
 					</ObjectLists>
 				</Effect>
+				<Effect Name="New_Guitar_Distortion" ID="{7B456900-BE08-4B14-A833-61B1E64FA5AF}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+					<PropertyList>
+						<Property Name="DistortionDrive" Type="Real32" Value="61"/>
+						<Property Name="DistortionTone" Type="Real32" Value="9"/>
+						<Property Name="DistortionType" Type="int32" Value="3"/>
+					</PropertyList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{4335588B-F448-4F7B-A63B-C2AFA7CB79B5}" ShortID="499003057">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="WetDryMix"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{434E6CA9-A8FC-4CB5-8E6E-920E080413B3}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="1"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-100</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{B7B2D6A1-3EB6-4CB8-9BB3-69205AFB496C}" ShortID="690418095">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="OutputLevel"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{87D6ECE6-6453-4950-8D90-3F64E7B7DB7C}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0.01144</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-11.87116</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</Effect>
 			</ChildrenList>
 		</WorkUnit>
 	</Effects>
