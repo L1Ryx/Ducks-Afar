@@ -14,6 +14,16 @@
 						</GameParameter>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Hafltime" ID="{79AF6A2F-BCC4-4C4A-AD05-EA72E342FC7C}" ShortID="331867064">
+					<ChildrenList>
+						<GameParameter Name="PGPL" ID="{8203D6B4-856F-4060-B206-DBC354D4E7F0}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+								<Property Name="RTPCRamping" Type="int16" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>

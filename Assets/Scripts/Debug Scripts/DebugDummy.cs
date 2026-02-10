@@ -38,6 +38,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/addHW5", "Try adds 5-Hardworm Pack", DebugAddHardwormFive);
         DebugLogConsole.AddCommand("/addKeycard", "Try adds Keycard", DebugAddKeycard);
         DebugLogConsole.AddCommand("/clearInven", "Clears Inventory", ClearInventory);
+        DebugLogConsole.AddCommand("/loadNextScene", "Loads the next scene", GoToNextScene);
     }
 
     void Update()

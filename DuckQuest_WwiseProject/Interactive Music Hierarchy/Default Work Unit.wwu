@@ -1505,6 +1505,619 @@
 						</MusicSegment>
 					</ChildrenList>
 				</MusicPlaylistContainer>
+				<Folder Name="HalfTime" ID="{4D4DDE82-F17A-43DD-8D03-9FA71D7B80D7}" ShortID="78196425">
+					<ChildrenList>
+						<MusicPlaylistContainer Name="MX_PGPL_Playlist" ID="{463FEA26-E9E5-4D17-A56E-283FD18AC5B1}" ShortID="430089828">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+								<Reference Name="PlaylistRoot">
+									<Custom>
+										<MusicPlaylistItem Name="" ID="{D5048512-1FC6-4E90-B280-290F16CD1CFD}" ShortID="314635614">
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{021D1307-0753-4696-A584-B52A89B002CE}" ShortID="1047446917">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="MX_PGPL_Segment" ID="{23E9C04E-45B1-4810-AFC6-53250EE50762}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
+										</MusicPlaylistItem>
+									</Custom>
+								</Reference>
+								<Reference Name="TransitionRoot">
+									<Custom>
+										<MusicTransition Name="Root" ID="{E23CF003-AECB-4092-A6D7-61D79AE386E6}">
+											<PropertyList>
+												<Property Name="IsFolder" Type="bool" Value="True"/>
+											</PropertyList>
+											<ChildrenList>
+												<MusicTransition Name="Transition" ID="{326601E1-322C-4540-9B01-F295E986E788}">
+													<TransitionInfo/>
+												</MusicTransition>
+											</ChildrenList>
+											<TransitionInfo/>
+										</MusicTransition>
+									</Custom>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicSegment Name="MX_PGPL_Segment" ID="{23E9C04E-45B1-4810-AFC6-53250EE50762}" ShortID="234650900">
+									<PropertyList>
+										<Property Name="EndPosition" Type="Real64" Value="78500"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<MusicTrack Name="PGPL-A" ID="{A0402F61-C095-4B55-AEF9-036E5F881F34}" ShortID="207219740">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{AA2B87E0-AEDB-4772-B499-1EF60A8E86B4}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PGPL-A" ID="{2368882B-EA24-43E9-9AB6-CF4793B864B3}">
+													<Language>SFX</Language>
+													<AudioFile>PGPL-A.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="599410978"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+														<CustomState Name="" ID="{71C5D275-C3BF-4FE9-95EB-6492EEA76116}" ShortID="768900766"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+														<CustomState Name="" ID="{351C51C4-D557-4DCC-8B54-C0CC9305B10C}" ShortID="621985982">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+														<CustomState Name="" ID="{56CB9CBE-3A95-432A-8F7F-3AB105328737}" ShortID="195688439">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+														<CustomState Name="" ID="{7DBD2109-3D28-4399-BA07-FAE059704BC3}" ShortID="445223709">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+														<CustomState Name="" ID="{B65E731C-734E-4A40-A3EC-665E8AB045BD}" ShortID="617166421">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{BE76C293-30AD-423A-A56D-2A88FE0396B1}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PGPL-A" ID="{409A46EC-0DDE-418F-B96A-849F51E0FD63}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="76666.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PGPL-A" ID="{2368882B-EA24-43E9-9AB6-CF4793B864B3}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PGPL-C" ID="{CA3A9903-B871-499F-B67D-1B0523798088}" ShortID="529678688">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{DEC5CB94-6A0A-447C-9311-1EAF47010A0D}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PGPL-C" ID="{A154AC46-D19C-42CF-BE3E-7CB6257FE3D8}">
+													<Language>SFX</Language>
+													<AudioFile>PGPL-C.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="23608449"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+														<CustomState Name="" ID="{B3DDCEE7-144A-448D-9A8C-E27FBAA0AD9B}" ShortID="1043528688">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+														<CustomState Name="" ID="{A634C683-065C-44B3-8C13-BB2F623BE1F7}" ShortID="1005406577">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+														<CustomState Name="" ID="{F7DFF034-30DF-42EF-906C-DBE4808E2428}" ShortID="148533553"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+														<CustomState Name="" ID="{578D6C0C-5687-43AC-BFC4-8759805EC83B}" ShortID="698869876">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+														<CustomState Name="" ID="{73408F6B-55AE-4D14-9D89-2F3E9E31EBFC}" ShortID="150006950">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{FB467CA1-3CC1-4EC4-8850-0ECC1A31C125}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PGPL-C" ID="{6E10A07D-1AC8-46A2-A137-145F798B6A2B}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="76666.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PGPL-C" ID="{A154AC46-D19C-42CF-BE3E-7CB6257FE3D8}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PGPL-D" ID="{BDCEFD90-9160-40F9-BA06-4D567CACC56C}" ShortID="122229544">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{4A0ABEF8-4B97-4C4B-B189-2F9CF6235A04}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PGPL-D" ID="{75FA905E-4D52-4AEB-9F24-62308FEA3797}">
+													<Language>SFX</Language>
+													<AudioFile>PGPL-D.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="863366906"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+														<CustomState Name="" ID="{1732E397-C9C8-4431-9B4E-0EAD10100A3A}" ShortID="1024934650">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+														<CustomState Name="" ID="{CE306194-BD2A-4320-B37A-7290AC984CAA}" ShortID="558334200">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+														<CustomState Name="" ID="{CCE32C69-295A-46F2-AE13-EBC5F034C25E}" ShortID="711900913">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+														<CustomState Name="" ID="{2E07C56F-06BD-47E9-B6B5-F95792BBB80A}" ShortID="704491132"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+														<CustomState Name="" ID="{4507C862-FC80-4B8B-A510-ABA77C52470E}" ShortID="41155498">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{316FB94E-CAB0-4B9B-972F-3487DC2B6211}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PGPL-D" ID="{3F79E24F-948D-4A29-91B0-CB3A9CA78D0C}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="76666.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PGPL-D" ID="{75FA905E-4D52-4AEB-9F24-62308FEA3797}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PGPL-F" ID="{998AF77C-94E5-48CE-B386-C714D89FD749}" ShortID="956205206">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{7DC777C4-E1AE-4A53-AB63-748D2909692A}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PGPL-F" ID="{A6A152E6-FB67-4E5A-AE93-C370E78C4EFD}">
+													<Language>SFX</Language>
+													<AudioFile>PGPL-F.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="832048181"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+														<CustomState Name="" ID="{D25F19F9-9AB3-44CB-8ECF-E5BFEB416CF5}" ShortID="800499297">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+														<CustomState Name="" ID="{27E0BF3B-457D-4CAF-B3FA-1EE2F5EC8BAD}" ShortID="582013191"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+														<CustomState Name="" ID="{30B18A6A-87A9-4462-85E9-2AEFA414CC28}" ShortID="51447850">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+														<CustomState Name="" ID="{0CA99A07-BF6E-4EF0-AB81-9F8330FEEBCD}" ShortID="905349535">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+														<CustomState Name="" ID="{B5F70C82-44C8-4883-81B8-2B5F7D1BA4CD}" ShortID="717579849">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{4D9B519F-D921-4A5A-A597-436C394E8CC8}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PGPL-F" ID="{914EBCAC-A32B-4EB0-B925-65FCF7EB5958}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="76666.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PGPL-F" ID="{A6A152E6-FB67-4E5A-AE93-C370E78C4EFD}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="PGPL-G" ID="{464B188D-0D56-4018-A804-2E23B4FC640C}" ShortID="765032091">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{4D162828-E062-4670-8054-9360779F6FC5}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PGPL-G" ID="{8044480C-93BD-4FDA-8768-C632068CA10C}">
+													<Language>SFX</Language>
+													<AudioFile>PGPL-G.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="432686981"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<StateInfo>
+												<StateGroupList>
+													<StateGroupInfo>
+														<StateGroupRef Name="PuzzleKey" ID="{1D8A6052-12EB-4267-92D1-FDF460F7D308}"/>
+													</StateGroupInfo>
+												</StateGroupList>
+												<CustomStateList>
+													<CustomState>
+														<StateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
+														<CustomState Name="" ID="{BA464F07-E9CF-4D28-99CD-56B157DC40F0}" ShortID="64301386">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="F" ID="{ACBAE493-994C-4574-86C7-ADE45CA3BF14}"/>
+														<CustomState Name="" ID="{A48CC3A9-9F1D-4BAB-8A91-603BAC1BD795}" ShortID="34150634">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="C" ID="{83171017-102C-4889-BFCE-F02B63E17E43}"/>
+														<CustomState Name="" ID="{59A5A9FC-B79B-4E30-BCAA-2FB1F90DD352}" ShortID="739370955">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="Dm" ID="{16321D5B-776F-48AD-9DD5-4816E220DBC0}"/>
+														<CustomState Name="" ID="{ECE09565-B8D4-4DED-B94E-7029E7D47B91}" ShortID="849479155">
+															<PropertyList>
+																<Property Name="Volume" Type="Real64" Value="-108"/>
+															</PropertyList>
+														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
+														<CustomState Name="" ID="{95252E25-20C7-453D-B466-BDDBFFF3DA18}" ShortID="566655708"/>
+													</CustomState>
+												</CustomStateList>
+											</StateInfo>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{A592354A-2730-4205-8425-14EF696FD4B0}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="PGPL-G" ID="{8E7091AF-2974-49AB-B90F-97E1DF18EA0A}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="76666.6666666667"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="PGPL-G" ID="{8044480C-93BD-4FDA-8768-C632068CA10C}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Cues">
+											<Reference>
+												<Local>
+													<MusicCue Name="Entry Cue" ID="{CC21C90A-1895-435F-95C3-45EABDE52470}"/>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<MusicCue Name="Exit Cue" ID="{5561708C-20B7-4446-8870-515BE5FF179B}">
+														<PropertyList>
+															<Property Name="CueType" Type="int16" Value="1"/>
+															<Property Name="TimeMs" Type="Real64" Value="66125"/>
+														</PropertyList>
+													</MusicCue>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicSegment>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{112C64C3-A6ED-4547-8BD9-4CC29E90F4C6}" ShortID="907546903">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Flanger" CompanyID="0" PluginID="125" PluginType="3">
+														<ObjectRef Name="Chorus_Like" ID="{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{840385C1-1E6C-4FE3-84EC-CB073AACF86A}" ShortID="133655107">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Pitch Shifter" CompanyID="0" PluginID="136" PluginType="3">
+														<ObjectRef Name="Octave_Down" ID="{062EC4B1-5372-4D1E-917B-C757293F2B42}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{10DED292-D7AA-4EAB-B147-63A084B1186C}" ShortID="408458820">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+														<ObjectRef Name="New_Gain" ID="{D5C73990-73B1-4CFF-88D5-6C9B157D0D83}" WorkUnitID="{1B0B209E-5233-4BF4-A63A-AE989EE1D319}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicPlaylistContainer>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>
