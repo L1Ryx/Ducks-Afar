@@ -7,6 +7,11 @@ public class PostProcessBurstHandler : MonoBehaviour
 {
     [Header("Volume Reference")]
     [SerializeField] private Volume volume;
+    [Header("Burst Cooldown")]
+    [SerializeField] private float burstCooldown = 0.3f; // seconds
+
+    private float lastBurstTime = -Mathf.Infinity;
+
 
     [Header("Burst Timing")]
     [SerializeField] private float rampUpTime = 0.05f;
@@ -54,9 +59,17 @@ public class PostProcessBurstHandler : MonoBehaviour
 
     public void Burst()
     {
-        if (burstRoutine != null) StopCoroutine(burstRoutine);
+        if (Time.unscaledTime - lastBurstTime < burstCooldown)
+            return;
+
+        lastBurstTime = Time.unscaledTime;
+
+        if (burstRoutine != null)
+            StopCoroutine(burstRoutine);
+
         burstRoutine = StartCoroutine(BurstRoutine());
     }
+
 
     public void ResetToIdle()
     {

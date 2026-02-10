@@ -30,6 +30,7 @@ namespace AK
         static const AkUniqueID PLAY_GLITCH = 1576299337U;
         static const AkUniqueID PLAY_HOMETHEME = 141146378U;
         static const AkUniqueID PLAY_HP = 2497743178U;
+        static const AkUniqueID PLAY_HTGLITCH = 160971085U;
         static const AkUniqueID PLAY_INTROTHEME = 446738903U;
         static const AkUniqueID PLAY_KEYCARDUNLOCK = 3034243397U;
         static const AkUniqueID PLAY_PETBOWLCOMPLETE = 654680740U;

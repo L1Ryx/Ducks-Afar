@@ -168,7 +168,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584317262894332510
+    m_lastTime: -8584309002876653016
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584317263645451769
+    m_lastTime: -8584309002876620437
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -215,6 +215,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: HALFTIME
+      guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      id: 775455729
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      Path: Events/Default Work Unit/HALFTIME
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: MUS
       guid: 383387e9486de54296205dd6617aaaad
       id: 712897226
@@ -229,6 +246,46 @@ MonoBehaviour:
         ObjectType: 4
         guid: 383387e9486de54296205dd6617aaaad
       Path: Events/Default Work Unit/MUS
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: PGPH
+      guid: 23f0fdf6158a3a49b74a88baedb10a22
+      id: 1911956882
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: PGPH
+        ObjectType: 4
+        guid: 23f0fdf6158a3a49b74a88baedb10a22
+      Path: Events/Default Work Unit/HALFTIME/PGPH
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Piano
+      guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      id: 1324340420
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Piano
+        ObjectType: 4
+        guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      Path: Events/Default Work Unit/HALFTIME/Piano
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -492,6 +549,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 5.3090415
       minDuration: 5.3090415
+    - name: Play_FP
+      guid: 82cf9eb36104064e96fde47213779aa1
+      id: 2262856512
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Play_FP
+        ObjectType: 3
+        guid: 82cf9eb36104064e96fde47213779aa1
+      Path: Events/Default Work Unit/HALFTIME/Play_FP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_Glitch
       guid: 3ff4b181af02d44ab3bc7f280c38be79
       id: 1576299337
@@ -532,6 +609,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Play_HP
+      guid: 71881a7ce9e8ec458c2224703af46c8d
+      id: 2497743178
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Play_HP
+        ObjectType: 3
+        guid: 71881a7ce9e8ec458c2224703af46c8d
+      Path: Events/Default Work Unit/HALFTIME/Play_HP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Play_HTGlitch
+      guid: 308015699546f6468fad88853961cf9e
+      id: 160971085
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Play_HTGlitch
+        ObjectType: 3
+        guid: 308015699546f6468fad88853961cf9e
+      Path: Events/Default Work Unit/HALFTIME/Play_HTGlitch
+      maxAttenuation: 0
+      maxDuration: 1.4866915
+      minDuration: 1.2501535
     - name: Play_IntroTheme
       guid: 900fc8981cb0094fbcd51cac993fcdd9
       id: 446738903
@@ -592,6 +709,141 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 4.324051
       minDuration: 3.8522909
+    - name: Play_PGPH_1
+      guid: 39fdc1c5ade5f94fb95f8375f392bc88
+      id: 3486572593
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: PGPH
+        ObjectType: 4
+        guid: 23f0fdf6158a3a49b74a88baedb10a22
+      - ElementName: Play_PGPH_1
+        ObjectType: 3
+        guid: 39fdc1c5ade5f94fb95f8375f392bc88
+      Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_1
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_PGPH_2
+      guid: 67d27beda985904fbc8b098737b073b3
+      id: 3486572594
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: PGPH
+        ObjectType: 4
+        guid: 23f0fdf6158a3a49b74a88baedb10a22
+      - ElementName: Play_PGPH_2
+        ObjectType: 3
+        guid: 67d27beda985904fbc8b098737b073b3
+      Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_2
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_PGPH_3
+      guid: d74aebdd148376459b01d4515ed45e29
+      id: 3486572595
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: PGPH
+        ObjectType: 4
+        guid: 23f0fdf6158a3a49b74a88baedb10a22
+      - ElementName: Play_PGPH_3
+        ObjectType: 3
+        guid: d74aebdd148376459b01d4515ed45e29
+      Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_3
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_PGPH_4
+      guid: fe3e728d17d1b34d8b49eb7c13d03aa5
+      id: 3486572596
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: PGPH
+        ObjectType: 4
+        guid: 23f0fdf6158a3a49b74a88baedb10a22
+      - ElementName: Play_PGPH_4
+        ObjectType: 3
+        guid: fe3e728d17d1b34d8b49eb7c13d03aa5
+      Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_4
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_PGPH_5
+      guid: 9f40b578af3e884db486fbe473ca7b7a
+      id: 3486572597
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: PGPH
+        ObjectType: 4
+        guid: 23f0fdf6158a3a49b74a88baedb10a22
+      - ElementName: Play_PGPH_5
+        ObjectType: 3
+        guid: 9f40b578af3e884db486fbe473ca7b7a
+      Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_5
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_PGPL
+      guid: 75a45d8c2e763940b47ed2e5e9d719b7
+      id: 2070631809
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Play_PGPL
+        ObjectType: 3
+        guid: 75a45d8c2e763940b47ed2e5e9d719b7
+      Path: Events/Default Work Unit/HALFTIME/Play_PGPL
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Play_PhoneTap
       guid: 4bf96ddf70b439439041d723a0643c33
       id: 625749573
@@ -612,6 +864,121 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.3085245
       minDuration: 0.21815975
+    - name: Play_Piano_1
+      guid: 849676247b84384e828f2a7b12634c2a
+      id: 327752721
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Piano
+        ObjectType: 4
+        guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      - ElementName: Play_Piano_1
+        ObjectType: 3
+        guid: 849676247b84384e828f2a7b12634c2a
+      Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_1
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_Piano_2
+      guid: 5883e6d3e941d744a1ac761d4ac792eb
+      id: 327752722
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Piano
+        ObjectType: 4
+        guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      - ElementName: Play_Piano_2
+        ObjectType: 3
+        guid: 5883e6d3e941d744a1ac761d4ac792eb
+      Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_2
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_Piano_3
+      guid: 2e5c4f5e66a2d74b87467b48ed652a13
+      id: 327752723
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Piano
+        ObjectType: 4
+        guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      - ElementName: Play_Piano_3
+        ObjectType: 3
+        guid: 2e5c4f5e66a2d74b87467b48ed652a13
+      Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_3
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_Piano_4
+      guid: 0fa13481da11d046bba29f6c563f327d
+      id: 327752724
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Piano
+        ObjectType: 4
+        guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      - ElementName: Play_Piano_4
+        ObjectType: 3
+        guid: 0fa13481da11d046bba29f6c563f327d
+      Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_4
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
+    - name: Play_Piano_5
+      guid: aa8dd952125b6e4caf1559025115b1de
+      id: 327752725
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Piano
+        ObjectType: 4
+        guid: 0006dd0b8883fc4b89d0aec8c70d4815
+      - ElementName: Play_Piano_5
+        ObjectType: 3
+        guid: aa8dd952125b6e4caf1559025115b1de
+      Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_5
+      maxAttenuation: 0
+      maxDuration: 10
+      minDuration: 10
     - name: Play_PickUp
       guid: 91ae4bed0daae14086f0e2512c8a990f
       id: 3860455926
@@ -852,6 +1219,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_FP
+      guid: f44d8f0645108e4f846cc192590179c0
+      id: 2658502842
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Stop_FP
+        ObjectType: 3
+        guid: f44d8f0645108e4f846cc192590179c0
+      Path: Events/Default Work Unit/HALFTIME/Stop_FP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_HomeTheme
       guid: c3d97e65e86f1749bb17d56b46bcde8e
       id: 1788876160
@@ -872,6 +1259,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
+    - name: Stop_HP
+      guid: 62d8859820b1fd4f8dde6afc6b46e5f2
+      id: 2423616176
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Stop_HP
+        ObjectType: 3
+        guid: 62d8859820b1fd4f8dde6afc6b46e5f2
+      Path: Events/Default Work Unit/HALFTIME/Stop_HP
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Stop_IntroTheme
       guid: 93574ff898c41c4d92aac54d45f95f7c
       id: 760977961
@@ -889,6 +1296,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: 93574ff898c41c4d92aac54d45f95f7c
       Path: Events/Default Work Unit/MUS/Stop_IntroTheme
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_PGPL
+      guid: 83c11313eb07ad4eaab7f79d1f51f7d3
+      id: 3741038939
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: Stop_PGPL
+        ObjectType: 3
+        guid: 83c11313eb07ad4eaab7f79d1f51f7d3
+      Path: Events/Default Work Unit/HALFTIME/Stop_PGPL
       maxAttenuation: 0
       maxDuration: 0
       minDuration: 0
@@ -978,8 +1405,56 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 401f8d77f57fc74a830de12ff87383af
     GuidInternal: 
-    m_lastTime: -8584327405771451909
+    m_lastTime: -8584309063562660933
     List:
+    - name: FP
+      guid: fc3a558e4b058a4e88972da6a477286b
+      id: 1802970379
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: FP
+        ObjectType: 13
+        guid: fc3a558e4b058a4e88972da6a477286b
+      Path: Game Parameters/Default Work Unit/Hafltime/FP
+    - name: Hafltime
+      guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      id: 1506661509
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      Path: Game Parameters/Default Work Unit/Hafltime
+    - name: HP
+      guid: bafb82d9ebfa9a489ce9178d3ec80ca3
+      id: 1769415205
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: HP
+        ObjectType: 13
+        guid: bafb82d9ebfa9a489ce9178d3ec80ca3
+      Path: Game Parameters/Default Work Unit/Hafltime/HP
     - name: HW_PianoNotesCount
       guid: d93ac710aa282f4e85b82856d5431666
       id: 1071466500
@@ -997,6 +1472,57 @@ MonoBehaviour:
         ObjectType: 13
         guid: d93ac710aa282f4e85b82856d5431666
       Path: Game Parameters/Default Work Unit/Pickups/HW_PianoNotesCount
+    - name: PGPH
+      guid: 03acb8b279cd6b489804c88a762ab68b
+      id: 1911956882
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: PGPH
+        ObjectType: 13
+        guid: 03acb8b279cd6b489804c88a762ab68b
+      Path: Game Parameters/Default Work Unit/Hafltime/PGPH
+    - name: PGPL
+      guid: b4d603826f856040b206dbc354d4e7f0
+      id: 1911956886
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: PGPL
+        ObjectType: 13
+        guid: b4d603826f856040b206dbc354d4e7f0
+      Path: Game Parameters/Default Work Unit/Hafltime/PGPL
+    - name: Piano
+      guid: b4e9c042c1cfc34086ddf9b0fbaee5dd
+      id: 1324340420
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: Piano
+        ObjectType: 13
+        guid: b4e9c042c1cfc34086ddf9b0fbaee5dd
+      Path: Game Parameters/Default Work Unit/Hafltime/Piano
     - name: Pickups
       guid: 484fa8cf3ad4814abdc3f92f4d6e783d
       id: 488853820

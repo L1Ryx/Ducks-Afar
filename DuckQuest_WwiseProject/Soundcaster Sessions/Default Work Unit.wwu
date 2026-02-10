@@ -89,7 +89,7 @@
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
 							<GameParameterRef Name="PGPL" ID="{8203D6B4-856F-4060-B206-DBC354D4E7F0}"/>
-							<Value>0</Value>
+							<Value>5</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"/>

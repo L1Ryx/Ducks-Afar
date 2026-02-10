@@ -2770,6 +2770,64 @@
 											</EffectSlot>
 										</Local>
 									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{8A142358-666A-4094-8412-C3DD1EE5C25B}" ShortID="8924757">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom>
+															<Effect Name="Gain (Custom)" ID="{62159041-0145-4503-858E-0E6D8BF5BD84}" ShortID="435600201" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+																<ObjectLists>
+																	<ObjectList Name="RTPC">
+																		<Reference>
+																			<Local>
+																				<RTPC Name="" ID="{35BDB910-D5D7-422F-A606-353E9A64AF78}" ShortID="553326415">
+																					<PropertyList>
+																						<Property Name="PropertyName" Type="string" Value="FullBandGain"/>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="ControlInput">
+																							<ObjectRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}" WorkUnitID="{778D1F40-7FF5-4AC7-830D-E12FF87383AF}"/>
+																						</Reference>
+																						<Reference Name="Curve">
+																							<Custom>
+																								<Curve Name="" ID="{6AEB2EED-93B0-4E01-8CF4-8E15F636D23F}">
+																									<PropertyList>
+																										<Property Name="Flags" Type="int32" Value="3"/>
+																									</PropertyList>
+																									<PointList>
+																										<Point>
+																											<XPos>0</XPos>
+																											<YPos>-0.03999</YPos>
+																											<Flags>5</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>10.28037</XPos>
+																											<YPos>0.03225</YPos>
+																											<Flags>0</Flags>
+																										</Point>
+																										<Point>
+																											<XPos>100</XPos>
+																											<YPos>0</YPos>
+																											<Flags>37</Flags>
+																										</Point>
+																									</PointList>
+																								</Curve>
+																							</Custom>
+																						</Reference>
+																					</ReferenceList>
+																				</RTPC>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
 								</ObjectList>
 							</ObjectLists>
 						</MusicPlaylistContainer>

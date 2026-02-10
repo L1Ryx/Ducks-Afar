@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{81F2BF30-7953-C708-CB21-656BBFC1D349}",
+    "Hash": "{313F0553-C66F-C00C-AF2D-98100432490A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -819,6 +819,14 @@
        "LibId": "8192003"
       },
       {
+       "Id": "435600201",
+       "Name": "Gain (Custom)",
+       "ObjectPath": "\\Interactive Music Hierarchy\\Default Work Unit\\HalfTime\\MX_HP_Playlist\\[Effect Slot [3]: (Gain)]\\Gain (Custom)",
+       "GUID": "{62159041-0145-4503-858E-0E6D8BF5BD84}",
+       "LibName": "Wwise Gain",
+       "LibId": "9109507"
+      },
+      {
        "Id": "440592676",
        "Name": "Gain (Custom)",
        "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_PGPH_AM\\[Effect Slot [2]: (Gain)]\\Gain (Custom)",
@@ -1227,7 +1235,16 @@
          "Id": "4202347640"
         }
        ]
-      }
+      },
+      "ActionSetState": [
+       {
+        "GroupId": "3241088250",
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
+      ]
      },
      {
       "Id": "1576299337",
@@ -1296,6 +1313,9 @@
        "Custom": [
         {
          "Id": "426145470"
+        },
+        {
+         "Id": "435600201"
         }
        ],
        "ShareSets": [
@@ -1306,7 +1326,44 @@
          "Id": "3851006675"
         }
        ]
-      }
+      },
+      "ActionSetState": [
+       {
+        "GroupId": "3241088250",
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
+      ]
+     },
+     {
+      "Id": "160971085",
+      "Name": "Play_HTGlitch",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Play_HTGlitch",
+      "GUID": "{69158030-4695-46F6-8FAD-88853961CF9E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.2501535",
+      "DurationMax": "1.4866915",
+      "MediaRefs": [
+       {
+        "Id": "881715182"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       },
+       {
+        "Id": "2806164392",
+        "Name": "ImpactDelay",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
+        "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
      },
      {
       "Id": "446738903",
@@ -1546,7 +1603,16 @@
          "Id": "3948262040"
         }
        ]
-      }
+      },
+      "ActionSetState": [
+       {
+        "GroupId": "3241088250",
+        "Id": "1886858551",
+        "Name": "Am",
+        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
+        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
+       }
+      ]
      },
      {
       "Id": "625749573",
@@ -2151,6 +2217,6 @@
     ]
    }
   ],
-  "FileHash": "{86ED5271-8C72-7BA8-A606-B3D6962768E5}"
+  "FileHash": "{5CCD5F73-DE97-66EF-1CC8-3E2C921A7D7F}"
  }
 }

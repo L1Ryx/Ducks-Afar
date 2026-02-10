@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	141146378	Play_HomeTheme			\Default Work Unit\MUS\Play_HomeTheme	
+	160971085	Play_HTGlitch			\Default Work Unit\HALFTIME\Play_HTGlitch	
 	225053596	Play_Eating			\Default Work Unit\WORLD\Play_Eating	
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
 	327752721	Play_Piano_1			\Default Work Unit\HALFTIME\Piano\Play_Piano_1	
@@ -73,6 +74,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 Effect plug-ins	ID	Name	Type				Notes
 	419517790	Fast_LF_Tremolo (Custom)	Wwise Tremolo			
 	426145470	Chorus_Like (Custom)	Wwise Flanger			
+	435600201	Gain (Custom)	Wwise Gain			
 	440592676	Gain (Custom)	Wwise Gain			
 	544780433	New_Gain	Wwise Gain			
 	819943492	Fear_no_Evil	Wwise Harmonizer			
