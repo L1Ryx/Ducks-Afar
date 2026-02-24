@@ -6,20 +6,31 @@
 				<SoundBank Name="General" ID="{0CBA4B47-3B91-4251-9C00-E080BFE424C8}">
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_PGPL" ID="{8C5DA475-762E-4039-B47E-D2E5E9D719B7}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BO_4" ID="{697CCB1E-DB1E-40BA-8F4F-DA80FC4C8338}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CL_3" ID="{85289C18-DAC6-40CE-9FF1-2C1FC54C6A1F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PickUp" ID="{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VH_4" ID="{19B2D40F-9420-414C-81C8-CFC6A1CE7F03}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SubCadenceA" ID="{FC39306B-D960-4169-94A7-51FA4DC2D5BB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VH_5" ID="{4C2E01EB-3E1F-417C-ABE9-DB20834F0EBA}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CL_2" ID="{9B834E05-B1F3-4185-AD77-C591136D5C11}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_CutsceneTheme" ID="{62E73EA1-6B55-418E-AC49-5EAFE53889ED}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AsterGabble" ID="{6076EF09-A6C0-4228-98DF-3AC49956AB30}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BO_1" ID="{E2C1AB95-F44F-422D-8893-36C4D69DBED2}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_DoorClose" ID="{38C89D1A-7265-4309-AA41-A9A15B7BD669}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CL_1" ID="{ACECFF5F-F975-4315-87AA-CF0C4D3D29B9}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BubblesGabble" ID="{5F238490-8655-4332-98F6-296A556C36F0}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PhoneTap" ID="{DF6DF94B-B470-4339-9041-D723A0643C33}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CodaGabble" ID="{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BO_2" ID="{090385DE-3124-440A-B1E6-FE7FC013E8F9}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_ReunionTheme" ID="{7358471E-4068-447A-B5A7-F3D03A26ABC6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CL_4" ID="{D9440882-77FD-4491-AB9D-26078DAE172F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RocketLaunch" ID="{E6CBCE9C-04DC-44D2-A6DC-5F976CAE4AF7}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Piano_2" ID="{D3E68358-41E9-44D7-A1AC-761D4AC792EB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BO_3" ID="{EDE999C0-B591-4529-BECC-003B1D60031E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VH_2" ID="{DC0DA6C2-0676-453C-ACFB-54CFF905E7F3}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PGPH_3" ID="{DDEB4AD7-8314-4576-9B01-D4515ED45E29}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_HP" ID="{7C1A8871-E8E9-45EC-8C22-24703AF46C8D}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -27,6 +38,8 @@
 						<ObjectRef Name="Play_HTGlitch" ID="{69158030-4695-46F6-8FAD-88853961CF9E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CutsceneTheme" ID="{D5BE17D1-D7B8-471C-B7DF-FF829E598096}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TofuGabble" ID="{D66DF366-FA5A-4816-BE2C-DFB06B746875}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_BO_5" ID="{ABF95D2A-4721-481B-8E05-A76CD433575C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CL_5" ID="{21858671-9D00-48AE-BC6B-19F966CCBB99}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_HomeTheme" ID="{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_HomeTheme" ID="{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_KeycardUnlock" ID="{643CA4ED-B61F-49A9-95A7-11FB757B94CB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -35,6 +48,7 @@
 						<ObjectRef Name="Play_AddCadenceB" ID="{5869A825-FD8D-4A5C-9197-EFE04B7D8693}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Glitch" ID="{81B1F43F-02AF-4AD4-B3BC-7F280C38BE79}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceC" ID="{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VH_1" ID="{58E5FCE4-B6AE-4AF5-B73C-6D3433D5E23C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PetBowlComplete" ID="{72BE6CB0-7372-4B2E-8A8E-8216AC3A79D6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceA" ID="{9D829611-4CB3-4B85-911E-A424FB1504B4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CraftingComplete" ID="{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -45,6 +59,7 @@
 						<ObjectRef Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_IntroTheme" ID="{F84F5793-C498-4D1C-92AA-C54D45F95F7C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PGPH_5" ID="{78B5409F-3EAF-4D88-B486-FBE473CA7B7A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_VH_3" ID="{5082162B-FCE5-4D8F-B070-E709E459D849}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PGPH_4" ID="{8D723EFE-D117-4DB3-8B49-EB7C13D03AA5}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_FP" ID="{B39ECF82-0461-4E06-96FD-E47213779AA1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Piano_1" ID="{24769684-847B-4E38-828F-2A7B12634C2A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>

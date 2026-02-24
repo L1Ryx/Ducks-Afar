@@ -81,17 +81,30 @@ State	ID	Name	State Group			Notes
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1071466500	HW_PianoNotesCount			\Default Work Unit\Pickups\HW_PianoNotesCount	
 	1324340420	Piano			\Default Work Unit\Hafltime\Piano	
+	1534528547	VH			\Default Work Unit\Hafltime\VH	
 	1769415205	HP			\Default Work Unit\Hafltime\HP	
 	1802970379	FP			\Default Work Unit\Hafltime\FP	
+	1853303384	CL			\Default Work Unit\Hafltime\CL	
+	1870080936	BO			\Default Work Unit\Hafltime\BO	
 	1911956882	PGPH			\Default Work Unit\Hafltime\PGPH	
 	1911956886	PGPL			\Default Work Unit\Hafltime\PGPL	
 
 Effect plug-ins	ID	Name	Type				Notes
+	5897579	Guitar Distortion (Custom)	Wwise Guitar Distortion			
+	183586835	Secret_message_Distant (Custom)	Wwise Harmonizer			
+	249870774	Guitar Distortion (Custom)	Wwise Guitar Distortion			
+	318730020	Guitar Distortion (Custom)	Wwise Guitar Distortion			
+	369478976	Gain (Custom)	Wwise Gain			
+	416092987	Tremolo (Custom)	Wwise Tremolo			
 	419517790	Fast_LF_Tremolo (Custom)	Wwise Tremolo			
 	426145470	Chorus_Like (Custom)	Wwise Flanger			
 	435600201	Gain (Custom)	Wwise Gain			
 	440592676	Gain (Custom)	Wwise Gain			
+	496166705	Tremolo (Custom)	Wwise Tremolo			
 	544780433	New_Gain	Wwise Gain			
+	548542518	Low_Pass_20KHz (Custom)	Wwise Parametric EQ			
+	577667461	Gain (Custom)	Wwise Gain			
+	763476907	Three_Voices (Custom)	Wwise Harmonizer			
 	819943492	Fear_no_Evil	Wwise Harmonizer			
 	847926699	Low_Pass_20KHz (Custom)	Wwise Parametric EQ			
 	851998551	New_Guitar_Distortion (Custom)	Wwise Guitar Distortion			

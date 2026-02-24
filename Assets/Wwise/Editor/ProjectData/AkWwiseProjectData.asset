@@ -168,7 +168,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584300900659591328
+    m_lastTime: -8584297022296440812
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584300900660290884
+    m_lastTime: -8584297036795239054
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -212,6 +212,46 @@ MonoBehaviour:
         ObjectType: 4
         guid: 48c35fd5762956438c1cf171a3fe1b0c
       Path: Events/Default Work Unit/AMBIENCE
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: BO
+      guid: 02f234bddcff4a45bc87672c779c00c7
+      id: 1870080936
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: BO
+        ObjectType: 4
+        guid: 02f234bddcff4a45bc87672c779c00c7
+      Path: Events/Default Work Unit/HALFTIME/BO
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: CL
+      guid: 936213ee1ddaea46b47400b753973342
+      id: 1853303384
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: CL
+        ObjectType: 4
+        guid: 936213ee1ddaea46b47400b753973342
+      Path: Events/Default Work Unit/HALFTIME/CL
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -389,6 +429,121 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_BO_1
+      guid: 95abc1e24ff42d42889336c4d69dbed2
+      id: 2162845363
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: BO
+        ObjectType: 4
+        guid: 02f234bddcff4a45bc87672c779c00c7
+      - ElementName: Play_BO_1
+        ObjectType: 3
+        guid: 95abc1e24ff42d42889336c4d69dbed2
+      Path: Events/Default Work Unit/HALFTIME/BO/Play_BO_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BO_2
+      guid: de85030924310a44b1e6fe7fc013e8f9
+      id: 2162845360
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: BO
+        ObjectType: 4
+        guid: 02f234bddcff4a45bc87672c779c00c7
+      - ElementName: Play_BO_2
+        ObjectType: 3
+        guid: de85030924310a44b1e6fe7fc013e8f9
+      Path: Events/Default Work Unit/HALFTIME/BO/Play_BO_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BO_3
+      guid: c099e9ed91b52945becc003b1d60031e
+      id: 2162845361
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: BO
+        ObjectType: 4
+        guid: 02f234bddcff4a45bc87672c779c00c7
+      - ElementName: Play_BO_3
+        ObjectType: 3
+        guid: c099e9ed91b52945becc003b1d60031e
+      Path: Events/Default Work Unit/HALFTIME/BO/Play_BO_3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BO_4
+      guid: 1ecb7c691edbba408f4fda80fc4c8338
+      id: 2162845366
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: BO
+        ObjectType: 4
+        guid: 02f234bddcff4a45bc87672c779c00c7
+      - ElementName: Play_BO_4
+        ObjectType: 3
+        guid: 1ecb7c691edbba408f4fda80fc4c8338
+      Path: Events/Default Work Unit/HALFTIME/BO/Play_BO_4
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_BO_5
+      guid: 2a5df9ab21471b488e05a76cd433575c
+      id: 2162845367
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: BO
+        ObjectType: 4
+        guid: 02f234bddcff4a45bc87672c779c00c7
+      - ElementName: Play_BO_5
+        ObjectType: 3
+        guid: 2a5df9ab21471b488e05a76cd433575c
+      Path: Events/Default Work Unit/HALFTIME/BO/Play_BO_5
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_BridgeSplash
       guid: 10102e2a64f6b944938f614402d9c632
       id: 573339928
@@ -446,6 +601,121 @@ MonoBehaviour:
         ObjectType: 3
         guid: 6bbb8fe6ca2dd64e939202dde8f83e64
       Path: Events/Default Work Unit/WORLD/Play_BushRustle
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CL_1
+      guid: 5fffecac75f9154387aacf0c4d3d29b9
+      id: 2946844355
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: CL
+        ObjectType: 4
+        guid: 936213ee1ddaea46b47400b753973342
+      - ElementName: Play_CL_1
+        ObjectType: 3
+        guid: 5fffecac75f9154387aacf0c4d3d29b9
+      Path: Events/Default Work Unit/HALFTIME/CL/Play_CL_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CL_2
+      guid: 054e839bf3b18541ad77c591136d5c11
+      id: 2946844352
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: CL
+        ObjectType: 4
+        guid: 936213ee1ddaea46b47400b753973342
+      - ElementName: Play_CL_2
+        ObjectType: 3
+        guid: 054e839bf3b18541ad77c591136d5c11
+      Path: Events/Default Work Unit/HALFTIME/CL/Play_CL_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CL_3
+      guid: 189c2885c6dace409ff12c1fc54c6a1f
+      id: 2946844353
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: CL
+        ObjectType: 4
+        guid: 936213ee1ddaea46b47400b753973342
+      - ElementName: Play_CL_3
+        ObjectType: 3
+        guid: 189c2885c6dace409ff12c1fc54c6a1f
+      Path: Events/Default Work Unit/HALFTIME/CL/Play_CL_3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CL_4
+      guid: 820844d9fd779144ab9d26078dae172f
+      id: 2946844358
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: CL
+        ObjectType: 4
+        guid: 936213ee1ddaea46b47400b753973342
+      - ElementName: Play_CL_4
+        ObjectType: 3
+        guid: 820844d9fd779144ab9d26078dae172f
+      Path: Events/Default Work Unit/HALFTIME/CL/Play_CL_4
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CL_5
+      guid: 71868521009dae48bc6b19f966ccbb99
+      id: 2946844359
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: CL
+        ObjectType: 4
+        guid: 936213ee1ddaea46b47400b753973342
+      - ElementName: Play_CL_5
+        ObjectType: 3
+        guid: 71868521009dae48bc6b19f966ccbb99
+      Path: Events/Default Work Unit/HALFTIME/CL/Play_CL_5
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1179,6 +1449,121 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_VH_1
+      guid: e4fce558aeb6f54ab73c6d3433d5e23c
+      id: 15396500
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: VH
+        ObjectType: 4
+        guid: bed550023e46e94088917b18b00d0895
+      - ElementName: Play_VH_1
+        ObjectType: 3
+        guid: e4fce558aeb6f54ab73c6d3433d5e23c
+      Path: Events/Default Work Unit/HALFTIME/VH/Play_VH_1
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_VH_2
+      guid: c2a60ddc76063c45acfb54cff905e7f3
+      id: 15396503
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: VH
+        ObjectType: 4
+        guid: bed550023e46e94088917b18b00d0895
+      - ElementName: Play_VH_2
+        ObjectType: 3
+        guid: c2a60ddc76063c45acfb54cff905e7f3
+      Path: Events/Default Work Unit/HALFTIME/VH/Play_VH_2
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_VH_3
+      guid: 2b168250e5fc8f4db070e709e459d849
+      id: 15396502
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: VH
+        ObjectType: 4
+        guid: bed550023e46e94088917b18b00d0895
+      - ElementName: Play_VH_3
+        ObjectType: 3
+        guid: 2b168250e5fc8f4db070e709e459d849
+      Path: Events/Default Work Unit/HALFTIME/VH/Play_VH_3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_VH_4
+      guid: 0fd4b21920944c4181c8cfc6a1ce7f03
+      id: 15396497
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: VH
+        ObjectType: 4
+        guid: bed550023e46e94088917b18b00d0895
+      - ElementName: Play_VH_4
+        ObjectType: 3
+        guid: 0fd4b21920944c4181c8cfc6a1ce7f03
+      Path: Events/Default Work Unit/HALFTIME/VH/Play_VH_4
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_VH_5
+      guid: eb012e4c1f3e7c41abe9db20834f0eba
+      id: 15396496
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: VH
+        ObjectType: 4
+        guid: bed550023e46e94088917b18b00d0895
+      - ElementName: Play_VH_5
+        ObjectType: 3
+        guid: eb012e4c1f3e7c41abe9db20834f0eba
+      Path: Events/Default Work Unit/HALFTIME/VH/Play_VH_5
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_BeachAmbience
       guid: c5a07c9c7587884eb40d01568c42ac25
       id: 1285050629
@@ -1376,6 +1761,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: VH
+      guid: bed550023e46e94088917b18b00d0895
+      id: 1534528547
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: HALFTIME
+        ObjectType: 4
+        guid: 29ba733429c6f34b90d0d1b523b5f4b1
+      - ElementName: VH
+        ObjectType: 4
+        guid: bed550023e46e94088917b18b00d0895
+      Path: Events/Default Work Unit/HALFTIME/VH
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: WORLD
       guid: 21a210147b9d364eab6d5cc6c4572afb
       id: 2609808943
@@ -1405,8 +1810,42 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 401f8d77f57fc74a830de12ff87383af
     GuidInternal: 
-    m_lastTime: -8584300900660289937
+    m_lastTime: -8584297039997895451
     List:
+    - name: BO
+      guid: 7066a68c3bdd3e438245e366b4e18556
+      id: 1870080936
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: BO
+        ObjectType: 13
+        guid: 7066a68c3bdd3e438245e366b4e18556
+      Path: Game Parameters/Default Work Unit/Hafltime/BO
+    - name: CL
+      guid: 8bd83ac3ab06cb4c9643ca12aec79059
+      id: 1853303384
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: CL
+        ObjectType: 13
+        guid: 8bd83ac3ab06cb4c9643ca12aec79059
+      Path: Game Parameters/Default Work Unit/Hafltime/CL
     - name: FP
       guid: fc3a558e4b058a4e88972da6a477286b
       id: 1802970379
@@ -1537,6 +1976,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: 484fa8cf3ad4814abdc3f92f4d6e783d
       Path: Game Parameters/Default Work Unit/Pickups
+    - name: VH
+      guid: aa7b4c97e37aa849b25450819672da05
+      id: 1534528547
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 401f8d77f57fc74a830de12ff87383af
+      - ElementName: Hafltime
+        ObjectType: 4
+        guid: 2f6aaf79c4bc4a4cad05ea72e342fc7c
+      - ElementName: VH
+        ObjectType: 13
+        guid: aa7b4c97e37aa849b25450819672da05
+      Path: Game Parameters/Default Work Unit/Hafltime/VH
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
     PathAndIcons:

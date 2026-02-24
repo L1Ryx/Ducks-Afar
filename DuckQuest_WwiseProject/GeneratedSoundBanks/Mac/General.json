@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{71516785-9566-7AB8-891B-EB403E182BEA}",
+    "Hash": "{76B9088C-AF62-DA8E-45F4-D45B76411CEF}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -923,6 +923,54 @@
     "Plugins": {
      "Custom": [
       {
+       "Id": "5897579",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_VL_AM\\[Effect Slot [2]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{04A7E519-338F-4265-9DA6-AB2E0FE35B47}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "183586835",
+       "Name": "Secret_message_Distant (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_BO_AM\\[Effect Slot [0]: (Harmonizer)]\\Secret_message_Distant (Custom)",
+       "GUID": "{1AE6BB4D-B334-4F2A-9DE8-383756D8D089}",
+       "LibName": "Wwise Harmonizer",
+       "LibId": "9043971"
+      },
+      {
+       "Id": "249870774",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_CL_AM\\[Effect Slot [0]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{588DD395-54C7-4F47-82E3-0A0A269233FC}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "318730020",
+       "Name": "Guitar Distortion (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_BO_AM\\[Effect Slot [1]: (Guitar Distortion)]\\Guitar Distortion (Custom)",
+       "GUID": "{61638746-F8E9-4BF6-B3FC-6FA50ED8514B}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
+      },
+      {
+       "Id": "369478976",
+       "Name": "Gain (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_CL_AM\\[Effect Slot [2]: (Gain)]\\Gain (Custom)",
+       "GUID": "{2E405A66-E69D-4266-9FB7-64ACA891EB81}",
+       "LibName": "Wwise Gain",
+       "LibId": "9109507"
+      },
+      {
+       "Id": "416092987",
+       "Name": "Tremolo (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_VL_AM\\[Effect Slot [1]: (Tremolo)]\\Tremolo (Custom)",
+       "GUID": "{963D432F-FC45-457E-9640-C22733E80708}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
        "Id": "419517790",
        "Name": "Fast_LF_Tremolo (Custom)",
        "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_Piano_AM\\[Effect Slot [1]: (Tremolo)]\\Fast_LF_Tremolo (Custom)",
@@ -953,6 +1001,38 @@
        "GUID": "{92E0BA62-78FD-4CA4-BBF6-9D90CF580571}",
        "LibName": "Wwise Gain",
        "LibId": "9109507"
+      },
+      {
+       "Id": "496166705",
+       "Name": "Tremolo (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_BO_AM\\[Effect Slot [2]: (Tremolo)]\\Tremolo (Custom)",
+       "GUID": "{88B2DE33-84D8-4571-873F-9E3649C29D36}",
+       "LibName": "Wwise Tremolo",
+       "LibId": "8585219"
+      },
+      {
+       "Id": "548542518",
+       "Name": "Low_Pass_20KHz (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_VL_AM\\[Effect Slot [0]: (Parametric EQ)]\\Low_Pass_20KHz (Custom)",
+       "GUID": "{68B1B0EB-82EF-45ED-BAE4-76202F2A3995}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "577667461",
+       "Name": "Gain (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_VL_AM\\[Effect Slot [3]: (Gain)]\\Gain (Custom)",
+       "GUID": "{0608F472-7F9A-4070-8DE4-BDAFC974AA95}",
+       "LibName": "Wwise Gain",
+       "LibId": "9109507"
+      },
+      {
+       "Id": "763476907",
+       "Name": "Three_Voices (Custom)",
+       "ObjectPath": "\\Actor-Mixer Hierarchy\\Default Work Unit\\HALFTIME\\SFX_CL_AM\\[Effect Slot [1]: (Harmonizer)]\\Three_Voices (Custom)",
+       "GUID": "{893C12B4-E48F-471D-A74D-4A6154FDA84F}",
+       "LibName": "Wwise Harmonizer",
+       "LibId": "9043971"
       },
       {
        "Id": "847926699",
@@ -1172,7 +1252,20 @@
        {
         "Id": "35872319"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "183586835"
+        },
+        {
+         "Id": "318730020"
+        },
+        {
+         "Id": "496166705"
+        }
+       ]
+      }
      },
      {
       "Id": "2162845360",
@@ -1186,7 +1279,20 @@
        {
         "Id": "702397331"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "183586835"
+        },
+        {
+         "Id": "318730020"
+        },
+        {
+         "Id": "496166705"
+        }
+       ]
+      }
      },
      {
       "Id": "2162845361",
@@ -1200,7 +1306,20 @@
        {
         "Id": "918060842"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "183586835"
+        },
+        {
+         "Id": "318730020"
+        },
+        {
+         "Id": "496166705"
+        }
+       ]
+      }
      },
      {
       "Id": "2162845366",
@@ -1214,7 +1333,20 @@
        {
         "Id": "136746658"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "183586835"
+        },
+        {
+         "Id": "318730020"
+        },
+        {
+         "Id": "496166705"
+        }
+       ]
+      }
      },
      {
       "Id": "2162845367",
@@ -1228,7 +1360,20 @@
        {
         "Id": "798051244"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "183586835"
+        },
+        {
+         "Id": "318730020"
+        },
+        {
+         "Id": "496166705"
+        }
+       ]
+      }
      },
      {
       "Id": "573339928",
@@ -1301,7 +1446,20 @@
        {
         "Id": "186947714"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "249870774"
+        },
+        {
+         "Id": "369478976"
+        },
+        {
+         "Id": "763476907"
+        }
+       ]
+      }
      },
      {
       "Id": "2946844352",
@@ -1315,7 +1473,20 @@
        {
         "Id": "917235642"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "249870774"
+        },
+        {
+         "Id": "369478976"
+        },
+        {
+         "Id": "763476907"
+        }
+       ]
+      }
      },
      {
       "Id": "2946844353",
@@ -1329,7 +1500,20 @@
        {
         "Id": "936105903"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "249870774"
+        },
+        {
+         "Id": "369478976"
+        },
+        {
+         "Id": "763476907"
+        }
+       ]
+      }
      },
      {
       "Id": "2946844358",
@@ -1343,7 +1527,20 @@
        {
         "Id": "449095755"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "249870774"
+        },
+        {
+         "Id": "369478976"
+        },
+        {
+         "Id": "763476907"
+        }
+       ]
+      }
      },
      {
       "Id": "2946844359",
@@ -1357,7 +1554,20 @@
        {
         "Id": "66967714"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "249870774"
+        },
+        {
+         "Id": "369478976"
+        },
+        {
+         "Id": "763476907"
+        }
+       ]
+      }
      },
      {
       "Id": "1194190264",
@@ -2285,7 +2495,23 @@
        {
         "Id": "148870571"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "5897579"
+        },
+        {
+         "Id": "416092987"
+        },
+        {
+         "Id": "548542518"
+        },
+        {
+         "Id": "577667461"
+        }
+       ]
+      }
      },
      {
       "Id": "15396503",
@@ -2299,7 +2525,23 @@
        {
         "Id": "199856878"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "5897579"
+        },
+        {
+         "Id": "416092987"
+        },
+        {
+         "Id": "548542518"
+        },
+        {
+         "Id": "577667461"
+        }
+       ]
+      }
      },
      {
       "Id": "15396502",
@@ -2313,7 +2555,23 @@
        {
         "Id": "242849543"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "5897579"
+        },
+        {
+         "Id": "416092987"
+        },
+        {
+         "Id": "548542518"
+        },
+        {
+         "Id": "577667461"
+        }
+       ]
+      }
      },
      {
       "Id": "15396497",
@@ -2327,7 +2585,23 @@
        {
         "Id": "290861898"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "5897579"
+        },
+        {
+         "Id": "416092987"
+        },
+        {
+         "Id": "548542518"
+        },
+        {
+         "Id": "577667461"
+        }
+       ]
+      }
      },
      {
       "Id": "15396496",
@@ -2341,7 +2615,23 @@
        {
         "Id": "963119954"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "5897579"
+        },
+        {
+         "Id": "416092987"
+        },
+        {
+         "Id": "548542518"
+        },
+        {
+         "Id": "577667461"
+        }
+       ]
+      }
      },
      {
       "Id": "1285050629",
@@ -2448,6 +2738,12 @@
       "GUID": "{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"
      },
      {
+      "Id": "1534528547",
+      "Name": "VH",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\VH",
+      "GUID": "{974C7BAA-7AE3-49A8-B254-50819672DA05}"
+     },
+     {
       "Id": "1769415205",
       "Name": "HP",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\HP",
@@ -2458,6 +2754,18 @@
       "Name": "FP",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\FP",
       "GUID": "{8E553AFC-054B-4E8A-8897-2DA6A477286B}"
+     },
+     {
+      "Id": "1853303384",
+      "Name": "CL",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\CL",
+      "GUID": "{C33AD88B-06AB-4CCB-9643-CA12AEC79059}"
+     },
+     {
+      "Id": "1870080936",
+      "Name": "BO",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\BO",
+      "GUID": "{8CA66670-DD3B-433E-8245-E366B4E18556}"
      },
      {
       "Id": "1911956882",
@@ -2520,6 +2828,6 @@
     ]
    }
   ],
-  "FileHash": "{9903E407-3631-0A4A-91EE-D0B8A3A4F1B1}"
+  "FileHash": "{570DC5A7-42D8-53B4-C582-EB74CBB4D998}"
  }
 }
