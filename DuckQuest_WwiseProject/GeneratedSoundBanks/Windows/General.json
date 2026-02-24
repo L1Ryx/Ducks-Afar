@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{313F0553-C66F-C00C-AF2D-98100432490A}",
+    "Hash": "{71516785-9566-7AB8-891B-EB403E182BEA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -56,6 +56,14 @@
       "CachePath": "13/{13B6D989-3A29-6A6A-2DE5-E99C7243FBA9}.wem"
      },
      {
+      "Id": "35872319",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BO-1.wav",
+      "CachePath": "37/{3796AE2D-64F9-EA91-24F5-DC6B625FDAE7}.wem"
+     },
+     {
       "Id": "42124371",
       "Language": "SFX",
       "Streaming": "false",
@@ -70,6 +78,14 @@
       "Location": "Memory",
       "ShortName": "Tofu-Gabble-C.wav",
       "CachePath": "F8/{F824FD36-0DB2-2DB7-37B8-7EF19EC7C96B}.wem"
+     },
+     {
+      "Id": "66967714",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CL-5.wav",
+      "CachePath": "08/{08DC90AD-09E4-5AAF-E6BA-9B08041F97DC}.wem"
      },
      {
       "Id": "81657979",
@@ -128,12 +144,28 @@
       "CachePath": "EF/{EF9BEC3D-6A54-7999-1699-4F8EFE901020}.wem"
      },
      {
+      "Id": "136746658",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BO-4.wav",
+      "CachePath": "28/{28C4335B-37EF-03AE-8408-62126E15D47E}.wem"
+     },
+     {
       "Id": "139384931",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Aster-Gabble-B.wav",
       "CachePath": "6E/{6EF50129-3377-ED50-2C87-AB11D682FD42}.wem"
+     },
+     {
+      "Id": "148870571",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VH-1.wav",
+      "CachePath": "F0/{F0FAE7B9-37A5-9486-6727-389FDE2ED66E}.wem"
      },
      {
       "Id": "158252601",
@@ -160,12 +192,28 @@
       "CachePath": "59/{5903CC31-7939-62DA-4618-CC341521334C}.wem"
      },
      {
+      "Id": "186947714",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CL-1.wav",
+      "CachePath": "44/{44A0EE0A-13BF-6E51-3EDE-A501E8803C25}.wem"
+     },
+     {
       "Id": "192228721",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "PGPH-5.wav",
       "CachePath": "2B/{2BD75551-3312-0A94-C16A-79AB948DE180}.wem"
+     },
+     {
+      "Id": "199856878",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VH-2.wav",
+      "CachePath": "56/{56D93F61-F885-9EED-2A13-FF6AABFFAEE1}.wem"
      },
      {
       "Id": "207193044",
@@ -192,6 +240,14 @@
       "CachePath": "C5/{C5495128-6260-D2E4-6DB8-608096F096AE}.wem"
      },
      {
+      "Id": "242849543",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VH-3.wav",
+      "CachePath": "64/{64DAD054-0D6D-2DAA-9FDF-B62D1B479F9E}.wem"
+     },
+     {
       "Id": "252938679",
       "Language": "SFX",
       "Streaming": "false",
@@ -214,6 +270,14 @@
       "Location": "Memory",
       "ShortName": "Tofu-Gabble-D.wav",
       "CachePath": "B3/{B3D8B8D9-0CE7-58F6-C647-D027C345CCB0}.wem"
+     },
+     {
+      "Id": "290861898",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VH-4.wav",
+      "CachePath": "7C/{7C4AB9BB-4BED-7A2F-98E9-28D75D74B3EA}.wem"
      },
      {
       "Id": "294326928",
@@ -318,6 +382,14 @@
       "Location": "Memory",
       "ShortName": "HP-F.wav",
       "CachePath": "CB/{CBF797FB-3FB4-71F3-36FA-01E8B22C53D5}.wem"
+     },
+     {
+      "Id": "449095755",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CL-4.wav",
+      "CachePath": "F3/{F383C4E1-E177-9394-5528-F67488E02BF4}.wem"
      },
      {
       "Id": "452798589",
@@ -528,6 +600,14 @@
       "CachePath": "29/{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem"
      },
      {
+      "Id": "702397331",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BO-2.wav",
+      "CachePath": "FF/{FF1C6503-8FB1-320E-73F2-59D362FB565E}.wem"
+     },
+     {
       "Id": "724881649",
       "Language": "SFX",
       "Streaming": "false",
@@ -590,6 +670,14 @@
       "Location": "Memory",
       "ShortName": "Bubbles-Gabble-A.wav",
       "CachePath": "8E/{8E28E824-F4C9-5F85-576B-1857126AADE2}.wem"
+     },
+     {
+      "Id": "798051244",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BO-5.wav",
+      "CachePath": "C7/{C72A1495-6D21-99ED-130C-D302CB2909DE}.wem"
      },
      {
       "Id": "798440518",
@@ -696,6 +784,22 @@
       "CachePath": "48/{4808D398-A2D1-803F-E561-29482B58EBD8}.wem"
      },
      {
+      "Id": "917235642",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CL-2.wav",
+      "CachePath": "ED/{EDB9E79C-FFE9-1BEF-738A-B22FDE16D36C}.wem"
+     },
+     {
+      "Id": "918060842",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "BO-3.wav",
+      "CachePath": "47/{47CD1AAB-6C06-DFB1-EB23-E8E9E3A73F16}.wem"
+     },
+     {
       "Id": "922243161",
       "Language": "SFX",
       "Streaming": "false",
@@ -720,12 +824,28 @@
       "CachePath": "1A/{1AD20E91-9A2F-2B09-B15B-794DAF0156FB}.wem"
      },
      {
+      "Id": "936105903",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CL-3.wav",
+      "CachePath": "D4/{D4297D33-2FBD-B2B8-AC55-6FE1654DCF23}.wem"
+     },
+     {
       "Id": "939932267",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Bell Hit.wav",
       "CachePath": "3A/{3A36803F-C1A7-25F3-F46F-16E6293C39B8}.wem"
+     },
+     {
+      "Id": "963119954",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "VH-5.wav",
+      "CachePath": "16/{16DA23DE-5F38-09E6-050F-78BE659C2CA3}.wem"
      },
      {
       "Id": "966170545",
@@ -1041,6 +1161,76 @@
       ]
      },
      {
+      "Id": "2162845363",
+      "Name": "Play_BO_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\BO\\Play_BO_1",
+      "GUID": "{E2C1AB95-F44F-422D-8893-36C4D69DBED2}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "35872319"
+       }
+      ]
+     },
+     {
+      "Id": "2162845360",
+      "Name": "Play_BO_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\BO\\Play_BO_2",
+      "GUID": "{090385DE-3124-440A-B1E6-FE7FC013E8F9}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "702397331"
+       }
+      ]
+     },
+     {
+      "Id": "2162845361",
+      "Name": "Play_BO_3",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\BO\\Play_BO_3",
+      "GUID": "{EDE999C0-B591-4529-BECC-003B1D60031E}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "918060842"
+       }
+      ]
+     },
+     {
+      "Id": "2162845366",
+      "Name": "Play_BO_4",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\BO\\Play_BO_4",
+      "GUID": "{697CCB1E-DB1E-40BA-8F4F-DA80FC4C8338}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "136746658"
+       }
+      ]
+     },
+     {
+      "Id": "2162845367",
+      "Name": "Play_BO_5",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\BO\\Play_BO_5",
+      "GUID": "{ABF95D2A-4721-481B-8E05-A76CD433575C}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "798051244"
+       }
+      ]
+     },
+     {
       "Id": "573339928",
       "Name": "Play_BridgeSplash",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_BridgeSplash",
@@ -1096,6 +1286,76 @@
         "Name": "ForestVerb",
         "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
         "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "2946844355",
+      "Name": "Play_CL_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\CL\\Play_CL_1",
+      "GUID": "{ACECFF5F-F975-4315-87AA-CF0C4D3D29B9}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "186947714"
+       }
+      ]
+     },
+     {
+      "Id": "2946844352",
+      "Name": "Play_CL_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\CL\\Play_CL_2",
+      "GUID": "{9B834E05-B1F3-4185-AD77-C591136D5C11}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "917235642"
+       }
+      ]
+     },
+     {
+      "Id": "2946844353",
+      "Name": "Play_CL_3",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\CL\\Play_CL_3",
+      "GUID": "{85289C18-DAC6-40CE-9FF1-2C1FC54C6A1F}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "936105903"
+       }
+      ]
+     },
+     {
+      "Id": "2946844358",
+      "Name": "Play_CL_4",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\CL\\Play_CL_4",
+      "GUID": "{D9440882-77FD-4491-AB9D-26078DAE172F}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "449095755"
+       }
+      ]
+     },
+     {
+      "Id": "2946844359",
+      "Name": "Play_CL_5",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\CL\\Play_CL_5",
+      "GUID": "{21858671-9D00-48AE-BC6B-19F966CCBB99}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "66967714"
        }
       ]
      },
@@ -1235,16 +1495,7 @@
          "Id": "4202347640"
         }
        ]
-      },
-      "ActionSetState": [
-       {
-        "GroupId": "3241088250",
-        "Id": "1886858551",
-        "Name": "Am",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
-        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
-       }
-      ]
+      }
      },
      {
       "Id": "1576299337",
@@ -1326,16 +1577,7 @@
          "Id": "3851006675"
         }
        ]
-      },
-      "ActionSetState": [
-       {
-        "GroupId": "3241088250",
-        "Id": "1886858551",
-        "Name": "Am",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
-        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
-       }
-      ]
+      }
      },
      {
       "Id": "160971085",
@@ -1603,16 +1845,7 @@
          "Id": "3948262040"
         }
        ]
-      },
-      "ActionSetState": [
-       {
-        "GroupId": "3241088250",
-        "Id": "1886858551",
-        "Name": "Am",
-        "ObjectPath": "\\States\\Default Work Unit\\PuzzleKey\\Am",
-        "GUID": "{D5571A37-1880-40E6-BE34-47F837672CA9}"
-       }
-      ]
+      }
      },
      {
       "Id": "625749573",
@@ -2041,6 +2274,76 @@
       ]
      },
      {
+      "Id": "15396500",
+      "Name": "Play_VH_1",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\VH\\Play_VH_1",
+      "GUID": "{58E5FCE4-B6AE-4AF5-B73C-6D3433D5E23C}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "148870571"
+       }
+      ]
+     },
+     {
+      "Id": "15396503",
+      "Name": "Play_VH_2",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\VH\\Play_VH_2",
+      "GUID": "{DC0DA6C2-0676-453C-ACFB-54CFF905E7F3}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "199856878"
+       }
+      ]
+     },
+     {
+      "Id": "15396502",
+      "Name": "Play_VH_3",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\VH\\Play_VH_3",
+      "GUID": "{5082162B-FCE5-4D8F-B070-E709E459D849}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "242849543"
+       }
+      ]
+     },
+     {
+      "Id": "15396497",
+      "Name": "Play_VH_4",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\VH\\Play_VH_4",
+      "GUID": "{19B2D40F-9420-414C-81C8-CFC6A1CE7F03}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "290861898"
+       }
+      ]
+     },
+     {
+      "Id": "15396496",
+      "Name": "Play_VH_5",
+      "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\VH\\Play_VH_5",
+      "GUID": "{4C2E01EB-3E1F-417C-ABE9-DB20834F0EBA}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.6666665",
+      "DurationMax": "6.6666665",
+      "MediaRefs": [
+       {
+        "Id": "963119954"
+       }
+      ]
+     },
+     {
       "Id": "1285050629",
       "Name": "Stop_BeachAmbience",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_BeachAmbience",
@@ -2217,6 +2520,6 @@
     ]
    }
   ],
-  "FileHash": "{448520AF-FBD3-4F53-9821-D701A14BBDE8}"
+  "FileHash": "{62DD1EC0-D7D9-46C0-9C7A-33A36929AFF9}"
  }
 }

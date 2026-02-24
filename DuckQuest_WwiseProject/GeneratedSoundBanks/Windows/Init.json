@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{A70FFFB3-684F-21DE-F455-2528DD4D8F07}",
+    "Hash": "{2DA056B5-6DF4-E7E8-236C-37F839BED708}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -126,6 +126,12 @@
       "GUID": "{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"
      },
      {
+      "Id": "1534528547",
+      "Name": "VH",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\VH",
+      "GUID": "{974C7BAA-7AE3-49A8-B254-50819672DA05}"
+     },
+     {
       "Id": "1769415205",
       "Name": "HP",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\HP",
@@ -136,6 +142,18 @@
       "Name": "FP",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\FP",
       "GUID": "{8E553AFC-054B-4E8A-8897-2DA6A477286B}"
+     },
+     {
+      "Id": "1853303384",
+      "Name": "CL",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\CL",
+      "GUID": "{C33AD88B-06AB-4CCB-9643-CA12AEC79059}"
+     },
+     {
+      "Id": "1870080936",
+      "Name": "BO",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\BO",
+      "GUID": "{8CA66670-DD3B-433E-8245-E366B4E18556}"
      },
      {
       "Id": "1911956882",
@@ -198,6 +216,6 @@
     ]
    }
   ],
-  "FileHash": "{ABD386E4-D4E0-E44D-FC1F-7648996FBB1A}"
+  "FileHash": "{D9E3B46B-34F5-BD9E-2D9A-0F2E2815A371}"
  }
 }
