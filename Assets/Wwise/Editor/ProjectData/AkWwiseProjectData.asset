@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics/Default Work Unit
     guid: 793fa6a395cb7e4f89754ce99c064c28
     GuidInternal: 
-    m_lastTime: -8584327405769114234
+    m_lastTime: -8584300900659583427
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584322964750020424
+    m_lastTime: -8584300900659708237
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -168,7 +168,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584309002876653016
+    m_lastTime: -8584300900659591328
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -196,7 +196,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584309002876620437
+    m_lastTime: -8584300900660290884
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -307,8 +307,8 @@ MonoBehaviour:
         guid: 1196829db34c854b911ea424fb1504b4
       Path: Events/Default Work Unit/WORLD/Play_AddCadenceA
       maxAttenuation: 0
-      maxDuration: 4
-      minDuration: 4
+      maxDuration: -1
+      minDuration: -1
     - name: Play_AddCadenceB
       guid: 25a869588dfd5c4a9197efe04b7d8693
       id: 1331068478
@@ -327,8 +327,8 @@ MonoBehaviour:
         guid: 25a869588dfd5c4a9197efe04b7d8693
       Path: Events/Default Work Unit/WORLD/Play_AddCadenceB
       maxAttenuation: 0
-      maxDuration: 4
-      minDuration: 4
+      maxDuration: -1
+      minDuration: -1
     - name: Play_AddCadenceC
       guid: 4b5b4a138fe1f04a8c938d90edb46451
       id: 1331068479
@@ -347,8 +347,8 @@ MonoBehaviour:
         guid: 4b5b4a138fe1f04a8c938d90edb46451
       Path: Events/Default Work Unit/WORLD/Play_AddCadenceC
       maxAttenuation: 0
-      maxDuration: 6
-      minDuration: 6
+      maxDuration: -1
+      minDuration: -1
     - name: Play_AsterGabble
       guid: 09ef7660c0a6284298df3ac49956ab30
       id: 2435079182
@@ -367,8 +367,8 @@ MonoBehaviour:
         guid: 09ef7660c0a6284298df3ac49956ab30
       Path: Events/Default Work Unit/WORLD/Play_AsterGabble
       maxAttenuation: 0
-      maxDuration: 1.0524322
-      minDuration: 0.9650846
+      maxDuration: -1
+      minDuration: -1
     - name: Play_BeachAmbience
       guid: d34da3ee0f31d84cbb3c16ce25ef91a1
       id: 283495111
@@ -387,8 +387,8 @@ MonoBehaviour:
         guid: d34da3ee0f31d84cbb3c16ce25ef91a1
       Path: Events/Default Work Unit/AMBIENCE/Play_BeachAmbience
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_BridgeSplash
       guid: 10102e2a64f6b944938f614402d9c632
       id: 573339928
@@ -407,8 +407,8 @@ MonoBehaviour:
         guid: 10102e2a64f6b944938f614402d9c632
       Path: Events/Default Work Unit/WORLD/Play_BridgeSplash
       maxAttenuation: 0
-      maxDuration: 3.716272
-      minDuration: 2.6278014
+      maxDuration: -1
+      minDuration: -1
     - name: Play_BubblesGabble
       guid: 9084235f5586324398f6296a556c36f0
       id: 3863193186
@@ -427,8 +427,8 @@ MonoBehaviour:
         guid: 9084235f5586324398f6296a556c36f0
       Path: Events/Default Work Unit/WORLD/Play_BubblesGabble
       maxAttenuation: 0
-      maxDuration: 2.0847144
-      minDuration: 1.22802
+      maxDuration: -1
+      minDuration: -1
     - name: Play_BushRustle
       guid: 6bbb8fe6ca2dd64e939202dde8f83e64
       id: 3224218195
@@ -447,8 +447,8 @@ MonoBehaviour:
         guid: 6bbb8fe6ca2dd64e939202dde8f83e64
       Path: Events/Default Work Unit/WORLD/Play_BushRustle
       maxAttenuation: 0
-      maxDuration: 1.0566666
-      minDuration: 1.0566666
+      maxDuration: -1
+      minDuration: -1
     - name: Play_CodaGabble
       guid: 9dc77b16ef25a3438093d24ecf1aa0bf
       id: 1194190264
@@ -467,8 +467,8 @@ MonoBehaviour:
         guid: 9dc77b16ef25a3438093d24ecf1aa0bf
       Path: Events/Default Work Unit/WORLD/Play_CodaGabble
       maxAttenuation: 0
-      maxDuration: 1.0815353
-      minDuration: 0.9512482
+      maxDuration: -1
+      minDuration: -1
     - name: Play_CraftingComplete
       guid: 0d6f326e36a9d14bb5ccc3a4ff6d5438
       id: 1504944989
@@ -487,8 +487,8 @@ MonoBehaviour:
         guid: 0d6f326e36a9d14bb5ccc3a4ff6d5438
       Path: Events/Default Work Unit/WORLD/Play_CraftingComplete
       maxAttenuation: 0
-      maxDuration: 1.3135277
-      minDuration: 0.98403394
+      maxDuration: -1
+      minDuration: -1
     - name: Play_CutsceneTheme
       guid: d117bed5b8d71c47b7dfff829e598096
       id: 3171580813
@@ -507,8 +507,8 @@ MonoBehaviour:
         guid: d117bed5b8d71c47b7dfff829e598096
       Path: Events/Default Work Unit/MUS/Play_CutsceneTheme
       maxAttenuation: 0
-      maxDuration: 37.67442
-      minDuration: 37.67442
+      maxDuration: -1
+      minDuration: -1
     - name: Play_DoorClose
       guid: 1a9dc83865720943aa41a9a15b7bd669
       id: 2721379730
@@ -527,8 +527,8 @@ MonoBehaviour:
         guid: 1a9dc83865720943aa41a9a15b7bd669
       Path: Events/Default Work Unit/WORLD/Play_DoorClose
       maxAttenuation: 0
-      maxDuration: 3.3772397
-      minDuration: 3.3772397
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Eating
       guid: d58b9e04513a924eb556c4069ea88628
       id: 225053596
@@ -547,8 +547,8 @@ MonoBehaviour:
         guid: d58b9e04513a924eb556c4069ea88628
       Path: Events/Default Work Unit/WORLD/Play_Eating
       maxAttenuation: 0
-      maxDuration: 5.3090415
-      minDuration: 5.3090415
+      maxDuration: -1
+      minDuration: -1
     - name: Play_FP
       guid: 82cf9eb36104064e96fde47213779aa1
       id: 2262856512
@@ -567,8 +567,8 @@ MonoBehaviour:
         guid: 82cf9eb36104064e96fde47213779aa1
       Path: Events/Default Work Unit/HALFTIME/Play_FP
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Glitch
       guid: 3ff4b181af02d44ab3bc7f280c38be79
       id: 1576299337
@@ -587,8 +587,8 @@ MonoBehaviour:
         guid: 3ff4b181af02d44ab3bc7f280c38be79
       Path: Events/Default Work Unit/WORLD/Play_Glitch
       maxAttenuation: 0
-      maxDuration: 1.3633021
-      minDuration: 1.3633021
+      maxDuration: -1
+      minDuration: -1
     - name: Play_HomeTheme
       guid: f9203b4ac7277b49b9d242e39f9d28d4
       id: 141146378
@@ -607,8 +607,8 @@ MonoBehaviour:
         guid: f9203b4ac7277b49b9d242e39f9d28d4
       Path: Events/Default Work Unit/MUS/Play_HomeTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_HP
       guid: 71881a7ce9e8ec458c2224703af46c8d
       id: 2497743178
@@ -627,8 +627,8 @@ MonoBehaviour:
         guid: 71881a7ce9e8ec458c2224703af46c8d
       Path: Events/Default Work Unit/HALFTIME/Play_HP
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_HTGlitch
       guid: 308015699546f6468fad88853961cf9e
       id: 160971085
@@ -647,8 +647,8 @@ MonoBehaviour:
         guid: 308015699546f6468fad88853961cf9e
       Path: Events/Default Work Unit/HALFTIME/Play_HTGlitch
       maxAttenuation: 0
-      maxDuration: 1.4866915
-      minDuration: 1.2501535
+      maxDuration: -1
+      minDuration: -1
     - name: Play_IntroTheme
       guid: 900fc8981cb0094fbcd51cac993fcdd9
       id: 446738903
@@ -667,8 +667,8 @@ MonoBehaviour:
         guid: 900fc8981cb0094fbcd51cac993fcdd9
       Path: Events/Default Work Unit/MUS/Play_IntroTheme
       maxAttenuation: 0
-      maxDuration: 12.5
-      minDuration: 12.5
+      maxDuration: -1
+      minDuration: -1
     - name: Play_KeycardUnlock
       guid: eda43c641fb6a94995a711fb757b94cb
       id: 3034243397
@@ -687,8 +687,8 @@ MonoBehaviour:
         guid: eda43c641fb6a94995a711fb757b94cb
       Path: Events/Default Work Unit/WORLD/Play_KeycardUnlock
       maxAttenuation: 0
-      maxDuration: 0.8033958
-      minDuration: 0.8033958
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PetBowlComplete
       guid: b06cbe7272732e4b8a8e8216ac3a79d6
       id: 654680740
@@ -707,8 +707,8 @@ MonoBehaviour:
         guid: b06cbe7272732e4b8a8e8216ac3a79d6
       Path: Events/Default Work Unit/WORLD/Play_PetBowlComplete
       maxAttenuation: 0
-      maxDuration: 4.324051
-      minDuration: 3.8522909
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PGPH_1
       guid: 39fdc1c5ade5f94fb95f8375f392bc88
       id: 3486572593
@@ -730,8 +730,8 @@ MonoBehaviour:
         guid: 39fdc1c5ade5f94fb95f8375f392bc88
       Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_1
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PGPH_2
       guid: 67d27beda985904fbc8b098737b073b3
       id: 3486572594
@@ -753,8 +753,8 @@ MonoBehaviour:
         guid: 67d27beda985904fbc8b098737b073b3
       Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_2
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PGPH_3
       guid: d74aebdd148376459b01d4515ed45e29
       id: 3486572595
@@ -776,8 +776,8 @@ MonoBehaviour:
         guid: d74aebdd148376459b01d4515ed45e29
       Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_3
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PGPH_4
       guid: fe3e728d17d1b34d8b49eb7c13d03aa5
       id: 3486572596
@@ -799,8 +799,8 @@ MonoBehaviour:
         guid: fe3e728d17d1b34d8b49eb7c13d03aa5
       Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_4
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PGPH_5
       guid: 9f40b578af3e884db486fbe473ca7b7a
       id: 3486572597
@@ -822,8 +822,8 @@ MonoBehaviour:
         guid: 9f40b578af3e884db486fbe473ca7b7a
       Path: Events/Default Work Unit/HALFTIME/PGPH/Play_PGPH_5
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PGPL
       guid: 75a45d8c2e763940b47ed2e5e9d719b7
       id: 2070631809
@@ -842,8 +842,8 @@ MonoBehaviour:
         guid: 75a45d8c2e763940b47ed2e5e9d719b7
       Path: Events/Default Work Unit/HALFTIME/Play_PGPL
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PhoneTap
       guid: 4bf96ddf70b439439041d723a0643c33
       id: 625749573
@@ -862,8 +862,8 @@ MonoBehaviour:
         guid: 4bf96ddf70b439439041d723a0643c33
       Path: Events/Default Work Unit/UI/Play_PhoneTap
       maxAttenuation: 0
-      maxDuration: 0.3085245
-      minDuration: 0.21815975
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Piano_1
       guid: 849676247b84384e828f2a7b12634c2a
       id: 327752721
@@ -885,8 +885,8 @@ MonoBehaviour:
         guid: 849676247b84384e828f2a7b12634c2a
       Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_1
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Piano_2
       guid: 5883e6d3e941d744a1ac761d4ac792eb
       id: 327752722
@@ -908,8 +908,8 @@ MonoBehaviour:
         guid: 5883e6d3e941d744a1ac761d4ac792eb
       Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_2
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Piano_3
       guid: 2e5c4f5e66a2d74b87467b48ed652a13
       id: 327752723
@@ -931,8 +931,8 @@ MonoBehaviour:
         guid: 2e5c4f5e66a2d74b87467b48ed652a13
       Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_3
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Piano_4
       guid: 0fa13481da11d046bba29f6c563f327d
       id: 327752724
@@ -954,8 +954,8 @@ MonoBehaviour:
         guid: 0fa13481da11d046bba29f6c563f327d
       Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_4
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Piano_5
       guid: aa8dd952125b6e4caf1559025115b1de
       id: 327752725
@@ -977,8 +977,8 @@ MonoBehaviour:
         guid: aa8dd952125b6e4caf1559025115b1de
       Path: Events/Default Work Unit/HALFTIME/Piano/Play_Piano_5
       maxAttenuation: 0
-      maxDuration: 10
-      minDuration: 10
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PickUp
       guid: 91ae4bed0daae14086f0e2512c8a990f
       id: 3860455926
@@ -997,8 +997,8 @@ MonoBehaviour:
         guid: 91ae4bed0daae14086f0e2512c8a990f
       Path: Events/Default Work Unit/WORLD/Play_PickUp
       maxAttenuation: 0
-      maxDuration: 0.06926526
-      minDuration: 0.031719707
+      maxDuration: -1
+      minDuration: -1
     - name: Play_PuzzleTheme
       guid: d0a7dac8be5ff942a21b4be3629c5804
       id: 3803220377
@@ -1017,8 +1017,8 @@ MonoBehaviour:
         guid: d0a7dac8be5ff942a21b4be3629c5804
       Path: Events/Default Work Unit/MUS/Play_PuzzleTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_ReunionTheme
       guid: 1e47587368407a44b5a7f3d03a26abc6
       id: 2345769801
@@ -1037,8 +1037,8 @@ MonoBehaviour:
         guid: 1e47587368407a44b5a7f3d03a26abc6
       Path: Events/Default Work Unit/MUS/Play_ReunionTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_RockBreak
       guid: a2898c247fedf145adcbf628cbfc4f0f
       id: 1119824134
@@ -1057,8 +1057,8 @@ MonoBehaviour:
         guid: a2898c247fedf145adcbf628cbfc4f0f
       Path: Events/Default Work Unit/WORLD/Play_RockBreak
       maxAttenuation: 0
-      maxDuration: 0.5860888
-      minDuration: 0.43907046
+      maxDuration: -1
+      minDuration: -1
     - name: Play_RocketLaunch
       guid: 9ccecbe6dc04d244a6dc5f976cae4af7
       id: 2095930195
@@ -1077,8 +1077,8 @@ MonoBehaviour:
         guid: 9ccecbe6dc04d244a6dc5f976cae4af7
       Path: Events/Default Work Unit/WORLD/Play_RocketLaunch
       maxAttenuation: 0
-      maxDuration: 5.558856
-      minDuration: 4.6183662
+      maxDuration: -1
+      minDuration: -1
     - name: Play_SingleTing
       guid: 5fe987844dc25f4cae4f8e90ba90baec
       id: 3963294118
@@ -1097,8 +1097,8 @@ MonoBehaviour:
         guid: 5fe987844dc25f4cae4f8e90ba90baec
       Path: Events/Default Work Unit/WORLD/Play_SingleTing
       maxAttenuation: 0
-      maxDuration: 1.5708547
-      minDuration: 1.1768113
+      maxDuration: -1
+      minDuration: -1
     - name: Play_SubCadenceA
       guid: 6b3039fc60d9694194a751fa4dc2d5bb
       id: 1545776886
@@ -1117,8 +1117,8 @@ MonoBehaviour:
         guid: 6b3039fc60d9694194a751fa4dc2d5bb
       Path: Events/Default Work Unit/WORLD/Play_SubCadenceA
       maxAttenuation: 0
-      maxDuration: 4
-      minDuration: 4
+      maxDuration: -1
+      minDuration: -1
     - name: Play_SubCadenceC
       guid: 4a8b8f8451f2e24182302e95e54a5b2c
       id: 1545776884
@@ -1137,8 +1137,8 @@ MonoBehaviour:
         guid: 4a8b8f8451f2e24182302e95e54a5b2c
       Path: Events/Default Work Unit/WORLD/Play_SubCadenceC
       maxAttenuation: 0
-      maxDuration: 6
-      minDuration: 6
+      maxDuration: -1
+      minDuration: -1
     - name: Play_TofuGabble
       guid: 66f36dd65afa1648be2cdfb06b746875
       id: 1339931719
@@ -1157,8 +1157,8 @@ MonoBehaviour:
         guid: 66f36dd65afa1648be2cdfb06b746875
       Path: Events/Default Work Unit/WORLD/Play_TofuGabble
       maxAttenuation: 0
-      maxDuration: 1.5726672
-      minDuration: 1.2433076
+      maxDuration: -1
+      minDuration: -1
     - name: Play_TypewriterClack
       guid: 527adedbbc4a4f4cac48294ddbdaae1a
       id: 928013289
@@ -1177,8 +1177,8 @@ MonoBehaviour:
         guid: 527adedbbc4a4f4cac48294ddbdaae1a
       Path: Events/Default Work Unit/UI/Play_TypewriterClack
       maxAttenuation: 0
-      maxDuration: 2.109036
-      minDuration: 1.2503299
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_BeachAmbience
       guid: c5a07c9c7587884eb40d01568c42ac25
       id: 1285050629
@@ -1197,8 +1197,8 @@ MonoBehaviour:
         guid: c5a07c9c7587884eb40d01568c42ac25
       Path: Events/Default Work Unit/AMBIENCE/Stop_BeachAmbience
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_CutsceneTheme
       guid: a13ee762556b8e41ac495eafe53889ed
       id: 4235903127
@@ -1217,8 +1217,8 @@ MonoBehaviour:
         guid: a13ee762556b8e41ac495eafe53889ed
       Path: Events/Default Work Unit/MUS/Stop_CutsceneTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_FP
       guid: f44d8f0645108e4f846cc192590179c0
       id: 2658502842
@@ -1237,8 +1237,8 @@ MonoBehaviour:
         guid: f44d8f0645108e4f846cc192590179c0
       Path: Events/Default Work Unit/HALFTIME/Stop_FP
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_HomeTheme
       guid: c3d97e65e86f1749bb17d56b46bcde8e
       id: 1788876160
@@ -1257,8 +1257,8 @@ MonoBehaviour:
         guid: c3d97e65e86f1749bb17d56b46bcde8e
       Path: Events/Default Work Unit/MUS/Stop_HomeTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_HP
       guid: 62d8859820b1fd4f8dde6afc6b46e5f2
       id: 2423616176
@@ -1277,8 +1277,8 @@ MonoBehaviour:
         guid: 62d8859820b1fd4f8dde6afc6b46e5f2
       Path: Events/Default Work Unit/HALFTIME/Stop_HP
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_IntroTheme
       guid: 93574ff898c41c4d92aac54d45f95f7c
       id: 760977961
@@ -1297,8 +1297,8 @@ MonoBehaviour:
         guid: 93574ff898c41c4d92aac54d45f95f7c
       Path: Events/Default Work Unit/MUS/Stop_IntroTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_PGPL
       guid: 83c11313eb07ad4eaab7f79d1f51f7d3
       id: 3741038939
@@ -1317,8 +1317,8 @@ MonoBehaviour:
         guid: 83c11313eb07ad4eaab7f79d1f51f7d3
       Path: Events/Default Work Unit/HALFTIME/Stop_PGPL
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_PuzzleTheme
       guid: f7656bd86bec364a984c39d617f44b50
       id: 1200236291
@@ -1337,8 +1337,8 @@ MonoBehaviour:
         guid: f7656bd86bec364a984c39d617f44b50
       Path: Events/Default Work Unit/MUS/Stop_PuzzleTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_ReunionTheme
       guid: 5e9c1b99147e2d4a89ad315234bac114
       id: 353900719
@@ -1357,8 +1357,8 @@ MonoBehaviour:
         guid: 5e9c1b99147e2d4a89ad315234bac114
       Path: Events/Default Work Unit/MUS/Stop_ReunionTheme
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: UI
       guid: d080ff677bd29c40abb3609187abda0e
       id: 1551306167
@@ -1405,7 +1405,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 401f8d77f57fc74a830de12ff87383af
     GuidInternal: 
-    m_lastTime: -8584309063562660933
+    m_lastTime: -8584300900660289937
     List:
     - name: FP
       guid: fc3a558e4b058a4e88972da6a477286b
@@ -1549,7 +1549,7 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: bad72d4387ac5a40b0a02b15affd5b55
     GuidInternal: 
-    m_lastTime: -8584318902992741458
+    m_lastTime: -8584300900659586415
     List:
     - name: PuzzleKey
       guid: 52608a1deb12674292d1fdf460f7d308
@@ -1677,7 +1677,7 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: e062435d3e25db4eadb60c37bc20abd6
     GuidInternal: 
-    m_lastTime: -8584327405769116377
+    m_lastTime: -8584300900659585409
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
@@ -1691,7 +1691,7 @@ MonoBehaviour:
     ParentPath: Triggers/Default Work Unit
     guid: 845353c10a65e044a9245ae71cd4a4c3
     GuidInternal: 
-    m_lastTime: -8584327405769115330
+    m_lastTime: -8584300900659584462
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0500000006000000090000000a0000000b000000
