@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5caede7629a154416be215313b48309a, type: 3}
-  m_Name: Item DB
+  m_Script: {fileID: 11500000, guid: cf769a5f9f8d14817abb248c634a86eb, type: 3}
+  m_Name: Empty Beat Sequence
   m_EditorClassIdentifier: 
-  items: []
+  levelId: 01
+  description: 
+  beats:
+  - {fileID: 11400000, guid: a2d3ea27f539c49618a2d71d62cdda15, type: 2}
