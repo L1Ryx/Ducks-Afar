@@ -24,6 +24,9 @@ public class SaveDebugCommands : MonoBehaviour
         DebugLogConsole.AddCommand<float>("/save_set_time", "Set playtime in seconds", SaveSetTime);
 
         DebugLogConsole.AddCommand("/save_reset", "Reset runtime save state", SaveResetCurrent);
+        
+        DebugLogConsole.AddCommand<int>("/save_fill", "Fill slot with test data", SaveFill);
+        DebugLogConsole.AddCommand("/save_open", "Open save directory", SaveOpenFolder);
     }
     
     private static void SavePath()
@@ -108,5 +111,25 @@ public class SaveDebugCommands : MonoBehaviour
     {
         Game.Ctx.SaveState.ResetForNewGame(string.Empty);
         Debug.Log("Reset SaveState to defaults");
+    }
+    
+    private static void SaveFill(int slot)
+    {
+        var ctx = Game.Ctx;
+
+        ctx.SaveState.CurrentLocation = $"TestZone_{slot}";
+        ctx.SaveState.CurrentCompanionId = $"Companion_{slot}";
+        ctx.SaveState.SetPlayTime(UnityEngine.Random.Range(10f, 500f));
+
+        ctx.Saves.SaveToSlot(slot);
+
+        Debug.Log($"Filled slot {slot} with test data");
+    }
+    
+    private static void SaveOpenFolder()
+    {
+        string path = Game.Ctx.Saves.SaveDirectoryPath;
+        Debug.Log($"Opening: {path}");
+        Application.OpenURL("file://" + path);
     }
 }
