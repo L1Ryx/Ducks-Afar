@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8155248415876772178}
   - component: {fileID: 2101593572837570565}
   - component: {fileID: 6383166171400444401}
+  - component: {fileID: 3227962403541141608}
   m_Layer: 0
   m_Name: Debug Dummy
   m_TagString: Untagged
@@ -91,6 +92,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  encounter: {fileID: 0}
+  singleTingAc: {fileID: 0}
   nextScene: Demo Reset
 --- !u!114 &2101593572837570565
 MonoBehaviour:
@@ -148,3 +151,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3227962403541141608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8020812968386469259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e63ffe6dbeeb34d5e8330de956cccce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

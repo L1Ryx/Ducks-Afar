@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using IngameDebugConsole;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -39,6 +40,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/addKeycard", "Try adds Keycard", DebugAddKeycard);
         DebugLogConsole.AddCommand("/clearInven", "Clears Inventory", ClearInventory);
         DebugLogConsole.AddCommand("/loadNextScene", "Loads the next scene", GoToNextScene);
+        DebugLogConsole.AddCommand("/printPersistencePath", "Prints ES3 Persistence Folder path", PrintPersistencePath);
     }
 
     void Update()
@@ -52,6 +54,11 @@ public class DebugDummy : MonoBehaviour
             Application.Quit();
 #endif
         }
+    }
+
+    public void PrintPersistencePath()
+    {
+        Debug.Log(Application.persistentDataPath);
     }
 
     public void DebugAddHardwormOne()

@@ -1,18 +1,19 @@
 using UnityEngine;
 
-public class GameContext : MonoBehaviour // // 👈 PERSISTENT/INITIALIZED ONCE
+public class GameContext : MonoBehaviour 
 {
     [Header("State References")]
     public PlayerData PlayerData { get; private set; }
 
-    public AudioStateModel Audio { get; private set; } // 👈 AUDIO MODEL IS HERE
+    public AudioStateModel Audio { get; private set; } 
     
     public InventoryModel Inventory { get; private set; }
     public InventorySelectionModel InventorySelection { get; private set; }
     public LevelStateModel LevelState { get; private set; }
     public InteractionLockModel InteractionLock { get; private set; }
     public ItemDatabase ItemDb => itemDatabase;
-    
+    public SaveStateModel SaveState { get; private set; }
+    public SaveSystem Saves { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
     public DialogueRunner Dialogue { get; private set; }
     
@@ -35,6 +36,11 @@ public class GameContext : MonoBehaviour // // 👈 PERSISTENT/INITIALIZED ONCE
 
         Game.SetContext(this);
     }
+    
+    private void Update()
+    {
+        SaveState.AddPlayTime(Time.deltaTime);
+    }
 
     private void InitializeRuntimeState()
     {
@@ -44,6 +50,9 @@ public class GameContext : MonoBehaviour // // 👈 PERSISTENT/INITIALIZED ONCE
         LevelState = new LevelStateModel();
         InteractionLock = new InteractionLockModel();
         Audio = new AudioStateModel();
+        SaveState = new SaveStateModel();
+        Saves = new SaveSystem(this);
+        
         Audio.Initialize(gameObject); // Global emitter is on game context!
 
         HardwormPickupSfx = GetComponentInChildren<HardwormPickupSfx>();
