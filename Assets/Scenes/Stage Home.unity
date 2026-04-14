@@ -8466,6 +8466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2022665427509816685, guid: ea28107d66f534abdaa8a9341c9eed67, type: 3}
+      propertyPath: locationName
+      value: solaris_0
+      objectReference: {fileID: 0}
     - target: {fileID: 4721259599623696515, guid: ea28107d66f534abdaa8a9341c9eed67, type: 3}
       propertyPath: m_Name
       value: SaveParent

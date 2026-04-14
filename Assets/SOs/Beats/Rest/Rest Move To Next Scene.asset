@@ -17,5 +17,6 @@ MonoBehaviour:
     features are implemented.
   onEnterEvents:
   - {fileID: 11400000, guid: 4c6e8b15d9c9b4e8695c6d3d85c2477a, type: 2}
+  - {fileID: 11400000, guid: d00f903ba999e4c0eacbda39b3731e7e, type: 2}
   - {fileID: 11400000, guid: 44fdf2340bc1f4bedb26fc4423cc7092, type: 2}
   advanceEvent: {fileID: 0}
