@@ -53,6 +53,9 @@ public class TitleCardSequencer : MonoBehaviour
 
     [Tooltip("If true, disables the panel GameObject at the end.")]
     [SerializeField] private bool disableOnFinish = true;
+
+    [SerializeField] private bool canOnlyBeStartedOnce = true;
+    private bool hasStarted = false;
     
     [Header("Typing Randomness")]
     [Tooltip("0 = perfectly uniform typing. 0.25 = +/-25% jitter per character.")]
@@ -106,6 +109,12 @@ public class TitleCardSequencer : MonoBehaviour
     /// </summary>
     public void StartSequence()
     {
+        if (canOnlyBeStartedOnce && hasStarted)
+        {
+            return;
+        }
+
+        hasStarted = true;
         CacheLinesAndTexts();
 
         if (_sequenceCo != null)
