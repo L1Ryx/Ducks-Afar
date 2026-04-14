@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c98e98-0d8d-433f-aa32-fc00b148d415" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/SaveStateModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/SaveStateModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/SaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Beats/001/Move To Next Scene.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Beats/001/Move To Next Scene.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +110,7 @@
       <workItem from="1774821518031" duration="2539000" />
       <workItem from="1774967564144" duration="609000" />
       <workItem from="1776051752696" duration="2517000" />
-      <workItem from="1776127192503" duration="309000" />
+      <workItem from="1776127192503" duration="947000" />
     </task>
     <servers />
   </component>
