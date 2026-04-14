@@ -328,7 +328,7 @@ MonoBehaviour:
   floatDistance: 0.3
   floatDuration: 1.2
   floatEase: 4
-  scaleAmount: 0.1
+  scaleAmount: 0
   scaleDuration: 1.9
   scaleEase: 4
   randomizeDelay: 1

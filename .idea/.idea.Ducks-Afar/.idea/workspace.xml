@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3c98e98-0d8d-433f-aa32-fc00b148d415" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Click Tutorial Parent.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Click Tutorial Parent.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Curtains Canvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Curtains Canvas.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/WorldUIRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/WorldUIRoot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Beats/001/End Puzzle (OLD).asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Beats/001/End Puzzle (OLD).asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SOs/Beats/001/Move To Next Scene.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Beats/001/Move To Next Scene.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Dusk.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Dusk.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Home.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Home.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Night.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Night.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Rest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Rest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +38,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c6fcfbd931e348ecb5b0d76a4ac091c61df200/0a/7bab7a29/MonoBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -110,7 +121,7 @@
       <workItem from="1774821518031" duration="2539000" />
       <workItem from="1774967564144" duration="609000" />
       <workItem from="1776051752696" duration="2517000" />
-      <workItem from="1776127192503" duration="947000" />
+      <workItem from="1776127192503" duration="3663000" />
     </task>
     <servers />
   </component>

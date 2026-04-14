@@ -34,6 +34,8 @@ public class TitleCardSequencer : MonoBehaviour
     [Header("Timing")]
     [Tooltip("Seconds to wait after a line finishes typing before starting the next line.")]
     [Min(0f)][SerializeField] private float delayAfterLine = 0.35f;
+    [Tooltip("Seconds to wait before the first line starts typing.")]
+    [Min(0f)][SerializeField] private float delayBeforeFirstLine = 0f;
 
     [Tooltip("Characters per second.")]
     [Min(0.1f)][SerializeField] private float typeSpeedCps = 35f;
@@ -182,6 +184,10 @@ public class TitleCardSequencer : MonoBehaviour
 
         if (canvasGroup != null)
             canvasGroup.alpha = 1f;
+        
+        // delay before first line
+        if (delayBeforeFirstLine > 0f)
+            yield return StartCoroutine(WaitRoutine(delayBeforeFirstLine));
 
         // Type each line sequentially
         for (int i = 0; i < lines.Count; i++)
