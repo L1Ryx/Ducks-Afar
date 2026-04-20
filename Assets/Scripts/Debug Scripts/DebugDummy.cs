@@ -54,6 +54,11 @@ public class DebugDummy : MonoBehaviour
             Application.Quit();
 #endif
         }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            ReloadSameScene();
+        }
     }
 
     public void PrintPersistencePath()
