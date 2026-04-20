@@ -21,6 +21,17 @@ public sealed class SaveSystem
     {
         return slotIndex >= 0 && slotIndex < SlotCount;
     }
+    
+    public void SaveToActiveSlot()
+    {
+        if (!ctx.SaveState.HasActiveSlot)
+        {
+            Debug.LogWarning("SaveToActiveSlot failed: no active slot is currently bound.");
+            return;
+        }
+
+        SaveToSlot(ctx.SaveState.ActiveSlotIndex);
+    }
 
     public string GetSlotPath(int slotIndex)
     {
@@ -114,6 +125,7 @@ public sealed class SaveSystem
         }
 
         ApplyDataToRuntimeState(data);
+        ctx.SaveState.BindToSlot(slotIndex);
 
         Debug.Log(
             $"Loaded slot {slotIndex} | " +
@@ -122,6 +134,22 @@ public sealed class SaveSystem
             $"companion={data.companionId}");
 
         return true;
+    }
+    
+    public void StartNewGameInSlot(int slotIndex, string startLocation)
+    {
+        if (!IsValidSlotIndex(slotIndex))
+        {
+            Debug.LogError($"StartNewGameInSlot failed: invalid slot index {slotIndex}");
+            return;
+        }
+
+        ctx.SaveState.ResetForNewGame(startLocation);
+        ctx.SaveState.BindToSlot(slotIndex);
+
+        SaveToSlot(slotIndex);
+
+        Debug.Log($"Started new game in slot {slotIndex} at location {startLocation}");
     }
 
     public void DeleteSlot(int slotIndex)

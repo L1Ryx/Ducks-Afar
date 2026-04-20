@@ -27,6 +27,40 @@ public class SaveDebugCommands : MonoBehaviour
         
         DebugLogConsole.AddCommand<int>("/save_fill", "Fill slot with test data", SaveFill);
         DebugLogConsole.AddCommand("/save_open", "Open save directory", SaveOpenFolder);
+        
+        DebugLogConsole.AddCommand("/save_active", "Prints the currently active save slot", SaveActive);
+        DebugLogConsole.AddCommand("/save_write_active", "Save to the active slot", SaveWriteActive);
+        DebugLogConsole.AddCommand<int>("/save_bind", "Bind current session to slot index", SaveBind);
+    }
+    
+    private static void SaveActive()
+    {
+        var s = Game.Ctx.SaveState;
+
+        if (!s.HasActiveSlot)
+        {
+            Debug.Log("No active save slot is currently bound.");
+            return;
+        }
+
+        Debug.Log($"Active save slot: {s.ActiveSlotIndex}");
+    }
+    
+    private static void SaveWriteActive()
+    {
+        Game.Ctx.Saves.SaveToActiveSlot();
+    }
+    
+    private static void SaveBind(int slotIndex)
+    {
+        if (!Game.Ctx.Saves.IsValidSlotIndex(slotIndex))
+        {
+            Debug.LogWarning($"Invalid slot index: {slotIndex}");
+            return;
+        }
+
+        Game.Ctx.SaveState.BindToSlot(slotIndex);
+        Debug.Log($"Bound current session to slot {slotIndex}");
     }
     
     private static void SavePath()
