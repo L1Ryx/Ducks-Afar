@@ -4075,7 +4075,7 @@
 								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-16</Value>
+										<Value>-19</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -4252,7 +4252,7 @@
 																										</Point>
 																										<Point>
 																											<XPos>100</XPos>
-																											<YPos>-0</YPos>
+																											<YPos>0</YPos>
 																											<Flags>37</Flags>
 																										</Point>
 																									</PointList>
@@ -4360,7 +4360,7 @@
 																									<PointList>
 																										<Point>
 																											<XPos>0</XPos>
-																											<YPos>-0</YPos>
+																											<YPos>0</YPos>
 																											<Flags>5</Flags>
 																										</Point>
 																										<Point>
@@ -4370,7 +4370,7 @@
 																										</Point>
 																										<Point>
 																											<XPos>100</XPos>
-																											<YPos>3</YPos>
+																											<YPos>-1.70248</YPos>
 																											<Flags>37</Flags>
 																										</Point>
 																									</PointList>
@@ -4751,7 +4751,7 @@
 																									<PointList>
 																										<Point>
 																											<XPos>0</XPos>
-																											<YPos>-0</YPos>
+																											<YPos>0</YPos>
 																											<Flags>5</Flags>
 																										</Point>
 																										<Point>
