@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3c98e98-0d8d-433f-aa32-fc00b148d415" name="Changes" comment="">
+    <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Default/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Default/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/TitleCardSequencer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/TitleCardSequencer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debug Scripts/DebugDummy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debug Scripts/DebugDummy.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,26 +16,23 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;L1Ryx&quot;
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "L1Ryx"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/L1Ryx/Ducks-Afar.git&quot;,
-    &quot;accountId&quot;: &quot;5cafedb1-1d2a-46b0-9aa7-82e83edfc342&quot;
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/L1Ryx/Ducks-Afar.git",
+    "accountId": "5cafedb1-1d2a-46b0-9aa7-82e83edfc342"
   }
-}</component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/CheckpointSaver.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Persistence Scripts/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="3AEXrKzCkUeqGl5gTFcYOqBTbqg" />
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3DxJVp86wXanroFD3VNiSxpwQzT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,7 +41,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "laptop/X-halftime-soloist",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -53,7 +49,7 @@
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.0.39f1/Unity.app/Contents/MacOS/Unity" />
@@ -101,19 +97,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b3c98e98-0d8d-433f-aa32-fc00b148d415" name="Changes" comment="" />
-      <created>1772158901579</created>
+      <changelist id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="" />
+      <created>1779217814301</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1772158901579</updated>
-      <workItem from="1772158902464" duration="1450000" />
-      <workItem from="1774295609103" duration="12000" />
-      <workItem from="1774295625415" duration="641000" />
-      <workItem from="1774821510010" duration="4000" />
-      <workItem from="1774821518031" duration="2539000" />
-      <workItem from="1774967564144" duration="609000" />
-      <workItem from="1776051752696" duration="2517000" />
-      <workItem from="1776197924263" duration="724000" />
+      <updated>1779217814301</updated>
+      <workItem from="1779217816162" duration="3026000" />
     </task>
     <servers />
   </component>
@@ -127,7 +116,4 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
 </project>

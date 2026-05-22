@@ -16,6 +16,9 @@ public class DebugDummy : MonoBehaviour
     [SerializeField] private DialogueEncounter encounter;
     [SerializeField] private AudioCue singleTingAc;
     
+    [Header("Settings")]
+    [SerializeField] private bool allowRToRestart = false;
+    
 
     [Header("Settings")] [SerializeField] private string nextScene = "Demo Reset";
 
@@ -55,9 +58,18 @@ public class DebugDummy : MonoBehaviour
 #endif
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && allowRToRestart)
         {
             ReloadSameScene();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SetFullscreen(true);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            SetFullscreen(false);
         }
     }
 
@@ -106,6 +118,18 @@ public class DebugDummy : MonoBehaviour
     {
         Game.Ctx.Inventory.TryAdd("012", 1);
         Game.Ctx.Audio.PlayCueGlobal(singleTingAc);
+    }
+    
+    public void SetFullscreen(bool fullscreen)
+    {
+        if (fullscreen)
+        {
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+        }
+        else
+        {
+            Screen.fullScreenMode = FullScreenMode.Windowed;
+        }
     }
 
     public void DoSceneResets()
