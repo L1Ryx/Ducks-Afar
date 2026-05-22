@@ -40,6 +40,9 @@ public sealed class PauseInputController : MonoBehaviour
 
     public void TogglePause()
     {
+        if (SettingsMenuPanel.TryBackActivePanel())
+            return;
+
         if (!Game.IsReady || Game.Ctx?.Pause == null)
             return;
 

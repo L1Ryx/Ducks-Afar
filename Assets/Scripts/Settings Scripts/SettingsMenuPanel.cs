@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public sealed class SettingsMenuPanel : MonoBehaviour
 {
+    private static SettingsMenuPanel activePanel;
+
     [Header("Panel")]
     [SerializeField] private CanvasGroup root;
     [SerializeField] private bool hideOnAwake = true;
@@ -24,6 +26,16 @@ public sealed class SettingsMenuPanel : MonoBehaviour
     [SerializeField] private UnityEvent onBack;
 
     private bool suppressCallbacks;
+    private bool isVisible;
+
+    public static bool TryBackActivePanel()
+    {
+        if (activePanel == null || !activePanel.isActiveAndEnabled || !activePanel.isVisible)
+            return false;
+
+        activePanel.Back();
+        return true;
+    }
 
     private void Reset()
     {
@@ -56,6 +68,9 @@ public sealed class SettingsMenuPanel : MonoBehaviour
         mxVolumeSlider?.onValueChanged.RemoveListener(HandleMxVolumeChanged);
         sfxVolumeSlider?.onValueChanged.RemoveListener(HandleSfxVolumeChanged);
         fullscreenToggle?.onValueChanged.RemoveListener(HandleFullscreenChanged);
+
+        if (activePanel == this)
+            activePanel = null;
     }
 
     public void Show()
@@ -105,6 +120,16 @@ public sealed class SettingsMenuPanel : MonoBehaviour
         root.alpha = visible ? 1f : 0f;
         root.interactable = visible;
         root.blocksRaycasts = visible;
+        isVisible = visible;
+
+        if (visible)
+        {
+            activePanel = this;
+        }
+        else if (activePanel == this)
+        {
+            activePanel = null;
+        }
     }
 
     private static void ConfigureSlider(Slider slider)
