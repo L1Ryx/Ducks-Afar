@@ -29,6 +29,13 @@ public class MouseInteractTargeter2D : MonoBehaviour
 
     private void Update()
     {
+        if (PauseUtility.IsPaused)
+        {
+            if (!wasLocked) ClearHover();
+            wasLocked = true;
+            return;
+        }
+
         bool locked = Game.IsReady && Game.Ctx?.InteractionLock?.IsLocked == true;
 
         if (locked)

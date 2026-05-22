@@ -319,6 +319,12 @@ public class TitleCardSequencer : MonoBehaviour
         float alpha = canvasGroup.alpha;
         while (alpha > 0f)
         {
+            if (PauseUtility.IsPaused)
+            {
+                yield return null;
+                continue;
+            }
+
             float dt = useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
             alpha -= fadeOutRate * dt;
             canvasGroup.alpha = Mathf.Max(0f, alpha);
@@ -331,9 +337,13 @@ public class TitleCardSequencer : MonoBehaviour
         if (seconds <= 0f)
             yield break;
 
-        if (useUnscaledTime)
-            yield return new WaitForSecondsRealtime(seconds);
-        else
-            yield return new WaitForSeconds(seconds);
+        float elapsed = 0f;
+        while (elapsed < seconds)
+        {
+            if (!PauseUtility.IsPaused)
+                elapsed += useUnscaledTime ? Time.unscaledDeltaTime : Time.deltaTime;
+
+            yield return null;
+        }
     }
 }

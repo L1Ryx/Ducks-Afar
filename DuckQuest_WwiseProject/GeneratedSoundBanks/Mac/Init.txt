@@ -9,11 +9,16 @@ State	ID	Name	State Group			Notes
 	1836525772	Dm	PuzzleKey			
 	1886858551	Am	PuzzleKey			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	319736021	Volume_MX			\Settings\Volume_MX	
+	3673881719	Volume_SFX			\Settings\Volume_SFX	
+	3695994288	Volume_Master			\Settings\Volume_Master	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	1313057045	AMB Bus			\Default Work Unit\Master Audio Bus\AMB Bus	
+	1313057045	AMB Bus			\Default Work Unit\Master Audio Bus\SFX Bus\AMB Bus	
 	1502772432	SFX Bus			\Default Work Unit\Master Audio Bus\SFX Bus	
 	3027868960	MX Bus			\Default Work Unit\Master Audio Bus\MX Bus	
-	3600729941	UI Bus			\Default Work Unit\Master Audio Bus\UI Bus	
+	3600729941	UI Bus			\Default Work Unit\Master Audio Bus\SFX Bus\UI Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes

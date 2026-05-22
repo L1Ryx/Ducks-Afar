@@ -86,6 +86,9 @@ public sealed class DialogueRunner : MonoBehaviour
         if (!IsRunning)
             return;
 
+        if (PauseUtility.IsPaused)
+            return;
+
         if (suppressAdvanceUntilMouseUp)
         {
             if (!Input.GetMouseButton(0))

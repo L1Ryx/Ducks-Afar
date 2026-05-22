@@ -46,6 +46,11 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
         seq?.Kill();
     }
 
+    private void Update()
+    {
+        ApplyPauseState(PauseUtility.IsPaused);
+    }
+
     // Hook this to LevelStartedEvent via GameEventListener.Response
     public void Play()
     {
@@ -92,10 +97,27 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
 
             seq.Join(sizeTween);
         }
+
+        ApplyPauseState(PauseUtility.IsPaused);
     }
 
     public void UnlockInteractions()
     {
         onUnlockInteractions?.Invoke();
+    }
+
+    private void ApplyPauseState(bool paused)
+    {
+        if (seq == null || !seq.IsActive())
+            return;
+
+        if (paused && seq.IsPlaying())
+        {
+            seq.Pause();
+            return;
+        }
+
+        if (!paused && !seq.IsPlaying())
+            seq.Play();
     }
 }

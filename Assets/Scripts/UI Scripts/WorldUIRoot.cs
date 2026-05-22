@@ -32,6 +32,7 @@ public class WorldUIRoot : MonoBehaviour
     private void HandleLeftClick(InputAction.CallbackContext ctx)
     {
         if (!ctx.performed) return;
+        if (PauseUtility.IsPaused) return;
         if (Game.Ctx.InteractionLock.IsLocked) return;
 
         OnLeftClickPress?.Invoke();

@@ -18,6 +18,7 @@ public class DebugDummy : MonoBehaviour
     
     [Header("Settings")]
     [SerializeField] private bool allowRToRestart = false;
+    [SerializeField] private bool allowEscapeToQuit = false;
     
 
     [Header("Settings")] [SerializeField] private string nextScene = "Demo Reset";
@@ -49,14 +50,13 @@ public class DebugDummy : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (allowEscapeToQuit && Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            ExitApplication();
         }
+
+        if (PauseUtility.IsPaused)
+            return;
 
         if (Input.GetKeyDown(KeyCode.R) && allowRToRestart)
         {
@@ -71,6 +71,15 @@ public class DebugDummy : MonoBehaviour
         {
             SetFullscreen(false);
         }
+    }
+
+    public static void ExitApplication()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 
     public void PrintPersistencePath()
