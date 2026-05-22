@@ -52,11 +52,7 @@ public class DebugDummy : MonoBehaviour
         
         if (allowEscapeToQuit && Input.GetKeyDown(KeyCode.Escape))
         {
-#if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+            ExitApplication();
         }
 
         if (PauseUtility.IsPaused)
@@ -75,6 +71,15 @@ public class DebugDummy : MonoBehaviour
         {
             SetFullscreen(false);
         }
+    }
+
+    public static void ExitApplication()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+            Application.Quit();
+#endif
     }
 
     public void PrintPersistencePath()
