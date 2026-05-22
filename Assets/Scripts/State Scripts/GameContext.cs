@@ -14,6 +14,7 @@ public class GameContext : MonoBehaviour
     public ItemDatabase ItemDb => itemDatabase;
     public SaveStateModel SaveState { get; private set; }
     public SaveSystem Saves { get; private set; }
+    public PauseStateModel Pause { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
     public DialogueRunner Dialogue { get; private set; }
     
@@ -33,12 +34,16 @@ public class GameContext : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         
         InitializeRuntimeState();
+        EnsurePauseComponents();
 
         Game.SetContext(this);
     }
     
     private void Update()
     {
+        if (Pause?.IsPaused == true)
+            return;
+
         SaveState.AddPlayTime(Time.deltaTime);
     }
 
@@ -52,6 +57,7 @@ public class GameContext : MonoBehaviour
         Audio = new AudioStateModel();
         SaveState = new SaveStateModel();
         Saves = new SaveSystem(this);
+        Pause = new PauseStateModel();
         
         Audio.Initialize(gameObject); // Global emitter is on game context!
 
@@ -64,5 +70,17 @@ public class GameContext : MonoBehaviour
         Dialogue = dialogueRunner;
         if (Dialogue == null)
             Debug.LogError("GameContext: DialogueRunner reference is missing. Assign it in the inspector.");
+    }
+
+    private void EnsurePauseComponents()
+    {
+        if (GetComponent<PauseSceneWatcher>() == null)
+            gameObject.AddComponent<PauseSceneWatcher>();
+
+        if (GetComponent<PauseTimeScaleDriver>() == null)
+            gameObject.AddComponent<PauseTimeScaleDriver>();
+
+        if (GetComponent<PauseInputController>() == null)
+            gameObject.AddComponent<PauseInputController>();
     }
 }

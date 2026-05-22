@@ -14,11 +14,14 @@ public class PlayerInteractor : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+        if (PauseUtility.IsPaused) return;
         TryInteract();
     }
 
     public bool TryInteract()
     {
+        if (PauseUtility.IsPaused) return false;
+
         var hits = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactableMask);
         if (hits == null || hits.Length == 0) return false;
 

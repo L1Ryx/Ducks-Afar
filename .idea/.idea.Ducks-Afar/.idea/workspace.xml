@@ -6,7 +6,38 @@
   <component name="ChangeListManager">
     <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/A1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/A1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/A2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/A2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/A3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/A3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AnimationTest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AnimationTest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Bootstrap.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Bootstrap.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo Begin.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo Begin.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Demo Reset.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Demo Reset.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Dusk 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Dusk 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Dusk.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Dusk.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Home 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Home 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Home.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Home.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Night.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Night.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Rest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Rest.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage Weird.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage Weird.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage-with-UI.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage-with-UI.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Stage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Stage.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Thumbnail.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Thumbnail.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/animation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/animation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/animation0.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/animation0.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/soloist.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/soloist.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/ClickInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/ClickInteractor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/MouseInteractTargeter2D.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/MouseInteractTargeter2D.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/PlayerControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/PlayerControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/PlayerInteractor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behavior Scripts/PlayerInteractor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Debug Scripts/DebugDummy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Debug Scripts/DebugDummy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue Scripts/DialogueRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue Scripts/DialogueRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Halftime Scripts/PlayableKey.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Halftime Scripts/PlayableKey.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Inven Scripts/InventorySelectionInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Inven Scripts/InventorySelectionInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Scripts/GameContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Scripts/GameContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/TitleCardSequencer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/TitleCardSequencer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/WorldUIRoot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/WorldUIRoot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +72,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "feature/pause-and-settings",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -51,6 +82,14 @@
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DA Builds/window-test.app/Contents/MacOS/Ducks Afar" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../DA Builds/window-test.app/Contents/MacOS" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/6000.0.39f1/Unity.app/Contents/MacOS/Unity" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath $PROJECT_DIR$ -debugCodeOptimization" />
@@ -102,7 +141,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1779217814301</updated>
-      <workItem from="1779217816162" duration="3026000" />
+      <workItem from="1779217816162" duration="6450000" />
     </task>
     <servers />
   </component>

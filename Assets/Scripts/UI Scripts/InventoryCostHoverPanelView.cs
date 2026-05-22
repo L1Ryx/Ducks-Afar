@@ -18,4 +18,9 @@ public class InventoryCostHoverPanelView : MonoBehaviour
 
     [Header("Symbol")]
     public Image symbolImage;
+
+    private void Awake()
+    {
+        NonInteractiveUiUtility.DisableRaycasts(gameObject, canvasGroup);
+    }
 }

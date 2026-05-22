@@ -142,6 +142,12 @@ public class PlayerControl : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        if (PauseUtility.IsPaused)
+        {
+            moveInput = Vector2.zero;
+            return;
+        }
+
         moveInput = context.ReadValue<Vector2>();
     }
 

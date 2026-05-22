@@ -13,6 +13,7 @@ public class ClickInteractor : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (!context.performed) return;
+        if (PauseUtility.IsPaused) return;
         TryInteract();
     }
 
@@ -20,6 +21,7 @@ public class ClickInteractor : MonoBehaviour
     {
         var target = targeter != null ? targeter.CurrentTarget : null;
         if (target == null) return;
+        if (PauseUtility.IsPaused) return;
         if (Game.Ctx.InteractionLock.IsLocked)
         {
             return;

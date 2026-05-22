@@ -22,4 +22,9 @@ public class CraftingHoverPanelView : MonoBehaviour
 
     [Header("Symbol")]
     public Image symbolImage;
+
+    private void Awake()
+    {
+        NonInteractiveUiUtility.DisableRaycasts(gameObject, canvasGroup);
+    }
 }

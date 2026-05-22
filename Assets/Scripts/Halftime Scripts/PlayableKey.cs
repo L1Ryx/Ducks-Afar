@@ -133,6 +133,9 @@ public sealed class PlayableKey : MonoBehaviour
 
     private void Update()
     {
+        if (PauseUtility.IsPaused)
+            return;
+
         if (!IsInPlayableSection())
             return;
 
