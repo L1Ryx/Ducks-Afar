@@ -14,6 +14,7 @@ public class GameContext : MonoBehaviour
     public ItemDatabase ItemDb => itemDatabase;
     public SaveStateModel SaveState { get; private set; }
     public SaveSystem Saves { get; private set; }
+    public SettingsSystem Settings { get; private set; }
     public PauseStateModel Pause { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
     public DialogueRunner Dialogue { get; private set; }
@@ -57,9 +58,12 @@ public class GameContext : MonoBehaviour
         Audio = new AudioStateModel();
         SaveState = new SaveStateModel();
         Saves = new SaveSystem(this);
+        Settings = new SettingsSystem(this);
         Pause = new PauseStateModel();
         
         Audio.Initialize(gameObject); // Global emitter is on game context!
+        Settings.LoadOrCreate();
+        Settings.ApplyAll();
 
         HardwormPickupSfx = GetComponentInChildren<HardwormPickupSfx>();
         if (HardwormPickupSfx == null)

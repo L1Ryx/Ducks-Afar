@@ -89,6 +89,16 @@ public sealed class PauseMenuView : MonoBehaviour
         Game.Ctx?.Pause?.Resume();
     }
 
+    public void ShowPanel()
+    {
+        SetVisible(true);
+    }
+
+    public void HidePanel()
+    {
+        SetVisible(false);
+    }
+
     public void RequestSettings()
     {
         onSettingsRequested?.Invoke();
