@@ -5098,7 +5098,7 @@ MonoBehaviour:
   worldAnchor: {fileID: 5783302704198606743}
   worldUIRootTag: WorldUIRoot
   title: CONTROLS
-  description: "TAB = Cycle Item \nR = Restart \nESC = Quit "
+  description: "TAB = Cycle Item \nR = Restart "
   symbolActive: {fileID: -1226265285564992136, guid: 0eb09609f8295429fa711bd720efc0f7, type: 3}
   symbolInactive: {fileID: -5686591620353406901, guid: 956ce94b414ec4c0a9675dd6b50fe2f5, type: 3}
   showDuration: 0.18

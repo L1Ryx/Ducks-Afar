@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{4E0CACA1-F5E2-A3FB-DB6D-A0A82D6D9A4B}",
+    "Hash": "{AB259541-2886-0889-ECC8-8C09AA873003}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -56,7 +56,7 @@
      {
       "Id": "1313057045",
       "Name": "AMB Bus",
-      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\AMB Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX Bus\\AMB Bus",
       "GUID": "{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"
      },
      {
@@ -74,7 +74,7 @@
      {
       "Id": "3600729941",
       "Name": "UI Bus",
-      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\UI Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX Bus\\UI Bus",
       "GUID": "{BE7C4AD1-2F98-479C-9B2D-3FF905DB3669}"
      },
      {
@@ -113,6 +113,12 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "319736021",
+      "Name": "Volume_MX",
+      "ObjectPath": "\\Game Parameters\\Settings\\Volume_MX",
+      "GUID": "{5E09E4C8-684D-42D4-93D5-5ADD21080C82}"
+     },
      {
       "Id": "1071466500",
       "Name": "HW_PianoNotesCount",
@@ -166,6 +172,18 @@
       "Name": "PGPL",
       "ObjectPath": "\\Game Parameters\\Default Work Unit\\Hafltime\\PGPL",
       "GUID": "{8203D6B4-856F-4060-B206-DBC354D4E7F0}"
+     },
+     {
+      "Id": "3673881719",
+      "Name": "Volume_SFX",
+      "ObjectPath": "\\Game Parameters\\Settings\\Volume_SFX",
+      "GUID": "{7463EC7D-A785-49B8-BB8B-6B8C396C64AF}"
+     },
+     {
+      "Id": "3695994288",
+      "Name": "Volume_Master",
+      "ObjectPath": "\\Game Parameters\\Settings\\Volume_Master",
+      "GUID": "{73F74BF0-D28B-495D-960F-91C11FAC9DF1}"
      }
     ],
     "StateGroups": [
@@ -216,6 +234,6 @@
     ]
    }
   ],
-  "FileHash": "{AB7B6B24-CCE3-E3E3-AC6E-57F0EDF6E209}"
+  "FileHash": "{6A30A643-258D-F4F5-DE70-75E13FC49E4F}"
  }
 }

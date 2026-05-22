@@ -3060,7 +3060,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+							<ObjectRef Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -4252,7 +4252,7 @@
 																										</Point>
 																										<Point>
 																											<XPos>100</XPos>
-																											<YPos>-0</YPos>
+																											<YPos>0</YPos>
 																											<Flags>37</Flags>
 																										</Point>
 																									</PointList>
@@ -4360,7 +4360,7 @@
 																									<PointList>
 																										<Point>
 																											<XPos>0</XPos>
-																											<YPos>-0</YPos>
+																											<YPos>0</YPos>
 																											<Flags>5</Flags>
 																										</Point>
 																										<Point>
@@ -4751,7 +4751,7 @@
 																									<PointList>
 																										<Point>
 																											<XPos>0</XPos>
-																											<YPos>-0</YPos>
+																											<YPos>0</YPos>
 																											<Flags>5</Flags>
 																										</Point>
 																										<Point>

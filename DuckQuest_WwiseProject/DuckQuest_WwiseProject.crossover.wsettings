@@ -290,8 +290,8 @@
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{F44C83F2-4EDE-4FDA-A4B6-CA2ECF348EDB}3379067153"/>
-				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{86F7E3EF-F038-4B6C-8754-76A137DFE3A7}"/>
+				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{F44C83F2-4EDE-4FDA-A4B6-CA2ECF348EDB}2836520165"/>
+				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{914FDA53-635B-4F76-B1AA-1ED7C0B8D066}"/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\CurrentSearch" Type="string" Value=""/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\RecentCategoriesTopCount" Type="int32" Value="0"/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\ValueColumnWidth" Type="int32" Value="140"/>

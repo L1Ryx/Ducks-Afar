@@ -172,7 +172,20 @@
 							<Position X="4" Y="0"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true"/>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Volume_MX" ID="{5E09E4C8-684D-42D4-93D5-5ADD21080C82}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_Master" ID="{73F74BF0-D28B-495D-960F-91C11FAC9DF1}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_SFX" ID="{7463EC7D-A785-49B8-BB8B-6B8C396C64AF}"/>
+							<Value>100</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
 						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
 					</CurrentStateList>
@@ -243,12 +256,24 @@
 							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="Volume_MX" ID="{5E09E4C8-684D-42D4-93D5-5ADD21080C82}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}"/>
 							<Value>0</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
 							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_Master" ID="{73F74BF0-D28B-495D-960F-91C11FAC9DF1}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Volume_SFX" ID="{7463EC7D-A785-49B8-BB8B-6B8C396C64AF}"/>
+							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="FP" ID="{8E553AFC-054B-4E8A-8897-2DA6A477286B}"/>
