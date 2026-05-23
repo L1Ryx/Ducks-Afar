@@ -3951,7 +3951,7 @@ MonoBehaviour:
   singleTingAc: {fileID: 0}
   allowRToRestart: 0
   allowEscapeToQuit: 0
-  nextScene: Demo Begin
+  nextScene: Title Screen
 --- !u!114 &1535081830
 MonoBehaviour:
   m_ObjectHideFlags: 0

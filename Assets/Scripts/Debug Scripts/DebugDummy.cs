@@ -71,11 +71,7 @@ public class DebugDummy : MonoBehaviour
 
     public static void ExitApplication()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-            Application.Quit();
-#endif
+        ApplicationExitUtility.ExitApplication();
     }
 
     public void PrintPersistencePath()

@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d776c0d24ce1d40b1be2dde02631652a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultFirstSceneName: Demo Begin
+  defaultFirstSceneName: Title Screen
 --- !u!1001 &982906258
 PrefabInstance:
   m_ObjectHideFlags: 0
