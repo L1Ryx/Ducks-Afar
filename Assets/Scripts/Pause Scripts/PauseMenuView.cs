@@ -6,6 +6,7 @@ public sealed class PauseMenuView : MonoBehaviour
     [Header("UI")]
     [SerializeField] private CanvasGroup root;
     [SerializeField] private GameObject firstSelectedObject;
+    [SerializeField] private bool bringToFrontOnShow = true;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onShown;
@@ -79,6 +80,9 @@ public sealed class PauseMenuView : MonoBehaviour
         root.alpha = visible ? 1f : 0f;
         root.interactable = visible;
         root.blocksRaycasts = visible;
+
+        if (visible && bringToFrontOnShow)
+            root.transform.SetAsLastSibling();
 
         if (firstSelectedObject != null)
             UnityEngine.EventSystems.EventSystem.current?.SetSelectedGameObject(visible ? firstSelectedObject : null);

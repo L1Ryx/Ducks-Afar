@@ -10,6 +10,7 @@ public sealed class SettingsMenuPanel : MonoBehaviour
     [Header("Panel")]
     [SerializeField] private CanvasGroup root;
     [SerializeField] private bool hideOnAwake = true;
+    [SerializeField] private bool bringToFrontOnShow = true;
 
     [Header("Audio")]
     [SerializeField] private Slider masterVolumeSlider;
@@ -124,6 +125,9 @@ public sealed class SettingsMenuPanel : MonoBehaviour
 
         if (visible)
         {
+            if (bringToFrontOnShow)
+                root.transform.SetAsLastSibling();
+
             activePanel = this;
         }
         else if (activePanel == this)
