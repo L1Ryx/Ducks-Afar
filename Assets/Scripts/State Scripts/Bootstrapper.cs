@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Bootstrapper : MonoBehaviour
 {
-    [SerializeField] private string defaultFirstSceneName = "Stage";
+    [SerializeField] private string defaultFirstSceneName = "Title Screen";
 
     private void Start()
     {

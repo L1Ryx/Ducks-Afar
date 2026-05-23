@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public sealed class PauseMenuView : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public sealed class PauseMenuView : MonoBehaviour
     [SerializeField] private CanvasGroup root;
     [SerializeField] private GameObject firstSelectedObject;
     [SerializeField] private bool bringToFrontOnShow = true;
+
+    [Header("Navigation")]
+    [SerializeField] private string titleSceneName = "Title Screen";
 
     [Header("Events")]
     [SerializeField] private UnityEvent onShown;
@@ -111,5 +115,17 @@ public sealed class PauseMenuView : MonoBehaviour
     public void RequestExit()
     {
         onExitRequested?.Invoke();
+    }
+
+    public void ReturnToTitleScreen()
+    {
+        if (Game.IsReady && Game.Ctx?.SceneLoader != null)
+        {
+            Game.Ctx.Saves?.SaveToActiveSlot();
+            Game.Ctx.SceneLoader.LoadScene(titleSceneName);
+            return;
+        }
+
+        SceneManager.LoadScene(titleSceneName);
     }
 }

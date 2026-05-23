@@ -89,6 +89,7 @@ public sealed class SaveSystem
             return;
         }
 
+        CaptureCurrentSceneCheckpoint();
         SaveSlotData data = BuildDataFromRuntimeState(slotIndex);
         string path = GetSlotPath(slotIndex);
 
@@ -304,5 +305,16 @@ public sealed class SaveSystem
         }
 
         return ctx.SceneLoader.CanLoadScene(data.sceneName);
+    }
+
+    private void CaptureCurrentSceneCheckpoint()
+    {
+        CheckpointSaver checkpoint = UnityEngine.Object.FindFirstObjectByType<CheckpointSaver>(
+            FindObjectsInactive.Include);
+
+        if (checkpoint == null)
+            return;
+
+        checkpoint.SetLocationOnly();
     }
 }

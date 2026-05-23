@@ -709,6 +709,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   root: {fileID: 8539518666832403791}
   firstSelectedObject: {fileID: 8465313767283207885}
+  bringToFrontOnShow: 1
+  titleSceneName: Title Screen
   onShown:
     m_PersistentCalls:
       m_Calls: []
@@ -745,9 +747,9 @@ MonoBehaviour:
   onExitRequested:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: ab810e0c1c24d4acf9d21124ba55dede, type: 2}
-        m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
-        m_MethodName: Raise
+      - m_Target: {fileID: 3124125955843486396}
+        m_TargetAssemblyTypeName: PauseMenuView, Assembly-CSharp
+        m_MethodName: ReturnToTitleScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
