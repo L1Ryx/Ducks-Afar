@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public sealed class CheckpointSaver : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public sealed class CheckpointSaver : MonoBehaviour
             return;
         }
 
-        Game.Ctx.SaveState.CurrentLocation = locationName;
+        StampCurrentSceneAndLocation();
         Debug.Log($"{name}: Set runtime save location -> {locationName}");
     }
 
@@ -47,7 +48,7 @@ public sealed class CheckpointSaver : MonoBehaviour
             return;
         }
 
-        Game.Ctx.SaveState.CurrentLocation = locationName;
+        StampCurrentSceneAndLocation();
         Debug.Log($"{name}: Set runtime save location -> {locationName}");
 
         Game.Ctx.Saves.SaveToActiveSlot();
@@ -82,5 +83,11 @@ public sealed class CheckpointSaver : MonoBehaviour
     public string GetLocationName()
     {
         return locationName;
+    }
+
+    private void StampCurrentSceneAndLocation()
+    {
+        Game.Ctx.SaveState.CurrentSceneName = SceneManager.GetActiveScene().name;
+        Game.Ctx.SaveState.CurrentLocation = locationName;
     }
 }

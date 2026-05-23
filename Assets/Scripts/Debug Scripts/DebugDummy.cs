@@ -1,10 +1,6 @@
-using System;
-using System.Runtime.CompilerServices;
 using IngameDebugConsole;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
 public class DebugDummy : MonoBehaviour
 {
@@ -143,28 +139,29 @@ public class DebugDummy : MonoBehaviour
 
     public void DoSceneResets()
     {
-        if (Game.IsReady && Game.Ctx != null)
-        {
-            Game.Ctx.Audio?.StopGlobalAmbience(immediate: false);
-            Game.Ctx.LevelState?.Reset();
-            Game.Ctx.InteractionLock?.ForceClear();
-            Game.Ctx.Inventory.Clear();
-            // Optional: reset other per-run state here (inventory, selections, etc.)
-        }
+        Game.Ctx?.SceneLoader?.PrepareForSceneLoad();
     }
-    /*
-     * SHAWN REFACTOR THIS INTO ANOTHER GAMEOBJECT PLEASE IM BEGGING
-     */
+
     public void ReloadSameScene()
     {
-        DoSceneResets();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if (!Game.IsReady || Game.Ctx?.SceneLoader == null)
+        {
+            Debug.LogWarning("ReloadSameScene failed: SceneLoader is not ready.");
+            return;
+        }
+
+        Game.Ctx.SceneLoader.ReloadActiveScene();
     }
 
     public void GoToNextScene()
     {
-        DoSceneResets();
-        SceneManager.LoadScene(nextScene);
+        if (!Game.IsReady || Game.Ctx?.SceneLoader == null)
+        {
+            Debug.LogWarning("GoToNextScene failed: SceneLoader is not ready.");
+            return;
+        }
+
+        Game.Ctx.SceneLoader.LoadScene(nextScene);
     }
 
     public void ToggleNoclip()

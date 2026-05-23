@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public sealed class SaveSystem
 {
@@ -99,6 +100,7 @@ public sealed class SaveSystem
             Debug.Log(
                 $"Saved slot {slotIndex} | " +
                 $"time={data.timePlayedSeconds:F1}s | " +
+                $"scene={data.sceneName} | " +
                 $"location={data.location} | " +
                 $"companion={data.companionId}");
         }
@@ -109,6 +111,16 @@ public sealed class SaveSystem
     }
 
     public bool LoadFromSlot(int slotIndex)
+    {
+        return LoadFromSlot(slotIndex, false);
+    }
+
+    public bool LoadFromSlotAndEnterScene(int slotIndex)
+    {
+        return LoadFromSlot(slotIndex, true);
+    }
+
+    private bool LoadFromSlot(int slotIndex, bool enterSavedScene)
     {
         if (!IsValidSlotIndex(slotIndex))
         {
@@ -124,19 +136,31 @@ public sealed class SaveSystem
             return false;
         }
 
+        if (enterSavedScene && !CanLoadSavedScene(data))
+            return false;
+
         ApplyDataToRuntimeState(data);
         ctx.SaveState.BindToSlot(slotIndex);
 
         Debug.Log(
             $"Loaded slot {slotIndex} | " +
             $"time={data.timePlayedSeconds:F1}s | " +
+            $"scene={data.sceneName} | " +
             $"location={data.location} | " +
             $"companion={data.companionId}");
+
+        if (enterSavedScene)
+            ctx.SceneLoader.LoadScene(data.sceneName);
 
         return true;
     }
     
     public void StartNewGameInSlot(int slotIndex, string startLocation)
+    {
+        StartNewGameInSlot(slotIndex, string.Empty, startLocation);
+    }
+
+    public void StartNewGameInSlot(int slotIndex, string startSceneName, string startLocation)
     {
         if (!IsValidSlotIndex(slotIndex))
         {
@@ -144,12 +168,31 @@ public sealed class SaveSystem
             return;
         }
 
-        ctx.SaveState.ResetForNewGame(startLocation);
+        ctx.SaveState.ResetForNewGame(startSceneName, startLocation);
         ctx.SaveState.BindToSlot(slotIndex);
 
         SaveToSlot(slotIndex);
 
-        Debug.Log($"Started new game in slot {slotIndex} at location {startLocation}");
+        Debug.Log($"Started new game in slot {slotIndex} at scene {startSceneName}, location {startLocation}");
+    }
+
+    public bool StartNewGameInSlotAndEnterScene(int slotIndex, string startSceneName, string startLocation)
+    {
+        if (string.IsNullOrWhiteSpace(startSceneName))
+        {
+            Debug.LogError("StartNewGameInSlotAndEnterScene failed: startSceneName is empty.");
+            return false;
+        }
+
+        if (!ctx.SceneLoader.CanLoadScene(startSceneName))
+            return false;
+
+        if (!IsValidSlotIndex(slotIndex))
+            return false;
+
+        StartNewGameInSlot(slotIndex, startSceneName, startLocation);
+
+        return ctx.SceneLoader.LoadScene(startSceneName);
     }
 
     public void DeleteSlot(int slotIndex)
@@ -205,6 +248,7 @@ public sealed class SaveSystem
             hasData = true,
             slotIndex = slotIndex,
             timePlayedSeconds = saveState.TimePlayedSeconds,
+            sceneName = GetSceneNameForSave(saveState),
             location = saveState.CurrentLocation ?? string.Empty,
             companionId = string.IsNullOrWhiteSpace(saveState.CurrentCompanionId)
                 ? NoneCompanionId
@@ -218,6 +262,7 @@ public sealed class SaveSystem
         SaveStateModel saveState = ctx.SaveState;
 
         saveState.SetPlayTime(data.timePlayedSeconds);
+        saveState.CurrentSceneName = data.sceneName ?? string.Empty;
         saveState.CurrentLocation = data.location ?? string.Empty;
         saveState.CurrentCompanionId = string.IsNullOrWhiteSpace(data.companionId)
             ? NoneCompanionId
@@ -234,7 +279,30 @@ public sealed class SaveSystem
         if (data.location == null)
             data.location = string.Empty;
 
+        if (data.sceneName == null)
+            data.sceneName = string.Empty;
+
         if (string.IsNullOrWhiteSpace(data.companionId))
             data.companionId = NoneCompanionId;
+    }
+
+    private static string GetSceneNameForSave(SaveStateModel saveState)
+    {
+        if (!string.IsNullOrWhiteSpace(saveState.CurrentSceneName))
+            return saveState.CurrentSceneName;
+
+        Scene activeScene = SceneManager.GetActiveScene();
+        return activeScene.IsValid() ? activeScene.name : string.Empty;
+    }
+
+    private bool CanLoadSavedScene(SaveSlotData data)
+    {
+        if (string.IsNullOrWhiteSpace(data.sceneName))
+        {
+            Debug.LogWarning($"LoadFromSlot: slot {data.slotIndex} has no saved sceneName.");
+            return false;
+        }
+
+        return ctx.SceneLoader.CanLoadScene(data.sceneName);
     }
 }

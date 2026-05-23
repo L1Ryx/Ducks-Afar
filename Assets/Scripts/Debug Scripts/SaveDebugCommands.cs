@@ -1,5 +1,6 @@
 using IngameDebugConsole;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveDebugCommands : MonoBehaviour
 {
@@ -17,8 +18,10 @@ public class SaveDebugCommands : MonoBehaviour
 
         DebugLogConsole.AddCommand<int>("/save_write", "Save current state to slot index", SaveWrite);
         DebugLogConsole.AddCommand<int>("/save_load", "Load slot into runtime state", SaveLoad);
+        DebugLogConsole.AddCommand<int>("/save_enter", "Load slot into runtime state and enter its saved scene", SaveEnter);
         DebugLogConsole.AddCommand<int>("/save_delete", "Delete a save slot", SaveDelete);
 
+        DebugLogConsole.AddCommand<string>("/save_set_scene", "Set current saved scene name", SaveSetScene);
         DebugLogConsole.AddCommand<string>("/save_set_location", "Set current location", SaveSetLocation);
         DebugLogConsole.AddCommand<string>("/save_set_companion", "Set current companion id", SaveSetCompanion);
         DebugLogConsole.AddCommand<float>("/save_set_time", "Set playtime in seconds", SaveSetTime);
@@ -86,6 +89,7 @@ public class SaveDebugCommands : MonoBehaviour
             Debug.Log(
                 $"Slot {i} | " +
                 $"time={s.timePlayedSeconds:F1}s | " +
+                $"scene={s.sceneName} | " +
                 $"loc={s.location} | " +
                 $"comp={s.companionId} | " +
                 $"saved={s.lastSavedUtc}");
@@ -99,6 +103,7 @@ public class SaveDebugCommands : MonoBehaviour
         Debug.Log(
             $"Current SaveState | " +
             $"time={s.TimePlayedSeconds:F1}s | " +
+            $"scene={s.CurrentSceneName} | " +
             $"loc={s.CurrentLocation} | " +
             $"comp={s.CurrentCompanionId}");
     }
@@ -117,10 +122,26 @@ public class SaveDebugCommands : MonoBehaviour
             Debug.LogWarning($"Load failed for slot {slotIndex}");
         }
     }
+
+    private static void SaveEnter(int slotIndex)
+    {
+        bool success = Game.Ctx.Saves.LoadFromSlotAndEnterScene(slotIndex);
+
+        if (!success)
+        {
+            Debug.LogWarning($"Load and enter failed for slot {slotIndex}");
+        }
+    }
     
     private static void SaveDelete(int slotIndex)
     {
         Game.Ctx.Saves.DeleteSlot(slotIndex);
+    }
+
+    private static void SaveSetScene(string sceneName)
+    {
+        Game.Ctx.SaveState.CurrentSceneName = sceneName;
+        Debug.Log($"Set scene -> {sceneName}");
     }
     
     private static void SaveSetLocation(string location)
@@ -151,6 +172,7 @@ public class SaveDebugCommands : MonoBehaviour
     {
         var ctx = Game.Ctx;
 
+        ctx.SaveState.CurrentSceneName = SceneManager.GetActiveScene().name;
         ctx.SaveState.CurrentLocation = $"TestZone_{slot}";
         ctx.SaveState.CurrentCompanionId = $"Companion_{slot}";
         ctx.SaveState.SetPlayTime(UnityEngine.Random.Range(10f, 500f));

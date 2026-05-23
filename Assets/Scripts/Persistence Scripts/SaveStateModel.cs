@@ -3,6 +3,7 @@ using UnityEngine;
 public sealed class SaveStateModel
 {
     public float TimePlayedSeconds { get; private set; }
+    public string CurrentSceneName { get; set; }
     public string CurrentLocation { get; set; }
     public string CurrentCompanionId { get; set; }
 
@@ -12,6 +13,7 @@ public sealed class SaveStateModel
     public SaveStateModel()
     {
         TimePlayedSeconds = 0f;
+        CurrentSceneName = string.Empty;
         CurrentLocation = string.Empty;
         CurrentCompanionId = SaveSystem.NoneCompanionId;
         HasActiveSlot = false;
@@ -42,7 +44,13 @@ public sealed class SaveStateModel
 
     public void ResetForNewGame(string startLocation)
     {
+        ResetForNewGame(string.Empty, startLocation);
+    }
+
+    public void ResetForNewGame(string startSceneName, string startLocation)
+    {
         TimePlayedSeconds = 0f;
+        CurrentSceneName = startSceneName ?? string.Empty;
         CurrentLocation = startLocation ?? string.Empty;
         CurrentCompanionId = SaveSystem.NoneCompanionId;
     }

@@ -7,6 +7,7 @@ public sealed class SaveSlotData
     public int slotIndex;
 
     public float timePlayedSeconds;
+    public string sceneName;
     public string location;
     public string companionId;
 
@@ -19,6 +20,7 @@ public sealed class SaveSlotData
             hasData = false,
             slotIndex = slotIndex,
             timePlayedSeconds = 0f,
+            sceneName = string.Empty,
             location = string.Empty,
             companionId = "NONE",
             lastSavedUtc = string.Empty
