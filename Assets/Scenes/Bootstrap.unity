@@ -396,6 +396,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause Panel Root
       objectReference: {fileID: 0}
+    - target: {fileID: 8539518666832403791, guid: cf430467995f440bfb7c0350d48cd0ea, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1110,6 +1114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 1831075303}
   itemDatabase: {fileID: 11400000, guid: f39762f4fe1d9409e8e272108d89f693, type: 2}
+  bootstrapSceneName: Bootstrap
 --- !u!114 &1712910840
 MonoBehaviour:
   m_ObjectHideFlags: 0

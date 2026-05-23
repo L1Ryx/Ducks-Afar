@@ -29,6 +29,18 @@ public sealed class TitleScreenController : MonoBehaviour
         ShowMain();
     }
 
+    private void OnEnable()
+    {
+        if (optionsPanel != null)
+            optionsPanel.OnBackRequested += HandleOptionsBackRequested;
+    }
+
+    private void OnDisable()
+    {
+        if (optionsPanel != null)
+            optionsPanel.OnBackRequested -= HandleOptionsBackRequested;
+    }
+
     private void Update()
     {
         if (currentPanel == TitlePanel.FileSelect && Input.GetKeyDown(KeyCode.Escape))
@@ -97,6 +109,12 @@ public sealed class TitleScreenController : MonoBehaviour
     public void Quit()
     {
         ApplicationExitUtility.ExitApplication();
+    }
+
+    private void HandleOptionsBackRequested()
+    {
+        if (currentPanel == TitlePanel.Options)
+            ShowMain();
     }
 
     private static void SetCanvasGroupVisible(CanvasGroup group, bool visible)

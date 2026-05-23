@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -28,6 +29,8 @@ public sealed class SettingsMenuPanel : MonoBehaviour
 
     private bool suppressCallbacks;
     private bool isVisible;
+
+    public event Action OnBackRequested;
 
     public static bool TryBackActivePanel()
     {
@@ -89,6 +92,7 @@ public sealed class SettingsMenuPanel : MonoBehaviour
     {
         Hide();
         onBack?.Invoke();
+        OnBackRequested?.Invoke();
     }
 
     public void RefreshFromSettings()
