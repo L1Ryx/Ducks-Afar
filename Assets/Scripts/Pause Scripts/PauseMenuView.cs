@@ -121,8 +121,10 @@ public sealed class PauseMenuView : MonoBehaviour
     {
         if (Game.IsReady && Game.Ctx?.SceneLoader != null)
         {
-            Game.Ctx.Saves?.SaveToActiveSlot();
-            Game.Ctx.SceneLoader.LoadScene(titleSceneName);
+            Game.Ctx.SceneLoader.LoadScene(
+                titleSceneName,
+                null,
+                () => Game.Ctx.Saves?.SaveToActiveSlot());
             return;
         }
 

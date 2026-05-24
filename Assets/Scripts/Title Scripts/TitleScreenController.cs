@@ -80,6 +80,12 @@ public sealed class TitleScreenController : MonoBehaviour
             return;
         }
 
+        if (fileSelect != null && fileSelect.TryGetCachedSlot(slotIndex, out SaveSlotData cachedSlot))
+        {
+            UseSaveSlot(cachedSlot);
+            return;
+        }
+
         SaveSlotData slot = Game.Ctx.Saves.ReadSlot(slotIndex);
 
         if (slot.hasData)
@@ -87,6 +93,28 @@ public sealed class TitleScreenController : MonoBehaviour
             Game.Ctx.Saves.LoadFromSlotAndEnterScene(slotIndex);
             return;
         }
+
+        Game.Ctx.Saves.StartNewGameInSlotAndEnterScene(
+            slotIndex,
+            newGameSceneName,
+            newGameStartLocation);
+    }
+
+    public void UseSaveSlot(SaveSlotData slot)
+    {
+        if (!Game.IsReady || Game.Ctx?.Saves == null)
+        {
+            Debug.LogWarning("UseSaveSlot failed: save system is not ready.");
+            return;
+        }
+
+        if (slot != null && slot.hasData)
+        {
+            Game.Ctx.Saves.LoadSlotDataAndEnterScene(slot);
+            return;
+        }
+
+        int slotIndex = slot != null ? slot.slotIndex : 0;
 
         Game.Ctx.Saves.StartNewGameInSlotAndEnterScene(
             slotIndex,
