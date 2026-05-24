@@ -15,6 +15,9 @@ public class Bootstrapper : MonoBehaviour
         // Clear handoff so future loads are clean
         AutoBootstrapRedirector.BootstrapHandoff.PendingSceneName = null;
 
+        if (Game.IsReady && Game.Ctx?.SceneLoader != null && Game.Ctx.SceneLoader.LoadScene(targetScene))
+            return;
+
         SceneManager.LoadScene(targetScene);
     }
 }

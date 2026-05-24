@@ -121,6 +121,31 @@ public sealed class SaveSystem
         return LoadFromSlot(slotIndex, true);
     }
 
+    public bool LoadSlotDataAndEnterScene(SaveSlotData data)
+    {
+        if (data == null)
+        {
+            Debug.LogError("LoadSlotDataAndEnterScene failed: save data is null.");
+            return false;
+        }
+
+        if (!data.hasData)
+        {
+            Debug.LogWarning($"LoadSlotDataAndEnterScene: slot {data.slotIndex} is empty.");
+            return false;
+        }
+
+        if (!IsValidSlotIndex(data.slotIndex))
+        {
+            Debug.LogError($"LoadSlotDataAndEnterScene failed: invalid slot index {data.slotIndex}");
+            return false;
+        }
+
+        return ctx.SceneLoader.LoadSceneDeferred(
+            null,
+            () => PrepareSlotDataForSceneLoad(data));
+    }
+
     private bool LoadFromSlot(int slotIndex, bool enterSavedScene)
     {
         if (!IsValidSlotIndex(slotIndex))
@@ -129,29 +154,17 @@ public sealed class SaveSystem
             return false;
         }
 
-        SaveSlotData data = ReadSlot(slotIndex);
+        if (enterSavedScene)
+            return ctx.SceneLoader.LoadSceneDeferred(null, () => PrepareSlotDataForSceneLoad(slotIndex));
 
+        SaveSlotData data = ReadSlot(slotIndex);
         if (!data.hasData)
         {
             Debug.LogWarning($"LoadFromSlot: slot {slotIndex} is empty.");
             return false;
         }
 
-        if (enterSavedScene && !CanLoadSavedScene(data))
-            return false;
-
-        ApplyDataToRuntimeState(data);
-        ctx.SaveState.BindToSlot(slotIndex);
-
-        Debug.Log(
-            $"Loaded slot {slotIndex} | " +
-            $"time={data.timePlayedSeconds:F1}s | " +
-            $"scene={data.sceneName} | " +
-            $"location={data.location} | " +
-            $"companion={data.companionId}");
-
-        if (enterSavedScene)
-            ctx.SceneLoader.LoadScene(data.sceneName);
+        ApplyLoadedSlotData(data, slotIndex);
 
         return true;
     }
@@ -191,9 +204,56 @@ public sealed class SaveSystem
         if (!IsValidSlotIndex(slotIndex))
             return false;
 
-        StartNewGameInSlot(slotIndex, startSceneName, startLocation);
+        return ctx.SceneLoader.LoadScene(
+            startSceneName,
+            null,
+            () => StartNewGameInSlot(slotIndex, startSceneName, startLocation));
+    }
 
-        return ctx.SceneLoader.LoadScene(startSceneName);
+    private void ApplyLoadedSlotData(SaveSlotData data, int slotIndex)
+    {
+        ApplyDataToRuntimeState(data);
+        ctx.SaveState.BindToSlot(slotIndex);
+
+        Debug.Log(
+            $"Loaded slot {slotIndex} | " +
+            $"time={data.timePlayedSeconds:F1}s | " +
+            $"scene={data.sceneName} | " +
+            $"location={data.location} | " +
+            $"companion={data.companionId}");
+    }
+
+    private string PrepareSlotDataForSceneLoad(int slotIndex)
+    {
+        SaveSlotData data = ReadSlot(slotIndex);
+        return PrepareSlotDataForSceneLoad(data);
+    }
+
+    private string PrepareSlotDataForSceneLoad(SaveSlotData data)
+    {
+        if (data == null)
+        {
+            Debug.LogError("PrepareSlotDataForSceneLoad failed: save data is null.");
+            return null;
+        }
+
+        if (!data.hasData)
+        {
+            Debug.LogWarning($"PrepareSlotDataForSceneLoad: slot {data.slotIndex} is empty.");
+            return null;
+        }
+
+        if (!IsValidSlotIndex(data.slotIndex))
+        {
+            Debug.LogError($"PrepareSlotDataForSceneLoad failed: invalid slot index {data.slotIndex}");
+            return null;
+        }
+
+        if (!CanLoadSavedScene(data))
+            return null;
+
+        ApplyLoadedSlotData(data, data.slotIndex);
+        return data.sceneName;
     }
 
     public void DeleteSlot(int slotIndex)

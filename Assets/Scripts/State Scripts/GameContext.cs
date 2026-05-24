@@ -78,6 +78,7 @@ public class GameContext : MonoBehaviour
         Audio.Initialize(gameObject); // Global emitter is on game context!
         Settings.LoadOrCreate();
         Settings.ApplyAll();
+        SceneLoader.PrewarmLoadingScreen();
 
         HardwormPickupSfx = GetComponentInChildren<HardwormPickupSfx>();
         if (HardwormPickupSfx == null)

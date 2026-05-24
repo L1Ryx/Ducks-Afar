@@ -75,7 +75,7 @@ public sealed class TitleSaveSlotCard : MonoBehaviour
 
     public void Use()
     {
-        owner?.UseSlot(slotIndex);
+        owner?.UseSlot(boundData);
     }
 
     public void Delete()

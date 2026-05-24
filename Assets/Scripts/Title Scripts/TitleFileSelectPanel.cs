@@ -5,6 +5,7 @@ public sealed class TitleFileSelectPanel : MonoBehaviour
     [SerializeField] private TitleSaveSlotCard[] slotCards;
 
     private TitleScreenController controller;
+    private SaveSlotData[] cachedSlots;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public sealed class TitleFileSelectPanel : MonoBehaviour
 
         EnsureSlotCards();
 
-        SaveSlotData[] slots = Game.Ctx.Saves.ReadAllSlots();
+        cachedSlots = Game.Ctx.Saves.ReadAllSlots();
 
         for (int i = 0; i < slotCards.Length; i++)
         {
@@ -43,8 +44,8 @@ public sealed class TitleFileSelectPanel : MonoBehaviour
             if (card == null)
                 continue;
 
-            SaveSlotData data = i < slots.Length
-                ? slots[i]
+            SaveSlotData data = i < cachedSlots.Length
+                ? cachedSlots[i]
                 : SaveSlotData.CreateEmpty(i);
 
             card.SetOwner(this);
@@ -57,9 +58,25 @@ public sealed class TitleFileSelectPanel : MonoBehaviour
         controller?.UseSaveSlot(slotIndex);
     }
 
+    public void UseSlot(SaveSlotData data)
+    {
+        controller?.UseSaveSlot(data);
+    }
+
     public void DeleteSlot(int slotIndex)
     {
         controller?.DeleteSaveSlot(slotIndex);
+    }
+
+    public bool TryGetCachedSlot(int slotIndex, out SaveSlotData data)
+    {
+        data = null;
+
+        if (cachedSlots == null || slotIndex < 0 || slotIndex >= cachedSlots.Length)
+            return false;
+
+        data = cachedSlots[slotIndex];
+        return data != null;
     }
 
     private void AssignOwnerToCards()
