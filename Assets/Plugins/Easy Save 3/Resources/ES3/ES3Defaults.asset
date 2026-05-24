@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b340139c9e4d054f904d8b452798652, type: 3}
   m_Name: ES3Defaults
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp-firstpass::ES3Defaults
   settings:
     _location: 0
     path: SaveFile.es3
@@ -42,10 +42,16 @@ MonoBehaviour:
     - AK.Wwise.Unity.Timeline
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
+    - glTFast
+    - glTFast.Documentation.Examples
+    - glTFast.dots
+    - glTFast.Export
+    - glTFast.Newtonsoft
     - IngameDebugConsole.Runtime
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1
+  onlyAddReferencesFromObjectsWithES3Referenceable: 0
   addAllPrefabsToManager: 1
   collectDependenciesDepth: 4
   collectDependenciesTimeout: 10
