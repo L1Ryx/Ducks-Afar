@@ -66,6 +66,36 @@ public sealed class DialogueRunner : MonoBehaviour
 
         ShowLine(currentEncounter.lines[currentLineIndex]);
     }
+
+    public void CancelDialogue()
+    {
+        if (typingRoutine != null)
+        {
+            StopCoroutine(typingRoutine);
+            typingRoutine = null;
+        }
+
+        currentEncounter = null;
+        currentLineIndex = 0;
+        currentLineCompleted = false;
+        suppressAdvanceUntilMouseUp = false;
+        isTyping = false;
+        IsRunning = false;
+
+        if (portraitImage != null)
+            portraitImage.sprite = null;
+
+        if (nameText != null)
+            nameText.text = string.Empty;
+
+        if (dialogueText != null)
+            dialogueText.text = string.Empty;
+
+        if (nextIndicator != null)
+            nextIndicator.gameObject.SetActive(false);
+
+        SetVisible(false);
+    }
     
     private void EndEncounter()
     {

@@ -92,6 +92,7 @@ public sealed class SceneLoadSystem
 
     public void PrepareForSceneLoad()
     {
+        ctx.Dialogue?.CancelDialogue();
         ctx.Audio?.StopGlobalAmbience(immediate: false);
         ctx.LevelState?.Reset();
         ctx.InteractionLock?.ForceClear();
