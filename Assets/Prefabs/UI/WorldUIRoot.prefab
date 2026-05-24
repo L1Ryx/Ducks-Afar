@@ -204,10 +204,11 @@ MonoBehaviour:
   popupPrefab: {fileID: 8858560408511775972, guid: ff1cb98b7fab7459d819ed771dd93ad6, type: 3}
   popupParent: {fileID: 86843398293233353}
   anchor: {fileID: 4711270342754587290}
-  verticalOffset: 150
   fadeInSeconds: 0.3
   holdSeconds: 2.5
-  fadeOutSeconds: 1.5
+  fadeOutSeconds: 0.3
+  exitDirection: {x: 1, y: 0}
+  exitDistance: 160
   showQuantitySuffixIfMultiple: 1
 --- !u!114 &5611778048570447233
 MonoBehaviour:
@@ -296,6 +297,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0

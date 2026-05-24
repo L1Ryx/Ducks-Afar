@@ -9,18 +9,20 @@ public class NewItemPopupManager : MonoBehaviour
 
     [Header("Layout")]
     [SerializeField] private RectTransform anchor;
-    [SerializeField] private float verticalOffset = 60f;
 
     [Header("Timing")]
     [SerializeField] private float fadeInSeconds = 0.12f;
     [SerializeField] private float holdSeconds = 1.25f;
     [SerializeField] private float fadeOutSeconds = 0.18f;
 
+    [Header("Exit Animation")]
+    [SerializeField] private Vector2 exitDirection = Vector2.right;
+    [SerializeField] private float exitDistance = 640f;
+
     [Header("Optional")]
     [SerializeField] private bool showQuantitySuffixIfMultiple = false;
 
-    // Active popup instances (oldest at index 0)
-    private readonly List<NewItemPopupUI> activePopups = new();
+    private NewItemPopupUI activePopup;
 
     // Snapshot of last-known counts
     private readonly Dictionary<string, int> prevCounts = new();
@@ -80,36 +82,44 @@ public class NewItemPopupManager : MonoBehaviour
             return;
         }
 
+        ExitActivePopup();
+
         var popup = Instantiate(popupPrefab, popupParent, false);
         popup.Bind(def);
-        
         popup.RebaseFloatyIfPresent();
+        PositionAtAnchor(popup);
 
-        activePopups.Add(popup);
-        RepositionActivePopups();
+        activePopup = popup;
 
-        popup.Play(fadeInSeconds, holdSeconds, fadeOutSeconds, () =>
+        popup.Play(fadeInSeconds, holdSeconds, fadeOutSeconds, exitDirection, exitDistance, () =>
         {
-            activePopups.Remove(popup);
+            if (activePopup == popup)
+                activePopup = null;
+
             Destroy(popup.gameObject);
-            RepositionActivePopups();
         });
     }
 
-    private void RepositionActivePopups()
+    private void PositionAtAnchor(NewItemPopupUI popup)
     {
-        if (anchor == null)
+        if (anchor == null || popup == null || popup.RectTransform == null)
             return;
 
-        Vector2 basePos = anchor.anchoredPosition;
+        popup.RectTransform.anchoredPosition = anchor.anchoredPosition;
+    }
 
-        for (int i = 0; i < activePopups.Count; i++)
+    private void ExitActivePopup()
+    {
+        if (activePopup == null)
+            return;
+
+        var exitingPopup = activePopup;
+        activePopup = null;
+
+        exitingPopup.PlayExit(fadeOutSeconds, exitDirection, exitDistance, () =>
         {
-            var rt = activePopups[i].RectTransform;
-            if (rt == null) continue;
-
-            rt.anchoredPosition = basePos + Vector2.up * (verticalOffset * i);
-        }
+            Destroy(exitingPopup.gameObject);
+        });
     }
 
     private Dictionary<string, int> BuildCounts(InventoryModel inventory)
@@ -127,23 +137,6 @@ public class NewItemPopupManager : MonoBehaviour
         return dict;
     }
 
-    private void RemoveMissingKeysFromPrev(Dictionary<string, int> currentCounts)
-    {
-        // Create list to avoid modifying while iterating
-        var toRemove = ListPool<string>.Get();
-
-        foreach (var kvp in prevCounts)
-        {
-            if (!currentCounts.ContainsKey(kvp.Key))
-                toRemove.Add(kvp.Key);
-        }
-
-        for (int i = 0; i < toRemove.Count; i++)
-            prevCounts.Remove(toRemove[i]);
-
-        ListPool<string>.Release(toRemove);
-    }
-
     private void TryRefreshSnapshotFromGame()
     {
         prevCounts.Clear();
@@ -157,26 +150,6 @@ public class NewItemPopupManager : MonoBehaviour
             var e = entries[i];
             if (string.IsNullOrWhiteSpace(e.itemId)) continue;
             prevCounts[e.itemId] = e.count;
-        }
-    }
-
-    /// <summary>
-    /// Tiny pooled-list utility to avoid allocations during removals.
-    /// If you don't care, you can delete this and just use a new List<string>().
-    /// </summary>
-    private static class ListPool<T>
-    {
-        private static readonly Stack<List<T>> pool = new();
-
-        public static List<T> Get()
-        {
-            return pool.Count > 0 ? pool.Pop() : new List<T>();
-        }
-
-        public static void Release(List<T> list)
-        {
-            list.Clear();
-            pool.Push(list);
         }
     }
 }

@@ -84,6 +84,18 @@ public class NewItemPopupUI : MonoBehaviour
         Action onFinished = null
     )
     {
+        Play(fadeInSeconds, holdSeconds, fadeOutSeconds, Vector2.zero, 0f, onFinished);
+    }
+
+    public void Play(
+        float fadeInSeconds,
+        float holdSeconds,
+        float fadeOutSeconds,
+        Vector2 exitDirection,
+        float exitDistance,
+        Action onFinished = null
+    )
+    {
         if (canvasGroup == null)
             return;
 
@@ -94,6 +106,8 @@ public class NewItemPopupUI : MonoBehaviour
         // Reset base state (important if reused / instantiated fast)
         transform.localScale = baseScale;
         canvasGroup.alpha = 0f;
+        Vector2 startAnchoredPosition = RectTransform != null ? RectTransform.anchoredPosition : Vector2.zero;
+        Vector2 exitAnchoredPosition = startAnchoredPosition + GetExitOffset(exitDirection, exitDistance);
 
         // POP: quick up then back
         // Use SetUpdate(true) for unscaled time (same as your coroutine implementation)
@@ -116,13 +130,57 @@ public class NewItemPopupUI : MonoBehaviour
             .Append(transform.DOScale(baseScale, popDownDuration).SetEase(Ease.InCubic))
             .Join(canvasGroup.DOFade(1f, fadeInSeconds).SetEase(Ease.OutQuad))
             .AppendInterval(holdSeconds)
-            .Append(canvasGroup.DOFade(0f, fadeOutSeconds).SetEase(Ease.InQuad))
-            .OnComplete(() =>
-            {
-                lifetimeSequence = null;
-                onFinished?.Invoke();
-            });
+            .Append(canvasGroup.DOFade(0f, fadeOutSeconds).SetEase(Ease.InQuad));
 
+        if (RectTransform != null)
+            lifetimeSequence.Join(RectTransform.DOAnchorPos(exitAnchoredPosition, fadeOutSeconds).SetEase(Ease.InCubic));
+
+        lifetimeSequence.OnComplete(() =>
+        {
+            lifetimeSequence = null;
+            onFinished?.Invoke();
+        });
+    }
+
+    public void PlayExit(
+        float fadeOutSeconds,
+        Vector2 exitDirection,
+        float exitDistance,
+        Action onFinished = null
+    )
+    {
+        if (canvasGroup == null)
+        {
+            onFinished?.Invoke();
+            return;
+        }
+
+        lifetimeSequence?.Kill();
+        popTween?.Kill();
+
+        Vector2 startAnchoredPosition = RectTransform != null ? RectTransform.anchoredPosition : Vector2.zero;
+        Vector2 exitAnchoredPosition = startAnchoredPosition + GetExitOffset(exitDirection, exitDistance);
+
+        lifetimeSequence = DOTween.Sequence()
+            .SetUpdate(true)
+            .Join(canvasGroup.DOFade(0f, fadeOutSeconds).SetEase(Ease.InQuad));
+
+        if (RectTransform != null)
+            lifetimeSequence.Join(RectTransform.DOAnchorPos(exitAnchoredPosition, fadeOutSeconds).SetEase(Ease.InCubic));
+
+        lifetimeSequence.OnComplete(() =>
+        {
+            lifetimeSequence = null;
+            onFinished?.Invoke();
+        });
+    }
+
+    private static Vector2 GetExitOffset(Vector2 direction, float distance)
+    {
+        if (direction.sqrMagnitude <= 0.0001f || distance <= 0f)
+            return Vector2.zero;
+
+        return direction.normalized * distance;
     }
 
     
