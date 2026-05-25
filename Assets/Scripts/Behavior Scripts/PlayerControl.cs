@@ -7,6 +7,7 @@ using UnityEngine.Rendering.UI;
 public class PlayerControl : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField, Min(1f)] private float sprintSpeedMultiplier = 2f;
 
     // [Header("Events")] 
     // [SerializeField] private UnityEvent lockInteractions;
@@ -22,6 +23,7 @@ public class PlayerControl : MonoBehaviour
 
     private Vector2 moveInput;
     private Vector2 moveVector;
+    private bool isSprinting;
 
     // 0=Down, 1=Up, 2=Left, 3=Right
     private int facing = 0;
@@ -103,7 +105,8 @@ public class PlayerControl : MonoBehaviour
         }
 
         moveVector = moveInput.sqrMagnitude > 1f ? moveInput.normalized : moveInput;
-        rb.linearVelocity = moveVector * moveSpeed;
+        float speedMultiplier = isSprinting ? sprintSpeedMultiplier : 1f;
+        rb.linearVelocity = moveVector * moveSpeed * speedMultiplier;
     }
 
 
@@ -149,6 +152,17 @@ public class PlayerControl : MonoBehaviour
         }
 
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnSprint(InputAction.CallbackContext context)
+    {
+        if (PauseUtility.IsPaused || context.canceled)
+        {
+            isSprinting = false;
+            return;
+        }
+
+        isSprinting = context.ReadValueAsButton();
     }
 
     // public void LockInteractions()
@@ -222,6 +236,7 @@ public class PlayerControl : MonoBehaviour
         {
             moveInput = Vector2.zero;
             moveVector = Vector2.zero;
+            isSprinting = false;
             rb.linearVelocity = Vector2.zero;
             lockedAxis = 0; 
         }
