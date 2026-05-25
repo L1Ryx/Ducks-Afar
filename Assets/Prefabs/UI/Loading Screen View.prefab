@@ -148,9 +148,12 @@ MonoBehaviour:
   root: {fileID: 3785483009874293523}
   messageText: {fileID: 4074732629127369935}
   defaultMessage: Loading...
-  fadeInDuration: 0.2
-  minimumVisibleDuration: 0.8
-  postLoadHoldDuration: 0.2
+  fadeInDuration: 0.5
+  textFadeInDuration: 0.25
+  minimumVisibleDuration: 1.2
+  postLoadHoldDuration: 0.5
+  textFadeOutDuration: 0.25
+  overlayFadeOutDelay: 0.5
   fadeOutDuration: 0.5
   sortingOrder: 5000
 --- !u!1 &7450651870995526890

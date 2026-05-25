@@ -53,6 +53,9 @@ public class TitleCardSequencer : MonoBehaviour
     [Tooltip("Use unscaled time (ignores Time.timeScale), useful for title cards.")]
     [SerializeField] private bool useUnscaledTime = true;
 
+    [Tooltip("If true, waits for the central scene loader to finish before showing this card.")]
+    [SerializeField] private bool waitForSceneLoadComplete = true;
+
     [Tooltip("If true, disables the panel GameObject at the end.")]
     [SerializeField] private bool disableOnFinish = true;
 
@@ -122,7 +125,7 @@ public class TitleCardSequencer : MonoBehaviour
         if (_sequenceCo != null)
             StopCoroutine(_sequenceCo);
 
-        _sequenceCo = StartCoroutine(SequenceRoutine());
+        _sequenceCo = StartCoroutine(StartWhenReadyRoutine());
     }
 
     /// <summary>
@@ -140,6 +143,14 @@ public class TitleCardSequencer : MonoBehaviour
 
         if (disableOnFinish)
             gameObject.SetActive(false);
+    }
+
+    private IEnumerator StartWhenReadyRoutine()
+    {
+        if (waitForSceneLoadComplete && Game.IsReady && Game.Ctx?.SceneLoader != null)
+            yield return Game.Ctx.SceneLoader.WaitUntilLoadComplete();
+
+        yield return SequenceRoutine();
     }
 
     private void CacheLinesAndTexts()

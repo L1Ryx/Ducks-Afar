@@ -15,6 +15,12 @@ public sealed class SceneLoadSystem
 
     public bool IsLoading { get; private set; }
 
+    public IEnumerator WaitUntilLoadComplete()
+    {
+        while (IsLoading)
+            yield return null;
+    }
+
     public void PrewarmLoadingScreen()
     {
         GetLoadingScreen().HideImmediate();

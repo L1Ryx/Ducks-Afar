@@ -36,7 +36,12 @@ public class LevelStarter : MonoBehaviour
 
     private IEnumerator DelayedStart(float delay)
     {
-        yield return new WaitForSeconds(delay);
+        if (Game.IsReady && Game.Ctx?.SceneLoader != null)
+            yield return Game.Ctx.SceneLoader.WaitUntilLoadComplete();
+
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
+
         Game.Ctx.LevelState.BeginLevel();
     }
 
