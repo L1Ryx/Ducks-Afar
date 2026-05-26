@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelBeatDirector : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class LevelBeatDirector : MonoBehaviour
             return;
 
         isRunning = true;
-        CurrentBeatIndex = -1;
+        CurrentBeatIndex = ResolveRestartBeatIndex() - 1;
 
         onSequenceStarted?.Raise();
         Advance();
@@ -66,6 +67,9 @@ public class LevelBeatDirector : MonoBehaviour
         foreach (var evt in beat.OnEnterEvents)
             evt?.Raise();
 
+        if (beat.MarkCheckpointOnEnter && beat.Checkpoint != null)
+            Game.Ctx?.LevelCheckpoints?.MarkCheckpoint(SceneManager.GetActiveScene().name, beat.Checkpoint.CheckpointId);
+
         // Subscribe to the beat’s advance trigger
         if (beat.AdvanceEvent != null)
             beat.AdvanceEvent.RegisterRuntimeListener(OnAdvanceTriggered);
@@ -86,5 +90,31 @@ public class LevelBeatDirector : MonoBehaviour
         var beat = CurrentBeat;
         if (beat?.AdvanceEvent != null)
             beat.AdvanceEvent.UnregisterRuntimeListener(OnAdvanceTriggered);
+    }
+
+    private int ResolveRestartBeatIndex()
+    {
+        if (!Game.IsReady || Game.Ctx?.LevelCheckpoints == null)
+            return 0;
+
+        if (!Game.Ctx.LevelCheckpoints.TryConsumeRestartCheckpoint(
+                SceneManager.GetActiveScene().name,
+                out string checkpointId))
+            return 0;
+
+        for (int i = 0; i < sequence.Beats.Count; i++)
+        {
+            LevelBeatSO beat = sequence.Beats[i];
+            LevelCheckpointSO checkpoint = beat != null ? beat.Checkpoint : null;
+
+            if (checkpoint == null || checkpoint.CheckpointId != checkpointId)
+                continue;
+
+            checkpoint.ApplySetup();
+            return i;
+        }
+
+        Debug.LogWarning($"LevelBeatDirector: Restart checkpoint '{checkpointId}' was saved but not found in sequence '{sequence.name}'.");
+        return 0;
     }
 }

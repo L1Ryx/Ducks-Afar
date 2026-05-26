@@ -19,4 +19,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
   - {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
   - {fileID: 11400000, guid: 481df9094e5434d7f81fc81f748257e6, type: 2}
+  checkpoint: {fileID: 11400000, guid: 2956b7b76bb8243669ca7197d0e978ff, type: 2}
+  markCheckpointOnEnter: 1
   advanceEvent: {fileID: 11400000, guid: d1beb7cb5807e4919a0c33d057213237, type: 2}

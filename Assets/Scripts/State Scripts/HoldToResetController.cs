@@ -1,0 +1,235 @@
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
+
+[DisallowMultipleComponent]
+public sealed class HoldToResetController : MonoBehaviour
+{
+    [Header("Input")]
+    [SerializeField] private InputActionReference resetAction;
+    [SerializeField] private bool useKeyboardFallback = true;
+    [SerializeField] private Key fallbackKey = Key.R;
+
+    [Header("Timing")]
+    [Min(0.1f)] [SerializeField] private float holdDuration = 1.5f;
+    [Min(0f)] [SerializeField] private float fadeToBlackDuration = 0.5f;
+    [Min(0.01f)] [SerializeField] private float releaseRecoveryDuration = 0.35f;
+
+    [Header("Post Processing")]
+    [SerializeField] private int volumePriority = 999;
+    [Range(0f, 1f)] [SerializeField] private float maxFilmGrainIntensity = 1f;
+    [Range(0f, 1f)] [SerializeField] private float maxChromaticAberrationIntensity = 1f;
+    [SerializeField] private float targetSaturation = -100f;
+    [SerializeField] private float targetPostExposure = -10f;
+    [Min(0.1f)] [SerializeField] private float holdEffectCurvePower = 3f;
+
+    private Volume resetVolume;
+    private VolumeProfile resetProfile;
+    private FilmGrain filmGrain;
+    private ChromaticAberration chromaticAberration;
+    private ColorAdjustments colorAdjustments;
+
+    private float progress;
+    private float fadeToBlackProgress;
+    private float holdTimer;
+    private float fadeToBlackTimer;
+    private bool hasTriggeredReset;
+    private bool isFadingToBlack;
+
+    private void Awake()
+    {
+        EnsureVolume();
+        ApplyProgress(0f);
+    }
+
+    private void OnEnable()
+    {
+        if (resetAction != null && resetAction.action != null)
+            resetAction.action.Enable();
+
+        SceneManager.sceneLoaded += HandleSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        if (resetAction != null && resetAction.action != null)
+            resetAction.action.Disable();
+
+        SceneManager.sceneLoaded -= HandleSceneLoaded;
+        ApplyFadeToBlackProgress(0f);
+        ApplyProgress(0f);
+    }
+
+    private void Update()
+    {
+        bool pressed = IsResetPressed();
+
+        if (isFadingToBlack)
+        {
+            UpdateFadeToBlack();
+            return;
+        }
+
+        if (hasTriggeredReset)
+            return;
+
+        if (pressed && CanResetNow())
+        {
+            holdTimer += Time.unscaledDeltaTime;
+            ApplyProgress(Mathf.Clamp01(holdTimer / holdDuration));
+
+            if (holdTimer >= holdDuration)
+                TriggerReset();
+
+            return;
+        }
+
+        RecoverTowardIdle();
+    }
+
+    private bool IsResetPressed()
+    {
+        if (resetAction != null && resetAction.action != null)
+            return resetAction.action.IsPressed();
+
+        return useKeyboardFallback &&
+               Keyboard.current != null &&
+               Keyboard.current[fallbackKey].isPressed;
+    }
+
+    private static bool CanResetNow()
+    {
+        if (!Game.IsReady || Game.Ctx?.SceneLoader == null)
+            return false;
+
+        if (PauseUtility.IsPaused)
+            return false;
+
+        if (Game.Ctx.SceneLoader.IsLoading)
+            return false;
+
+        if (Game.Ctx.InteractionLock?.IsLocked == true)
+            return false;
+
+        return true;
+    }
+
+    private void RecoverTowardIdle()
+    {
+        holdTimer = 0f;
+        ApplyFadeToBlackProgress(0f);
+
+        if (progress <= 0f)
+            return;
+
+        float rate = releaseRecoveryDuration > 0f ? 1f / releaseRecoveryDuration : float.PositiveInfinity;
+        ApplyProgress(Mathf.MoveTowards(progress, 0f, rate * Time.unscaledDeltaTime));
+    }
+
+    private void TriggerReset()
+    {
+        hasTriggeredReset = true;
+        holdTimer = 0f;
+        ApplyProgress(1f);
+
+        isFadingToBlack = true;
+        fadeToBlackTimer = 0f;
+
+        if (fadeToBlackDuration <= 0f)
+            CompleteReset();
+    }
+
+    private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        holdTimer = 0f;
+        fadeToBlackTimer = 0f;
+        isFadingToBlack = false;
+        hasTriggeredReset = false;
+        ApplyFadeToBlackProgress(0f);
+        ApplyProgress(0f);
+    }
+
+    private void EnsureVolume()
+    {
+        if (resetVolume != null)
+            return;
+
+        var volumeObject = new GameObject("Hold To Reset PP Volume");
+        volumeObject.transform.SetParent(transform, false);
+        volumeObject.hideFlags = HideFlags.DontSave;
+
+        resetVolume = volumeObject.AddComponent<Volume>();
+        resetVolume.isGlobal = true;
+        resetVolume.priority = volumePriority;
+        resetVolume.weight = 0f;
+
+        resetProfile = ScriptableObject.CreateInstance<VolumeProfile>();
+        resetProfile.hideFlags = HideFlags.HideAndDontSave;
+
+        filmGrain = resetProfile.Add<FilmGrain>(true);
+        filmGrain.intensity.overrideState = true;
+        filmGrain.response.overrideState = true;
+        filmGrain.response.value = 1f;
+
+        chromaticAberration = resetProfile.Add<ChromaticAberration>(true);
+        chromaticAberration.intensity.overrideState = true;
+
+        colorAdjustments = resetProfile.Add<ColorAdjustments>(true);
+        colorAdjustments.saturation.overrideState = true;
+        colorAdjustments.postExposure.overrideState = true;
+
+        resetVolume.sharedProfile = resetProfile;
+    }
+
+    private void ApplyProgress(float value)
+    {
+        EnsureVolume();
+
+        progress = Mathf.Clamp01(value);
+        resetVolume.weight = progress;
+        float curvedProgress = EaseOut(progress);
+
+        if (filmGrain != null)
+            filmGrain.intensity.value = curvedProgress * maxFilmGrainIntensity;
+
+        if (chromaticAberration != null)
+            chromaticAberration.intensity.value = curvedProgress * maxChromaticAberrationIntensity;
+
+        if (colorAdjustments != null)
+        {
+            colorAdjustments.saturation.value = Mathf.Lerp(0f, targetSaturation, curvedProgress);
+            colorAdjustments.postExposure.value = Mathf.Lerp(0f, targetPostExposure, fadeToBlackProgress);
+        }
+    }
+
+    private float EaseOut(float t)
+    {
+        return 1f - Mathf.Pow(1f - Mathf.Clamp01(t), holdEffectCurvePower);
+    }
+
+    private void UpdateFadeToBlack()
+    {
+        fadeToBlackTimer += Time.unscaledDeltaTime;
+        float t = fadeToBlackDuration > 0f ? Mathf.Clamp01(fadeToBlackTimer / fadeToBlackDuration) : 1f;
+        ApplyFadeToBlackProgress(t);
+
+        if (t >= 1f)
+            CompleteReset();
+    }
+
+    private void ApplyFadeToBlackProgress(float value)
+    {
+        fadeToBlackProgress = Mathf.Clamp01(value);
+
+        if (colorAdjustments != null)
+            colorAdjustments.postExposure.value = Mathf.Lerp(0f, targetPostExposure, fadeToBlackProgress);
+    }
+
+    private void CompleteReset()
+    {
+        isFadingToBlack = false;
+        Game.Ctx.SceneLoader.ReloadActiveScene();
+    }
+}

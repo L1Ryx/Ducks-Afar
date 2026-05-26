@@ -41,9 +41,7 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
 
     private void OnDisable()
     {
-        posTween?.Kill();
-        sizeTween?.Kill();
-        seq?.Kill();
+        KillTweens();
     }
 
     private void Update()
@@ -106,6 +104,19 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
         onUnlockInteractions?.Invoke();
     }
 
+    public void SnapToFinishedState()
+    {
+        if (cam == null)
+            cam = GetComponent<Camera>();
+
+        KillTweens();
+
+        transform.position = targetPos;
+
+        if (cam.orthographic)
+            cam.orthographicSize = targetOrthoSize;
+    }
+
     private void ApplyPauseState(bool paused)
     {
         if (seq == null || !seq.IsActive())
@@ -119,5 +130,16 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
 
         if (!paused && !seq.IsPlaying())
             seq.Play();
+    }
+
+    private void KillTweens()
+    {
+        posTween?.Kill();
+        sizeTween?.Kill();
+        seq?.Kill();
+
+        posTween = null;
+        sizeTween = null;
+        seq = null;
     }
 }

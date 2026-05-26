@@ -11,6 +11,7 @@ public class GameContext : MonoBehaviour
     public InventoryModel Inventory { get; private set; }
     public InventorySelectionModel InventorySelection { get; private set; }
     public LevelStateModel LevelState { get; private set; }
+    public LevelCheckpointModel LevelCheckpoints { get; private set; }
     public InteractionLockModel InteractionLock { get; private set; }
     public ItemDatabase ItemDb => itemDatabase;
     public SaveStateModel SaveState { get; private set; }
@@ -39,6 +40,7 @@ public class GameContext : MonoBehaviour
         
         InitializeRuntimeState();
         EnsurePauseComponents();
+        EnsureHoldToResetController();
 
         Game.SetContext(this);
     }
@@ -67,6 +69,7 @@ public class GameContext : MonoBehaviour
         Inventory = new InventoryModel(new InventoryData());
         InventorySelection = new InventorySelectionModel(Inventory);
         LevelState = new LevelStateModel();
+        LevelCheckpoints = new LevelCheckpointModel();
         InteractionLock = new InteractionLockModel();
         Audio = new AudioStateModel();
         SaveState = new SaveStateModel();
@@ -101,6 +104,12 @@ public class GameContext : MonoBehaviour
 
         if (GetComponent<PauseInputController>() == null)
             gameObject.AddComponent<PauseInputController>();
+    }
+
+    private void EnsureHoldToResetController()
+    {
+        if (GetComponent<HoldToResetController>() == null)
+            gameObject.AddComponent<HoldToResetController>();
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)

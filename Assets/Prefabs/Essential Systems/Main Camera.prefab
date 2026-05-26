@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2783246645570633920}
   - component: {fileID: 7186632533147458901}
   - component: {fileID: 4837883573716060894}
+  - component: {fileID: 245027419036053653}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -124,7 +125,6 @@ MonoBehaviour:
   m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
-  m_Version: 2
   m_TaaSettings:
     m_Quality: 3
     m_FrameInfluence: 0.1
@@ -132,6 +132,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+  m_Version: 2
 --- !u!114 &5672371897001214630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,3 +247,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fcef739b142452cada69a5a65d447d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &245027419036053653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5998916118269403988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventListener
+  Event: {fileID: 11400000, guid: 4b494a718c9714a14a6fb03de4fc1a4f, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5672371897001214630}
+        m_TargetAssemblyTypeName: CameraEaseInOnLevelStart, Assembly-CSharp
+        m_MethodName: SnapToFinishedState
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

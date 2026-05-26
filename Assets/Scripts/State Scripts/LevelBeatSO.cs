@@ -13,6 +13,10 @@ public class LevelBeatSO : ScriptableObject
     [Tooltip("Raised immediately when this beat becomes active (in order).")]
     [SerializeField] private List<GameEvent> onEnterEvents = new();
 
+    [Header("Checkpoint")]
+    [SerializeField] private LevelCheckpointSO checkpoint;
+    [SerializeField] private bool markCheckpointOnEnter;
+
     [Header("Beat Progression")]
     [Tooltip("When this event is raised, the director advances to the next beat.")]
     [SerializeField] private GameEvent advanceEvent;
@@ -20,5 +24,7 @@ public class LevelBeatSO : ScriptableObject
     
     public string BeatId => beatId;
     public IReadOnlyList<GameEvent> OnEnterEvents => onEnterEvents;
+    public LevelCheckpointSO Checkpoint => checkpoint;
+    public bool MarkCheckpointOnEnter => markCheckpointOnEnter;
     public GameEvent AdvanceEvent => advanceEvent;
 }

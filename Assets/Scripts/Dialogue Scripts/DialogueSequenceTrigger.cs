@@ -67,29 +67,18 @@ public sealed class DialogueSequenceTrigger : MonoBehaviour
 
         Game.Ctx.Dialogue.StartDialogue(encounter);
 
-        // Advance index for next trigger
-        if (currentEncounterIndex < encounters.Count - 1)
-        {
-            currentEncounterIndex++;
-        }
-        else
-        {
-            // We just used the last encounter
-            if (stopAfterLastEncounter)
-            {
-                isExhausted = true;
-                currentEncounterIndex++; // mark as exhausted
-            }
-            else if (loopLastEncounter)
-            {
-                currentEncounterIndex = encounters.Count - 1;
-            }
-            else
-            {
-                // Stay at last encounter by default to avoid out-of-range.
-                currentEncounterIndex = encounters.Count - 1;
-            }
-        }
+        AdvanceEncounterIndex();
+    }
+
+    public void SkipNextEncounter()
+    {
+        if (isExhausted)
+            return;
+
+        if (encounters == null || encounters.Count == 0)
+            return;
+
+        AdvanceEncounterIndex();
     }
 
     // Optional helper APIs (nice for debugging or bespoke logic)
@@ -103,5 +92,30 @@ public sealed class DialogueSequenceTrigger : MonoBehaviour
     {
         currentEncounterIndex = Mathf.Clamp(index, 0, Mathf.Max(0, encounters.Count - 1));
         isExhausted = false;
+    }
+
+    private void AdvanceEncounterIndex()
+    {
+        if (currentEncounterIndex < encounters.Count - 1)
+        {
+            currentEncounterIndex++;
+            return;
+        }
+
+        if (stopAfterLastEncounter)
+        {
+            isExhausted = true;
+            currentEncounterIndex++;
+            return;
+        }
+
+        if (loopLastEncounter)
+        {
+            currentEncounterIndex = encounters.Count - 1;
+            return;
+        }
+
+        // Stay at the last encounter by default to avoid out-of-range.
+        currentEncounterIndex = encounters.Count - 1;
     }
 }

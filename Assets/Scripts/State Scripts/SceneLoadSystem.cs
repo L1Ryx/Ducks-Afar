@@ -93,7 +93,9 @@ public sealed class SceneLoadSystem
 
     public void ReloadActiveScene()
     {
-        LoadScene(SceneManager.GetActiveScene().name);
+        string sceneName = SceneManager.GetActiveScene().name;
+        ctx.LevelCheckpoints?.PrepareRestart(sceneName);
+        LoadScene(sceneName);
     }
 
     public void PrepareForSceneLoad()
