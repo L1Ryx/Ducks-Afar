@@ -1200,6 +1200,7 @@ GameObject:
   - component: {fileID: 1712910845}
   - component: {fileID: 1712910847}
   - component: {fileID: 1712910846}
+  - component: {fileID: 1712910848}
   m_Layer: 0
   m_Name: GameContext
   m_TagString: Untagged
@@ -1402,6 +1403,30 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &1712910848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712910837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a52626f00e3946468d05a132066b81b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HoldToResetController
+  resetAction: {fileID: 0}
+  useKeyboardFallback: 1
+  fallbackKey: 32
+  holdDuration: 1
+  fadeToBlackDuration: 0.5
+  releaseRecoveryDuration: 0.35
+  volumePriority: 999
+  maxFilmGrainIntensity: 1
+  maxChromaticAberrationIntensity: 1
+  targetSaturation: -100
+  targetPostExposure: -10
+  holdEffectCurvePower: 3
 --- !u!1001 &1725222139
 PrefabInstance:
   m_ObjectHideFlags: 0
