@@ -41,6 +41,7 @@ public class GameContext : MonoBehaviour
         InitializeRuntimeState();
         EnsurePauseComponents();
         EnsureHoldToResetController();
+        EnsureDevComponents();
 
         Game.SetContext(this);
     }
@@ -110,6 +111,17 @@ public class GameContext : MonoBehaviour
     {
         if (GetComponent<HoldToResetController>() == null)
             gameObject.AddComponent<HoldToResetController>();
+    }
+
+    private void EnsureDevComponents()
+    {
+#if UNITY_EDITOR
+        if (GetComponent<DevSceneCommands>() == null)
+            gameObject.AddComponent<DevSceneCommands>();
+
+        if (GetComponent<EditorDebugConsoleHotkey>() == null)
+            gameObject.AddComponent<EditorDebugConsoleHotkey>();
+#endif
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)

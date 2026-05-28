@@ -32,11 +32,7 @@ public class DebugDummy : MonoBehaviour
         DebugLogConsole.AddCommand("/restart", "Reloads the current scene", ReloadSameScene);
         DebugLogConsole.AddCommand("/hyperspeed", "Toggles hyperspeed for the player", ToggleHyperspeed);
         DebugLogConsole.AddCommand("/killAllAudio", "Kills all Wwise audio", KillAllWwiseAudio);
-        DebugLogConsole.AddCommand("/addHW1", "Try adds 1-Hardworm Pack", DebugAddHardwormOne);
-        DebugLogConsole.AddCommand("/addHW2", "Try adds 2-Hardworm Pack", DebugAddHardwormTwo);
-        DebugLogConsole.AddCommand("/addHW3", "Try adds 3-Hardworm Pack", DebugAddHardwormThree);
-        DebugLogConsole.AddCommand("/addHW4", "Try adds 4-Hardworm Pack", DebugAddHardwormFour);
-        DebugLogConsole.AddCommand("/addHW5", "Try adds 5-Hardworm Pack", DebugAddHardwormFive);
+        DebugLogConsole.AddCommand<int>("/addHW", "Adds a hardworm pack by pack size. Example: /addHW 3", DebugAddHardwormPack);
         DebugLogConsole.AddCommand("/addKeycard", "Try adds Keycard", DebugAddKeycard);
         DebugLogConsole.AddCommand("/clearInven", "Clears Inventory", ClearInventory);
         DebugLogConsole.AddCommand("/loadNextScene", "Loads the next scene", GoToNextScene);
@@ -79,29 +75,26 @@ public class DebugDummy : MonoBehaviour
         Debug.Log(Application.persistentDataPath);
     }
 
-    public void DebugAddHardwormOne()
+    public void DebugAddHardwormPack(int packSize)
     {
-        Game.Ctx.Inventory.TryAdd("001", 1);
-    }
-    
-    public void DebugAddHardwormTwo()
-    {
-        Game.Ctx.Inventory.TryAdd("002", 1);
-    }
-    
-    public void DebugAddHardwormThree()
-    {
-        Game.Ctx.Inventory.TryAdd("003", 1);
-    }
-    
-    public void DebugAddHardwormFour()
-    {
-        Game.Ctx.Inventory.TryAdd("004", 1);
-    }
-    
-    public void DebugAddHardwormFive()
-    {
-        Game.Ctx.Inventory.TryAdd("005", 1);
+        if (!Game.IsReady || Game.Ctx?.Inventory == null || Game.Ctx.ItemDb == null)
+        {
+            Debug.LogWarning("Add hardworm failed: GameContext, Inventory, or ItemDatabase is not ready.");
+            return;
+        }
+
+        HardwormPackDefinition packDef = Game.Ctx.ItemDb.GetHardwormByPackSize(packSize);
+        if (packDef == null || string.IsNullOrWhiteSpace(packDef.itemId))
+        {
+            Debug.LogWarning($"Add hardworm failed: no hardworm pack definition found for pack size {packSize}.");
+            return;
+        }
+
+        if (Game.Ctx.Inventory.TryAdd(packDef.itemId, 1))
+        {
+            Game.Ctx.HardwormPickupSfx?.PlayPickup(packDef);
+            Debug.Log($"Added hardworm pack: size={packSize}, itemId={packDef.itemId}");
+        }
     }
 
     public void ClearInventory()
