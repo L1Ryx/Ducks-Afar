@@ -590,6 +590,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1054611898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054611899}
+  - component: {fileID: 1054611900}
+  m_Layer: 0
+  m_Name: Dev Diagnostics Overlay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1054611899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054611898}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1712910838}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054611900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054611898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285031a5bf9b4e5da7aa5d56b5755169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevDiagnosticsOverlay
+  root: {fileID: 0}
+  text: {fileID: 0}
+  sortingOrder: 4800
+  toggleKey: 283
+  visibleOnStart: 0
+  refreshRateHz: 8
 --- !u!1 &1161664107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1274,7 @@ Transform:
   - {fileID: 6829757107640847669}
   - {fileID: 1504286301}
   - {fileID: 1537591671}
+  - {fileID: 1054611899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1712910839
@@ -1497,7 +1548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 744358321568934933, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -11.411987
+      value: -11.412109
       objectReference: {fileID: 0}
     - target: {fileID: 744358321568934933, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.y
