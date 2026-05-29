@@ -14,6 +14,7 @@ public sealed class TitleScreenController : MonoBehaviour
     [SerializeField] private CanvasGroup fileSelectPanel;
     [SerializeField] private SettingsMenuPanel optionsPanel;
     [SerializeField] private CanvasGroup introPanel;
+    [SerializeField] private CanvasGroup ducksPanel;
 
     [Header("File Select")]
     [SerializeField] private TitleFileSelectPanel fileSelect;
@@ -28,7 +29,7 @@ public sealed class TitleScreenController : MonoBehaviour
             fileSelect.SetController(this);
 
         //ShowMain();
-        ShowIntro();
+        ShowIntro(); //to show initial title screen
     }
 
     private void OnEnable()
