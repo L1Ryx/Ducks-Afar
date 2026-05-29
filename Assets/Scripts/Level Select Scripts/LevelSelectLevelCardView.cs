@@ -1,10 +1,11 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public sealed class LevelSelectLevelCardView : MonoBehaviour
+public sealed class LevelSelectLevelCardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [Header("Text")]
     [SerializeField] private TMP_Text titleText;
@@ -23,23 +24,47 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private UIFloatyJuice floatyJuice;
 
+    [Header("Hover Scale")]
+    [SerializeField] private bool scaleOnHover = true;
+    [SerializeField, Min(1f)] private float hoverScaleMultiplier = 1.08f;
+    [SerializeField, Min(0f)] private float hoverScaleLerpSpeed = 18f;
+
     private LevelDefinition level;
+    private RectTransform rectTransform;
+    private Vector3 baseScale = Vector3.one;
     private float visibleAlpha = 1f;
     private Tween fadeTween;
+    private bool pointerHovered;
 
     public UnityEvent<LevelDefinition> OnLevelSelected { get; } = new();
     public LevelDefinition BoundLevel => level;
     public bool CanSelect => level != null && (button == null || button.interactable);
+    public bool IsPointerHovered => pointerHovered;
+    public RectTransform ClickRect
+    {
+        get
+        {
+            if (button != null && button.transform is RectTransform buttonRect)
+                return buttonRect;
+
+            return rectTransform != null ? rectTransform : transform as RectTransform;
+        }
+    }
 
     private void Reset()
     {
         button = GetComponent<Button>();
         fadeCanvasGroup = GetComponent<CanvasGroup>();
         floatyJuice = GetComponent<UIFloatyJuice>();
+        rectTransform = GetComponent<RectTransform>();
     }
 
     private void Awake()
     {
+        rectTransform = GetComponent<RectTransform>();
+        if (rectTransform != null)
+            baseScale = rectTransform.localScale;
+
         if (fadeCanvasGroup == null)
             fadeCanvasGroup = GetComponent<CanvasGroup>();
 
@@ -50,12 +75,25 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
             button.onClick.AddListener(HandleClicked);
     }
 
+    private void Update()
+    {
+        UpdateHoverScale();
+    }
+
     private void OnDestroy()
     {
         fadeTween?.Kill();
 
         if (button != null)
             button.onClick.RemoveListener(HandleClicked);
+    }
+
+    private void OnDisable()
+    {
+        pointerHovered = false;
+
+        if (rectTransform != null)
+            rectTransform.localScale = baseScale;
     }
 
     public void Bind(LevelDefinition levelDefinition, SaveStateModel saveState)
@@ -119,8 +157,21 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
 
     public void RebaseFloatyJuice()
     {
+        if (rectTransform != null)
+            baseScale = rectTransform.localScale;
+
         if (floatyJuice != null)
             floatyJuice.Rebase();
+    }
+
+    private void UpdateHoverScale()
+    {
+        if (!scaleOnHover || rectTransform == null)
+            return;
+
+        Vector3 targetScale = baseScale * (pointerHovered ? hoverScaleMultiplier : 1f);
+        float lerp = 1f - Mathf.Exp(-hoverScaleLerpSpeed * Time.unscaledDeltaTime);
+        rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, targetScale, lerp);
     }
 
     private void RebuildArtifactSymbols(LevelDefinition levelDefinition, SaveStateModel saveState)
@@ -155,5 +206,15 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
             return;
 
         OnLevelSelected.Invoke(level);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        pointerHovered = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        pointerHovered = false;
     }
 }

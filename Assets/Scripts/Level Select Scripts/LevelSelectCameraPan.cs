@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 public sealed class LevelSelectCameraPan : MonoBehaviour
@@ -16,6 +17,7 @@ public sealed class LevelSelectCameraPan : MonoBehaviour
     [SerializeField] private float smoothing = 16f;
 
     private float currentVelocity;
+    private Tween focusTween;
 
     public float MinX
     {
@@ -28,6 +30,8 @@ public sealed class LevelSelectCameraPan : MonoBehaviour
         get => maxX;
         set => maxX = value;
     }
+
+    public Vector3 CurrentPosition => panTarget != null ? panTarget.position : transform.position;
 
     private void Reset()
     {
@@ -62,10 +66,84 @@ public sealed class LevelSelectCameraPan : MonoBehaviour
         panTarget.position = position;
     }
 
+    private void OnDestroy()
+    {
+        focusTween?.Kill();
+    }
+
     public void SetPanBounds(float leftX, float rightX)
     {
         minX = Mathf.Min(leftX, rightX);
         maxX = Mathf.Max(leftX, rightX);
+    }
+
+    public void FocusOnX(float worldX, float duration, Ease ease)
+    {
+        if (panTarget == null)
+            return;
+
+        currentVelocity = 0f;
+        focusTween?.Kill();
+
+        float targetX = Mathf.Clamp(worldX, minX, maxX);
+        if (duration <= 0f)
+        {
+            Vector3 immediatePosition = panTarget.position;
+            immediatePosition.x = targetX;
+            panTarget.position = immediatePosition;
+            return;
+        }
+
+        focusTween = panTarget
+            .DOMoveX(targetX, duration)
+            .SetEase(ease)
+            .SetUpdate(true);
+    }
+
+    public void FocusOn(Vector2 worldPosition, float duration, Ease ease)
+    {
+        if (panTarget == null)
+            return;
+
+        currentVelocity = 0f;
+        focusTween?.Kill();
+
+        Vector3 targetPosition = panTarget.position;
+        targetPosition.x = Mathf.Clamp(worldPosition.x, minX, maxX);
+        targetPosition.y = worldPosition.y;
+
+        if (duration <= 0f)
+        {
+            panTarget.position = targetPosition;
+            return;
+        }
+
+        focusTween = panTarget
+            .DOMove(targetPosition, duration)
+            .SetEase(ease)
+            .SetUpdate(true);
+    }
+
+    public void FocusOnY(float worldY, float duration, Ease ease)
+    {
+        if (panTarget == null)
+            return;
+
+        currentVelocity = 0f;
+        focusTween?.Kill();
+
+        if (duration <= 0f)
+        {
+            Vector3 immediatePosition = panTarget.position;
+            immediatePosition.y = worldY;
+            panTarget.position = immediatePosition;
+            return;
+        }
+
+        focusTween = panTarget
+            .DOMoveY(worldY, duration)
+            .SetEase(ease)
+            .SetUpdate(true);
     }
 
     private float GetDesiredVelocity()

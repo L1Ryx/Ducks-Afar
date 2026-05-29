@@ -21,8 +21,22 @@ public sealed class LevelSelectController : MonoBehaviour
     [SerializeField] private Transform cardParent;
     [SerializeField] private LevelSelectLevelCardView cardPrefab;
     [SerializeField] private Button backButton;
-    [SerializeField] private Vector2 cardDeckEdgePadding = new(16f, 16f);
     [SerializeField] private Vector2 cardDeckContentPadding = new(48f, 0f);
+    [SerializeField, Min(0f)] private float backButtonOrbitGap = 64f;
+
+    [Header("Camera Focus")]
+    [SerializeField] private LevelSelectCameraPan cameraPan;
+    [SerializeField, Min(0f)] private float cameraFocusDuration = 0.45f;
+    [SerializeField] private Ease cameraFocusEase = Ease.OutCubic;
+
+    [Header("Card Orbit")]
+    [SerializeField] private bool animateOrbit = true;
+    [SerializeField, Min(0f)] private float orbitRadius = 360f;
+    [SerializeField] private float orbitSpeedDegreesPerSecond = -18f;
+    [SerializeField] private float orbitStartAngleDegrees = 90f;
+    [SerializeField] private bool pauseOrbitOnCardHover = true;
+    [SerializeField, Min(0f)] private float hoverPauseLerpSpeed = 10f;
+    [SerializeField, Min(0f)] private float orbitBoundsPadding = 80f;
 
     [Header("Scene Loading")]
     [SerializeField] private string loadingMessage = "Loading level...";
@@ -38,6 +52,10 @@ public sealed class LevelSelectController : MonoBehaviour
     private bool isLoadingLevel;
     private bool isClosingDeck;
     private bool waitForClickRelease;
+    private float orbitAngleOffsetDegrees;
+    private float orbitHoverSpeedMultiplier = 1f;
+    private float previousCameraY;
+    private bool hasPreviousCameraY;
     private Tween cardDeckFadeTween;
 
     private SaveStateModel SaveState => Game.IsReady ? Game.Ctx?.SaveState : null;
@@ -57,6 +75,9 @@ public sealed class LevelSelectController : MonoBehaviour
     {
         if (worldCamera == null)
             worldCamera = Camera.main;
+
+        if (cameraPan == null && worldCamera != null)
+            cameraPan = worldCamera.GetComponent<LevelSelectCameraPan>();
 
         DisableDeckFollowComponent();
 
@@ -93,7 +114,10 @@ public sealed class LevelSelectController : MonoBehaviour
     private void LateUpdate()
     {
         if (IsCardDeckVisible() && activePlanet != null)
+        {
             PositionCardDeck(activePlanet);
+            UpdateCardOrbit(Time.unscaledDeltaTime);
+        }
     }
 
     private void OnDestroy()
@@ -130,8 +154,18 @@ public sealed class LevelSelectController : MonoBehaviour
             return;
 
         activePlanet = planet;
+        orbitAngleOffsetDegrees = 0f;
+        if (cameraPan != null)
+        {
+            previousCameraY = cameraPan.CurrentPosition.y;
+            hasPreviousCameraY = true;
+            cameraPan.FocusOn(planet.WorldAnchor.position, cameraFocusDuration, cameraFocusEase);
+        }
+
         RebuildCards(planet.Definition);
         PositionCardDeck(planet);
+        PositionOrbitCards();
+        PositionBackButton();
         ShowCards();
     }
 
@@ -164,6 +198,7 @@ public sealed class LevelSelectController : MonoBehaviour
         }
 
         FitCardDeckToContent();
+        PositionOrbitCards();
     }
 
     private void PlayCardFadeIns()
@@ -180,34 +215,20 @@ public sealed class LevelSelectController : MonoBehaviour
 
     private void FitCardDeckToContent()
     {
-        if (cardDeckRoot == null || cardParent is not RectTransform cardParentRect)
+        if (cardDeckRoot == null)
             return;
 
-        LayoutRebuilder.ForceRebuildLayoutImmediate(cardParentRect);
+        DisableCardParentLayout();
 
-        float preferredCardsWidth = LayoutUtility.GetPreferredWidth(cardParentRect);
-        float preferredCardsHeight = LayoutUtility.GetPreferredHeight(cardParentRect);
-        if (preferredCardsWidth <= 0f || preferredCardsHeight <= 0f)
+        float maxCardWidth = 0f;
+        float maxCardHeight = 0f;
+        for (int i = 0; i < activeCards.Count; i++)
         {
-            float fallbackWidth = 0f;
-            float fallbackHeight = 0f;
-            for (int i = 0; i < activeCards.Count; i++)
+            if (activeCards[i] != null && activeCards[i].transform is RectTransform cardRect)
             {
-                if (activeCards[i] != null && activeCards[i].transform is RectTransform cardRect)
-                {
-                    fallbackWidth = Mathf.Max(fallbackWidth, cardRect.rect.width);
-                    fallbackHeight += cardRect.rect.height;
-                }
+                maxCardWidth = Mathf.Max(maxCardWidth, cardRect.rect.width);
+                maxCardHeight = Mathf.Max(maxCardHeight, cardRect.rect.height);
             }
-
-            if (cardParent.TryGetComponent(out HorizontalOrVerticalLayoutGroup layout) && activeCards.Count > 1)
-                fallbackHeight += layout.spacing * (activeCards.Count - 1);
-
-            if (preferredCardsWidth <= 0f)
-                preferredCardsWidth = fallbackWidth;
-
-            if (preferredCardsHeight <= 0f)
-                preferredCardsHeight = fallbackHeight;
         }
 
         float preferredBackWidth = 0f;
@@ -218,21 +239,44 @@ public sealed class LevelSelectController : MonoBehaviour
             preferredBackHeight = backRect.rect.height;
         }
 
+        float orbitDiameter = orbitRadius * 2f;
         float desiredWidth = Mathf.Max(
             cardDeckRoot.rect.width,
-            preferredCardsWidth + cardDeckContentPadding.x,
+            orbitDiameter + maxCardWidth + orbitBoundsPadding + cardDeckContentPadding.x,
             preferredBackWidth + cardDeckContentPadding.x);
 
         float desiredHeight = Mathf.Max(
             cardDeckRoot.rect.height,
-            preferredCardsHeight + preferredBackHeight + cardDeckContentPadding.y);
+            orbitDiameter + maxCardHeight + preferredBackHeight + orbitBoundsPadding + cardDeckContentPadding.y);
 
         cardDeckRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, desiredWidth);
         cardDeckRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, desiredHeight);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(cardDeckRoot);
+
+        PositionBackButton();
 
         for (int i = 0; i < activeCards.Count; i++)
             activeCards[i]?.RebaseFloatyJuice();
+    }
+
+    private void DisableCardParentLayout()
+    {
+        if (cardParent == null)
+            return;
+
+        if (cardParent is RectTransform cardParentRect)
+        {
+            cardParentRect.anchorMin = new Vector2(0.5f, 0.5f);
+            cardParentRect.anchorMax = new Vector2(0.5f, 0.5f);
+            cardParentRect.pivot = new Vector2(0.5f, 0.5f);
+            cardParentRect.anchoredPosition = Vector2.zero;
+            cardParentRect.sizeDelta = Vector2.zero;
+        }
+
+        foreach (LayoutGroup layoutGroup in cardParent.GetComponents<LayoutGroup>())
+            layoutGroup.enabled = false;
+
+        foreach (ContentSizeFitter fitter in cardParent.GetComponents<ContentSizeFitter>())
+            fitter.enabled = false;
     }
 
     private void LoadLevel(LevelDefinition level)
@@ -306,10 +350,10 @@ public sealed class LevelSelectController : MonoBehaviour
         for (int i = 0; i < activeCards.Count; i++)
         {
             LevelSelectLevelCardView card = activeCards[i];
-            if (card == null || !card.CanSelect || card.transform is not RectTransform cardRect)
+            if (card == null || !card.CanSelect)
                 continue;
 
-            if (IsPointerInsideRect(cardRect, screenPosition))
+            if (IsPointerInsideRect(card.ClickRect, screenPosition))
             {
                 LoadLevel(card.BoundLevel);
                 return;
@@ -354,8 +398,7 @@ public sealed class LevelSelectController : MonoBehaviour
             LevelSelectLevelCardView card = activeCards[i];
             if (card != null &&
                 card.gameObject.activeInHierarchy &&
-                card.transform is RectTransform cardRect &&
-                IsPointerInsideRect(cardRect, screenPosition))
+                IsPointerInsideRect(card.ClickRect, screenPosition))
             {
                 return true;
             }
@@ -395,7 +438,6 @@ public sealed class LevelSelectController : MonoBehaviour
             return;
 
         Vector3 screenPoint = camera.WorldToScreenPoint(planet.WorldAnchor.position);
-        screenPoint.y += planet.Definition.LevelCardsScreenOffset.y;
 
         Camera eventCamera = canvas.renderMode == RenderMode.ScreenSpaceOverlay
             ? null
@@ -407,44 +449,96 @@ public sealed class LevelSelectController : MonoBehaviour
             eventCamera,
             out Vector2 localPoint);
 
-        cardDeckRoot.anchoredPosition = ClampDeckToCanvas(localPoint, canvasRect, cardDeckRoot, cardDeckEdgePadding);
+        cardDeckRoot.anchoredPosition = localPoint;
+    }
+
+    private void UpdateCardOrbit(float deltaTime)
+    {
+        if (PauseUtility.IsPaused || isLoadingLevel)
+            return;
+
+        UpdateOrbitHoverSpeedMultiplier(deltaTime);
+
+        if (animateOrbit)
+            orbitAngleOffsetDegrees += orbitSpeedDegreesPerSecond * orbitHoverSpeedMultiplier * deltaTime;
+
+        PositionOrbitCards();
+    }
+
+    private void UpdateOrbitHoverSpeedMultiplier(float deltaTime)
+    {
+        bool shouldPause = pauseOrbitOnCardHover && ShouldPauseOrbitForHover();
+        float targetMultiplier = shouldPause ? 0f : 1f;
+        float lerp = 1f - Mathf.Exp(-hoverPauseLerpSpeed * deltaTime);
+        orbitHoverSpeedMultiplier = Mathf.Lerp(orbitHoverSpeedMultiplier, targetMultiplier, lerp);
+    }
+
+    private void PositionOrbitCards()
+    {
+        int count = activeCards.Count;
+        if (count <= 0)
+            return;
+
+        float step = 360f / count;
+        for (int i = 0; i < count; i++)
+        {
+            LevelSelectLevelCardView card = activeCards[i];
+            if (card == null || card.transform is not RectTransform cardRect)
+                continue;
+
+            float angleDegrees = orbitStartAngleDegrees + orbitAngleOffsetDegrees + step * i;
+            float angleRadians = angleDegrees * Mathf.Deg2Rad;
+            Vector2 orbitPosition = new Vector2(Mathf.Cos(angleRadians), Mathf.Sin(angleRadians)) * orbitRadius;
+
+            cardRect.anchorMin = new Vector2(0.5f, 0.5f);
+            cardRect.anchorMax = new Vector2(0.5f, 0.5f);
+            cardRect.pivot = new Vector2(0.5f, 0.5f);
+            cardRect.anchoredPosition = orbitPosition;
+
+            cardRect.localRotation = Quaternion.identity;
+        }
+    }
+
+    private void PositionBackButton()
+    {
+        if (backButton == null || backButton.transform is not RectTransform backRect)
+            return;
+
+        backRect.anchorMin = new Vector2(0.5f, 0.5f);
+        backRect.anchorMax = new Vector2(0.5f, 0.5f);
+        backRect.pivot = new Vector2(0.5f, 0.5f);
+        backRect.anchoredPosition = new Vector2(
+            0f,
+            -orbitRadius - backRect.rect.height * 0.5f - backButtonOrbitGap);
+        backRect.localRotation = Quaternion.identity;
+    }
+
+    private bool ShouldPauseOrbitForHover()
+    {
+        if (!pauseOrbitOnCardHover)
+            return false;
+
+        Vector2 screenPosition = Input.mousePosition;
+        for (int i = 0; i < activeCards.Count; i++)
+        {
+            LevelSelectLevelCardView card = activeCards[i];
+            if (card == null)
+                continue;
+
+            if (card.IsPointerHovered)
+                return true;
+
+            if (IsPointerInsideRect(card.ClickRect, screenPosition))
+                return true;
+        }
+
+        return false;
     }
 
     private void DisableDeckFollowComponent()
     {
         if (cardDeckRoot != null && cardDeckRoot.TryGetComponent(out ScreenSpaceFollowWorld follow))
             follow.enabled = false;
-    }
-
-    private static Vector2 ClampDeckToCanvas(Vector2 localPoint, RectTransform canvasRect, RectTransform deckRoot, Vector2 padding)
-    {
-        GetDeckAllowedRanges(canvasRect, deckRoot, padding, out float minX, out float maxX, out float minY, out float maxY);
-
-        if (minX <= maxX)
-            localPoint.x = Mathf.Clamp(localPoint.x, minX, maxX);
-
-        if (minY <= maxY)
-            localPoint.y = Mathf.Clamp(localPoint.y, minY, maxY);
-
-        return localPoint;
-    }
-
-    private static void GetDeckAllowedRanges(
-        RectTransform canvasRect,
-        RectTransform deckRoot,
-        Vector2 padding,
-        out float minX,
-        out float maxX,
-        out float minY,
-        out float maxY)
-    {
-        Rect canvas = canvasRect.rect;
-        Rect deck = deckRoot.rect;
-
-        minX = canvas.xMin + padding.x + deck.width * deckRoot.pivot.x;
-        maxX = canvas.xMax - padding.x - deck.width * (1f - deckRoot.pivot.x);
-        minY = canvas.yMin + padding.y + deck.height * deckRoot.pivot.y;
-        maxY = canvas.yMax - padding.y - deck.height * (1f - deckRoot.pivot.y);
     }
 
     private void ShowCards()
@@ -479,6 +573,7 @@ public sealed class LevelSelectController : MonoBehaviour
         activePlanet = null;
         waitForClickRelease = false;
         LevelSelectPointerTargeter2D.ClearAllHover();
+        RestoreCameraY();
 
         cardDeckCanvasGroup.interactable = false;
         cardDeckCanvasGroup.blocksRaycasts = true;
@@ -498,6 +593,7 @@ public sealed class LevelSelectController : MonoBehaviour
         isClosingDeck = false;
         activePlanet = null;
         waitForClickRelease = false;
+        RestoreCameraY();
 
         if (cardDeckCanvasGroup != null)
         {
@@ -508,6 +604,15 @@ public sealed class LevelSelectController : MonoBehaviour
 
         if (cardDeckRoot != null)
             cardDeckRoot.gameObject.SetActive(false);
+    }
+
+    private void RestoreCameraY()
+    {
+        if (!hasPreviousCameraY || cameraPan == null || isLoadingLevel)
+            return;
+
+        hasPreviousCameraY = false;
+        cameraPan.FocusOnY(previousCameraY, cameraFocusDuration, cameraFocusEase);
     }
 
     private static bool IsPointerInsideRect(RectTransform rect, Vector2 screenPosition)
