@@ -73,6 +73,9 @@ public sealed class LevelSelectController : MonoBehaviour
 
     private void Update()
     {
+        if (PauseUtility.IsPaused)
+            return;
+
         if (waitForClickRelease)
         {
             if (!Input.GetMouseButton(0))
@@ -117,6 +120,9 @@ public sealed class LevelSelectController : MonoBehaviour
 
     public void SelectPlanet(LevelSelectPlanetNode planet)
     {
+        if (PauseUtility.IsPaused)
+            return;
+
         if (IsAnyCardDeckOpen())
             return;
 
@@ -231,6 +237,9 @@ public sealed class LevelSelectController : MonoBehaviour
 
     private void LoadLevel(LevelDefinition level)
     {
+        if (PauseUtility.IsPaused)
+            return;
+
         if (isLoadingLevel)
             return;
 

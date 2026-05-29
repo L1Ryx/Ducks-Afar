@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 3946491878410397795}
   - component: {fileID: 2744147531993962379}
   - component: {fileID: 4007215647163811142}
+  - component: {fileID: 6909395375349402110}
   m_Layer: 5
   m_Name: WorldUIRoot
   m_TagString: WorldUIRoot
@@ -343,6 +344,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6909395375349402110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8426617908181703014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e95146d3507457bad1a552f9d23b28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WorldUICanvasRegistry
 --- !u!1001 &898748295222292065
 PrefabInstance:
   m_ObjectHideFlags: 0
