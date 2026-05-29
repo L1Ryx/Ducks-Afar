@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics/Default Work Unit
     guid: 793fa6a395cb7e4f89754ce99c064c28
     GuidInternal: 
-    m_lastTime: -8584300900659583427
+    m_lastTime: -8584218527013418329
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy/Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584221179146442658
+    m_lastTime: -8584218527013559239
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -176,7 +176,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584297022296440812
+    m_lastTime: -8584218527013422807
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -204,7 +204,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584297036795239054
+    m_lastTime: -8584218527014373790
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -1818,7 +1818,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 401f8d77f57fc74a830de12ff87383af
     GuidInternal: 
-    m_lastTime: -8584297039997895451
+    m_lastTime: -8584218527014373088
     List:
     - name: BO
       guid: 7066a68c3bdd3e438245e366b4e18556
@@ -2012,7 +2012,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Settings
     guid: 89ff87c4e3edfb4c8b88d571cf49c40e
     GuidInternal: 
-    m_lastTime: -8584221179152769585
+    m_lastTime: -8584218527014372577
     List:
     - name: Volume_Master
       guid: f04bf7738bd25d49960f91c11fac9df1
@@ -2068,7 +2068,7 @@ MonoBehaviour:
     ParentPath: States/Default Work Unit
     guid: bad72d4387ac5a40b0a02b15affd5b55
     GuidInternal: 
-    m_lastTime: -8584300900659586415
+    m_lastTime: -8584218527013420522
     List:
     - name: PuzzleKey
       guid: 52608a1deb12674292d1fdf460f7d308
@@ -2196,7 +2196,7 @@ MonoBehaviour:
     ParentPath: Switches/Default Work Unit
     guid: e062435d3e25db4eadb60c37bc20abd6
     GuidInternal: 
-    m_lastTime: -8584300900659585409
+    m_lastTime: -8584218527013419806
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers/Default Work Unit.wwu
@@ -2210,7 +2210,7 @@ MonoBehaviour:
     ParentPath: Triggers/Default Work Unit
     guid: 845353c10a65e044a9245ae71cd4a4c3
     GuidInternal: 
-    m_lastTime: -8584300900659584462
+    m_lastTime: -8584218527013419092
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0500000006000000090000000a0000000b000000

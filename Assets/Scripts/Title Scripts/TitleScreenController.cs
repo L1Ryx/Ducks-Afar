@@ -13,6 +13,7 @@ public sealed class TitleScreenController : MonoBehaviour
     [SerializeField] private CanvasGroup mainPanel;
     [SerializeField] private CanvasGroup fileSelectPanel;
     [SerializeField] private SettingsMenuPanel optionsPanel;
+    [SerializeField] private CanvasGroup introPanel;
 
     [Header("File Select")]
     [SerializeField] private TitleFileSelectPanel fileSelect;
@@ -26,7 +27,8 @@ public sealed class TitleScreenController : MonoBehaviour
         if (fileSelect != null)
             fileSelect.SetController(this);
 
-        ShowMain();
+        //ShowMain();
+        ShowIntro();
     }
 
     private void OnEnable()
@@ -47,9 +49,23 @@ public sealed class TitleScreenController : MonoBehaviour
             ShowMain();
     }
 
+    public void ShowIntro()
+    {
+        SetCanvasGroupVisible(introPanel, true);
+        SetCanvasGroupVisible(mainPanel, false);
+        SetCanvasGroupVisible(fileSelectPanel, false);
+        optionsPanel?.Hide();
+    }
+
+    public void introClick()
+    {
+        ShowMain();
+    }
+
     public void ShowMain()
     {
         currentPanel = TitlePanel.Main;
+        SetCanvasGroupVisible(introPanel, false);
         SetCanvasGroupVisible(mainPanel, true);
         SetCanvasGroupVisible(fileSelectPanel, false);
         optionsPanel?.Hide();
