@@ -119,6 +119,9 @@ public class GameContext : MonoBehaviour
         if (GetComponent<DevSceneCommands>() == null)
             gameObject.AddComponent<DevSceneCommands>();
 
+        if (GetComponent<SaveDebugCommands>() == null)
+            gameObject.AddComponent<SaveDebugCommands>();
+
         if (GetComponent<EditorDebugConsoleHotkey>() == null)
             gameObject.AddComponent<EditorDebugConsoleHotkey>();
 #endif

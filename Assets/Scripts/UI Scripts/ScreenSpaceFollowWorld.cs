@@ -40,6 +40,14 @@ public class ScreenSpaceFollowWorld : MonoBehaviour
 
     private void LateUpdate()
     {
+        FollowAnchor();
+    }
+
+    public void FollowAnchor()
+    {
+        if (rt == null)
+            rt = (RectTransform)transform;
+
         if (worldCamera == null || canvasRect == null || worldAnchor == null)
             return;
 
@@ -136,6 +144,9 @@ public class ScreenSpaceFollowWorld : MonoBehaviour
 
     public void Init(Camera cam, RectTransform canvas, Transform anchor)
     {
+        if (rt == null)
+            rt = (RectTransform)transform;
+
         worldCamera = cam;
         canvasRect = canvas;
         worldAnchor = anchor;
@@ -147,5 +158,10 @@ public class ScreenSpaceFollowWorld : MonoBehaviour
     {
         clampToCanvas = clamp;
         edgePaddingPx = paddingPx;
+    }
+
+    public void SetApplyXOffsetWhenClamped(bool apply)
+    {
+        applyXOffsetWhenClamped = apply;
     }
 }

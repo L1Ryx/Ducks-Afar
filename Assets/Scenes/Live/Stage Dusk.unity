@@ -2372,7 +2372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616012301581301687, guid: c2e3dc171c4cb45e186f731742cc3a02, type: 3}
       propertyPath: m_Name
-      value: Spaceship Dummy
+      value: Level Select Spaceship
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8613,6 +8613,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2811466089481459989, guid: 962f730bac8314f6492513131099954e, type: 3}
+      propertyPath: unlockLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811466089481459989, guid: 962f730bac8314f6492513131099954e, type: 3}
+      propertyPath: completeLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2811466089481459989, guid: 962f730bac8314f6492513131099954e, type: 3}
+      propertyPath: 'unlockLevels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a56168a2f781400cbb9b096beabc2f6, type: 2}
+    - target: {fileID: 2811466089481459989, guid: 962f730bac8314f6492513131099954e, type: 3}
+      propertyPath: 'completeLevels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4881ea03cd1724f7ba2a002803e9ff8b, type: 2}
     - target: {fileID: 8578636772555899403, guid: 962f730bac8314f6492513131099954e, type: 3}
       propertyPath: m_Name
       value: Pet Bowl
@@ -14704,7 +14720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
       propertyPath: nextScene
-      value: Stage Night
+      value: Level Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

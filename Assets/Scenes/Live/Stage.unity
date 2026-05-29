@@ -4243,7 +4243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8616012301581301687, guid: c2e3dc171c4cb45e186f731742cc3a02, type: 3}
       propertyPath: m_Name
-      value: Spaceship Dummy
+      value: Level Select Spaceship
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15872,7 +15872,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c3be0dc6b286f45879ba9d9cb09dcc63, type: 2}
     - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
       propertyPath: nextScene
-      value: Stage Dusk
+      value: Level Select
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16571,7 +16571,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1522147835
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -745185137839875440, guid: 029c801b7892c42f5b41d33a78b105a2, type: 3}
@@ -19022,6 +19022,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: World Grid
       objectReference: {fileID: 0}
+    - target: {fileID: 4746798225633724896, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: unlockLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746798225633724896, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: completeLevels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746798225633724896, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: 'unlockLevels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 4881ea03cd1724f7ba2a002803e9ff8b, type: 2}
+    - target: {fileID: 4746798225633724896, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: 'completeLevels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 0b7f47660f65647049747401f0023e17, type: 2}
     - target: {fileID: 5841787701623105294, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
       propertyPath: m_Size.y
       value: 93

@@ -6632,6 +6632,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &1801068524
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6650,6 +6651,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6671,9 +6674,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1611248307
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: ceba28fc775c1428fb8627af9c9f6e59, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6683,7 +6688,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1801068525
 Transform:
@@ -8461,7 +8465,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: c3be0dc6b286f45879ba9d9cb09dcc63, type: 2}
     - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
       propertyPath: nextScene
-      value: Stage
+      value: Level Select
       objectReference: {fileID: 0}
     - target: {fileID: 8155248415876772178, guid: fc29cb943b6ea44658cff0af4601db9f, type: 3}
       propertyPath: singleTingAc
@@ -9496,11 +9500,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spaceship
       objectReference: {fileID: 0}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 7495775180661146112}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: Apply
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: LevelProgressReward, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8622972114627751775, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      propertyPath: onSuccess.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8616012301581301687, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7495775180661146112}
   m_SourcePrefab: {fileID: 100100000, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+--- !u!1 &4876588293862854688 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8616012301581301687, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
+  m_PrefabInstance: {fileID: 4876588293862854687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5123830947872964204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -77423,6 +77463,26 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4889177615784755119, guid: 5b98aee91cd394a5690fb116881217e6, type: 3}
   m_PrefabInstance: {fileID: 4876588293862854687}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7495775180661146112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4876588293862854688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccddcc99e8a694e92a6ef04a41c48134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelProgressReward
+  unlockLevels:
+  - {fileID: 11400000, guid: 0b7f47660f65647049747401f0023e17, type: 2}
+  completeLevels: []
+  discoverArtifacts: []
+  unlockLevelIds: []
+  completeLevelIds: []
+  discoverArtifactIds: []
+  saveActiveSlotOnChange: 1
 --- !u!1001 &7527828134623350685
 PrefabInstance:
   m_ObjectHideFlags: 0
