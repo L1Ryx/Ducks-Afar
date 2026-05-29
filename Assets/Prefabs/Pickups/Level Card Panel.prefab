@@ -459,6 +459,9 @@ MonoBehaviour:
   button: {fileID: 2562168778776240522}
   fadeCanvasGroup: {fileID: 0}
   floatyJuice: {fileID: 521193863208468128}
+  scaleOnHover: 1
+  hoverScaleMultiplier: 1.15
+  hoverScaleLerpSpeed: 18
 --- !u!1 &7658714379983410451
 GameObject:
   m_ObjectHideFlags: 0
