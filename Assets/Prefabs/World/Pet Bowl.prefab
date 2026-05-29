@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 7980670195689664599}
   - component: {fileID: 5734407928677720217}
   - component: {fileID: 936946899477750672}
+  - component: {fileID: 2811466089481459989}
   m_Layer: 6
   m_Name: Pet Bowl
   m_TagString: Untagged
@@ -197,7 +198,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1465715855
-  m_SortingLayer: 8
+  m_SortingLayer: 9
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2710346176272861009, guid: bca2dc9e9c5584812916ed11d97f6ca6, type: 3}
@@ -289,9 +290,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2811466089481459989}
+        m_TargetAssemblyTypeName: LevelProgressReward, Assembly-CSharp
+        m_MethodName: Apply
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onFail:
     m_PersistentCalls:
       m_Calls: []
+  levelProgressReward: {fileID: 2811466089481459989}
 --- !u!114 &9221882878028826644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,6 +420,25 @@ MonoBehaviour:
   colorValueFlickerAmount: 0.03
   localOffset: {x: 0, y: 0, z: 0}
   followRotation: 1
+--- !u!114 &2811466089481459989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8578636772555899403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccddcc99e8a694e92a6ef04a41c48134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelProgressReward
+  unlockLevels: []
+  completeLevels: []
+  discoverArtifacts: []
+  unlockLevelIds: []
+  completeLevelIds: []
+  discoverArtifactIds: []
+  saveActiveSlotOnChange: 1
 --- !u!1001 &1680283226048175033
 PrefabInstance:
   m_ObjectHideFlags: 0

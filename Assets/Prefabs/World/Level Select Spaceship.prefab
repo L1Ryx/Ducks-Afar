@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3798306960894057296}
   - component: {fileID: 8547398156544998403}
   - component: {fileID: 6692803589060033776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Important Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4758,7 +4758,7 @@ ParticleSystem:
     vectorLabel1_3: W
 --- !u!199 &6692803589060033776
 ParticleSystemRenderer:
-  serializedVersion: 6
+  serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4777,6 +4777,8 @@ ParticleSystemRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4798,9 +4800,11 @@ ParticleSystemRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1611248307
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 3
@@ -4832,7 +4836,6 @@ ParticleSystemRenderer:
   m_MeshWeighting1: 1
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
-  m_MaskInteraction: 0
 --- !u!1 &8523264779126683737
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,8 +4880,9 @@ GameObject:
   - component: {fileID: 775685325359138305}
   - component: {fileID: 5651436166706334530}
   - component: {fileID: 3879820846002082079}
+  - component: {fileID: 3961596957537465589}
   m_Layer: 6
-  m_Name: Spaceship Dummy
+  m_Name: Level Select Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4905,6 +4909,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6781320715566979256
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4923,6 +4928,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4944,9 +4951,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1611248307
-  m_SortingLayer: 12
+  m_SortingLayer: 13
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: f774cca663d804ef58280fd3c84b4cbd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4956,7 +4965,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &775685325359138305
 BoxCollider2D:
@@ -5047,6 +5055,34 @@ MonoBehaviour:
   sortPoint: {fileID: 2921309606373952173}
   orderPrecision: 100
   orderOffset: 0
+--- !u!114 &3961596957537465589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616012301581301687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d02be72d52fc14003830fac1aad417c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSelectSpaceship
+  screenSpacePanelPrefab: {fileID: 5027378557544692386, guid: a20277e0a78704ab296384f816f58e3a, type: 3}
+  worldAnchor: {fileID: 8869024216000930724}
+  fallbackCanvasRect: {fileID: 0}
+  title: Spaceship
+  description: Leave the planet.
+  symbolActive: {fileID: -1226265285564992136, guid: 0eb09609f8295429fa711bd720efc0f7, type: 3}
+  symbolInactive: {fileID: -5686591620353406901, guid: 956ce94b414ec4c0a9675dd6b50fe2f5, type: 3}
+  levelSelectSceneName: Level Select
+  loadingMessage: Loading...
+  showDuration: 0.18
+  hideDuration: 0.12
+  hiddenScale: 0.88
+  showEase: 27
+  hideEase: 8
+  activeAlpha: 0.95
+  inactiveAlpha: 0.7
 --- !u!1 &8658393581043058490
 GameObject:
   m_ObjectHideFlags: 0

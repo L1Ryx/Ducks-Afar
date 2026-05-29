@@ -45,6 +45,9 @@ TagManager:
   - name: Furthest
     uniqueID: 239568807
     locked: 0
+  - name: Planets
+    uniqueID: 3465472729
+    locked: 0
   - name: Shoreline
     uniqueID: 187023817
     locked: 0
@@ -86,3 +89,4 @@ TagManager:
     locked: 0
   m_RenderingLayers:
   - Default
+  m_MigratedRenderPipelines: []
