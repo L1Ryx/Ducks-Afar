@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,7 +19,13 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
     [Header("Input")]
     [SerializeField] private Button button;
 
+    [Header("Tween")]
+    [SerializeField] private CanvasGroup fadeCanvasGroup;
+    [SerializeField] private UIFloatyJuice floatyJuice;
+
     private LevelDefinition level;
+    private float visibleAlpha = 1f;
+    private Tween fadeTween;
 
     public UnityEvent<LevelDefinition> OnLevelSelected { get; } = new();
     public LevelDefinition BoundLevel => level;
@@ -27,16 +34,26 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
     private void Reset()
     {
         button = GetComponent<Button>();
+        fadeCanvasGroup = GetComponent<CanvasGroup>();
+        floatyJuice = GetComponent<UIFloatyJuice>();
     }
 
     private void Awake()
     {
+        if (fadeCanvasGroup == null)
+            fadeCanvasGroup = GetComponent<CanvasGroup>();
+
+        if (floatyJuice == null)
+            floatyJuice = GetComponent<UIFloatyJuice>();
+
         if (button != null)
             button.onClick.AddListener(HandleClicked);
     }
 
     private void OnDestroy()
     {
+        fadeTween?.Kill();
+
         if (button != null)
             button.onClick.RemoveListener(HandleClicked);
     }
@@ -62,10 +79,48 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour
         if (button != null)
             button.interactable = unlocked;
 
-        if (lockedCanvasGroup != null)
-            lockedCanvasGroup.alpha = unlocked ? 1f : 0.55f;
+        visibleAlpha = unlocked ? 1f : 0.55f;
+
+        if (lockedCanvasGroup != null && lockedCanvasGroup != fadeCanvasGroup)
+            lockedCanvasGroup.alpha = visibleAlpha;
+        else if (fadeCanvasGroup != null)
+            fadeCanvasGroup.alpha = visibleAlpha;
 
         RebuildArtifactSymbols(level, saveState);
+    }
+
+    public void PlayFadeIn(float duration, float delay)
+    {
+        if (fadeCanvasGroup == null)
+            return;
+
+        fadeTween?.Kill();
+        fadeCanvasGroup.alpha = 0f;
+        fadeTween = fadeCanvasGroup
+            .DOFade(visibleAlpha, duration)
+            .SetDelay(delay)
+            .SetEase(Ease.OutQuad)
+            .SetUpdate(true);
+    }
+
+    public Tween PlayFadeOut(float duration)
+    {
+        if (fadeCanvasGroup == null)
+            return null;
+
+        fadeTween?.Kill();
+        fadeTween = fadeCanvasGroup
+            .DOFade(0f, duration)
+            .SetEase(Ease.InQuad)
+            .SetUpdate(true);
+
+        return fadeTween;
+    }
+
+    public void RebaseFloatyJuice()
+    {
+        if (floatyJuice != null)
+            floatyJuice.Rebase();
     }
 
     private void RebuildArtifactSymbols(LevelDefinition levelDefinition, SaveStateModel saveState)

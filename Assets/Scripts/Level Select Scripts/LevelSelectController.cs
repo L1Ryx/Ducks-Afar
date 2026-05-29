@@ -7,17 +7,13 @@ public sealed class LevelSelectController : MonoBehaviour
 {
     private static readonly List<LevelSelectController> Instances = new();
 
-    [Header("Catalog")]
-    [SerializeField] private LevelSelectCatalog catalog;
+    [Header("Level Filtering")]
     [SerializeField] private bool showLockedLevels = true;
 
-    [Header("Planet Layout")]
-    [SerializeField] private LevelSelectPlanetNode planetPrefab;
-    [SerializeField] private Transform planetParent;
+    [Header("Placed Planets")]
+    [SerializeField] private LevelSelectPlanetNode[] planets;
+    [SerializeField] private Camera worldCamera;
     [SerializeField] private GameObject planetHoverPanelPrefab;
-    [SerializeField] private Vector2 planetStartPosition = new Vector2(-6f, 0f);
-    [SerializeField] private float planetSpacing = 5f;
-    [SerializeField] private bool buildPlanetsOnStart = true;
 
     [Header("Card Deck")]
     [SerializeField] private RectTransform cardDeckRoot;
@@ -32,9 +28,15 @@ public sealed class LevelSelectController : MonoBehaviour
     [SerializeField] private string loadingMessage = "Loading level...";
     [SerializeField, Min(0f)] private float levelSelectFadeOutDuration = 0.16f;
 
+    [Header("Card Tween")]
+    [SerializeField, Min(0f)] private float cardFadeInDuration = 0.16f;
+    [SerializeField, Min(0f)] private float cardFadeOutDuration = 0.12f;
+    [SerializeField, Min(0f)] private float cardFadeStagger = 0.035f;
+
     private readonly List<LevelSelectLevelCardView> activeCards = new();
     private LevelSelectPlanetNode activePlanet;
     private bool isLoadingLevel;
+    private bool isClosingDeck;
     private bool waitForClickRelease;
     private Tween cardDeckFadeTween;
 
@@ -53,27 +55,20 @@ public sealed class LevelSelectController : MonoBehaviour
 
     private void Awake()
     {
-        if (planetParent == null)
-            planetParent = transform;
+        if (worldCamera == null)
+            worldCamera = Camera.main;
 
         DisableDeckFollowComponent();
 
         if (backButton != null)
             backButton.onClick.AddListener(HideCards);
 
-        HideCards();
+        HideCardsImmediate();
     }
 
     private void Start()
     {
-        if (buildPlanetsOnStart)
-        {
-            BuildPlanets();
-        }
-        else
-        {
-            BindExistingPlanets();
-        }
+        InitializePlacedPlanets();
     }
 
     private void Update()
@@ -106,54 +101,18 @@ public sealed class LevelSelectController : MonoBehaviour
             backButton.onClick.RemoveListener(HideCards);
     }
 
-    public void BuildPlanets()
+    private void InitializePlacedPlanets()
     {
-        if (catalog == null || planetPrefab == null)
-            return;
+        RectTransform canvasRect = GetWorldUiCanvasRect();
 
-        for (int i = planetParent.childCount - 1; i >= 0; i--)
-        {
-            Destroy(planetParent.GetChild(i).gameObject);
-        }
-
-        for (int i = 0; i < catalog.Planets.Count; i++)
-        {
-            LevelSelectPlanetDefinition planet = catalog.Planets[i];
-            if (planet == null)
-                continue;
-
-            LevelSelectPlanetNode node = Instantiate(planetPrefab, planetParent);
-            node.transform.localPosition = new Vector3(
-                planetStartPosition.x + planetSpacing * i,
-                planetStartPosition.y,
-                0f);
-
-            if (planetHoverPanelPrefab != null)
-                node.SetHoverPanelPrefab(planetHoverPanelPrefab);
-
-            node.Bind(planet, this);
-        }
+        for (int i = 0; i < planets.Length; i++)
+            planets[i]?.Initialize(this, planetHoverPanelPrefab, canvasRect, worldCamera);
     }
 
-    public void BindExistingPlanets()
+    private RectTransform GetWorldUiCanvasRect()
     {
-        if (catalog == null || planetParent == null)
-            return;
-
-        LevelSelectPlanetNode[] planetNodes = planetParent.GetComponentsInChildren<LevelSelectPlanetNode>(true);
-        int planetCount = Mathf.Min(planetNodes.Length, catalog.Planets.Count);
-
-        for (int i = 0; i < planetCount; i++)
-        {
-            LevelSelectPlanetDefinition planet = catalog.Planets[i];
-            if (planet == null || planetNodes[i] == null)
-                continue;
-
-            if (planetHoverPanelPrefab != null)
-                planetNodes[i].SetHoverPanelPrefab(planetHoverPanelPrefab);
-
-            planetNodes[i].Bind(planet, this);
-        }
+        Canvas canvas = cardDeckRoot != null ? cardDeckRoot.GetComponentInParent<Canvas>() : null;
+        return canvas != null ? canvas.GetComponent<RectTransform>() : null;
     }
 
     public void SelectPlanet(LevelSelectPlanetNode planet)
@@ -199,6 +158,18 @@ public sealed class LevelSelectController : MonoBehaviour
         }
 
         FitCardDeckToContent();
+    }
+
+    private void PlayCardFadeIns()
+    {
+        for (int i = 0; i < activeCards.Count; i++)
+            activeCards[i]?.PlayFadeIn(cardFadeInDuration, i * cardFadeStagger);
+    }
+
+    private void PlayCardFadeOuts(float duration)
+    {
+        for (int i = 0; i < activeCards.Count; i++)
+            activeCards[i]?.PlayFadeOut(duration);
     }
 
     private void FitCardDeckToContent()
@@ -253,6 +224,9 @@ public sealed class LevelSelectController : MonoBehaviour
         cardDeckRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, desiredWidth);
         cardDeckRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, desiredHeight);
         LayoutRebuilder.ForceRebuildLayoutImmediate(cardDeckRoot);
+
+        for (int i = 0; i < activeCards.Count; i++)
+            activeCards[i]?.RebaseFloatyJuice();
     }
 
     private void LoadLevel(LevelDefinition level)
@@ -279,6 +253,7 @@ public sealed class LevelSelectController : MonoBehaviour
 
         cardDeckCanvasGroup.interactable = false;
         cardDeckCanvasGroup.blocksRaycasts = true;
+        PlayCardFadeOuts(Mathf.Min(cardFadeOutDuration, levelSelectFadeOutDuration));
 
         cardDeckFadeTween?.Kill();
         cardDeckFadeTween = cardDeckCanvasGroup
@@ -389,7 +364,9 @@ public sealed class LevelSelectController : MonoBehaviour
 
     private bool IsCardDeckOpen()
     {
-        return cardDeckRoot != null &&
+        return isLoadingLevel ||
+            isClosingDeck ||
+            cardDeckRoot != null &&
             cardDeckRoot.gameObject.activeInHierarchy &&
             (cardDeckCanvasGroup == null || cardDeckCanvasGroup.alpha > 0.01f);
     }
@@ -403,7 +380,7 @@ public sealed class LevelSelectController : MonoBehaviour
 
         Canvas canvas = cardDeckRoot.GetComponentInParent<Canvas>();
         RectTransform canvasRect = canvas != null ? canvas.GetComponent<RectTransform>() : null;
-        Camera camera = Camera.main;
+        Camera camera = worldCamera != null ? worldCamera : Camera.main;
 
         if (canvasRect == null || camera == null)
             return;
@@ -475,6 +452,7 @@ public sealed class LevelSelectController : MonoBehaviour
             cardDeckCanvasGroup.blocksRaycasts = true;
         }
 
+        PlayCardFadeIns();
         waitForClickRelease = Input.GetMouseButton(0);
     }
 
@@ -482,6 +460,33 @@ public sealed class LevelSelectController : MonoBehaviour
     {
         cardDeckFadeTween?.Kill();
 
+        if (!IsCardDeckVisible() || cardFadeOutDuration <= 0f || cardDeckCanvasGroup == null)
+        {
+            HideCardsImmediate();
+            return;
+        }
+
+        isClosingDeck = true;
+        activePlanet = null;
+        waitForClickRelease = false;
+        LevelSelectPointerTargeter2D.ClearAllHover();
+
+        cardDeckCanvasGroup.interactable = false;
+        cardDeckCanvasGroup.blocksRaycasts = true;
+        PlayCardFadeOuts(cardFadeOutDuration);
+
+        cardDeckFadeTween = cardDeckCanvasGroup
+            .DOFade(0f, cardFadeOutDuration)
+            .SetEase(Ease.InQuad)
+            .SetUpdate(true)
+            .OnComplete(HideCardsImmediate);
+    }
+
+    private void HideCardsImmediate()
+    {
+        cardDeckFadeTween?.Kill();
+
+        isClosingDeck = false;
         activePlanet = null;
         waitForClickRelease = false;
 

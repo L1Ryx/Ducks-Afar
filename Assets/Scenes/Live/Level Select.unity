@@ -2422,23 +2422,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b919bd8c502724bb69b384ba046748d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelectController
-  catalog: {fileID: 11400000, guid: e623b95b103a044a387ad97258ed2771, type: 2}
   showLockedLevels: 0
-  planetPrefab: {fileID: 2111008916}
-  planetParent: {fileID: 449640819}
+  planets:
+  - {fileID: 2111008916}
+  worldCamera: {fileID: 519420031}
   planetHoverPanelPrefab: {fileID: 5027378557544692386, guid: c82c8808043724d348ebae8eee8ee4d7, type: 3}
-  planetStartPosition: {x: 0, y: 0}
-  planetSpacing: 5
-  buildPlanetsOnStart: 0
   cardDeckRoot: {fileID: 1210980345}
   cardDeckCanvasGroup: {fileID: 1210980348}
   cardParent: {fileID: 1210980347}
   cardPrefab: {fileID: 9172134221579824417, guid: e40511c709b10414891dc3aee00b92a9, type: 3}
   backButton: {fileID: 1210980346}
   cardDeckEdgePadding: {x: 16, y: 16}
-  cardDeckContentPadding: {x: 48, y: 0}
-  loadingMessage: Loading level...
+  cardDeckContentPadding: {x: 0, y: 0}
+  loadingMessage: Loading...
   levelSelectFadeOutDuration: 0.16
+  cardFadeInDuration: 0.24
+  cardFadeOutDuration: 0.36
+  cardFadeStagger: 0.2
 --- !u!1 &1721697249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2905,10 +2905,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97b8c5fd5e75f4904ae4e2b65a4003ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelectPlanetNode
+  definition: {fileID: 11400000, guid: 3815cb7e7f1ba470e89b865e62f651a1, type: 2}
   spriteRenderer: {fileID: 2111008914}
   worldAnchor: {fileID: 2111008915}
   screenSpacePanelPrefab: {fileID: 5027378557544692386, guid: c82c8808043724d348ebae8eee8ee4d7, type: 3}
-  worldUIRootTag: WorldUIRoot
   showDuration: 0.18
   hideDuration: 0.12
   hiddenScale: 0.88

@@ -5,13 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHoverInfoUI
 {
+    [Header("Definition")]
+    [SerializeField] private LevelSelectPlanetDefinition definition;
+
     [Header("Visuals")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform worldAnchor;
 
     [Header("Hover Panel")]
     [SerializeField] private GameObject screenSpacePanelPrefab;
-    [SerializeField] private string worldUIRootTag = "WorldUIRoot";
 
     [Header("Tween")]
     [SerializeField] private float showDuration = 0.18f;
@@ -20,13 +22,14 @@ public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHover
     [SerializeField] private Ease showEase = Ease.OutBack;
     [SerializeField] private Ease hideEase = Ease.InCubic;
 
-    private LevelSelectPlanetDefinition definition;
     private LevelSelectController controller;
     private GameObject panelInstance;
     private RectTransform panelTransform;
     private CanvasGroup canvasGroup;
     private TMP_Text titleText;
     private TMP_Text descriptionText;
+    private RectTransform hoverCanvasRect;
+    private Camera hoverWorldCamera;
     private Tween activeTween;
     private bool isVisible;
 
@@ -43,9 +46,6 @@ public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHover
     {
         if (worldAnchor == null)
             worldAnchor = transform;
-
-        SpawnPanel();
-        HideImmediate();
     }
 
     private void OnDestroy()
@@ -56,31 +56,33 @@ public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHover
             Destroy(panelInstance);
     }
 
-    public void Bind(LevelSelectPlanetDefinition planetDefinition, LevelSelectController owner)
+    public void Initialize(
+        LevelSelectController owner,
+        GameObject hoverPanelPrefab,
+        RectTransform canvasRect,
+        Camera worldCamera)
     {
-        definition = planetDefinition;
         controller = owner;
+
+        if (hoverPanelPrefab != null)
+            screenSpacePanelPrefab = hoverPanelPrefab;
+
+        hoverCanvasRect = canvasRect;
+        hoverWorldCamera = worldCamera != null ? worldCamera : Camera.main;
 
         if (spriteRenderer != null && definition != null && definition.Sprite != null)
             spriteRenderer.sprite = definition.Sprite;
 
+        SpawnPanel();
         ApplyHoverText();
-    }
-
-    public void SetHoverPanelPrefab(GameObject prefab)
-    {
-        screenSpacePanelPrefab = prefab;
-
-        if (panelInstance == null)
-        {
-            SpawnPanel();
-            ApplyHoverText();
-            HideImmediate();
-        }
+        HideImmediate();
     }
 
     public void Interact(GameObject interactor)
     {
+        if (LevelSelectController.IsAnyCardDeckOpen())
+            return;
+
         if (definition == null)
             return;
 
@@ -92,6 +94,12 @@ public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHover
         if (!enabled)
             return;
 
+        if (LevelSelectController.IsAnyCardDeckOpen())
+        {
+            Hide();
+            return;
+        }
+
         if (isHovered)
             Show();
         else
@@ -100,25 +108,16 @@ public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHover
 
     private void SpawnPanel()
     {
-        if (screenSpacePanelPrefab == null)
+        if (panelInstance != null || screenSpacePanelPrefab == null)
             return;
 
-        GameObject rootGO = GameObject.FindGameObjectWithTag(worldUIRootTag);
-        if (rootGO == null)
+        if (hoverCanvasRect == null)
         {
-            Debug.LogError($"{nameof(LevelSelectPlanetNode)}: Could not find WorldUIRoot with tag '{worldUIRootTag}'.", this);
+            Debug.LogError($"{nameof(LevelSelectPlanetNode)}: Hover canvas rect not assigned by controller.", this);
             return;
         }
 
-        Canvas canvas = rootGO.GetComponentInChildren<Canvas>();
-        if (canvas == null)
-        {
-            Debug.LogError($"{nameof(LevelSelectPlanetNode)}: WorldUIRoot has no Canvas.", this);
-            return;
-        }
-
-        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
-        panelInstance = Instantiate(screenSpacePanelPrefab, canvasRect);
+        panelInstance = Instantiate(screenSpacePanelPrefab, hoverCanvasRect);
 
         HoverPanelView view = panelInstance.GetComponent<HoverPanelView>();
         if (view == null || view.panelTransform == null || view.canvasGroup == null || view.titleText == null)
@@ -142,7 +141,7 @@ public sealed class LevelSelectPlanetNode : MonoBehaviour, IInteractable, IHover
         if (follow == null)
             follow = panelInstance.AddComponent<ScreenSpaceFollowWorld>();
 
-        follow.Init(Camera.main, canvasRect, WorldAnchor);
+        follow.Init(hoverWorldCamera, hoverCanvasRect, WorldAnchor);
     }
 
     private void ApplyHoverText()
