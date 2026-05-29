@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public sealed class LevelSelectLevelCardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public sealed class LevelSelectLevelCardView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, ICanvasRaycastFilter
 {
     [Header("Text")]
     [SerializeField] private TMP_Text titleText;
@@ -19,6 +19,7 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour, IPointerEnterHandl
 
     [Header("Input")]
     [SerializeField] private Button button;
+    [SerializeField] private Vector2 hitAreaInset = new(24f, 10f);
 
     [Header("Tween")]
     [SerializeField] private CanvasGroup fadeCanvasGroup;
@@ -216,5 +217,27 @@ public sealed class LevelSelectLevelCardView : MonoBehaviour, IPointerEnterHandl
     public void OnPointerExit(PointerEventData eventData)
     {
         pointerHovered = false;
+    }
+
+    public bool IsRaycastLocationValid(Vector2 screenPoint, Camera eventCamera)
+    {
+        RectTransform hitRect = ClickRect;
+        if (hitRect == null)
+            return false;
+
+        if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(hitRect, screenPoint, eventCamera, out Vector2 localPoint))
+            return false;
+
+        Rect rect = hitRect.rect;
+        Vector2 safeInset = new Vector2(
+            Mathf.Min(Mathf.Max(0f, hitAreaInset.x), rect.width * 0.45f),
+            Mathf.Min(Mathf.Max(0f, hitAreaInset.y), rect.height * 0.45f));
+
+        rect.xMin += safeInset.x;
+        rect.xMax -= safeInset.x;
+        rect.yMin += safeInset.y;
+        rect.yMax -= safeInset.y;
+
+        return rect.Contains(localPoint);
     }
 }

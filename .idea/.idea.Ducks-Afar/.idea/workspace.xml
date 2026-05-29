@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Pickups/Level Card Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Pickups/Level Card Panel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Level Select.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Level Select.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level Select Scripts/LevelSelectCameraPan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level Select Scripts/LevelSelectCameraPan.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level Select Scripts/LevelSelectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level Select Scripts/LevelSelectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level Select Scripts/LevelSelectLevelCardView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level Select Scripts/LevelSelectLevelCardView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/cooler-level-select",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -116,7 +111,7 @@
       <updated>1779217814301</updated>
       <workItem from="1779217816162" duration="8885000" />
       <workItem from="1779826380624" duration="6000" />
-      <workItem from="1779999048044" duration="5168000" />
+      <workItem from="1779999048044" duration="5782000" />
     </task>
     <servers />
   </component>

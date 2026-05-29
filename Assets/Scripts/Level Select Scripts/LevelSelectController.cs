@@ -104,11 +104,6 @@ public sealed class LevelSelectController : MonoBehaviour
 
             return;
         }
-
-        if (!Input.GetMouseButtonDown(0))
-            return;
-
-        HandleCardDeckFallbackClick(Input.mousePosition);
     }
 
     private void LateUpdate()
@@ -330,37 +325,6 @@ public sealed class LevelSelectController : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(level.SceneName);
     }
 
-    private void HandleCardDeckFallbackClick(Vector2 screenPosition)
-    {
-        if (isLoadingLevel)
-            return;
-
-        if (!IsCardDeckVisible())
-            return;
-
-        if (backButton != null &&
-            backButton.interactable &&
-            backButton.transform is RectTransform backRect &&
-            IsPointerInsideRect(backRect, screenPosition))
-        {
-            HideCards();
-            return;
-        }
-
-        for (int i = 0; i < activeCards.Count; i++)
-        {
-            LevelSelectLevelCardView card = activeCards[i];
-            if (card == null || !card.CanSelect)
-                continue;
-
-            if (IsPointerInsideRect(card.ClickRect, screenPosition))
-            {
-                LoadLevel(card.BoundLevel);
-                return;
-            }
-        }
-    }
-
     public static bool IsPointerOverOpenDeck(Vector2 screenPosition)
     {
         for (int i = 0; i < Instances.Count; i++)
@@ -526,9 +490,6 @@ public sealed class LevelSelectController : MonoBehaviour
                 continue;
 
             if (card.IsPointerHovered)
-                return true;
-
-            if (IsPointerInsideRect(card.ClickRect, screenPosition))
                 return true;
         }
 
