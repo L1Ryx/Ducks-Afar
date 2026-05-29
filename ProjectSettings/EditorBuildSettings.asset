@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Live/Title Screen.unity
     guid: 2762b65feea04b4084985467ded0c05b
   - enabled: 1
+    path: Assets/Scenes/Live/Level Select.unity
+    guid: 2a807b622e07e455588de9773fd85566
+  - enabled: 1
     path: Assets/Scenes/Demo Begin.unity
     guid: 19c7bbe71d76446ac9edc2f9fd309bcd
   - enabled: 1

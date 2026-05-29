@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -103,7 +104,10 @@ public sealed class SaveSystem
                 $"time={data.timePlayedSeconds:F1}s | " +
                 $"scene={data.sceneName} | " +
                 $"location={data.location} | " +
-                $"companion={data.companionId}");
+                $"companion={data.companionId} | " +
+                $"unlocked={data.unlockedLevelIds.Count} | " +
+                $"completed={data.completedLevelIds.Count} | " +
+                $"artifacts={data.discoveredArtifactIds.Count}");
         }
         catch (Exception ex)
         {
@@ -314,6 +318,9 @@ public sealed class SaveSystem
             companionId = string.IsNullOrWhiteSpace(saveState.CurrentCompanionId)
                 ? NoneCompanionId
                 : saveState.CurrentCompanionId,
+            unlockedLevelIds = BuildSortedList(saveState.UnlockedLevelIds),
+            completedLevelIds = BuildSortedList(saveState.CompletedLevelIds),
+            discoveredArtifactIds = BuildSortedList(saveState.DiscoveredArtifactIds),
             lastSavedUtc = DateTime.UtcNow.ToString("o")
         };
     }
@@ -328,6 +335,9 @@ public sealed class SaveSystem
         saveState.CurrentCompanionId = string.IsNullOrWhiteSpace(data.companionId)
             ? NoneCompanionId
             : data.companionId;
+        saveState.SetUnlockedLevels(data.unlockedLevelIds);
+        saveState.SetCompletedLevels(data.completedLevelIds);
+        saveState.SetDiscoveredArtifacts(data.discoveredArtifactIds);
     }
 
     private void SanitizeLoadedData(SaveSlotData data, int slotIndex)
@@ -345,6 +355,10 @@ public sealed class SaveSystem
 
         if (string.IsNullOrWhiteSpace(data.companionId))
             data.companionId = NoneCompanionId;
+
+        data.unlockedLevelIds = SanitizeIdList(data.unlockedLevelIds);
+        data.completedLevelIds = SanitizeIdList(data.completedLevelIds);
+        data.discoveredArtifactIds = SanitizeIdList(data.discoveredArtifactIds);
     }
 
     private static string GetSceneNameForSave(SaveStateModel saveState)
@@ -376,5 +390,34 @@ public sealed class SaveSystem
             return;
 
         checkpoint.SetLocationOnly();
+    }
+
+    private static List<string> BuildSortedList(IReadOnlyCollection<string> ids)
+    {
+        List<string> list = SanitizeIdList(ids);
+        list.Sort(StringComparer.Ordinal);
+        return list;
+    }
+
+    private static List<string> SanitizeIdList(IEnumerable<string> ids)
+    {
+        List<string> list = new List<string>();
+
+        if (ids == null)
+            return list;
+
+        HashSet<string> seen = new HashSet<string>();
+
+        foreach (string id in ids)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+                continue;
+
+            string normalized = id.Trim();
+            if (seen.Add(normalized))
+                list.Add(normalized);
+        }
+
+        return list;
     }
 }

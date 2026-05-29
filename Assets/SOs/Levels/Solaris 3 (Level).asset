@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85d756ac7a3a4474852a1a2e6ca81ca, type: 3}
+  m_Name: Solaris 3 (Level)
+  m_EditorClassIdentifier: Assembly-CSharp::LevelDefinition
+  levelId: 003
+  displayName: Lost Archipelago
+  description: Rescue CODA the duck.
+  sceneName: Stage Night
+  artifacts:
+  - {fileID: 11400000, guid: e0628baf32c9943f7b330f1f5fcf75ba, type: 2}
+  - {fileID: 11400000, guid: 08ba6273a28d9427bb7d67a4538049b9, type: 2}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public sealed class SaveSlotData
@@ -10,6 +11,10 @@ public sealed class SaveSlotData
     public string sceneName;
     public string location;
     public string companionId;
+
+    public List<string> unlockedLevelIds = new();
+    public List<string> completedLevelIds = new();
+    public List<string> discoveredArtifactIds = new();
 
     public string lastSavedUtc;
 
@@ -23,6 +28,9 @@ public sealed class SaveSlotData
             sceneName = string.Empty,
             location = string.Empty,
             companionId = "NONE",
+            unlockedLevelIds = new List<string>(),
+            completedLevelIds = new List<string>(),
+            discoveredArtifactIds = new List<string>(),
             lastSavedUtc = string.Empty
         };
     }

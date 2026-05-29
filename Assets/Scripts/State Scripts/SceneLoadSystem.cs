@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public sealed class SceneLoadSystem
 {
@@ -36,6 +39,11 @@ public sealed class SceneLoadSystem
 
         if (!Application.CanStreamedLevelBeLoaded(sceneName))
         {
+#if UNITY_EDITOR
+            if (IsSceneEnabledInEditorBuildSettings(sceneName))
+                return true;
+#endif
+
             Debug.LogError(
                 $"Scene load failed: scene '{sceneName}' is not in Build Settings or cannot be loaded.");
             return false;
@@ -210,4 +218,22 @@ public sealed class SceneLoadSystem
         while (Time.unscaledTime < endTime)
             yield return null;
     }
+
+#if UNITY_EDITOR
+    private static bool IsSceneEnabledInEditorBuildSettings(string sceneName)
+    {
+        foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+        {
+            if (!scene.enabled)
+                continue;
+
+            string buildSceneName = System.IO.Path.GetFileNameWithoutExtension(scene.path);
+            if (string.Equals(buildSceneName, sceneName, StringComparison.Ordinal) ||
+                string.Equals(scene.path, sceneName, StringComparison.Ordinal))
+                return true;
+        }
+
+        return false;
+    }
+#endif
 }
