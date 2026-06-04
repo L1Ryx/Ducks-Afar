@@ -32,7 +32,6 @@ public sealed class TitleScreenController : MonoBehaviour
     private CanvasGroupFade fileSelectPanelFade;
     private CanvasGroupFade optionsPanelFade;
     private CanvasGroupFade introPanelFade;
-    private CanvasGroupFade ducksPanelFade;
     private Coroutine panelTransitionRoutine;
     private TitlePanel currentPanel = TitlePanel.None;
 
@@ -164,10 +163,13 @@ public sealed class TitleScreenController : MonoBehaviour
         ApplicationExitUtility.ExitApplication();
     }
 
-    private void HandleOptionsBackRequested()
+    private bool HandleOptionsBackRequested()
     {
-        if (currentPanel == TitlePanel.Options)
-            ShowMain();
+        if (currentPanel != TitlePanel.Options)
+            return false;
+
+        ShowMain();
+        return true;
     }
 
     private void ShowPanel(TitlePanel panel)
@@ -232,7 +234,6 @@ public sealed class TitleScreenController : MonoBehaviour
         HidePanelInstant(TitlePanel.Main);
         HidePanelInstant(TitlePanel.FileSelect);
         HidePanelInstant(TitlePanel.Options);
-        HideDucksPanelInstant();
 
         PreparePanelForShow(panel);
         CanvasGroupFade fade = GetPanelFade(panel);
@@ -287,20 +288,11 @@ public sealed class TitleScreenController : MonoBehaviour
             SetCanvasGroupVisible(GetPanelCanvasGroup(panel), false);
     }
 
-    private void HideDucksPanelInstant()
-    {
-        if (ducksPanelFade != null)
-            ducksPanelFade.HideInstant();
-        else
-            SetCanvasGroupVisible(ducksPanel, false);
-    }
-
     private void ResolvePanelFades()
     {
         mainPanelFade = ResolvePanelFade(mainPanel);
         fileSelectPanelFade = ResolvePanelFade(fileSelectPanel);
         introPanelFade = ResolvePanelFade(introPanel);
-        ducksPanelFade = ResolvePanelFade(ducksPanel);
         optionsPanelFade = ResolvePanelFade(optionsPanel != null ? optionsPanel.RootCanvasGroup : null);
     }
 
@@ -310,7 +302,6 @@ public sealed class TitleScreenController : MonoBehaviour
         fileSelectPanelFade?.KillActiveTween(false);
         optionsPanelFade?.KillActiveTween(false);
         introPanelFade?.KillActiveTween(false);
-        ducksPanelFade?.KillActiveTween(false);
     }
 
     private static CanvasGroupFade ResolvePanelFade(CanvasGroup group)
