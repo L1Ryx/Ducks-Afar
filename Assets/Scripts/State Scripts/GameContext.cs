@@ -17,6 +17,7 @@ public class GameContext : MonoBehaviour
     public SaveStateModel SaveState { get; private set; }
     public SaveSystem Saves { get; private set; }
     public SceneLoadSystem SceneLoader { get; private set; }
+    public SceneFlowSystem SceneFlow { get; private set; }
     public SettingsSystem Settings { get; private set; }
     public PauseStateModel Pause { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
@@ -26,6 +27,10 @@ public class GameContext : MonoBehaviour
     [SerializeField] private DialogueRunner dialogueRunner;
 
     [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
+
+    [Header("Scene Flow")]
+    [SerializeField] private SceneFlowPresetSO sceneFlowPreset;
+
     [SerializeField] private string bootstrapSceneName = "Bootstrap";
 
     private void Awake()
@@ -75,6 +80,7 @@ public class GameContext : MonoBehaviour
         Audio = new AudioStateModel();
         SaveState = new SaveStateModel();
         SceneLoader = new SceneLoadSystem(this);
+        SceneFlow = new SceneFlowSystem(this, sceneFlowPreset);
         Saves = new SaveSystem(this);
         Settings = new SettingsSystem(this);
         Pause = new PauseStateModel();
