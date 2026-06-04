@@ -31,6 +31,7 @@ public sealed class SettingsMenuPanel : MonoBehaviour
     private bool isVisible;
 
     public event Action OnBackRequested;
+    public CanvasGroup RootCanvasGroup => GetRootCanvasGroup();
 
     public static bool TryBackActivePanel()
     {
@@ -43,7 +44,7 @@ public sealed class SettingsMenuPanel : MonoBehaviour
 
     private void Reset()
     {
-        root = GetComponentInChildren<CanvasGroup>(true);
+        GetRootCanvasGroup();
     }
 
     private void Awake()
@@ -116,21 +117,23 @@ public sealed class SettingsMenuPanel : MonoBehaviour
 
     private void SetVisible(bool visible)
     {
-        if (root == null)
+        CanvasGroup targetRoot = GetRootCanvasGroup();
+
+        if (targetRoot == null)
         {
             Debug.LogWarning($"{nameof(SettingsMenuPanel)} has no CanvasGroup root assigned.", this);
             return;
         }
 
-        root.alpha = visible ? 1f : 0f;
-        root.interactable = visible;
-        root.blocksRaycasts = visible;
+        targetRoot.alpha = visible ? 1f : 0f;
+        targetRoot.interactable = visible;
+        targetRoot.blocksRaycasts = visible;
         isVisible = visible;
 
         if (visible)
         {
             if (bringToFrontOnShow)
-                root.transform.SetAsLastSibling();
+                targetRoot.transform.SetAsLastSibling();
 
             activePanel = this;
         }
@@ -138,6 +141,14 @@ public sealed class SettingsMenuPanel : MonoBehaviour
         {
             activePanel = null;
         }
+    }
+
+    private CanvasGroup GetRootCanvasGroup()
+    {
+        if (root == null)
+            root = GetComponentInChildren<CanvasGroup>(true);
+
+        return root;
     }
 
     private static void ConfigureSlider(Slider slider)

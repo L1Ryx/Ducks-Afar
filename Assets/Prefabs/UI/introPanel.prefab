@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 2054101874271716425}
   - component: {fileID: 3786409662111758720}
   - component: {fileID: 6143257645067876074}
+  - component: {fileID: 6143257645067876075}
   m_Layer: 5
   m_Name: introPanel
   m_TagString: Untagged
@@ -349,6 +350,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6143257645067876075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2886595267965334110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe177d831db64a4da9e40cb91f8442eb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  canvasGroup: {fileID: 6143257645067876074}
+  fadeInDuration: 0.25
+  fadeOutDuration: 0.2
+  fadeInEase: 6
+  fadeOutEase: 5
+  useUnscaledTime: 1
 --- !u!1 &7498700890846389113
 GameObject:
   m_ObjectHideFlags: 0

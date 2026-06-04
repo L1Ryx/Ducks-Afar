@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 173395676}
   - component: {fileID: 173395675}
   - component: {fileID: 173395678}
+  - component: {fileID: 173395679}
   m_Layer: 5
   m_Name: File Select Panel
   m_TagString: Untagged
@@ -599,6 +600,24 @@ MonoBehaviour:
   - {fileID: 1849158867}
   - {fileID: 1517511951}
   - {fileID: 2100557944}
+--- !u!114 &173395679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173395673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe177d831db64a4da9e40cb91f8442eb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  canvasGroup: {fileID: 173395675}
+  fadeInDuration: 0.25
+  fadeOutDuration: 0.2
+  fadeInEase: 6
+  fadeOutEase: 5
+  useUnscaledTime: 1
 --- !u!1001 &195882147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2670,6 +2689,7 @@ GameObject:
   - component: {fileID: 916560054}
   - component: {fileID: 916560053}
   - component: {fileID: 916560055}
+  - component: {fileID: 916560056}
   m_Layer: 5
   m_Name: DucksPhysicsPnael
   m_TagString: Untagged
@@ -2750,6 +2770,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &916560056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 916560051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe177d831db64a4da9e40cb91f8442eb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  canvasGroup: {fileID: 916560055}
+  fadeInDuration: 0.25
+  fadeOutDuration: 0.2
+  fadeInEase: 6
+  fadeOutEase: 5
+  useUnscaledTime: 1
 --- !u!1 &961632055
 GameObject:
   m_ObjectHideFlags: 0
@@ -4612,6 +4650,7 @@ GameObject:
   - component: {fileID: 1499735644}
   - component: {fileID: 1499735643}
   - component: {fileID: 1499735645}
+  - component: {fileID: 1499735646}
   m_Layer: 5
   m_Name: Main Panel
   m_TagString: Untagged
@@ -4692,6 +4731,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1499735646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499735641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe177d831db64a4da9e40cb91f8442eb, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  canvasGroup: {fileID: 1499735645}
+  fadeInDuration: 0.25
+  fadeOutDuration: 0.2
+  fadeInEase: 6
+  fadeOutEase: 5
+  useUnscaledTime: 1
 --- !u!114 &1517511951 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4785849802726435751, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
