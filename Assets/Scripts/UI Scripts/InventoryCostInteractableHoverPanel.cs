@@ -139,7 +139,7 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
             view.requiredIcon.sprite = requiredItem.icon;
         }
 
-        view.requiredText.text = $"{requiredItem.displayName} ×{requiredCount}";
+        view.requiredText.text = ItemQuantityFormatter.FormatNameWithCount(requiredItem, requiredCount);
     }
 
 

@@ -169,7 +169,7 @@ public class InventoryBarSlotUI : MonoBehaviour
         DOTween.Kill(numberText);
 
         if (ShouldShowCount)
-            numberText.text = $"x{itemCount}";
+            numberText.text = $"{itemCount}";
         else
             numberText.text = string.Empty;
 

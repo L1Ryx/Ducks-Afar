@@ -85,7 +85,9 @@ public class NewItemPopupManager : MonoBehaviour
         ExitActivePopup();
 
         var popup = Instantiate(popupPrefab, popupParent, false);
-        popup.Bind(def);
+        popup.Bind(def, showQuantitySuffixIfMultiple
+            ? ItemQuantityFormatter.FormatNameWithCount(def, deltaAdded)
+            : null);
         popup.RebaseFloatyIfPresent();
         PositionAtAnchor(popup);
 
