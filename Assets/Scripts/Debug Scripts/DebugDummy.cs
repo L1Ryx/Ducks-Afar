@@ -150,6 +150,12 @@ public class DebugDummy : MonoBehaviour
             return;
         }
 
+        if (Game.Ctx.SceneFlow != null)
+        {
+            Game.Ctx.SceneFlow.LoadNextScene(nextScene);
+            return;
+        }
+
         Game.Ctx.SceneLoader.LoadScene(nextScene);
     }
 
