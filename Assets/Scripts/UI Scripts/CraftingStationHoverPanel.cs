@@ -112,9 +112,7 @@ public class CraftingStationHoverPanel : MonoBehaviour, IHoverInfoUI
             view.inputIcon.sprite = inputItem != null ? inputItem.icon : null;
         }
 
-        view.inputText.text = inputItem != null
-            ? $"{inputItem.displayName} ×{inputCount}"
-            : "";
+        view.inputText.text = ItemQuantityFormatter.FormatNameWithCount(inputItem, inputCount);
 
         // Output (from trade)
         var trade = station.Trade;
@@ -131,7 +129,7 @@ public class CraftingStationHoverPanel : MonoBehaviour, IHoverInfoUI
             view.outputIcon.sprite = trade.outputItem.icon;
         }
 
-        view.outputText.text = $"{trade.outputItem.displayName} ×{trade.outputCount}";
+        view.outputText.text = ItemQuantityFormatter.FormatNameWithCount(trade.outputItem, trade.outputCount);
     }
 
     private bool CanAfford()
