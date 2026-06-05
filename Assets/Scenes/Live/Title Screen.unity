@@ -750,6 +750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173395674}
     m_Modifications:
+    - target: {fileID: 1409458929712762088, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1913515002209054116, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -999,6 +1003,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4165575870200940934, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165575870200940934, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
@@ -1057,6 +1065,10 @@ PrefabInstance:
     - target: {fileID: 7473815978544167347, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550965406054948561, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8933209424169902898, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
@@ -4028,7 +4040,6 @@ MonoBehaviour:
   fileSelectPanel: {fileID: 173395675}
   optionsPanel: {fileID: 1197854943}
   introPanel: {fileID: 1317434989}
-  ducksPanel: {fileID: 916560055}
   animatePanelTransitions: 1
   fileSelect: {fileID: 173395678}
   newGameSceneName: animation0
@@ -4781,6 +4792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173395674}
     m_Modifications:
+    - target: {fileID: 1409458929712762088, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1913515002209054116, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5030,6 +5045,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4165575870200940934, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165575870200940934, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
@@ -5089,6 +5108,10 @@ PrefabInstance:
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8550965406054948561, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 8933209424169902898, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
       value: 1
@@ -5130,6 +5153,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 173395674}
     m_Modifications:
+    - target: {fileID: 1409458929712762088, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1913515002209054116, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -5379,6 +5406,10 @@ PrefabInstance:
       value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4165575870200940934, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165575870200940934, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
@@ -5433,6 +5464,10 @@ PrefabInstance:
     - target: {fileID: 7473815978544167347, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8550965406054948561, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8933209424169902898, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
       propertyPath: m_Colors.m_HighlightedColor.b
