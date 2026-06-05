@@ -1,6 +1,7 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public sealed class TitleScreenController : MonoBehaviour
 {
@@ -18,7 +19,6 @@ public sealed class TitleScreenController : MonoBehaviour
     [SerializeField] private CanvasGroup fileSelectPanel;
     [SerializeField] private SettingsMenuPanel optionsPanel;
     [SerializeField] private CanvasGroup introPanel;
-    [SerializeField] private CanvasGroup ducksPanel;
 
     [Header("Panel Fades")]
     [SerializeField] private bool animatePanelTransitions = true;
@@ -69,6 +69,7 @@ public sealed class TitleScreenController : MonoBehaviour
     {
         if (currentPanel == TitlePanel.FileSelect && Input.GetKeyDown(KeyCode.Escape))
             ShowMain();
+            EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void ShowIntro()

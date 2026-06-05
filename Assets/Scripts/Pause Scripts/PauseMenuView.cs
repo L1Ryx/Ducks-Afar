@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public sealed class PauseMenuView : MonoBehaviour
@@ -89,7 +90,7 @@ public sealed class PauseMenuView : MonoBehaviour
             root.transform.SetAsLastSibling();
 
         if (firstSelectedObject != null)
-            UnityEngine.EventSystems.EventSystem.current?.SetSelectedGameObject(visible ? firstSelectedObject : null);
+            EventSystem.current?.SetSelectedGameObject(visible ? firstSelectedObject : null);
     }
 
     public void Resume()
