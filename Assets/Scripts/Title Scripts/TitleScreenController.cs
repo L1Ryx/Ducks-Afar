@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public sealed class TitleScreenController : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public sealed class TitleScreenController : MonoBehaviour
     [SerializeField] private CanvasGroup fileSelectPanel;
     [SerializeField] private SettingsMenuPanel optionsPanel;
     [SerializeField] private CanvasGroup introPanel;
-    [SerializeField] private CanvasGroup ducksPanel;
 
     [Header("File Select")]
     [SerializeField] private TitleFileSelectPanel fileSelect;
@@ -48,6 +48,7 @@ public sealed class TitleScreenController : MonoBehaviour
     {
         if (currentPanel == TitlePanel.FileSelect && Input.GetKeyDown(KeyCode.Escape))
             ShowMain();
+            EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void ShowIntro()
@@ -66,8 +67,8 @@ public sealed class TitleScreenController : MonoBehaviour
     public void ShowMain()
     {
         currentPanel = TitlePanel.Main;
-        SetCanvasGroupVisible(introPanel, false);
         SetCanvasGroupVisible(mainPanel, true);
+        SetCanvasGroupVisible(introPanel, false);
         SetCanvasGroupVisible(fileSelectPanel, false);
         optionsPanel?.Hide();
     }
