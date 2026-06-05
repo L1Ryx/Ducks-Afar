@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da5097381294bc5bcb809d41aaacb5d, type: 3}
+  m_Name: Dev Scene Flow
+  m_EditorClassIdentifier: Assembly-CSharp::SceneFlowPresetSO
+  presetId: default
+  description: Default scene progression migrated from the current DebugDummy nextScene
+    values.
+  firstSceneName: Title Screen
+  transitions:
+  - fromSceneName: Title Screen
+    toSceneName: animation0
+    loadingMessage: 
+  - fromSceneName: Level Select
+    toSceneName: animation0
+    loadingMessage: 
+  - fromSceneName: Demo Begin
+    toSceneName: animation0
+    loadingMessage: 
+  - fromSceneName: animation0
+    toSceneName: Stage Home
+    loadingMessage: 
+  - fromSceneName: Stage
+    toSceneName: Level Select
+    loadingMessage: 
+  - fromSceneName: Stage Home
+    toSceneName: Level Select
+    loadingMessage: 
+  - fromSceneName: Stage Dusk
+    toSceneName: Level Select
+    loadingMessage: 
+  - fromSceneName: Stage Night
+    toSceneName: Stage Rest
+    loadingMessage: 
+  - fromSceneName: Stage Rest
+    toSceneName: Stage Weird
+    loadingMessage: 
+  - fromSceneName: Stage Weird
+    toSceneName: animation
+    loadingMessage: 
+  - fromSceneName: animation
+    toSceneName: Demo Reset
+    loadingMessage: Ending Demo...
+  - fromSceneName: Demo Reset
+    toSceneName: Title Screen
+    loadingMessage: 

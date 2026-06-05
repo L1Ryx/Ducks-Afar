@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 173395676}
   - component: {fileID: 173395675}
   - component: {fileID: 173395678}
+  - component: {fileID: 173395679}
   m_Layer: 5
   m_Name: File Select Panel
   m_TagString: Untagged
@@ -723,6 +724,24 @@ MonoBehaviour:
   - {fileID: 1849158867}
   - {fileID: 1517511951}
   - {fileID: 2100557944}
+--- !u!114 &173395679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173395673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe177d831db64a4da9e40cb91f8442eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 173395675}
+  fadeInDuration: 0.35
+  fadeOutDuration: 0.4
+  fadeInEase: 6
+  fadeOutEase: 5
+  useUnscaledTime: 1
 --- !u!1001 &195882147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2826,7 +2845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.582458, y: 12.86377}
+  m_AnchoredPosition: {x: -20.58252, y: 12.86377}
   m_SizeDelta: {x: 407.5259, y: 254.7036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008022224
@@ -3588,6 +3607,7 @@ GameObject:
   - component: {fileID: 1499735644}
   - component: {fileID: 1499735643}
   - component: {fileID: 1499735645}
+  - component: {fileID: 1499735646}
   m_Layer: 5
   m_Name: Main Panel
   m_TagString: Untagged
@@ -3668,6 +3688,24 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1499735646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499735641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe177d831db64a4da9e40cb91f8442eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 1499735645}
+  fadeInDuration: 0.35
+  fadeOutDuration: 0.4
+  fadeInEase: 6
+  fadeOutEase: 5
+  useUnscaledTime: 1
 --- !u!114 &1517511951 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4785849802726435751, guid: 3f8e24ae68fb444418a978fbf115b9f7, type: 3}
@@ -3990,6 +4028,8 @@ MonoBehaviour:
   fileSelectPanel: {fileID: 173395675}
   optionsPanel: {fileID: 1197854943}
   introPanel: {fileID: 1317434989}
+  ducksPanel: {fileID: 916560055}
+  animatePanelTransitions: 1
   fileSelect: {fileID: 173395678}
   newGameSceneName: animation0
   newGameStartLocation: auralis_0

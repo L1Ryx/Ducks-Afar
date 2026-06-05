@@ -234,7 +234,7 @@ public class AdditionOutputSlotHoverPanel : MonoBehaviour, IHoverInfoUI
         }
 
         // Case 4: Valid output
-        view.resultName.text = $"{outDef.displayName} ×1";
+        view.resultName.text = ItemQuantityFormatter.FormatNameWithCount(outDef, 1);
         view.resultIcon.sprite = outDef.icon;
         view.resultIcon.enabled = outDef.icon != null;
     }

@@ -1757,6 +1757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 1831075303}
   itemDatabase: {fileID: 11400000, guid: f39762f4fe1d9409e8e272108d89f693, type: 2}
+  sceneFlowPreset: {fileID: 11400000, guid: 5813eb18858cf4ae8b8fa703d9b82630, type: 2}
   bootstrapSceneName: Bootstrap
 --- !u!114 &1712910840
 MonoBehaviour:

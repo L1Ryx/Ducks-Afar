@@ -1,3 +1,5 @@
+using System.Collections;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -5,6 +7,8 @@ public sealed class TitleScreenController : MonoBehaviour
 {
     private enum TitlePanel
     {
+        None,
+        Intro,
         Main,
         FileSelect,
         Options
@@ -16,20 +20,29 @@ public sealed class TitleScreenController : MonoBehaviour
     [SerializeField] private SettingsMenuPanel optionsPanel;
     [SerializeField] private CanvasGroup introPanel;
 
+    [Header("Panel Fades")]
+    [SerializeField] private bool animatePanelTransitions = true;
+
     [Header("File Select")]
     [SerializeField] private TitleFileSelectPanel fileSelect;
     [SerializeField] private string newGameSceneName = "Demo Begin";
     [SerializeField] private string newGameStartLocation = "auralis_0";
 
-    private TitlePanel currentPanel;
+    private CanvasGroupFade mainPanelFade;
+    private CanvasGroupFade fileSelectPanelFade;
+    private CanvasGroupFade optionsPanelFade;
+    private CanvasGroupFade introPanelFade;
+    private Coroutine panelTransitionRoutine;
+    private TitlePanel currentPanel = TitlePanel.None;
 
     private void Awake()
     {
+        ResolvePanelFades();
+
         if (fileSelect != null)
             fileSelect.SetController(this);
 
-        //ShowMain();
-        ShowIntro(); //to show initial title screen
+        ShowPanelInstant(TitlePanel.Intro);
     }
 
     private void OnEnable()
@@ -42,6 +55,14 @@ public sealed class TitleScreenController : MonoBehaviour
     {
         if (optionsPanel != null)
             optionsPanel.OnBackRequested -= HandleOptionsBackRequested;
+
+        if (panelTransitionRoutine != null)
+        {
+            StopCoroutine(panelTransitionRoutine);
+            panelTransitionRoutine = null;
+        }
+
+        KillPanelTweens();
     }
 
     private void Update()
@@ -53,10 +74,7 @@ public sealed class TitleScreenController : MonoBehaviour
 
     public void ShowIntro()
     {
-        SetCanvasGroupVisible(introPanel, true);
-        SetCanvasGroupVisible(mainPanel, false);
-        SetCanvasGroupVisible(fileSelectPanel, false);
-        optionsPanel?.Hide();
+        ShowPanel(TitlePanel.Intro);
     }
 
     public void introClick()
@@ -66,28 +84,17 @@ public sealed class TitleScreenController : MonoBehaviour
 
     public void ShowMain()
     {
-        currentPanel = TitlePanel.Main;
-        SetCanvasGroupVisible(mainPanel, true);
-        SetCanvasGroupVisible(introPanel, false);
-        SetCanvasGroupVisible(fileSelectPanel, false);
-        optionsPanel?.Hide();
+        ShowPanel(TitlePanel.Main);
     }
 
     public void ShowFileSelect()
     {
-        currentPanel = TitlePanel.FileSelect;
-        fileSelect?.Refresh();
-        SetCanvasGroupVisible(mainPanel, false);
-        SetCanvasGroupVisible(fileSelectPanel, true);
-        optionsPanel?.Hide();
+        ShowPanel(TitlePanel.FileSelect);
     }
 
     public void ShowOptions()
     {
-        currentPanel = TitlePanel.Options;
-        SetCanvasGroupVisible(mainPanel, false);
-        SetCanvasGroupVisible(fileSelectPanel, false);
-        optionsPanel?.Show();
+        ShowPanel(TitlePanel.Options);
     }
 
     public void UseSaveSlot(int slotIndex)
@@ -157,10 +164,180 @@ public sealed class TitleScreenController : MonoBehaviour
         ApplicationExitUtility.ExitApplication();
     }
 
-    private void HandleOptionsBackRequested()
+    private bool HandleOptionsBackRequested()
     {
-        if (currentPanel == TitlePanel.Options)
-            ShowMain();
+        if (currentPanel != TitlePanel.Options)
+            return false;
+
+        ShowMain();
+        return true;
+    }
+
+    private void ShowPanel(TitlePanel panel)
+    {
+        if (currentPanel == panel)
+            return;
+
+        if (!animatePanelTransitions)
+        {
+            ShowPanelInstant(panel);
+            return;
+        }
+
+        if (panelTransitionRoutine != null)
+            return;
+
+        panelTransitionRoutine = StartCoroutine(ShowPanelRoutine(panel));
+    }
+
+    private IEnumerator ShowPanelRoutine(TitlePanel panel)
+    {
+        TitlePanel outgoingPanel = currentPanel;
+        CanvasGroupFade outgoingFade = GetPanelFade(outgoingPanel);
+
+        if (outgoingFade != null)
+        {
+            Tween fadeOut = outgoingFade.FadeOut();
+            if (fadeOut != null)
+                yield return fadeOut.WaitForCompletion();
+        }
+
+        HidePanelAfterFade(outgoingPanel);
+        PreparePanelForShow(panel);
+
+        CanvasGroupFade incomingFade = GetPanelFade(panel);
+        if (incomingFade != null)
+        {
+            incomingFade.HideInstant();
+            Tween fadeIn = incomingFade.FadeIn();
+            if (fadeIn != null)
+                yield return fadeIn.WaitForCompletion();
+        }
+        else
+        {
+            SetCanvasGroupVisible(GetPanelCanvasGroup(panel), true);
+        }
+
+        currentPanel = panel;
+        panelTransitionRoutine = null;
+    }
+
+    private void ShowPanelInstant(TitlePanel panel)
+    {
+        if (panelTransitionRoutine != null)
+        {
+            StopCoroutine(panelTransitionRoutine);
+            panelTransitionRoutine = null;
+            KillPanelTweens();
+        }
+
+        HidePanelInstant(TitlePanel.Intro);
+        HidePanelInstant(TitlePanel.Main);
+        HidePanelInstant(TitlePanel.FileSelect);
+        HidePanelInstant(TitlePanel.Options);
+
+        PreparePanelForShow(panel);
+        CanvasGroupFade fade = GetPanelFade(panel);
+
+        if (fade != null)
+            fade.ShowInstant();
+        else
+            SetCanvasGroupVisible(GetPanelCanvasGroup(panel), true);
+
+        currentPanel = panel;
+    }
+
+    private void PreparePanelForShow(TitlePanel panel)
+    {
+        switch (panel)
+        {
+            case TitlePanel.FileSelect:
+                fileSelect?.Refresh();
+                break;
+            case TitlePanel.Options:
+                optionsPanel?.Show();
+                break;
+        }
+    }
+
+    private void HidePanelAfterFade(TitlePanel panel)
+    {
+        if (panel == TitlePanel.Options)
+            optionsPanel?.Hide();
+
+        if (panel == TitlePanel.None)
+            return;
+
+        CanvasGroupFade fade = GetPanelFade(panel);
+
+        if (fade != null)
+            fade.HideInstant();
+        else
+            SetCanvasGroupVisible(GetPanelCanvasGroup(panel), false);
+    }
+
+    private void HidePanelInstant(TitlePanel panel)
+    {
+        if (panel == TitlePanel.Options)
+            optionsPanel?.Hide();
+
+        CanvasGroupFade fade = GetPanelFade(panel);
+
+        if (fade != null)
+            fade.HideInstant();
+        else
+            SetCanvasGroupVisible(GetPanelCanvasGroup(panel), false);
+    }
+
+    private void ResolvePanelFades()
+    {
+        mainPanelFade = ResolvePanelFade(mainPanel);
+        fileSelectPanelFade = ResolvePanelFade(fileSelectPanel);
+        introPanelFade = ResolvePanelFade(introPanel);
+        optionsPanelFade = ResolvePanelFade(optionsPanel != null ? optionsPanel.RootCanvasGroup : null);
+    }
+
+    private void KillPanelTweens()
+    {
+        mainPanelFade?.KillActiveTween(false);
+        fileSelectPanelFade?.KillActiveTween(false);
+        optionsPanelFade?.KillActiveTween(false);
+        introPanelFade?.KillActiveTween(false);
+    }
+
+    private static CanvasGroupFade ResolvePanelFade(CanvasGroup group)
+    {
+        if (group == null)
+            return null;
+
+        if (!group.TryGetComponent(out CanvasGroupFade fade))
+            fade = group.gameObject.AddComponent<CanvasGroupFade>();
+
+        return fade;
+    }
+
+    private CanvasGroupFade GetPanelFade(TitlePanel panel)
+    {
+        return panel switch
+        {
+            TitlePanel.Intro => introPanelFade,
+            TitlePanel.Main => mainPanelFade,
+            TitlePanel.FileSelect => fileSelectPanelFade,
+            TitlePanel.Options => optionsPanelFade,
+            _ => null
+        };
+    }
+
+    private CanvasGroup GetPanelCanvasGroup(TitlePanel panel)
+    {
+        return panel switch
+        {
+            TitlePanel.Intro => introPanel,
+            TitlePanel.Main => mainPanel,
+            TitlePanel.FileSelect => fileSelectPanel,
+            TitlePanel.Options => optionsPanel != null ? optionsPanel.RootCanvasGroup : null,
+            _ => null
+        };
     }
 
     private static void SetCanvasGroupVisible(CanvasGroup group, bool visible)
