@@ -42,7 +42,7 @@ MonoBehaviour:
     loadingMessage: 
   - fromSceneName: animation
     toSceneName: Demo Reset
-    loadingMessage: Ending Demo...
+    loadingMessage: 
   - fromSceneName: Demo Reset
     toSceneName: Title Screen
     loadingMessage: 

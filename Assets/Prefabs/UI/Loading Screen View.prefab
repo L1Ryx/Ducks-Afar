@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoadingScreenView
   root: {fileID: 3785483009874293523}
   messageText: {fileID: 4074732629127369935}
-  defaultMessage: Loading...
+  defaultMessage: Loading
   fadeInDuration: 0.5
   textFadeInDuration: 0.25
   minimumVisibleDuration: 1.2
@@ -155,6 +155,10 @@ MonoBehaviour:
   textFadeOutDuration: 0.25
   overlayFadeOutDelay: 0.5
   fadeOutDuration: 0.5
+  TofuAnim: {fileID: 0}
+  BubblesAnim: {fileID: 0}
+  AsterAnim: {fileID: 0}
+  CodaAnim: {fileID: 0}
   sortingOrder: 5000
 --- !u!1 &7450651870995526890
 GameObject:
