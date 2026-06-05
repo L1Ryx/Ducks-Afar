@@ -25,7 +25,7 @@ public class DuckIntroAnimations : MonoBehaviour
         asterSequence1.Join(AsterAnim.DOLocalMoveX(AsterAnim.localPosition.x+30, 5f)
             .SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
         
-        bubbleSequence1.Append(BubblesAnim.DORotate(new Vector3(0, 0, 5), 8f).
+        bubbleSequence1.Append(BubblesAnim.DORotate(new Vector3(0, 0, 180), 8f).
                     SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear));
         // BubblesAnim.DORotate(new Vector3(0, 0, 45), 8f, RotateMode.LocalAxisAdd).
         //             SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
@@ -33,7 +33,7 @@ public class DuckIntroAnimations : MonoBehaviour
         //     SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
         // bubbleSequence1.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y+29, 5f).
         //     SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
-        bubbleSequence1.Join(BubblesAnim.DOMove(new Vector3(-290, 137, 0), 8f).SetRelative().
+        bubbleSequence1.Join(BubblesAnim.DOMove(new Vector3(-30, 30, 0), 5f).SetRelative().
             SetEase(Ease.InOutSine).
             SetLoops(-1, LoopType.Yoyo));
         
@@ -54,7 +54,7 @@ public class DuckIntroAnimations : MonoBehaviour
         tofuSequence.Join(TofuAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
         
-        bubbleSequence2.Append(BubblesAnim.DOMove(new Vector3(-692, 346, 0), 1).SetRelative()
+        bubbleSequence2.Append(BubblesAnim.DOMove(new Vector3(-548, 360, 0), 1)
             .SetEase(Ease.InOutSine));
         bubbleSequence2.Join(BubblesAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
@@ -68,6 +68,11 @@ public class DuckIntroAnimations : MonoBehaviour
             .SetEase(Ease.InOutSine));
         codaSequence.Join(CodaAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
+
+        Destroy(BubblesAnim);
+        Destroy(TofuAnim);
+        Destroy(AsterAnim);
+        Destroy(CodaAnim);
 
 
     }
