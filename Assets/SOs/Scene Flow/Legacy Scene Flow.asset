@@ -12,37 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da5097381294bc5bcb809d41aaacb5d, type: 3}
   m_Name: Legacy Scene Flow
   m_EditorClassIdentifier: Assembly-CSharp::SceneFlowPresetSO
-  presetId: default
+  presetId: legacy
   description: Legacy Scene Flow for v0.26.6.4
-  firstSceneName: Title Screen
+  firstSceneName: Studio Splash
   transitions:
+  - fromSceneName: Studio Splash
+    toSceneName: Title Screen
+    loadingMessage:
+    loadPresentation: 1
   - fromSceneName: Title Screen
     toSceneName: animation0
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: animation0
     toSceneName: Stage Home
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Home
     toSceneName: Stage
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage
     toSceneName: Stage Dusk
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Dusk
     toSceneName: Stage Night
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Night
     toSceneName: Stage Rest
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Rest
     toSceneName: Stage Weird
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Weird
     toSceneName: animation
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: animation
     toSceneName: Demo Reset
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Demo Reset
     toSceneName: Title Screen
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0

@@ -15,41 +15,57 @@ MonoBehaviour:
   presetId: default
   description: Default scene progression migrated from the current DebugDummy nextScene
     values.
-  firstSceneName: Title Screen
+  firstSceneName: Studio Splash
   transitions:
+  - fromSceneName: Studio Splash
+    toSceneName: Title Screen
+    loadingMessage:
+    loadPresentation: 1
   - fromSceneName: Title Screen
     toSceneName: animation0
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Level Select
     toSceneName: animation0
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Demo Begin
     toSceneName: animation0
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: animation0
     toSceneName: Stage Home
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage
     toSceneName: Level Select
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Home
     toSceneName: Level Select
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Dusk
     toSceneName: Level Select
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Night
     toSceneName: Stage Rest
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Rest
     toSceneName: Stage Weird
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: Stage Weird
     toSceneName: animation
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0
   - fromSceneName: animation
     toSceneName: Demo Reset
     loadingMessage: Ending Demo...
+    loadPresentation: 0
   - fromSceneName: Demo Reset
     toSceneName: Title Screen
-    loadingMessage: 
+    loadingMessage:
+    loadPresentation: 0

@@ -42,10 +42,12 @@ public sealed class SceneFlowTransition
     [SerializeField] private string fromSceneName;
     [SerializeField] private string toSceneName;
     [SerializeField] private string loadingMessage;
+    [SerializeField] private SceneLoadPresentation loadPresentation = SceneLoadPresentation.LoadingScreen;
 
     public string FromSceneName => fromSceneName;
     public string ToSceneName => toSceneName;
     public string LoadingMessage => loadingMessage;
+    public SceneLoadPresentation LoadPresentation => loadPresentation;
 
     public bool MatchesFromScene(string sceneName)
     {

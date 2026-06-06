@@ -43,8 +43,15 @@ public sealed class SceneFlowSystem
             return false;
         }
 
-        if (TryResolveNextScene(fromSceneName, fallbackSceneName, out string nextSceneName, out string loadingMessage))
-            return ctx.SceneLoader.LoadScene(nextSceneName, loadingMessage);
+        if (TryResolveNextScene(
+                fromSceneName,
+                fallbackSceneName,
+                out string nextSceneName,
+                out string loadingMessage,
+                out SceneLoadPresentation loadPresentation))
+        {
+            return ctx.SceneLoader.LoadScene(nextSceneName, loadingMessage, loadPresentation);
+        }
 
         return false;
     }
@@ -53,15 +60,18 @@ public sealed class SceneFlowSystem
         string fromSceneName,
         string fallbackSceneName,
         out string nextSceneName,
-        out string loadingMessage)
+        out string loadingMessage,
+        out SceneLoadPresentation loadPresentation)
     {
         nextSceneName = null;
         loadingMessage = null;
+        loadPresentation = SceneLoadPresentation.LoadingScreen;
 
         if (ActivePreset != null && ActivePreset.TryGetTransition(fromSceneName, out SceneFlowTransition transition))
         {
             nextSceneName = transition.ToSceneName;
             loadingMessage = transition.LoadingMessage;
+            loadPresentation = transition.LoadPresentation;
             return true;
         }
 

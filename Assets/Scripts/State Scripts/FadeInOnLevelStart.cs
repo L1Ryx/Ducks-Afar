@@ -14,6 +14,7 @@ public class FadeInOnLevelStart : MonoBehaviour
 
     [Header("Behavior")]
     [SerializeField] private bool disableAfterFade = true;
+    [SerializeField] private bool blockRaycastsDuringFade = true;
 
     [Header("Events")] [SerializeField] private UnityEvent onFadeIn;
 
@@ -33,9 +34,8 @@ public class FadeInOnLevelStart : MonoBehaviour
             return;
         }
 
-        // Start fully black and block input until fade is triggered.
         SetAlpha(1f);
-        overlayImage.raycastTarget = true;
+        overlayImage.raycastTarget = blockRaycastsDuringFade;
     }
 
     // Hook this up in GameEventListener.Response
@@ -44,6 +44,7 @@ public class FadeInOnLevelStart : MonoBehaviour
         if (fadeRoutine != null)
             StopCoroutine(fadeRoutine);
 
+        overlayImage.raycastTarget = blockRaycastsDuringFade;
         fadeRoutine = StartCoroutine(FadeOutRoutine());
     }
 
