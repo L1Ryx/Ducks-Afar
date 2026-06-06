@@ -34,6 +34,11 @@ public sealed class LoadingScreenView : MonoBehaviour
     public float PostLoadHoldDuration => postLoadHoldDuration;
 
     private bool visible;
+    private Tween duckLoadingTween;
+    private CanvasGroup tofuDuckGroup;
+    private CanvasGroup bubblesDuckGroup;
+    private CanvasGroup asterDuckGroup;
+    private CanvasGroup codaDuckGroup;
 
     private void Awake()
     {
@@ -51,17 +56,21 @@ public sealed class LoadingScreenView : MonoBehaviour
 
         if (messageText == null)
             messageText = root.GetComponentInChildren<TMP_Text>(true);
+
+        ResolveDuckCanvasGroups();
     }
 
     public IEnumerator Show(string message = null)
     {
         EnsureInitialized();
         SetMessage(message);
+        SetDucksVisible(true);
         
         root.gameObject.SetActive(true);
         root.transform.SetAsLastSibling();
         SetBlocking(true);
         SetMessageAlpha(0f);
+        SetDucksAlpha(0f);
 
         if (!visible)
             root.alpha = 0f;
@@ -79,20 +88,56 @@ public sealed class LoadingScreenView : MonoBehaviour
         ducksLoading.Append(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y-8, 0.5f));
         ducksLoading.Join(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y+8, 0.5f));
         ducksLoading.SetLoops(-1, LoopType.Restart);
-
+        StartDuckLoadingAnimation();
 
         yield return FadeTo(1f, fadeInDuration);
-        yield return FadeMessageTo(1f, textFadeInDuration);
+        yield return FadeLoadingContentTo(1f, textFadeInDuration);
+    }
+
+    public IEnumerator ShowBlack()
+    {
+        EnsureInitialized();
+        StopDuckLoadingAnimation();
+        SetDucksVisible(false);
+
+        root.gameObject.SetActive(true);
+        root.transform.SetAsLastSibling();
+        SetBlocking(true);
+        SetMessageAlpha(0f);
+        SetDucksAlpha(0f);
+
+        if (!visible)
+            root.alpha = 0f;
+
+        visible = true;
+        Canvas.ForceUpdateCanvases();
+
+        yield return FadeTo(1f, fadeInDuration);
     }
 
     public IEnumerator Hide()
     {
         EnsureInitialized();
 
-        yield return FadeMessageTo(0f, textFadeOutDuration);
+        yield return FadeLoadingContentTo(0f, textFadeOutDuration);
 
         if (overlayFadeOutDelay > 0f)
             yield return WaitForUnscaledSeconds(overlayFadeOutDelay);
+
+        yield return FadeTo(0f, fadeOutDuration);
+        StopDuckLoadingAnimation();
+        SetDucksVisible(false);
+        SetBlocking(false);
+        visible = false;
+    }
+
+    public IEnumerator HideBlack()
+    {
+        EnsureInitialized();
+        StopDuckLoadingAnimation();
+        SetDucksVisible(false);
+        SetMessageAlpha(0f);
+        SetDucksAlpha(0f);
 
         yield return FadeTo(0f, fadeOutDuration);
         SetBlocking(false);
@@ -102,8 +147,11 @@ public sealed class LoadingScreenView : MonoBehaviour
     public void HideImmediate()
     {
         EnsureInitialized();
+        StopDuckLoadingAnimation();
+        SetDucksVisible(false);
         root.alpha = 0f;
         SetMessageAlpha(0f);
+        SetDucksAlpha(0f);
         SetBlocking(false);
         visible = false;
     }
@@ -114,28 +162,33 @@ public sealed class LoadingScreenView : MonoBehaviour
             messageText.text = string.IsNullOrWhiteSpace(message) ? defaultMessage : message;
     }
 
-    private IEnumerator FadeMessageTo(float targetAlpha, float duration)
+    private IEnumerator FadeLoadingContentTo(float targetAlpha, float duration)
     {
-        if (messageText == null)
+        if (messageText == null && !HasAnyDuckGroup())
             yield break;
 
         if (duration <= 0f)
         {
             SetMessageAlpha(targetAlpha);
+            SetDucksAlpha(targetAlpha);
             yield break;
         }
 
-        float startAlpha = messageText.color.a;
+        float startMessageAlpha = messageText != null ? messageText.color.a : targetAlpha;
+        float startDuckAlpha = GetDuckAlpha();
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
             elapsed += Time.unscaledDeltaTime;
-            SetMessageAlpha(Mathf.Lerp(startAlpha, targetAlpha, elapsed / duration));
+            float normalized = elapsed / duration;
+            SetMessageAlpha(Mathf.Lerp(startMessageAlpha, targetAlpha, normalized));
+            SetDucksAlpha(Mathf.Lerp(startDuckAlpha, targetAlpha, normalized));
             yield return null;
         }
 
         SetMessageAlpha(targetAlpha);
+        SetDucksAlpha(targetAlpha);
     }
 
     private void SetMessageAlpha(float alpha)
@@ -187,6 +240,105 @@ public sealed class LoadingScreenView : MonoBehaviour
 
         while (Time.unscaledTime < endTime)
             yield return null;
+    }
+
+    private void StartDuckLoadingAnimation()
+    {
+        StopDuckLoadingAnimation();
+
+        if (TofuAnim == null || BubblesAnim == null || AsterAnim == null || CodaAnim == null)
+            return;
+
+        Sequence ducksLoading = DOTween.Sequence();
+        ducksLoading.Append(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y - 8, 0.5f));
+        ducksLoading.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y + 8, 0.5f));
+        ducksLoading.Append(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y - 8, 0.5f));
+        ducksLoading.Join(AsterAnim.DOLocalMoveY(AsterAnim.localPosition.y + 8, 0.5f));
+        ducksLoading.Append(AsterAnim.DOLocalMoveY(AsterAnim.localPosition.y - 8, 0.5f));
+        ducksLoading.Join(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y + 8, 0.5f));
+        ducksLoading.Append(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y - 8, 0.5f));
+        ducksLoading.Join(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y + 8, 0.5f));
+        ducksLoading.SetLoops(-1, LoopType.Restart);
+
+        duckLoadingTween = ducksLoading;
+    }
+
+    private void StopDuckLoadingAnimation()
+    {
+        duckLoadingTween?.Kill();
+        duckLoadingTween = null;
+    }
+
+    private void SetDucksVisible(bool visibleDucks)
+    {
+        SetTransformVisible(TofuAnim, visibleDucks);
+        SetTransformVisible(BubblesAnim, visibleDucks);
+        SetTransformVisible(AsterAnim, visibleDucks);
+        SetTransformVisible(CodaAnim, visibleDucks);
+    }
+
+    private void SetDucksAlpha(float alpha)
+    {
+        SetCanvasGroupAlpha(tofuDuckGroup, alpha);
+        SetCanvasGroupAlpha(bubblesDuckGroup, alpha);
+        SetCanvasGroupAlpha(asterDuckGroup, alpha);
+        SetCanvasGroupAlpha(codaDuckGroup, alpha);
+    }
+
+    private float GetDuckAlpha()
+    {
+        if (tofuDuckGroup != null)
+            return tofuDuckGroup.alpha;
+        if (bubblesDuckGroup != null)
+            return bubblesDuckGroup.alpha;
+        if (asterDuckGroup != null)
+            return asterDuckGroup.alpha;
+        if (codaDuckGroup != null)
+            return codaDuckGroup.alpha;
+
+        return 0f;
+    }
+
+    private bool HasAnyDuckGroup()
+    {
+        return tofuDuckGroup != null ||
+               bubblesDuckGroup != null ||
+               asterDuckGroup != null ||
+               codaDuckGroup != null;
+    }
+
+    private void ResolveDuckCanvasGroups()
+    {
+        tofuDuckGroup = GetOrAddCanvasGroup(TofuAnim);
+        bubblesDuckGroup = GetOrAddCanvasGroup(BubblesAnim);
+        asterDuckGroup = GetOrAddCanvasGroup(AsterAnim);
+        codaDuckGroup = GetOrAddCanvasGroup(CodaAnim);
+    }
+
+    private static CanvasGroup GetOrAddCanvasGroup(Transform target)
+    {
+        if (target == null)
+            return null;
+
+        CanvasGroup group = target.GetComponent<CanvasGroup>();
+        if (group == null)
+            group = target.gameObject.AddComponent<CanvasGroup>();
+
+        group.interactable = false;
+        group.blocksRaycasts = false;
+        return group;
+    }
+
+    private static void SetTransformVisible(Transform target, bool visibleTransform)
+    {
+        if (target != null)
+            target.gameObject.SetActive(visibleTransform);
+    }
+
+    private static void SetCanvasGroupAlpha(CanvasGroup group, float alpha)
+    {
+        if (group != null)
+            group.alpha = alpha;
     }
 
     private void BuildDefaultView()

@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Title Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Title Screen.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Settings Scripts/SettingsMenuPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Settings Scripts/SettingsMenuPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Title Scripts/TitleScreenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Title Scripts/TitleScreenController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.ai.assistant/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.ai.assistant/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Legacy Scene Flow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Legacy Scene Flow.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +37,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/menu-fades",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="$PROJECT_DIR$/../../DA Builds/loading-test.app/Contents/MacOS/Ducks Afar" />
@@ -117,6 +114,8 @@
       <workItem from="1779826380624" duration="6000" />
       <workItem from="1779999048044" duration="5782000" />
       <workItem from="1780604167807" duration="15000" />
+      <workItem from="1780690981814" duration="1000" />
+      <workItem from="1780709740514" duration="2000" />
     </task>
     <servers />
   </component>

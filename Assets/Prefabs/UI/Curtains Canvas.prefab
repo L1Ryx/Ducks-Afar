@@ -223,6 +223,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   disableAfterFade: 0
+  blockRaycastsDuringFade: 1
   onFadeIn:
     m_PersistentCalls:
       m_Calls:

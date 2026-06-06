@@ -5076,6 +5076,8 @@ MonoBehaviour:
   symbolInactive: {fileID: -5686591620353406901, guid: 956ce94b414ec4c0a9675dd6b50fe2f5, type: 3}
   levelSelectSceneName: Level Select
   loadingMessage: Loading...
+  interactionSettings: {fileID: 11400000, guid: 871b5b938ed7b4770ac823baf32847d3, type: 2}
+  interactableWhenNoSettings: 1
   showDuration: 0.18
   hideDuration: 0.12
   hiddenScale: 0.88

@@ -23,6 +23,10 @@ public sealed class LevelSelectSpaceship : MonoBehaviour, IInteractable, IHoverI
     [SerializeField] private string levelSelectSceneName = "Level Select";
     [SerializeField] private string loadingMessage = "Opening map...";
 
+    [Header("Interaction Gate")]
+    [SerializeField] private LevelSelectSpaceshipInteractionSettings interactionSettings;
+    [SerializeField] private bool interactableWhenNoSettings = true;
+
     [Header("Tween")]
     [SerializeField] private float showDuration = 0.18f;
     [SerializeField] private float hideDuration = 0.12f;
@@ -41,6 +45,10 @@ public sealed class LevelSelectSpaceship : MonoBehaviour, IInteractable, IHoverI
     private Tween activeTween;
     private bool isVisible;
     private bool isLoading;
+    private bool IsInteractionEnabled =>
+        interactionSettings != null
+            ? interactionSettings.SpaceshipsInteractable
+            : interactableWhenNoSettings;
 
     private void Reset()
     {
@@ -70,7 +78,7 @@ public sealed class LevelSelectSpaceship : MonoBehaviour, IInteractable, IHoverI
 
     public void Interact(GameObject interactor)
     {
-        if (isLoading)
+        if (isLoading || !IsInteractionEnabled)
             return;
 
         if (string.IsNullOrWhiteSpace(levelSelectSceneName))
@@ -93,8 +101,11 @@ public sealed class LevelSelectSpaceship : MonoBehaviour, IInteractable, IHoverI
 
     public void SetHoverState(bool isHovered, bool inRange)
     {
-        if (!enabled || isLoading)
+        if (!enabled || isLoading || !IsInteractionEnabled)
+        {
+            Hide();
             return;
+        }
 
         if (isHovered)
             Show(inRange);
