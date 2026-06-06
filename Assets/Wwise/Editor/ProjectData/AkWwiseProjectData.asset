@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584218527013559239
+    m_lastTime: -8584208308766466976
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -176,7 +176,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584218527013422807
+    m_lastTime: -8584208304399983825
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -204,7 +204,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584218527014373790
+    m_lastTime: -8584208306523711734
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -887,6 +887,46 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_HoverBegin
+      guid: 7dcbc3669b6afa40beb161b4541c0a75
+      id: 686307327
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: UI
+        ObjectType: 4
+        guid: d080ff677bd29c40abb3609187abda0e
+      - ElementName: Play_HoverBegin
+        ObjectType: 3
+        guid: 7dcbc3669b6afa40beb161b4541c0a75
+      Path: Events/Default Work Unit/UI/Play_HoverBegin
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_HoverEnd
+      guid: 939bc51201efa04ba24686c2dd9dc28b
+      id: 2047496303
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: UI
+        ObjectType: 4
+        guid: d080ff677bd29c40abb3609187abda0e
+      - ElementName: Play_HoverEnd
+        ObjectType: 3
+        guid: 939bc51201efa04ba24686c2dd9dc28b
+      Path: Events/Default Work Unit/UI/Play_HoverEnd
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_HP
       guid: 71881a7ce9e8ec458c2224703af46c8d
       id: 2497743178
@@ -1297,6 +1337,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_RestartSuccess
+      guid: 4cf1ee223dd41a4ca2b5badde87123c3
+      id: 3910045716
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: UI
+        ObjectType: 4
+        guid: d080ff677bd29c40abb3609187abda0e
+      - ElementName: Play_RestartSuccess
+        ObjectType: 3
+        guid: 4cf1ee223dd41a4ca2b5badde87123c3
+      Path: Events/Default Work Unit/UI/Play_RestartSuccess
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_ReunionTheme
       guid: 1e47587368407a44b5a7f3d03a26abc6
       id: 2345769801
@@ -1414,6 +1474,46 @@ MonoBehaviour:
         ObjectType: 3
         guid: 4a8b8f8451f2e24182302e95e54a5b2c
       Path: Events/Default Work Unit/WORLD/Play_SubCadenceC
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TelescopeClose
+      guid: 98d35caf60ff1e40a15057a72cde60b8
+      id: 1944180642
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_TelescopeClose
+        ObjectType: 3
+        guid: 98d35caf60ff1e40a15057a72cde60b8
+      Path: Events/Default Work Unit/WORLD/Play_TelescopeClose
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_TelescopeOpen
+      guid: 70387624f6e17146b07e44fe585f8ac4
+      id: 186989302
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_TelescopeOpen
+        ObjectType: 3
+        guid: 70387624f6e17146b07e44fe585f8ac4
+      Path: Events/Default Work Unit/WORLD/Play_TelescopeOpen
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1569,6 +1669,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: eb012e4c1f3e7c41abe9db20834f0eba
       Path: Events/Default Work Unit/HALFTIME/VH/Play_VH_5
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_WoodenClick
+      guid: 0ae3bd07e249f84aa7ed265cee777c4f
+      id: 2386972776
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: UI
+        ObjectType: 4
+        guid: d080ff677bd29c40abb3609187abda0e
+      - ElementName: Play_WoodenClick
+        ObjectType: 3
+        guid: 0ae3bd07e249f84aa7ed265cee777c4f
+      Path: Events/Default Work Unit/UI/Play_WoodenClick
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1818,7 +1938,7 @@ MonoBehaviour:
     ParentPath: Game Parameters/Default Work Unit
     guid: 401f8d77f57fc74a830de12ff87383af
     GuidInternal: 
-    m_lastTime: -8584218527014373088
+    m_lastTime: -8584208311886575404
     List:
     - name: BO
       guid: 7066a68c3bdd3e438245e366b4e18556
@@ -2056,6 +2176,33 @@ MonoBehaviour:
         ObjectType: 13
         guid: 7dec637485a7b849bb8b6b8c396c64af
       Path: Game Parameters/Settings/Volume_SFX
+  - PhysicalPath: Game Parameters/System.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: System
+      ObjectType: 12
+      guid: 1c5941874ef7c049a630eda48fba3214
+    ParentPath: Game Parameters/System
+    guid: 1c5941874ef7c049a630eda48fba3214
+    GuidInternal: 
+    m_lastTime: -8584208311886516358
+    List:
+    - name: Restart_Progress
+      guid: 8ce26ec226f7604c9340ea5a9a3083a5
+      id: 3668122428
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: System
+        ObjectType: 12
+        guid: 1c5941874ef7c049a630eda48fba3214
+      - ElementName: Restart_Progress
+        ObjectType: 13
+        guid: 8ce26ec226f7604c9340ea5a9a3083a5
+      Path: Game Parameters/System/Restart_Progress
   StateWwu:
   - PhysicalPath: States/Default Work Unit.wwu
     PathAndIcons:

@@ -46,6 +46,7 @@ public class GameContext : MonoBehaviour
         InitializeRuntimeState();
         EnsurePauseComponents();
         EnsureHoldToResetController();
+        EnsureMenuButtonAudioSystem();
         EnsureDevComponents();
 
         Game.SetContext(this);
@@ -117,6 +118,12 @@ public class GameContext : MonoBehaviour
     {
         if (GetComponent<HoldToResetController>() == null)
             gameObject.AddComponent<HoldToResetController>();
+    }
+
+    private void EnsureMenuButtonAudioSystem()
+    {
+        if (GetComponent<MenuButtonAudioSystem>() == null)
+            gameObject.AddComponent<MenuButtonAudioSystem>();
     }
 
     private void EnsureDevComponents()

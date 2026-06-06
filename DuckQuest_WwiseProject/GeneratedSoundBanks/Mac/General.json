@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{0398AF06-312D-FCC8-CC52-2C0F0CFA70BC}",
+    "Hash": "{0A8577D8-0BDE-795D-C30E-5A555E6E96EA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -296,6 +296,14 @@
       "CachePath": "04/{0457C24F-9576-09C2-C99C-B9C2A7957248}.wem"
      },
      {
+      "Id": "313663578",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mic-Bump-B.wav",
+      "CachePath": "B9/{B965153C-AFFF-276E-0AFD-21896F286F66}.wem"
+     },
+     {
       "Id": "322555041",
       "Language": "SFX",
       "Streaming": "false",
@@ -488,6 +496,14 @@
       "CachePath": "B6/{B6B1A4AF-0849-F71C-8A6A-8C536F299297}.wem"
      },
      {
+      "Id": "565126401",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mic-Bump.wav",
+      "CachePath": "76/{7632878B-40F9-BFB5-0914-52AA7502C2D4}.wem"
+     },
+     {
       "Id": "577419295",
       "Language": "SFX",
       "Streaming": "false",
@@ -598,6 +614,14 @@
       "Location": "Memory",
       "ShortName": "Add-B-3.wav",
       "CachePath": "29/{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem"
+     },
+     {
+      "Id": "687294598",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Star-Shimmer.wav",
+      "CachePath": "FA/{FA3EA394-8F26-F8EE-2371-F325DCF97C07}.wem"
      },
      {
       "Id": "702397331",
@@ -712,12 +736,28 @@
       "CachePath": "E3/{E3E77FC0-DC5C-3BAD-71D9-34FB2807E1E5}.wem"
      },
      {
+      "Id": "840110822",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Restart-Success.wav",
+      "CachePath": "AD/{AD9DD87D-FB3E-6452-D799-E076795CC643}.wem"
+     },
+     {
       "Id": "842882810",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sub-A-1.wav",
       "CachePath": "48/{488C4879-8034-4458-18EB-A4A14EC92BE0}.wem"
+     },
+     {
+      "Id": "845812551",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI-Wooden-Click.wav",
+      "CachePath": "8F/{8FAB9480-ACE0-07C5-5BC5-F0FB2710C1D0}.wem"
      },
      {
       "Id": "849723551",
@@ -1748,6 +1788,34 @@
       ]
      },
      {
+      "Id": "686307327",
+      "Name": "Play_HoverBegin",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_HoverBegin",
+      "GUID": "{66C3CB7D-6A9B-40FA-BEB1-61B4541C0A75}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.26115397",
+      "DurationMax": "0.32903337",
+      "MediaRefs": [
+       {
+        "Id": "565126401"
+       }
+      ]
+     },
+     {
+      "Id": "2047496303",
+      "Name": "Play_HoverEnd",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_HoverEnd",
+      "GUID": "{12C59B93-EF01-4BA0-A246-86C2DD9DC28B}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.15906247",
+      "DurationMax": "0.17854162",
+      "MediaRefs": [
+       {
+        "Id": "313663578"
+       }
+      ]
+     },
+     {
       "Id": "2497743178",
       "Name": "Play_HP",
       "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Play_HP",
@@ -2270,6 +2338,20 @@
       ]
      },
      {
+      "Id": "3910045716",
+      "Name": "Play_RestartSuccess",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_RestartSuccess",
+      "GUID": "{22EEF14C-D43D-4C1A-A2B5-BADDE87123C3}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8815272",
+      "DurationMax": "0.9894809",
+      "MediaRefs": [
+       {
+        "Id": "840110822"
+       }
+      ]
+     },
+     {
       "Id": "2345769801",
       "Name": "Play_ReunionTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_ReunionTheme",
@@ -2426,6 +2508,34 @@
        },
        {
         "Id": "523787390"
+       }
+      ]
+     },
+     {
+      "Id": "1944180642",
+      "Name": "Play_TelescopeClose",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_TelescopeClose",
+      "GUID": "{AF5CD398-FF60-401E-A150-57A72CDE60B8}",
+      "DurationType": "OneShot",
+      "DurationMin": "4.4661446",
+      "DurationMax": "5.9615874",
+      "MediaRefs": [
+       {
+        "Id": "687294598"
+       }
+      ]
+     },
+     {
+      "Id": "186989302",
+      "Name": "Play_TelescopeOpen",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_TelescopeOpen",
+      "GUID": "{24763870-E1F6-4671-B07E-44FE585F8AC4}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.8777825",
+      "DurationMax": "2.5065389",
+      "MediaRefs": [
+       {
+        "Id": "687294598"
        }
       ]
      },
@@ -2634,6 +2744,28 @@
       }
      },
      {
+      "Id": "2386972776",
+      "Name": "Play_WoodenClick",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_WoodenClick",
+      "GUID": "{07BDE30A-49E2-4AF8-A7ED-265CEE777C4F}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.19950236",
+      "DurationMax": "0.2989158",
+      "MediaRefs": [
+       {
+        "Id": "845812551"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
       "Id": "1285050629",
       "Name": "Stop_BeachAmbience",
       "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_BeachAmbience",
@@ -2828,6 +2960,6 @@
     ]
    }
   ],
-  "FileHash": "{02538F07-5E2C-DEDD-B490-9DC990D94D70}"
+  "FileHash": "{5E8C842F-2D65-FC88-AD0C-62ACC1016013}"
  }
 }

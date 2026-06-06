@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8741591C-F74E-49C0-A630-EDA48FBA3214}" SchemaVersion="123">
+	<GameParameters>
+		<WorkUnit Name="System" ID="{8741591C-F74E-49C0-A630-EDA48FBA3214}" PersistMode="Standalone">
+			<ChildrenList>
+				<GameParameter Name="Restart_Progress" ID="{C26EE28C-F726-4C60-9340-EA5A9A3083A5}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="95"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="95"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>

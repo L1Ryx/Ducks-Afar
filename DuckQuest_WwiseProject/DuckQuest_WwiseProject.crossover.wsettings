@@ -18,12 +18,14 @@
 				<Property Name="EffectsView\MeteringObject\{65397B72-19EC-43DB-B2D2-EB84437B6BDC}" Type="string" Value="{5FC857D8-443C-43B7-9CD5-301FFCAD4DE2}"/>
 				<Property Name="EffectsView\MeteringObject\{7A0568D0-BE8B-4233-B3E8-200344DB7AE0}" Type="string" Value="{5FC857D8-443C-43B7-9CD5-301FFCAD4DE2}"/>
 				<Property Name="EffectsView\MeteringObject\{7B456900-BE08-4B14-A833-61B1E64FA5AF}" Type="string" Value="{9DDE9C79-9652-4C36-9D73-8DFE38215DF1}"/>
+				<Property Name="EffectsView\MeteringObject\{830124FB-B9D5-4AE8-846E-E94A74652666}" Type="string" Value="{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}"/>
 				<Property Name="EffectsView\MeteringObject\{8348F7CA-5256-42C7-AAE2-19F9EBFD9093}" Type="string" Value="{6E0323E2-8A43-4235-9876-1A1F029C7FDF}"/>
 				<Property Name="EffectsView\MeteringObject\{8ABC7B2C-3C3E-40AC-AC4B-6AE984CCEE2D}" Type="string" Value="{6E0323E2-8A43-4235-9876-1A1F029C7FDF}"/>
 				<Property Name="EffectsView\MeteringObject\{92E0BA62-78FD-4CA4-BBF6-9D90CF580571}" Type="string" Value="{B269F331-C089-4ACC-AFED-9056A9676AB2}"/>
 				<Property Name="EffectsView\MeteringObject\{940CCB47-F031-4C6A-B0E6-726CAC418C02}" Type="string" Value="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"/>
 				<Property Name="EffectsView\MeteringObject\{A1F17D99-0801-4F32-B74E-ADB2D9ACC556}" Type="string" Value="{055DECC2-C270-4F8A-A626-A049843F2D7A}"/>
 				<Property Name="EffectsView\MeteringObject\{BD428CB6-2609-441A-ACF3-423C44AD2930}" Type="string" Value="{6E0323E2-8A43-4235-9876-1A1F029C7FDF}"/>
+				<Property Name="EffectsView\MeteringObject\{C5AB12D7-EB0E-4F9F-B0B2-2DF0A245A5D1}" Type="string" Value="{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}"/>
 				<Property Name="EffectsView\MeteringObject\{CA2317BC-AC76-4D87-AFF3-F372E7A46A54}" Type="string" Value="{055DECC2-C270-4F8A-A626-A049843F2D7A}"/>
 				<Property Name="EffectsView\MeteringObject\{CF106291-237C-4A1D-BD6B-4043A9E887A8}" Type="string" Value="{6E0323E2-8A43-4235-9876-1A1F029C7FDF}"/>
 				<Property Name="EffectsView\MeteringObject\{D5C73990-73B1-4CFF-88D5-6C9B157D0D83}" Type="string" Value="{463FEA26-E9E5-4D17-A56E-283FD18AC5B1}"/>
@@ -32,12 +34,16 @@
 				<Property Name="EffectsView\MeteringObject\{EEE0CC86-8CA5-4DBC-A6B7-568FCB26F290}" Type="string" Value="{463FEA26-E9E5-4D17-A56E-283FD18AC5B1}"/>
 				<Property Name="Event Action List\{049E8BD5-3A51-4E92-B556-C4069EA88628}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{068F4DF4-1045-4F8E-846C-C192590179C0}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{07BDE30A-49E2-4AF8-A7ED-265CEE777C4F}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{090385DE-3124-440A-B1E6-FE7FC013E8F9}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{12C59B93-EF01-4BA0-A246-86C2DD9DC28B}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{1313C183-07EB-4EAD-AAB7-F79D1F51F7D3}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{167BC79D-25EF-43A3-8093-D24ECF1AA0BF}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{19B2D40F-9420-414C-81C8-CFC6A1CE7F03}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{21858671-9D00-48AE-BC6B-19F966CCBB99}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{22EEF14C-D43D-4C1A-A2B5-BADDE87123C3}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{24763870-E1F6-4671-B07E-44FE585F8AC4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{24769684-847B-4E38-828F-2A7B12634C2A}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{2A2E1010-F664-44B9-938F-614402D9C632}\x64_Expand States" Type="string" Value=""/>
@@ -57,6 +63,7 @@
 				<Property Name="Event Action List\{62E73EA1-6B55-418E-AC49-5EAFE53889ED}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{643CA4ED-B61F-49A9-95A7-11FB757B94CB}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{66C3CB7D-6A9B-40FA-BEB1-61B4541C0A75}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{69158030-4695-46F6-8FAD-88853961CF9E}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{697CCB1E-DB1E-40BA-8F4F-DA80FC4C8338}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}\x64_Expand States" Type="string" Value=""/>
@@ -81,6 +88,7 @@
 				<Property Name="Event Action List\{9D829611-4CB3-4B85-911E-A424FB1504B4}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{ABF95D2A-4721-481B-8E05-A76CD433575C}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{ACECFF5F-F975-4315-87AA-CF0C4D3D29B9}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{AF5CD398-FF60-401E-A150-57A72CDE60B8}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{B39ECF82-0461-4E06-96FD-E47213779AA1}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C5C1FD39-E5AD-4FF9-B95F-8375F392BC88}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}\x64_Expand States" Type="string" Value=""/>
@@ -290,7 +298,7 @@
 						<Value Platform="Windows"></Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{F44C83F2-4EDE-4FDA-A4B6-CA2ECF348EDB}2836520165"/>
+				<Property Name="SoundEngine\BusMapping\{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" Type="string" Value="{F44C83F2-4EDE-4FDA-A4B6-CA2ECF348EDB}4124753516"/>
 				<Property Name="Soundcaster\PreviousSession" Type="string" Value="{914FDA53-635B-4F76-B1AA-1ED7C0B8D066}"/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\CurrentSearch" Type="string" Value=""/>
 				<Property Name="TabPropertyEditor\LayoutInstanceId_PropertyEditorInObjectTabLeft_{031E1E2C-DC25-4332-80C3-FFCC371AC803}\RecentCategoriesTopCount" Type="int32" Value="0"/>

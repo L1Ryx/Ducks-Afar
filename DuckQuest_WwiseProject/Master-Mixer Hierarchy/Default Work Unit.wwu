@@ -30,7 +30,34 @@
 						<Bus Name="SFX Bus" ID="{7296ECA1-CE9F-46FD-BC1B-AFE26E131159}">
 							<ChildrenList>
 								<Bus Name="UI Bus" ID="{BE7C4AD1-2F98-479C-9B2D-3FF905DB3669}"/>
-								<Bus Name="AMB Bus" ID="{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"/>
+								<Bus Name="AMB Bus" ID="{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}">
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{228CA37D-B323-46CF-871D-E2A385199F9A}" ShortID="176785293">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+																<ObjectRef Name="Restart_Distortion" ID="{C5AB12D7-EB0E-4F9F-B0B2-2DF0A245A5D1}" WorkUnitID="{1B0B209E-5233-4BF4-A63A-AE989EE1D319}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{ADC2CA95-3010-4C50-BBFE-C44F622D3982}" ShortID="1039321207">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</Bus>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="RTPC">
@@ -91,6 +118,30 @@
 						</AuxBus>
 						<Bus Name="MX Bus" ID="{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}">
 							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{F644E55E-4813-4A26-B7B5-D7A3148986A5}" ShortID="760988798">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+														<ObjectRef Name="Restart_Distortion" ID="{C5AB12D7-EB0E-4F9F-B0B2-2DF0A245A5D1}" WorkUnitID="{1B0B209E-5233-4BF4-A63A-AE989EE1D319}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{E90572C6-7CB6-4EFB-9EAE-7F8865553D7F}" ShortID="268335871">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
 								<ObjectList Name="RTPC">
 									<Reference>
 										<Local>

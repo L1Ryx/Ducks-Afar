@@ -10,12 +10,20 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{AB259541-2886-0889-ECC8-8C09AA873003}",
+    "Hash": "{05489736-B41A-4302-0B84-820675F90A1D}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "ShareSets": [
+      {
+       "Id": "1008402193",
+       "Name": "Low_Pass_20KHz",
+       "ObjectPath": "\\Effects\\Factory Effects\\Parametric EQ\\Low Pass Filters\\Low_Pass_20KHz",
+       "GUID": "{830124FB-B9D5-4AE8-846E-E94A74652666}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
       {
        "Id": "1588715066",
        "Name": "Echoes_Linear",
@@ -23,6 +31,14 @@
        "GUID": "{D20F3717-EBA2-4E3A-84F8-C8BD431563FB}",
        "LibName": "Wwise Delay",
        "LibId": "6946819"
+      },
+      {
+       "Id": "2911816396",
+       "Name": "Restart_Distortion",
+       "ObjectPath": "\\Effects\\Default Work Unit\\Restart_Distortion",
+       "GUID": "{C5AB12D7-EB0E-4F9F-B0B2-2DF0A245A5D1}",
+       "LibName": "Wwise Guitar Distortion",
+       "LibId": "8257539"
       },
       {
        "Id": "3442768367",
@@ -57,7 +73,17 @@
       "Id": "1313057045",
       "Name": "AMB Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX Bus\\AMB Bus",
-      "GUID": "{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}"
+      "GUID": "{C00CC797-8BC7-4AFE-8CC3-65236D39FE13}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1008402193"
+        },
+        {
+         "Id": "2911816396"
+        }
+       ]
+      }
      },
      {
       "Id": "1502772432",
@@ -69,7 +95,17 @@
       "Id": "3027868960",
       "Name": "MX Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\MX Bus",
-      "GUID": "{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}"
+      "GUID": "{27A06554-99AA-46C4-AA21-DDBBAB3D95FE}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "1008402193"
+        },
+        {
+         "Id": "2911816396"
+        }
+       ]
+      }
      },
      {
       "Id": "3600729941",
@@ -174,6 +210,12 @@
       "GUID": "{8203D6B4-856F-4060-B206-DBC354D4E7F0}"
      },
      {
+      "Id": "3668122428",
+      "Name": "Restart_Progress",
+      "ObjectPath": "\\Game Parameters\\System\\Restart_Progress",
+      "GUID": "{C26EE28C-F726-4C60-9340-EA5A9A3083A5}"
+     },
+     {
       "Id": "3673881719",
       "Name": "Volume_SFX",
       "ObjectPath": "\\Game Parameters\\Settings\\Volume_SFX",
@@ -234,6 +276,6 @@
     ]
    }
   ],
-  "FileHash": "{6A30A643-258D-F4F5-DE70-75E13FC49E4F}"
+  "FileHash": "{75952FA1-0BE2-A028-B6AD-66022A1AFEEB}"
  }
 }

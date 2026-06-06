@@ -6,6 +6,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	15396503	Play_VH_2			\Default Work Unit\HALFTIME\VH\Play_VH_2	
 	141146378	Play_HomeTheme			\Default Work Unit\MUS\Play_HomeTheme	
 	160971085	Play_HTGlitch			\Default Work Unit\HALFTIME\Play_HTGlitch	
+	186989302	Play_TelescopeOpen			\Default Work Unit\WORLD\Play_TelescopeOpen	
 	225053596	Play_Eating			\Default Work Unit\WORLD\Play_Eating	
 	283495111	Play_BeachAmbience			\Default Work Unit\AMBIENCE\Play_BeachAmbience	
 	327752721	Play_Piano_1			\Default Work Unit\HALFTIME\Piano\Play_Piano_1	
@@ -18,6 +19,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	573339928	Play_BridgeSplash			\Default Work Unit\WORLD\Play_BridgeSplash	
 	625749573	Play_PhoneTap			\Default Work Unit\UI\Play_PhoneTap	
 	654680740	Play_PetBowlComplete			\Default Work Unit\WORLD\Play_PetBowlComplete	
+	686307327	Play_HoverBegin			\Default Work Unit\UI\Play_HoverBegin	
 	760977961	Stop_IntroTheme			\Default Work Unit\MUS\Stop_IntroTheme	
 	928013289	Play_TypewriterClack			\Default Work Unit\UI\Play_TypewriterClack	
 	1119824134	Play_RockBreak			\Default Work Unit\WORLD\Play_RockBreak	
@@ -33,6 +35,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	1545776886	Play_SubCadenceA			\Default Work Unit\WORLD\Play_SubCadenceA	
 	1576299337	Play_Glitch			\Default Work Unit\WORLD\Play_Glitch	
 	1788876160	Stop_HomeTheme			\Default Work Unit\MUS\Stop_HomeTheme	
+	1944180642	Play_TelescopeClose			\Default Work Unit\WORLD\Play_TelescopeClose	
+	2047496303	Play_HoverEnd			\Default Work Unit\UI\Play_HoverEnd	
 	2070631809	Play_PGPL			\Default Work Unit\HALFTIME\Play_PGPL	
 	2095930195	Play_RocketLaunch			\Default Work Unit\WORLD\Play_RocketLaunch	
 	2162845360	Play_BO_2			\Default Work Unit\HALFTIME\BO\Play_BO_2	
@@ -42,6 +46,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2162845367	Play_BO_5			\Default Work Unit\HALFTIME\BO\Play_BO_5	
 	2262856512	Play_FP			\Default Work Unit\HALFTIME\Play_FP	
 	2345769801	Play_ReunionTheme			\Default Work Unit\MUS\Play_ReunionTheme	
+	2386972776	Play_WoodenClick			\Default Work Unit\UI\Play_WoodenClick	
 	2423616176	Stop_HP			\Default Work Unit\HALFTIME\Stop_HP	
 	2435079182	Play_AsterGabble			\Default Work Unit\WORLD\Play_AsterGabble	
 	2497743178	Play_HP			\Default Work Unit\HALFTIME\Play_HP	
@@ -64,6 +69,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3803220377	Play_PuzzleTheme			\Default Work Unit\MUS\Play_PuzzleTheme	
 	3860455926	Play_PickUp			\Default Work Unit\WORLD\Play_PickUp	
 	3863193186	Play_BubblesGabble			\Default Work Unit\WORLD\Play_BubblesGabble	
+	3910045716	Play_RestartSuccess			\Default Work Unit\UI\Play_RestartSuccess	
 	3963294118	Play_SingleTing			\Default Work Unit\WORLD\Play_SingleTing	
 	4235903127	Stop_CutsceneTheme			\Default Work Unit\MUS\Stop_CutsceneTheme	
 
@@ -152,6 +158,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	290861898	VH-4	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\7C\{7C4AB9BB-4BED-7A2F-98E9-28D75D74B3EA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\HALFTIME\SFX_VL_AM\VH-4		1280192
 	294326928	Add-C-5	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B2\{B231BE4C-5DD8-A94D-64ED-7CF70168485D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_C_Blend\Add-C-5		1152144
 	307388510	PGPH-2	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\04\{0457C24F-9576-09C2-C99C-B9C2A7957248}.wem		\Actor-Mixer Hierarchy\Default Work Unit\HALFTIME\SFX_PGPH_AM\PGPH-2		1920144
+	313663578	Mic-Bump-B	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B9\{B965153C-AFFF-276E-0AFD-21896F286F66}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_HoverEnd_Blend\Mic-Bump-B		16274
 	322555041	Add-A-4	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\D5\{D5DBAC54-0580-72F1-0EA7-832165E29566}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-4		768160
 	329023967	FP-D	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\50\{50B40C57-BFFE-E5B2-E9EE-9F2F26D5E2B5}.wem		\Interactive Music Hierarchy\Default Work Unit\HalfTime\MX_FP_Playlist\MX_FP_Segment\FP-D		14720144
 	331087142	Door Open	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\A6\{A6CE7098-906A-9AF5-15C4-6F96218ACB32}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_DoorClose_Blend\Door Open		170116
@@ -176,6 +183,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	523787390	Sub-C-4	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\9E\{9E22334B-F30B-0208-1EB3-B1664A51E742}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_C_Blend\Sub-C-4		1152144
 	526018396	Piano-1	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\E2\{E2E01379-21F3-7C81-5733-508C5DEECB59}.wem		\Actor-Mixer Hierarchy\Default Work Unit\HALFTIME\SFX_Piano_AM\Piano-1		1920144
 	548699161	Bubbles-Gabble-C	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B6\{B6B1A4AF-0849-F71C-8A6A-8C536F299297}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BubblesGabble_Random\Bubbles-Gabble-C		188996
+	565126401	Mic-Bump	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\76\{7632878B-40F9-BFB5-0914-52AA7502C2D4}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_HoverBegin_Blend\Mic-Bump		28236
 	577419295	Coda-Gabble-A	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\A5\{A54652FF-32ED-9DD6-3370-3A4F79710C70}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-A		196096
 	583587143	Single Ting	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\85\{85C22927-D02A-372F-C9C8-3490F59EFA10}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_SingleTing_Blend\Single Ting		293112
 	593888354	HP-C	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\E6\{E62DE29F-1211-1320-EDA6-F0BAB5A87FB6}.wem		\Interactive Music Hierarchy\Default Work Unit\HalfTime\MX_HP_Playlist\MX_HP_Segment\HP-C		14720144
@@ -190,6 +198,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	679306726	Add-A-5	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\D2\{D23F7EAA-01E1-D720-BCF8-5A8390157F3A}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_A_Blend\Add-A-5		768160
 	682665517	Ducks-Afar-Night-Dm-72-44	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\C9\{C9E39092-0DE3-F0CE-2F0C-5EFCA61479AB}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_NightTheme_Playlist\MX_NightTheme_Segment\Ducks-Afar-Night-Dm-72-44		15360096
 	683992905	Add-B-3	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\29\{296C2E90-55B1-868B-8A89-E008F4A7F614}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_B_Blend\Add-B-3		768144
+	687294598	Star-Shimmer	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\FA\{FA3EA394-8F26-F8EE-2371-F325DCF97C07}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_TelescopeShimmer_Blend\Star-Shimmer		191446
 	702397331	BO-2	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\FF\{FF1C6503-8FB1-320E-73F2-59D362FB565E}.wem		\Actor-Mixer Hierarchy\Default Work Unit\HALFTIME\SFX_BO_AM\BO-2		1280192
 	724881649	FP-A	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\BF\{BF8E063E-52C3-77CA-43DE-3419B0E5DDEE}.wem		\Interactive Music Hierarchy\Default Work Unit\HalfTime\MX_FP_Playlist\MX_FP_Segment\FP-A		14720144
 	730796043	481067-Small_Bush_Foliage_Rustle_5	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\FE\{FEE1DF9F-879F-E2EC-5A40-3A222B69870B}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_BushRustle_Blend\481067-Small_Bush_Foliage_Rustle_5		186492
@@ -204,7 +213,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	800590812	Pop 2	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\48\{486DD6BA-72A6-A864-BF26-5FD55A01A34C}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_PickUp_Random\Pop 2		11944
 	819499791	Tofu-Gabble-A	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\04\{04FA6224-CBC2-D8B7-D297-61277CFA2116}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_TofuGabble_Random\Tofu-Gabble-A		146260
 	832048181	PGPL-F	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\E3\{E3E77FC0-DC5C-3BAD-71D9-34FB2807E1E5}.wem		\Interactive Music Hierarchy\Default Work Unit\HalfTime\MX_PGPL_Playlist\MX_PGPL_Segment\PGPL-F		14720144
+	840110822	Restart-Success	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\AD\{AD9DD87D-FB3E-6452-D799-E076795CC643}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_RestartSuccess_Blend\Restart-Success		164844
 	842882810	Sub-A-1	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\48\{488C4879-8034-4458-18EB-A4A14EC92BE0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Sub_A_Blend\Sub-A-1		768144
+	845812551	UI-Wooden-Click	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\8F\{8FAB9480-ACE0-07C5-5BC5-F0FB2710C1D0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\SFX_UIClick_Blend\UI-Wooden-Click		55852
 	849723551	Coda-Gabble-C	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B9\{B9108094-8506-32AF-20F0-9CA2C3F83EAD}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_CodaGabble_Random\Coda-Gabble-C		196096
 	855146624	Chisel	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\BB\{BB907DCD-5635-2DD8-C5ED-1B126493BEA1}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_Chisel_Blend\Chisel		218380
 	863366906	PGPL-D	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\BC\{BC6525D4-39B7-B943-21D4-18805E5B5CE7}.wem		\Interactive Music Hierarchy\Default Work Unit\HalfTime\MX_PGPL_Playlist\MX_PGPL_Segment\PGPL-D		14720144

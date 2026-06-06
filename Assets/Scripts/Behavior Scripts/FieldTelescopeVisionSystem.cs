@@ -30,12 +30,14 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
 
     private Coroutine activeRoutine;
     private GameEvent activePlayerMovedEvent;
+    private GameObject activeAudioEmitter;
 
     public static void Reveal(
         Sprite dotSprite,
         float duration,
         FieldTelescopeRevealEndMode endMode = FieldTelescopeRevealEndMode.Timed,
-        GameEvent playerMovedEvent = null
+        GameEvent playerMovedEvent = null,
+        GameObject audioEmitter = null
     )
     {
         if (instance == null)
@@ -45,7 +47,7 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
             instance = go.AddComponent<FieldTelescopeVisionSystem>();
         }
 
-        instance.BeginReveal(dotSprite, duration, endMode, playerMovedEvent);
+        instance.BeginReveal(dotSprite, duration, endMode, playerMovedEvent, audioEmitter);
     }
 
     private void Awake()
@@ -67,9 +69,10 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
         StopActiveEffect(completeTweens: false);
     }
 
-    private void BeginReveal(Sprite dotSprite, float duration, FieldTelescopeRevealEndMode endMode, GameEvent playerMovedEvent)
+    private void BeginReveal(Sprite dotSprite, float duration, FieldTelescopeRevealEndMode endMode, GameEvent playerMovedEvent, GameObject audioEmitter)
     {
         StopActiveEffect(completeTweens: true);
+        activeAudioEmitter = audioEmitter;
 
         CaptureAndObscureNonInteractables();
 
@@ -116,12 +119,19 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
 
     private IEnumerator RestoreRoutine()
     {
+        bool shouldPlayClose = HasActiveEffect();
+
+        if (shouldPlayClose)
+            PlayTelescopeClose();
+
         FadeOutAndRestore();
         yield return new WaitForSeconds(fadeOutDuration);
 
         spriteStates.Clear();
         tilemapStates.Clear();
         activeDots.Clear();
+
+        activeAudioEmitter = null;
     }
 
     private void CaptureAndObscureNonInteractables()
@@ -285,6 +295,8 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
 
     private void StopActiveEffect(bool completeTweens)
     {
+        bool shouldPlayClose = HasActiveEffect();
+
         UnregisterPlayerMovedListener();
 
         if (activeRoutine != null)
@@ -318,6 +330,25 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
         spriteStates.Clear();
         tilemapStates.Clear();
         activeDots.Clear();
+
+        if (shouldPlayClose)
+            PlayTelescopeClose();
+
+        activeAudioEmitter = null;
+    }
+
+    private bool HasActiveEffect()
+    {
+        return activeRoutine != null ||
+               activePlayerMovedEvent != null ||
+               spriteStates.Count > 0 ||
+               tilemapStates.Count > 0 ||
+               activeDots.Count > 0;
+    }
+
+    private void PlayTelescopeClose()
+    {
+        ProjectAudio.PlayOn(ProjectAudio.Config != null ? ProjectAudio.Config.TelescopeCloseCue : null, activeAudioEmitter);
     }
 
     private void UnregisterPlayerMovedListener()

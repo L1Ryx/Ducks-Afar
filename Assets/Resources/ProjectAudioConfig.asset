@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b95f31e31546dd9b1094f15e4c4bc2, type: 3}
+  m_Name: ProjectAudioConfig
+  m_EditorClassIdentifier: 
+  telescopeOpenCue: {fileID: 11400000, guid: 1b37e7a4e3bd4c479f6e861172b5fb77, type: 2}
+  telescopeCloseCue: {fileID: 11400000, guid: 92ae3bc9f0d04e7eb6c9dde88c37515a, type: 2}
+  hoverBeginCue: {fileID: 11400000, guid: 065f3ca172104f5ca87478b1025fd7d5, type: 2}
+  hoverEndCue: {fileID: 11400000, guid: 785dd6502a9c47b99bd8fdb20739caa1, type: 2}
+  woodenClickCue: {fileID: 11400000, guid: 2c94648f8a874801b5b6f3fa492fda71, type: 2}
+  restartSuccessCue: {fileID: 11400000, guid: 33f4c3caf73645fcba32b22f43961ff5, type: 2}
+  restartProgressRtpc: {fileID: 11400000, guid: 8a2d957f2aa5418f9e4586aa97f2c8b2, type: 2}

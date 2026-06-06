@@ -74,6 +74,14 @@
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_WoodenClick" ID="{07BDE30A-49E2-4AF8-A7ED-265CEE777C4F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_TelescopeOpen" ID="{24763870-E1F6-4671-B07E-44FE585F8AC4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="3" Y="5"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_RockBreak" ID="{248C89A2-ED7F-45F1-ADCB-F628CBFC4F0F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="4" Y="0"/>
 						</Module>
@@ -84,6 +92,14 @@
 						<Module>
 							<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_HoverBegin" ID="{66C3CB7D-6A9B-40FA-BEB1-61B4541C0A75}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_HoverEnd" ID="{12C59B93-EF01-4BA0-A246-86C2DD9DC28B}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="4" Y="5"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -132,6 +148,10 @@
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_RestartSuccess" ID="{22EEF14C-D43D-4C1A-A2B5-BADDE87123C3}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_BeachAmbience" ID="{9C7CA0C5-8775-4E88-B40D-01568C42AC25}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="1" Y="0"/>
 						</Module>
@@ -178,12 +198,20 @@
 							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="Volume_Master" ID="{73F74BF0-D28B-495D-960F-91C11FAC9DF1}"/>
 							<Value>100</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Volume_SFX" ID="{7463EC7D-A785-49B8-BB8B-6B8C396C64AF}"/>
 							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
+							<GameParameterRef Name="Restart_Progress" ID="{C26EE28C-F726-4C60-9340-EA5A9A3083A5}"/>
+							<Value>0</Value>
 						</RTPCValue>
 					</RTPCValueList>
 					<CurrentStateList ShowAll="true">
