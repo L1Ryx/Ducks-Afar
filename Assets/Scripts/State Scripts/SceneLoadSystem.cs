@@ -59,16 +59,31 @@ public sealed class SceneLoadSystem
 
     public bool LoadScene(string sceneName, string loadingMessage)
     {
-        return LoadScene(sceneName, loadingMessage, null);
+        return LoadScene(sceneName, loadingMessage, SceneLoadPresentation.LoadingScreen, null);
+    }
+
+    public bool LoadScene(string sceneName, string loadingMessage, SceneLoadPresentation presentation)
+    {
+        return LoadScene(sceneName, loadingMessage, presentation, null);
     }
 
     public bool LoadScene(string sceneName, string loadingMessage, Action beforeSceneLoad)
+    {
+        return LoadScene(sceneName, loadingMessage, SceneLoadPresentation.LoadingScreen, beforeSceneLoad);
+    }
+
+    public bool LoadScene(
+        string sceneName,
+        string loadingMessage,
+        SceneLoadPresentation presentation,
+        Action beforeSceneLoad)
     {
         if (!CanLoadScene(sceneName))
             return false;
 
         return StartSceneLoad(
             loadingMessage,
+            presentation,
             () =>
             {
                 beforeSceneLoad?.Invoke();
@@ -78,16 +93,27 @@ public sealed class SceneLoadSystem
 
     public bool LoadSceneDeferred(string loadingMessage, Func<string> resolveSceneName)
     {
+        return LoadSceneDeferred(loadingMessage, SceneLoadPresentation.LoadingScreen, resolveSceneName);
+    }
+
+    public bool LoadSceneDeferred(
+        string loadingMessage,
+        SceneLoadPresentation presentation,
+        Func<string> resolveSceneName)
+    {
         if (resolveSceneName == null)
         {
             Debug.LogError("Scene load failed: no deferred scene resolver was provided.");
             return false;
         }
 
-        return StartSceneLoad(loadingMessage, resolveSceneName);
+        return StartSceneLoad(loadingMessage, presentation, resolveSceneName);
     }
 
-    private bool StartSceneLoad(string loadingMessage, Func<string> resolveSceneName)
+    private bool StartSceneLoad(
+        string loadingMessage,
+        SceneLoadPresentation presentation,
+        Func<string> resolveSceneName)
     {
         if (IsLoading)
         {
@@ -95,7 +121,7 @@ public sealed class SceneLoadSystem
             return false;
         }
 
-        ctx.StartCoroutine(LoadSceneRoutine(loadingMessage, resolveSceneName));
+        ctx.StartCoroutine(LoadSceneRoutine(loadingMessage, presentation, resolveSceneName));
         return true;
     }
 
@@ -118,13 +144,25 @@ public sealed class SceneLoadSystem
 
     private IEnumerator LoadSceneRoutine(
         string loadingMessage,
+        SceneLoadPresentation presentation,
         Func<string> resolveSceneName)
     {
         IsLoading = true;
 
-        LoadingScreenView screen = GetLoadingScreen();
-        yield return screen.Show(loadingMessage);
-        yield return null;
+        LoadingScreenView screen = null;
+        bool usesOverlay = presentation != SceneLoadPresentation.InstantNoOverlay;
+
+        if (usesOverlay)
+        {
+            screen = GetLoadingScreen();
+
+            if (presentation == SceneLoadPresentation.SilentBlack)
+                yield return screen.ShowBlack();
+            else
+                yield return screen.Show(loadingMessage);
+
+            yield return null;
+        }
 
         float visibleStartTime = Time.unscaledTime;
 
@@ -143,14 +181,14 @@ public sealed class SceneLoadSystem
         if (preLoadException != null)
         {
             Debug.LogError($"Scene load failed during pre-load work: {preLoadException}");
-            yield return screen.Hide();
+            yield return HideLoadPresentation(screen, presentation);
             IsLoading = false;
             yield break;
         }
 
         if (!CanLoadScene(sceneName))
         {
-            yield return screen.Hide();
+            yield return HideLoadPresentation(screen, presentation);
             IsLoading = false;
             yield break;
         }
@@ -161,7 +199,7 @@ public sealed class SceneLoadSystem
         if (operation == null)
         {
             Debug.LogError($"Scene load failed: Unity could not start loading scene '{sceneName}'.");
-            yield return screen.Hide();
+            yield return HideLoadPresentation(screen, presentation);
             IsLoading = false;
             yield break;
         }
@@ -171,20 +209,34 @@ public sealed class SceneLoadSystem
         while (operation.progress < 0.9f)
             yield return null;
 
-        yield return WaitForMinimumVisibleTime(screen, visibleStartTime);
+        if (presentation == SceneLoadPresentation.LoadingScreen)
+            yield return WaitForMinimumVisibleTime(screen, visibleStartTime);
 
         operation.allowSceneActivation = true;
 
         while (!operation.isDone)
             yield return null;
 
-        if (screen.PostLoadHoldDuration > 0f)
+        if (presentation == SceneLoadPresentation.LoadingScreen && screen.PostLoadHoldDuration > 0f)
             yield return WaitForUnscaledSeconds(screen.PostLoadHoldDuration);
 
         yield return null;
-        yield return screen.Hide();
+        yield return HideLoadPresentation(screen, presentation);
 
         IsLoading = false;
+    }
+
+    private static IEnumerator HideLoadPresentation(
+        LoadingScreenView screen,
+        SceneLoadPresentation presentation)
+    {
+        if (screen == null || presentation == SceneLoadPresentation.InstantNoOverlay)
+            yield break;
+
+        if (presentation == SceneLoadPresentation.SilentBlack)
+            yield return screen.HideBlack();
+        else
+            yield return screen.Hide();
     }
 
     private LoadingScreenView GetLoadingScreen()
