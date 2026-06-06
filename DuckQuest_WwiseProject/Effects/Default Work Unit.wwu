@@ -81,7 +81,7 @@
 															</Point>
 															<Point>
 																<XPos>100</XPos>
-																<YPos>0</YPos>
+																<YPos>-49.71098</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>
@@ -105,6 +105,87 @@
 											<Reference Name="Curve">
 												<Custom>
 													<Curve Name="" ID="{87D6ECE6-6453-4950-8D90-3F64E7B7DB7C}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0.01144</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-11.87116</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</Effect>
+				<Effect Name="Restart_Distortion" ID="{C5AB12D7-EB0E-4F9F-B0B2-2DF0A245A5D1}" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+					<PropertyList>
+						<Property Name="DistortionDrive" Type="Real32" Value="61"/>
+						<Property Name="DistortionTone" Type="Real32" Value="9"/>
+						<Property Name="DistortionType" Type="int32" Value="3"/>
+					</PropertyList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{4BBCF8EC-70E0-436D-B07A-E9A752F5A219}" ShortID="994707953">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="WetDryMix"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Restart_Progress" ID="{C26EE28C-F726-4C60-9340-EA5A9A3083A5}" WorkUnitID="{8741591C-F74E-49C0-A630-EDA48FBA3214}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{1C477B27-FE3D-44B8-8D6A-42928BA16C74}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="1"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-100</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>-21.96532</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{55E6EEC4-12A9-4B0E-B968-3069F317CC5A}" ShortID="597883685">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="OutputLevel"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Restart_Progress" ID="{C26EE28C-F726-4C60-9340-EA5A9A3083A5}" WorkUnitID="{8741591C-F74E-49C0-A630-EDA48FBA3214}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{CE6D301C-BFF6-453C-9532-71529D343A40}">
 														<PropertyList>
 															<Property Name="Flags" Type="int32" Value="3"/>
 														</PropertyList>

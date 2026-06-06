@@ -37,11 +37,17 @@ public sealed class HoldToResetController : MonoBehaviour
     private float fadeToBlackTimer;
     private bool hasTriggeredReset;
     private bool isFadingToBlack;
+    private bool wasHoldingReset;
 
     private void Awake()
     {
         EnsureVolume();
         ApplyProgress(0f);
+    }
+
+    private void Start()
+    {
+        ApplyRestartProgressRtpc(progress);
     }
 
     private void OnEnable()
@@ -58,8 +64,10 @@ public sealed class HoldToResetController : MonoBehaviour
             resetAction.action.Disable();
 
         SceneManager.sceneLoaded -= HandleSceneLoaded;
+        wasHoldingReset = false;
         ApplyFadeToBlackProgress(0f);
         ApplyProgress(0f);
+        ApplyRestartProgressRtpc(0f);
     }
 
     private void Update()
@@ -77,13 +85,27 @@ public sealed class HoldToResetController : MonoBehaviour
 
         if (pressed && CanResetNow())
         {
+            if (!wasHoldingReset)
+            {
+                wasHoldingReset = true;
+                ApplyRestartProgressRtpc(0f);
+            }
+
             holdTimer += Time.unscaledDeltaTime;
-            ApplyProgress(Mathf.Clamp01(holdTimer / holdDuration));
+            float normalizedHoldProgress = Mathf.Clamp01(holdTimer / holdDuration);
+            ApplyProgress(normalizedHoldProgress);
+            ApplyRestartProgressRtpc(normalizedHoldProgress);
 
             if (holdTimer >= holdDuration)
                 TriggerReset();
 
             return;
+        }
+
+        if (wasHoldingReset)
+        {
+            wasHoldingReset = false;
+            ApplyRestartProgressRtpc(0f);
         }
 
         RecoverTowardIdle();
@@ -131,8 +153,12 @@ public sealed class HoldToResetController : MonoBehaviour
     private void TriggerReset()
     {
         hasTriggeredReset = true;
+        wasHoldingReset = false;
         holdTimer = 0f;
         ApplyProgress(1f);
+        ApplyRestartProgressRtpc(1f);
+        ProjectAudio.PlayGlobal(ProjectAudio.Config != null ? ProjectAudio.Config.RestartSuccessCue : null);
+        ProjectAudio.StopMusicAndAmbienceImmediate();
 
         isFadingToBlack = true;
         fadeToBlackTimer = 0f;
@@ -147,8 +173,10 @@ public sealed class HoldToResetController : MonoBehaviour
         fadeToBlackTimer = 0f;
         isFadingToBlack = false;
         hasTriggeredReset = false;
+        wasHoldingReset = false;
         ApplyFadeToBlackProgress(0f);
         ApplyProgress(0f);
+        ApplyRestartProgressRtpc(0f);
     }
 
     private void EnsureVolume()
@@ -207,6 +235,13 @@ public sealed class HoldToResetController : MonoBehaviour
     private float EaseOut(float t)
     {
         return 1f - Mathf.Pow(1f - Mathf.Clamp01(t), holdEffectCurvePower);
+    }
+
+    private void ApplyRestartProgressRtpc(float normalizedProgress)
+    {
+        ProjectAudio.SetGlobalRtpc(
+            ProjectAudio.Config != null ? ProjectAudio.Config.RestartProgressRtpc : null,
+            Mathf.Clamp01(normalizedProgress) * 100f);
     }
 
     private void UpdateFadeToBlack()

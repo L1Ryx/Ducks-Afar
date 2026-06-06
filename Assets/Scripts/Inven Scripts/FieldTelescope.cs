@@ -25,7 +25,8 @@ public class FieldTelescope : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
-        FieldTelescopeVisionSystem.Reveal(visualDotSprite, revealDuration, revealEndMode, playerMovedEvent);
+        ProjectAudio.PlayOn(ProjectAudio.Config != null ? ProjectAudio.Config.TelescopeOpenCue : null, gameObject);
+        FieldTelescopeVisionSystem.Reveal(visualDotSprite, revealDuration, revealEndMode, playerMovedEvent, gameObject);
         onUsed?.Invoke();
     }
 }

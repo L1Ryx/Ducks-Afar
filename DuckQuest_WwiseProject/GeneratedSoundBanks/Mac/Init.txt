@@ -11,6 +11,7 @@ State	ID	Name	State Group			Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	319736021	Volume_MX			\Settings\Volume_MX	
+	3668122428	Restart_Progress			\System\Restart_Progress	
 	3673881719	Volume_SFX			\Settings\Volume_SFX	
 	3695994288	Volume_Master			\Settings\Volume_Master	
 
@@ -26,7 +27,9 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	2806164392	ImpactDelay			\Default Work Unit\Master Audio Bus\ImpactDelay	
 
 Effect plug-ins	ID	Name	Type				Notes
+	1008402193	Low_Pass_20KHz	Wwise Parametric EQ			
 	1588715066	Echoes_Linear	Wwise Delay			
+	2911816396	Restart_Distortion	Wwise Guitar Distortion			
 	3442768367	Hall_Large_Dark	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes

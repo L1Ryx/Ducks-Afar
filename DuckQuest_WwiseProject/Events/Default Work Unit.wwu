@@ -236,6 +236,28 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_TelescopeOpen" ID="{24763870-E1F6-4671-B07E-44FE585F8AC4}">
+							<ChildrenList>
+								<Action Name="" ID="{F33A3CFF-8E67-4846-A601-893D8FF85172}" ShortID="877222466">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_TelescopeShimmer_Blend" ID="{595C0A43-4313-462B-B0EE-3D4B78BCFA2F}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_TelescopeClose" ID="{AF5CD398-FF60-401E-A150-57A72CDE60B8}">
+							<ChildrenList>
+								<Action Name="" ID="{18DA4DD9-0084-4726-B0B1-10B3DDD804E8}" ShortID="710178669">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_TelescopeShimmerDull_Blend" ID="{9EBB30FD-CD42-4BF5-901E-5230EF586B1E}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">
@@ -292,6 +314,50 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_PhoneTap_Blend" ID="{C00C6D2D-E70E-4FEB-AD8B-D25F8617B9DD}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_HoverBegin" ID="{66C3CB7D-6A9B-40FA-BEB1-61B4541C0A75}">
+							<ChildrenList>
+								<Action Name="" ID="{1CE47EF1-4AC2-42F8-A5B6-2A641A8CD227}" ShortID="1042745417">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_HoverBegin_Blend" ID="{8DEB8184-3589-453F-B485-18B19D184779}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_HoverEnd" ID="{12C59B93-EF01-4BA0-A246-86C2DD9DC28B}">
+							<ChildrenList>
+								<Action Name="" ID="{011D513E-2E7B-4F32-92A5-8F5118271D55}" ShortID="1021569772">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_HoverEnd_Blend" ID="{CEFD1A3B-96F5-49B2-844B-97B949F06823}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_WoodenClick" ID="{07BDE30A-49E2-4AF8-A7ED-265CEE777C4F}">
+							<ChildrenList>
+								<Action Name="" ID="{FA9AEE01-0D3A-444B-A17D-EE31EBEDDB9A}" ShortID="6068956">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_UIClick_Blend" ID="{ACE8DBF7-E03E-48A3-B5A5-F698732930ED}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_RestartSuccess" ID="{22EEF14C-D43D-4C1A-A2B5-BADDE87123C3}">
+							<ChildrenList>
+								<Action Name="" ID="{F2C77BEA-44C6-4FBE-AC76-1734D6B2481F}" ShortID="967980230">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_RestartSuccess_Blend" ID="{1880E93D-4336-464A-A07E-717CEA81E697}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
