@@ -69,6 +69,7 @@ public sealed class LoadingScreenView : MonoBehaviour
         visible = true;
         Canvas.ForceUpdateCanvases();
         Sequence ducksLoading = DOTween.Sequence();
+        
         ducksLoading.Append(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y-8, 0.5f));
         ducksLoading.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y+8, 0.5f));
         ducksLoading.Append(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y-8, 0.5f));
