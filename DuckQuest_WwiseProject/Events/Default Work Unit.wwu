@@ -346,7 +346,7 @@
 								<Action Name="" ID="{FA9AEE01-0D3A-444B-A17D-EE31EBEDDB9A}" ShortID="6068956">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_UIClick_Blend" ID="{ACE8DBF7-E03E-48A3-B5A5-F698732930ED}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+											<ObjectRef Name="SFX_UIDullClick_Blend" ID="{ACE8DBF7-E03E-48A3-B5A5-F698732930ED}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -358,6 +358,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_RestartSuccess_Blend" ID="{1880E93D-4336-464A-A07E-717CEA81E697}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_HighClick" ID="{F50CA5DD-1057-4E94-B7A5-5344F2C136CD}">
+							<ChildrenList>
+								<Action Name="" ID="{B731F90A-A722-4791-AF00-718874C60173}" ShortID="72437861">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_UINormalClick_Blend" ID="{D48035D4-326F-49F9-A471-B82256D634F9}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -516,6 +527,44 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="MX_IntroTheme_Playlist" ID="{1F1D6A62-1981-4339-A564-97ACE21F3B70}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MainMenuTheme" ID="{4CA40DC5-CC96-4A39-B445-CC07106C8F62}">
+							<ChildrenList>
+								<Action Name="" ID="{D2B5D9B9-D182-49C5-A9CD-37FA94CBBD0E}" ShortID="137509576">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_MainMenuTheme_Playlist" ID="{CA4AC98C-4EA4-459C-820B-13C32DA9E11C}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_MainMenuTheme" ID="{8C52E296-1F4C-47C5-BE31-0029F7211A9B}">
+							<ChildrenList>
+								<Action Name="" ID="{88635178-862F-447D-8A55-4B80EA662051}" ShortID="1031038908">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_MainMenuTheme_Playlist" ID="{CA4AC98C-4EA4-459C-820B-13C32DA9E11C}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_StudioStinger" ID="{453F0105-EBCC-4C29-B3D5-343F06D32BFC}">
+							<ChildrenList>
+								<Action Name="" ID="{A995A3B3-4498-408A-9670-D996FC9008CE}" ShortID="78419296">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_StudioStinger_Playlist" ID="{1883CAD6-E5D9-4C0C-B8C7-13EF34F8645B}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

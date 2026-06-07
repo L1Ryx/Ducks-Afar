@@ -20,7 +20,11 @@ public sealed class StudioSplashController : MonoBehaviour
     [Header("Fallback")]
     [SerializeField] private string fallbackNextSceneName = "Title Screen";
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue studioStingerCueOverride;
+
     private Tween activeTween;
+    private bool hasPlayedStudioStinger;
 
     private void Awake()
     {
@@ -52,6 +56,7 @@ public sealed class StudioSplashController : MonoBehaviour
         if (initialDelay > 0f)
             yield return WaitForSeconds(initialDelay);
 
+        PlayStudioStinger();
         yield return FadeSplashTo(1f, fadeInDuration);
 
         if (holdDuration > 0f)
@@ -83,6 +88,19 @@ public sealed class StudioSplashController : MonoBehaviour
         }
 
         SceneManager.LoadScene(fallbackNextSceneName);
+    }
+
+    private void PlayStudioStinger()
+    {
+        if (hasPlayedStudioStinger)
+            return;
+
+        hasPlayedStudioStinger = true;
+        AudioCue cue = studioStingerCueOverride != null
+            ? studioStingerCueOverride
+            : ProjectAudio.Config != null ? ProjectAudio.Config.StudioStingerCue : null;
+
+        ProjectAudio.PlayGlobal(cue);
     }
 
     private IEnumerator FadeSplashTo(float targetAlpha, float duration)
