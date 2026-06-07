@@ -2049,15 +2049,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785483009874293523, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_Alpha
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_text
       value: Loading
-      objectReference: {fileID: 0}
-    - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
-      propertyPath: m_fontSize
-      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontStyle
@@ -2077,7 +2073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontSizeBase
-      value: 28
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_sharedMaterial
@@ -2093,7 +2089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6927147632941670811, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -69
+      value: -95
       objectReference: {fileID: 0}
     - target: {fileID: 6927147632941670811, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.y
