@@ -451,7 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultFirstSceneName: Studio Splash
   initialLoadPresentation: 1
-  initialLoadingMessage:
+  initialLoadingMessage: 
 --- !u!1001 &982906258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1273,6 +1273,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3950629848165832229, guid: eae69be6d047a40138686f536c281890, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4127425007907815446, guid: eae69be6d047a40138686f536c281890, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 124.28906
+      objectReference: {fileID: 0}
     - target: {fileID: 4458344653170437663, guid: eae69be6d047a40138686f536c281890, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -233
@@ -2025,7 +2033,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 744358321568934933, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8.44458
+      value: -8.444336
       objectReference: {fileID: 0}
     - target: {fileID: 744358321568934933, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2045,7 +2053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785483009874293523, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_text
@@ -2058,7 +2066,7 @@ PrefabInstance:
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
+      objectReference: {fileID: 11400000, guid: 927bcb58bab1b4b3cab2648a5b46e0d8, type: 2}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontStyle
       value: 1
@@ -2082,7 +2090,7 @@ PrefabInstance:
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -5884635307735769431, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
+      objectReference: {fileID: 4304401435190037296, guid: 927bcb58bab1b4b3cab2648a5b46e0d8, type: 2}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
@@ -2092,8 +2100,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6927147632941670811, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -99.6001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927147632941670811, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 78
+      value: 82.200195
       objectReference: {fileID: 0}
     - target: {fileID: 8595823890738505459, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: CodaAnim
@@ -2294,6 +2306,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299009961703854802, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8125001449852397574, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_Alpha
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801606098618476710, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}

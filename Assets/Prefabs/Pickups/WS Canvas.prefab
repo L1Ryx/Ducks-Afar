@@ -31,12 +31,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2719846095621358626}
+  - {fileID: 8016871801406749634}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.0286, y: 1.273}
+  m_AnchoredPosition: {x: 0.02859497, y: 1.2730026}
   m_SizeDelta: {x: 4.5265, y: 2.5461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6874319479478044206
@@ -57,6 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -404211931
@@ -84,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &5343981978609508024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,8 +200,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db273a9289c304c3a9efa50a3e69f34f, type: 3}
---- !u!224 &2719846095621358626 stripped
+--- !u!224 &8016871801406749634 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6429056592706356439, guid: db273a9289c304c3a9efa50a3e69f34f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1425366295811603255, guid: db273a9289c304c3a9efa50a3e69f34f, type: 3}
   m_PrefabInstance: {fileID: 8972944474705215733}
   m_PrefabAsset: {fileID: 0}
