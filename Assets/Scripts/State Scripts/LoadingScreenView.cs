@@ -77,17 +77,7 @@ public sealed class LoadingScreenView : MonoBehaviour
 
         visible = true;
         Canvas.ForceUpdateCanvases();
-        Sequence ducksLoading = DOTween.Sequence();
-        
-        ducksLoading.Append(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y-8, 0.5f));
-        ducksLoading.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y+8, 0.5f));
-        ducksLoading.Append(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y-8, 0.5f));
-        ducksLoading.Join(AsterAnim.DOLocalMoveY(AsterAnim.localPosition.y+8, 0.5f));
-        ducksLoading.Append(AsterAnim.DOLocalMoveY(AsterAnim.localPosition.y-8, 0.5f));
-        ducksLoading.Join(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y+8, 0.5f));
-        ducksLoading.Append(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y-8, 0.5f));
-        ducksLoading.Join(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y+8, 0.5f));
-        ducksLoading.SetLoops(-1, LoopType.Restart);
+
         StartDuckLoadingAnimation();
 
         yield return FadeTo(1f, fadeInDuration);
@@ -250,6 +240,12 @@ public sealed class LoadingScreenView : MonoBehaviour
             return;
 
         Sequence ducksLoading = DOTween.Sequence();
+
+        // TofuAnim.DOMoveY(106, 0.1f);
+        // BubblesAnim.DOMoveY(106, 0.1f);
+        // AsterAnim.DOMoveY(106, 0.1f);
+        // CodaAnim.DOMoveY(106, 0.1f);
+
         ducksLoading.Append(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y - 8, 0.5f));
         ducksLoading.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y + 8, 0.5f));
         ducksLoading.Append(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y - 8, 0.5f));
@@ -265,6 +261,10 @@ public sealed class LoadingScreenView : MonoBehaviour
 
     private void StopDuckLoadingAnimation()
     {
+        TofuAnim.DOMoveY(35, 0.1f, true);
+        BubblesAnim.DOMoveY(35, 0.1f, true);
+        AsterAnim.DOMoveY(35, 0.1f, true);
+        CodaAnim.DOMoveY(35, 0.1f, true);
         duckLoadingTween?.Kill();
         duckLoadingTween = null;
     }
