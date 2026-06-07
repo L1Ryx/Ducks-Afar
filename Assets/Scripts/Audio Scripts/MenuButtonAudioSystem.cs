@@ -49,7 +49,7 @@ public sealed class MenuButtonAudioSystem : MonoBehaviour
 
     public void PlaySelection(GameObject emitter)
     {
-        ProjectAudio.PlayOn(Config != null ? Config.WoodenClickCue : null, emitter);
+        ProjectAudio.PlayOn(Config != null ? Config.ButtonClickCue : null, emitter);
     }
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)

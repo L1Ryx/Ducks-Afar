@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{0A8577D8-0BDE-795D-C30E-5A555E6E96EA}",
+    "Hash": "{6AB3FCCE-D652-ABBA-D59A-C66DBCF6AD5C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -78,6 +78,14 @@
       "Location": "Memory",
       "ShortName": "Tofu-Gabble-C.wav",
       "CachePath": "F8/{F824FD36-0DB2-2DB7-37B8-7EF19EC7C96B}.wem"
+     },
+     {
+      "Id": "54364027",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "UI-Click-Better.wav",
+      "CachePath": "52/{52CF0004-73FD-F3E4-84C1-0B5469BDA4B4}.wem"
      },
      {
       "Id": "66967714",
@@ -688,6 +696,14 @@
       "CachePath": "EB/{EB0D708E-F9AC-44AF-3D67-F2E95F12B15C}.wem"
      },
      {
+      "Id": "793037626",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Title-RB.wav",
+      "CachePath": "99/{993B2A71-BA94-4DBA-699D-F4DAEE86BBC6}.wem"
+     },
+     {
       "Id": "794129864",
       "Language": "SFX",
       "Streaming": "false",
@@ -726,6 +742,14 @@
       "Location": "Memory",
       "ShortName": "Tofu-Gabble-A.wav",
       "CachePath": "04/{04FA6224-CBC2-D8B7-D297-61277CFA2116}.wem"
+     },
+     {
+      "Id": "822215883",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Ducks-Afar-Start-Stinger-RB.wav",
+      "CachePath": "0D/{0D80C4FF-56AD-3830-F6EF-AE0FEFE7B0E3}.wem"
      },
      {
       "Id": "832048181",
@@ -1776,6 +1800,28 @@
       ]
      },
      {
+      "Id": "2406302514",
+      "Name": "Play_HighClick",
+      "ObjectPath": "\\Events\\Default Work Unit\\UI\\Play_HighClick",
+      "GUID": "{F50CA5DD-1057-4E94-B7A5-5344F2C136CD}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.24078147",
+      "DurationMax": "0.3214047",
+      "MediaRefs": [
+       {
+        "Id": "54364027"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
       "Id": "141146378",
       "Name": "Play_HomeTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_HomeTheme",
@@ -1918,6 +1964,18 @@
         "Name": "ForestVerb",
         "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
         "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "2251157239",
+      "Name": "Play_MainMenuTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_MainMenuTheme",
+      "GUID": "{4CA40DC5-CC96-4A39-B445-CC07106C8F62}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "793037626"
        }
       ]
      },
@@ -2460,6 +2518,20 @@
       ]
      },
      {
+      "Id": "1614898610",
+      "Name": "Play_StudioStinger",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_StudioStinger",
+      "GUID": "{453F0105-EBCC-4C29-B3D5-343F06D32BFC}",
+      "DurationType": "OneShot",
+      "DurationMin": "7.6875",
+      "DurationMax": "7.6875",
+      "MediaRefs": [
+       {
+        "Id": "822215883"
+       }
+      ]
+     },
+     {
       "Id": "1545776886",
       "Name": "Play_SubCadenceA",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_SubCadenceA",
@@ -2826,6 +2898,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "3235806489",
+      "Name": "Stop_MainMenuTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_MainMenuTheme",
+      "GUID": "{8C52E296-1F4C-47C5-BE31-0029F7211A9B}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "3741038939",
       "Name": "Stop_PGPL",
       "ObjectPath": "\\Events\\Default Work Unit\\HALFTIME\\Stop_PGPL",
@@ -2960,6 +3042,6 @@
     ]
    }
   ],
-  "FileHash": "{DA77EA48-06A3-74B2-C00E-459618E6268B}"
+  "FileHash": "{633BD4CA-8544-D9F0-6F32-5EB346291CD6}"
  }
 }

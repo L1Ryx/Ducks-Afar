@@ -14,11 +14,15 @@ public sealed class ProjectAudioConfig : ScriptableObject
     [Header("Menu UI")]
     [SerializeField] private AudioCue hoverBeginCue;
     [SerializeField] private AudioCue hoverEndCue;
-    [SerializeField] private AudioCue woodenClickCue;
+    [SerializeField] private AudioCue buttonClickCue;
 
     [Header("Restart")]
     [SerializeField] private AudioCue restartSuccessCue;
     [SerializeField] private AudioRtpc restartProgressRtpc;
+
+    [Header("Title")]
+    [SerializeField] private AudioCue mainMenuThemeCue;
+    [SerializeField] private AudioCue studioStingerCue;
 
     public static ProjectAudioConfig Instance
     {
@@ -35,7 +39,9 @@ public sealed class ProjectAudioConfig : ScriptableObject
     public AudioCue TelescopeCloseCue => telescopeCloseCue;
     public AudioCue HoverBeginCue => hoverBeginCue;
     public AudioCue HoverEndCue => hoverEndCue;
-    public AudioCue WoodenClickCue => woodenClickCue;
+    public AudioCue ButtonClickCue => buttonClickCue;
     public AudioCue RestartSuccessCue => restartSuccessCue;
     public AudioRtpc RestartProgressRtpc => restartProgressRtpc;
+    public AudioCue MainMenuThemeCue => mainMenuThemeCue;
+    public AudioCue StudioStingerCue => studioStingerCue;
 }

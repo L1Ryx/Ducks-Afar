@@ -16,6 +16,8 @@ MonoBehaviour:
   telescopeCloseCue: {fileID: 11400000, guid: 92ae3bc9f0d04e7eb6c9dde88c37515a, type: 2}
   hoverBeginCue: {fileID: 11400000, guid: 065f3ca172104f5ca87478b1025fd7d5, type: 2}
   hoverEndCue: {fileID: 11400000, guid: 785dd6502a9c47b99bd8fdb20739caa1, type: 2}
-  woodenClickCue: {fileID: 11400000, guid: 2c94648f8a874801b5b6f3fa492fda71, type: 2}
+  buttonClickCue: {fileID: 11400000, guid: 2f158239311ec4ae9b7a4ebd381e3e18, type: 2}
   restartSuccessCue: {fileID: 11400000, guid: 33f4c3caf73645fcba32b22f43961ff5, type: 2}
   restartProgressRtpc: {fileID: 11400000, guid: 8a2d957f2aa5418f9e4586aa97f2c8b2, type: 2}
+  mainMenuThemeCue: {fileID: 11400000, guid: d98e7782dd6b4b7f922db6c74cdd0980, type: 2}
+  studioStingerCue: {fileID: 11400000, guid: 880cda0f06e64266b815d8281c122ade, type: 2}
