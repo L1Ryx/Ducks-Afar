@@ -451,7 +451,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultFirstSceneName: Studio Splash
   initialLoadPresentation: 1
-  initialLoadingMessage: 
+  initialLoadingMessage:
 --- !u!1001 &982906258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1273,10 +1273,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3950629848165832229, guid: eae69be6d047a40138686f536c281890, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -9
-      objectReference: {fileID: 0}
     - target: {fileID: 4458344653170437663, guid: eae69be6d047a40138686f536c281890, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -233
@@ -2056,6 +2052,14 @@ PrefabInstance:
       value: Loading
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
+      propertyPath: m_fontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
+    - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontStyle
       value: 1
       objectReference: {fileID: 0}
@@ -2073,12 +2077,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontSizeBase
-      value: 32
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 8365030405494945382, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
+      objectReference: {fileID: -5884635307735769431, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
     - target: {fileID: 4074732629127369935, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
@@ -2088,12 +2092,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6927147632941670811, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -95
-      objectReference: {fileID: 0}
-    - target: {fileID: 6927147632941670811, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 76
+      value: 78
       objectReference: {fileID: 0}
     - target: {fileID: 8595823890738505459, guid: c0b7c92116e8f4129b9fc9e83b3c1924, type: 3}
       propertyPath: CodaAnim
