@@ -1566,11 +1566,12 @@ MonoBehaviour:
   splashImage: {fileID: 1741394054}
   initialDelay: 1.5
   fadeInDuration: 0.75
-  holdDuration: 2
+  holdDuration: 3.5
   fadeOutDuration: 0.75
-  postFadeDelay: 1
+  postFadeDelay: 2
   useUnscaledTime: 1
   fallbackNextSceneName: Title Screen
+  studioStingerCueOverride: {fileID: 0}
 --- !u!1 &1753732304
 GameObject:
   m_ObjectHideFlags: 8

@@ -176,7 +176,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584208304399983825
+    m_lastTime: -8584208150714900545
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -204,7 +204,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584208306523711734
+    m_lastTime: -8584208150817000130
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -867,6 +867,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_HighClick
+      guid: dda50cf55710944eb7a55344f2c136cd
+      id: 2406302514
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: UI
+        ObjectType: 4
+        guid: d080ff677bd29c40abb3609187abda0e
+      - ElementName: Play_HighClick
+        ObjectType: 3
+        guid: dda50cf55710944eb7a55344f2c136cd
+      Path: Events/Default Work Unit/UI/Play_HighClick
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_HomeTheme
       guid: f9203b4ac7277b49b9d242e39f9d28d4
       id: 141146378
@@ -1004,6 +1024,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: eda43c641fb6a94995a711fb757b94cb
       Path: Events/Default Work Unit/WORLD/Play_KeycardUnlock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_MainMenuTheme
+      guid: c50da44c96cc394ab445cc07106c8f62
+      id: 2251157239
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Play_MainMenuTheme
+        ObjectType: 3
+        guid: c50da44c96cc394ab445cc07106c8f62
+      Path: Events/Default Work Unit/MUS/Play_MainMenuTheme
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1437,6 +1477,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_StudioStinger
+      guid: 05013f45cceb294cb3d5343f06d32bfc
+      id: 1614898610
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Play_StudioStinger
+        ObjectType: 3
+        guid: 05013f45cceb294cb3d5343f06d32bfc
+      Path: Events/Default Work Unit/MUS/Play_StudioStinger
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_SubCadenceA
       guid: 6b3039fc60d9694194a751fa4dc2d5bb
       id: 1545776886
@@ -1809,6 +1869,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: 93574ff898c41c4d92aac54d45f95f7c
       Path: Events/Default Work Unit/MUS/Stop_IntroTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_MainMenuTheme
+      guid: 96e2528c4c1fc547be310029f7211a9b
+      id: 3235806489
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Stop_MainMenuTheme
+        ObjectType: 3
+        guid: 96e2528c4c1fc547be310029f7211a9b
+      Path: Events/Default Work Unit/MUS/Stop_MainMenuTheme
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

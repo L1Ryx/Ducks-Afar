@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -5,6 +6,8 @@ using UnityEngine.UI;
 
 public class FadeInOnLevelStart : MonoBehaviour
 {
+    public static event Action<FadeInOnLevelStart> FadeFromBlackStarted;
+
     [Header("References")]
     [SerializeField] private Image overlayImage;
 
@@ -16,7 +19,9 @@ public class FadeInOnLevelStart : MonoBehaviour
     [SerializeField] private bool disableAfterFade = true;
     [SerializeField] private bool blockRaycastsDuringFade = true;
 
-    [Header("Events")] [SerializeField] private UnityEvent onFadeIn;
+    [Header("Events")]
+    [SerializeField] private UnityEvent onFadeInStarted;
+    [SerializeField] private UnityEvent onFadeIn;
 
     private Coroutine fadeRoutine;
 
@@ -45,6 +50,8 @@ public class FadeInOnLevelStart : MonoBehaviour
             StopCoroutine(fadeRoutine);
 
         overlayImage.raycastTarget = blockRaycastsDuringFade;
+        FadeFromBlackStarted?.Invoke(this);
+        onFadeInStarted?.Invoke();
         fadeRoutine = StartCoroutine(FadeOutRoutine());
     }
 

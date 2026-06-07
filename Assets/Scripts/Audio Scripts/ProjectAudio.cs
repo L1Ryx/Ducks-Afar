@@ -39,6 +39,25 @@ public static class ProjectAudio
         Game.Ctx.Audio.SetGlobalRtpc(rtpc, value);
     }
 
+    public static void SetGlobalMusic(AudioCue cue)
+    {
+        if (cue == null || !cue.HasPlayEvent)
+            return;
+
+        if (!Game.IsReady || Game.Ctx?.Audio == null)
+            return;
+
+        Game.Ctx.Audio.SetGlobalMusic(cue);
+    }
+
+    public static void StopGlobalMusic(bool immediate = false)
+    {
+        if (!Game.IsReady || Game.Ctx?.Audio == null)
+            return;
+
+        Game.Ctx.Audio.StopGlobalMusic(immediate);
+    }
+
     public static void StopMusicAndAmbienceImmediate()
     {
         if (!Game.IsReady || Game.Ctx?.Audio == null)

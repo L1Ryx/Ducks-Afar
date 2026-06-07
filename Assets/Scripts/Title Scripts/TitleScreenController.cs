@@ -2,6 +2,7 @@ using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public sealed class TitleScreenController : MonoBehaviour
 {
@@ -28,12 +29,17 @@ public sealed class TitleScreenController : MonoBehaviour
     [SerializeField] private string newGameSceneName = "Demo Begin";
     [SerializeField] private string newGameStartLocation = "auralis_0";
 
+    [Header("Audio")]
+    [SerializeField] private bool playMainMenuThemeOnCurtainUnveil = true;
+    [SerializeField] private AudioCue mainMenuThemeCueOverride;
+
     private CanvasGroupFade mainPanelFade;
     private CanvasGroupFade fileSelectPanelFade;
     private CanvasGroupFade optionsPanelFade;
     private CanvasGroupFade introPanelFade;
     private Coroutine panelTransitionRoutine;
     private TitlePanel currentPanel = TitlePanel.None;
+    private bool mainMenuThemeStarted;
 
     private void Awake()
     {
@@ -49,12 +55,17 @@ public sealed class TitleScreenController : MonoBehaviour
     {
         if (optionsPanel != null)
             optionsPanel.OnBackRequested += HandleOptionsBackRequested;
+
+        FadeInOnLevelStart.FadeFromBlackStarted += HandleFadeFromBlackStarted;
     }
 
     private void OnDisable()
     {
         if (optionsPanel != null)
             optionsPanel.OnBackRequested -= HandleOptionsBackRequested;
+
+        FadeInOnLevelStart.FadeFromBlackStarted -= HandleFadeFromBlackStarted;
+        StopMainMenuTheme();
 
         if (panelTransitionRoutine != null)
         {
@@ -115,14 +126,19 @@ public sealed class TitleScreenController : MonoBehaviour
 
         if (slot.hasData)
         {
-            Game.Ctx.Saves.LoadFromSlotAndEnterScene(slotIndex);
+            if (Game.Ctx.Saves.LoadFromSlotAndEnterScene(slotIndex))
+                StopMainMenuTheme();
+
             return;
         }
 
-        Game.Ctx.Saves.StartNewGameInSlotAndEnterScene(
-            slotIndex,
-            newGameSceneName,
-            newGameStartLocation);
+        if (Game.Ctx.Saves.StartNewGameInSlotAndEnterScene(
+                slotIndex,
+                newGameSceneName,
+                newGameStartLocation))
+        {
+            StopMainMenuTheme();
+        }
     }
 
     public void UseSaveSlot(SaveSlotData slot)
@@ -135,16 +151,21 @@ public sealed class TitleScreenController : MonoBehaviour
 
         if (slot != null && slot.hasData)
         {
-            Game.Ctx.Saves.LoadSlotDataAndEnterScene(slot);
+            if (Game.Ctx.Saves.LoadSlotDataAndEnterScene(slot))
+                StopMainMenuTheme();
+
             return;
         }
 
         int slotIndex = slot != null ? slot.slotIndex : 0;
 
-        Game.Ctx.Saves.StartNewGameInSlotAndEnterScene(
-            slotIndex,
-            newGameSceneName,
-            newGameStartLocation);
+        if (Game.Ctx.Saves.StartNewGameInSlotAndEnterScene(
+                slotIndex,
+                newGameSceneName,
+                newGameStartLocation))
+        {
+            StopMainMenuTheme();
+        }
     }
 
     public void DeleteSaveSlot(int slotIndex)
@@ -161,7 +182,47 @@ public sealed class TitleScreenController : MonoBehaviour
 
     public void Quit()
     {
+        StopMainMenuTheme();
         ApplicationExitUtility.ExitApplication();
+    }
+
+    private void HandleFadeFromBlackStarted(FadeInOnLevelStart fade)
+    {
+        if (!playMainMenuThemeOnCurtainUnveil)
+            return;
+
+        if (fade == null || fade.gameObject.scene != gameObject.scene)
+            return;
+
+        if (SceneManager.GetActiveScene() != gameObject.scene)
+            return;
+
+        PlayMainMenuTheme();
+    }
+
+    private void PlayMainMenuTheme()
+    {
+        if (mainMenuThemeStarted)
+            return;
+
+        AudioCue cue = mainMenuThemeCueOverride != null
+            ? mainMenuThemeCueOverride
+            : ProjectAudio.Config != null ? ProjectAudio.Config.MainMenuThemeCue : null;
+
+        if (cue == null || !cue.HasPlayEvent)
+            return;
+
+        ProjectAudio.SetGlobalMusic(cue);
+        mainMenuThemeStarted = true;
+    }
+
+    private void StopMainMenuTheme()
+    {
+        if (!mainMenuThemeStarted)
+            return;
+
+        ProjectAudio.StopGlobalMusic(immediate: false);
+        mainMenuThemeStarted = false;
     }
 
     private bool HandleOptionsBackRequested()
