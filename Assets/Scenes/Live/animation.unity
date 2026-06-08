@@ -440,7 +440,7 @@ VideoPlayer:
   m_DirectAudioMutes: 
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 0
-  m_SkipOnDrop: 0
+  m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 0
   m_FrameReadyEventEnabled: 0
@@ -475,6 +475,8 @@ MonoBehaviour:
   onVideoEnd: {fileID: 11400000, guid: 8b513ae5bad474f639fe5bbb16862681, type: 2}
   useUnscaledVideoTime: 1
   disableVideoAudio: 1
+  waitForFirstFrame: 0
+  skipOnDrop: 0
   endBlackHoldSeconds: 2.5
   hideVideoDuringEndHold: 1
   useUnscaledTimeForEndHold: 0
