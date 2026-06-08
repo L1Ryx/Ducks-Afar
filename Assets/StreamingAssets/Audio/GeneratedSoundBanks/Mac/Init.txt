@@ -1,0 +1,40 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	3241088250	PuzzleKey			\Default Work Unit\PuzzleKey	
+
+State	ID	Name	State Group			Notes
+	84696440	G	PuzzleKey			
+	84696441	F	PuzzleKey			
+	84696444	C	PuzzleKey			
+	748895195	None	PuzzleKey			
+	1836525772	Dm	PuzzleKey			
+	1886858551	Am	PuzzleKey			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	319736021	Volume_MX			\Settings\Volume_MX	
+	3668122428	Restart_Progress			\System\Restart_Progress	
+	3673881719	Volume_SFX			\Settings\Volume_SFX	
+	3695994288	Volume_Master			\Settings\Volume_Master	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	1313057045	AMB Bus			\Default Work Unit\Master Audio Bus\SFX Bus\AMB Bus	
+	1502772432	SFX Bus			\Default Work Unit\Master Audio Bus\SFX Bus	
+	3027868960	MX Bus			\Default Work Unit\Master Audio Bus\MX Bus	
+	3600729941	UI Bus			\Default Work Unit\Master Audio Bus\SFX Bus\UI Bus	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1396104734	SpaceVerb			\Default Work Unit\Master Audio Bus\SpaceVerb	
+	1690558513	ForestVerb			\Default Work Unit\Master Audio Bus\ForestVerb	
+	2806164392	ImpactDelay			\Default Work Unit\Master Audio Bus\ImpactDelay	
+
+Effect plug-ins	ID	Name	Type				Notes
+	1008402193	Low_Pass_20KHz	Wwise Parametric EQ			
+	1588715066	Echoes_Linear	Wwise Delay			
+	2911816396	Restart_Distortion	Wwise Guitar Distortion			
+	3442768367	Hall_Large_Dark	Wwise RoomVerb			
+	3701691487	Hall_Large_Bright	Wwise RoomVerb			
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
