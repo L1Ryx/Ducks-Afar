@@ -103,6 +103,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -239,6 +240,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -370,12 +372,12 @@ MonoBehaviour:
   primaryButtonText: {fileID: 2449397386570175062}
   primaryButton: {fileID: 8933209424169902898}
   deleteButton: {fileID: 7473815978544167347}
-  showSlotNumber: 1
-  showSceneName: 1
+  showSlotNumber: 0
+  showSceneName: 0
   showLocation: 1
   showPlayTime: 1
-  showCompanion: 1
-  showLastSaved: 1
+  showCompanion: 0
+  showLastSaved: 0
   emptyTitle: New File
   occupiedTitleFormat: File {0}
   newGameButtonLabel: New Game
@@ -483,6 +485,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -740,6 +743,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
