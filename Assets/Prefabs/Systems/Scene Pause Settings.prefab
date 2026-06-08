@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPausable: 1
+  allowHoldToRestart: 0
   reason: 
