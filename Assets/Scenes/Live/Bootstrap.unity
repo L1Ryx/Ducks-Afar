@@ -1527,6 +1527,7 @@ MonoBehaviour:
   resetAction: {fileID: 0}
   useKeyboardFallback: 1
   fallbackKey: 32
+  sceneRestartAllowed: 0
   holdDuration: 1
   fadeToBlackDuration: 0.5
   releaseRecoveryDuration: 0.35
@@ -1885,9 +1886,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8125001449852397574, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8801606098618476710, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
       propertyPath: m_Name
       value: Dialogue Panel
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876680858404255581, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
+    - target: {fileID: 8876680858404255581, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876680858404255581, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5884635307735769431, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
+    - target: {fileID: 8876680858404255581, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

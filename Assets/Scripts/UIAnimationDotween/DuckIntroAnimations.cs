@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class DuckIntroAnimations : MonoBehaviour
 {
-    [SerializeField] Transform TofuAnim;
-    [SerializeField] Transform BubblesAnim;
-    [SerializeField] Transform CodaAnim;
-    [SerializeField] Transform AsterAnim;
+    [SerializeField] RectTransform TofuAnim;
+    [SerializeField] RectTransform BubblesAnim;
+    [SerializeField] RectTransform CodaAnim;
+    [SerializeField] RectTransform AsterAnim;
     [SerializeField] CanvasGroup root;
     private Sequence tofuSequence = DOTween.Sequence();
     private Sequence bubbleSequence2 = DOTween.Sequence();
@@ -17,7 +17,7 @@ public class DuckIntroAnimations : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y+10, 2f)
+        TofuAnim.DOAnchorPosY(TofuAnim.anchoredPosition.y + 10f, 2f)
             .SetEase(Ease.InOutSine)
             .SetLoops(-1, LoopType.Yoyo);
         
@@ -26,7 +26,7 @@ public class DuckIntroAnimations : MonoBehaviour
     
         asterSequence1.Append(AsterAnim.DORotate(new Vector3(0, 0, 360), 30f, 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
-        asterSequence1.Join(AsterAnim.DOLocalMoveX(AsterAnim.localPosition.x+30, 5f)
+        asterSequence1.Join(AsterAnim.DOAnchorPosX(AsterAnim.anchoredPosition.x + 30f, 5f)
             .SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
         
         bubbleSequence1.Append(BubblesAnim.DORotate(new Vector3(0, 0, 180), 8f).
@@ -37,7 +37,7 @@ public class DuckIntroAnimations : MonoBehaviour
         //     SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
         // bubbleSequence1.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y+29, 5f).
         //     SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo));
-        bubbleSequence1.Join(BubblesAnim.DOMove(new Vector3(-30, 30, 0), 5f).SetRelative().
+        bubbleSequence1.Join(BubblesAnim.DOAnchorPos(new Vector2(-30f, 30f), 5f).SetRelative().
             SetEase(Ease.InOutSine).
             SetLoops(-1, LoopType.Yoyo));
         
@@ -49,22 +49,22 @@ public class DuckIntroAnimations : MonoBehaviour
     public void secondAnimation()
     {
 
-        tofuSequence.Append(TofuAnim.DOMove(new Vector3(-737, -409, 0), 1).SetRelative()
+        tofuSequence.Append(TofuAnim.DOAnchorPos(new Vector2(-737f, -409f), 1f).SetRelative()
             .SetEase(Ease.InOutSine));
         tofuSequence.Join(TofuAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
         
-        bubbleSequence2.Append(BubblesAnim.DOMove(new Vector3(-548, 360, 0), 1)
+        bubbleSequence2.Append(BubblesAnim.DOAnchorPos(new Vector2(-548f, 360f), 1f)
             .SetEase(Ease.InOutSine));
         bubbleSequence2.Join(BubblesAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
         
-        asterSequence2.Append(AsterAnim.DOMove(new Vector3(563, 325, 0), 1).SetRelative()
+        asterSequence2.Append(AsterAnim.DOAnchorPos(new Vector2(563f, 325f), 1f).SetRelative()
             .SetEase(Ease.InOutSine));
         asterSequence2.Join(AsterAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
         
-        codaSequence.Append(CodaAnim.DOMove(new Vector3(548, -360, 0), 1).SetRelative()
+        codaSequence.Append(CodaAnim.DOAnchorPos(new Vector2(548f, -360f), 1f).SetRelative()
             .SetEase(Ease.InOutSine));
         codaSequence.Join(CodaAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));

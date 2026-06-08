@@ -22,10 +22,10 @@ public sealed class LoadingScreenView : MonoBehaviour
     [SerializeField, Min(0f)] private float overlayFadeOutDelay = 0.1f;
     [SerializeField, Min(0f)] private float fadeOutDuration = 0.25f;
 
-    [SerializeField] Transform TofuAnim;
-    [SerializeField] Transform BubblesAnim;
-    [SerializeField] Transform AsterAnim;
-    [SerializeField] Transform CodaAnim;
+    [SerializeField] private RectTransform TofuAnim;
+    [SerializeField] private RectTransform BubblesAnim;
+    [SerializeField] private RectTransform AsterAnim;
+    [SerializeField] private RectTransform CodaAnim;
 
     [Header("Default View")]
     [SerializeField] private int sortingOrder = 5000;
@@ -39,6 +39,11 @@ public sealed class LoadingScreenView : MonoBehaviour
     private CanvasGroup bubblesDuckGroup;
     private CanvasGroup asterDuckGroup;
     private CanvasGroup codaDuckGroup;
+    private bool duckBasePositionsCaptured;
+    private float tofuDuckBaseY;
+    private float bubblesDuckBaseY;
+    private float asterDuckBaseY;
+    private float codaDuckBaseY;
 
     private void Awake()
     {
@@ -239,21 +244,20 @@ public sealed class LoadingScreenView : MonoBehaviour
         if (TofuAnim == null || BubblesAnim == null || AsterAnim == null || CodaAnim == null)
             return;
 
+        CaptureDuckBasePositions();
+        ResetDuckAnchoredPositions();
+
+        const float duckLoadingStep = 8f;
         Sequence ducksLoading = DOTween.Sequence();
 
-        // TofuAnim.DOMoveY(106, 0.1f);
-        // BubblesAnim.DOMoveY(106, 0.1f);
-        // AsterAnim.DOMoveY(106, 0.1f);
-        // CodaAnim.DOMoveY(106, 0.1f);
-
-        ducksLoading.Append(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y - 8, 0.5f));
-        ducksLoading.Join(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y + 8, 0.5f));
-        ducksLoading.Append(BubblesAnim.DOLocalMoveY(BubblesAnim.localPosition.y - 8, 0.5f));
-        ducksLoading.Join(AsterAnim.DOLocalMoveY(AsterAnim.localPosition.y + 8, 0.5f));
-        ducksLoading.Append(AsterAnim.DOLocalMoveY(AsterAnim.localPosition.y - 8, 0.5f));
-        ducksLoading.Join(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y + 8, 0.5f));
-        ducksLoading.Append(CodaAnim.DOLocalMoveY(CodaAnim.localPosition.y - 8, 0.5f));
-        ducksLoading.Join(TofuAnim.DOLocalMoveY(TofuAnim.localPosition.y + 8, 0.5f));
+        ducksLoading.Append(TofuAnim.DOAnchorPosY(tofuDuckBaseY - duckLoadingStep, 0.5f));
+        ducksLoading.Join(BubblesAnim.DOAnchorPosY(bubblesDuckBaseY + duckLoadingStep, 0.5f));
+        ducksLoading.Append(BubblesAnim.DOAnchorPosY(bubblesDuckBaseY - duckLoadingStep, 0.5f));
+        ducksLoading.Join(AsterAnim.DOAnchorPosY(asterDuckBaseY + duckLoadingStep, 0.5f));
+        ducksLoading.Append(AsterAnim.DOAnchorPosY(asterDuckBaseY - duckLoadingStep, 0.5f));
+        ducksLoading.Join(CodaAnim.DOAnchorPosY(codaDuckBaseY + duckLoadingStep, 0.5f));
+        ducksLoading.Append(CodaAnim.DOAnchorPosY(codaDuckBaseY - duckLoadingStep, 0.5f));
+        ducksLoading.Join(TofuAnim.DOAnchorPosY(tofuDuckBaseY + duckLoadingStep, 0.5f));
         ducksLoading.SetLoops(-1, LoopType.Restart);
 
         duckLoadingTween = ducksLoading;
@@ -261,12 +265,40 @@ public sealed class LoadingScreenView : MonoBehaviour
 
     private void StopDuckLoadingAnimation()
     {
-        TofuAnim.DOMoveY(35, 0.1f, true);
-        BubblesAnim.DOMoveY(35, 0.1f, true);
-        AsterAnim.DOMoveY(35, 0.1f, true);
-        CodaAnim.DOMoveY(35, 0.1f, true);
         duckLoadingTween?.Kill();
         duckLoadingTween = null;
+        CaptureDuckBasePositions();
+        ResetDuckAnchoredPositions();
+    }
+
+    private void CaptureDuckBasePositions()
+    {
+        if (duckBasePositionsCaptured)
+            return;
+
+        tofuDuckBaseY = TofuAnim != null ? TofuAnim.anchoredPosition.y : 0f;
+        bubblesDuckBaseY = BubblesAnim != null ? BubblesAnim.anchoredPosition.y : 0f;
+        asterDuckBaseY = AsterAnim != null ? AsterAnim.anchoredPosition.y : 0f;
+        codaDuckBaseY = CodaAnim != null ? CodaAnim.anchoredPosition.y : 0f;
+        duckBasePositionsCaptured = true;
+    }
+
+    private void ResetDuckAnchoredPositions()
+    {
+        SetDuckAnchoredY(TofuAnim, tofuDuckBaseY);
+        SetDuckAnchoredY(BubblesAnim, bubblesDuckBaseY);
+        SetDuckAnchoredY(AsterAnim, asterDuckBaseY);
+        SetDuckAnchoredY(CodaAnim, codaDuckBaseY);
+    }
+
+    private static void SetDuckAnchoredY(RectTransform target, float y)
+    {
+        if (target == null)
+            return;
+
+        Vector2 anchoredPosition = target.anchoredPosition;
+        anchoredPosition.y = y;
+        target.anchoredPosition = anchoredPosition;
     }
 
     private void SetDucksVisible(bool visibleDucks)

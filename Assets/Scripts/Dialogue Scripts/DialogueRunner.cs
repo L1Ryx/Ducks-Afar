@@ -145,13 +145,6 @@ public sealed class DialogueRunner : MonoBehaviour
 
             return;
         }
-
-        if (!HasAdvanceAction() && IsFallbackAdvancePressedThisFrame())
-            Advance();
-        }
-        // if (Input.GetMouseButtonDown(0)) // CHANGE LATER TO NEW INPUT SYSTEM !!!
-        //     Advance();
-
     }
 
     private void HandleAdvancePerformed(InputAction.CallbackContext context)
@@ -167,24 +160,12 @@ public sealed class DialogueRunner : MonoBehaviour
         if (HasAdvanceAction())
             return advanceAction.action.IsPressed();
 
-        return IsFallbackAdvancePressed();
+        return false;
     }
 
     private bool HasAdvanceAction()
     {
         return advanceAction != null && advanceAction.action != null;
-    }
-
-    private static bool IsFallbackAdvancePressed()
-    {
-        return (Mouse.current != null && Mouse.current.leftButton.isPressed) ||
-               (Keyboard.current != null && Keyboard.current.spaceKey.isPressed);
-    }
-
-    private static bool IsFallbackAdvancePressedThisFrame()
-    {
-        return (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) ||
-               (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame);
     }
 
     public void Advance()
