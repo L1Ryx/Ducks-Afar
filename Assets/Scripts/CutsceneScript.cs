@@ -11,6 +11,8 @@ public class CutsceneScript : MonoBehaviour
     [Header("Playback")]
     [SerializeField] private bool useUnscaledVideoTime = true;
     [SerializeField] private bool disableVideoAudio = true;
+    [SerializeField] private bool waitForFirstFrame = false;
+    [SerializeField] private bool skipOnDrop = false;
 
     [Header("End Hold")]
     [SerializeField, Min(0f)] private float endBlackHoldSeconds = 0f;
@@ -85,6 +87,9 @@ public class CutsceneScript : MonoBehaviour
     {
         if (useUnscaledVideoTime)
             videoPlayer.timeUpdateMode = VideoTimeUpdateMode.UnscaledGameTime;
+
+        videoPlayer.waitForFirstFrame = waitForFirstFrame;
+        videoPlayer.skipOnDrop = skipOnDrop;
 
         if (disableVideoAudio)
         {
