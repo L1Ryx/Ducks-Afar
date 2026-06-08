@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: 723401975}
   - component: {fileID: 723401977}
   - component: {fileID: 723401978}
+  - component: {fileID: 723401979}
   m_Layer: 0
   m_Name: finalVideoDA
   m_TagString: Untagged
@@ -432,10 +433,8 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 0
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
   m_EnabledAudioTracks: 
   m_DirectAudioMutes: 
@@ -474,6 +473,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onVideoEnd: {fileID: 11400000, guid: 8b513ae5bad474f639fe5bbb16862681, type: 2}
+  useUnscaledVideoTime: 1
+  disableVideoAudio: 1
   endBlackHoldSeconds: 2.5
   hideVideoDuringEndHold: 1
   useUnscaledTimeForEndHold: 0
@@ -505,6 +506,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &723401979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723401974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf252211424a4ad995049dd4a3c03c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VideoPlayerDebugReadout
 --- !u!1001 &1176569708
 PrefabInstance:
   m_ObjectHideFlags: 0
