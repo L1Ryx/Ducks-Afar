@@ -14,6 +14,6 @@ public class UIAnimation : MonoBehaviour
     {
         transform.DOLocalMoveY(transform.localPosition.y + bobHeight, duration)
             .SetEase(Ease.InOutSine)
-            .SetLoops(-1, LoopType.Yoyo);
+            .SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
     }
 }
