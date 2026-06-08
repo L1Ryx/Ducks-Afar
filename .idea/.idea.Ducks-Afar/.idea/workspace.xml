@@ -5,28 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ProjectAudioConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ProjectAudioConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Studio Splash.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Studio Splash.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio Scripts/ProjectAudio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio Scripts/ProjectAudio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio Scripts/ProjectAudioConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio Scripts/ProjectAudioConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Dialogue Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Dialogue Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Dev Scene Flow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Dev Scene Flow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Legacy Scene Flow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Legacy Scene Flow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Title Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Title Screen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue Scripts/DialogueRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue Scripts/DialogueRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pause Scripts/PauseMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pause Scripts/PauseMenuView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Scripts/FadeInOnLevelStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Scripts/FadeInOnLevelStart.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Title Scripts/StudioSplashController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Title Scripts/StudioSplashController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Title Scripts/TitleScreenController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Title Scripts/TitleScreenController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/.cache/SoundBankInfoCache.dat" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/.cache/SoundBankInfoCache.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/Actor-Mixer Hierarchy/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/Actor-Mixer Hierarchy/Default Work Unit.wwu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/DuckQuest_WwiseProject.crossover.validationcache" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/DuckQuest_WwiseProject.crossover.validationcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/DuckQuest_WwiseProject.crossover.wsettings" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/DuckQuest_WwiseProject.crossover.wsettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/Events/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/Events/Default Work Unit.wwu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Mac/General.bnk" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Mac/General.bnk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Mac/General.json" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Mac/General.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Mac/General.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Mac/General.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Windows/General.bnk" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Windows/General.bnk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Windows/General.json" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Windows/General.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Windows/General.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/GeneratedSoundBanks/Windows/General.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/Interactive Music Hierarchy/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/Interactive Music Hierarchy/Default Work Unit.wwu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/SoundBanks/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/SoundBanks/Default Work Unit.wwu" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DuckQuest_WwiseProject/Soundcaster Sessions/Default Work Unit.wwu" beforeDir="false" afterPath="$PROJECT_DIR$/DuckQuest_WwiseProject/Soundcaster Sessions/Default Work Unit.wwu" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +36,9 @@
     &quot;accountId&quot;: &quot;5cafedb1-1d2a-46b0-9aa7-82e83edfc342&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Title Scripts/TitleScreenController.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -72,7 +63,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DA Builds/loading-test.app/Contents/MacOS/Ducks Afar" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DA Builds/6-8-test.app/Contents/MacOS/Ducks Afar" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../DA Builds/window-test.app/Contents/MacOS" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -137,6 +128,7 @@
       <workItem from="1780690981814" duration="1000" />
       <workItem from="1780709740514" duration="2000" />
       <workItem from="1780791918974" duration="24000" />
+      <workItem from="1780791982009" duration="1238000" />
     </task>
     <servers />
   </component>

@@ -58,6 +58,10 @@
 							<Position X="2" Y="2"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_HighClick" ID="{F50CA5DD-1057-4E94-B7A5-5344F2C136CD}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_AddCadenceC" ID="{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}"/>
 							<Position X="2" Y="5"/>
 						</Module>
@@ -102,35 +106,8 @@
 							<Position X="4" Y="5"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="PGPL" ID="{8203D6B4-856F-4060-B206-DBC354D4E7F0}"/>
-							<Value>5</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="HW_PianoNotesCount" ID="{10C73AD9-28AA-4E2F-85B8-2856D5431666}"/>
-							<Value>3</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="FP" ID="{8E553AFC-054B-4E8A-8897-2DA6A477286B}"/>
-							<Value>0</Value>
-						</RTPCValue>
-					</RTPCValueList>
-					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
-					</CurrentStateList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Music Test" ID="{914FDA53-635B-4F76-B1AA-1ED7C0B8D066}">
@@ -204,31 +181,8 @@
 							<Position X="4" Y="0"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="Volume_MX" ID="{5E09E4C8-684D-42D4-93D5-5ADD21080C82}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Volume_Master" ID="{73F74BF0-D28B-495D-960F-91C11FAC9DF1}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Volume_SFX" ID="{7463EC7D-A785-49B8-BB8B-6B8C396C64AF}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Restart_Progress" ID="{C26EE28C-F726-4C60-9340-EA5A9A3083A5}"/>
-							<Value>0</Value>
-						</RTPCValue>
-					</RTPCValueList>
-					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
-					</CurrentStateList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 				<SoundcasterSession Name="HALFTIME" ID="{86F7E3EF-F038-4B6C-8754-76A137DFE3A7}">
@@ -286,43 +240,8 @@
 							<Position X="3" Y="4"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true">
-						<RTPCValue>
-							<GameParameterRef Name="PGPL" ID="{8203D6B4-856F-4060-B206-DBC354D4E7F0}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Piano" ID="{42C0E9B4-CFC1-40C3-86DD-F9B0FBAEE5DD}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Volume_MX" ID="{5E09E4C8-684D-42D4-93D5-5ADD21080C82}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="PGPH" ID="{B2B8AC03-CD79-486B-9804-C88A762AB68B}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="HP" ID="{D982FBBA-FAEB-489A-9CE9-178D3EC80CA3}"/>
-							<Value>0</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Volume_Master" ID="{73F74BF0-D28B-495D-960F-91C11FAC9DF1}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="Volume_SFX" ID="{7463EC7D-A785-49B8-BB8B-6B8C396C64AF}"/>
-							<Value>100</Value>
-						</RTPCValue>
-						<RTPCValue>
-							<GameParameterRef Name="FP" ID="{8E553AFC-054B-4E8A-8897-2DA6A477286B}"/>
-							<Value>0</Value>
-						</RTPCValue>
-					</RTPCValueList>
-					<CurrentStateList ShowAll="true">
-						<CurrentStateRef Name="Am" ID="{D5571A37-1880-40E6-BE34-47F837672CA9}"/>
-					</CurrentStateList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
 			</ChildrenList>

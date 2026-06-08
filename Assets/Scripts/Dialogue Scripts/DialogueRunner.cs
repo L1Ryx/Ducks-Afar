@@ -2,6 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public sealed class DialogueRunner : MonoBehaviour
@@ -15,6 +16,9 @@ public sealed class DialogueRunner : MonoBehaviour
 
     [Header("Typing")]
     [SerializeField] private float charactersPerSecond = 40f;
+
+    [Header("Input")]
+    [SerializeField] private InputActionReference advanceAction;
     
     [Header("Dialogue Events")]
     [SerializeField] private UnityEvent OnDialogueStarted;
@@ -28,9 +32,7 @@ public sealed class DialogueRunner : MonoBehaviour
     [SerializeField] private float sentencePause = 0.15f;
 
     private bool currentLineCompleted;
-    private bool suppressAdvanceUntilMouseUp;
-    private bool suppressAdvanceUntilSpaceBarUp;
-
+    private bool suppressAdvanceUntilInputReleased;
 
     private DialogueEncounter currentEncounter;
     private int currentLineIndex;
@@ -40,6 +42,24 @@ public sealed class DialogueRunner : MonoBehaviour
     public bool IsRunning { get; private set; }
 
     // ===== Public API =====
+
+    private void OnEnable()
+    {
+        if (advanceAction == null || advanceAction.action == null)
+            return;
+
+        advanceAction.action.Enable();
+        advanceAction.action.performed += HandleAdvancePerformed;
+    }
+
+    private void OnDisable()
+    {
+        if (advanceAction == null || advanceAction.action == null)
+            return;
+
+        advanceAction.action.performed -= HandleAdvancePerformed;
+        advanceAction.action.Disable();
+    }
 
     private void SetVisible(bool visible)
     {
@@ -61,8 +81,7 @@ public sealed class DialogueRunner : MonoBehaviour
         SetVisible(true);
         OnDialogueStarted?.Invoke();
         
-        suppressAdvanceUntilMouseUp = true;
-        suppressAdvanceUntilSpaceBarUp = true;
+        suppressAdvanceUntilInputReleased = true;
 
         ShowLine(currentEncounter.lines[currentLineIndex]);
     }
@@ -78,8 +97,7 @@ public sealed class DialogueRunner : MonoBehaviour
         currentEncounter = null;
         currentLineIndex = 0;
         currentLineCompleted = false;
-        suppressAdvanceUntilMouseUp = false;
-        suppressAdvanceUntilSpaceBarUp = false;
+        suppressAdvanceUntilInputReleased = false;
         isTyping = false;
         IsRunning = false;
 
@@ -120,28 +138,15 @@ public sealed class DialogueRunner : MonoBehaviour
         if (PauseUtility.IsPaused)
             return;
 
-        // if (suppressAdvanceUntilMouseUp)
-        // {
-        //     if (!Input.GetMouseButton(0))
-        //         suppressAdvanceUntilMouseUp = false;
-
-        //     return;
-        // }
-
-        if (suppressAdvanceUntilMouseUp)
+        if (suppressAdvanceUntilInputReleased)
         {
-            if (!Input.GetMouseButton(0))
-                suppressAdvanceUntilMouseUp = false;
+            if (!IsAdvancePressed())
+                suppressAdvanceUntilInputReleased = false;
+
             return;
         }
-        if (suppressAdvanceUntilSpaceBarUp)
-        {
-            if(!Input.GetKeyDown(KeyCode.Space))
-                suppressAdvanceUntilSpaceBarUp = false;
-            return;
-        }
-        
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)){ // CHANGE LATER TO NEW INPUT SYSTEM !!!
+
+        if (!HasAdvanceAction() && IsFallbackAdvancePressedThisFrame())
             Advance();
         }
         // if (Input.GetMouseButtonDown(0)) // CHANGE LATER TO NEW INPUT SYSTEM !!!
@@ -149,7 +154,38 @@ public sealed class DialogueRunner : MonoBehaviour
 
     }
 
+    private void HandleAdvancePerformed(InputAction.CallbackContext context)
+    {
+        if (!IsRunning || PauseUtility.IsPaused || suppressAdvanceUntilInputReleased)
+            return;
 
+        Advance();
+    }
+
+    private bool IsAdvancePressed()
+    {
+        if (HasAdvanceAction())
+            return advanceAction.action.IsPressed();
+
+        return IsFallbackAdvancePressed();
+    }
+
+    private bool HasAdvanceAction()
+    {
+        return advanceAction != null && advanceAction.action != null;
+    }
+
+    private static bool IsFallbackAdvancePressed()
+    {
+        return (Mouse.current != null && Mouse.current.leftButton.isPressed) ||
+               (Keyboard.current != null && Keyboard.current.spaceKey.isPressed);
+    }
+
+    private static bool IsFallbackAdvancePressedThisFrame()
+    {
+        return (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) ||
+               (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame);
+    }
 
     public void Advance()
     {

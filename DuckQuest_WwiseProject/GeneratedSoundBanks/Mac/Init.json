@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{05489736-B41A-4302-0B84-820675F90A1D}",
+    "Hash": "{CE8EB9A4-D0D9-D3C4-49A8-3ABDFFE3DCCC}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -45,6 +45,14 @@
        "Name": "Hall_Large_Dark",
        "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Halls\\Hall_Large_Dark",
        "GUID": "{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "3701691487",
+       "Name": "Hall_Large_Bright",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Halls\\Hall_Large_Bright",
+       "GUID": "{CB602948-2D1D-4977-A8D5-378184293E80}",
        "LibName": "Wwise RoomVerb",
        "LibId": "7733251"
       }
@@ -121,6 +129,19 @@
      }
     ],
     "AuxBusses": [
+     {
+      "Id": "1396104734",
+      "Name": "SpaceVerb",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SpaceVerb",
+      "GUID": "{4767C42F-5FE0-498C-A1AA-1912FC96F8F8}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3701691487"
+        }
+       ]
+      }
+     },
      {
       "Id": "1690558513",
       "Name": "ForestVerb",
@@ -276,6 +297,6 @@
     ]
    }
   ],
-  "FileHash": "{75952FA1-0BE2-A028-B6AD-66022A1AFEEB}"
+  "FileHash": "{2E6F42A6-14E6-787A-A9E6-23DEFDB06B4E}"
  }
 }

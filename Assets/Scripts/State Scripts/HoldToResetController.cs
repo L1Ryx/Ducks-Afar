@@ -11,6 +11,7 @@ public sealed class HoldToResetController : MonoBehaviour
     [SerializeField] private InputActionReference resetAction;
     [SerializeField] private bool useKeyboardFallback = true;
     [SerializeField] private Key fallbackKey = Key.R;
+    [SerializeField] private bool sceneRestartAllowed = false;
 
     [Header("Timing")]
     [Min(0.1f)] [SerializeField] private float holdDuration = 1.5f;
@@ -38,6 +39,14 @@ public sealed class HoldToResetController : MonoBehaviour
     private bool hasTriggeredReset;
     private bool isFadingToBlack;
     private bool wasHoldingReset;
+
+    public void SetSceneRestartAllowed(bool allowed)
+    {
+        sceneRestartAllowed = allowed;
+
+        if (!sceneRestartAllowed && !isFadingToBlack)
+            ResetHoldProgress();
+    }
 
     private void Awake()
     {
@@ -121,8 +130,11 @@ public sealed class HoldToResetController : MonoBehaviour
                Keyboard.current[fallbackKey].isPressed;
     }
 
-    private static bool CanResetNow()
+    private bool CanResetNow()
     {
+        if (!sceneRestartAllowed)
+            return false;
+
         if (!Game.IsReady || Game.Ctx?.SceneLoader == null)
             return false;
 
@@ -136,6 +148,15 @@ public sealed class HoldToResetController : MonoBehaviour
             return false;
 
         return true;
+    }
+
+    private void ResetHoldProgress()
+    {
+        holdTimer = 0f;
+        wasHoldingReset = false;
+        ApplyFadeToBlackProgress(0f);
+        ApplyProgress(0f);
+        ApplyRestartProgressRtpc(0f);
     }
 
     private void RecoverTowardIdle()

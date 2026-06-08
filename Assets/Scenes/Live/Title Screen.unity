@@ -3178,6 +3178,10 @@ PrefabInstance:
       propertyPath: blockRaycastsDuringFade
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5578943904789781018, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
+      propertyPath: waitForSceneLoadCompleteBeforeFade
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7917469807201072902, guid: 8c89c457affde4e258f11d2f2942d1b4, type: 3}
       propertyPath: m_Color.a
       value: 0

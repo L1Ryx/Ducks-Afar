@@ -123,13 +123,27 @@ public sealed class PauseMenuView : MonoBehaviour
     {
         if (Game.IsReady && Game.Ctx?.SceneLoader != null)
         {
-            Game.Ctx.SceneLoader.LoadScene(
+            if (Game.Ctx.SceneLoader.LoadScene(
                 titleSceneName,
                 null,
-                () => Game.Ctx.Saves?.SaveToActiveSlot());
+                () => Game.Ctx.Saves?.SaveToActiveSlot()))
+            {
+                StopCurrentAudioForTitleReturn();
+            }
+
             return;
         }
 
+        StopCurrentAudioForTitleReturn();
         SceneManager.LoadScene(titleSceneName);
+    }
+
+    private static void StopCurrentAudioForTitleReturn()
+    {
+        if (!Game.IsReady || Game.Ctx?.Audio == null)
+            return;
+
+        Game.Ctx.Audio.StopGlobalMusic(immediate: false);
+        Game.Ctx.Audio.StopGlobalAmbience(immediate: false);
     }
 }

@@ -845,6 +845,7 @@ MonoBehaviour:
   nextIndicator: {fileID: 174330322490991169}
   canvasGroup: {fileID: 8125001449852397574}
   charactersPerSecond: 32
+  advanceAction: {fileID: 2324720497571294947, guid: 9ede4ae4185534c968d93efb0cc89a1a, type: 3}
   OnDialogueStarted:
     m_PersistentCalls:
       m_Calls:

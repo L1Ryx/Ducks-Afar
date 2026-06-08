@@ -3225,9 +3225,14 @@
 							<ChildrenList>
 								<Sound Name="Mic-Bump" ID="{A9D005DD-F2D6-4888-AE49-D41CE41F44FE}" ShortID="822909848">
 									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>1200</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-6</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3294,9 +3299,14 @@
 							<ChildrenList>
 								<Sound Name="Mic-Bump-B" ID="{2ECC71C9-2B13-4924-A53B-5AFD34941126}" ShortID="593534150">
 									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>1200</Value>
+											</ValueList>
+										</Property>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>-12</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3480,8 +3490,8 @@
 											<Modifier Name="" ID="{25E80A71-A729-4E5F-B2AD-995A888D73DC}">
 												<PropertyList>
 													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="250"/>
-													<Property Name="Min" Type="Real64" Value="-250"/>
+													<Property Name="Max" Type="Real64" Value="150"/>
+													<Property Name="Min" Type="Real64" Value="-150"/>
 												</PropertyList>
 											</Modifier>
 										</ModifierInfo>
@@ -3512,10 +3522,20 @@
 							<ChildrenList>
 								<Sound Name="UI-Click-Better" ID="{0514E3A0-85BB-4473-AEE6-FF5DFA0E9657}" ShortID="954708153">
 									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>30</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 										<Property Name="UserAuxSendVolume0" Type="Real64">
 											<ValueList>
-												<Value>-6</Value>
+												<Value>-18</Value>
 											</ValueList>
 										</Property>
 										<Property Name="Volume" Type="Real64">
@@ -3532,7 +3552,7 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
 										</Reference>
 										<Reference Name="UserAuxSend0">
-											<ObjectRef Name="ForestVerb" ID="{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+											<ObjectRef Name="SpaceVerb" ID="{4767C42F-5FE0-498C-A1AA-1912FC96F8F8}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
@@ -3546,6 +3566,49 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="UI-Click-Better" ID="{9F1F4B9B-B39C-45B1-A400-E54D21D8E087}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Overwrite Save" ID="{38113191-71AA-4CAC-8C28-53000571981E}" ShortID="313477915">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>45</Value>
+											</ValueList>
+										</Property>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-18</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="SpaceVerb" ID="{4767C42F-5FE0-498C-A1AA-1912FC96F8F8}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Overwrite Save" ID="{FE24C606-89F6-41CC-9927-BCC23B193776}">
+											<Language>SFX</Language>
+											<AudioFile>Overwrite Save.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="961957601"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Overwrite Save" ID="{FE24C606-89F6-41CC-9927-BCC23B193776}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
