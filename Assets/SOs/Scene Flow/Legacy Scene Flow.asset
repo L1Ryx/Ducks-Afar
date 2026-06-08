@@ -18,45 +18,45 @@ MonoBehaviour:
   transitions:
   - fromSceneName: Studio Splash
     toSceneName: Title Screen
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 1
   - fromSceneName: Title Screen
     toSceneName: animation0
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: animation0
     toSceneName: Stage Home
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage Home
     toSceneName: Stage
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage
     toSceneName: Stage Dusk
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage Dusk
     toSceneName: Stage Night
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage Night
     toSceneName: Stage Rest
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage Rest
     toSceneName: Stage Weird
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage Weird
     toSceneName: animation
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0
   - fromSceneName: animation
     toSceneName: Demo Reset
-    loadingMessage:
-    loadPresentation: 0
+    loadingMessage: 
+    loadPresentation: 2
   - fromSceneName: Demo Reset
     toSceneName: Title Screen
-    loadingMessage:
+    loadingMessage: 
     loadPresentation: 0

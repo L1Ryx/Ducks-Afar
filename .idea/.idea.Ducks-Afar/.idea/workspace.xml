@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="" />
+    <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerInputActions.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Dialogue Panel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Dialogue Panel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Dev Scene Flow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Dev Scene Flow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Legacy Scene Flow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SOs/Scene Flow/Legacy Scene Flow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Title Screen.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Title Screen.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue Scripts/DialogueRunner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue Scripts/DialogueRunner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Pause Scripts/PauseMenuView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Pause Scripts/PauseMenuView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/State Scripts/FadeInOnLevelStart.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/State Scripts/FadeInOnLevelStart.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

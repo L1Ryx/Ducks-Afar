@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584208180711004235
+    m_lastTime: -8584207253603298632
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -143,6 +143,23 @@ MonoBehaviour:
         ObjectType: 2
         guid: a1ec96729fcefd46bc1bafe26e131159
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/SFX Bus
+    - name: SpaceVerb
+      guid: 2fc46747e05f8c49a1aa1912fc96f8f8
+      id: 1396104734
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3b285fafa3b13043963f7baa8242bcfd
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SpaceVerb
+        ObjectType: 1
+        guid: 2fc46747e05f8c49a1aa1912fc96f8f8
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/SpaceVerb
     - name: UI Bus
       guid: d14a7cbe982f9c479b2d3ff905db3669
       id: 3600729941

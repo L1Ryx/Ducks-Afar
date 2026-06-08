@@ -18,6 +18,7 @@ public class FadeInOnLevelStart : MonoBehaviour
     [Header("Behavior")]
     [SerializeField] private bool disableAfterFade = true;
     [SerializeField] private bool blockRaycastsDuringFade = true;
+    [SerializeField] private bool waitForSceneLoadCompleteBeforeFade = false;
 
     [Header("Events")]
     [SerializeField] private UnityEvent onFadeInStarted;
@@ -49,10 +50,18 @@ public class FadeInOnLevelStart : MonoBehaviour
         if (fadeRoutine != null)
             StopCoroutine(fadeRoutine);
 
+        fadeRoutine = StartCoroutine(PlayFadeFromBlackRoutine());
+    }
+
+    private IEnumerator PlayFadeFromBlackRoutine()
+    {
+        if (waitForSceneLoadCompleteBeforeFade && Game.IsReady && Game.Ctx?.SceneLoader != null)
+            yield return Game.Ctx.SceneLoader.WaitUntilLoadComplete();
+
         overlayImage.raycastTarget = blockRaycastsDuringFade;
         FadeFromBlackStarted?.Invoke(this);
         onFadeInStarted?.Invoke();
-        fadeRoutine = StartCoroutine(FadeOutRoutine());
+        yield return FadeOutRoutine();
     }
 
     private IEnumerator FadeOutRoutine()
