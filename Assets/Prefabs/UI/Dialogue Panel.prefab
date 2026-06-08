@@ -165,8 +165,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: CODA
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
-  m_sharedMaterial: {fileID: 8365030405494945382, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
+  m_sharedMaterial: {fileID: -5884635307735769431, guid: 58bf3053a85b34a73bacdf4e3b170836, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -190,8 +190,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -201,6 +201,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -532,8 +533,8 @@ MonoBehaviour:
   m_text: There's no time to waste. I can't just stand by and watch all our work
     go to waste! Also, by the way, the quick brown fox jumps over the lazy dog.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
-  m_sharedMaterial: {fileID: 8365030405494945382, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 927bcb58bab1b4b3cab2648a5b46e0d8, type: 2}
+  m_sharedMaterial: {fileID: 4304401435190037296, guid: 927bcb58bab1b4b3cab2648a5b46e0d8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -557,8 +558,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -568,8 +569,9 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 50
+  m_lineSpacing: 2
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

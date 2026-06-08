@@ -7,6 +7,13 @@ public class DuckIntroAnimations : MonoBehaviour
     [SerializeField] Transform BubblesAnim;
     [SerializeField] Transform CodaAnim;
     [SerializeField] Transform AsterAnim;
+    [SerializeField] CanvasGroup root;
+    private Sequence tofuSequence = DOTween.Sequence();
+    private Sequence bubbleSequence2 = DOTween.Sequence();
+    private Sequence asterSequence2 = DOTween.Sequence();
+    private Sequence codaSequence = DOTween.Sequence();
+    private Sequence bubbleSequence1 = DOTween.Sequence();
+    private Sequence asterSequence1 = DOTween.Sequence();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,9 +23,6 @@ public class DuckIntroAnimations : MonoBehaviour
         
         CodaAnim.DORotate(new Vector3(0, 0, 20), 5, RotateMode.WorldAxisAdd).
             SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
-
-        Sequence bubbleSequence1 = DOTween.Sequence();
-        Sequence asterSequence1 = DOTween.Sequence();
     
         asterSequence1.Append(AsterAnim.DORotate(new Vector3(0, 0, 360), 30f, 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
@@ -44,10 +48,6 @@ public class DuckIntroAnimations : MonoBehaviour
     // Update is called once per frame
     public void secondAnimation()
     {
-        Sequence tofuSequence = DOTween.Sequence();
-        Sequence bubbleSequence2 = DOTween.Sequence();
-        Sequence asterSequence2 = DOTween.Sequence();
-        Sequence codaSequence = DOTween.Sequence();
 
         tofuSequence.Append(TofuAnim.DOMove(new Vector3(-737, -409, 0), 1).SetRelative()
             .SetEase(Ease.InOutSine));
@@ -69,11 +69,21 @@ public class DuckIntroAnimations : MonoBehaviour
         codaSequence.Join(CodaAnim.DORotate(new Vector3(0, 0, 360), 0.5f , 
             RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear));
 
-        Destroy(BubblesAnim);
-        Destroy(TofuAnim);
-        Destroy(AsterAnim);
-        Destroy(CodaAnim);
+        Invoke(nameof(killAnims), 1.0f);
 
+
+    }
+
+    public void killAnims()
+    {
+        // asterSequence2.Kill();
+        // tofuSequence.Kill();
+        // bubbleSequence2.Kill();
+        // codaSequence.Kill();
+        // bubbleSequence1.Kill();
+        // asterSequence1.Kill();
+
+        root.alpha = 0;
 
     }
 }

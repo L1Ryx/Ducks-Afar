@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Progress remembered.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
-  m_sharedMaterial: {fileID: 8365030405494945382, guid: 5736ff7d8a65e434c9dba0dafb00a037, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 927bcb58bab1b4b3cab2648a5b46e0d8, type: 2}
+  m_sharedMaterial: {fileID: 4304401435190037296, guid: 927bcb58bab1b4b3cab2648a5b46e0d8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98,11 +98,12 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -228,7 +229,9 @@ MonoBehaviour:
   fadeOutRate: 1.5
   fadeOutAtEnd: 1
   useUnscaledTime: 1
+  waitForSceneLoadComplete: 1
   disableOnFinish: 0
+  canOnlyBeStartedOnce: 1
   perCharTimeJitter: 0.769
   minCharTimeMultiplier: 0.1
   maxCharTimeMultiplier: 1.5

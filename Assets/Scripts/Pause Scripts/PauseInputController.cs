@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public sealed class PauseInputController : MonoBehaviour
@@ -45,7 +46,7 @@ public sealed class PauseInputController : MonoBehaviour
 
         if (!Game.IsReady || Game.Ctx?.Pause == null)
             return;
-
+        
         Game.Ctx.Pause.Toggle();
     }
 }

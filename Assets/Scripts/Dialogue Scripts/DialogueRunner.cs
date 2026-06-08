@@ -29,9 +29,8 @@ public sealed class DialogueRunner : MonoBehaviour
 
     private bool currentLineCompleted;
     private bool suppressAdvanceUntilMouseUp;
+    private bool suppressAdvanceUntilSpaceBarUp;
 
-    
-    
 
     private DialogueEncounter currentEncounter;
     private int currentLineIndex;
@@ -63,6 +62,7 @@ public sealed class DialogueRunner : MonoBehaviour
         OnDialogueStarted?.Invoke();
         
         suppressAdvanceUntilMouseUp = true;
+        suppressAdvanceUntilSpaceBarUp = true;
 
         ShowLine(currentEncounter.lines[currentLineIndex]);
     }
@@ -79,6 +79,7 @@ public sealed class DialogueRunner : MonoBehaviour
         currentLineIndex = 0;
         currentLineCompleted = false;
         suppressAdvanceUntilMouseUp = false;
+        suppressAdvanceUntilSpaceBarUp = false;
         isTyping = false;
         IsRunning = false;
 
@@ -119,16 +120,33 @@ public sealed class DialogueRunner : MonoBehaviour
         if (PauseUtility.IsPaused)
             return;
 
+        // if (suppressAdvanceUntilMouseUp)
+        // {
+        //     if (!Input.GetMouseButton(0))
+        //         suppressAdvanceUntilMouseUp = false;
+
+        //     return;
+        // }
+
         if (suppressAdvanceUntilMouseUp)
         {
             if (!Input.GetMouseButton(0))
                 suppressAdvanceUntilMouseUp = false;
-
+            return;
+        }
+        if (suppressAdvanceUntilSpaceBarUp)
+        {
+            if(!Input.GetKeyDown(KeyCode.Space))
+                suppressAdvanceUntilSpaceBarUp = false;
             return;
         }
         
-        if (Input.GetMouseButtonDown(0)) // CHANGE LATER TO NEW INPUT SYSTEM !!!
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)){ // CHANGE LATER TO NEW INPUT SYSTEM !!!
             Advance();
+        }
+        // if (Input.GetMouseButtonDown(0)) // CHANGE LATER TO NEW INPUT SYSTEM !!!
+        //     Advance();
+
     }
 
 
