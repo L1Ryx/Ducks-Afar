@@ -10,6 +10,7 @@ public class CutsceneScript : MonoBehaviour
 
     [Header("Playback")]
     [SerializeField] private bool useUnscaledVideoTime = true;
+    [SerializeField] private bool disableVideoAudio = true;
 
     [Header("End Hold")]
     [SerializeField, Min(0f)] private float endBlackHoldSeconds = 0f;
@@ -82,10 +83,14 @@ public class CutsceneScript : MonoBehaviour
 
     private void ApplyPlaybackSettings()
     {
-        if (!useUnscaledVideoTime)
-            return;
+        if (useUnscaledVideoTime)
+            videoPlayer.timeUpdateMode = VideoTimeUpdateMode.UnscaledGameTime;
 
-        videoPlayer.timeUpdateMode = VideoTimeUpdateMode.UnscaledGameTime;
+        if (disableVideoAudio)
+        {
+            videoPlayer.audioOutputMode = VideoAudioOutputMode.None;
+            videoPlayer.controlledAudioTrackCount = 0;
+        }
     }
 
     private static void SeekToStart(VideoPlayer source)
