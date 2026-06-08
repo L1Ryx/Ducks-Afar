@@ -284,7 +284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6614425783692172231, guid: e66de4459a9e24634b85b0d7a96d4a3f, type: 3}
       propertyPath: m_text
-      value: < click here to begin >
+      value: "\u2013 click here to begin \u2013"
       objectReference: {fileID: 0}
     - target: {fileID: 6614425783692172231, guid: e66de4459a9e24634b85b0d7a96d4a3f, type: 3}
       propertyPath: m_fontSize
@@ -1885,7 +1885,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -17.409424, y: 21.22107}
+  m_AnchoredPosition: {x: -17.409668, y: 21.220947}
   m_SizeDelta: {x: 219.82898, y: 33.218994}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &287524077
@@ -3233,7 +3233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -20.582825, y: 12.86377}
+  m_AnchoredPosition: {x: -20.58252, y: 12.86377}
   m_SizeDelta: {x: 407.5259, y: 254.7036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1008022224
