@@ -148,6 +148,10 @@ public sealed class DialogueRunner : MonoBehaviour
 
         if (!HasAdvanceAction() && IsFallbackAdvancePressedThisFrame())
             Advance();
+        }
+        // if (Input.GetMouseButtonDown(0)) // CHANGE LATER TO NEW INPUT SYSTEM !!!
+        //     Advance();
+
     }
 
     private void HandleAdvancePerformed(InputAction.CallbackContext context)
