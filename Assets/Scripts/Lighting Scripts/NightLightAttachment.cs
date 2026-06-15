@@ -21,6 +21,9 @@ public class NightLightAttachment : MonoBehaviour
     [Tooltip("If true, the light prefab is instantiated. Default false.")]
     [SerializeField] private bool night = false;
 
+    [Tooltip("Optional. If assigned, the light only exists while this object is active in the hierarchy.")]
+    [SerializeField] private GameObject requiredActiveObject;
+
     [Header("Overrides")]
     [SerializeField] private bool overrideOuterRadius = false;
     [Min(0f)]
@@ -72,9 +75,11 @@ public class NightLightAttachment : MonoBehaviour
     private float _baseOuterRadius;
     private float _baseIntensity;
     private Color _baseColor;
+    private bool _lastVisibilityAllowed;
 
     private void OnEnable()
     {
+        _lastVisibilityAllowed = IsVisibilityAllowed();
         ApplyNightState();
     }
 
@@ -103,6 +108,13 @@ public class NightLightAttachment : MonoBehaviour
 
     private void LateUpdate()
     {
+        bool visibilityAllowed = IsVisibilityAllowed();
+        if (visibilityAllowed != _lastVisibilityAllowed)
+        {
+            _lastVisibilityAllowed = visibilityAllowed;
+            ApplyNightState();
+        }
+
         // Optional: keep rotation matched at runtime if desired.
         if (_instance != null && followRotation)
         {
@@ -112,7 +124,7 @@ public class NightLightAttachment : MonoBehaviour
 
     private void ApplyNightState()
     {
-        if (!night)
+        if (!night || !IsVisibilityAllowed())
         {
             StopFlicker();
             DestroyInstance();
@@ -292,6 +304,11 @@ public class NightLightAttachment : MonoBehaviour
             _flickerTween.Kill();
         }
         _flickerTween = null;
+    }
+
+    private bool IsVisibilityAllowed()
+    {
+        return requiredActiveObject == null || requiredActiveObject.activeInHierarchy;
     }
 
     // Public API (optional, useful if you have a global day/night manager)

@@ -1,0 +1,197 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Atlas_HomeTiles
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 0
+      compressionQuality: 0
+      maxTextureSize: 0
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 4
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    - serializedVersion: 4
+      m_BuildTarget: Standalone
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: 4
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 1
+      m_IgnorePlatformSupport: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 4
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -259588732
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 54540902
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -2130286134
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 495305864
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 4474609382690156350
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 4334406747931028323
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -2385775000964321786
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 3007227074936171519
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 262209782
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -429345660
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1397771860
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1946307247
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -443493468
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 251887700
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1005698996
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -70581057
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 726334924
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1571353761
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 193876630
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1652255317
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -529288912
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -1474903497
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -1892789735
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -589437053
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 2123672979
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 358887126
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1043823594
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -1889147679
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -199859514
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -1352940504
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1720971862
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 463124240
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 946457616
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 216605543
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -1941026173
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1532183297
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 984194563
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 88372861
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -160512896
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -1058042528
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: -355244045
+    - e50a8fa23b9de4aa6a0ececf3a5da7c1: 1716027052
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -259588732, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 54540902, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -2130286134, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 495305864, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 4474609382690156350, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 4334406747931028323, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -2385775000964321786, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 3007227074936171519, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 262209782, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -429345660, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1397771860, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1946307247, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -443493468, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 251887700, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1005698996, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -70581057, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 726334924, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1571353761, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 193876630, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1652255317, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -529288912, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -1474903497, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -1892789735, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -589437053, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 2123672979, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 358887126, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1043823594, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -1889147679, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -199859514, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -1352940504, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1720971862, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 463124240, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 946457616, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 216605543, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -1941026173, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1532183297, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 984194563, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 88372861, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -160512896, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -1058042528, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: -355244045, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  - {fileID: 1716027052, guid: e50a8fa23b9de4aa6a0ececf3a5da7c1, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - home_tileset_6
+  - home_tileset_7
+  - home_tileset_4
+  - home_tileset_5
+  - home_tileset_2
+  - home_tileset_3
+  - home_tileset_0
+  - home_tileset_1
+  - home_tileset_8
+  - home_tileset_9
+  - home_tileset_40
+  - home_tileset_41
+  - home_tileset_28
+  - home_tileset_29
+  - home_tileset_24
+  - home_tileset_25
+  - home_tileset_39
+  - home_tileset_26
+  - home_tileset_38
+  - home_tileset_27
+  - home_tileset_37
+  - home_tileset_20
+  - home_tileset_36
+  - home_tileset_21
+  - home_tileset_35
+  - home_tileset_22
+  - home_tileset_34
+  - home_tileset_23
+  - home_tileset_33
+  - home_tileset_32
+  - home_tileset_31
+  - home_tileset_30
+  - home_tileset_15
+  - home_tileset_14
+  - home_tileset_17
+  - home_tileset_16
+  - home_tileset_11
+  - home_tileset_10
+  - home_tileset_13
+  - home_tileset_12
+  - home_tileset_19
+  - home_tileset_18
+  m_RenderDataMap: {}
+  m_Tag: Atlas_HomeTiles
+  m_IsVariant: 0
