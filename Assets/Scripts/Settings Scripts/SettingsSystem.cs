@@ -139,9 +139,7 @@ public sealed class SettingsSystem
 
     private void ApplyVisual()
     {
-        Screen.fullScreenMode = Data.fullscreen
-            ? FullScreenMode.FullScreenWindow
-            : FullScreenMode.Windowed;
+        DesktopFullscreen.Apply(Data.fullscreen);
     }
 
     private void EnsureSettingsDirectoryExists()

@@ -116,14 +116,7 @@ public class DebugDummy : MonoBehaviour
     
     public void SetFullscreen(bool fullscreen)
     {
-        if (fullscreen)
-        {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        }
-        else
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-        }
+        DesktopFullscreen.Apply(fullscreen);
     }
 
     public void DoSceneResets()
