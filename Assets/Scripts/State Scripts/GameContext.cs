@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -146,5 +147,36 @@ public class GameContext : MonoBehaviour
             return;
 
         SaveState.CurrentSceneName = scene.name;
+
+        if (SaveState.HasSavedPlayerPosition && SaveState.SavedPlayerPositionSceneName == scene.name)
+            StartCoroutine(RestoreSavedPlayerPositionWhenReady(scene.name));
+    }
+
+    private IEnumerator RestoreSavedPlayerPositionWhenReady(string sceneName)
+    {
+        const int maxWaitFrames = 60;
+
+        for (int i = 0; i < maxWaitFrames; i++)
+        {
+            if (SaveState == null
+                || !SaveState.HasSavedPlayerPosition
+                || SaveState.SavedPlayerPositionSceneName != sceneName)
+            {
+                yield break;
+            }
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                player.transform.position = SaveState.SavedPlayerPosition;
+
+                if (player.TryGetComponent<Rigidbody2D>(out var body))
+                    body.linearVelocity = Vector2.zero;
+
+                yield break;
+            }
+
+            yield return null;
+        }
     }
 }

@@ -223,15 +223,15 @@ MonoBehaviour:
         m_Calls: []
     delayAfterLineOverride: -1
   delayAfterLine: 3
-  delayBeforeFirstLine: 4
+  delayBeforeFirstLine: 0
   typeSpeedCps: 12
   delayAfterLastLine: 2
   fadeOutRate: 1.5
   fadeOutAtEnd: 1
   useUnscaledTime: 1
-  waitForSceneLoadComplete: 1
+  waitForSceneLoadComplete: 0
   disableOnFinish: 0
-  canOnlyBeStartedOnce: 1
+  canOnlyBeStartedOnce: 0
   perCharTimeJitter: 0.769
   minCharTimeMultiplier: 0.1
   maxCharTimeMultiplier: 1.5
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed5502413eb864e1a8d4dda9a64eb957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: d00f903ba999e4c0eacbda39b3731e7e, type: 2}
+  Event: {fileID: 11400000, guid: ce5a017ea9bb4af6a0a4b8f9a011a14a, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

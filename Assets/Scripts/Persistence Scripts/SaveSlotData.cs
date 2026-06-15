@@ -11,10 +11,16 @@ public sealed class SaveSlotData
     public string sceneName;
     public string location;
     public string companionId;
+    public bool hasPlayerPosition;
+    public string playerPositionSceneName;
+    public float playerPositionX;
+    public float playerPositionY;
+    public float playerPositionZ;
 
     public List<string> unlockedLevelIds = new();
     public List<string> completedLevelIds = new();
     public List<string> discoveredArtifactIds = new();
+    public List<string> worldStateIds = new();
 
     public string lastSavedUtc;
 
@@ -28,9 +34,15 @@ public sealed class SaveSlotData
             sceneName = string.Empty,
             location = string.Empty,
             companionId = "NONE",
+            hasPlayerPosition = false,
+            playerPositionSceneName = string.Empty,
+            playerPositionX = 0f,
+            playerPositionY = 0f,
+            playerPositionZ = 0f,
             unlockedLevelIds = new List<string>(),
             completedLevelIds = new List<string>(),
             discoveredArtifactIds = new List<string>(),
+            worldStateIds = new List<string>(),
             lastSavedUtc = string.Empty
         };
     }

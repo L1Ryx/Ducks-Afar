@@ -6,11 +6,15 @@ public sealed class SaveStateModel
     private readonly HashSet<string> unlockedLevelIds = new();
     private readonly HashSet<string> completedLevelIds = new();
     private readonly HashSet<string> discoveredArtifactIds = new();
+    private readonly HashSet<string> worldStateIds = new();
 
     public float TimePlayedSeconds { get; private set; }
     public string CurrentSceneName { get; set; }
     public string CurrentLocation { get; set; }
     public string CurrentCompanionId { get; set; }
+    public bool HasSavedPlayerPosition { get; private set; }
+    public string SavedPlayerPositionSceneName { get; private set; }
+    public Vector3 SavedPlayerPosition { get; private set; }
 
     public bool HasActiveSlot { get; private set; }
     public int ActiveSlotIndex { get; private set; }
@@ -21,6 +25,9 @@ public sealed class SaveStateModel
         CurrentSceneName = string.Empty;
         CurrentLocation = string.Empty;
         CurrentCompanionId = SaveSystem.NoneCompanionId;
+        HasSavedPlayerPosition = false;
+        SavedPlayerPositionSceneName = string.Empty;
+        SavedPlayerPosition = Vector3.zero;
         HasActiveSlot = false;
         ActiveSlotIndex = -1;
     }
@@ -28,6 +35,7 @@ public sealed class SaveStateModel
     public IReadOnlyCollection<string> UnlockedLevelIds => unlockedLevelIds;
     public IReadOnlyCollection<string> CompletedLevelIds => completedLevelIds;
     public IReadOnlyCollection<string> DiscoveredArtifactIds => discoveredArtifactIds;
+    public IReadOnlyCollection<string> WorldStateIds => worldStateIds;
 
     public void AddPlayTime(float deltaTime)
     {
@@ -62,9 +70,11 @@ public sealed class SaveStateModel
         CurrentSceneName = startSceneName ?? string.Empty;
         CurrentLocation = startLocation ?? string.Empty;
         CurrentCompanionId = SaveSystem.NoneCompanionId;
+        ClearSavedPlayerPosition();
         unlockedLevelIds.Clear();
         completedLevelIds.Clear();
         discoveredArtifactIds.Clear();
+        worldStateIds.Clear();
     }
 
     public bool IsLevelUnlocked(string levelId)
@@ -80,6 +90,25 @@ public sealed class SaveStateModel
     public bool IsArtifactDiscovered(string artifactId)
     {
         return ContainsId(discoveredArtifactIds, artifactId);
+    }
+
+    public bool HasWorldState(string worldStateId)
+    {
+        return ContainsId(worldStateIds, worldStateId);
+    }
+
+    public void SetSavedPlayerPosition(string sceneName, Vector3 position)
+    {
+        HasSavedPlayerPosition = true;
+        SavedPlayerPositionSceneName = string.IsNullOrWhiteSpace(sceneName) ? string.Empty : sceneName.Trim();
+        SavedPlayerPosition = position;
+    }
+
+    public void ClearSavedPlayerPosition()
+    {
+        HasSavedPlayerPosition = false;
+        SavedPlayerPositionSceneName = string.Empty;
+        SavedPlayerPosition = Vector3.zero;
     }
 
     public bool UnlockLevel(string levelId)
@@ -116,6 +145,16 @@ public sealed class SaveStateModel
         return RemoveId(discoveredArtifactIds, artifactId);
     }
 
+    public bool SetWorldState(string worldStateId)
+    {
+        return AddId(worldStateIds, worldStateId);
+    }
+
+    public bool ClearWorldState(string worldStateId)
+    {
+        return RemoveId(worldStateIds, worldStateId);
+    }
+
     public void SetUnlockedLevels(IEnumerable<string> levelIds)
     {
         ReplaceSet(unlockedLevelIds, levelIds);
@@ -136,6 +175,11 @@ public sealed class SaveStateModel
         ReplaceSet(discoveredArtifactIds, artifactIds);
     }
 
+    public void SetWorldStates(IEnumerable<string> worldStateIds)
+    {
+        ReplaceSet(this.worldStateIds, worldStateIds);
+    }
+
     public void ClearUnlockedLevels()
     {
         unlockedLevelIds.Clear();
@@ -149,6 +193,11 @@ public sealed class SaveStateModel
     public void ClearDiscoveredArtifacts()
     {
         discoveredArtifactIds.Clear();
+    }
+
+    public void ClearWorldStates()
+    {
+        worldStateIds.Clear();
     }
 
     private static bool ContainsId(HashSet<string> ids, string id)

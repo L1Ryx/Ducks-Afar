@@ -35,6 +35,7 @@ public class SaveDebugCommands : MonoBehaviour
         
         DebugLogConsole.AddCommand("/save_active", "Prints the currently active save slot", SaveActive);
         DebugLogConsole.AddCommand("/save_write_active", "Save to the active slot", SaveWriteActive);
+        DebugLogConsole.AddCommand("/save_current", "Save current scene, player position, and runtime save state to the active slot", SaveCurrent);
         DebugLogConsole.AddCommand<int>("/save_bind", "Bind current session to slot index", SaveBind);
 
         DebugLogConsole.AddCommand<string>("/save_unlock_level", "Add a level id to unlocked levels", SaveUnlockLevel);
@@ -43,10 +44,13 @@ public class SaveDebugCommands : MonoBehaviour
         DebugLogConsole.AddCommand<string>("/save_uncomplete_level", "Remove a level id from completed levels", SaveUncompleteLevel);
         DebugLogConsole.AddCommand<string>("/save_discover_artifact", "Add an artifact id to discovered artifacts", SaveDiscoverArtifact);
         DebugLogConsole.AddCommand<string>("/save_forget_artifact", "Remove an artifact id from discovered artifacts", SaveForgetArtifact);
+        DebugLogConsole.AddCommand<string>("/save_set_world", "Add a world-state id", SaveSetWorldState);
+        DebugLogConsole.AddCommand<string>("/save_clear_world", "Remove a world-state id", SaveClearWorldState);
 
         DebugLogConsole.AddCommand<string>("/save_set_unlocked", "Replace unlocked level ids. Separate ids with comma, semicolon, or pipe", SaveSetUnlocked);
         DebugLogConsole.AddCommand<string>("/save_set_completed", "Replace completed level ids. Separate ids with comma, semicolon, or pipe", SaveSetCompleted);
         DebugLogConsole.AddCommand<string>("/save_set_artifacts", "Replace discovered artifact ids. Separate ids with comma, semicolon, or pipe", SaveSetArtifacts);
+        DebugLogConsole.AddCommand<string>("/save_set_world_list", "Replace world-state ids. Separate ids with comma, semicolon, or pipe", SaveSetWorldStates);
         DebugLogConsole.AddCommand("/save_clear_progress_lists", "Clear unlocked, completed, and artifact progress lists", SaveClearProgressLists);
     }
     
@@ -66,6 +70,11 @@ public class SaveDebugCommands : MonoBehaviour
     private static void SaveWriteActive()
     {
         Game.Ctx.Saves.SaveToActiveSlot();
+    }
+
+    private static void SaveCurrent()
+    {
+        Game.Ctx.Saves.SaveCurrentGameToActiveSlot();
     }
     
     private static void SaveBind(int slotIndex)
@@ -105,6 +114,9 @@ public class SaveDebugCommands : MonoBehaviour
                 $"time={s.timePlayedSeconds:F1}s | " +
                 $"scene={s.sceneName} | " +
                 $"loc={s.location} | " +
+                $"hasPos={s.hasPlayerPosition} | " +
+                $"posScene={s.playerPositionSceneName} | " +
+                $"pos=({s.playerPositionX:F2}, {s.playerPositionY:F2}, {s.playerPositionZ:F2}) | " +
                 $"comp={s.companionId} | " +
                 $"saved={s.lastSavedUtc}");
         }
@@ -119,10 +131,14 @@ public class SaveDebugCommands : MonoBehaviour
             $"time={s.TimePlayedSeconds:F1}s | " +
             $"scene={s.CurrentSceneName} | " +
             $"loc={s.CurrentLocation} | " +
+            $"hasPos={s.HasSavedPlayerPosition} | " +
+            $"posScene={s.SavedPlayerPositionSceneName} | " +
+            $"pos={s.SavedPlayerPosition} | " +
             $"comp={s.CurrentCompanionId} | " +
             $"unlocked=[{FormatIds(s.UnlockedLevelIds)}] | " +
             $"completed=[{FormatIds(s.CompletedLevelIds)}] | " +
-            $"artifacts=[{FormatIds(s.DiscoveredArtifactIds)}]");
+            $"artifacts=[{FormatIds(s.DiscoveredArtifactIds)}] | " +
+            $"world=[{FormatIds(s.WorldStateIds)}]");
     }
     
     private static void SaveWrite(int slotIndex)
@@ -196,6 +212,7 @@ public class SaveDebugCommands : MonoBehaviour
         ctx.SaveState.SetUnlockedLevels(new[] { "debug_planet_intro", $"debug_level_{slot}" });
         ctx.SaveState.SetCompletedLevels(new[] { "debug_planet_intro" });
         ctx.SaveState.SetDiscoveredArtifacts(new[] { $"debug_artifact_{slot}_a" });
+        ctx.SaveState.SetWorldStates(new[] { $"debug_world_flag_{slot}_a" });
 
         ctx.Saves.SaveToSlot(slot);
 
@@ -245,6 +262,18 @@ public class SaveDebugCommands : MonoBehaviour
         Debug.Log($"{(changed ? "Forgot" : "Was not discovered or invalid")}: {artifactId}");
     }
 
+    private static void SaveSetWorldState(string worldStateId)
+    {
+        bool changed = Game.Ctx.SaveState.SetWorldState(worldStateId);
+        Debug.Log($"{(changed ? "Set world state" : "Already set or invalid")}: {worldStateId}");
+    }
+
+    private static void SaveClearWorldState(string worldStateId)
+    {
+        bool changed = Game.Ctx.SaveState.ClearWorldState(worldStateId);
+        Debug.Log($"{(changed ? "Cleared world state" : "Was not set or invalid")}: {worldStateId}");
+    }
+
     private static void SaveSetUnlocked(string rawIds)
     {
         Game.Ctx.SaveState.SetUnlockedLevels(ParseIds(rawIds));
@@ -263,12 +292,19 @@ public class SaveDebugCommands : MonoBehaviour
         Debug.Log($"Discovered artifacts -> [{FormatIds(Game.Ctx.SaveState.DiscoveredArtifactIds)}]");
     }
 
+    private static void SaveSetWorldStates(string rawIds)
+    {
+        Game.Ctx.SaveState.SetWorldStates(ParseIds(rawIds));
+        Debug.Log($"World states -> [{FormatIds(Game.Ctx.SaveState.WorldStateIds)}]");
+    }
+
     private static void SaveClearProgressLists()
     {
         Game.Ctx.SaveState.ClearUnlockedLevels();
         Game.Ctx.SaveState.ClearCompletedLevels();
         Game.Ctx.SaveState.ClearDiscoveredArtifacts();
-        Debug.Log("Cleared unlocked levels, completed levels, and discovered artifacts.");
+        Game.Ctx.SaveState.ClearWorldStates();
+        Debug.Log("Cleared unlocked levels, completed levels, discovered artifacts, and world states.");
     }
 
     private static IEnumerable<string> ParseIds(string rawIds)

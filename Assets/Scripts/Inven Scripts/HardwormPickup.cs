@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HardwormPickup : MonoBehaviour, IInteractable
 {
@@ -14,9 +15,11 @@ public class HardwormPickup : MonoBehaviour, IInteractable
     [SerializeField] private GameEvent onPickedUp; // optional: hook to your SO event system
 
     [SerializeField] private GameEvent onPickedUpGenericItem;
+    [SerializeField] private UnityEvent onSuccess;
     
     public HardwormPackDefinition PackDef => packDef;
     public int PacksGranted => packsGranted;
+    public UnityEvent OnSuccessEvent => onSuccess;
 
     public void Interact(GameObject interactor)
     {
@@ -45,6 +48,7 @@ public class HardwormPickup : MonoBehaviour, IInteractable
         Game.Ctx.HardwormPickupSfx?.PlayPickup(packDef);
         if (onPickedUp != null) onPickedUp.Raise();
         if (onPickedUpGenericItem != null) onPickedUpGenericItem.Raise();
+        onSuccess?.Invoke();
 
         Destroy(gameObject);
     }

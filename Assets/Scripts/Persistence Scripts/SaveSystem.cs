@@ -24,15 +24,27 @@ public sealed class SaveSystem
         return slotIndex >= 0 && slotIndex < SlotCount;
     }
     
-    public void SaveToActiveSlot()
+    public bool SaveToActiveSlot(bool captureSceneCheckpoint = true)
     {
         if (!ctx.SaveState.HasActiveSlot)
         {
             Debug.LogWarning("SaveToActiveSlot failed: no active slot is currently bound.");
-            return;
+            return false;
         }
 
-        SaveToSlot(ctx.SaveState.ActiveSlotIndex);
+        return SaveToSlot(ctx.SaveState.ActiveSlotIndex, captureSceneCheckpoint);
+    }
+
+    public bool SaveCurrentGameToActiveSlot()
+    {
+        if (!ctx.SaveState.HasActiveSlot)
+        {
+            Debug.LogWarning("SaveCurrentGameToActiveSlot failed: no active slot is currently bound.");
+            return false;
+        }
+
+        CaptureCurrentSceneAndPlayerPosition();
+        return SaveToSlot(ctx.SaveState.ActiveSlotIndex, captureSceneCheckpoint: false);
     }
 
     public string GetSlotPath(int slotIndex)
@@ -82,15 +94,17 @@ public sealed class SaveSystem
         }
     }
 
-    public void SaveToSlot(int slotIndex)
+    public bool SaveToSlot(int slotIndex, bool captureSceneCheckpoint = true)
     {
         if (!IsValidSlotIndex(slotIndex))
         {
             Debug.LogError($"SaveToSlot failed: invalid slot index {slotIndex}");
-            return;
+            return false;
         }
 
-        CaptureCurrentSceneCheckpoint();
+        if (captureSceneCheckpoint)
+            CaptureCurrentSceneCheckpoint();
+
         SaveSlotData data = BuildDataFromRuntimeState(slotIndex);
         string path = GetSlotPath(slotIndex);
 
@@ -104,14 +118,19 @@ public sealed class SaveSystem
                 $"time={data.timePlayedSeconds:F1}s | " +
                 $"scene={data.sceneName} | " +
                 $"location={data.location} | " +
+                $"hasPos={data.hasPlayerPosition} | " +
                 $"companion={data.companionId} | " +
                 $"unlocked={data.unlockedLevelIds.Count} | " +
                 $"completed={data.completedLevelIds.Count} | " +
-                $"artifacts={data.discoveredArtifactIds.Count}");
+                $"artifacts={data.discoveredArtifactIds.Count} | " +
+                $"world={data.worldStateIds.Count}");
+
+            return true;
         }
         catch (Exception ex)
         {
             Debug.LogError($"SaveToSlot failed for slot {slotIndex}: {ex}");
+            return false;
         }
     }
 
@@ -318,9 +337,15 @@ public sealed class SaveSystem
             companionId = string.IsNullOrWhiteSpace(saveState.CurrentCompanionId)
                 ? NoneCompanionId
                 : saveState.CurrentCompanionId,
+            hasPlayerPosition = saveState.HasSavedPlayerPosition,
+            playerPositionSceneName = saveState.SavedPlayerPositionSceneName ?? string.Empty,
+            playerPositionX = saveState.SavedPlayerPosition.x,
+            playerPositionY = saveState.SavedPlayerPosition.y,
+            playerPositionZ = saveState.SavedPlayerPosition.z,
             unlockedLevelIds = BuildSortedList(saveState.UnlockedLevelIds),
             completedLevelIds = BuildSortedList(saveState.CompletedLevelIds),
             discoveredArtifactIds = BuildSortedList(saveState.DiscoveredArtifactIds),
+            worldStateIds = BuildSortedList(saveState.WorldStateIds),
             lastSavedUtc = DateTime.UtcNow.ToString("o")
         };
     }
@@ -335,9 +360,22 @@ public sealed class SaveSystem
         saveState.CurrentCompanionId = string.IsNullOrWhiteSpace(data.companionId)
             ? NoneCompanionId
             : data.companionId;
+
+        if (data.hasPlayerPosition)
+        {
+            saveState.SetSavedPlayerPosition(
+                data.playerPositionSceneName,
+                new Vector3(data.playerPositionX, data.playerPositionY, data.playerPositionZ));
+        }
+        else
+        {
+            saveState.ClearSavedPlayerPosition();
+        }
+
         saveState.SetUnlockedLevels(data.unlockedLevelIds);
         saveState.SetCompletedLevels(data.completedLevelIds);
         saveState.SetDiscoveredArtifacts(data.discoveredArtifactIds);
+        saveState.SetWorldStates(data.worldStateIds);
     }
 
     private void SanitizeLoadedData(SaveSlotData data, int slotIndex)
@@ -356,9 +394,13 @@ public sealed class SaveSystem
         if (string.IsNullOrWhiteSpace(data.companionId))
             data.companionId = NoneCompanionId;
 
+        if (data.playerPositionSceneName == null)
+            data.playerPositionSceneName = string.Empty;
+
         data.unlockedLevelIds = SanitizeIdList(data.unlockedLevelIds);
         data.completedLevelIds = SanitizeIdList(data.completedLevelIds);
         data.discoveredArtifactIds = SanitizeIdList(data.discoveredArtifactIds);
+        data.worldStateIds = SanitizeIdList(data.worldStateIds);
     }
 
     private static string GetSceneNameForSave(SaveStateModel saveState)
@@ -390,6 +432,24 @@ public sealed class SaveSystem
             return;
 
         checkpoint.SetLocationOnly();
+    }
+
+    private void CaptureCurrentSceneAndPlayerPosition()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        string sceneName = activeScene.IsValid() ? activeScene.name : string.Empty;
+
+        ctx.SaveState.CurrentSceneName = sceneName;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player == null)
+        {
+            Debug.LogWarning("SaveCurrentGameToActiveSlot: no GameObject tagged Player was found. Saving scene/world state without exact player position.");
+            ctx.SaveState.ClearSavedPlayerPosition();
+            return;
+        }
+
+        ctx.SaveState.SetSavedPlayerPosition(sceneName, player.transform.position);
     }
 
     private static List<string> BuildSortedList(IReadOnlyCollection<string> ids)
