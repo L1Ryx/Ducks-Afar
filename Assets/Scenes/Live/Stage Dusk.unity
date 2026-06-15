@@ -15109,7 +15109,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550359136750149019, guid: d6c3b48297bc34a71a29f7dff238b962, type: 3}
       propertyPath: orthographic size
-      value: 9.3788185
+      value: 9.368231
       objectReference: {fileID: 0}
     - target: {fileID: 5672371897001214630, guid: d6c3b48297bc34a71a29f7dff238b962, type: 3}
       propertyPath: startOffset.x
