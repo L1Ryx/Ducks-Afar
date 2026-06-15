@@ -14,6 +14,11 @@ public sealed class DialogueRunner : MonoBehaviour
     [SerializeField] private Image nextIndicator;
     [SerializeField] private CanvasGroup canvasGroup;
 
+    [Header("Name Box")]
+    [SerializeField] private RectTransform actualNameBoxRect;
+    [SerializeField] private float nameBoxRightPadding = 28f;
+    [SerializeField] private float nameBoxMaxWidth = 1200f;
+
     [Header("Typing")]
     [SerializeField] private float charactersPerSecond = 40f;
 
@@ -105,7 +110,10 @@ public sealed class DialogueRunner : MonoBehaviour
             portraitImage.sprite = null;
 
         if (nameText != null)
+        {
             nameText.text = string.Empty;
+            ResizeNameBoxToText();
+        }
 
         if (dialogueText != null)
             dialogueText.text = string.Empty;
@@ -209,6 +217,7 @@ public sealed class DialogueRunner : MonoBehaviour
         // UI setup
         portraitImage.sprite = line.speaker.portrait;
         nameText.text = line.speaker.displayName;
+        ResizeNameBoxToText();
         dialogueText.text = string.Empty;
         nextIndicator.gameObject.SetActive(false);
 
@@ -296,5 +305,58 @@ public sealed class DialogueRunner : MonoBehaviour
         }
 
         ShowLine(currentEncounter.lines[currentLineIndex]);
+    }
+
+    private void ResizeNameBoxToText()
+    {
+        if (nameText == null)
+            return;
+
+        RectTransform boxRect = ResolveActualNameBoxRect();
+        RectTransform textRect = nameText.rectTransform;
+        RectTransform parentRect = boxRect != null ? boxRect.parent as RectTransform : null;
+        if (boxRect == null || textRect == null || parentRect == null)
+            return;
+
+        nameText.ForceMeshUpdate();
+        float textLeft = GetRectLeftInParent(textRect, parentRect);
+        float textWidth = Mathf.Ceil(Mathf.Max(0f, nameText.GetPreferredValues(
+            nameText.text,
+            Mathf.Infinity,
+            Mathf.Infinity).x));
+        float textRight = textLeft + textWidth;
+        float boxLeft = GetRectLeftInParent(boxRect, parentRect);
+        float targetWidth = Mathf.Min(
+            textRight - boxLeft + nameBoxRightPadding,
+            nameBoxMaxWidth);
+
+        boxRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, Mathf.Max(0f, targetWidth));
+    }
+
+    private RectTransform ResolveActualNameBoxRect()
+    {
+        if (actualNameBoxRect != null)
+            return actualNameBoxRect;
+
+        RectTransform textRect = nameText != null ? nameText.rectTransform : null;
+        Transform nameBox = textRect != null ? textRect.parent : null;
+        Transform actualBox = nameBox != null ? nameBox.Find("Actual Name Box") : null;
+        return actualBox as RectTransform;
+    }
+
+    private static float GetRectLeftInParent(RectTransform rect, RectTransform parent)
+    {
+        Vector3[] corners = new Vector3[4];
+        rect.GetWorldCorners(corners);
+
+        float left = float.PositiveInfinity;
+        for (int i = 0; i < corners.Length; i++)
+        {
+            float x = parent.InverseTransformPoint(corners[i]).x;
+            if (x < left)
+                left = x;
+        }
+
+        return left;
     }
 }
