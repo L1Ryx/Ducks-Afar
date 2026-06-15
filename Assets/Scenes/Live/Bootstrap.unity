@@ -1886,6 +1886,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8125001449852397574, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8801606098618476710, guid: ca342ac39e0fdba47afac86ee43b25e2, type: 3}
       propertyPath: m_Name
       value: Dialogue Panel
