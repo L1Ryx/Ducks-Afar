@@ -91,19 +91,8 @@ public sealed class SavedSpawnPoint : MonoBehaviour
         if (player.TryGetComponent<Rigidbody2D>(out var body))
             body.linearVelocity = Vector2.zero;
 
-        StartCoroutine(SyncCameraAfterSpawn(player));
+        StartCoroutine(GameContext.SyncGameplayCamerasToPlayerRoomForFrames(player));
         appliedSpawnEvent?.Raise();
-    }
-
-    private static IEnumerator SyncCameraAfterSpawn(GameObject player)
-    {
-        const int syncFrameCount = 8;
-
-        for (int i = 0; i < syncFrameCount; i++)
-        {
-            GameContext.SyncGameplayCamerasToPlayerRoom(player);
-            yield return null;
-        }
     }
 
     private bool TryResolveSpawnPointId(out string resolvedSpawnPointId)

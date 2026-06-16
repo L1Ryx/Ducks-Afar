@@ -31,7 +31,6 @@ public sealed class PlayerDeathController : MonoBehaviour
         isDying = true;
         LockPlayer();
         StopPlayer(player);
-        StopEnemy(source);
 
         if (!TryForceRestart())
         {
@@ -40,6 +39,7 @@ public sealed class PlayerDeathController : MonoBehaviour
             return false;
         }
 
+        StopEnemy(source);
         return true;
     }
 
@@ -90,7 +90,7 @@ public sealed class PlayerDeathController : MonoBehaviour
 
     private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        UnlockPlayer();
         isDying = false;
-        ownsInteractionLock = false;
     }
 }

@@ -126,11 +126,11 @@ public sealed class EnemyGateController : MonoBehaviour
         }
 
         bool changed = Game.Ctx.SaveState.SetWorldState(resolvedFlagId);
-        if (saveActiveSlotOnOpen && Game.Ctx.Saves != null && Game.Ctx.Saves.SaveCurrentGameToActiveSlot())
-            savedEvent?.Raise();
-
         if (!changed)
             return;
+
+        if (saveActiveSlotOnOpen && Game.Ctx.Saves != null && Game.Ctx.Saves.SaveCurrentGameToActiveSlot())
+            savedEvent?.Raise();
     }
 
     private bool IsFlagSet()

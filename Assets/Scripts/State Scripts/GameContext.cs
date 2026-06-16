@@ -182,7 +182,7 @@ public class GameContext : MonoBehaviour
                 if (player.TryGetComponent<Rigidbody2D>(out var body))
                     body.linearVelocity = Vector2.zero;
 
-                StartCoroutine(SyncGameplayCamerasToPlayerRoomWhenReady(player));
+                StartCoroutine(SyncGameplayCamerasToPlayerRoomForFrames(player));
                 yield break;
             }
 
@@ -190,11 +190,10 @@ public class GameContext : MonoBehaviour
         }
     }
 
-    private static IEnumerator SyncGameplayCamerasToPlayerRoomWhenReady(GameObject player)
+    public static IEnumerator SyncGameplayCamerasToPlayerRoomForFrames(GameObject player, int frameCount = 8)
     {
-        const int syncFrameCount = 8;
-
-        for (int i = 0; i < syncFrameCount; i++)
+        frameCount = Mathf.Max(1, frameCount);
+        for (int i = 0; i < frameCount; i++)
         {
             SyncGameplayCamerasToPlayerRoom(player);
             yield return null;
