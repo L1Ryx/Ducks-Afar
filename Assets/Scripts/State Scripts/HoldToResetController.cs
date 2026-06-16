@@ -48,6 +48,18 @@ public sealed class HoldToResetController : MonoBehaviour
             ResetHoldProgress();
     }
 
+    public bool ForceReset()
+    {
+        if (hasTriggeredReset || isFadingToBlack)
+            return false;
+
+        if (!Game.IsReady || Game.Ctx?.SceneLoader == null || Game.Ctx.SceneLoader.IsLoading)
+            return false;
+
+        TriggerReset();
+        return true;
+    }
+
     private void Awake()
     {
         EnsureVolume();

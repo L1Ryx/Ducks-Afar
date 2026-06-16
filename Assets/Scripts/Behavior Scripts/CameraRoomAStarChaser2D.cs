@@ -18,6 +18,17 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     [SerializeField] private bool clampToRoomBounds = true;
     [SerializeField, Min(0f)] private float roomEdgePadding = 0.15f;
 
+    [Header("Home")]
+    [SerializeField] private bool returnHomeWhenTargetLeavesRoom = true;
+    [SerializeField] private bool cacheHomePositionOnAwake = true;
+    [SerializeField, Min(0f)] private float homeStoppingDistance = 0.08f;
+    [SerializeField] private Vector2 homePosition;
+
+    [Header("Flee")]
+    [SerializeField] private bool fleeFromTarget;
+    [SerializeField, Min(0.25f)] private float fleeDistance = 4f;
+    [SerializeField, Min(0f)] private float fleeStoppingDistance = 0.15f;
+
     [Header("Pathfinding")]
     [SerializeField] private LayerMask obstacleMask = Physics2D.DefaultRaycastLayers;
     [SerializeField, Min(0.05f)] private float cellSize = 0.5f;
@@ -83,6 +94,8 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     private bool hasLastStuckCheckPosition;
     private float nextStuckCheckTime;
     private int consecutiveStuckRepaths;
+    private bool hasHomePosition;
+    private bool wasReturningHome;
 
     private static readonly Vector2Int[] FourWay =
     {
@@ -118,6 +131,9 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     {
         EnsureRefs();
         ConfigurePhysics();
+
+        if (cacheHomePositionOnAwake)
+            CacheHomePosition();
     }
 
     private void OnEnable()
@@ -154,18 +170,17 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     {
         EnsureRefs();
 
-        if (body == null || room == null || target == null)
+        if (body == null || room == null)
         {
             Stop();
             return;
         }
 
         Vector2 currentPosition = body.position;
-        Vector2 targetPosition = target.position;
         bool selfInRoom = room.Contains(currentPosition);
-        bool targetInRoom = room.Contains(targetPosition);
+        bool targetInRoom = target != null && room.Contains(target.position);
 
-        if ((stopWhenOutsideRoom && !selfInRoom) || (onlyChaseWhenTargetInRoom && !targetInRoom))
+        if (stopWhenOutsideRoom && !selfInRoom)
         {
             ClearPath();
             Stop();
@@ -173,19 +188,60 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
             return;
         }
 
-        if ((targetPosition - currentPosition).sqrMagnitude <= stoppingDistance * stoppingDistance)
+        bool shouldReturnHome = returnHomeWhenTargetLeavesRoom &&
+                                onlyChaseWhenTargetInRoom &&
+                                !targetInRoom &&
+                                hasHomePosition;
+
+        if (onlyChaseWhenTargetInRoom && !targetInRoom && !shouldReturnHome)
         {
             ClearPath();
             Stop();
+            ClampBodyToRoom();
             return;
         }
 
-        if (ShouldRepath(targetPosition))
-            Repath(currentPosition, targetPosition);
+        if (target == null && !shouldReturnHome)
+        {
+            ClearPath();
+            Stop();
+            ClampBodyToRoom();
+            return;
+        }
 
-        ShortcutVisibleWaypoints(currentPosition, targetPosition);
-        FollowPath(targetPosition);
-        CheckStuck(currentPosition, targetPosition);
+        bool shouldFlee = !shouldReturnHome && fleeFromTarget && targetInRoom;
+        Vector2 goalPosition = shouldReturnHome
+            ? homePosition
+            : shouldFlee
+                ? GetFleeGoalPosition(currentPosition, target.position)
+                : (Vector2)target.position;
+        float activeStoppingDistance = shouldReturnHome
+            ? homeStoppingDistance
+            : shouldFlee
+                ? fleeStoppingDistance
+                : stoppingDistance;
+
+        if (shouldReturnHome != wasReturningHome)
+        {
+            ClearPath();
+            nextRepathTime = 0f;
+            wasReturningHome = shouldReturnHome;
+        }
+
+        if ((goalPosition - currentPosition).sqrMagnitude <= activeStoppingDistance * activeStoppingDistance)
+        {
+            ClearPath();
+            Stop();
+            ClampBodyToRoom();
+            return;
+        }
+
+        if (ShouldRepath(goalPosition))
+            Repath(currentPosition, goalPosition);
+
+        ShortcutVisibleWaypoints(currentPosition, goalPosition);
+        FollowPath(goalPosition);
+        CheckStuck(currentPosition, goalPosition);
         ClampBodyToRoom();
     }
 
@@ -221,6 +277,36 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
             layerMask = obstacleMask,
             useTriggers = includeTriggerObstacles,
         };
+    }
+
+    public void CacheHomePosition()
+    {
+        EnsureRefs();
+        homePosition = body != null ? body.position : (Vector2)transform.position;
+        hasHomePosition = true;
+    }
+
+    public void SetFleeFromTarget(bool shouldFlee)
+    {
+        if (fleeFromTarget == shouldFlee)
+            return;
+
+        fleeFromTarget = shouldFlee;
+        ClearPath();
+        nextRepathTime = 0f;
+    }
+
+    public void FreezeMovement()
+    {
+        ClearPath();
+
+        if (body == null)
+            body = GetComponent<Rigidbody2D>();
+
+        if (body != null)
+            body.linearVelocity = Vector2.zero;
+
+        enabled = false;
     }
 
     private void CacheIgnoredColliders()
@@ -299,6 +385,51 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
 
         return (targetPosition - lastTargetPathPosition).sqrMagnitude >=
                targetMoveRepathDistance * targetMoveRepathDistance;
+    }
+
+    private Vector2 GetFleeGoalPosition(Vector2 currentPosition, Vector2 threatPosition)
+    {
+        Bounds bounds = GetPaddedRoomBounds();
+        Vector2 away = currentPosition - threatPosition;
+        if (away.sqrMagnitude <= 0.0001f)
+            away = hasHomePosition ? currentPosition - homePosition : Vector2.up;
+
+        away.Normalize();
+
+        Vector2 right = new Vector2(away.y, -away.x);
+        Vector2[] directions =
+        {
+            away,
+            (away + right * 0.65f).normalized,
+            (away - right * 0.65f).normalized,
+            right,
+            -right,
+            -away,
+        };
+
+        Vector2 best = currentPosition;
+        float bestScore = float.NegativeInfinity;
+
+        for (int i = 0; i < directions.Length; i++)
+        {
+            Vector2 candidate = ClampToBounds(currentPosition + directions[i] * fleeDistance, bounds);
+            if (IsBlocked(candidate))
+                continue;
+
+            float distanceFromThreat = (candidate - threatPosition).sqrMagnitude;
+            float distanceFromCurrent = (candidate - currentPosition).sqrMagnitude;
+            float score = distanceFromThreat + distanceFromCurrent * 0.2f;
+            if (score <= bestScore)
+                continue;
+
+            bestScore = score;
+            best = candidate;
+        }
+
+        if (bestScore > float.NegativeInfinity)
+            return best;
+
+        return ClampToBounds(currentPosition + away * Mathf.Min(fleeDistance, 1f), bounds);
     }
 
     private void Repath(Vector2 start, Vector2 goal)

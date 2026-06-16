@@ -111,10 +111,17 @@ public class CameraEaseInOnLevelStart : MonoBehaviour
 
         KillTweens();
 
-        transform.position = targetPos;
-
         if (cam.orthographic)
             cam.orthographicSize = targetOrthoSize;
+
+        if (TryGetComponent(out GameplayCameraAnchorController anchorController))
+        {
+            anchorController.FocusPlayerRoom(immediate: true);
+            targetPos = transform.position;
+            return;
+        }
+
+        transform.position = targetPos;
     }
 
     private void ApplyPauseState(bool paused)

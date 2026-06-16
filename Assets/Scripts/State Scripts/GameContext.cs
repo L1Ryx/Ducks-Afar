@@ -21,6 +21,7 @@ public class GameContext : MonoBehaviour
     public SceneFlowSystem SceneFlow { get; private set; }
     public SettingsSystem Settings { get; private set; }
     public PauseStateModel Pause { get; private set; }
+    public PlayerDeathController PlayerDeath { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
     public DialogueRunner Dialogue { get; private set; }
     
@@ -47,6 +48,7 @@ public class GameContext : MonoBehaviour
         InitializeRuntimeState();
         EnsurePauseComponents();
         EnsureHoldToResetController();
+        EnsurePlayerDeathController();
         EnsureMenuButtonAudioSystem();
         EnsureDevComponents();
 
@@ -121,6 +123,13 @@ public class GameContext : MonoBehaviour
             gameObject.AddComponent<HoldToResetController>();
     }
 
+    private void EnsurePlayerDeathController()
+    {
+        PlayerDeath = GetComponent<PlayerDeathController>();
+        if (PlayerDeath == null)
+            PlayerDeath = gameObject.AddComponent<PlayerDeathController>();
+    }
+
     private void EnsureMenuButtonAudioSystem()
     {
         if (GetComponent<MenuButtonAudioSystem>() == null)
@@ -173,10 +182,37 @@ public class GameContext : MonoBehaviour
                 if (player.TryGetComponent<Rigidbody2D>(out var body))
                     body.linearVelocity = Vector2.zero;
 
+                StartCoroutine(SyncGameplayCamerasToPlayerRoomWhenReady(player));
                 yield break;
             }
 
             yield return null;
+        }
+    }
+
+    private static IEnumerator SyncGameplayCamerasToPlayerRoomWhenReady(GameObject player)
+    {
+        const int syncFrameCount = 8;
+
+        for (int i = 0; i < syncFrameCount; i++)
+        {
+            SyncGameplayCamerasToPlayerRoom(player);
+            yield return null;
+        }
+    }
+
+    public static void SyncGameplayCamerasToPlayerRoom(GameObject player)
+    {
+        if (player == null)
+            return;
+
+        GameplayCameraAnchorController[] controllers = Object.FindObjectsByType<GameplayCameraAnchorController>(
+            FindObjectsInactive.Exclude);
+
+        foreach (GameplayCameraAnchorController controller in controllers)
+        {
+            if (controller != null && controller.gameObject.scene == player.scene)
+                controller.FocusPlayerRoom(immediate: true);
         }
     }
 }

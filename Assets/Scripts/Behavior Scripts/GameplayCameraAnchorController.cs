@@ -61,6 +61,13 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
         FocusRoom(room, immediate: false);
     }
 
+    public void FocusPlayerRoom(bool immediate)
+    {
+        GameplayCameraRoom room = FindStartingRoom();
+        if (room != null)
+            FocusRoom(room, immediate);
+    }
+
     public void FocusRoom(GameplayCameraRoom room, bool immediate)
     {
         if (room == null)
@@ -80,6 +87,7 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
 
         if (immediate || panDuration <= 0f || !Application.isPlaying)
         {
+            panTarget.DOKill(false);
             panTarget.position = targetPosition;
             ReleasePanLock();
             return;
