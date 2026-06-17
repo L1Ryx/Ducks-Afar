@@ -111,6 +111,6 @@ MonoBehaviour:
   - {fileID: 4033963593745906527, guid: 139269e23f0664d36966b4d7a224d7ab, type: 3}
   - {fileID: 4620268381834522989, guid: 139269e23f0664d36966b4d7a224d7ab, type: 3}
   - {fileID: 2066951348801999096, guid: 139269e23f0664d36966b4d7a224d7ab, type: 3}
-  secondsPerFrame: 0.25
+  secondsPerFrame: 0.15
   alignVisualToDirection: 0
   spriteForwardAngle: 180
