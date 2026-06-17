@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f3af59761a04f69989e6f556f84daca, type: 3}
+  m_Name: HomeStageAutotilerSettings
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::HomeStageAutotilerSettings
+  beigeFlowerPrefabs:
+  - {fileID: 124838512789283542, guid: a0cb7a5174bcb4d22a888e283e957476, type: 3}
+  - {fileID: 2294356470812417778, guid: 50c427f0efa574f9e86adf008d81341f, type: 3}
+  - {fileID: 875757612743756536, guid: f145f04aa84d54720a31c0a0e341029f, type: 3}
+  seed: 9173
+  spread: 2
+  density: 1
+  minimumDistance: 1.35
+  edgePadding: 0.42
+  cellJitter: 0.34
+  noiseScale: 0.18
+  noiseInfluence: 0.25
+  maxGeneratedFlowers: 0
+  avoidSceneSpriteBounds: 1
+  objectAvoidancePadding: 0.25
