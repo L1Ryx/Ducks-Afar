@@ -124,7 +124,8 @@ public sealed class SaveSystem
                 $"unlocked={data.unlockedLevelIds.Count} | " +
                 $"completed={data.completedLevelIds.Count} | " +
                 $"artifacts={data.discoveredArtifactIds.Count} | " +
-                $"world={data.worldStateIds.Count}");
+                $"world={data.worldStateIds.Count} | " +
+                $"variants={data.sceneVariants.Count}");
 
             return true;
         }
@@ -349,6 +350,7 @@ public sealed class SaveSystem
             completedLevelIds = BuildSortedList(saveState.CompletedLevelIds),
             discoveredArtifactIds = BuildSortedList(saveState.DiscoveredArtifactIds),
             worldStateIds = BuildSortedList(saveState.WorldStateIds),
+            sceneVariants = BuildSortedSceneVariantList(saveState.SceneVariantIds),
             lastSavedUtc = DateTime.UtcNow.ToString("o")
         };
     }
@@ -384,6 +386,7 @@ public sealed class SaveSystem
         saveState.SetCompletedLevels(data.completedLevelIds);
         saveState.SetDiscoveredArtifacts(data.discoveredArtifactIds);
         saveState.SetWorldStates(data.worldStateIds);
+        saveState.SetSceneVariants(data.sceneVariants);
     }
 
     private void SanitizeLoadedData(SaveSlotData data, int slotIndex)
@@ -412,6 +415,7 @@ public sealed class SaveSystem
         data.completedLevelIds = SanitizeIdList(data.completedLevelIds);
         data.discoveredArtifactIds = SanitizeIdList(data.discoveredArtifactIds);
         data.worldStateIds = SanitizeIdList(data.worldStateIds);
+        data.sceneVariants = SanitizeSceneVariantList(data.sceneVariants);
     }
 
     private static bool ContainsGoldwormWorldState(List<string> worldStateIds)
@@ -487,6 +491,32 @@ public sealed class SaveSystem
         return list;
     }
 
+    private static List<SceneVariantSaveData> BuildSortedSceneVariantList(
+        IReadOnlyDictionary<string, string> sceneVariants)
+    {
+        List<SceneVariantSaveData> list = new List<SceneVariantSaveData>();
+
+        if (sceneVariants == null)
+            return list;
+
+        foreach (KeyValuePair<string, string> pair in sceneVariants)
+        {
+            string sceneName = NormalizeId(pair.Key);
+            string variantId = NormalizeId(pair.Value);
+            if (sceneName.Length == 0 || variantId.Length == 0)
+                continue;
+
+            list.Add(new SceneVariantSaveData
+            {
+                sceneName = sceneName,
+                variantId = variantId
+            });
+        }
+
+        list.Sort((a, b) => string.Compare(a.sceneName, b.sceneName, StringComparison.Ordinal));
+        return list;
+    }
+
     private static List<string> SanitizeIdList(IEnumerable<string> ids)
     {
         List<string> list = new List<string>();
@@ -507,5 +537,34 @@ public sealed class SaveSystem
         }
 
         return list;
+    }
+
+    private static List<SceneVariantSaveData> SanitizeSceneVariantList(
+        IEnumerable<SceneVariantSaveData> sceneVariants)
+    {
+        Dictionary<string, string> sanitized = new Dictionary<string, string>();
+
+        if (sceneVariants != null)
+        {
+            foreach (SceneVariantSaveData sceneVariant in sceneVariants)
+            {
+                if (sceneVariant == null)
+                    continue;
+
+                string sceneName = NormalizeId(sceneVariant.sceneName);
+                string variantId = NormalizeId(sceneVariant.variantId);
+                if (sceneName.Length == 0 || variantId.Length == 0)
+                    continue;
+
+                sanitized[sceneName] = variantId;
+            }
+        }
+
+        return BuildSortedSceneVariantList(sanitized);
+    }
+
+    private static string NormalizeId(string id)
+    {
+        return string.IsNullOrWhiteSpace(id) ? string.Empty : id.Trim();
     }
 }
