@@ -50,7 +50,7 @@ MonoBehaviour:
   maxDelay: 60
   triggerEvent: {fileID: 11400000, guid: 01af161542c1042fbbee7918ed6cdd1b, type: 2}
   speed: 16
-  angleRange: {x: -60, y: 60}
+  angleRange: {x: -20, y: 20}
   offscreenPadding: 2
   scaleRange: {x: 1, y: 1.15}
   bobAmplitude: 0.08

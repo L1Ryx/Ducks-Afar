@@ -10,7 +10,7 @@ public sealed class RavenFlyby : MonoBehaviour
     [SerializeField, Min(0.01f)] private float secondsPerFrame = 0.25f;
 
     [Header("Visual Alignment")]
-    [SerializeField] private bool alignVisualToDirection = true;
+    [SerializeField] private bool alignVisualToDirection = false;
     [SerializeField] private float spriteForwardAngle = 180f;
 
     private SpriteRenderer spriteRenderer;
