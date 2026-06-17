@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2c7f24268024b0da913a8ca655a0cca, type: 3}
   m_Name: Auralis Second Visit
   m_EditorClassIdentifier: Assembly-CSharp::SceneVariantDataSO
-  variantId: First Visit
-  description: At the start of the game
+  variantId: Second Visit
+  description: After returning to Auralis
   onAppliedEvents: []
   onFirstAppliedEvents: []

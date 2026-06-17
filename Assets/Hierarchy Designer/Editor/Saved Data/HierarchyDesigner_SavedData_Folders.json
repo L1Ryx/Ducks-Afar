@@ -1,0 +1,40 @@
+{
+    "items": [
+        {
+            "Name": "FIRST VISIT",
+            "TextColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "FontSize": 12,
+            "FontStyle": 0,
+            "ImageColor": {
+                "r": 1.0,
+                "g": 0.9153609275817871,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "ImageType": 0
+        },
+        {
+            "Name": "SECOND VISIT",
+            "TextColor": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "FontSize": 12,
+            "FontStyle": 0,
+            "ImageColor": {
+                "r": 1.0,
+                "g": 0.9742206931114197,
+                "b": 0.0,
+                "a": 1.0
+            },
+            "ImageType": 0
+        }
+    ]
+}
