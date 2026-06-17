@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcd71ac5089d41ef9d784c4a73ecd7c8, type: 3}
+  m_Name: _Auralis Scene Sequence
+  m_EditorClassIdentifier: Assembly-CSharp::SceneVariantSequenceSO
+  sceneName: Stage Home
+  variants:
+  - {fileID: 11400000, guid: d09976853f9634875b14283df3bb170a, type: 2}
+  - {fileID: 11400000, guid: 51d7888564dea455fb1644614ebf1a75, type: 2}

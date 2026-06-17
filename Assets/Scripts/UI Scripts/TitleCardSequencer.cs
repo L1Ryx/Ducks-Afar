@@ -281,8 +281,8 @@ public class TitleCardSequencer : MonoBehaviour
                 c = charInfo.character;
             }
 
-            // Play typing audio
-            Game.Ctx.Audio.PlayCueGlobal(ac);
+            if (Game.IsReady && Game.Ctx?.Audio != null && ac != null)
+                Game.Ctx.Audio.PlayCueGlobal(ac);
 
             float delay = GetHumanCharDelay(baseSecondsPerChar, c);
             yield return StartCoroutine(WaitRoutine(delay));

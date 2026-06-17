@@ -16,7 +16,7 @@ public sealed class LevelProgressReward : MonoBehaviour
     [SerializeField] private List<string> discoverArtifactIds = new();
 
     [Header("Saving")]
-    [SerializeField] private bool saveActiveSlotOnChange = true;
+    [SerializeField] private bool saveActiveSlotOnChange = false;
 
     public void Apply()
     {

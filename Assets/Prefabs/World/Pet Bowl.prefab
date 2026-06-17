@@ -438,7 +438,7 @@ MonoBehaviour:
   unlockLevelIds: []
   completeLevelIds: []
   discoverArtifactIds: []
-  saveActiveSlotOnChange: 1
+  saveActiveSlotOnChange: 0
 --- !u!1001 &1680283226048175033
 PrefabInstance:
   m_ObjectHideFlags: 0

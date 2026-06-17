@@ -8,6 +8,7 @@ public sealed class SaveStateModel
     private readonly HashSet<string> completedLevelIds = new();
     private readonly HashSet<string> discoveredArtifactIds = new();
     private readonly HashSet<string> worldStateIds = new();
+    private readonly Dictionary<string, string> sceneVariantIds = new();
 
     public float TimePlayedSeconds { get; private set; }
     public string CurrentSceneName { get; set; }
@@ -43,6 +44,7 @@ public sealed class SaveStateModel
     public IReadOnlyCollection<string> CompletedLevelIds => completedLevelIds;
     public IReadOnlyCollection<string> DiscoveredArtifactIds => discoveredArtifactIds;
     public IReadOnlyCollection<string> WorldStateIds => worldStateIds;
+    public IReadOnlyDictionary<string, string> SceneVariantIds => sceneVariantIds;
 
     public void AddPlayTime(float deltaTime)
     {
@@ -84,6 +86,7 @@ public sealed class SaveStateModel
         completedLevelIds.Clear();
         discoveredArtifactIds.Clear();
         worldStateIds.Clear();
+        sceneVariantIds.Clear();
     }
 
     public bool IsLevelUnlocked(string levelId)
@@ -196,6 +199,43 @@ public sealed class SaveStateModel
         return RemoveId(worldStateIds, worldStateId);
     }
 
+    public bool TryGetSceneVariant(string sceneName, out string variantId)
+    {
+        string normalizedSceneName = NormalizeId(sceneName);
+        if (normalizedSceneName.Length == 0)
+        {
+            variantId = string.Empty;
+            return false;
+        }
+
+        return sceneVariantIds.TryGetValue(normalizedSceneName, out variantId)
+            && !string.IsNullOrWhiteSpace(variantId);
+    }
+
+    public bool SetSceneVariant(string sceneName, string variantId)
+    {
+        string normalizedSceneName = NormalizeId(sceneName);
+        string normalizedVariantId = NormalizeId(variantId);
+
+        if (normalizedSceneName.Length == 0 || normalizedVariantId.Length == 0)
+            return false;
+
+        if (sceneVariantIds.TryGetValue(normalizedSceneName, out string current)
+            && current == normalizedVariantId)
+        {
+            return false;
+        }
+
+        sceneVariantIds[normalizedSceneName] = normalizedVariantId;
+        return true;
+    }
+
+    public bool ClearSceneVariant(string sceneName)
+    {
+        string normalizedSceneName = NormalizeId(sceneName);
+        return normalizedSceneName.Length > 0 && sceneVariantIds.Remove(normalizedSceneName);
+    }
+
     public void SetUnlockedLevels(IEnumerable<string> levelIds)
     {
         ReplaceSet(unlockedLevelIds, levelIds);
@@ -221,6 +261,22 @@ public sealed class SaveStateModel
         ReplaceSet(this.worldStateIds, worldStateIds);
     }
 
+    public void SetSceneVariants(IEnumerable<SceneVariantSaveData> sceneVariants)
+    {
+        sceneVariantIds.Clear();
+
+        if (sceneVariants == null)
+            return;
+
+        foreach (SceneVariantSaveData sceneVariant in sceneVariants)
+        {
+            if (sceneVariant == null)
+                continue;
+
+            SetSceneVariant(sceneVariant.sceneName, sceneVariant.variantId);
+        }
+    }
+
     public void ClearUnlockedLevels()
     {
         unlockedLevelIds.Clear();
@@ -239,6 +295,11 @@ public sealed class SaveStateModel
     public void ClearWorldStates()
     {
         worldStateIds.Clear();
+    }
+
+    public void ClearSceneVariants()
+    {
+        sceneVariantIds.Clear();
     }
 
     private static bool ContainsId(HashSet<string> ids, string id)

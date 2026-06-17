@@ -23,6 +23,7 @@ public sealed class SaveSlotData
     public List<string> completedLevelIds = new();
     public List<string> discoveredArtifactIds = new();
     public List<string> worldStateIds = new();
+    public List<SceneVariantSaveData> sceneVariants = new();
 
     public string lastSavedUtc;
 
@@ -47,7 +48,15 @@ public sealed class SaveSlotData
             completedLevelIds = new List<string>(),
             discoveredArtifactIds = new List<string>(),
             worldStateIds = new List<string>(),
+            sceneVariants = new List<SceneVariantSaveData>(),
             lastSavedUtc = string.Empty
         };
     }
+}
+
+[Serializable]
+public sealed class SceneVariantSaveData
+{
+    public string sceneName;
+    public string variantId;
 }

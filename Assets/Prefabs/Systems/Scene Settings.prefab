@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 301568296410463030}
   - component: {fileID: 2224236680334177019}
+  - component: {fileID: 8578644592380159241}
   m_Layer: 0
   m_Name: Scene Settings
   m_TagString: Untagged
@@ -48,3 +49,28 @@ MonoBehaviour:
   allowHoldToRestart: 0
   reason: 
   allowGoldwormCurrencyUI: 0
+--- !u!114 &8578644592380159241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6352677792389586742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d2e6373958453491eca12b6e668665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequence: {fileID: 0}
+  sceneNameOverride: 
+  groupRoot: {fileID: 0}
+  useEditorVariantOverride: 0
+  editorVariantOverride: {fileID: 0}
+  applyOnStart: 1
+  repeatLastVariantWhenAdvancing: 1
+  trackFirstAppliedVariants: 1
+  saveActiveSlotWhenVariantChanges: 1
+  saveActiveSlotWhenFirstApplied: 1
+  savedEvent: {fileID: 0}
+  variantAppliedEvent: {fileID: 0}
+  variantChangedEvent: {fileID: 0}
