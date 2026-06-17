@@ -377,6 +377,7 @@ MonoBehaviour:
   showLocation: 1
   showPlayTime: 1
   showCompanion: 0
+  showGoldworms: 1
   showLastSaved: 0
   emptyTitle: New File
   occupiedTitleFormat: File {0}

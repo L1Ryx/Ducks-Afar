@@ -25,6 +25,7 @@ public sealed class TitleSaveSlotCard : MonoBehaviour
     [SerializeField] private bool showLocation = true;
     [SerializeField] private bool showPlayTime = true;
     [SerializeField] private bool showCompanion = true;
+    [SerializeField] private bool showGoldworms = true;
     [SerializeField] private bool showLastSaved = true;
 
     [Header("Labels")]
@@ -102,6 +103,7 @@ public sealed class TitleSaveSlotCard : MonoBehaviour
         AppendLine(sb, showLocation, $"Location: {Fallback(data.location, "Unknown")}");
         AppendLine(sb, showPlayTime, $"Playtime: {FormatPlayTime(data.timePlayedSeconds)}");
         AppendLine(sb, showCompanion, $"Companion: {Fallback(data.companionId, SaveSystem.NoneCompanionId)}");
+        AppendLine(sb, showGoldworms, $"Goldworms: {Mathf.Max(0, data.goldworms)}");
         AppendLine(sb, showLastSaved, $"Saved: {FormatSavedTime(data.lastSavedUtc)}");
 
         return sb.ToString().TrimEnd();

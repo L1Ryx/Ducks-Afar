@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1225031457013990473
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561807520732694408}
+  - component: {fileID: 4109237675411044161}
+  m_Layer: 0
+  m_Name: Raven Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561807520732694408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225031457013990473}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4109237675411044161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225031457013990473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6c1abe7121ae48c98cf9c0bd7c53962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RavenController
+  ravenPrefab: {fileID: 387318983164769710, guid: 54e6ec5ee462d4649a7f330840df31b1, type: 3}
+  spawnAutomatically: 1
+  minDelay: 30
+  maxDelay: 60
+  triggerEvent: {fileID: 11400000, guid: 01af161542c1042fbbee7918ed6cdd1b, type: 2}
+  speed: 16
+  angleRange: {x: -60, y: 60}
+  offscreenPadding: 2
+  scaleRange: {x: 1, y: 1.15}
+  bobAmplitude: 0.08
+  bobFrequency: 2.1
+  targetCamera: {fileID: 0}
