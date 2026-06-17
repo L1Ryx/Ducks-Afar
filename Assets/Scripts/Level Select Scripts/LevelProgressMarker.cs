@@ -16,7 +16,7 @@ public sealed class LevelProgressMarker : MonoBehaviour
     [SerializeField] private List<LevelDefinition> unlockLevelsOnCompletion = new();
 
     [Header("Saving")]
-    [SerializeField] private bool saveActiveSlotOnChange = true;
+    [SerializeField] private bool saveActiveSlotOnChange = false;
 
     private string LevelId => level != null ? level.LevelId : fallbackLevelId;
 
