@@ -71,6 +71,7 @@ MonoBehaviour:
   useUnscaledTime: 1
   showIndefinitelyEvent: {fileID: 11400000, guid: 03b453f306204f20b13295cb62c08076, type: 2}
   hideIndefinitelyEvent: {fileID: 11400000, guid: e76a9938ee9141fdb42f390e7f1ed013, type: 2}
+  fadeOutForLevelTransitionEvent: {fileID: 11400000, guid: b20667fc295a749b8911426858fc6b11, type: 2}
 --- !u!1 &970462364409526148
 GameObject:
   m_ObjectHideFlags: 0

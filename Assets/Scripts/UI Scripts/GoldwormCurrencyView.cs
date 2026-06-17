@@ -18,6 +18,7 @@ public sealed class GoldwormCurrencyView : MonoBehaviour
     [Header("Optional Game Event API")]
     [SerializeField] private GameEvent showIndefinitelyEvent;
     [SerializeField] private GameEvent hideIndefinitelyEvent;
+    [SerializeField] private GameEvent fadeOutForLevelTransitionEvent;
 
     private SaveStateModel boundSaveState;
     private Coroutine bindRoutine;
@@ -44,6 +45,7 @@ public sealed class GoldwormCurrencyView : MonoBehaviour
     {
         showIndefinitelyEvent?.RegisterRuntimeListener(ShowIndefinitely);
         hideIndefinitelyEvent?.RegisterRuntimeListener(HideIndefinitely);
+        fadeOutForLevelTransitionEvent?.RegisterRuntimeListener(PrepareForSceneTransition);
         SceneManager.activeSceneChanged += HandleActiveSceneChanged;
         SceneManager.sceneLoaded += HandleSceneLoaded;
 
@@ -54,6 +56,7 @@ public sealed class GoldwormCurrencyView : MonoBehaviour
     {
         showIndefinitelyEvent?.UnregisterRuntimeListener(ShowIndefinitely);
         hideIndefinitelyEvent?.UnregisterRuntimeListener(HideIndefinitely);
+        fadeOutForLevelTransitionEvent?.UnregisterRuntimeListener(PrepareForSceneTransition);
         SceneManager.activeSceneChanged -= HandleActiveSceneChanged;
         SceneManager.sceneLoaded -= HandleSceneLoaded;
 

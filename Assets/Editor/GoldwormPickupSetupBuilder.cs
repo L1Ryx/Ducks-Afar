@@ -15,7 +15,9 @@ public static class GoldwormPickupSetupBuilder
     private const string GoldwormPickedUpEventPath = "Assets/SOs/Events/OnPickedUp/OnPickedUpGoldworm.asset";
     private const string GoldwormShowEventPath = "Assets/SOs/Events/OnGoldwormsShowIndefinitely.asset";
     private const string GoldwormHideEventPath = "Assets/SOs/Events/OnGoldwormsHideIndefinitely.asset";
-    private const string HoverSourcePrefabPath = "Assets/Prefabs/Pickups/HardwormPickup_Base.prefab";
+    private const string FadeOutOfLevelStartEventPath = "Assets/SOs/Events/OnFadeOutOfLevelStart.asset";
+    private const string GoldwormHoverPanelPrefabPath = PickupFolder + "/GoldwormHoverPanelUI.prefab";
+    private const string HoverSettingsSourcePrefabPath = "Assets/Prefabs/Pickups/HardwormPickup_Base.prefab";
 
     [MenuItem("Ducks Afar/Build Goldworm Pickups")]
     public static void Build()
@@ -27,6 +29,7 @@ public static class GoldwormPickupSetupBuilder
         GameEvent pickedUpEvent = EnsureGameEvent(GoldwormPickedUpEventPath);
         GameEvent showEvent = EnsureGameEvent(GoldwormShowEventPath);
         GameEvent hideEvent = EnsureGameEvent(GoldwormHideEventPath);
+        GameEvent fadeOutOfLevelStartEvent = EnsureGameEvent(FadeOutOfLevelStartEventPath);
 
         HoverPanelSettings hoverSettings = LoadHoverPanelSettings();
 
@@ -35,8 +38,8 @@ public static class GoldwormPickupSetupBuilder
         CreatePickupVariant(basePrefab, "GoldwormPickup_B", "Assets/Art/Goldworm-B.aseprite", "Goldworm-B");
         CreatePickupVariant(basePrefab, "GoldwormPickup_C", "Assets/Art/Goldworm-C.aseprite", "Goldworm-C");
 
-        HookCurrencyPanelPrefab(showEvent, hideEvent);
-        HookBootstrapCurrencyPanel(showEvent, hideEvent);
+        HookCurrencyPanelPrefab(showEvent, hideEvent, fadeOutOfLevelStartEvent);
+        HookBootstrapCurrencyPanel(showEvent, hideEvent, fadeOutOfLevelStartEvent);
 
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
@@ -49,6 +52,11 @@ public static class GoldwormPickupSetupBuilder
     {
         GameObject root = new GameObject("GoldwormPickup_Base");
         root.layer = LayerMask.NameToLayer("Interactable");
+
+        GameObject anchor = new GameObject("Anchor");
+        anchor.layer = root.layer;
+        anchor.transform.SetParent(root.transform, worldPositionStays: false);
+        anchor.transform.localPosition = Vector3.up;
 
         SpriteRenderer spriteRenderer = root.AddComponent<SpriteRenderer>();
         spriteRenderer.sortingLayerName = "Items";
@@ -73,6 +81,7 @@ public static class GoldwormPickupSetupBuilder
         MonoBehaviour hoverPanel = root.AddComponent(hoverPanelType) as MonoBehaviour;
         SerializedObject hoverObject = new SerializedObject(hoverPanel);
         hoverObject.FindProperty("screenSpacePanelPrefab").objectReferenceValue = hoverSettings.ScreenSpacePanelPrefab;
+        hoverObject.FindProperty("worldAnchor").objectReferenceValue = anchor.transform;
         hoverObject.FindProperty("worldUIRootTag").stringValue = hoverSettings.WorldUIRootTag;
         hoverObject.FindProperty("title").stringValue = "Goldworm";
         hoverObject.FindProperty("showDuration").floatValue = hoverSettings.ShowDuration;
@@ -124,7 +133,10 @@ public static class GoldwormPickupSetupBuilder
         UnityEngine.Object.DestroyImmediate(root);
     }
 
-    private static void HookCurrencyPanelPrefab(GameEvent showEvent, GameEvent hideEvent)
+    private static void HookCurrencyPanelPrefab(
+        GameEvent showEvent,
+        GameEvent hideEvent,
+        GameEvent fadeOutOfLevelStartEvent)
     {
         if (!File.Exists(CurrencyPanelPrefabPath))
             return;
@@ -132,7 +144,11 @@ public static class GoldwormPickupSetupBuilder
         GameObject root = PrefabUtility.LoadPrefabContents(CurrencyPanelPrefabPath);
         try
         {
-            GoldwormCurrencyView view = ConfigureGoldwormSection(root.transform, showEvent, hideEvent);
+            GoldwormCurrencyView view = ConfigureGoldwormSection(
+                root.transform,
+                showEvent,
+                hideEvent,
+                fadeOutOfLevelStartEvent);
             if (view != null)
                 PrefabUtility.SaveAsPrefabAsset(root, CurrencyPanelPrefabPath);
         }
@@ -142,7 +158,10 @@ public static class GoldwormPickupSetupBuilder
         }
     }
 
-    private static void HookBootstrapCurrencyPanel(GameEvent showEvent, GameEvent hideEvent)
+    private static void HookBootstrapCurrencyPanel(
+        GameEvent showEvent,
+        GameEvent hideEvent,
+        GameEvent fadeOutOfLevelStartEvent)
     {
         if (!File.Exists(BootstrapScenePath))
             return;
@@ -152,7 +171,11 @@ public static class GoldwormPickupSetupBuilder
 
         foreach (GameObject root in scene.GetRootGameObjects())
         {
-            GoldwormCurrencyView view = ConfigureGoldwormSection(root.transform, showEvent, hideEvent);
+            GoldwormCurrencyView view = ConfigureGoldwormSection(
+                root.transform,
+                showEvent,
+                hideEvent,
+                fadeOutOfLevelStartEvent);
             changed |= view != null;
         }
 
@@ -160,7 +183,11 @@ public static class GoldwormPickupSetupBuilder
             EditorSceneManager.SaveScene(scene);
     }
 
-    private static GoldwormCurrencyView ConfigureGoldwormSection(Transform root, GameEvent showEvent, GameEvent hideEvent)
+    private static GoldwormCurrencyView ConfigureGoldwormSection(
+        Transform root,
+        GameEvent showEvent,
+        GameEvent hideEvent,
+        GameEvent fadeOutOfLevelStartEvent)
     {
         Transform section = FindDeepChild(root, "Goldworms Section");
         if (section == null)
@@ -184,6 +211,7 @@ public static class GoldwormPickupSetupBuilder
         viewObject.FindProperty("useUnscaledTime").boolValue = true;
         viewObject.FindProperty("showIndefinitelyEvent").objectReferenceValue = showEvent;
         viewObject.FindProperty("hideIndefinitelyEvent").objectReferenceValue = hideEvent;
+        viewObject.FindProperty("fadeOutForLevelTransitionEvent").objectReferenceValue = fadeOutOfLevelStartEvent;
         viewObject.ApplyModifiedPropertiesWithoutUndo();
 
         group.alpha = 0f;
@@ -206,6 +234,7 @@ public static class GoldwormPickupSetupBuilder
     {
         HoverPanelSettings settings = new HoverPanelSettings
         {
+            ScreenSpacePanelPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(GoldwormHoverPanelPrefabPath),
             WorldUIRootTag = "WorldUIRoot",
             ShowDuration = 0.18f,
             HideDuration = 0.12f,
@@ -216,7 +245,7 @@ public static class GoldwormPickupSetupBuilder
             OutOfRangeAlpha = 0.75f
         };
 
-        GameObject source = AssetDatabase.LoadAssetAtPath<GameObject>(HoverSourcePrefabPath);
+        GameObject source = AssetDatabase.LoadAssetAtPath<GameObject>(HoverSettingsSourcePrefabPath);
         if (source == null)
             return settings;
 
@@ -225,7 +254,6 @@ public static class GoldwormPickupSetupBuilder
             return settings;
 
         SerializedObject sourceObject = new SerializedObject(sourcePanel);
-        settings.ScreenSpacePanelPrefab = sourceObject.FindProperty("screenSpacePanelPrefab").objectReferenceValue as GameObject;
         settings.WorldUIRootTag = sourceObject.FindProperty("worldUIRootTag").stringValue;
         settings.ShowDuration = sourceObject.FindProperty("showDuration").floatValue;
         settings.HideDuration = sourceObject.FindProperty("hideDuration").floatValue;
