@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 [RequireComponent(typeof(VideoPlayer))]
@@ -19,9 +20,14 @@ public class CutsceneScript : MonoBehaviour
     [SerializeField] private bool hideVideoDuringEndHold = true;
     [SerializeField] private bool useUnscaledTimeForEndHold;
 
+#if UNITY_EDITOR
+    private static readonly string[] EditorSkippableScenes = { "animation", "animation0" };
+#endif
+
     private VideoPlayer videoPlayer;
     private Coroutine endHoldRoutine;
     private float initialTargetCameraAlpha = 1f;
+    private bool hasEnded;
 
     private void Awake()
     {
@@ -51,6 +57,8 @@ public class CutsceneScript : MonoBehaviour
     
     public void PlayVideo()
     {
+        hasEnded = false;
+
         if (endHoldRoutine != null)
         {
             StopCoroutine(endHoldRoutine);
@@ -75,6 +83,44 @@ public class CutsceneScript : MonoBehaviour
             videoPlayer.Prepare();
         }
     }
+
+#if UNITY_EDITOR
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P) && IsEditorSkippableScene())
+            SkipCutsceneForEditor();
+    }
+
+    private static bool IsEditorSkippableScene()
+    {
+        string activeSceneName = SceneManager.GetActiveScene().name;
+        foreach (string sceneName in EditorSkippableScenes)
+        {
+            if (activeSceneName == sceneName)
+                return true;
+        }
+
+        return false;
+    }
+
+    private void SkipCutsceneForEditor()
+    {
+        if (hasEnded)
+            return;
+
+        Debug.Log($"Editor skip requested for cutscene scene '{SceneManager.GetActiveScene().name}'.", this);
+
+        if (endHoldRoutine != null)
+        {
+            StopCoroutine(endHoldRoutine);
+            endHoldRoutine = null;
+        }
+
+        videoPlayer.Stop();
+        videoPlayer.targetCameraAlpha = 0f;
+        RaiseVideoEnd();
+    }
+#endif
 
     private void HandlePreparedAndPlay(VideoPlayer source)
     {
@@ -111,6 +157,9 @@ public class CutsceneScript : MonoBehaviour
 
     private void HandleVideoEnd(VideoPlayer source)
     {
+        if (hasEnded)
+            return;
+
         if (endHoldRoutine != null)
             StopCoroutine(endHoldRoutine);
 
@@ -131,6 +180,15 @@ public class CutsceneScript : MonoBehaviour
         }
 
         endHoldRoutine = null;
+        RaiseVideoEnd();
+    }
+
+    private void RaiseVideoEnd()
+    {
+        if (hasEnded)
+            return;
+
+        hasEnded = true;
         onVideoEnd?.Raise();
     }
 }
