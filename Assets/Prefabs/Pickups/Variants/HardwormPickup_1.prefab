@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HardwormPickup_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1426375073299472425, guid: f20a083f6cf5c4c3493ac3fb732fa288, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1811832145532550314, guid: f20a083f6cf5c4c3493ac3fb732fa288, type: 3}
       propertyPath: packDef
       value: 

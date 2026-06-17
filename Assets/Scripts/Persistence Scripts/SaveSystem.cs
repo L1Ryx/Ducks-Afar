@@ -119,6 +119,7 @@ public sealed class SaveSystem
                 $"scene={data.sceneName} | " +
                 $"location={data.location} | " +
                 $"hasPos={data.hasPlayerPosition} | " +
+                $"goldworms={data.goldworms} | " +
                 $"companion={data.companionId} | " +
                 $"unlocked={data.unlockedLevelIds.Count} | " +
                 $"completed={data.completedLevelIds.Count} | " +
@@ -342,6 +343,8 @@ public sealed class SaveSystem
             playerPositionX = saveState.SavedPlayerPosition.x,
             playerPositionY = saveState.SavedPlayerPosition.y,
             playerPositionZ = saveState.SavedPlayerPosition.z,
+            goldworms = saveState.Goldworms,
+            hasCollectedGoldworms = saveState.HasCollectedGoldworms,
             unlockedLevelIds = BuildSortedList(saveState.UnlockedLevelIds),
             completedLevelIds = BuildSortedList(saveState.CompletedLevelIds),
             discoveredArtifactIds = BuildSortedList(saveState.DiscoveredArtifactIds),
@@ -360,6 +363,11 @@ public sealed class SaveSystem
         saveState.CurrentCompanionId = string.IsNullOrWhiteSpace(data.companionId)
             ? NoneCompanionId
             : data.companionId;
+        saveState.SetGoldworms(data.goldworms);
+        saveState.SetHasCollectedGoldworms(
+            data.hasCollectedGoldworms
+            || data.goldworms > 0
+            || ContainsGoldwormWorldState(data.worldStateIds));
 
         if (data.hasPlayerPosition)
         {
@@ -385,6 +393,9 @@ public sealed class SaveSystem
         if (data.timePlayedSeconds < 0f)
             data.timePlayedSeconds = 0f;
 
+        if (data.goldworms < 0)
+            data.goldworms = 0;
+
         if (data.location == null)
             data.location = string.Empty;
 
@@ -401,6 +412,23 @@ public sealed class SaveSystem
         data.completedLevelIds = SanitizeIdList(data.completedLevelIds);
         data.discoveredArtifactIds = SanitizeIdList(data.discoveredArtifactIds);
         data.worldStateIds = SanitizeIdList(data.worldStateIds);
+    }
+
+    private static bool ContainsGoldwormWorldState(List<string> worldStateIds)
+    {
+        if (worldStateIds == null)
+            return false;
+
+        foreach (string id in worldStateIds)
+        {
+            if (!string.IsNullOrWhiteSpace(id)
+                && id.Trim().StartsWith("goldworm:", StringComparison.OrdinalIgnoreCase))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     private static string GetSceneNameForSave(SaveStateModel saveState)

@@ -1640,7 +1640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6352677792389586742, guid: 80724089feb364fdf9480cda25589330, type: 3}
       propertyPath: m_Name
-      value: Scene Pause Settings
+      value: Scene Settings
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3259,6 +3259,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   disableAfterFade: 0
+  blockRaycastsDuringFade: 1
+  waitForSceneLoadCompleteBeforeFade: 0
+  onFadeInStarted:
+    m_PersistentCalls:
+      m_Calls: []
   onFadeIn:
     m_PersistentCalls:
       m_Calls: []

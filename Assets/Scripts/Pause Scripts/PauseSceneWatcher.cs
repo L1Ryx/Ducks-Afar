@@ -33,7 +33,7 @@ public sealed class PauseSceneWatcher : MonoBehaviour
         if (!Game.IsReady || Game.Ctx?.Pause == null)
             return;
 
-        var settings = Object.FindFirstObjectByType<ScenePauseSettings>(FindObjectsInactive.Include);
+        var settings = FindActiveSceneSettings();
         if (settings != null)
         {
             settings.Apply();
@@ -42,7 +42,7 @@ public sealed class PauseSceneWatcher : MonoBehaviour
 
         Game.Ctx.Pause.SetScenePausable(
             defaultPausableWhenNoMarkerFound,
-            "No ScenePauseSettings marker found in the active scene."
+            "No SceneSettings marker found in the active scene."
         );
         ApplySceneRestartAllowed(false);
     }
@@ -51,5 +51,21 @@ public sealed class PauseSceneWatcher : MonoBehaviour
     {
         if (Game.Ctx != null && Game.Ctx.TryGetComponent(out HoldToResetController holdToReset))
             holdToReset.SetSceneRestartAllowed(allowRestart);
+    }
+
+    private static SceneSettings FindActiveSceneSettings()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneSettings[] settings = Object.FindObjectsByType<SceneSettings>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None);
+
+        foreach (SceneSettings candidate in settings)
+        {
+            if (candidate != null && candidate.gameObject.scene == activeScene)
+                return candidate;
+        }
+
+        return null;
     }
 }

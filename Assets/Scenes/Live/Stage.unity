@@ -9674,13 +9674,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6352677792389586742, guid: 80724089feb364fdf9480cda25589330, type: 3}
-      propertyPath: m_Name
-      value: Scene Pause Settings
-      objectReference: {fileID: 0}
     - target: {fileID: 2224236680334177019, guid: 80724089feb364fdf9480cda25589330, type: 3}
       propertyPath: allowHoldToRestart
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6352677792389586742, guid: 80724089feb364fdf9480cda25589330, type: 3}
+      propertyPath: m_Name
+      value: Scene Settings
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

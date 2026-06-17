@@ -16,6 +16,8 @@ public sealed class SaveSlotData
     public float playerPositionX;
     public float playerPositionY;
     public float playerPositionZ;
+    public int goldworms;
+    public bool hasCollectedGoldworms;
 
     public List<string> unlockedLevelIds = new();
     public List<string> completedLevelIds = new();
@@ -39,6 +41,8 @@ public sealed class SaveSlotData
             playerPositionX = 0f,
             playerPositionY = 0f,
             playerPositionZ = 0f,
+            goldworms = 0,
+            hasCollectedGoldworms = false,
             unlockedLevelIds = new List<string>(),
             completedLevelIds = new List<string>(),
             discoveredArtifactIds = new List<string>(),

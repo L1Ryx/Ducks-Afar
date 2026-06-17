@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,9 +16,13 @@ public sealed class SaveStateModel
     public bool HasSavedPlayerPosition { get; private set; }
     public string SavedPlayerPositionSceneName { get; private set; }
     public Vector3 SavedPlayerPosition { get; private set; }
+    public int Goldworms { get; private set; }
+    public bool HasCollectedGoldworms { get; private set; }
 
     public bool HasActiveSlot { get; private set; }
     public int ActiveSlotIndex { get; private set; }
+    public event Action<int> GoldwormsChanged;
+    public event Action<bool> GoldwormCollectionStateChanged;
 
     public SaveStateModel()
     {
@@ -28,6 +33,8 @@ public sealed class SaveStateModel
         HasSavedPlayerPosition = false;
         SavedPlayerPositionSceneName = string.Empty;
         SavedPlayerPosition = Vector3.zero;
+        Goldworms = 0;
+        HasCollectedGoldworms = false;
         HasActiveSlot = false;
         ActiveSlotIndex = -1;
     }
@@ -70,6 +77,8 @@ public sealed class SaveStateModel
         CurrentSceneName = startSceneName ?? string.Empty;
         CurrentLocation = startLocation ?? string.Empty;
         CurrentCompanionId = SaveSystem.NoneCompanionId;
+        SetGoldworms(0);
+        SetHasCollectedGoldworms(false);
         ClearSavedPlayerPosition();
         unlockedLevelIds.Clear();
         completedLevelIds.Clear();
@@ -95,6 +104,38 @@ public sealed class SaveStateModel
     public bool HasWorldState(string worldStateId)
     {
         return ContainsId(worldStateIds, worldStateId);
+    }
+
+    public void SetGoldworms(int amount)
+    {
+        int normalizedAmount = Mathf.Max(0, amount);
+        if (Goldworms == normalizedAmount)
+            return;
+
+        Goldworms = normalizedAmount;
+        GoldwormsChanged?.Invoke(Goldworms);
+    }
+
+    public void AddGoldworms(int amount)
+    {
+        if (amount <= 0)
+            return;
+
+        SetGoldworms(Goldworms + amount);
+    }
+
+    public void MarkGoldwormsCollected()
+    {
+        SetHasCollectedGoldworms(true);
+    }
+
+    public void SetHasCollectedGoldworms(bool hasCollected)
+    {
+        if (HasCollectedGoldworms == hasCollected)
+            return;
+
+        HasCollectedGoldworms = hasCollected;
+        GoldwormCollectionStateChanged?.Invoke(HasCollectedGoldworms);
     }
 
     public void SetSavedPlayerPosition(string sceneName, Vector3 position)

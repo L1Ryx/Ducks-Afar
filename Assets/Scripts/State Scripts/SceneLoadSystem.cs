@@ -134,6 +134,13 @@ public sealed class SceneLoadSystem
 
     public void PrepareForSceneLoad()
     {
+        GoldwormCurrencyView[] goldwormViews = UnityEngine.Object.FindObjectsByType<GoldwormCurrencyView>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None);
+
+        foreach (GoldwormCurrencyView view in goldwormViews)
+            view.PrepareForSceneTransition();
+
         ctx.Dialogue?.CancelDialogue();
         ctx.Audio?.StopGlobalAmbience(immediate: false);
         ctx.LevelState?.Reset();
