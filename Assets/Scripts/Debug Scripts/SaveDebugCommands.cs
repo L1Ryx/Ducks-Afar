@@ -3,13 +3,28 @@ using System.Collections.Generic;
 using IngameDebugConsole;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class SaveDebugCommands : MonoBehaviour
 {
+    [Header("Events")]
+    [SerializeField] private GameEvent savedEvent;
+
+    private static SaveDebugCommands instance;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        instance = this;
         RegisterDebugCommands();
+    }
+
+    private void OnDestroy()
+    {
+        if (instance == this)
+            instance = null;
     }
 
     private void RegisterDebugCommands()
@@ -36,6 +51,7 @@ public class SaveDebugCommands : MonoBehaviour
         DebugLogConsole.AddCommand("/save_active", "Prints the currently active save slot", SaveActive);
         DebugLogConsole.AddCommand("/save_write_active", "Save to the active slot", SaveWriteActive);
         DebugLogConsole.AddCommand("/save_current", "Save current scene, player position, and runtime save state to the active slot", SaveCurrent);
+        DebugLogConsole.AddCommand("/save_notify", "Raise OnGameSaved without writing a file, for testing save UI", SaveNotify);
         DebugLogConsole.AddCommand<int>("/save_bind", "Bind current session to slot index", SaveBind);
 
         DebugLogConsole.AddCommand<string>("/save_unlock_level", "Add a level id to unlocked levels", SaveUnlockLevel);
@@ -69,12 +85,42 @@ public class SaveDebugCommands : MonoBehaviour
     
     private static void SaveWriteActive()
     {
-        Game.Ctx.Saves.SaveToActiveSlot();
+        if (!Game.Ctx.Saves.SaveToActiveSlot())
+            return;
+
+        RaiseSavedEvent("/save_write_active");
     }
 
     private static void SaveCurrent()
     {
-        Game.Ctx.Saves.SaveCurrentGameToActiveSlot();
+        if (!Game.Ctx.Saves.SaveCurrentGameToActiveSlot())
+            return;
+
+        RaiseSavedEvent("/save_current");
+    }
+
+    private static void SaveNotify()
+    {
+        RaiseSavedEvent("/save_notify");
+    }
+
+    private static void RaiseSavedEvent(string sourceCommand)
+    {
+        GameEvent eventToRaise = instance != null ? instance.savedEvent : null;
+
+#if UNITY_EDITOR
+        if (eventToRaise == null)
+            eventToRaise = AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/SOs/Events/OnGameSaved.asset");
+#endif
+
+        if (eventToRaise == null)
+        {
+            Debug.LogWarning($"{sourceCommand} failed to raise OnGameSaved: no event is assigned.");
+            return;
+        }
+
+        eventToRaise.Raise();
+        Debug.Log($"{sourceCommand} raised OnGameSaved.");
     }
     
     private static void SaveBind(int slotIndex)
@@ -339,4 +385,22 @@ public class SaveDebugCommands : MonoBehaviour
         list.Sort(StringComparer.Ordinal);
         return string.Join(", ", list);
     }
+
+#if UNITY_EDITOR
+    private void Reset()
+    {
+        AssignEditorDefaults();
+    }
+
+    private void OnValidate()
+    {
+        AssignEditorDefaults();
+    }
+
+    private void AssignEditorDefaults()
+    {
+        if (savedEvent == null)
+            savedEvent = AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/SOs/Events/OnGameSaved.asset");
+    }
+#endif
 }

@@ -57,6 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+  m_UseReflectionProbes: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -72,7 +73,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
@@ -120,6 +121,7 @@ GameObject:
   - component: {fileID: 4329201611737309857}
   - component: {fileID: 1492310456517525199}
   - component: {fileID: 4327136443626211329}
+  - component: {fileID: 8584163685327339246}
   m_Layer: 5
   m_Name: Dark Overlay
   m_TagString: Untagged
@@ -224,6 +226,10 @@ MonoBehaviour:
     m_RotationOrder: 4
   disableAfterFade: 0
   blockRaycastsDuringFade: 1
+  waitForSceneLoadCompleteBeforeFade: 0
+  onFadeInStarted:
+    m_PersistentCalls:
+      m_Calls: []
   onFadeIn:
     m_PersistentCalls:
       m_Calls:
@@ -306,11 +312,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   startDelaySeconds: 0.5
+  levelFullyBlack: {fileID: 11400000, guid: 14b6b41d9b864c8d98acbb8fdf515e74, type: 2}
   levelFadeOutComplete: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}
-  savedEvent: {fileID: 11400000, guid: ce5a017ea9bb4af6a0a4b8f9a011a14a, type: 2}
   blockRaycastsDuringFade: 1
-  saveActiveSlotWhenBlack: 1
-  captureSceneCheckpointOnSave: 0
 --- !u!114 &978010055287441542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,3 +412,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8584163685327339246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210262262112039414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8c1c1f5f1a4f269d6d4fd6a2f1a8e3, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::LevelEndSaveOnEvent
+  triggerEvent: {fileID: 11400000, guid: 14b6b41d9b864c8d98acbb8fdf515e74, type: 2}
+  savedEvent: {fileID: 11400000, guid: ce5a017ea9bb4af6a0a4b8f9a011a14a, type: 2}
+  saveActiveSlotOnTrigger: 1
+  captureSceneCheckpointOnSave: 0
+  logSkippedSaves: 1

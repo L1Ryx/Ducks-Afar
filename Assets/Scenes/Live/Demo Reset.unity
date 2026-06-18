@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3059,6 +3059,7 @@ GameObject:
   - component: {fileID: 1218675822}
   - component: {fileID: 1218675821}
   - component: {fileID: 1218675820}
+  - component: {fileID: 1218675824}
   m_Layer: 5
   m_Name: Dark Overlay
   m_TagString: Untagged
@@ -3190,11 +3191,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   startDelaySeconds: 0.5
+  levelFullyBlack: {fileID: 11400000, guid: 14b6b41d9b864c8d98acbb8fdf515e74, type: 2}
   levelFadeOutComplete: {fileID: 11400000, guid: 7e8f559d28f00426db2a46d00f55fb96, type: 2}
-  savedEvent: {fileID: 11400000, guid: ce5a017ea9bb4af6a0a4b8f9a011a14a, type: 2}
   blockRaycastsDuringFade: 1
-  saveActiveSlotWhenBlack: 1
-  captureSceneCheckpointOnSave: 0
 --- !u!114 &1218675822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3270,6 +3269,23 @@ MonoBehaviour:
   onFadeIn:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1218675824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218675816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8c1c1f5f1a4f269d6d4fd6a2f1a8e3, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::LevelEndSaveOnEvent
+  triggerEvent: {fileID: 11400000, guid: 14b6b41d9b864c8d98acbb8fdf515e74, type: 2}
+  savedEvent: {fileID: 11400000, guid: ce5a017ea9bb4af6a0a4b8f9a011a14a, type: 2}
+  saveActiveSlotOnTrigger: 1
+  captureSceneCheckpointOnSave: 0
+  logSkippedSaves: 1
 --- !u!1 &1242814564
 GameObject:
   m_ObjectHideFlags: 0

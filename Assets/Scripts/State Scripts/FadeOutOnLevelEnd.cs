@@ -19,18 +19,14 @@ public class FadeOutOnLevelEnd : MonoBehaviour
     [SerializeField] private float startDelaySeconds = 0f;
 
     [Header("Events")]
+    [Tooltip("Raised after the overlay reaches full black, before levelFadeOutComplete is raised.")]
+    [SerializeField] private GameEvent levelFullyBlack;
     [Tooltip("Raised when fade-to-black finishes.")]
     [SerializeField] private GameEvent levelFadeOutComplete;
-    [Tooltip("Raised after the active save slot is successfully written at fade-to-black.")]
-    [SerializeField] private GameEvent savedEvent;
 
     [Header("Behavior")]
     [Tooltip("If true, blocks clicks during the fade-out.")]
     [SerializeField] private bool blockRaycastsDuringFade = true;
-    [Tooltip("If true, saves the active slot after the curtain has fully faded to black.")]
-    [SerializeField] private bool saveActiveSlotWhenBlack = true;
-    [Tooltip("If true, runs the scene checkpoint capture before saving. Leave off for level-end progress saves.")]
-    [SerializeField] private bool captureSceneCheckpointOnSave = false;
 
     private Coroutine fadeRoutine;
 
@@ -101,7 +97,7 @@ public class FadeOutOnLevelEnd : MonoBehaviour
 
         SetAlpha(1f);
 
-        SaveActiveSlotIfWanted();
+        levelFullyBlack?.Raise();
 
         // Fade complete event
         if (levelFadeOutComplete != null)
@@ -117,36 +113,6 @@ public class FadeOutOnLevelEnd : MonoBehaviour
         overlayImage.color = c;
     }
 
-    private void SaveActiveSlotIfWanted()
-    {
-        if (!saveActiveSlotWhenBlack)
-            return;
-
-        if (!Game.IsReady || Game.Ctx?.Saves == null || Game.Ctx.SaveState == null)
-        {
-            Debug.LogWarning($"{nameof(FadeOutOnLevelEnd)}: skipped level-end save because GameContext is not ready.", this);
-            return;
-        }
-
-        if (!Game.Ctx.SaveState.HasActiveSlot)
-        {
-            Debug.LogWarning($"{nameof(FadeOutOnLevelEnd)}: skipped level-end save because no active save slot is loaded.", this);
-            return;
-        }
-
-        if (!Game.Ctx.Saves.SaveToActiveSlot(captureSceneCheckpointOnSave))
-            return;
-
-        if (savedEvent != null)
-        {
-            savedEvent.Raise();
-        }
-        else
-        {
-            Debug.LogWarning($"{nameof(FadeOutOnLevelEnd)}: saved successfully, but no savedEvent is assigned for the progress UI.", this);
-        }
-    }
-
 #if UNITY_EDITOR
     private void OnValidate()
     {
@@ -155,8 +121,8 @@ public class FadeOutOnLevelEnd : MonoBehaviour
 
     private void AssignEditorDefaults()
     {
-        if (savedEvent == null)
-            savedEvent = AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/SOs/Events/OnGameSaved.asset");
+        if (levelFullyBlack == null)
+            levelFullyBlack = AssetDatabase.LoadAssetAtPath<GameEvent>("Assets/SOs/Events/OnLevelCurtainFullyBlack.asset");
     }
 #endif
 }
