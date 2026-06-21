@@ -52,7 +52,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DA Builds/6-8-test.app/Contents/MacOS/Ducks Afar" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../DA Builds/screen-test.app/Contents/MacOS/Ducks Afar" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../DA Builds/window-test.app/Contents/MacOS" />
       <option name="PASS_PARENT_ENVS" value="1" />

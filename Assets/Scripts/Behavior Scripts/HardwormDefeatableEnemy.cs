@@ -25,6 +25,10 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     [SerializeField, Min(0f)] private float fadeDuration = 0.35f;
     [SerializeField] private bool destroyAfterFade = true;
 
+    [Header("Drop")]
+    [SerializeField] private GameObject droppedItemPrefab;
+    [SerializeField] private Vector3 droppedItemOffset;
+
     [Header("Events")]
     [SerializeField] private UnityEvent onDefeated;
     [SerializeField] private UnityEvent onDefeatFailed;
@@ -143,9 +147,18 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
 
         onDefeated?.Invoke();
         Defeated?.Invoke(this);
+        DropItem();
 
         if (destroyAfterFade)
             Destroy(gameObject);
+    }
+
+    private void DropItem()
+    {
+        if (droppedItemPrefab == null)
+            return;
+
+        Instantiate(droppedItemPrefab, transform.position + droppedItemOffset, Quaternion.identity, transform.parent);
     }
 
     private void DisableGameplay()

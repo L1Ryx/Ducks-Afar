@@ -52,14 +52,13 @@ public sealed class EnemyGateController : MonoBehaviour
     private Coroutine openRoutine;
     private GameObject openedVersionInstance;
 
+    public bool IsOpen => isOpen;
+    public bool IsOpening => isOpening;
+    public bool CanOpen => !isOpen && !isOpening;
+
     private void Awake()
     {
         EnsureRefs();
-    }
-
-    private void OnEnable()
-    {
-        RegisterEnemyListeners();
     }
 
     private void Start()
@@ -71,40 +70,16 @@ public sealed class EnemyGateController : MonoBehaviour
         }
 
         ApplyClosedState();
-        CheckEnemies();
     }
 
-    private void OnDisable()
-    {
-        UnregisterEnemyListeners();
-    }
-
+    [System.Obsolete("Enemy gates are now opened by an inventory key. This method remains for old UnityEvent references.")]
     public void CheckEnemies()
     {
-        if (isOpen)
-            return;
-
-        if (enemies == null || enemies.Length == 0)
-            return;
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            HardwormDefeatableEnemy enemy = enemies[i];
-            if (enemy != null && !enemy.IsDefeated)
-                return;
-        }
-
-        OpenGate(persist: true, destroyCachedEnemies: false);
     }
 
     public void OpenGate()
     {
         OpenGate(persist: true, destroyCachedEnemies: false);
-    }
-
-    private void HandleEnemyDefeated(HardwormDefeatableEnemy enemy)
-    {
-        CheckEnemies();
     }
 
     private void OpenGate(bool persist, bool destroyCachedEnemies)
@@ -113,8 +88,6 @@ public sealed class EnemyGateController : MonoBehaviour
             return;
 
         isOpening = true;
-        UnregisterEnemyListeners();
-
         if (openRoutine != null)
             StopCoroutine(openRoutine);
 
@@ -148,7 +121,6 @@ public sealed class EnemyGateController : MonoBehaviour
 
         isOpen = true;
         isOpening = false;
-        UnregisterEnemyListeners();
 
         if (openRoutine != null)
         {
@@ -300,30 +272,6 @@ public sealed class EnemyGateController : MonoBehaviour
             HardwormDefeatableEnemy enemy = enemies[i];
             if (enemy != null)
                 enemy.DestroyImmediatelyForPersistence();
-        }
-    }
-
-    private void RegisterEnemyListeners()
-    {
-        if (enemies == null)
-            return;
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (enemies[i] != null)
-                enemies[i].Defeated += HandleEnemyDefeated;
-        }
-    }
-
-    private void UnregisterEnemyListeners()
-    {
-        if (enemies == null)
-            return;
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (enemies[i] != null)
-                enemies[i].Defeated -= HandleEnemyDefeated;
         }
     }
 

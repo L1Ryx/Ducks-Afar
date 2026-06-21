@@ -26,8 +26,8 @@ public class InventoryCostInteractableHoverPanel : MonoBehaviour, IHoverInfoUI
     [SerializeField] private Ease hideEase = Ease.InCubic;
 
     [Header("Alpha")]
-    [SerializeField] private float activeAlpha = 1f;
-    [SerializeField] private float inactiveAlpha = 0.45f;
+    [SerializeField] private float activeAlpha = 0.95f;
+    [SerializeField] private float inactiveAlpha = 0.7f;
 
     private GameObject panelInstance;
     private InventoryCostHoverPanelView view;
