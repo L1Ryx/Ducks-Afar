@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -6,6 +7,23 @@ using UnityEditor;
 [DisallowMultipleComponent]
 public sealed class EnemyGateController : MonoBehaviour
 {
+    [System.Serializable]
+    private sealed class GateHalf
+    {
+        public Transform root;
+        public SpriteRenderer spriteRenderer;
+        public BoxCollider2D collider;
+        public Sprite closedSprite;
+        public Sprite transitionSprite;
+        public Sprite openSprite;
+        public Vector2 closedColliderOffset;
+        public Vector2 closedColliderSize = Vector2.one;
+        public Vector2 openColliderOffset;
+        public Vector2 openColliderSize = Vector2.one;
+
+        public bool IsConfigured => spriteRenderer != null && collider != null;
+    }
+
     [Header("Persistence")]
     [SerializeField] private PersistentId persistentId;
     [SerializeField] private string flagId;
@@ -17,6 +35,11 @@ public sealed class EnemyGateController : MonoBehaviour
     [SerializeField] private bool destroyEnemiesWhenLoadedOpen = true;
 
     [Header("Gate")]
+    [SerializeField] private GateHalf leftHalf = new GateHalf();
+    [SerializeField] private GateHalf rightHalf = new GateHalf();
+    [SerializeField, Min(0f)] private float transitionDuration = 0.25f;
+
+    [Header("Legacy Gate")]
     [SerializeField] private Collider2D[] gateColliders;
     [SerializeField] private SpriteRenderer gateSpriteRenderer;
     [SerializeField] private Sprite openedSprite;
@@ -25,6 +48,8 @@ public sealed class EnemyGateController : MonoBehaviour
     [SerializeField] private string interactedLayerName = "Interacted";
 
     private bool isOpen;
+    private bool isOpening;
+    private Coroutine openRoutine;
     private GameObject openedVersionInstance;
 
     private void Awake()
@@ -41,10 +66,11 @@ public sealed class EnemyGateController : MonoBehaviour
     {
         if (IsFlagSet())
         {
-            OpenGate(persist: false, destroyCachedEnemies: destroyEnemiesWhenLoadedOpen);
+            ApplyOpenStateImmediate(destroyCachedEnemies: destroyEnemiesWhenLoadedOpen);
             return;
         }
 
+        ApplyClosedState();
         CheckEnemies();
     }
 
@@ -83,11 +109,89 @@ public sealed class EnemyGateController : MonoBehaviour
 
     private void OpenGate(bool persist, bool destroyCachedEnemies)
     {
+        if (isOpen || isOpening)
+            return;
+
+        isOpening = true;
+        UnregisterEnemyListeners();
+
+        if (openRoutine != null)
+            StopCoroutine(openRoutine);
+
+        openRoutine = StartCoroutine(OpenGateRoutine(persist, destroyCachedEnemies));
+    }
+
+    private IEnumerator OpenGateRoutine(bool persist, bool destroyCachedEnemies)
+    {
+        ApplyTransitionState();
+
+        if (transitionDuration > 0f && HasConfiguredHalves())
+            yield return new WaitForSeconds(transitionDuration);
+
+        ApplyOpenVisualState();
+
+        isOpen = true;
+        isOpening = false;
+        openRoutine = null;
+
+        if (destroyCachedEnemies)
+            DestroyCachedEnemiesForLoadedOpen();
+
+        if (persist)
+            PersistOpenState();
+    }
+
+    private void ApplyOpenStateImmediate(bool destroyCachedEnemies)
+    {
         if (isOpen)
             return;
 
         isOpen = true;
+        isOpening = false;
         UnregisterEnemyListeners();
+
+        if (openRoutine != null)
+        {
+            StopCoroutine(openRoutine);
+            openRoutine = null;
+        }
+
+        ApplyOpenVisualState();
+
+        if (destroyCachedEnemies)
+            DestroyCachedEnemiesForLoadedOpen();
+    }
+
+    private void ApplyClosedState()
+    {
+        if (HasConfiguredHalves())
+        {
+            ApplyHalfState(leftHalf, leftHalf.closedSprite, leftHalf.closedColliderOffset, leftHalf.closedColliderSize);
+            ApplyHalfState(rightHalf, rightHalf.closedSprite, rightHalf.closedColliderOffset, rightHalf.closedColliderSize);
+            SetLegacyGateVisible(false);
+            SetLegacyCollidersEnabled(false);
+        }
+    }
+
+    private void ApplyTransitionState()
+    {
+        if (!HasConfiguredHalves())
+            return;
+
+        ApplyHalfSprite(leftHalf, leftHalf.transitionSprite);
+        ApplyHalfSprite(rightHalf, rightHalf.transitionSprite);
+    }
+
+    private void ApplyOpenVisualState()
+    {
+        if (HasConfiguredHalves())
+        {
+            ApplyHalfState(leftHalf, leftHalf.openSprite, leftHalf.openColliderOffset, leftHalf.openColliderSize);
+            ApplyHalfState(rightHalf, rightHalf.openSprite, rightHalf.openColliderOffset, rightHalf.openColliderSize);
+            SetLegacyGateVisible(false);
+            SetLegacyCollidersEnabled(false);
+            return;
+        }
 
         if (gateColliders == null || gateColliders.Length == 0)
             gateColliders = GetComponentsInChildren<Collider2D>(true);
@@ -106,12 +210,6 @@ public sealed class EnemyGateController : MonoBehaviour
 
         if (moveToInteractedLayerOnOpen)
             MoveHierarchyToLayer(interactedLayerName);
-
-        if (destroyCachedEnemies)
-            DestroyCachedEnemiesForLoadedOpen();
-
-        if (persist)
-            PersistOpenState();
     }
 
     private void PersistOpenState()
@@ -131,6 +229,55 @@ public sealed class EnemyGateController : MonoBehaviour
 
         if (saveActiveSlotOnOpen && Game.Ctx.Saves != null && Game.Ctx.Saves.SaveCurrentGameToActiveSlot())
             savedEvent?.Raise();
+    }
+
+    private bool HasConfiguredHalves()
+    {
+        return leftHalf != null && rightHalf != null && leftHalf.IsConfigured && rightHalf.IsConfigured;
+    }
+
+    private void ApplyHalfState(GateHalf half, Sprite sprite, Vector2 colliderOffset, Vector2 colliderSize)
+    {
+        ApplyHalfSprite(half, sprite);
+
+        if (half.collider == null)
+            return;
+
+        half.collider.enabled = true;
+        half.collider.offset = colliderOffset;
+        half.collider.size = colliderSize;
+    }
+
+    private void ApplyHalfSprite(GateHalf half, Sprite sprite)
+    {
+        if (half == null || half.spriteRenderer == null || sprite == null)
+            return;
+
+        half.spriteRenderer.sprite = sprite;
+    }
+
+    private void SetLegacyGateVisible(bool visible)
+    {
+        if (gateSpriteRenderer != null)
+            gateSpriteRenderer.enabled = visible;
+    }
+
+    private void SetLegacyCollidersEnabled(bool enabled)
+    {
+        if (gateColliders == null)
+            return;
+
+        for (int i = 0; i < gateColliders.Length; i++)
+        {
+            Collider2D col = gateColliders[i];
+            if (col == null)
+                continue;
+
+            if ((leftHalf != null && col == leftHalf.collider) || (rightHalf != null && col == rightHalf.collider))
+                continue;
+
+            col.enabled = enabled;
+        }
     }
 
     private bool IsFlagSet()
