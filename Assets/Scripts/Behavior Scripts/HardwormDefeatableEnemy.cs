@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public sealed class HardwormDefeatableEnemy : MonoBehaviour
@@ -20,8 +21,11 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     [Header("Refs")]
     [SerializeField] private CameraRoomAStarChaser2D chaser;
     [SerializeField] private TMP_Text requirementText;
+    [SerializeField] private Animator animator;
 
     [Header("Defeat")]
+    [SerializeField] private string deathAnimationStateName = "Die";
+    [SerializeField, Min(0f)] private float deathAnimationDuration = 0.7f;
     [SerializeField, Min(0f)] private float fadeDuration = 0.35f;
     [SerializeField] private bool destroyAfterFade = true;
 
@@ -35,7 +39,9 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
 
     private SpriteRenderer[] spriteRenderers;
     private TMP_Text[] textRenderers;
+    private Graphic[] uiGraphics;
     private Collider2D[] colliders;
+    private Rigidbody2D body;
     private readonly Collider2D[] playerContactResults = new Collider2D[8];
     private bool isDefeated;
     private bool isDefeating;
@@ -76,6 +82,12 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
 
         if (requirementText == null)
             requirementText = GetComponentInChildren<TMP_Text>(true);
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>(true);
+
+        if (body == null)
+            body = GetComponent<Rigidbody2D>();
 
         UpdateRequirementText();
     }
@@ -122,7 +134,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
         isDefeated = true;
         isDefeating = false;
         chaser?.SetFleeFromTarget(false);
-        DisableGameplay();
+        DisableGameplay(disableColliders: true);
         Defeated?.Invoke(this);
         Destroy(gameObject);
     }
@@ -131,7 +143,9 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     {
         isDefeating = true;
         chaser?.SetFleeFromTarget(false);
-        DisableGameplay();
+        DisableGameplay(disableColliders: false);
+
+        yield return PlayDeathAnimation();
 
         float elapsed = 0f;
         while (fadeDuration > 0f && elapsed < fadeDuration)
@@ -161,10 +175,15 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
         Instantiate(droppedItemPrefab, transform.position + droppedItemOffset, Quaternion.identity, transform.parent);
     }
 
-    private void DisableGameplay()
+    private void DisableGameplay(bool disableColliders)
     {
         if (chaser != null)
-            chaser.enabled = false;
+            chaser.FreezeMovement();
+
+        MakeBodyImmovable();
+
+        if (!disableColliders)
+            return;
 
         if (colliders == null)
             CacheRenderersAndColliders();
@@ -174,6 +193,33 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
             if (col != null)
                 col.enabled = false;
         }
+    }
+
+    private void MakeBodyImmovable()
+    {
+        if (body == null)
+            body = GetComponent<Rigidbody2D>();
+
+        if (body == null)
+            return;
+
+        body.linearVelocity = Vector2.zero;
+        body.angularVelocity = 0f;
+        body.bodyType = RigidbodyType2D.Kinematic;
+        body.gravityScale = 0f;
+    }
+
+    private IEnumerator PlayDeathAnimation()
+    {
+        if (animator == null || string.IsNullOrWhiteSpace(deathAnimationStateName))
+            yield break;
+
+        animator.enabled = true;
+        animator.Play(deathAnimationStateName, 0, 0f);
+        animator.Update(0f);
+
+        if (deathAnimationDuration > 0f)
+            yield return new WaitForSeconds(deathAnimationDuration);
     }
 
     private void UpdateFleeState()
@@ -333,12 +379,19 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
 
         if (requirementText == null)
             requirementText = GetComponentInChildren<TMP_Text>(true);
+
+        if (animator == null)
+            animator = GetComponentInChildren<Animator>(true);
+
+        if (body == null)
+            body = GetComponent<Rigidbody2D>();
     }
 
     private void CacheRenderersAndColliders()
     {
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true);
         textRenderers = GetComponentsInChildren<TMP_Text>(true);
+        uiGraphics = GetComponentsInChildren<Graphic>(true);
         colliders = GetComponentsInChildren<Collider2D>(true);
     }
 
@@ -350,7 +403,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
 
     private void SetAlpha(float alpha)
     {
-        if (spriteRenderers == null || textRenderers == null)
+        if (spriteRenderers == null || textRenderers == null || uiGraphics == null)
             CacheRenderersAndColliders();
 
         foreach (SpriteRenderer renderer in spriteRenderers)
@@ -371,6 +424,16 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
             Color color = text.color;
             color.a = alpha;
             text.color = color;
+        }
+
+        foreach (Graphic graphic in uiGraphics)
+        {
+            if (graphic == null)
+                continue;
+
+            Color color = graphic.color;
+            color.a = alpha;
+            graphic.color = color;
         }
     }
 }

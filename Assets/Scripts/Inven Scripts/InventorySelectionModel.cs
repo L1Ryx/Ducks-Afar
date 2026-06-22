@@ -17,16 +17,18 @@ public class InventorySelectionModel
     public void CycleNext()
     {
         var entries = inv.Data.entries;
-        if (entries == null || entries.Count == 0)
+        int entryCount = entries?.Count ?? 0;
+        if (entries == null || entryCount == 0)
             return;
 
-        selectedIndex = (selectedIndex + 1) % entries.Count;
+        selectedIndex = (selectedIndex + 1) % entryCount;
     }
 
     public InventoryEntry GetSelectedEntry()
     {
         var entries = inv.Data.entries;
-        if (entries == null || entries.Count == 0)
+        int entryCount = entries?.Count ?? 0;
+        if (entries == null || entryCount == 0)
             return default;
 
         EnsureValid();
@@ -42,13 +44,14 @@ public class InventorySelectionModel
     public void EnsureValid()
     {
         var entries = inv.Data.entries;
-        if (entries == null || entries.Count == 0)
+        int entryCount = entries?.Count ?? 0;
+        if (entries == null || entryCount == 0)
         {
             selectedIndex = 0;
             return;
         }
 
         if (selectedIndex < 0) selectedIndex = 0;
-        if (selectedIndex >= entries.Count) selectedIndex = entries.Count - 1;
+        if (selectedIndex >= entryCount) selectedIndex = entryCount - 1;
     }
 }

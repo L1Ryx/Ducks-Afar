@@ -298,6 +298,15 @@ public sealed class HoldToResetController : MonoBehaviour
     private void CompleteReset()
     {
         isFadingToBlack = false;
+
+        if (Game.Ctx?.Saves != null
+            && Game.Ctx.SaveState != null
+            && Game.Ctx.SaveState.HasActiveSlot
+            && Game.Ctx.Saves.LoadFromSlotAndEnterScene(Game.Ctx.SaveState.ActiveSlotIndex))
+        {
+            return;
+        }
+
         Game.Ctx.SceneLoader.ReloadActiveScene();
     }
 }

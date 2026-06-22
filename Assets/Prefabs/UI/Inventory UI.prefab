@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
+  m_Name:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 7159133668120255444}
   - component: {fileID: 4897859619390557944}
   - component: {fileID: 553355705463091782}
+  - component: {fileID: 6386185492221841018}
   - component: {fileID: 5232829348461652231}
   - component: {fileID: 515605255105040914}
   m_Layer: 5
@@ -465,6 +466,32 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &6386185492221841018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3422250153092642812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 60
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!114 &553355705463091782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,11 +507,14 @@ MonoBehaviour:
   canvasGroup: {fileID: 4897859619390557944}
   fadeSeconds: 1.25
   fadeEase: 6
+  slotsRoot: {fileID: 8234158048548919187}
+  slotTemplate: {fileID: 1505340281513259432}
   slots:
   - {fileID: 1505340281513259432}
   - {fileID: 4700240454387205033}
   - {fileID: 7359777780203090424}
   - {fileID: 2531102308655702309}
+  slotSpacing: 60
   ac: {fileID: 11400000, guid: ba0d6a97316e5402db78b65d7c193c3a, type: 2}
 --- !u!114 &5232829348461652231
 MonoBehaviour:

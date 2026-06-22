@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine.Events;
 
 public class InventoryModel
 {
-    public const int MaxDistinctItemTypes = 4;
-
     public InventoryData Data { get; }
     public event Action OnChanged;
 
@@ -37,10 +34,13 @@ public class InventoryModel
     public bool Contains(string itemId) => indexById.ContainsKey(itemId);
 
     /// <summary>
-    /// Adds items. Returns false if this would introduce a new item type beyond the cap.
+    /// Adds items. Returns false only when the item id is invalid.
     /// </summary>
     public bool TryAdd(string itemId, int packsToAdd = 1)
     {
+        if (string.IsNullOrWhiteSpace(itemId))
+            return false;
+
         if (packsToAdd <= 0) return true;
 
         if (indexById.TryGetValue(itemId, out var idx))
@@ -51,15 +51,6 @@ public class InventoryModel
 
             OnChanged?.Invoke();
             return true;
-        }
-
-        // New item type: enforce cap
-        if (Data.entries.Count >= MaxDistinctItemTypes)
-        {
-            UnityEngine.Debug.Log(
-                $"Inventory full: cannot add new item type '{itemId}' (max {MaxDistinctItemTypes})."
-            );
-            return false;
         }
 
         Data.entries.Add(new InventoryEntry { itemId = itemId, count = packsToAdd });
@@ -74,17 +65,12 @@ public class InventoryModel
         if (string.IsNullOrEmpty(itemId))
             return false;
 
-        // Already have this item type → always allowed
-        if (indexById.ContainsKey(itemId))
-            return true;
-
-        // New item type → only allowed if under cap
-        return Data.entries.Count < MaxDistinctItemTypes;
+        return true;
     }
 
 
     /// <summary>
-    /// Backward-compatible; logs if add fails due to capacity.
+    /// Backward-compatible wrapper for older callers.
     /// Prefer TryAdd for gameplay logic.
     /// </summary>
     public void Add(string itemId, int packsToAdd = 1)

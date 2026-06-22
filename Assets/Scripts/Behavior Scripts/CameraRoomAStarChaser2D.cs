@@ -18,6 +18,10 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     [SerializeField] private bool clampToRoomBounds = true;
     [SerializeField, Min(0f)] private float roomEdgePadding = 0.15f;
 
+    [Header("Detection")]
+    [SerializeField] private bool useDetectionRange = true;
+    [SerializeField, Min(0f)] private float detectionRange = 6f;
+
     [Header("Home")]
     [SerializeField] private bool returnHomeWhenTargetLeavesRoom = true;
     [SerializeField] private bool cacheHomePositionOnAwake = true;
@@ -65,6 +69,11 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     [SerializeField] private bool faceMovementDirection;
     [SerializeField, Min(0f)] private float facingFlipDeadzone = 0.03f;
 
+    [Header("Natural Movement")]
+    [SerializeField] private bool useSpeedNoise = true;
+    [SerializeField, Range(0f, 0.6f)] private float speedNoiseAmount = 0.14f;
+    [SerializeField, Min(0.01f)] private float speedNoiseFrequency = 0.8f;
+
     [Header("Stuck Recovery")]
     [SerializeField] private bool useStuckRecovery = true;
     [SerializeField, Min(0.05f)] private float stuckCheckInterval = 0.35f;
@@ -96,6 +105,7 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     private int consecutiveStuckRepaths;
     private bool hasHomePosition;
     private bool wasReturningHome;
+    private float speedNoiseSeed;
 
     private static readonly Vector2Int[] FourWay =
     {
@@ -134,6 +144,8 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
 
         if (cacheHomePositionOnAwake)
             CacheHomePosition();
+
+        speedNoiseSeed = Random.value * 1000f;
     }
 
     private void OnEnable()
@@ -156,6 +168,9 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
         if (maxVisitedNodes < 16)
             maxVisitedNodes = 16;
 
+        if (speedNoiseFrequency < 0.01f)
+            speedNoiseFrequency = 0.01f;
+
         if (body == null)
             body = GetComponent<Rigidbody2D>();
 
@@ -177,8 +192,13 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
         }
 
         Vector2 currentPosition = body.position;
+        bool targetAvailable = target != null;
         bool selfInRoom = room.Contains(currentPosition);
-        bool targetInRoom = target != null && room.Contains(target.position);
+        bool targetInRoom = targetAvailable && room.Contains(target.position);
+        bool targetInDetectionRange = targetAvailable && IsTargetInDetectionRange(currentPosition);
+        bool blockedByRoomRule = onlyChaseWhenTargetInRoom && !targetInRoom;
+        bool blockedByDetection = !targetInDetectionRange;
+        bool targetCanBeChased = targetAvailable && !blockedByRoomRule && !blockedByDetection;
 
         if (stopWhenOutsideRoom && !selfInRoom)
         {
@@ -189,11 +209,10 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
         }
 
         bool shouldReturnHome = returnHomeWhenTargetLeavesRoom &&
-                                onlyChaseWhenTargetInRoom &&
-                                !targetInRoom &&
+                                !targetCanBeChased &&
                                 hasHomePosition;
 
-        if (onlyChaseWhenTargetInRoom && !targetInRoom && !shouldReturnHome)
+        if (!targetCanBeChased && !shouldReturnHome)
         {
             ClearPath();
             Stop();
@@ -201,15 +220,7 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
             return;
         }
 
-        if (target == null && !shouldReturnHome)
-        {
-            ClearPath();
-            Stop();
-            ClampBodyToRoom();
-            return;
-        }
-
-        bool shouldFlee = !shouldReturnHome && fleeFromTarget && targetInRoom;
+        bool shouldFlee = !shouldReturnHome && fleeFromTarget && targetCanBeChased;
         Vector2 goalPosition = shouldReturnHome
             ? homePosition
             : shouldFlee
@@ -708,7 +719,7 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
 
         Vector2 toWaypoint = waypoint - position;
         Vector2 direction = toWaypoint.normalized;
-        float speed = maxSpeed;
+        float speed = maxSpeed * GetNaturalSpeedMultiplier();
 
         if (cornerSlowdown > 0f && waypointIndex < path.Count - 1)
         {
@@ -988,6 +999,30 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
             deceleration * Time.fixedDeltaTime);
     }
 
+    private bool IsTargetInDetectionRange(Vector2 currentPosition)
+    {
+        if (!useDetectionRange)
+            return true;
+
+        if (target == null)
+            return false;
+
+        if (detectionRange <= 0f)
+            return true;
+
+        return ((Vector2)target.position - currentPosition).sqrMagnitude <= detectionRange * detectionRange;
+    }
+
+    private float GetNaturalSpeedMultiplier()
+    {
+        if (!useSpeedNoise || speedNoiseAmount <= 0f)
+            return 1f;
+
+        float sample = Mathf.PerlinNoise(speedNoiseSeed, Time.time * speedNoiseFrequency);
+        float centered = sample * 2f - 1f;
+        return Mathf.Max(0.2f, 1f + centered * speedNoiseAmount);
+    }
+
     private void ClearPath()
     {
         path.Clear();
@@ -1113,6 +1148,14 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
             Gizmos.DrawCube(bounds.center, bounds.size);
             Gizmos.color = new Color(0.2f, 0.9f, 1f, 0.9f);
             Gizmos.DrawWireCube(bounds.center, bounds.size);
+        }
+
+        if (useDetectionRange && detectionRange > 0f)
+        {
+            Gizmos.color = new Color(0.95f, 0.9f, 0.25f, 0.16f);
+            Gizmos.DrawSphere(transform.position, detectionRange);
+            Gizmos.color = new Color(0.95f, 0.9f, 0.25f, 0.9f);
+            Gizmos.DrawWireSphere(transform.position, detectionRange);
         }
 
         if (drawPathGizmos && path.Count > 0)

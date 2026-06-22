@@ -136,12 +136,12 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
 
     private void CaptureAndObscureNonInteractables()
     {
-        foreach (var spriteRenderer in FindObjectsOfType<SpriteRenderer>())
+        foreach (var spriteRenderer in FindObjectsByType<SpriteRenderer>(FindObjectsInactive.Exclude))
         {
             if (spriteRenderer == null || !spriteRenderer.enabled)
                 continue;
 
-            if (spriteRenderer.GetComponentInParent<IInteractable>() != null)
+            if (ShouldReveal(spriteRenderer.transform))
                 continue;
 
             Color original = spriteRenderer.color;
@@ -158,12 +158,12 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
             spriteRenderer.DOColor(target, fadeInDuration).SetUpdate(true);
         }
 
-        foreach (var tilemap in FindObjectsOfType<Tilemap>())
+        foreach (var tilemap in FindObjectsByType<Tilemap>(FindObjectsInactive.Exclude))
         {
             if (tilemap == null || !tilemap.enabled)
                 continue;
 
-            if (tilemap.GetComponentInParent<IInteractable>() != null)
+            if (ShouldReveal(tilemap.transform))
                 continue;
 
             Color original = tilemap.color;
@@ -201,7 +201,7 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
         }
 
         var seen = new HashSet<Transform>();
-        foreach (var behaviour in FindObjectsOfType<MonoBehaviour>())
+        foreach (var behaviour in FindObjectsByType<MonoBehaviour>(FindObjectsInactive.Exclude))
         {
             if (behaviour == null || behaviour is not IInteractable)
                 continue;
@@ -250,6 +250,12 @@ public class FieldTelescopeVisionSystem : MonoBehaviour
     {
         Transform anchor = target.Find("Anchor");
         return anchor != null ? anchor : target;
+    }
+
+    private static bool ShouldReveal(Transform target)
+    {
+        return target.GetComponentInParent<IInteractable>() != null ||
+               target.GetComponentInParent<FieldTelescopeRevealTarget>() != null;
     }
 
     private void FadeOutAndRestore()

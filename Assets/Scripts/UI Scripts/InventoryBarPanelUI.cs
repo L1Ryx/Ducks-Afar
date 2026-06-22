@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 [DisallowMultipleComponent]
 public class InventoryBarPanelUI : MonoBehaviour
@@ -10,21 +13,26 @@ public class InventoryBarPanelUI : MonoBehaviour
     [SerializeField] private float fadeSeconds = 0.20f;
     [SerializeField] private Ease fadeEase = Ease.OutQuad;
 
-    [Header("Slots (size must be 4)")]
-    [SerializeField] private InventoryBarSlotUI[] slots = new InventoryBarSlotUI[4];
+    [Header("Slots")]
+    [SerializeField] private RectTransform slotsRoot;
+    [SerializeField] private InventoryBarSlotUI slotTemplate;
+    [SerializeField] private InventoryBarSlotUI[] slots = Array.Empty<InventoryBarSlotUI>();
+    [SerializeField, Min(0f)] private float slotSpacing = 60f;
 
     [Header("Audio")] [SerializeField] private AudioCue ac;
 
     private int lastSelectedIndex = -1;
     private bool subscribed;
+    private bool slotsInitialized;
+    private int activeSlotCount = -1;
+    private readonly List<InventoryBarSlotUI> managedSlots = new();
+    private readonly List<SlotSnapshot> snapshot = new();
     
     private struct SlotSnapshot
     {
         public string itemId;
         public int count;
     }
-    private readonly SlotSnapshot[] snapshot = new SlotSnapshot[4];
-
 
     private void Awake()
     {
@@ -38,8 +46,8 @@ public class InventoryBarPanelUI : MonoBehaviour
         canvasGroup.alpha = 0f;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
-        
-        
+        EnsureSlotSetup();
+        SetVisibleSlotCount(0);
     }
 
     private void OnEnable()
@@ -69,8 +77,8 @@ public class InventoryBarPanelUI : MonoBehaviour
         subscribed = true;
 
         yield return null; // one frame
-        for (int i = 0; i < slots.Length; i++)
-            slots[i]?.Rebase();
+        SyncSlotCountFromInventory();
+        RebaseSlots();
 
         RefreshSlots();
         ApplySelection(force: true);
@@ -82,14 +90,16 @@ public class InventoryBarPanelUI : MonoBehaviour
         if (!subscribed) return;
 
         if (Game.IsReady && Game.Ctx != null && Game.Ctx.Inventory != null)
+        {
             Game.Ctx.Inventory.OnChanged -= HandleInventoryChanged;
+        }
 
         subscribed = false;
     }
 
     private void Update()
     {
-        if (!Game.IsReady || Game.Ctx?.InventorySelection == null) return;
+        if (!Game.IsReady || Game.Ctx?.Inventory == null || Game.Ctx.InventorySelection == null) return;
         ApplySelection(force: false);
     }
 
@@ -104,11 +114,13 @@ public class InventoryBarPanelUI : MonoBehaviour
         if (!Game.IsReady || Game.Ctx?.Inventory == null || Game.Ctx.ItemDb == null)
             return;
 
+        SyncSlotCountFromInventory();
+
         var entries = Game.Ctx.Inventory.Data.entries;
 
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < activeSlotCount; i++)
         {
-            if (slots[i] == null)
+            if (managedSlots[i] == null)
             {
                 Debug.LogError($"InventoryBarPanelUI: slots[{i}] is NULL");
                 continue;
@@ -136,13 +148,15 @@ public class InventoryBarPanelUI : MonoBehaviour
                 continue;
 
             // Update snapshot first
-            snapshot[i].itemId = desiredItemId;
-            snapshot[i].count = desiredCount;
+            SlotSnapshot updatedSnapshot = snapshot[i];
+            updatedSnapshot.itemId = desiredItemId;
+            updatedSnapshot.count = desiredCount;
+            snapshot[i] = updatedSnapshot;
 
             // Apply UI change only when needed
             if (desiredItemId == null)
             {
-                slots[i].SetEmpty();
+                managedSlots[i].SetEmpty();
             }
             else
             {
@@ -150,11 +164,11 @@ public class InventoryBarPanelUI : MonoBehaviour
                 if (def == null)
                 {
                     Debug.LogWarning($"InventoryBarPanelUI: ItemDatabase missing def for '{desiredItemId}'");
-                    slots[i].SetEmpty();
+                    managedSlots[i].SetEmpty();
                 }
                 else
                 {
-                    slots[i].BindItem(def, desiredCount);
+                    managedSlots[i].BindItem(def, desiredCount);
                 }
             }
         }
@@ -164,7 +178,9 @@ public class InventoryBarPanelUI : MonoBehaviour
     private void ApplySelection(bool force)
     {
         var entries = Game.Ctx.Inventory.Data.entries;
-        int entryCount = entries != null ? entries.Count : 0;
+        SyncSlotCountFromInventory();
+
+        int entryCount = entries?.Count ?? 0;
 
         int selected = (entryCount > 0) ? Game.Ctx.InventorySelection.SelectedIndex : -1;
 
@@ -179,13 +195,133 @@ public class InventoryBarPanelUI : MonoBehaviour
         }
 
         // Only update what changed
-        if (lastSelectedIndex >= 0 && lastSelectedIndex < 4)
-            slots[lastSelectedIndex]?.SetSelected(false);
+        if (lastSelectedIndex >= 0 && lastSelectedIndex < managedSlots.Count)
+            managedSlots[lastSelectedIndex]?.SetSelected(false);
 
-        if (selected >= 0 && selected < 4 && selected < entryCount)
-            slots[selected]?.SetSelected(true);
+        if (selected >= 0 && selected < activeSlotCount && selected < entryCount)
+            managedSlots[selected]?.SetSelected(true);
 
         lastSelectedIndex = selected;
+    }
+
+    private void EnsureSlotSetup()
+    {
+        if (slotsInitialized)
+        {
+            EnsureLayoutGroup();
+            return;
+        }
+
+        if (slotsRoot == null)
+            slotsRoot = transform as RectTransform;
+
+        managedSlots.Clear();
+
+        if (slots != null)
+        {
+            foreach (InventoryBarSlotUI slot in slots)
+            {
+                if (slot != null && !managedSlots.Contains(slot))
+                    managedSlots.Add(slot);
+            }
+        }
+
+        if (managedSlots.Count == 0 && slotsRoot != null)
+            managedSlots.AddRange(slotsRoot.GetComponentsInChildren<InventoryBarSlotUI>(true));
+
+        if (slotTemplate == null && managedSlots.Count > 0)
+            slotTemplate = managedSlots[0];
+
+        EnsureLayoutGroup();
+        EnsureSnapshotSize(managedSlots.Count);
+        slotsInitialized = true;
+    }
+
+    private void EnsureLayoutGroup()
+    {
+        if (slotsRoot == null)
+            return;
+
+        if (!slotsRoot.TryGetComponent(out HorizontalLayoutGroup layout))
+            layout = slotsRoot.gameObject.AddComponent<HorizontalLayoutGroup>();
+
+        layout.childAlignment = TextAnchor.MiddleCenter;
+        layout.spacing = slotSpacing;
+        layout.childControlWidth = false;
+        layout.childControlHeight = false;
+        layout.childForceExpandWidth = false;
+        layout.childForceExpandHeight = false;
+    }
+
+    private void SyncSlotCountFromInventory()
+    {
+        int count = 0;
+        if (Game.IsReady && Game.Ctx?.Inventory != null)
+            count = Game.Ctx.Inventory.Data?.entries?.Count ?? 0;
+
+        SetVisibleSlotCount(count);
+    }
+
+    private void SetVisibleSlotCount(int count)
+    {
+        EnsureSlotSetup();
+
+        count = Mathf.Max(0, count);
+        if (activeSlotCount == count && managedSlots.Count >= count)
+            return;
+
+        EnsureSlotsExist(count);
+        EnsureSnapshotSize(count);
+
+        for (int i = 0; i < managedSlots.Count; i++)
+        {
+            bool shouldShow = i < count;
+            InventoryBarSlotUI slot = managedSlots[i];
+            if (slot == null)
+                continue;
+
+            if (!shouldShow)
+            {
+                slot.SetSelected(false);
+                slot.SetEmpty();
+            }
+
+            slot.gameObject.SetActive(shouldShow);
+        }
+
+        activeSlotCount = count;
+        lastSelectedIndex = -1;
+        if (slotsRoot != null)
+            LayoutRebuilder.MarkLayoutForRebuild(slotsRoot);
+        RebaseSlots();
+    }
+
+    private void EnsureSlotsExist(int count)
+    {
+        if (slotTemplate == null || slotsRoot == null)
+            return;
+
+        while (managedSlots.Count < count)
+        {
+            InventoryBarSlotUI slot = Instantiate(slotTemplate, slotsRoot);
+            slot.name = $"Item {managedSlots.Count + 1} Frame";
+            managedSlots.Add(slot);
+        }
+    }
+
+    private void EnsureSnapshotSize(int count)
+    {
+        while (snapshot.Count < count)
+            snapshot.Add(default);
+
+        for (int i = count; i < snapshot.Count; i++)
+            snapshot[i] = default;
+    }
+
+    private void RebaseSlots()
+    {
+        for (int i = 0; i < activeSlotCount && i < managedSlots.Count; i++)
+            managedSlots[i]?.Rebase();
     }
 
 
