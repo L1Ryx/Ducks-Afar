@@ -73818,7 +73818,7 @@ GameObject:
   - component: {fileID: 7163366743978773052}
   - component: {fileID: 8637831714581843478}
   - component: {fileID: 5269483744420718329}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shoreline (C)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

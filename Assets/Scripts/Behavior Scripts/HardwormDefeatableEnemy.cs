@@ -34,6 +34,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     [SerializeField, Min(0f)] private float deathAnimationDuration = 0.7f;
     [SerializeField] private bool waitForDeathAnimationFinalFrame = true;
     [SerializeField, Min(0.1f)] private float deathAnimationMaxWaitSeconds = 3f;
+    [SerializeField, Min(0f)] private float requirementUiFadeDuration = 0.18f;
     [SerializeField, Min(0f)] private float fadeDuration = 0.35f;
     [SerializeField] private bool destroyAfterFade = true;
 
@@ -52,6 +53,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     private Collider2D[] colliders;
     private Rigidbody2D body;
     private readonly Collider2D[] playerContactResults = new Collider2D[8];
+    private Coroutine requirementUiFadeRoutine;
     private bool isDefeated;
     private bool isDefeating;
 
@@ -153,6 +155,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
         isDefeating = true;
         chaser?.SetFleeFromTarget(false);
         DisableGameplay(disableColliders: false);
+        StartRequirementUiFadeOut();
 
         yield return PlayDeathAnimation();
 
@@ -160,11 +163,12 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
         while (fadeDuration > 0f && elapsed < fadeDuration)
         {
             elapsed += Time.deltaTime;
-            SetAlpha(Mathf.Clamp01(1f - elapsed / fadeDuration));
+            SetSpriteAlpha(Mathf.Clamp01(1f - elapsed / fadeDuration));
             yield return null;
         }
 
-        SetAlpha(0f);
+        SetSpriteAlpha(0f);
+        SetRequirementUiAlpha(0f);
         isDefeated = true;
         isDefeating = false;
 
@@ -460,9 +464,63 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
             requirementText.text = requiredHardworms.ToString();
     }
 
-    private void SetAlpha(float alpha)
+    private void StartRequirementUiFadeOut()
     {
-        if (spriteRenderers == null || textRenderers == null || uiGraphics == null)
+        if (requirementUiFadeRoutine != null)
+            StopCoroutine(requirementUiFadeRoutine);
+
+        requirementUiFadeRoutine = StartCoroutine(FadeRequirementUiRoutine());
+    }
+
+    private IEnumerator FadeRequirementUiRoutine()
+    {
+        if (textRenderers == null || uiGraphics == null)
+            CacheRenderersAndColliders();
+
+        float startAlpha = GetRequirementUiAlpha();
+        if (requirementUiFadeDuration <= 0f)
+        {
+            SetRequirementUiAlpha(0f);
+            requirementUiFadeRoutine = null;
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < requirementUiFadeDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / requirementUiFadeDuration);
+            SetRequirementUiAlpha(Mathf.Lerp(startAlpha, 0f, t));
+            yield return null;
+        }
+
+        SetRequirementUiAlpha(0f);
+        requirementUiFadeRoutine = null;
+    }
+
+    private float GetRequirementUiAlpha()
+    {
+        if (textRenderers == null || uiGraphics == null)
+            CacheRenderersAndColliders();
+
+        foreach (Graphic graphic in uiGraphics)
+        {
+            if (graphic != null)
+                return graphic.color.a;
+        }
+
+        foreach (TMP_Text text in textRenderers)
+        {
+            if (text != null)
+                return text.color.a;
+        }
+
+        return 1f;
+    }
+
+    private void SetSpriteAlpha(float alpha)
+    {
+        if (spriteRenderers == null)
             CacheRenderersAndColliders();
 
         foreach (SpriteRenderer renderer in spriteRenderers)
@@ -474,6 +532,12 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
             color.a = alpha;
             renderer.color = color;
         }
+    }
+
+    private void SetRequirementUiAlpha(float alpha)
+    {
+        if (textRenderers == null || uiGraphics == null)
+            CacheRenderersAndColliders();
 
         foreach (TMP_Text text in textRenderers)
         {

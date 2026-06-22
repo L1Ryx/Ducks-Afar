@@ -213,10 +213,28 @@ public sealed class DialogueRunner : MonoBehaviour
     private void ShowLine(DialogueEncounter.Line line)
     {
         currentLineCompleted = false;
-        
+
         // UI setup
-        portraitImage.sprite = line.speaker.portrait;
-        nameText.text = line.speaker.displayName;
+        bool hasSpeaker = line.speaker != null;
+        SetSpeakerChromeVisible(hasSpeaker);
+
+        if (hasSpeaker)
+        {
+            if (portraitImage != null)
+                portraitImage.sprite = line.speaker.portrait;
+
+            if (nameText != null)
+                nameText.text = line.speaker.displayName;
+        }
+        else
+        {
+            if (portraitImage != null)
+                portraitImage.sprite = null;
+
+            if (nameText != null)
+                nameText.text = string.Empty;
+        }
+
         ResizeNameBoxToText();
         dialogueText.text = string.Empty;
         nextIndicator.gameObject.SetActive(false);
@@ -224,7 +242,7 @@ public sealed class DialogueRunner : MonoBehaviour
         // Optional line-start audio
         if (line.lineCue != null)
             Game.Ctx.Audio.PlayCueGlobal(line.lineCue);
-        else if (line.speaker.lineStartCue != null)
+        else if (line.speaker != null && line.speaker.lineStartCue != null)
             Game.Ctx.Audio.PlayCueGlobal(line.speaker.lineStartCue);
 
         typingRoutine = StartCoroutine(TypeLine(line));
@@ -342,6 +360,25 @@ public sealed class DialogueRunner : MonoBehaviour
         Transform nameBox = textRect != null ? textRect.parent : null;
         Transform actualBox = nameBox != null ? nameBox.Find("Actual Name Box") : null;
         return actualBox as RectTransform;
+    }
+
+    private void SetSpeakerChromeVisible(bool visible)
+    {
+        if (portraitImage != null)
+            portraitImage.gameObject.SetActive(visible);
+
+        Transform nameBox = ResolveNameBoxRoot();
+        if (nameBox != null)
+            nameBox.gameObject.SetActive(visible);
+    }
+
+    private Transform ResolveNameBoxRoot()
+    {
+        if (nameText != null && nameText.transform.parent != null)
+            return nameText.transform.parent;
+
+        RectTransform boxRect = ResolveActualNameBoxRect();
+        return boxRect != null ? boxRect.parent : null;
     }
 
     private static float GetRectLeftInParent(RectTransform rect, RectTransform parent)

@@ -505,6 +505,7 @@ MonoBehaviour:
   deathAnimationDuration: 0.7
   waitForDeathAnimationFinalFrame: 1
   deathAnimationMaxWaitSeconds: 3
+  requirementUiFadeDuration: 0.18
   fadeDuration: 1
   destroyAfterFade: 1
   droppedItemPrefab: {fileID: 1341502172045543628, guid: 71b163e0496d6427bb85733083ff1932, type: 3}
