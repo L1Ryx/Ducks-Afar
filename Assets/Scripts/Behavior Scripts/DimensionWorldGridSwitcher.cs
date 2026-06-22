@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 public enum DimensionGridState
 {
@@ -30,6 +30,8 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
     [Header("Transition")]
     [SerializeField] private GameEvent zoneTransitionEffectEvent;
     [SerializeField] private bool playTransitionEffect = true;
+    [SerializeField] private bool playTransitionAudio = true;
+    [SerializeField] private AudioCue transitionAudioCue;
     [SerializeField, Min(0f)] private float switchDelaySeconds = 0.08f;
 
     [Header("Events")]
@@ -76,9 +78,19 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
         Switch(DimensionGridState.Primary);
     }
 
+    public void SwitchToPrimaryWithoutSaving()
+    {
+        Switch(DimensionGridState.Primary, saveState: false);
+    }
+
     public void SwitchToAlternate()
     {
         Switch(DimensionGridState.Alternate);
+    }
+
+    public void SwitchToAlternateWithoutSaving()
+    {
+        Switch(DimensionGridState.Alternate, saveState: false);
     }
 
     public void ApplyAction(DimensionSwitchAction action)
@@ -99,6 +111,16 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
 
     public void Switch(DimensionGridState nextState)
     {
+        Switch(nextState, saveActiveSlotOnSwitch);
+    }
+
+    public void SwitchWithoutSaving(DimensionGridState nextState)
+    {
+        Switch(nextState, saveState: false);
+    }
+
+    private void Switch(DimensionGridState nextState, bool saveState)
+    {
         if (currentState == nextState)
             return;
 
@@ -107,11 +129,11 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
 
         if (playTransitionEffect && switchDelaySeconds > 0f)
         {
-            switchRoutine = StartCoroutine(SwitchAfterEffect(nextState));
+            switchRoutine = StartCoroutine(SwitchAfterEffect(nextState, saveState));
             return;
         }
 
-        ApplyState(nextState, playTransitionEffect, saveActiveSlotOnSwitch, force: false);
+        ApplyState(nextState, playTransitionEffect, saveState, force: false);
     }
 
     private void ApplyState(DimensionGridState nextState, bool playEffects, bool saveState, bool force)
@@ -120,7 +142,7 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
             return;
 
         if (playEffects)
-            zoneTransitionEffectEvent?.Raise();
+            PlayTransitionEffect();
 
         currentState = nextState;
         ApplyWorldGrids();
@@ -133,12 +155,12 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
             switchedToPrimaryEvent?.Raise();
     }
 
-    private IEnumerator SwitchAfterEffect(DimensionGridState nextState)
+    private IEnumerator SwitchAfterEffect(DimensionGridState nextState, bool saveState)
     {
-        zoneTransitionEffectEvent?.Raise();
+        PlayTransitionEffect();
         yield return new WaitForSecondsRealtime(switchDelaySeconds);
 
-        ApplyState(nextState, playEffects: false, saveActiveSlotOnSwitch, force: false);
+        ApplyState(nextState, playEffects: false, saveState, force: false);
         switchRoutine = null;
     }
 
@@ -153,22 +175,33 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
 
     private void ApplySavedState(bool saveState)
     {
-        if (string.IsNullOrWhiteSpace(alternateActiveFlagId)
-            || !Game.IsReady
-            || Game.Ctx?.SaveState == null)
+        if (!Game.IsReady || Game.Ctx?.SaveState == null)
         {
             return;
         }
 
-        string flagId = alternateActiveFlagId.Trim();
-        bool changed = currentState == DimensionGridState.Alternate
-            ? Game.Ctx.SaveState.SetWorldState(flagId)
-            : Game.Ctx.SaveState.ClearWorldState(flagId);
+        if (!string.IsNullOrWhiteSpace(alternateActiveFlagId))
+        {
+            string flagId = alternateActiveFlagId.Trim();
+            if (currentState == DimensionGridState.Alternate)
+                Game.Ctx.SaveState.SetWorldState(flagId);
+            else
+                Game.Ctx.SaveState.ClearWorldState(flagId);
+        }
 
-        if (!changed || !saveState)
+        if (!saveState)
             return;
 
-        SaveActiveSlotWithoutCapturingPosition();
+        SaveActiveSlotCapturingPosition();
+    }
+
+    private void PlayTransitionEffect()
+    {
+        zoneTransitionEffectEvent?.Raise();
+        if (playTransitionAudio)
+            ProjectAudio.PlayGlobal(transitionAudioCue);
+
+        PostProcessEffectToolbox.PlayGlitchBurstGlobal(playAudio: false);
     }
 
     public static void SaveActiveSlotWithoutCapturingPosition()
@@ -180,5 +213,16 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
             return;
 
         Game.Ctx.Saves.SaveToActiveSlot(captureSceneCheckpoint: false);
+    }
+
+    public static void SaveActiveSlotCapturingPosition()
+    {
+        if (!Game.IsReady || Game.Ctx?.Saves == null || Game.Ctx.SaveState == null)
+            return;
+
+        if (!Game.Ctx.SaveState.HasActiveSlot)
+            return;
+
+        Game.Ctx.Saves.SaveCurrentGameToActiveSlot();
     }
 }

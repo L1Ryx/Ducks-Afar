@@ -14,9 +14,19 @@ public sealed class GameplayCameraRoom : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private Vector2 cameraOffset;
 
+    [Header("Post Processing")]
+    [SerializeField, Range(0f, 100f)] private float creepyVignette;
+    [SerializeField, Range(0f, 100f)] private float dreamBloom;
+    [SerializeField, Range(0f, 100f)] private float desaturate;
+    [SerializeField, Min(0f)] private float postProcessFadeSeconds = 0.5f;
+
     private BoxCollider2D roomTrigger;
 
     public string RoomId => string.IsNullOrWhiteSpace(roomId) ? name : roomId;
+    public float CreepyVignettePercent => creepyVignette;
+    public float DreamBloomPercent => dreamBloom;
+    public float DesaturatePercent => desaturate;
+    public float PostProcessFadeSeconds => postProcessFadeSeconds;
 
     public Bounds Bounds
     {
@@ -34,6 +44,9 @@ public sealed class GameplayCameraRoom : MonoBehaviour
 
         if (roomTrigger != null)
             roomTrigger.isTrigger = true;
+
+        if (Application.isPlaying && controller != null && controller.CurrentRoom == this)
+            controller.ApplyCurrentRoomLook();
     }
 
     private void Awake()
@@ -64,6 +77,16 @@ public sealed class GameplayCameraRoom : MonoBehaviour
     {
         EnsureTrigger();
         return roomTrigger != null && roomTrigger.OverlapPoint(worldPoint);
+    }
+
+    public void SetPostProcessLook(float creepyVignettePercent, float dreamBloomPercent, float desaturatePercent, bool keepCurrentDreamBloom = false)
+    {
+        creepyVignette = Mathf.Clamp(creepyVignettePercent, 0f, 100f);
+        dreamBloom = keepCurrentDreamBloom ? dreamBloom : Mathf.Clamp(dreamBloomPercent, 0f, 100f);
+        desaturate = Mathf.Clamp(desaturatePercent, 0f, 100f);
+
+        if (Application.isPlaying && controller != null && controller.CurrentRoom == this)
+            controller.ApplyCurrentRoomLook();
     }
 
     public float DistanceSquaredTo(Vector2 worldPoint)

@@ -62,7 +62,7 @@ public sealed class DimensionSwitchTrigger2D : MonoBehaviour
         }
 
         if (switcher == null)
-            switcher = FindFirstObjectByType<DimensionWorldGridSwitcher>();
+            switcher = FindAnyObjectByType<DimensionWorldGridSwitcher>();
 
         if (switcher == null)
         {
@@ -89,7 +89,7 @@ public sealed class DimensionSwitchTrigger2D : MonoBehaviour
 
         bool changed = Game.Ctx.SaveState.SetWorldState(flagId);
         if (changed && saveActiveSlotOnTrigger)
-            DimensionWorldGridSwitcher.SaveActiveSlotWithoutCapturingPosition();
+            DimensionWorldGridSwitcher.SaveActiveSlotCapturingPosition();
     }
 
     private bool WasTriggeredInSave()

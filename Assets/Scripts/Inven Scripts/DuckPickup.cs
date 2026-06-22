@@ -41,6 +41,10 @@ public class DuckPickup : MonoBehaviour, IInteractable
         if (onPickedUp != null) onPickedUp.Raise();
         if (onPickedUpGenericItem != null) onPickedUpGenericItem.Raise();
 
+        IPickupSuccessEffect[] pickupEffects = GetComponents<IPickupSuccessEffect>();
+        for (int i = 0; i < pickupEffects.Length; i++)
+            pickupEffects[i]?.OnPickupSucceeded(gameObject, interactor);
+
         Destroy(gameObject);
     }
 }

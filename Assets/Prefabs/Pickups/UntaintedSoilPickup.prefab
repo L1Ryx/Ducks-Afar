@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4412467477112761080}
   - component: {fileID: 6867549307942400915}
   - component: {fileID: 7916321121252379063}
+  - component: {fileID: 2311965681490837693}
   m_Layer: 6
   m_Name: UntaintedSoilPickup
   m_TagString: Untagged
@@ -245,6 +246,27 @@ MonoBehaviour:
   outOfRangeAlpha: 0.75
   symbolInRange: {fileID: -1226265285564992136, guid: 0eb09609f8295429fa711bd720efc0f7, type: 3}
   symbolOutOfRange: {fileID: -5686591620353406901, guid: 956ce94b414ec4c0a9675dd6b50fe2f5, type: 3}
+--- !u!114 &2311965681490837693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3314744622827926284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991d0700760ab42bd9b4a9a099a9ee89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UntaintedSoilPickupEffect
+  targetRoom: {fileID: 0}
+  targetRoomId: auralis_11
+  creepyVignette: 100
+  desaturate: 100
+  preserveRoomDreamBloom: 1
+  dimensionSwitcher: {fileID: 0}
+  npcPrefab: {fileID: 3937751246587656915, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
+  npcParent: {fileID: 0}
+  npcSpawnOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &6861707703746373897
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,6 +83,8 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
             return;
 
         currentRoom = room;
+        ApplyRoomPostProcessing(room);
+
         panTween?.Kill();
 
         if (immediate || panDuration <= 0f || !Application.isPlaying)
@@ -100,6 +102,24 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
             .SetEase(panEase)
             .SetUpdate(useUnscaledTime)
             .OnComplete(ReleasePanLock);
+    }
+
+    public void ApplyCurrentRoomLook()
+    {
+        if (currentRoom != null)
+            ApplyRoomPostProcessing(currentRoom);
+    }
+
+    private static void ApplyRoomPostProcessing(GameplayCameraRoom room)
+    {
+        if (room == null)
+            return;
+
+        PostProcessEffectToolbox.ApplyRoomLook(
+            room.CreepyVignettePercent,
+            room.DreamBloomPercent,
+            room.DesaturatePercent,
+            room.PostProcessFadeSeconds);
     }
 
     private void EnsureRefs()

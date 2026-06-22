@@ -52,6 +52,9 @@ MonoBehaviour:
   saveActiveSlotOnSwitch: 1
   zoneTransitionEffectEvent: {fileID: 11400000, guid: 3d859bcf40f4b4398b049707be5d2894, type: 2}
   playTransitionEffect: 1
+  playTransitionAudio: 1
+  transitionAudioCue: {fileID: 11400000, guid: 372480c2111f24048bc99b40c2d19d10, type: 2}
+  switchDelaySeconds: 0.08
   switchedEvent: {fileID: 11400000, guid: 81a277e49151a4cb6b72f91dea891559, type: 2}
   switchedToPrimaryEvent: {fileID: 0}
   switchedToAlternateEvent: {fileID: 0}
