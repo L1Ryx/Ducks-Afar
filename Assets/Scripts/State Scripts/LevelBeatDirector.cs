@@ -6,6 +6,9 @@ public class LevelBeatDirector : MonoBehaviour
     [Header("Sequence")]
     [SerializeField] private LevelBeatSequenceSO sequence;
 
+    [Header("Scene Variant Re-entry")]
+    [SerializeField] private bool resumeAtFirstCheckpointWhenSceneVariantAlreadySeen = true;
+
     [Header("Optional Events")]
     [SerializeField] private GameEvent onSequenceStarted;
     [SerializeField] private GameEvent onSequenceCompleted;
@@ -40,7 +43,7 @@ public class LevelBeatDirector : MonoBehaviour
             return;
 
         isRunning = true;
-        CurrentBeatIndex = ResolveRestartBeatIndex() - 1;
+        CurrentBeatIndex = ResolveStartBeatIndex() - 1;
 
         onSequenceStarted?.Raise();
         Advance();
@@ -92,7 +95,28 @@ public class LevelBeatDirector : MonoBehaviour
             beat.AdvanceEvent.UnregisterRuntimeListener(OnAdvanceTriggered);
     }
 
-    private int ResolveRestartBeatIndex()
+    private bool ShouldResumeAtCheckpointForSeenSceneVariant()
+    {
+        if (!resumeAtFirstCheckpointWhenSceneVariantAlreadySeen)
+            return false;
+
+        SceneVariantController variantController = Object.FindFirstObjectByType<SceneVariantController>();
+        if (variantController == null)
+            return false;
+
+        if (!variantController.HasAppliedCurrentVariant)
+            return false;
+
+        if (!variantController.TracksFirstAppliedVariants)
+            return false;
+
+        if (variantController.CurrentVariant == null)
+            return false;
+
+        return !variantController.LastApplyWasFirstApplication;
+    }
+
+    private int ResolveStartBeatIndex()
     {
         if (!Game.IsReady || Game.Ctx?.LevelCheckpoints == null)
             return 0;
@@ -100,8 +124,44 @@ public class LevelBeatDirector : MonoBehaviour
         if (!Game.Ctx.LevelCheckpoints.TryConsumeRestartCheckpoint(
                 SceneManager.GetActiveScene().name,
                 out string checkpointId))
-            return 0;
+        {
+            if (ShouldResumeAtCheckpointForSeenSceneVariant()
+                && TryResolveFirstCheckpointBeatIndex(out int checkpointStartIndex))
+            {
+                return checkpointStartIndex;
+            }
 
+            return 0;
+        }
+
+        if (TryResolveCheckpointBeatIndex(checkpointId, out int restartIndex))
+            return restartIndex;
+
+        Debug.LogWarning($"LevelBeatDirector: Restart checkpoint '{checkpointId}' was saved but not found in sequence '{sequence.name}'.");
+        return 0;
+    }
+
+    private bool TryResolveFirstCheckpointBeatIndex(out int beatIndex)
+    {
+        for (int i = 0; i < sequence.Beats.Count; i++)
+        {
+            LevelBeatSO beat = sequence.Beats[i];
+            LevelCheckpointSO checkpoint = beat != null ? beat.Checkpoint : null;
+
+            if (checkpoint == null)
+                continue;
+
+            checkpoint.ApplySetup();
+            beatIndex = i;
+            return true;
+        }
+
+        beatIndex = 0;
+        return false;
+    }
+
+    private bool TryResolveCheckpointBeatIndex(string checkpointId, out int beatIndex)
+    {
         for (int i = 0; i < sequence.Beats.Count; i++)
         {
             LevelBeatSO beat = sequence.Beats[i];
@@ -111,10 +171,11 @@ public class LevelBeatDirector : MonoBehaviour
                 continue;
 
             checkpoint.ApplySetup();
-            return i;
+            beatIndex = i;
+            return true;
         }
 
-        Debug.LogWarning($"LevelBeatDirector: Restart checkpoint '{checkpointId}' was saved but not found in sequence '{sequence.name}'.");
-        return 0;
+        beatIndex = 0;
+        return false;
     }
 }

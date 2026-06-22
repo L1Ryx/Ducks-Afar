@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequence: {fileID: 11400000, guid: 06aeba2322ac84001893c7470085e94a, type: 2}
+  resumeAtFirstCheckpointWhenSceneVariantAlreadySeen: 1
   onSequenceStarted: {fileID: 0}
   onSequenceCompleted: {fileID: 0}
 --- !u!114 &7493980512407693922

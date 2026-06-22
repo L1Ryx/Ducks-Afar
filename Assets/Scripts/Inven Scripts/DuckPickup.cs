@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class DuckPickup : MonoBehaviour, IInteractable
@@ -22,6 +21,11 @@ public class DuckPickup : MonoBehaviour, IInteractable
 
     public void Interact(GameObject interactor)
     {
+        if (itemDef == null)
+        {
+            Debug.LogError($"{nameof(DuckPickup)} '{name}' is missing an item definition.", this);
+            return;
+        }
 
         if (itemsGranted <= 0) itemsGranted = 1;
 

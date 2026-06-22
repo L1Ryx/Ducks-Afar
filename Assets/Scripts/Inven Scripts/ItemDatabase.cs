@@ -24,14 +24,26 @@ public class ItemDatabase : ScriptableObject
 
     public T Get<T>(string itemId) where T : ItemDefinition
     {
-        if (byId == null) Init();
+        EnsureInitialized();
         return byId.TryGetValue(itemId, out var def) ? def as T : null;
     }
 
     public ItemDefinition Get(string itemId)
     {
-        if (byId == null) Init();
+        EnsureInitialized();
         return byId.TryGetValue(itemId, out var def) ? def : null;
+    }
+
+    private void EnsureInitialized()
+    {
+        if (byId == null)
+        {
+            Init();
+            return;
+        }
+
+        if (byId.Count != items.Count)
+            Init();
     }
     
     public HardwormPackDefinition GetHardwormByPackSize(int packSize)

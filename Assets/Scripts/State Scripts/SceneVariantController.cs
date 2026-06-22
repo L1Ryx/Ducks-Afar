@@ -32,6 +32,9 @@ public sealed class SceneVariantController : MonoBehaviour
 
     public SceneVariantDataSO CurrentVariant { get; private set; }
     public string CurrentVariantId => CurrentVariant != null ? CurrentVariant.VariantId : string.Empty;
+    public bool HasAppliedCurrentVariant { get; private set; }
+    public bool LastApplyWasFirstApplication { get; private set; }
+    public bool TracksFirstAppliedVariants => trackFirstAppliedVariants;
 
     private Coroutine startRoutine;
 
@@ -65,7 +68,8 @@ public sealed class SceneVariantController : MonoBehaviour
         CurrentVariant = activeVariant;
         ApplyGroups(activeVariant);
         RaiseEvents(activeVariant.OnAppliedEvents);
-        RaiseFirstAppliedEventsIfNeeded(activeVariant);
+        LastApplyWasFirstApplication = RaiseFirstAppliedEventsIfNeeded(activeVariant);
+        HasAppliedCurrentVariant = true;
         variantAppliedEvent?.Raise();
     }
 
@@ -116,7 +120,8 @@ public sealed class SceneVariantController : MonoBehaviour
         CurrentVariant = variant;
         ApplyGroups(variant);
         RaiseEvents(variant.OnAppliedEvents);
-        RaiseFirstAppliedEventsIfNeeded(variant);
+        LastApplyWasFirstApplication = RaiseFirstAppliedEventsIfNeeded(variant);
+        HasAppliedCurrentVariant = true;
         variantAppliedEvent?.Raise();
 
         if (changed)
@@ -170,18 +175,19 @@ public sealed class SceneVariantController : MonoBehaviour
             group.Apply(activeVariant);
     }
 
-    private void RaiseFirstAppliedEventsIfNeeded(SceneVariantDataSO variant)
+    private bool RaiseFirstAppliedEventsIfNeeded(SceneVariantDataSO variant)
     {
         if (!trackFirstAppliedVariants || !Game.IsReady || Game.Ctx?.SaveState == null)
-            return;
+            return false;
 
         string flagId = BuildSeenFlagId(ResolveSceneName(), variant.VariantId);
         if (Game.Ctx.SaveState.HasWorldState(flagId))
-            return;
+            return false;
 
         RaiseEvents(variant.OnFirstAppliedEvents);
         Game.Ctx.SaveState.SetWorldState(flagId);
         SaveActiveSlotIfWanted(saveActiveSlotWhenFirstApplied);
+        return true;
     }
 
     private string ResolveSceneName()
