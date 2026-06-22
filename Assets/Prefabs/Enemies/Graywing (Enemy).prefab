@@ -503,9 +503,12 @@ MonoBehaviour:
   animator: {fileID: 5440979618027785255}
   deathAnimationStateName: Die
   deathAnimationDuration: 0.7
+  waitForDeathAnimationFinalFrame: 1
+  deathAnimationMaxWaitSeconds: 3
   fadeDuration: 1
   destroyAfterFade: 1
   droppedItemPrefab: {fileID: 1341502172045543628, guid: 71b163e0496d6427bb85733083ff1932, type: 3}
+  dropRule: 0
   droppedItemOffset: {x: 0, y: 0, z: 0}
   onDefeated:
     m_PersistentCalls:

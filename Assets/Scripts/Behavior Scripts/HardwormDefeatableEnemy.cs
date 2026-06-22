@@ -8,6 +8,12 @@ using UnityEngine.UI;
 [DisallowMultipleComponent]
 public sealed class HardwormDefeatableEnemy : MonoBehaviour
 {
+    private enum DropRule
+    {
+        Always,
+        OnlyLastDefeatedInCameraRoom,
+    }
+
     [Header("Requirement")]
     [SerializeField, Min(1)] private int requiredHardworms = 3;
     [SerializeField] private bool allowLargerHardwormPacks;
@@ -26,11 +32,14 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     [Header("Defeat")]
     [SerializeField] private string deathAnimationStateName = "Die";
     [SerializeField, Min(0f)] private float deathAnimationDuration = 0.7f;
+    [SerializeField] private bool waitForDeathAnimationFinalFrame = true;
+    [SerializeField, Min(0.1f)] private float deathAnimationMaxWaitSeconds = 3f;
     [SerializeField, Min(0f)] private float fadeDuration = 0.35f;
     [SerializeField] private bool destroyAfterFade = true;
 
     [Header("Drop")]
     [SerializeField] private GameObject droppedItemPrefab;
+    [SerializeField] private DropRule dropRule = DropRule.Always;
     [SerializeField] private Vector3 droppedItemOffset;
 
     [Header("Events")]
@@ -169,10 +178,35 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
 
     private void DropItem()
     {
-        if (droppedItemPrefab == null)
+        if (droppedItemPrefab == null || !ShouldDropItem())
             return;
 
         Instantiate(droppedItemPrefab, transform.position + droppedItemOffset, Quaternion.identity, transform.parent);
+    }
+
+    private bool ShouldDropItem()
+    {
+        if (dropRule == DropRule.Always)
+            return true;
+
+        GameplayCameraRoom ownRoom = chaser != null ? chaser.Room : null;
+        if (ownRoom == null)
+            return true;
+
+        HardwormDefeatableEnemy[] enemies = FindObjectsByType<HardwormDefeatableEnemy>(
+            FindObjectsInactive.Exclude,
+            FindObjectsSortMode.None);
+
+        foreach (HardwormDefeatableEnemy enemy in enemies)
+        {
+            if (enemy == null || enemy == this || enemy.isDefeated)
+                continue;
+
+            if (enemy.chaser != null && enemy.chaser.Room == ownRoom)
+                return false;
+        }
+
+        return true;
     }
 
     private void DisableGameplay(bool disableColliders)
@@ -218,8 +252,33 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
         animator.Play(deathAnimationStateName, 0, 0f);
         animator.Update(0f);
 
+        if (waitForDeathAnimationFinalFrame)
+        {
+            yield return WaitForDeathAnimationFinalFrame();
+            yield break;
+        }
+
         if (deathAnimationDuration > 0f)
             yield return new WaitForSeconds(deathAnimationDuration);
+    }
+
+    private IEnumerator WaitForDeathAnimationFinalFrame()
+    {
+        float maxWait = Mathf.Max(deathAnimationDuration, deathAnimationMaxWaitSeconds);
+        float elapsed = 0f;
+
+        while (elapsed < maxWait)
+        {
+            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            bool inDeathState = string.IsNullOrWhiteSpace(deathAnimationStateName) || state.IsName(deathAnimationStateName);
+            bool reachedFinalFrame = inDeathState && !animator.IsInTransition(0) && state.normalizedTime >= 1f;
+
+            if (reachedFinalFrame)
+                yield break;
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     private void UpdateFleeState()

@@ -127,6 +127,8 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
         new Vector2Int(-1, -1),
     };
 
+    public GameplayCameraRoom Room => room;
+
     private void Reset()
     {
         body = GetComponent<Rigidbody2D>();
