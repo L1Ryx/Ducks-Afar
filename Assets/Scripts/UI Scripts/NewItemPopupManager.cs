@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class NewItemPopupManager : MonoBehaviour
 {
+    public static NewItemPopupManager Instance { get; private set; }
+
     [Header("Prefab & Parent")]
     [SerializeField] private NewItemPopupUI popupPrefab;
     [SerializeField] private RectTransform popupParent;
@@ -29,11 +31,19 @@ public class NewItemPopupManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         if (popupParent == null)
             popupParent = transform as RectTransform;
         
         if (anchor == null)
             Debug.LogWarning("NewItemPopupManager: Anchor is not assigned.");
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 
     private void OnEnable()
@@ -88,6 +98,58 @@ public class NewItemPopupManager : MonoBehaviour
         popup.Bind(def, showQuantitySuffixIfMultiple
             ? ItemQuantityFormatter.FormatNameWithCount(def, deltaAdded)
             : null);
+        popup.RebaseFloatyIfPresent();
+        PositionAtAnchor(popup);
+
+        activePopup = popup;
+
+        popup.Play(fadeInSeconds, holdSeconds, fadeOutSeconds, exitDirection, exitDistance, () =>
+        {
+            if (activePopup == popup)
+                activePopup = null;
+
+            Destroy(popup.gameObject);
+        });
+    }
+
+    public void ShowPickupPopup(string title, Sprite icon)
+    {
+        if (popupPrefab == null)
+        {
+            Debug.LogWarning("NewItemPopupManager: popupPrefab is not assigned.");
+            return;
+        }
+
+        ExitActivePopup();
+
+        var popup = Instantiate(popupPrefab, popupParent, false);
+        popup.Bind(title, icon);
+        popup.RebaseFloatyIfPresent();
+        PositionAtAnchor(popup);
+
+        activePopup = popup;
+
+        popup.Play(fadeInSeconds, holdSeconds, fadeOutSeconds, exitDirection, exitDistance, () =>
+        {
+            if (activePopup == popup)
+                activePopup = null;
+
+            Destroy(popup.gameObject);
+        });
+    }
+
+    public void ShowPickupPopup(string title, Sprite icon, float popupPixelsPerSpritePixel)
+    {
+        if (popupPrefab == null)
+        {
+            Debug.LogWarning("NewItemPopupManager: popupPrefab is not assigned.");
+            return;
+        }
+
+        ExitActivePopup();
+
+        var popup = Instantiate(popupPrefab, popupParent, false);
+        popup.Bind(title, icon, popupPixelsPerSpritePixel);
         popup.RebaseFloatyIfPresent();
         PositionAtAnchor(popup);
 

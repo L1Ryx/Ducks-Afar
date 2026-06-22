@@ -10,6 +10,14 @@ public sealed class GoldwormPickup : MonoBehaviour, IInteractable
     [Header("Currency")]
     [SerializeField, Min(1)] private int goldwormsGranted = 1;
 
+    [Header("Pickup Popup")]
+    [SerializeField] private bool showPickupPopup = true;
+    [SerializeField] private string popupTitle = "Goldworm";
+    [SerializeField] private Sprite popupIcon;
+    [Tooltip("One-hardworm popup icons are 16px sprites displayed in an 80px UI slot, so 5 keeps goldworms at the same pixel scale.")]
+    [SerializeField, Min(0.01f)] private float popupPixelsPerSpritePixel = 5f;
+    [SerializeField] private NewItemPopupManager popupManager;
+
     [Header("Persistence")]
     [Tooltip("Optional explicit override. Leave empty for an automatic scene/path/position-based pickup id.")]
     [SerializeField] private string flagIdOverride;
@@ -27,6 +35,9 @@ public sealed class GoldwormPickup : MonoBehaviour, IInteractable
     {
         if (persistentId == null)
             persistentId = GetComponent<PersistentId>();
+
+        if (popupIcon == null)
+            popupIcon = GetComponentInChildren<SpriteRenderer>(true)?.sprite;
     }
 
     private IEnumerator Start()
@@ -57,6 +68,8 @@ public sealed class GoldwormPickup : MonoBehaviour, IInteractable
         Game.Ctx.SaveState.AddGoldworms(GoldwormsGranted);
         Game.Ctx.SaveState.SetWorldState(flagId);
 
+        ShowPickupPopup();
+
         onPickedUp?.Raise();
         onSuccess?.Invoke();
 
@@ -64,6 +77,33 @@ public sealed class GoldwormPickup : MonoBehaviour, IInteractable
             Game.Ctx.Saves.SaveToActiveSlot(captureSceneCheckpoint: false);
 
         Destroy(gameObject);
+    }
+
+    private void ShowPickupPopup()
+    {
+        if (!showPickupPopup)
+            return;
+
+        if (popupManager == null)
+            popupManager = NewItemPopupManager.Instance;
+
+        if (popupManager == null)
+            popupManager = FindFirstObjectByType<NewItemPopupManager>();
+
+        if (popupManager == null)
+            return;
+
+        string title = string.IsNullOrWhiteSpace(popupTitle) ? "Goldworm" : popupTitle.Trim();
+        popupManager.ShowPickupPopup(title, ResolvePopupIcon(), popupPixelsPerSpritePixel);
+    }
+
+    private Sprite ResolvePopupIcon()
+    {
+        if (popupIcon != null)
+            return popupIcon;
+
+        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
+        return spriteRenderer != null ? spriteRenderer.sprite : null;
     }
 
     private bool IsAlreadyCollected()

@@ -170,6 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoldwormPickup
   goldwormsGranted: 1
+  showPickupPopup: 1
+  popupTitle: Goldworm
+  popupIcon: {fileID: 1530007708631097287, guid: f4e3dd1c4a5354b03ac6815ce972dc36, type: 3}
+  popupManager: {fileID: 0}
   flagIdOverride: 
   persistentId: {fileID: 0}
   saveImmediately: 1

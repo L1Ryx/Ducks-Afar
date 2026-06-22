@@ -65,7 +65,41 @@ public class NewItemPopupUI : MonoBehaviour
             itemDescText.text = !string.IsNullOrWhiteSpace(overrideTitle) ? overrideTitle : def.displayName;
 
         if (itemIconImage != null)
-            itemIconImage.sprite = def.icon;
+            SetIcon(def.icon);
+    }
+
+    public void Bind(string title, Sprite icon)
+    {
+        if (itemDescText != null)
+            itemDescText.text = title;
+
+        if (itemIconImage != null)
+            SetIcon(icon);
+    }
+
+    public void Bind(string title, Sprite icon, float popupPixelsPerSpritePixel)
+    {
+        Bind(title, icon);
+        SetIconSizeFromSprite(icon, popupPixelsPerSpritePixel);
+    }
+
+    private void SetIcon(Sprite icon)
+    {
+        if (itemIconImage == null)
+            return;
+
+        itemIconImage.sprite = icon;
+        itemIconImage.preserveAspect = true;
+    }
+
+    private void SetIconSizeFromSprite(Sprite icon, float popupPixelsPerSpritePixel)
+    {
+        if (itemIconImage == null || icon == null || popupPixelsPerSpritePixel <= 0f)
+            return;
+
+        RectTransform iconRect = itemIconImage.rectTransform;
+        iconRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, icon.rect.width * popupPixelsPerSpritePixel);
+        iconRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, icon.rect.height * popupPixelsPerSpritePixel);
     }
     
     public void RebaseFloatyIfPresent()
