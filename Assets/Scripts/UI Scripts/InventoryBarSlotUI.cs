@@ -1,4 +1,3 @@
-using System.Collections;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -69,18 +68,7 @@ public class InventoryBarSlotUI : MonoBehaviour
         if (itemFrameRect == null && itemFrameImage != null) itemFrameRect = itemFrameImage.rectTransform;
         if (itemIconRect == null && itemIconImage != null) itemIconRect = itemIconImage.rectTransform;
 
-        if (itemFrameRect != null) baseFrameScale = itemFrameRect.localScale;
-        if (itemIconRect != null) baseIconScale = itemIconRect.localScale;
-
-        if (itemFrameImage != null) baseFrameColor = itemFrameImage.color;
-        if (itemIconImage != null) baseIconColor = itemIconImage.color;
-
-        if (titleBackgroundImage != null) baseTitleBgColor = titleBackgroundImage.color;
-
-        if (titleText != null) baseTitleTextAlpha = titleText.alpha;
-        if (titleBackgroundImage != null) baseTitleBgColor = titleBackgroundImage.color;
-        
-        if (titleBackgroundImage != null) baseTitleBgColor = titleBackgroundImage.color;
+        CaptureBaseStateIfNeeded();
         SetTitleVisibleImmediate(false);
 
         // Ensure title starts hidden (your spec: only visible when selected)
@@ -105,9 +93,27 @@ public class InventoryBarSlotUI : MonoBehaviour
             juice.enabled = enabled;
     }
 
+    private void CaptureBaseStateIfNeeded()
+    {
+        if (based)
+            return;
+
+        if (itemFrameRect != null) baseFrameScale = itemFrameRect.localScale;
+        if (itemIconRect != null) baseIconScale = itemIconRect.localScale;
+
+        if (itemFrameImage != null) baseFrameColor = itemFrameImage.color;
+        if (itemIconImage != null) baseIconColor = itemIconImage.color;
+
+        if (titleBackgroundImage != null) baseTitleBgColor = titleBackgroundImage.color;
+        if (titleText != null) baseTitleTextAlpha = titleText.alpha;
+
+        based = true;
+    }
+
 
     public void SetEmpty()
     {
+        CaptureBaseStateIfNeeded();
         KillTweens();
         hasItem = false;
         itemCount = 0;
@@ -124,11 +130,37 @@ public class InventoryBarSlotUI : MonoBehaviour
         if (titleText != null) titleText.text = string.Empty;
         SetTitleVisibleImmediate(false);
         UpdateCountImmediate();
+        ApplyDeselectedImmediate();
+    }
+
+    public void ResetForReuse()
+    {
+        SetEmpty();
+        gameObject.SetActive(true);
+    }
+
+    public void CopyBaseStateFrom(InventoryBarSlotUI source)
+    {
+        if (source == null)
+            return;
+
+        source.CaptureBaseStateIfNeeded();
+
+        baseFrameScale = source.baseFrameScale;
+        baseIconScale = source.baseIconScale;
+        baseFrameColor = source.baseFrameColor;
+        baseIconColor = source.baseIconColor;
+        baseTitleBgColor = source.baseTitleBgColor;
+        baseTitleTextAlpha = source.baseTitleTextAlpha;
+        based = true;
+
+        ApplyDeselectedImmediate();
     }
 
 
     public void BindItem(ItemDefinition def, int quantity)
     {
+        CaptureBaseStateIfNeeded();
         KillTweens();
         hasItem = (def != null);
         itemCount = hasItem ? Mathf.Max(0, quantity) : 0;
@@ -190,21 +222,10 @@ public class InventoryBarSlotUI : MonoBehaviour
         based = true;
     }
     
-    private void OnEnable()
-    {
-        // Let layout finish this frame
-        StartCoroutine(RebaseNextFrame());
-    }
-
-    private IEnumerator RebaseNextFrame()
-    {
-        yield return null;
-        Rebase();
-    }
-
-
     public void SetSelected(bool selected)
     {
+        CaptureBaseStateIfNeeded();
+
         if (IsEmpty)
         {
             ApplyDeselectedImmediate();

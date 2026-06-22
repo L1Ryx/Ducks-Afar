@@ -25,14 +25,8 @@ public class InventoryBarPanelUI : MonoBehaviour
     private bool subscribed;
     private bool slotsInitialized;
     private int activeSlotCount = -1;
+    private Vector2 slotSize = new(100f, 100f);
     private readonly List<InventoryBarSlotUI> managedSlots = new();
-    private readonly List<SlotSnapshot> snapshot = new();
-    
-    private struct SlotSnapshot
-    {
-        public string itemId;
-        public int count;
-    }
 
     private void Awake()
     {
@@ -78,7 +72,6 @@ public class InventoryBarPanelUI : MonoBehaviour
 
         yield return null; // one frame
         SyncSlotCountFromInventory();
-        RebaseSlots();
 
         RefreshSlots();
         ApplySelection(force: true);
@@ -120,56 +113,29 @@ public class InventoryBarPanelUI : MonoBehaviour
 
         for (int i = 0; i < activeSlotCount; i++)
         {
-            if (managedSlots[i] == null)
+            InventoryBarSlotUI slot = i < managedSlots.Count ? managedSlots[i] : null;
+            if (slot == null)
             {
                 Debug.LogError($"InventoryBarPanelUI: slots[{i}] is NULL");
                 continue;
             }
 
-            // Desired state for this UI slot
-            string desiredItemId = null;
-            int desiredCount = 0;
-
-            if (entries != null && i < entries.Count && !string.IsNullOrEmpty(entries[i].itemId))
+            if (entries == null || i >= entries.Count || string.IsNullOrEmpty(entries[i].itemId))
             {
-                desiredItemId = entries[i].itemId;
-                desiredCount = entries[i].count;
-            }
-
-            // Normalize empties
-            if (string.IsNullOrEmpty(desiredItemId))
-            {
-                desiredItemId = null;
-                desiredCount = 0;
-            }
-
-            // If unchanged, do nothing (prevents jerk)
-            if (snapshot[i].itemId == desiredItemId && snapshot[i].count == desiredCount)
+                slot.SetEmpty();
                 continue;
+            }
 
-            // Update snapshot first
-            SlotSnapshot updatedSnapshot = snapshot[i];
-            updatedSnapshot.itemId = desiredItemId;
-            updatedSnapshot.count = desiredCount;
-            snapshot[i] = updatedSnapshot;
-
-            // Apply UI change only when needed
-            if (desiredItemId == null)
+            InventoryEntry entry = entries[i];
+            var def = Game.Ctx.ItemDb.Get(entry.itemId);
+            if (def == null)
             {
-                managedSlots[i].SetEmpty();
+                Debug.LogWarning($"InventoryBarPanelUI: ItemDatabase missing def for '{entry.itemId}'");
+                slot.SetEmpty();
             }
             else
             {
-                var def = Game.Ctx.ItemDb.Get(desiredItemId);
-                if (def == null)
-                {
-                    Debug.LogWarning($"InventoryBarPanelUI: ItemDatabase missing def for '{desiredItemId}'");
-                    managedSlots[i].SetEmpty();
-                }
-                else
-                {
-                    managedSlots[i].BindItem(def, desiredCount);
-                }
+                slot.BindItem(def, entry.count);
             }
         }
     }
@@ -232,9 +198,63 @@ public class InventoryBarPanelUI : MonoBehaviour
         if (slotTemplate == null && managedSlots.Count > 0)
             slotTemplate = managedSlots[0];
 
+        managedSlots.Sort(CompareSlotSiblingOrder);
+        CaptureSlotSize();
+        ConfigureSlotLayout();
         EnsureLayoutGroup();
-        EnsureSnapshotSize(managedSlots.Count);
         slotsInitialized = true;
+    }
+
+    private int CompareSlotSiblingOrder(InventoryBarSlotUI a, InventoryBarSlotUI b)
+    {
+        if (a == b) return 0;
+        if (a == null) return 1;
+        if (b == null) return -1;
+
+        return a.transform.GetSiblingIndex().CompareTo(b.transform.GetSiblingIndex());
+    }
+
+    private void CaptureSlotSize()
+    {
+        RectTransform templateRect = slotTemplate != null ? slotTemplate.transform as RectTransform : null;
+        if (templateRect == null)
+            return;
+
+        Vector2 size = templateRect.sizeDelta;
+        if (size.x > 0f && size.y > 0f)
+            slotSize = size;
+    }
+
+    private void ConfigureSlotLayout()
+    {
+        for (int i = 0; i < managedSlots.Count; i++)
+        {
+            InventoryBarSlotUI slot = managedSlots[i];
+            if (slot == null)
+                continue;
+
+            slot.transform.SetSiblingIndex(i);
+
+            if (slot.transform is RectTransform rect)
+            {
+                rect.anchorMin = new Vector2(0.5f, 0.5f);
+                rect.anchorMax = new Vector2(0.5f, 0.5f);
+                rect.pivot = new Vector2(0.5f, 0.5f);
+                rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, slotSize.x);
+                rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, slotSize.y);
+            }
+
+            if (!slot.TryGetComponent(out LayoutElement layoutElement))
+                layoutElement = slot.gameObject.AddComponent<LayoutElement>();
+
+            layoutElement.ignoreLayout = false;
+            layoutElement.minWidth = slotSize.x;
+            layoutElement.minHeight = slotSize.y;
+            layoutElement.preferredWidth = slotSize.x;
+            layoutElement.preferredHeight = slotSize.y;
+            layoutElement.flexibleWidth = 0f;
+            layoutElement.flexibleHeight = 0f;
+        }
     }
 
     private void EnsureLayoutGroup()
@@ -247,10 +267,12 @@ public class InventoryBarPanelUI : MonoBehaviour
 
         layout.childAlignment = TextAnchor.MiddleCenter;
         layout.spacing = slotSpacing;
-        layout.childControlWidth = false;
-        layout.childControlHeight = false;
+        layout.childControlWidth = true;
+        layout.childControlHeight = true;
         layout.childForceExpandWidth = false;
         layout.childForceExpandHeight = false;
+        layout.childScaleWidth = false;
+        layout.childScaleHeight = false;
     }
 
     private void SyncSlotCountFromInventory()
@@ -267,11 +289,12 @@ public class InventoryBarPanelUI : MonoBehaviour
         EnsureSlotSetup();
 
         count = Mathf.Max(0, count);
-        if (activeSlotCount == count && managedSlots.Count >= count)
+        if (activeSlotCount == count && HasExpectedVisibleSlots(count))
             return;
 
         EnsureSlotsExist(count);
-        EnsureSnapshotSize(count);
+        ConfigureSlotLayout();
+        ResizeSlotsRoot(count);
 
         for (int i = 0; i < managedSlots.Count; i++)
         {
@@ -280,10 +303,18 @@ public class InventoryBarPanelUI : MonoBehaviour
             if (slot == null)
                 continue;
 
+            bool wasShowing = slot.gameObject.activeSelf;
             if (!shouldShow)
             {
                 slot.SetSelected(false);
                 slot.SetEmpty();
+                slot.gameObject.SetActive(false);
+                continue;
+            }
+
+            if (!wasShowing)
+            {
+                slot.ResetForReuse();
             }
 
             slot.gameObject.SetActive(shouldShow);
@@ -291,9 +322,26 @@ public class InventoryBarPanelUI : MonoBehaviour
 
         activeSlotCount = count;
         lastSelectedIndex = -1;
-        if (slotsRoot != null)
-            LayoutRebuilder.MarkLayoutForRebuild(slotsRoot);
-        RebaseSlots();
+        RebuildLayoutNow();
+    }
+
+    private bool HasExpectedVisibleSlots(int count)
+    {
+        if (managedSlots.Count < count)
+            return false;
+
+        for (int i = 0; i < managedSlots.Count; i++)
+        {
+            InventoryBarSlotUI slot = managedSlots[i];
+            if (slot == null)
+                continue;
+
+            bool shouldShow = i < count;
+            if (slot.gameObject.activeSelf != shouldShow)
+                return false;
+        }
+
+        return true;
     }
 
     private void EnsureSlotsExist(int count)
@@ -305,25 +353,29 @@ public class InventoryBarPanelUI : MonoBehaviour
         {
             InventoryBarSlotUI slot = Instantiate(slotTemplate, slotsRoot);
             slot.name = $"Item {managedSlots.Count + 1} Frame";
+            slot.CopyBaseStateFrom(slotTemplate);
+            slot.ResetForReuse();
             managedSlots.Add(slot);
         }
     }
 
-    private void EnsureSnapshotSize(int count)
+    private void ResizeSlotsRoot(int count)
     {
-        while (snapshot.Count < count)
-            snapshot.Add(default);
+        if (slotsRoot == null)
+            return;
 
-        for (int i = count; i < snapshot.Count; i++)
-            snapshot[i] = default;
+        float width = count <= 0 ? slotSize.x : count * slotSize.x + Mathf.Max(0, count - 1) * slotSpacing;
+        slotsRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width);
     }
 
-    private void RebaseSlots()
+    private void RebuildLayoutNow()
     {
-        for (int i = 0; i < activeSlotCount && i < managedSlots.Count; i++)
-            managedSlots[i]?.Rebase();
-    }
+        if (slotsRoot == null)
+            return;
 
+        LayoutRebuilder.ForceRebuildLayoutImmediate(slotsRoot);
+        Canvas.ForceUpdateCanvases();
+    }
 
     // Hook these from GameEventListener responses
     public void FadeInOnLevelStarted()
