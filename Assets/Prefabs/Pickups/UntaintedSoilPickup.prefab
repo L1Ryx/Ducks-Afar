@@ -258,11 +258,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991d0700760ab42bd9b4a9a099a9ee89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UntaintedSoilPickupEffect
-  targetRoom: {fileID: 0}
-  targetRoomId: auralis_11
-  creepyVignette: 100
-  desaturate: 100
-  preserveRoomDreamBloom: 1
+  roomLookTargets:
+  - room: {fileID: 0}
+    roomId: auralis_11
+    creepyVignette: 100
+    dreamBloom: 0
+    desaturate: 100
+    preserveCurrentDreamBloom: 1
   dimensionSwitcher: {fileID: 0}
   npcPrefab: {fileID: 3937751246587656915, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
   npcParent: {fileID: 0}

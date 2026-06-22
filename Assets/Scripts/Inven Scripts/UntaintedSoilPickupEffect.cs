@@ -3,12 +3,22 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEffect
 {
+    [System.Serializable]
+    private sealed class RoomLookTarget
+    {
+        public GameplayCameraRoom room;
+        public string roomId = "auralis_11";
+        [Range(0f, 100f)] public float creepyVignette = 100f;
+        [Range(0f, 100f)] public float dreamBloom;
+        [Range(0f, 100f)] public float desaturate = 100f;
+        public bool preserveCurrentDreamBloom = true;
+    }
+
     [Header("Room Look")]
-    [SerializeField] private GameplayCameraRoom targetRoom;
-    [SerializeField] private string targetRoomId = "auralis_11";
-    [SerializeField, Range(0f, 100f)] private float creepyVignette = 100f;
-    [SerializeField, Range(0f, 100f)] private float desaturate = 100f;
-    [SerializeField] private bool preserveRoomDreamBloom = true;
+    [SerializeField] private RoomLookTarget[] roomLookTargets =
+    {
+        new RoomLookTarget()
+    };
 
     [Header("Dimension")]
     [SerializeField] private DimensionWorldGridSwitcher dimensionSwitcher;
@@ -27,24 +37,44 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
 
         hasRun = true;
 
-        GameplayCameraRoom room = ResolveRoom();
-        if (room != null)
-        {
-            room.SetPostProcessLook(
-                creepyVignette,
-                0f,
-                desaturate,
-                keepCurrentDreamBloom: preserveRoomDreamBloom);
-        }
+        GameplayCameraRoom spawnRoom = ApplyRoomLooks();
 
         ResolveSwitcher()?.SwitchToPrimaryWithoutSaving();
-        SpawnNpc(room);
+        SpawnNpc(spawnRoom);
     }
 
-    private GameplayCameraRoom ResolveRoom()
+    private GameplayCameraRoom ApplyRoomLooks()
     {
-        if (targetRoom != null)
-            return targetRoom;
+        GameplayCameraRoom firstResolvedRoom = null;
+
+        if (roomLookTargets == null)
+            return null;
+
+        for (int i = 0; i < roomLookTargets.Length; i++)
+        {
+            RoomLookTarget target = roomLookTargets[i];
+            GameplayCameraRoom room = ResolveRoom(target);
+            if (room == null)
+                continue;
+
+            firstResolvedRoom ??= room;
+            room.SetPostProcessLook(
+                target.creepyVignette,
+                target.dreamBloom,
+                target.desaturate,
+                keepCurrentDreamBloom: target.preserveCurrentDreamBloom);
+        }
+
+        return firstResolvedRoom;
+    }
+
+    private GameplayCameraRoom ResolveRoom(RoomLookTarget target)
+    {
+        if (target == null)
+            return null;
+
+        if (target.room != null)
+            return target.room;
 
         GameplayCameraRoom[] rooms = FindObjectsByType<GameplayCameraRoom>(
             FindObjectsInactive.Include,
@@ -53,14 +83,14 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
         for (int i = 0; i < rooms.Length; i++)
         {
             GameplayCameraRoom room = rooms[i];
-            if (room != null && room.RoomId == targetRoomId)
+            if (room != null && room.RoomId == target.roomId)
             {
-                targetRoom = room;
-                return targetRoom;
+                target.room = room;
+                return target.room;
             }
         }
 
-        Debug.LogWarning($"{nameof(UntaintedSoilPickupEffect)} could not find camera room '{targetRoomId}'.", this);
+        Debug.LogWarning($"{nameof(UntaintedSoilPickupEffect)} could not find camera room '{target.roomId}'.", this);
         return null;
     }
 

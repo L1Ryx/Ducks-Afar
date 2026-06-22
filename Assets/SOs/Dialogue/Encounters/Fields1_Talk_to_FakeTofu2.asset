@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3467d0579a0c940a194cdf5dc73bd25e, type: 3}
+  m_Name: Fields1_Talk_to_FakeTofu2
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: You found it, Cap'n. The untainted soil!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: ASTER's gonna be so happy. No, everyone's gonna be so happy for you when
+      they hear!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: I'll be right here with you, Cap'n. Let's bring it home!
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  nextEncounter: {fileID: 0}
+  onEncounterEnd: {fileID: 0}
