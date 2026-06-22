@@ -7,6 +7,7 @@ public class PostProcessBurstHandler : MonoBehaviour
 {
     [Header("Volume Reference")]
     [SerializeField] private Volume volume;
+    [SerializeField] private bool cloneProfileAtRuntime = true;
     [Header("Burst Cooldown")]
     [SerializeField] private float burstCooldown = 0.3f; // seconds
 
@@ -41,18 +42,19 @@ public class PostProcessBurstHandler : MonoBehaviour
             return;
         }
 
-        // Note: profile could be shared; that's fine for a simple global effect.
-        // If you want per-instance safety, instantiate a copy of the profile at runtime.
         VolumeProfile profile = volume.profile;
+        if (profile == null)
+        {
+            profile = ScriptableObject.CreateInstance<VolumeProfile>();
+            volume.profile = profile;
+        }
+        else if (cloneProfileAtRuntime)
+        {
+            profile = Instantiate(profile);
+            volume.profile = profile;
+        }
 
-        profile.TryGet(out chromatic);
-        profile.TryGet(out vignette);
-        profile.TryGet(out bloom);
-        profile.TryGet(out grain);
-
-        // Ensure the key ones exist
-        if (chromatic == null) Debug.LogWarning("ChromaticAberration override not found in Volume profile.");
-        if (vignette == null) Debug.LogWarning("Vignette override not found in Volume profile.");
+        EnsureEffects(profile);
 
         ResetToIdle();
     }
@@ -135,5 +137,28 @@ public class PostProcessBurstHandler : MonoBehaviour
     {
         if (vignette == null) return;
         vignette.intensity.value = intensity;
+    }
+
+    private void EnsureEffects(VolumeProfile profile)
+    {
+        if (profile == null)
+            return;
+
+        if (!profile.TryGet(out chromatic))
+            chromatic = profile.Add<ChromaticAberration>(true);
+
+        if (!profile.TryGet(out vignette))
+            vignette = profile.Add<Vignette>(true);
+
+        if (!profile.TryGet(out bloom))
+            bloom = profile.Add<Bloom>(true);
+
+        if (!profile.TryGet(out grain))
+            grain = profile.Add<FilmGrain>(true);
+
+        chromatic.intensity.overrideState = true;
+        vignette.intensity.overrideState = true;
+        bloom.intensity.overrideState = true;
+        grain.intensity.overrideState = true;
     }
 }
