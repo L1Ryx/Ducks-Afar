@@ -5,14 +5,27 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogue/Dialogue Encounter")]
 public sealed class DialogueEncounter : ScriptableObject
 {
+    public enum LineKind
+    {
+        Text,
+        Examine
+    }
+
     [Serializable]
     public sealed class Line
     {
+        [Header("Line Kind")]
+        public LineKind kind = LineKind.Text;
+
         [Header("Who speaks")]
         public DialogueCharacter speaker;
 
         [Header("Text")]
         [TextArea] public string text;
+
+        [Header("Examine")]
+        public Sprite examineImage;
+        [Min(1f)] public float examineWidth = 1000f;
 
         [Header("Audio (optional)")]
         [Tooltip("Optional cue to play for this line. If null, the speaker's defaultLineCue may be used.")]

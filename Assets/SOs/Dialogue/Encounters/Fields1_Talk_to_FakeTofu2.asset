@@ -13,17 +13,26 @@ MonoBehaviour:
   m_Name: Fields1_Talk_to_FakeTofu2
   m_EditorClassIdentifier: 
   lines:
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: You found it, Cap'n. The untainted soil!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: ASTER's gonna be so happy. No, everyone's gonna be so happy for you when
       they hear!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
-  - speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: I'll be right here with you, Cap'n. Let's bring it home!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
   nextEncounter: {fileID: 0}

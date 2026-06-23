@@ -31,7 +31,7 @@ MonoBehaviour:
   - fromSceneName: Stage Home
     toSceneName: Stage
     loadingMessage: 
-    loadPresentation: 0
+    loadPresentation: 1
   - fromSceneName: Stage
     toSceneName: Stage Dusk
     loadingMessage: 

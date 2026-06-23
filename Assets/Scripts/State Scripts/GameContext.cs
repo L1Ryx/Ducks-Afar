@@ -24,9 +24,11 @@ public class GameContext : MonoBehaviour
     public PlayerDeathController PlayerDeath { get; private set; }
     public HardwormPickupSfx HardwormPickupSfx { get; private set; }
     public DialogueRunner Dialogue { get; private set; }
+    public ExaminePanelView ExaminePanel { get; private set; }
     
     [Header("View Refs")]
     [SerializeField] private DialogueRunner dialogueRunner;
+    [SerializeField] private ExaminePanelView examinePanel;
 
     [Header("Databases")] [SerializeField] private ItemDatabase itemDatabase;
 
@@ -103,6 +105,10 @@ public class GameContext : MonoBehaviour
         Dialogue = dialogueRunner;
         if (Dialogue == null)
             Debug.LogError("GameContext: DialogueRunner reference is missing. Assign it in the inspector.");
+
+        ExaminePanel = examinePanel;
+        if (ExaminePanel == null)
+            ExaminePanel = GetComponentInChildren<ExaminePanelView>(includeInactive: true);
     }
 
     private void EnsurePauseComponents()

@@ -23,10 +23,10 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
     [Header("Dimension")]
     [SerializeField] private DimensionWorldGridSwitcher dimensionSwitcher;
 
-    [Header("Temporary NPC Spawn")]
-    [SerializeField] private GameObject npcPrefab;
-    [SerializeField] private Transform npcParent;
-    [SerializeField] private Vector3 npcSpawnOffset;
+    [Header("Spawn")]
+    [SerializeField] private GameObject spawnPrefab;
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private Transform spawnParent;
 
     private bool hasRun;
 
@@ -37,10 +37,10 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
 
         hasRun = true;
 
-        GameplayCameraRoom spawnRoom = ApplyRoomLooks();
+        ApplyRoomLooks();
 
         ResolveSwitcher()?.SwitchToPrimaryWithoutSaving();
-        SpawnNpc(spawnRoom);
+        SpawnConfiguredPrefab();
     }
 
     private GameplayCameraRoom ApplyRoomLooks()
@@ -102,15 +102,12 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
         return dimensionSwitcher;
     }
 
-    private void SpawnNpc(GameplayCameraRoom room)
+    private void SpawnConfiguredPrefab()
     {
-        if (npcPrefab == null || room == null)
+        if (spawnPrefab == null || spawnPoint == null)
             return;
 
-        Vector3 spawnPosition = room.Bounds.center + npcSpawnOffset;
-        spawnPosition.z = npcPrefab.transform.position.z;
-
-        Transform parent = npcParent != null ? npcParent : room.transform;
-        Instantiate(npcPrefab, spawnPosition, npcPrefab.transform.rotation, parent);
+        Transform parent = spawnParent != null ? spawnParent : spawnPoint.parent;
+        Instantiate(spawnPrefab, spawnPoint.position, spawnPoint.rotation, parent);
     }
 }

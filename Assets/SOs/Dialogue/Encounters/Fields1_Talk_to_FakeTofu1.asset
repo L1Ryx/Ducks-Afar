@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3467d0579a0c940a194cdf5dc73bd25e, type: 3}
+  m_Name: Fields1_Talk_to_FakeTofu1
+  m_EditorClassIdentifier: 
+  lines:
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Cap'n, right on time!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: I've been trying to draw the best picture of all of us. Me, ASTER, BUBBLES,
+      CODA, and you!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Check it out!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 1
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: 
+    examineImage: {fileID: 21300000, guid: 28bf51e2d25024add8ee4bf48fd92a8a, type: 3}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "I\u2019ve really got to get better! I won\u2019t stop until I\u2019ve
+      got the perfect portrait of all of us!"
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: "Alright Cap\u2019n, I\u2019m off soon!"
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: It's my nightly-nap time, so keep this gate key safe for me!
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
+    text: Can't wait to see your research tomorrow! You're so close.
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  nextEncounter: {fileID: 0}
+  onEncounterEnd: {fileID: 11400000, guid: 5a45fd032b91145a4b0f36ed3c08da75, type: 2}

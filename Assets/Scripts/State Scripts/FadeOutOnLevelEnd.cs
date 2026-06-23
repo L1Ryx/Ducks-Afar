@@ -74,6 +74,20 @@ public class FadeOutOnLevelEnd : MonoBehaviour
         fadeRoutine = StartCoroutine(FadeToBlackRoutine(delaySeconds));
     }
 
+    public void CutToBlackImmediate()
+    {
+        if (fadeRoutine != null)
+        {
+            StopCoroutine(fadeRoutine);
+            fadeRoutine = null;
+        }
+
+        if (blockRaycastsDuringFade)
+            overlayImage.raycastTarget = true;
+
+        SetAlpha(1f);
+    }
+
     private IEnumerator FadeToBlackRoutine(float delaySeconds)
     {
         if (delaySeconds > 0f)

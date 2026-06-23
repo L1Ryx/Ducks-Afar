@@ -43,6 +43,7 @@ public sealed class DialogueRunner : MonoBehaviour
     private int currentLineIndex;
     private Coroutine typingRoutine;
     private bool isTyping;
+    private bool isExamining;
 
     public bool IsRunning { get; private set; }
 
@@ -104,7 +105,11 @@ public sealed class DialogueRunner : MonoBehaviour
         currentLineCompleted = false;
         suppressAdvanceUntilInputReleased = false;
         isTyping = false;
+        isExamining = false;
         IsRunning = false;
+
+        if (Game.IsReady && Game.Ctx?.ExaminePanel != null)
+            Game.Ctx.ExaminePanel.Hide(invokeCallback: false);
 
         if (portraitImage != null)
             portraitImage.sprite = null;
@@ -127,6 +132,7 @@ public sealed class DialogueRunner : MonoBehaviour
     private void EndEncounter()
     {
         IsRunning = false;
+        isExamining = false;
         nextIndicator.gameObject.SetActive(false);
 
         currentEncounter.onEncounterEnd?.Raise();
@@ -181,6 +187,9 @@ public sealed class DialogueRunner : MonoBehaviour
         if (!IsRunning)
             return;
 
+        if (isExamining)
+            return;
+
         if (isTyping)
         {
             FinishTypingInstantly();
@@ -213,6 +222,15 @@ public sealed class DialogueRunner : MonoBehaviour
     private void ShowLine(DialogueEncounter.Line line)
     {
         currentLineCompleted = false;
+        isExamining = false;
+
+        if (line.kind == DialogueEncounter.LineKind.Examine)
+        {
+            ShowExamineLine(line);
+            return;
+        }
+
+        SetVisible(true);
 
         // UI setup
         bool hasSpeaker = line.speaker != null;
@@ -246,6 +264,40 @@ public sealed class DialogueRunner : MonoBehaviour
             Game.Ctx.Audio.PlayCueGlobal(line.speaker.lineStartCue);
 
         typingRoutine = StartCoroutine(TypeLine(line));
+    }
+
+    private void ShowExamineLine(DialogueEncounter.Line line)
+    {
+        isTyping = false;
+        isExamining = true;
+
+        if (nextIndicator != null)
+            nextIndicator.gameObject.SetActive(false);
+
+        SetVisible(false);
+
+        ExaminePanelView examinePanel = Game.IsReady ? Game.Ctx?.ExaminePanel : null;
+        if (examinePanel == null)
+        {
+            Debug.LogWarning($"{nameof(DialogueRunner)} could not show examine line because no ExaminePanelView is bound in GameContext.", this);
+            CompleteExamineLine(line);
+            return;
+        }
+
+        examinePanel.Show(
+            line.examineImage,
+            line.examineWidth,
+            () => CompleteExamineLine(line));
+    }
+
+    private void CompleteExamineLine(DialogueEncounter.Line line)
+    {
+        if (!IsRunning)
+            return;
+
+        isExamining = false;
+        MarkLineCompleted(line);
+        AdvanceToNextLine();
     }
 
     private IEnumerator TypeLine(DialogueEncounter.Line line)

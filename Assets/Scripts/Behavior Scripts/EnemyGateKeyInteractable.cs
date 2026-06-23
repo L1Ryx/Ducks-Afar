@@ -5,11 +5,15 @@ public sealed class EnemyGateKeyInteractable : InventoryCostInteractable
 {
     [Header("Gate")]
     [SerializeField] private EnemyGateController gate;
+    [SerializeField] private InventoryCostInteractableHoverPanel hoverPanel;
 
     private void Awake()
     {
         if (gate == null)
             gate = GetComponent<EnemyGateController>();
+
+        if (hoverPanel == null)
+            hoverPanel = GetComponent<InventoryCostInteractableHoverPanel>();
     }
 
     protected override bool CanInteractNow(GameObject interactor)
@@ -19,6 +23,7 @@ public sealed class EnemyGateKeyInteractable : InventoryCostInteractable
 
     protected override void OnPaymentSucceeded(GameObject interactor)
     {
+        hoverPanel?.ForceHide();
         gate?.OpenGate();
     }
 
@@ -27,6 +32,9 @@ public sealed class EnemyGateKeyInteractable : InventoryCostInteractable
     {
         if (gate == null)
             gate = GetComponent<EnemyGateController>();
+
+        if (hoverPanel == null)
+            hoverPanel = GetComponent<InventoryCostInteractableHoverPanel>();
     }
 #endif
 }

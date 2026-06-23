@@ -262,13 +262,19 @@ MonoBehaviour:
   - room: {fileID: 0}
     roomId: auralis_11
     creepyVignette: 100
-    dreamBloom: 0
+    dreamBloom: 100
+    desaturate: 100
+    preserveCurrentDreamBloom: 1
+  - room: {fileID: 0}
+    roomId: auralis_12
+    creepyVignette: 100
+    dreamBloom: 100
     desaturate: 100
     preserveCurrentDreamBloom: 1
   dimensionSwitcher: {fileID: 0}
-  npcPrefab: {fileID: 3937751246587656915, guid: 3d074524c405b41bb88cf1706e8ea4c9, type: 3}
-  npcParent: {fileID: 0}
-  npcSpawnOffset: {x: 0, y: 0, z: 0}
+  spawnPrefab: {fileID: 5476604898196694710, guid: c49ce3c2df9614677af9e2a90925a964, type: 3}
+  spawnPoint: {fileID: 0}
+  spawnParent: {fileID: 0}
 --- !u!1 &6861707703746373897
 GameObject:
   m_ObjectHideFlags: 0
