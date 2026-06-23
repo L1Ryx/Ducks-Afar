@@ -173,6 +173,7 @@ public sealed class FreakyTofuController : MonoBehaviour
             AcquireInteractionLock();
 
         ResolveCurtain()?.CutToBlackImmediate();
+        Game.Ctx?.Saves?.SaveCurrentGameToActiveSlot();
 
         if (Game.IsReady && Game.Ctx?.SceneFlow != null && Game.Ctx.SceneFlow.LoadNextScene(fallbackNextSceneName))
             return;
