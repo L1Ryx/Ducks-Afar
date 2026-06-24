@@ -11,6 +11,9 @@ public class DuckPickup : MonoBehaviour, IInteractable
     [Tooltip("Number of items granted (usually 1).")]
     [SerializeField] private int itemsGranted = 1;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue gateKeyPickupCue;
+
     [Header("Events")]
     [SerializeField] private GameEvent onPickedUp; // optional: hook to your SO event system
 
@@ -37,7 +40,10 @@ public class DuckPickup : MonoBehaviour, IInteractable
         }
 
         // SUCCESS
-        Game.Ctx.HardwormPickupSfx?.PlayPickup(hardwormPackDefForSfx);
+        if (hardwormPackDefForSfx != null)
+            Game.Ctx.HardwormPickupSfx?.PlayPickup(hardwormPackDefForSfx);
+
+        PlayGateKeyPickupIfNeeded();
         if (onPickedUp != null) onPickedUp.Raise();
         if (onPickedUpGenericItem != null) onPickedUpGenericItem.Raise();
 
@@ -46,5 +52,11 @@ public class DuckPickup : MonoBehaviour, IInteractable
             pickupEffects[i]?.OnPickupSucceeded(gameObject, interactor);
 
         Destroy(gameObject);
+    }
+
+    private void PlayGateKeyPickupIfNeeded()
+    {
+        if (itemDef is GateKeyDefinition)
+            ProjectAudio.PlayGlobal(gateKeyPickupCue);
     }
 }

@@ -5134,6 +5134,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   gate: {fileID: 113493272899733167}
+  hoverPanel: {fileID: 6192023838057265267}
+  keyUnlockCue: {fileID: 11400000, guid: 07ddc9c50299c4b649585f50f7ea7a34, type: 2}
+  gateOpenCue: {fileID: 11400000, guid: 4365cb68fed00403b82ba1ca4cb66fd6, type: 2}
 --- !u!114 &6192023838057265267
 MonoBehaviour:
   m_ObjectHideFlags: 0

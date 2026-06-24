@@ -9,6 +9,9 @@ public class GrantInventoryItemOnEvent : MonoBehaviour
     [SerializeField] private ItemDefinition item;
     [SerializeField, Min(1)] private int amount = 1;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue gateKeyPickupCue;
+
     private void OnEnable()
     {
         triggerEvent?.RegisterRuntimeListener(GrantItem);
@@ -34,6 +37,12 @@ public class GrantInventoryItemOnEvent : MonoBehaviour
         }
 
         if (!Game.Ctx.Inventory.TryAdd(item.itemId, Mathf.Max(1, amount)))
+        {
             Debug.LogWarning($"{nameof(GrantInventoryItemOnEvent)} on '{name}' could not add item '{item.itemId}'.", this);
+            return;
+        }
+
+        if (item is GateKeyDefinition)
+            ProjectAudio.PlayGlobal(gateKeyPickupCue);
     }
 }

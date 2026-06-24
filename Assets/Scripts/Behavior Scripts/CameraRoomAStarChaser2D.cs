@@ -74,6 +74,9 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     [SerializeField, Range(0f, 0.6f)] private float speedNoiseAmount = 0.14f;
     [SerializeField, Min(0.01f)] private float speedNoiseFrequency = 0.8f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue awareCue;
+
     [Header("Stuck Recovery")]
     [SerializeField] private bool useStuckRecovery = true;
     [SerializeField, Min(0.05f)] private float stuckCheckInterval = 0.35f;
@@ -105,6 +108,7 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
     private int consecutiveStuckRepaths;
     private bool hasHomePosition;
     private bool wasReturningHome;
+    private bool wasAwareOfTarget;
     private float speedNoiseSeed;
 
     private static readonly Vector2Int[] FourWay =
@@ -201,6 +205,7 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
         bool blockedByRoomRule = onlyChaseWhenTargetInRoom && !targetInRoom;
         bool blockedByDetection = !targetInDetectionRange;
         bool targetCanBeChased = targetAvailable && !blockedByRoomRule && !blockedByDetection;
+        UpdateAwarenessAudio(targetCanBeChased && !fleeFromTarget);
 
         if (stopWhenOutsideRoom && !selfInRoom)
         {
@@ -311,6 +316,7 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
 
     public void FreezeMovement()
     {
+        UpdateAwarenessAudio(false);
         ClearPath();
 
         if (body == null)
@@ -320,6 +326,17 @@ public sealed class CameraRoomAStarChaser2D : MonoBehaviour
             body.linearVelocity = Vector2.zero;
 
         enabled = false;
+    }
+
+    private void UpdateAwarenessAudio(bool isAware)
+    {
+        if (wasAwareOfTarget == isAware)
+            return;
+
+        wasAwareOfTarget = isAware;
+
+        if (isAware)
+            ProjectAudio.PlayGlobal(awareCue);
     }
 
     private void CacheIgnoredColliders()

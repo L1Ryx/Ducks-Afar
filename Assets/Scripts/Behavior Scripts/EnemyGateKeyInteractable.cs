@@ -7,6 +7,10 @@ public sealed class EnemyGateKeyInteractable : InventoryCostInteractable
     [SerializeField] private EnemyGateController gate;
     [SerializeField] private InventoryCostInteractableHoverPanel hoverPanel;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue keyUnlockCue;
+    [SerializeField] private AudioCue gateOpenCue;
+
     private void Awake()
     {
         if (gate == null)
@@ -24,6 +28,8 @@ public sealed class EnemyGateKeyInteractable : InventoryCostInteractable
     protected override void OnPaymentSucceeded(GameObject interactor)
     {
         hoverPanel?.ForceHide();
+        ProjectAudio.PlayGlobal(keyUnlockCue);
+        ProjectAudio.PlayGlobal(gateOpenCue);
         gate?.OpenGate();
     }
 

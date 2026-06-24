@@ -434,6 +434,7 @@ MonoBehaviour:
   useSpeedNoise: 1
   speedNoiseAmount: 0.14
   speedNoiseFrequency: 0.8
+  awareCue: {fileID: 11400000, guid: c82f545c59d0440d28afbc775bd06823, type: 2}
   useStuckRecovery: 1
   stuckCheckInterval: 0.2
   stuckMinMoveDistance: 0.06
@@ -511,6 +512,8 @@ MonoBehaviour:
   droppedItemPrefab: {fileID: 1341502172045543628, guid: 71b163e0496d6427bb85733083ff1932, type: 3}
   dropRule: 0
   droppedItemOffset: {x: 0, y: 0, z: 0}
+  deathCue: {fileID: 11400000, guid: e0b8988a433744532975e4344c796024, type: 2}
+  itemDropCue: {fileID: 11400000, guid: cd4eb36b3705d4f0b98d0121a9922a81, type: 2}
   onDefeated:
     m_PersistentCalls:
       m_Calls: []

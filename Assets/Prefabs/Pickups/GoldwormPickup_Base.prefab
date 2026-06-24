@@ -173,7 +173,9 @@ MonoBehaviour:
   showPickupPopup: 1
   popupTitle: Goldworm
   popupIcon: {fileID: 1530007708631097287, guid: f4e3dd1c4a5354b03ac6815ce972dc36, type: 3}
+  popupPixelsPerSpritePixel: 5
   popupManager: {fileID: 0}
+  pickupCue: {fileID: 11400000, guid: 48786b4fc82d34057af766023578f044, type: 2}
   flagIdOverride: 
   persistentId: {fileID: 0}
   saveImmediately: 1

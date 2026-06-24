@@ -156,6 +156,7 @@ MonoBehaviour:
   itemDef: {fileID: 11400000, guid: 967696246ff3d4b81ab081656f6ba2de, type: 2}
   hardwormPackDefForSfx: {fileID: 0}
   itemsGranted: 1
+  gateKeyPickupCue: {fileID: 11400000, guid: 002e54b5030b143b0a5e5f0fbdfbeede, type: 2}
   onPickedUp: {fileID: 0}
   onPickedUpGenericItem: {fileID: 11400000, guid: 26e8e2b9da95941618740b2abd454f56, type: 2}
 --- !u!114 &4105965895453827838

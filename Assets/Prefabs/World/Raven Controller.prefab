@@ -56,3 +56,4 @@ MonoBehaviour:
   bobAmplitude: 0.08
   bobFrequency: 2.1
   targetCamera: {fileID: 0}
+  flybyCue: {fileID: 11400000, guid: 80d1fb3c56fea4ae38abc32b93fcd34c, type: 2}

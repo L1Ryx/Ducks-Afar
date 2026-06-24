@@ -1672,6 +1672,7 @@ MonoBehaviour:
   triggerEvent: {fileID: 11400000, guid: 5a45fd032b91145a4b0f36ed3c08da75, type: 2}
   item: {fileID: 11400000, guid: 967696246ff3d4b81ab081656f6ba2de, type: 2}
   amount: 1
+  gateKeyPickupCue: {fileID: 11400000, guid: 002e54b5030b143b0a5e5f0fbdfbeede, type: 2}
 --- !u!1001 &1725222139
 PrefabInstance:
   m_ObjectHideFlags: 0

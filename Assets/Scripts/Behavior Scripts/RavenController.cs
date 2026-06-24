@@ -21,6 +21,9 @@ public sealed class RavenController : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private Camera targetCamera;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue flybyCue;
+
     private Coroutine automaticRoutine;
 
     private void OnEnable()
@@ -62,6 +65,7 @@ public sealed class RavenController : MonoBehaviour
         Vector3 spawnPosition = BuildSpawnPosition(cameraToUse, direction);
         RavenFlyby flyby = Instantiate(ravenPrefab, spawnPosition, Quaternion.identity);
         flyby.name = "Raven Flyby";
+        ProjectAudio.PlayGlobal(flybyCue);
 
         float scale = Random.Range(
             Mathf.Min(scaleRange.x, scaleRange.y),

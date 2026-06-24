@@ -43,6 +43,10 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
     [SerializeField] private DropRule dropRule = DropRule.Always;
     [SerializeField] private Vector3 droppedItemOffset;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue deathCue;
+    [SerializeField] private AudioCue itemDropCue;
+
     [Header("Events")]
     [SerializeField] private UnityEvent onDefeated;
     [SerializeField] private UnityEvent onDefeatFailed;
@@ -156,6 +160,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
         chaser?.SetFleeFromTarget(false);
         DisableGameplay(disableColliders: false);
         StartRequirementUiFadeOut();
+        ProjectAudio.PlayGlobal(deathCue);
 
         yield return PlayDeathAnimation();
 
@@ -186,6 +191,7 @@ public sealed class HardwormDefeatableEnemy : MonoBehaviour
             return;
 
         Instantiate(droppedItemPrefab, transform.position + droppedItemOffset, Quaternion.identity, transform.parent);
+        ProjectAudio.PlayGlobal(itemDropCue);
     }
 
     private bool ShouldDropItem()

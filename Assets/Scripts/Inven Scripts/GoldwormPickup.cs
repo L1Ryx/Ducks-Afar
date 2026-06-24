@@ -18,6 +18,9 @@ public sealed class GoldwormPickup : MonoBehaviour, IInteractable
     [SerializeField, Min(0.01f)] private float popupPixelsPerSpritePixel = 5f;
     [SerializeField] private NewItemPopupManager popupManager;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue pickupCue;
+
     [Header("Persistence")]
     [Tooltip("Optional explicit override. Leave empty for an automatic scene/path/position-based pickup id.")]
     [SerializeField] private string flagIdOverride;
@@ -69,6 +72,7 @@ public sealed class GoldwormPickup : MonoBehaviour, IInteractable
         Game.Ctx.SaveState.SetWorldState(flagId);
 
         ShowPickupPopup();
+        ProjectAudio.PlayGlobal(pickupCue);
 
         onPickedUp?.Raise();
         onSuccess?.Invoke();
