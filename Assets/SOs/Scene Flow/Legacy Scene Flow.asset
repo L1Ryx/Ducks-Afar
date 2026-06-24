@@ -29,7 +29,7 @@ MonoBehaviour:
     loadingMessage: 
     loadPresentation: 0
   - fromSceneName: Stage Home
-    toSceneName: Stage
+    toSceneName: 
     loadingMessage: 
     loadPresentation: 1
   - fromSceneName: Stage

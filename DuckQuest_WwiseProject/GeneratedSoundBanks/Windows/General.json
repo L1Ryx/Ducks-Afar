@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{7B4E9D1A-9C5B-61BF-F255-C5C62F13C8CB}",
+    "Hash": "{822DD75E-BEF1-DFA7-E9C9-6FD185772041}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -88,6 +88,14 @@
       "CachePath": "52/{52CF0004-73FD-F3E4-84C1-0B5469BDA4B4}.wem"
      },
      {
+      "Id": "61030631",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "chirp b.wav",
+      "CachePath": "CA/{CAE82948-EF66-7710-C265-FCE43C514FDA}.wem"
+     },
+     {
       "Id": "66967714",
       "Language": "SFX",
       "Streaming": "false",
@@ -96,12 +104,28 @@
       "CachePath": "08/{08DC90AD-09E4-5AAF-E6BA-9B08041F97DC}.wem"
      },
      {
+      "Id": "77974842",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "chirp c.wav",
+      "CachePath": "4F/{4FA1A7F3-2C97-DEA8-BA61-80268AB3C97D}.wem"
+     },
+     {
       "Id": "81657979",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Typewriter 2.wav",
       "CachePath": "F8/{F8E8F71E-9CAB-1CDB-7ADB-B048587DDC83}.wem"
+     },
+     {
+      "Id": "94102739",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "chirp a.wav",
+      "CachePath": "E5/{E5C9C885-1ACE-B616-321A-631ADF5CBBF1}.wem"
      },
      {
       "Id": "95388393",
@@ -126,6 +150,14 @@
       "Location": "Memory",
       "ShortName": "PGPH-1.wav",
       "CachePath": "5E/{5E445C92-2F7F-BD34-2286-4A9C79CD6066}.wem"
+     },
+     {
+      "Id": "111860277",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "coin A.wav",
+      "CachePath": "1C/{1CB68C9F-063C-94F6-FAAD-1E62C91C9990}.wem"
      },
      {
       "Id": "120788902",
@@ -200,6 +232,14 @@
       "CachePath": "59/{5903CC31-7939-62DA-4618-CC341521334C}.wem"
      },
      {
+      "Id": "185499203",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "chirp death a.wav",
+      "CachePath": "6E/{6E95B2B4-BB7E-550E-EB4F-6BAA7BFAAF17}.wem"
+     },
+     {
       "Id": "186947714",
       "Language": "SFX",
       "Streaming": "false",
@@ -230,6 +270,14 @@
       "Location": "Memory",
       "ShortName": "Add-A-2.wav",
       "CachePath": "C7/{C75BEE7E-EE1B-7E5F-32A4-29B1BFC49C6A}.wem"
+     },
+     {
+      "Id": "213883189",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "gate swing open.wav",
+      "CachePath": "76/{76AD10E2-A80C-09FF-8071-565B8DF1BFFF}.wem"
      },
      {
       "Id": "216209671",
@@ -270,6 +318,14 @@
       "Location": "Memory",
       "ShortName": "HP-G.wav",
       "CachePath": "B3/{B3F26C69-2B34-17C0-5923-75983557CAF2}.wem"
+     },
+     {
+      "Id": "260191167",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "raven-flyby.wav",
+      "CachePath": "B4/{B45D100F-42FD-A9E8-7624-3B464F33C227}.wem"
      },
      {
       "Id": "271830612",
@@ -360,6 +416,14 @@
       "CachePath": "4E/{4EBB4472-6117-DB83-09DF-CB86A42A293D}.wem"
      },
      {
+      "Id": "389078945",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "coin D.wav",
+      "CachePath": "0A/{0AF09A46-6010-1BC2-50E2-63FD98016FB5}.wem"
+     },
+     {
       "Id": "393017442",
       "Language": "SFX",
       "Streaming": "false",
@@ -382,6 +446,14 @@
       "Location": "Memory",
       "ShortName": "Duck-Game-Reunion.wav",
       "CachePath": "5D/{5DA4012F-AB01-0BC8-10BD-E736C740C701}.wem"
+     },
+     {
+      "Id": "427972928",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "chirp death b.wav",
+      "CachePath": "AA/{AA493770-CF58-9E9B-D018-B1DE4D4A9438}.wem"
      },
      {
       "Id": "432686981",
@@ -422,6 +494,14 @@
       "Location": "Memory",
       "ShortName": "Eating.wav",
       "CachePath": "3E/{3EFE407E-BA29-19EA-6B9D-246F301BE9F9}.wem"
+     },
+     {
+      "Id": "461452829",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "key unlock b.wav",
+      "CachePath": "F1/{F1FFDCD6-0CDA-F8FF-17DF-94C808B33AE5}.wem"
      },
      {
       "Id": "464117777",
@@ -472,6 +552,14 @@
       "CachePath": "5E/{5E02DDAA-7D67-A74A-53E4-A7C5AFC97F3B}.wem"
      },
      {
+      "Id": "523495129",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "coin B.wav",
+      "CachePath": "8D/{8DA0AC51-388B-9E14-7AFB-C90EFF937EE6}.wem"
+     },
+     {
       "Id": "523726839",
       "Language": "SFX",
       "Streaming": "false",
@@ -494,6 +582,14 @@
       "Location": "Memory",
       "ShortName": "Piano-1.wav",
       "CachePath": "E2/{E2E01379-21F3-7C81-5733-508C5DEECB59}.wem"
+     },
+     {
+      "Id": "532688255",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Creepy Ring Loop.wav",
+      "CachePath": "27/{273A3D03-23F4-8729-2F67-3894D884F62C}.wem"
      },
      {
       "Id": "548699161",
@@ -526,6 +622,14 @@
       "Location": "Memory",
       "ShortName": "Single Ting.wav",
       "CachePath": "85/{85C22927-D02A-372F-C9C8-3490F59EFA10}.wem"
+     },
+     {
+      "Id": "593222733",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "key drop.wav",
+      "CachePath": "86/{86236A11-03B6-7063-C4F9-A86A3AAEDEFB}.wem"
      },
      {
       "Id": "593888354",
@@ -574,6 +678,14 @@
       "Location": "Memory",
       "ShortName": "Sub-A-2.wav",
       "CachePath": "7B/{7B3B3255-04F3-D8B4-9520-FA150A51ED7B}.wem"
+     },
+     {
+      "Id": "631248514",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "coin C.wav",
+      "CachePath": "E3/{E3BFB99F-B124-EB78-735B-0EAEDF3F0FAB}.wem"
      },
      {
       "Id": "650713914",
@@ -640,6 +752,14 @@
       "CachePath": "FF/{FF1C6503-8FB1-320E-73F2-59D362FB565E}.wem"
      },
      {
+      "Id": "723252657",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "key unlock a.wav",
+      "CachePath": "35/{35AF16D0-968E-5B33-ABC6-A5B010F3ECC0}.wem"
+     },
+     {
       "Id": "724881649",
       "Language": "SFX",
       "Streaming": "false",
@@ -678,6 +798,14 @@
       "Location": "Memory",
       "ShortName": "Add-B-1.wav",
       "CachePath": "F6/{F6FC2138-D1AA-9DF9-27ED-E3E3A933CEA7}.wem"
+     },
+     {
+      "Id": "764012477",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "dark-drone-seamless.wav",
+      "CachePath": "B3/{B325BD17-F193-57E5-DEC6-9764D2C95424}.wem"
      },
      {
       "Id": "783888783",
@@ -950,6 +1078,14 @@
       "Location": "Memory",
       "ShortName": "Ducks-Afar-Intro-Cutscene.wav",
       "CachePath": "81/{812C8C25-5CF8-B44F-843C-9A76A9ADF9DF}.wem"
+     },
+     {
+      "Id": "988277014",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "key pick up.wav",
+      "CachePath": "72/{7207FCC3-7CC3-4178-1F04-2D4079137764}.wem"
      },
      {
       "Id": "995171218",
@@ -1687,6 +1823,18 @@
       ]
      },
      {
+      "Id": "3948445156",
+      "Name": "Play_CreepyRing",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_CreepyRing",
+      "GUID": "{F38C127F-1044-49B5-9D40-5572D581653A}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "532688255"
+       }
+      ]
+     },
+     {
       "Id": "3171580813",
       "Name": "Play_CutsceneTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_CutsceneTheme",
@@ -1697,6 +1845,18 @@
       "MediaRefs": [
        {
         "Id": "216209671"
+       }
+      ]
+     },
+     {
+      "Id": "2744316682",
+      "Name": "Play_DarkAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Play_DarkAmbience",
+      "GUID": "{75EBFDFD-482D-4FC3-91DB-BC87B67EABD1}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "764012477"
        }
       ]
      },
@@ -1780,6 +1940,28 @@
       }
      },
      {
+      "Id": "3788303255",
+      "Name": "Play_GateOpen",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_GateOpen",
+      "GUID": "{6DE6BA1D-2554-4958-A3BD-95C7973F15A5}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.6300198",
+      "DurationMax": "2.0536962",
+      "MediaRefs": [
+       {
+        "Id": "213883189"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
       "Id": "1576299337",
       "Name": "Play_Glitch",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_Glitch",
@@ -1804,6 +1986,74 @@
         "Name": "ImpactDelay",
         "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ImpactDelay",
         "GUID": "{75E8FF73-24F3-4021-830E-DBCB32EE9C07}"
+       }
+      ]
+     },
+     {
+      "Id": "3838955501",
+      "Name": "Play_GoldwormPickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_GoldwormPickup",
+      "GUID": "{C20D6BCE-1E22-4F50-8BCD-F3436534FF6A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.41355518",
+      "DurationMax": "1.2663628",
+      "MediaRefs": [
+       {
+        "Id": "111860277"
+       },
+       {
+        "Id": "389078945"
+       },
+       {
+        "Id": "523495129"
+       },
+       {
+        "Id": "631248514"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "362058447",
+      "Name": "Play_GrawingDeath",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_GrawingDeath",
+      "GUID": "{0691BF31-8B6C-42A9-B785-13B11E50811A}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.46800432",
+      "DurationMax": "0.7103369",
+      "MediaRefs": [
+       {
+        "Id": "185499203"
+       },
+       {
+        "Id": "427972928"
+       }
+      ]
+     },
+     {
+      "Id": "1136278652",
+      "Name": "Play_GraywingAware",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_GraywingAware",
+      "GUID": "{399C7F9B-BA12-42CC-AB6F-488F9AA4F713}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4201701",
+      "DurationMax": "0.90380406",
+      "MediaRefs": [
+       {
+        "Id": "61030631"
+       },
+       {
+        "Id": "77974842"
+       },
+       {
+        "Id": "94102739"
        }
       ]
      },
@@ -1967,6 +2217,75 @@
       "MediaRefs": [
        {
         "Id": "228594327"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "885077343",
+      "Name": "Play_KeyPickup",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_KeyPickup",
+      "GUID": "{5BB3CD7D-1024-44CD-A7A7-27DB0FBBEBD6}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.36223957",
+      "DurationMax": "0.43077785",
+      "MediaRefs": [
+       {
+        "Id": "988277014"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "1939414080",
+      "Name": "Play_KeySpawn",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_KeySpawn",
+      "GUID": "{2892B86B-E144-4094-BC9D-7BF09A800C32}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.67529756",
+      "DurationMax": "0.8030687",
+      "MediaRefs": [
+       {
+        "Id": "593222733"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
+     },
+     {
+      "Id": "4104431215",
+      "Name": "Play_KeyUnlock",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_KeyUnlock",
+      "GUID": "{01B116D7-85AE-4C61-8CEB-56297D40DC95}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3037885",
+      "DurationMax": "2.2721384",
+      "MediaRefs": [
+       {
+        "Id": "461452829"
+       },
+       {
+        "Id": "723252657"
        }
       ],
       "AuxBusRefs": [
@@ -2403,6 +2722,28 @@
        },
        {
         "Id": "736026174"
+       }
+      ]
+     },
+     {
+      "Id": "3376168860",
+      "Name": "Play_RavenFlyby",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_RavenFlyby",
+      "GUID": "{03E8E1D3-B4A0-4C00-A879-F1A98F088DBE}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.7486253",
+      "DurationMax": "1.9627658",
+      "MediaRefs": [
+       {
+        "Id": "260191167"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
        }
       ]
      },
@@ -2859,10 +3200,30 @@
       "DurationMax": "0"
      },
      {
+      "Id": "1455719054",
+      "Name": "Stop_CreepyRing",
+      "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Stop_CreepyRing",
+      "GUID": "{98DAAF15-A481-4A9D-8489-E41813217516}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "4235903127",
       "Name": "Stop_CutsceneTheme",
       "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_CutsceneTheme",
       "GUID": "{62E73EA1-6B55-418E-AC49-5EAFE53889ED}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "4250796764",
+      "Name": "Stop_DarkAmbience",
+      "ObjectPath": "\\Events\\Default Work Unit\\AMBIENCE\\Stop_DarkAmbience",
+      "GUID": "{AB188798-B855-40AF-829E-E4DEEA02DB5D}",
       "MaxAttenuation": "0",
       "DurationType": "OneShot",
       "DurationMin": "0",
@@ -3053,6 +3414,6 @@
     ]
    }
   ],
-  "FileHash": "{A17D73E7-15F3-6D4F-3C29-C10DA8708EE2}"
+  "FileHash": "{C727AA8F-8764-FEA5-F0F2-E8D581AE7B39}"
  }
 }

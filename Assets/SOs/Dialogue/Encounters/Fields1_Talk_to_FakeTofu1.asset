@@ -41,7 +41,7 @@ MonoBehaviour:
     examineImage: {fileID: 21300000, guid: 28bf51e2d25024add8ee4bf48fd92a8a, type: 3}
     examineWidth: 1000
     lineCue: {fileID: 0}
-    afterLineEvent: {fileID: 0}
+    afterLineEvent: {fileID: 11400000, guid: 44f77ac799bdb4a71994aa79928825da, type: 2}
   - kind: 0
     speaker: {fileID: 11400000, guid: 47384b603847b494cb22479fc827ed33, type: 2}
     text: "I\u2019ve really got to get better! I won\u2019t stop until I\u2019ve

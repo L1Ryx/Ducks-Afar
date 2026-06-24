@@ -29,6 +29,9 @@ public sealed class FreakyTofuController : MonoBehaviour
     [SerializeField] private TMP_Text numberText;
     [SerializeField] private int displayNumber = 3;
 
+    [Header("Audio")]
+    [SerializeField] private AudioCue chaseCue;
+
     [Header("Scene Advance")]
     [SerializeField] private FadeOutOnLevelEnd curtainFade;
     [SerializeField] private string fallbackNextSceneName;
@@ -40,6 +43,7 @@ public sealed class FreakyTofuController : MonoBehaviour
     private bool hasTriggeredSceneAdvance;
     private bool ownsInteractionLock;
     private float jitterSeed;
+    private uint chasePlayingId;
 
     private void Awake()
     {
@@ -57,6 +61,7 @@ public sealed class FreakyTofuController : MonoBehaviour
 
     private void OnDisable()
     {
+        StopChaseCue();
         ReleaseInteractionLock();
     }
 
@@ -117,6 +122,7 @@ public sealed class FreakyTofuController : MonoBehaviour
     {
         hasNoticedPlayer = true;
         SetNumberVisible(true);
+        PlayChaseCue();
     }
 
     private void ChasePlayer()
@@ -167,6 +173,7 @@ public sealed class FreakyTofuController : MonoBehaviour
         hasNoticedPlayer = true;
         SetNumberVisible(true);
         StopMoving();
+        StopChaseCue();
         StopPlayer(other);
 
         if (lockInteractionsOnTouch)
@@ -186,6 +193,34 @@ public sealed class FreakyTofuController : MonoBehaviour
     {
         if (other != null && other.attachedRigidbody != null)
             other.attachedRigidbody.linearVelocity = Vector2.zero;
+    }
+
+    private void PlayChaseCue()
+    {
+        if (chasePlayingId != 0 || chaseCue == null || !chaseCue.HasPlayEvent)
+            return;
+
+        chasePlayingId = ProjectAudio.PlayGlobal(chaseCue);
+    }
+
+    private void StopChaseCue()
+    {
+        if (chaseCue == null)
+        {
+            chasePlayingId = 0;
+            return;
+        }
+
+        if (Game.IsReady && Game.Ctx?.Audio != null && chaseCue.HasStopEvent)
+        {
+            Game.Ctx.Audio.StopCueGlobal(chaseCue);
+        }
+        else if (chasePlayingId != 0)
+        {
+            AkSoundEngine.StopPlayingID(chasePlayingId);
+        }
+
+        chasePlayingId = 0;
     }
 
     private void AcquireInteractionLock()

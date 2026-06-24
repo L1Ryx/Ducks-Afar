@@ -500,6 +500,7 @@ MonoBehaviour:
   numberCanvasGroup: {fileID: 834541866798288810}
   numberText: {fileID: 1684388772781562251}
   displayNumber: -4
+  chaseCue: {fileID: 11400000, guid: 5777fc7d13d6b4092a105f7cfa65d0d9, type: 2}
   curtainFade: {fileID: 0}
   fallbackNextSceneName: 
   lockInteractionsOnTouch: 1

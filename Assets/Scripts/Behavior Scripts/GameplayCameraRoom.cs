@@ -1,5 +1,20 @@
 using UnityEngine;
 
+public enum GameplayCameraRoomMusicMode
+{
+    KeepCurrent,
+    Silence,
+    PlayCue
+}
+
+public enum GameplayCameraRoomAlternateMusicMode
+{
+    SameAsPrimary,
+    KeepCurrent,
+    Silence,
+    PlayCue
+}
+
 [DisallowMultipleComponent]
 [RequireComponent(typeof(BoxCollider2D))]
 public sealed class GameplayCameraRoom : MonoBehaviour
@@ -19,6 +34,15 @@ public sealed class GameplayCameraRoom : MonoBehaviour
     [SerializeField, Range(0f, 100f)] private float dreamBloom;
     [SerializeField, Range(0f, 100f)] private float desaturate;
     [SerializeField, Min(0f)] private float postProcessFadeSeconds = 0.5f;
+
+    [Header("Music")]
+    [Tooltip("What this room should do to the current music while the primary dimension is active.")]
+    [SerializeField] private GameplayCameraRoomMusicMode primaryMusicMode = GameplayCameraRoomMusicMode.KeepCurrent;
+    [SerializeField] private AudioCue primaryMusicCue;
+
+    [Tooltip("Defaults to Same As Primary so alternate dimensions inherit the room's normal music setup until overridden.")]
+    [SerializeField] private GameplayCameraRoomAlternateMusicMode alternateMusicMode = GameplayCameraRoomAlternateMusicMode.SameAsPrimary;
+    [SerializeField] private AudioCue alternateMusicCue;
 
     private BoxCollider2D roomTrigger;
 
@@ -89,6 +113,15 @@ public sealed class GameplayCameraRoom : MonoBehaviour
             controller.ApplyCurrentRoomLook();
     }
 
+    public bool TryGetMusic(DimensionGridState dimension, out AudioCue musicCue, out bool silenceMusic)
+    {
+        GameplayCameraRoomMusicMode mode = GetMusicMode(dimension);
+        musicCue = GetMusicCue(dimension);
+        silenceMusic = mode == GameplayCameraRoomMusicMode.Silence;
+
+        return mode == GameplayCameraRoomMusicMode.PlayCue && musicCue != null && musicCue.HasPlayEvent;
+    }
+
     public float DistanceSquaredTo(Vector2 worldPoint)
     {
         Bounds bounds = Bounds;
@@ -124,6 +157,31 @@ public sealed class GameplayCameraRoom : MonoBehaviour
             return;
 
         controller = Object.FindAnyObjectByType<GameplayCameraAnchorController>();
+    }
+
+    private GameplayCameraRoomMusicMode GetMusicMode(DimensionGridState dimension)
+    {
+        if (dimension == DimensionGridState.Primary)
+            return primaryMusicMode;
+
+        return alternateMusicMode switch
+        {
+            GameplayCameraRoomAlternateMusicMode.KeepCurrent => GameplayCameraRoomMusicMode.KeepCurrent,
+            GameplayCameraRoomAlternateMusicMode.Silence => GameplayCameraRoomMusicMode.Silence,
+            GameplayCameraRoomAlternateMusicMode.PlayCue => GameplayCameraRoomMusicMode.PlayCue,
+            _ => primaryMusicMode
+        };
+    }
+
+    private AudioCue GetMusicCue(DimensionGridState dimension)
+    {
+        if (dimension == DimensionGridState.Alternate
+            && alternateMusicMode == GameplayCameraRoomAlternateMusicMode.PlayCue)
+        {
+            return alternateMusicCue;
+        }
+
+        return primaryMusicCue;
     }
 
 #if UNITY_EDITOR

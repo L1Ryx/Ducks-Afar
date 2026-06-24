@@ -147,6 +147,7 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
         currentState = nextState;
         ApplyWorldGrids();
         ApplySavedState(saveState);
+        ApplyCurrentRoomMusic();
 
         switchedEvent?.Raise();
         if (currentState == DimensionGridState.Alternate)
@@ -202,6 +203,15 @@ public sealed class DimensionWorldGridSwitcher : MonoBehaviour
             ProjectAudio.PlayGlobal(transitionAudioCue);
 
         PostProcessEffectToolbox.PlayGlitchBurstGlobal(playAudio: false);
+    }
+
+    private static void ApplyCurrentRoomMusic()
+    {
+        GameplayCameraAnchorController[] controllers = Object.FindObjectsByType<GameplayCameraAnchorController>(
+            FindObjectsInactive.Exclude);
+
+        for (int i = 0; i < controllers.Length; i++)
+            controllers[i]?.ApplyCurrentRoomMusic();
     }
 
     public static void SaveActiveSlotWithoutCapturingPosition()

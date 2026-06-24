@@ -1,5 +1,12 @@
 using UnityEngine;
 
+public enum UntaintedSoilAmbienceAction
+{
+    None,
+    Stop,
+    SwitchToCue
+}
+
 [DisallowMultipleComponent]
 public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEffect
 {
@@ -23,6 +30,11 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
     [Header("Dimension")]
     [SerializeField] private DimensionWorldGridSwitcher dimensionSwitcher;
 
+    [Header("Audio")]
+    [SerializeField] private UntaintedSoilAmbienceAction ambienceAction = UntaintedSoilAmbienceAction.Stop;
+    [SerializeField] private GameEvent stopAmbienceEvent;
+    [SerializeField] private AudioCue switchAmbienceCue;
+
     [Header("Spawn")]
     [SerializeField] private GameObject spawnPrefab;
     [SerializeField] private Transform spawnPoint;
@@ -38,9 +50,32 @@ public sealed class UntaintedSoilPickupEffect : MonoBehaviour, IPickupSuccessEff
         hasRun = true;
 
         ApplyRoomLooks();
+        ApplyAmbienceAction();
 
         ResolveSwitcher()?.SwitchToPrimaryWithoutSaving();
         SpawnConfiguredPrefab();
+    }
+
+    private void ApplyAmbienceAction()
+    {
+        switch (ambienceAction)
+        {
+            case UntaintedSoilAmbienceAction.Stop:
+                if (stopAmbienceEvent != null)
+                {
+                    stopAmbienceEvent.Raise();
+                    return;
+                }
+
+                if (Game.IsReady && Game.Ctx?.Audio != null)
+                    Game.Ctx.Audio.StopGlobalAmbience(immediate: false);
+                break;
+
+            case UntaintedSoilAmbienceAction.SwitchToCue:
+                if (Game.IsReady && Game.Ctx?.Audio != null && switchAmbienceCue != null && switchAmbienceCue.HasPlayEvent)
+                    Game.Ctx.Audio.SetGlobalAmbience(switchAmbienceCue);
+                break;
+        }
     }
 
     private GameplayCameraRoom ApplyRoomLooks()

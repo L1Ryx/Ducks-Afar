@@ -272,6 +272,9 @@ MonoBehaviour:
     desaturate: 100
     preserveCurrentDreamBloom: 1
   dimensionSwitcher: {fileID: 0}
+  ambienceAction: 1
+  stopAmbienceEvent: {fileID: 11400000, guid: 2e35741ec84e34699ae1793886edf514, type: 2}
+  switchAmbienceCue: {fileID: 0}
   spawnPrefab: {fileID: 5476604898196694710, guid: c49ce3c2df9614677af9e2a90925a964, type: 3}
   spawnPoint: {fileID: 0}
   spawnParent: {fileID: 0}

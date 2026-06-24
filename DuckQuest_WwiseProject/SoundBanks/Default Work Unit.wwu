@@ -7,6 +7,8 @@
 					<ObjectInclusionList>
 						<ObjectRef Name="Play_TelescopeClose" ID="{AF5CD398-FF60-401E-A150-57A72CDE60B8}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PGPL" ID="{8C5DA475-762E-4039-B47E-D2E5E9D719B7}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_KeySpawn" ID="{2892B86B-E144-4094-BC9D-7BF09A800C32}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_DarkAmbience" ID="{AB188798-B855-40AF-829E-E4DEEA02DB5D}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BO_4" ID="{697CCB1E-DB1E-40BA-8F4F-DA80FC4C8338}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CL_3" ID="{85289C18-DAC6-40CE-9FF1-2C1FC54C6A1F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PickUp" ID="{ED4BAE91-AA0D-40E1-86F0-E2512C8A990F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -19,6 +21,8 @@
 						<ObjectRef Name="Play_SubCadenceC" ID="{848F8B4A-F251-41E2-8230-2E95E54A5B2C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AsterGabble" ID="{6076EF09-A6C0-4228-98DF-3AC49956AB30}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BO_1" ID="{E2C1AB95-F44F-422D-8893-36C4D69DBED2}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_GrawingDeath" ID="{0691BF31-8B6C-42A9-B785-13B11E50811A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_GraywingAware" ID="{399C7F9B-BA12-42CC-AB6F-488F9AA4F713}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PuzzleTheme" ID="{C8DAA7D0-5FBE-42F9-A21B-4BE3629C5804}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_DoorClose" ID="{38C89D1A-7265-4309-AA41-A9A15B7BD669}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CL_1" ID="{ACECFF5F-F975-4315-87AA-CF0C4D3D29B9}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -29,6 +33,7 @@
 						<ObjectRef Name="Play_ReunionTheme" ID="{7358471E-4068-447A-B5A7-F3D03A26ABC6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CL_4" ID="{D9440882-77FD-4491-AB9D-26078DAE172F}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BridgeSplash" ID="{2A2E1010-F664-44B9-938F-614402D9C632}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_KeyPickup" ID="{5BB3CD7D-1024-44CD-A7A7-27DB0FBBEBD6}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RocketLaunch" ID="{E6CBCE9C-04DC-44D2-A6DC-5F976CAE4AF7}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Piano_2" ID="{D3E68358-41E9-44D7-A1AC-761D4AC792EB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BO_3" ID="{EDE999C0-B591-4529-BECC-003B1D60031E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -45,12 +50,15 @@
 						<ObjectRef Name="Play_BO_5" ID="{ABF95D2A-4721-481B-8E05-A76CD433575C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CL_5" ID="{21858671-9D00-48AE-BC6B-19F966CCBB99}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_HomeTheme" ID="{657ED9C3-6FE8-4917-BB17-D56B46BCDE8E}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_GateOpen" ID="{6DE6BA1D-2554-4958-A3BD-95C7973F15A5}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_HomeTheme" ID="{4A3B20F9-27C7-497B-B9D2-42E39F9D28D4}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_KeycardUnlock" ID="{643CA4ED-B61F-49A9-95A7-11FB757B94CB}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_CreepyRing" ID="{F38C127F-1044-49B5-9D40-5572D581653A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_ReunionTheme" ID="{991B9C5E-7E14-4A2D-89AD-315234BAC114}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_PuzzleTheme" ID="{D86B65F7-EC6B-4A36-984C-39D617F44B50}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_MainMenuTheme" ID="{4CA40DC5-CC96-4A39-B445-CC07106C8F62}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceB" ID="{5869A825-FD8D-4A5C-9197-EFE04B7D8693}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Stop_CreepyRing" ID="{98DAAF15-A481-4A9D-8489-E41813217516}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Glitch" ID="{81B1F43F-02AF-4AD4-B3BC-7F280C38BE79}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_AddCadenceC" ID="{134A5B4B-E18F-4AF0-8C93-8D90EDB46451}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_VH_1" ID="{58E5FCE4-B6AE-4AF5-B73C-6D3433D5E23C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -60,10 +68,12 @@
 						<ObjectRef Name="Play_HoverEnd" ID="{12C59B93-EF01-4BA0-A246-86C2DD9DC28B}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_CraftingComplete" ID="{6E326F0D-A936-4BD1-B5CC-C3A4FF6D5438}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Piano_3" ID="{5E4F5C2E-A266-4BD7-8746-7B48ED652A13}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_RavenFlyby" ID="{03E8E1D3-B4A0-4C00-A879-F1A98F088DBE}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_RestartSuccess" ID="{22EEF14C-D43D-4C1A-A2B5-BADDE87123C3}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_StudioStinger" ID="{453F0105-EBCC-4C29-B3D5-343F06D32BFC}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_TypewriterClack" ID="{DBDE7A52-4ABC-4C4F-AC48-294DDBDAAE1A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_SingleTing" ID="{8487E95F-C24D-4C5F-AE4F-8E90BA90BAEC}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_KeyUnlock" ID="{01B116D7-85AE-4C61-8CEB-56297D40DC95}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Piano_5" ID="{52D98DAA-5B12-4C6E-AF15-59025115B1DE}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BeachAmbience" ID="{EEA34DD3-310F-4CD8-BB3C-16CE25EF91A1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_IntroTheme" ID="{F84F5793-C498-4D1C-92AA-C54D45F95F7C}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
@@ -78,8 +88,10 @@
 						<ObjectRef Name="Stop_PGPL" ID="{1313C183-07EB-4EAD-AAB7-F79D1F51F7D3}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_BushRustle" ID="{E68FBB6B-2DCA-4ED6-9392-02DDE8F83E64}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_IntroTheme" ID="{98C80F90-B01C-4F09-BCD5-1CAC993FCDD9}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_GoldwormPickup" ID="{C20D6BCE-1E22-4F50-8BCD-F3436534FF6A}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_FP" ID="{068F4DF4-1045-4F8E-846C-C192590179C0}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PGPH_2" ID="{ED7BD267-85A9-4F90-BC8B-098737B073B3}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_DarkAmbience" ID="{75EBFDFD-482D-4FC3-91DB-BC87B67EABD1}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_PGPH_1" ID="{C5C1FD39-E5AD-4FF9-B95F-8375F392BC88}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_HP" ID="{9885D862-B120-4FFD-8DDE-6AFC6B46E5F2}" WorkUnitID="{4C4929FF-C016-4B8C-B9F5-06DD1BEAB568}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>

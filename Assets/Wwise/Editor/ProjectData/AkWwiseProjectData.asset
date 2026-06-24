@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy/Default Work Unit
     guid: 3b285fafa3b13043963f7baa8242bcfd
     GuidInternal: 
-    m_lastTime: -8584207109570414328
+    m_lastTime: -8584192627496185955
     List:
     - name: AMB Bus
       guid: 97c70cc0c78bfe4a8cc365236d39fe13
@@ -60,6 +60,27 @@ MonoBehaviour:
         ObjectType: 2
         guid: 97c70cc0c78bfe4a8cc365236d39fe13
       Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/SFX Bus/AMB
+        Bus
+    - name: ENEMIES Bus
+      guid: 69a45ba1a32a674abfa5ff868afcd237
+      id: 3305821793
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 3b285fafa3b13043963f7baa8242bcfd
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: SFX Bus
+        ObjectType: 2
+        guid: a1ec96729fcefd46bc1bafe26e131159
+      - ElementName: ENEMIES Bus
+        ObjectType: 2
+        guid: 69a45ba1a32a674abfa5ff868afcd237
+      Path: Master-Mixer Hierarchy/Default Work Unit/Master Audio Bus/SFX Bus/ENEMIES
         Bus
     - name: ForestVerb
       guid: 601eb4a0ce48324ba6b2ca15c855c8be
@@ -193,7 +214,7 @@ MonoBehaviour:
     ParentPath: SoundBanks/Default Work Unit
     guid: 7a777d225192b8499669a054edc3da18
     GuidInternal: 
-    m_lastTime: -8584207553519304063
+    m_lastTime: -8584192626375487206
     List:
     - name: General
       guid: 474bba0c913b51429c00e080bfe424c8
@@ -221,7 +242,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584207553525229206
+    m_lastTime: -8584192626476634756
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -784,6 +805,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_CreepyRing
+      guid: 7f128cf34410b5499d405572d581653a
+      id: 3948445156
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_CreepyRing
+        ObjectType: 3
+        guid: 7f128cf34410b5499d405572d581653a
+      Path: Events/Default Work Unit/WORLD/Play_CreepyRing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_CutsceneTheme
       guid: d117bed5b8d71c47b7dfff829e598096
       id: 3171580813
@@ -801,6 +842,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: d117bed5b8d71c47b7dfff829e598096
       Path: Events/Default Work Unit/MUS/Play_CutsceneTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_DarkAmbience
+      guid: fdfdeb752d48c34f91dbbc87b67eabd1
+      id: 2744316682
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: AMBIENCE
+        ObjectType: 4
+        guid: 48c35fd5762956438c1cf171a3fe1b0c
+      - ElementName: Play_DarkAmbience
+        ObjectType: 3
+        guid: fdfdeb752d48c34f91dbbc87b67eabd1
+      Path: Events/Default Work Unit/AMBIENCE/Play_DarkAmbience
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -864,6 +925,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_GateOpen
+      guid: 1dbae66d54255849a3bd95c7973f15a5
+      id: 3788303255
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_GateOpen
+        ObjectType: 3
+        guid: 1dbae66d54255849a3bd95c7973f15a5
+      Path: Events/Default Work Unit/WORLD/Play_GateOpen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_Glitch
       guid: 3ff4b181af02d44ab3bc7f280c38be79
       id: 1576299337
@@ -881,6 +962,66 @@ MonoBehaviour:
         ObjectType: 3
         guid: 3ff4b181af02d44ab3bc7f280c38be79
       Path: Events/Default Work Unit/WORLD/Play_Glitch
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_GoldwormPickup
+      guid: ce6b0dc2221e504f8bcdf3436534ff6a
+      id: 3838955501
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_GoldwormPickup
+        ObjectType: 3
+        guid: ce6b0dc2221e504f8bcdf3436534ff6a
+      Path: Events/Default Work Unit/WORLD/Play_GoldwormPickup
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_GrawingDeath
+      guid: 31bf91066c8ba942b78513b11e50811a
+      id: 362058447
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_GrawingDeath
+        ObjectType: 3
+        guid: 31bf91066c8ba942b78513b11e50811a
+      Path: Events/Default Work Unit/WORLD/Play_GrawingDeath
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_GraywingAware
+      guid: 9b7f9c3912bacc42ab6f488f9aa4f713
+      id: 1136278652
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_GraywingAware
+        ObjectType: 3
+        guid: 9b7f9c3912bacc42ab6f488f9aa4f713
+      Path: Events/Default Work Unit/WORLD/Play_GraywingAware
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1041,6 +1182,66 @@ MonoBehaviour:
         ObjectType: 3
         guid: eda43c641fb6a94995a711fb757b94cb
       Path: Events/Default Work Unit/WORLD/Play_KeycardUnlock
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_KeyPickup
+      guid: 7dcdb35b2410cd44a7a727db0fbbebd6
+      id: 885077343
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_KeyPickup
+        ObjectType: 3
+        guid: 7dcdb35b2410cd44a7a727db0fbbebd6
+      Path: Events/Default Work Unit/WORLD/Play_KeyPickup
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_KeySpawn
+      guid: 6bb8922844e19440bc9d7bf09a800c32
+      id: 1939414080
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_KeySpawn
+        ObjectType: 3
+        guid: 6bb8922844e19440bc9d7bf09a800c32
+      Path: Events/Default Work Unit/WORLD/Play_KeySpawn
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_KeyUnlock
+      guid: d716b101ae85614c8ceb56297d40dc95
+      id: 4104431215
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_KeyUnlock
+        ObjectType: 3
+        guid: d716b101ae85614c8ceb56297d40dc95
+      Path: Events/Default Work Unit/WORLD/Play_KeyUnlock
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1391,6 +1592,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: d0a7dac8be5ff942a21b4be3629c5804
       Path: Events/Default Work Unit/MUS/Play_PuzzleTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_RavenFlyby
+      guid: d3e1e803a0b4004ca879f1a98f088dbe
+      id: 3376168860
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Play_RavenFlyby
+        ObjectType: 3
+        guid: d3e1e803a0b4004ca879f1a98f088dbe
+      Path: Events/Default Work Unit/WORLD/Play_RavenFlyby
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1789,6 +2010,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Stop_CreepyRing
+      guid: 15afda9881a49d4a8489e41813217516
+      id: 1455719054
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: WORLD
+        ObjectType: 4
+        guid: 21a210147b9d364eab6d5cc6c4572afb
+      - ElementName: Stop_CreepyRing
+        ObjectType: 3
+        guid: 15afda9881a49d4a8489e41813217516
+      Path: Events/Default Work Unit/WORLD/Stop_CreepyRing
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Stop_CutsceneTheme
       guid: a13ee762556b8e41ac495eafe53889ed
       id: 4235903127
@@ -1806,6 +2047,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: a13ee762556b8e41ac495eafe53889ed
       Path: Events/Default Work Unit/MUS/Stop_CutsceneTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_DarkAmbience
+      guid: 988718ab55b8af40829ee4deea02db5d
+      id: 4250796764
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: AMBIENCE
+        ObjectType: 4
+        guid: 48c35fd5762956438c1cf171a3fe1b0c
+      - ElementName: Stop_DarkAmbience
+        ObjectType: 3
+        guid: 988718ab55b8af40829ee4deea02db5d
+      Path: Events/Default Work Unit/AMBIENCE/Stop_DarkAmbience
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

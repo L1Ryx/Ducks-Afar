@@ -84,6 +84,7 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
 
         currentRoom = room;
         ApplyRoomPostProcessing(room);
+        ApplyRoomMusic(room);
 
         panTween?.Kill();
 
@@ -110,6 +111,12 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
             ApplyRoomPostProcessing(currentRoom);
     }
 
+    public void ApplyCurrentRoomMusic()
+    {
+        if (currentRoom != null)
+            ApplyRoomMusic(currentRoom);
+    }
+
     private static void ApplyRoomPostProcessing(GameplayCameraRoom room)
     {
         if (room == null)
@@ -120,6 +127,28 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
             room.DreamBloomPercent,
             room.DesaturatePercent,
             room.PostProcessFadeSeconds);
+    }
+
+    private static void ApplyRoomMusic(GameplayCameraRoom room)
+    {
+        if (room == null || !Game.IsReady || Game.Ctx?.Audio == null)
+            return;
+
+        DimensionGridState dimension = DimensionGridState.Primary;
+        DimensionWorldGridSwitcher switcher = Object.FindAnyObjectByType<DimensionWorldGridSwitcher>();
+        if (switcher != null)
+            dimension = switcher.CurrentState;
+
+        bool hasMusic = room.TryGetMusic(dimension, out AudioCue musicCue, out bool silenceMusic);
+
+        if (silenceMusic)
+        {
+            Game.Ctx.Audio.StopGlobalMusic(immediate: false);
+            return;
+        }
+
+        if (hasMusic)
+            Game.Ctx.Audio.SetGlobalMusic(musicCue);
     }
 
     private void EnsureRefs()

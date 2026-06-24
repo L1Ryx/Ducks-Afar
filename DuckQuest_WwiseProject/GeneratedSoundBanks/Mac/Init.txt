@@ -19,6 +19,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	1313057045	AMB Bus			\Default Work Unit\Master Audio Bus\SFX Bus\AMB Bus	
 	1502772432	SFX Bus			\Default Work Unit\Master Audio Bus\SFX Bus	
 	3027868960	MX Bus			\Default Work Unit\Master Audio Bus\MX Bus	
+	3305821793	ENEMIES Bus			\Default Work Unit\Master Audio Bus\SFX Bus\ENEMIES Bus	
 	3600729941	UI Bus			\Default Work Unit\Master Audio Bus\SFX Bus\UI Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 

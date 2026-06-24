@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D524C03D-78B5-3158-4FBB-516547B1B11E}",
+    "Hash": "{B5B75003-0B8F-0B5D-0BA5-ABA39C59405B}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -114,6 +114,20 @@
         }
        ]
       }
+     },
+     {
+      "Id": "3305821793",
+      "Name": "ENEMIES Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\SFX Bus\\ENEMIES Bus",
+      "GUID": "{A15BA469-2AA3-4A67-BFA5-FF868AFCD237}",
+      "AuxBusRefs": [
+       {
+        "Id": "1690558513",
+        "Name": "ForestVerb",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\ForestVerb",
+        "GUID": "{A0B41E60-48CE-4B32-A6B2-CA15C855C8BE}"
+       }
+      ]
      },
      {
       "Id": "3600729941",
@@ -297,6 +311,6 @@
     ]
    }
   ],
-  "FileHash": "{BD46FDEC-156A-1030-3CF5-43D3F903A184}"
+  "FileHash": "{739656C6-008D-4E23-DBF0-68CCA84650AF}"
  }
 }

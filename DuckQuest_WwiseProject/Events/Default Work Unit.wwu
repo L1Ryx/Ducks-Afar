@@ -258,6 +258,119 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_CreepyRing" ID="{F38C127F-1044-49B5-9D40-5572D581653A}">
+							<ChildrenList>
+								<Action Name="" ID="{E2FCBEAA-C7DE-44E7-8653-21CBDCF81E5D}" ShortID="810264371">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_CreepyRing_Blend" ID="{D9B8B6EF-FF77-42BA-8FB7-92EAA1B993C8}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_CreepyRing" ID="{98DAAF15-A481-4A9D-8489-E41813217516}">
+							<ChildrenList>
+								<Action Name="" ID="{A3535D4F-1139-4ADD-81D7-944F74135CD0}" ShortID="384826579">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_CreepyRing_Blend" ID="{D9B8B6EF-FF77-42BA-8FB7-92EAA1B993C8}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_GraywingAware" ID="{399C7F9B-BA12-42CC-AB6F-488F9AA4F713}">
+							<ChildrenList>
+								<Action Name="" ID="{ED3F76F7-DF03-405E-8AFE-4F01AC26AC39}" ShortID="668626621">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_GraywingAware_Random" ID="{764E5E49-8AE9-47D8-AE8D-327A40F65C76}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_GrawingDeath" ID="{0691BF31-8B6C-42A9-B785-13B11E50811A}">
+							<ChildrenList>
+								<Action Name="" ID="{C4EB0EC4-7011-4B97-8766-B2EC62A4D219}" ShortID="544282981">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_GraywingDeath_Random" ID="{894A43F5-08D9-437B-B08D-70E3D8B542D8}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_GoldwormPickup" ID="{C20D6BCE-1E22-4F50-8BCD-F3436534FF6A}">
+							<ChildrenList>
+								<Action Name="" ID="{DA00ADA2-A8DE-4C52-828B-2D31D36BF4DE}" ShortID="885412488">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_GoldwormPickup_Random" ID="{713B0B85-B21C-428A-BF55-584D88AFC4A7}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_KeySpawn" ID="{2892B86B-E144-4094-BC9D-7BF09A800C32}">
+							<ChildrenList>
+								<Action Name="" ID="{DD3B7878-85D9-41BD-8C7B-4EB786930260}" ShortID="653476180">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_KeySpawn_Blend" ID="{1A3C1A7A-2C7D-4B3F-832C-EAC591925216}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_KeyPickup" ID="{5BB3CD7D-1024-44CD-A7A7-27DB0FBBEBD6}">
+							<ChildrenList>
+								<Action Name="" ID="{5180B221-24D0-4963-80F3-EB85E9A6CB76}" ShortID="95699958">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_KeyPickup_Blend" ID="{1864DD76-9F7F-486E-8D68-28C905E13C1C}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_KeyUnlock" ID="{01B116D7-85AE-4C61-8CEB-56297D40DC95}">
+							<ChildrenList>
+								<Action Name="" ID="{ADAB4E62-3781-407D-B05D-2F835D4BAA27}" ShortID="46347015">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_KeyUnlock_Random" ID="{FB0BFF78-A5E1-487A-B178-954D5884AEF6}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_GateOpen" ID="{6DE6BA1D-2554-4958-A3BD-95C7973F15A5}">
+							<ChildrenList>
+								<Action Name="" ID="{65FBEF7F-68FA-4367-A0E1-05B631DA8006}" ShortID="579759930">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_GateOpen_Blend" ID="{698B5B71-B34B-4AD9-B236-8CA2EE089033}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_RavenFlyby" ID="{03E8E1D3-B4A0-4C00-A879-F1A98F088DBE}">
+							<ChildrenList>
+								<Action Name="" ID="{3ADF7F9D-27F8-4CAA-85F7-AD69CD795124}" ShortID="688874103">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_RavenFlyby" ID="{D256004B-5B9C-41A7-8056-5AFDA5BE1328}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AMBIENCE" ID="{D55FC348-2976-4356-8C1C-F171A3FE1B0C}" ShortID="322830194">
@@ -288,6 +401,37 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AMB_Beach_Blend" ID="{BAAD000F-F8E3-49F2-A62D-8C95C8BA1648}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_DarkAmbience" ID="{75EBFDFD-482D-4FC3-91DB-BC87B67EABD1}">
+							<ChildrenList>
+								<Action Name="" ID="{E8D8D81C-C4D1-46A9-AD12-F759EA3688B9}" ShortID="214652342">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Dark_Blend" ID="{B6BC5FC1-7CAB-40A9-924E-3A8774583BC0}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_DarkAmbience" ID="{AB188798-B855-40AF-829E-E4DEEA02DB5D}">
+							<ChildrenList>
+								<Action Name="" ID="{F2F765DD-47B4-4995-91EA-B754FB598F3C}" ShortID="847455569">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+										<Property Name="FadeTime" Type="Real64" Value="4"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_Dark_Blend" ID="{B6BC5FC1-7CAB-40A9-924E-3A8774583BC0}" WorkUnitID="{13244F0E-85C2-4937-AB84-69F4DE582935}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
