@@ -50,6 +50,9 @@ public sealed class DialogueEncounter : ScriptableObject
     public bool fadePanel;
     [Min(0f)] public float fadeInSeconds = 0.12f;
     [Min(0f)] public float fadeOutSeconds = 0.12f;
+    public bool fadeBetweenLines;
+    [Min(0f)] public float lineFadeOutSeconds = 0.08f;
+    [Min(0f)] public float lineFadeInSeconds = 0.08f;
 
     [Header("Encounter flow")]
     [Tooltip("Optional: next encounter to start automatically after this one ends.")]

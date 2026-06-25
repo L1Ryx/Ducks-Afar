@@ -43,8 +43,10 @@ public sealed class DialogueRunner : MonoBehaviour
     private int currentLineIndex;
     private Coroutine typingRoutine;
     private Coroutine panelFadeRoutine;
+    private Coroutine lineTransitionRoutine;
     private bool isTyping;
     private bool isExamining;
+    private bool isTransitioningLine;
 
     public bool IsRunning { get; private set; }
 
@@ -139,6 +141,10 @@ public sealed class DialogueRunner : MonoBehaviour
             return;
 
         StopAllCoroutines();
+        typingRoutine = null;
+        panelFadeRoutine = null;
+        lineTransitionRoutine = null;
+        isTransitioningLine = false;
 
         currentEncounter = encounter;
         currentLineIndex = 0;
@@ -152,7 +158,7 @@ public sealed class DialogueRunner : MonoBehaviour
         
         suppressAdvanceUntilInputReleased = true;
 
-        ShowLine(currentEncounter.lines[currentLineIndex]);
+        ShowLine(currentEncounter.lines[currentLineIndex], preservePanelVisibility: encounter.fadePanel);
     }
 
     public void CancelDialogue()
@@ -169,12 +175,19 @@ public sealed class DialogueRunner : MonoBehaviour
             panelFadeRoutine = null;
         }
 
+        if (lineTransitionRoutine != null)
+        {
+            StopCoroutine(lineTransitionRoutine);
+            lineTransitionRoutine = null;
+        }
+
         currentEncounter = null;
         currentLineIndex = 0;
         currentLineCompleted = false;
         suppressAdvanceUntilInputReleased = false;
         isTyping = false;
         isExamining = false;
+        isTransitioningLine = false;
         IsRunning = false;
 
         if (Game.IsReady && Game.Ctx?.ExaminePanel != null)
@@ -256,7 +269,7 @@ public sealed class DialogueRunner : MonoBehaviour
         if (!IsRunning)
             return;
 
-        if (isExamining)
+        if (isExamining || isTransitioningLine)
             return;
 
         if (isTyping)
@@ -287,7 +300,7 @@ public sealed class DialogueRunner : MonoBehaviour
 
     // ===== Internal flow =====
 
-    private void ShowLine(DialogueEncounter.Line line)
+    private void ShowLine(DialogueEncounter.Line line, bool preservePanelVisibility = false)
     {
         currentLineCompleted = false;
         isExamining = false;
@@ -298,7 +311,8 @@ public sealed class DialogueRunner : MonoBehaviour
             return;
         }
 
-        SetVisible(true, allowFade: currentEncounter != null && currentEncounter.fadePanel);
+        if (!preservePanelVisibility)
+            SetVisible(true, allowFade: currentEncounter != null && currentEncounter.fadePanel);
 
         // UI setup
         bool hasSpeaker = line.speaker != null;
@@ -459,7 +473,70 @@ public sealed class DialogueRunner : MonoBehaviour
             return;
         }
 
-        ShowLine(currentEncounter.lines[currentLineIndex]);
+        DialogueEncounter.Line nextLine = currentEncounter.lines[currentLineIndex];
+        if (ShouldFadeBetweenLines(nextLine))
+            lineTransitionRoutine = StartCoroutine(TransitionToLine(nextLine));
+        else
+            ShowLine(nextLine);
+    }
+
+    private bool ShouldFadeBetweenLines(DialogueEncounter.Line nextLine)
+    {
+        return currentEncounter != null
+            && currentEncounter.fadeBetweenLines
+            && canvasGroup != null
+            && nextLine != null
+            && nextLine.kind == DialogueEncounter.LineKind.Text;
+    }
+
+    private IEnumerator TransitionToLine(DialogueEncounter.Line line)
+    {
+        isTransitioningLine = true;
+
+        if (nextIndicator != null)
+            nextIndicator.gameObject.SetActive(false);
+
+        yield return FadeCanvasAlphaTo(0f, currentEncounter.lineFadeOutSeconds);
+
+        ShowLine(line, preservePanelVisibility: true);
+
+        yield return FadeCanvasAlphaTo(1f, currentEncounter.lineFadeInSeconds);
+
+        canvasGroup.interactable = true;
+        canvasGroup.blocksRaycasts = true;
+        isTransitioningLine = false;
+        lineTransitionRoutine = null;
+    }
+
+    private IEnumerator FadeCanvasAlphaTo(float targetAlpha, float duration)
+    {
+        if (canvasGroup == null)
+            yield break;
+
+        if (panelFadeRoutine != null)
+        {
+            StopCoroutine(panelFadeRoutine);
+            panelFadeRoutine = null;
+        }
+
+        if (duration <= 0f)
+        {
+            canvasGroup.alpha = targetAlpha;
+            yield break;
+        }
+
+        float startAlpha = canvasGroup.alpha;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
     }
 
     private void ResizeNameBoxToText()
