@@ -39,7 +39,7 @@ MonoBehaviour:
   fadeInSeconds: 0.24
   fadeOutSeconds: 0.24
   fadeBetweenLines: 1
-  lineFadeOutSeconds: 0.08
-  lineFadeInSeconds: 0.08
+  lineFadeOutSeconds: 0.24
+  lineFadeInSeconds: 0.24
   nextEncounter: {fileID: 0}
   onEncounterEnd: {fileID: 0}
