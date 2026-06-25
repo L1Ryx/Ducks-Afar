@@ -22,7 +22,7 @@ MonoBehaviour:
     afterLineEvent: {fileID: 0}
   - kind: 0
     speaker: {fileID: 0}
-    text: Yes, check even the bushes!
+    text: Yes, check even the bushes.
     examineImage: {fileID: 0}
     examineWidth: 1000
     lineCue: {fileID: 0}
