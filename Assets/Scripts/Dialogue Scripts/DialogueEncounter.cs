@@ -5,6 +5,12 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogue/Dialogue Encounter")]
 public sealed class DialogueEncounter : ScriptableObject
 {
+    public enum TextRevealMode
+    {
+        Typewriter,
+        Instant
+    }
+
     public enum LineKind
     {
         Text,
@@ -38,6 +44,12 @@ public sealed class DialogueEncounter : ScriptableObject
 
     [Header("Lines (played in order)")]
     public List<Line> lines = new List<Line>();
+
+    [Header("Presentation")]
+    public TextRevealMode textRevealMode = TextRevealMode.Typewriter;
+    public bool fadePanel;
+    [Min(0f)] public float fadeInSeconds = 0.12f;
+    [Min(0f)] public float fadeOutSeconds = 0.12f;
 
     [Header("Encounter flow")]
     [Tooltip("Optional: next encounter to start automatically after this one ends.")]

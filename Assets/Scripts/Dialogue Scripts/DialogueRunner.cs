@@ -42,6 +42,7 @@ public sealed class DialogueRunner : MonoBehaviour
     private DialogueEncounter currentEncounter;
     private int currentLineIndex;
     private Coroutine typingRoutine;
+    private Coroutine panelFadeRoutine;
     private bool isTyping;
     private bool isExamining;
 
@@ -67,12 +68,71 @@ public sealed class DialogueRunner : MonoBehaviour
         advanceAction.action.Disable();
     }
 
-    private void SetVisible(bool visible)
+    private void SetVisible(bool visible, bool allowFade = false)
     {
+        if (allowFade && currentEncounter != null && currentEncounter.fadePanel)
+        {
+            float duration = visible ? currentEncounter.fadeInSeconds : currentEncounter.fadeOutSeconds;
+            FadeVisible(visible, duration);
+            return;
+        }
+
+        SetVisibleInstant(visible);
+    }
+
+    private void SetVisibleInstant(bool visible)
+    {
+        if (panelFadeRoutine != null)
+        {
+            StopCoroutine(panelFadeRoutine);
+            panelFadeRoutine = null;
+        }
+
         canvasGroup.alpha = visible ? 1f : 0f;
         canvasGroup.interactable = visible;
         canvasGroup.blocksRaycasts = visible;
     }
+
+    private void FadeVisible(bool visible, float duration)
+    {
+        if (panelFadeRoutine != null)
+        {
+            StopCoroutine(panelFadeRoutine);
+            panelFadeRoutine = null;
+        }
+
+        if (duration <= 0f || canvasGroup == null)
+        {
+            SetVisibleInstant(visible);
+            return;
+        }
+
+        panelFadeRoutine = StartCoroutine(FadeVisibleRoutine(visible, duration));
+    }
+
+    private IEnumerator FadeVisibleRoutine(bool visible, float duration)
+    {
+        float startAlpha = canvasGroup.alpha;
+        float targetAlpha = visible ? 1f : 0f;
+        float elapsed = 0f;
+
+        canvasGroup.interactable = visible;
+        canvasGroup.blocksRaycasts = visible;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
+            yield return null;
+        }
+
+        canvasGroup.alpha = targetAlpha;
+        canvasGroup.interactable = visible;
+        canvasGroup.blocksRaycasts = visible;
+        panelFadeRoutine = null;
+    }
+
     public void StartDialogue(DialogueEncounter encounter)
     {
         if (encounter == null || encounter.lines.Count == 0)
@@ -84,7 +144,10 @@ public sealed class DialogueRunner : MonoBehaviour
         currentLineIndex = 0;
         IsRunning = true;
 
-        SetVisible(true);
+        if (encounter.fadePanel && canvasGroup != null)
+            canvasGroup.alpha = 0f;
+
+        SetVisible(true, allowFade: true);
         OnDialogueStarted?.Invoke();
         
         suppressAdvanceUntilInputReleased = true;
@@ -98,6 +161,12 @@ public sealed class DialogueRunner : MonoBehaviour
         {
             StopCoroutine(typingRoutine);
             typingRoutine = null;
+        }
+
+        if (panelFadeRoutine != null)
+        {
+            StopCoroutine(panelFadeRoutine);
+            panelFadeRoutine = null;
         }
 
         currentEncounter = null;
@@ -126,7 +195,7 @@ public sealed class DialogueRunner : MonoBehaviour
         if (nextIndicator != null)
             nextIndicator.gameObject.SetActive(false);
 
-        SetVisible(false);
+        SetVisibleInstant(false);
     }
     
     private void EndEncounter()
@@ -138,7 +207,7 @@ public sealed class DialogueRunner : MonoBehaviour
         currentEncounter.onEncounterEnd?.Raise();
         OnDialogueFinished?.Invoke();
 
-        SetVisible(false);
+        SetVisible(false, allowFade: true);
 
         if (currentEncounter.nextEncounter != null)
             StartDialogue(currentEncounter.nextEncounter);
@@ -213,8 +282,7 @@ public sealed class DialogueRunner : MonoBehaviour
         isTyping = false;
         nextIndicator.gameObject.SetActive(true);
 
-        // Raise after-line event once
-        line.afterLineEvent?.Raise();
+        MarkLineCompleted(line);
     }
 
     // ===== Internal flow =====
@@ -230,7 +298,7 @@ public sealed class DialogueRunner : MonoBehaviour
             return;
         }
 
-        SetVisible(true);
+        SetVisible(true, allowFade: currentEncounter != null && currentEncounter.fadePanel);
 
         // UI setup
         bool hasSpeaker = line.speaker != null;
@@ -263,7 +331,24 @@ public sealed class DialogueRunner : MonoBehaviour
         else if (line.speaker != null && line.speaker.lineStartCue != null)
             Game.Ctx.Audio.PlayCueGlobal(line.speaker.lineStartCue);
 
-        typingRoutine = StartCoroutine(TypeLine(line));
+        if (ShouldRevealInstantly())
+            ShowLineInstantly(line);
+        else
+            typingRoutine = StartCoroutine(TypeLine(line));
+    }
+
+    private bool ShouldRevealInstantly()
+    {
+        return currentEncounter != null
+            && currentEncounter.textRevealMode == DialogueEncounter.TextRevealMode.Instant;
+    }
+
+    private void ShowLineInstantly(DialogueEncounter.Line line)
+    {
+        isTyping = false;
+        dialogueText.text = line.text;
+        nextIndicator.gameObject.SetActive(true);
+        MarkLineCompleted(line);
     }
 
     private void ShowExamineLine(DialogueEncounter.Line line)

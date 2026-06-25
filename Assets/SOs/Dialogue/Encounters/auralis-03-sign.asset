@@ -13,10 +13,17 @@ MonoBehaviour:
   m_Name: auralis-03-sign
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEncounter
   lines:
-  - speaker: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 0}
     text: '"All personnel are authorized to neutralize wild graywings with hardworms.
       They have become invasive and should be removed."'
+    examineImage: {fileID: 0}
+    examineWidth: 1000
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
+  textRevealMode: 1
+  fadePanel: 1
+  fadeInSeconds: 0.24
+  fadeOutSeconds: 0.24
   nextEncounter: {fileID: 0}
   onEncounterEnd: {fileID: 0}

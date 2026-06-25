@@ -73,6 +73,9 @@ TagManager:
   - name: Markings
     uniqueID: 2845729043
     locked: 0
+  - name: Enemy Drops
+    uniqueID: 563507149
+    locked: 0
   - name: Obstacles
     uniqueID: 3485359955
     locked: 0
