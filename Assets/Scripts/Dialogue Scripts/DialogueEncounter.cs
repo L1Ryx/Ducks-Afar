@@ -54,6 +54,13 @@ public sealed class DialogueEncounter : ScriptableObject
     [Min(0f)] public float lineFadeOutSeconds = 0.08f;
     [Min(0f)] public float lineFadeInSeconds = 0.08f;
 
+    [Header("Glitched Text")]
+    public bool enableGlitchedText = true;
+    [Tooltip("Typing this marker in dialogue text makes that character slot rapidly scramble at runtime.")]
+    public string glitchMarker = "§";
+    public string glitchCharacterPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&*+-=<>/\\[]{}";
+    [Min(1f)] public float glitchRefreshesPerSecond = 24f;
+
     [Header("Encounter flow")]
     [Tooltip("Optional: next encounter to start automatically after this one ends.")]
     public DialogueEncounter nextEncounter;

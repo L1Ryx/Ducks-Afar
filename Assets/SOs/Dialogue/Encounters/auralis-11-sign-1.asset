@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3467d0579a0c940a194cdf5dc73bd25e, type: 3}
+  m_Name: auralis-11-sign-1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueEncounter
+  lines:
+  - kind: 0
+    speaker: {fileID: 0}
+    text: Lake viewing grounds are closed for the winter season.
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  - kind: 0
+    speaker: {fileID: 0}
+    text: "-\xA7\xA7\xA7\xA7\xA7\xA7\xA7 Park"
+    examineImage: {fileID: 0}
+    examineWidth: 1000
+    lineCue: {fileID: 0}
+    afterLineEvent: {fileID: 0}
+  textRevealMode: 1
+  fadePanel: 1
+  fadeInSeconds: 0.24
+  fadeOutSeconds: 0.24
+  fadeBetweenLines: 1
+  lineFadeOutSeconds: 0.24
+  lineFadeInSeconds: 0.24
+  enableGlitchedText: 1
+  glitchMarker: "\xA7"
+  glitchCharacterPool: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&*+-=<>/\[]{}
+  glitchRefreshesPerSecond: 24
+  nextEncounter: {fileID: 0}
+  onEncounterEnd: {fileID: 0}

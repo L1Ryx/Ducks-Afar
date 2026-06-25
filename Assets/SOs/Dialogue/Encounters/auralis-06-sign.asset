@@ -22,7 +22,9 @@ MonoBehaviour:
     afterLineEvent: {fileID: 0}
   - kind: 0
     speaker: {fileID: 0}
-    text: Yes, check even the bushes.
+    text: 'Yes, check even the bushes!
+
+'
     examineImage: {fileID: 0}
     examineWidth: 1000
     lineCue: {fileID: 0}
@@ -41,5 +43,9 @@ MonoBehaviour:
   fadeBetweenLines: 1
   lineFadeOutSeconds: 0.24
   lineFadeInSeconds: 0.24
+  enableGlitchedText: 1
+  glitchMarker: "\xA7"
+  glitchCharacterPool: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&*+-=<>/\[]{}
+  glitchRefreshesPerSecond: 24
   nextEncounter: {fileID: 0}
   onEncounterEnd: {fileID: 0}

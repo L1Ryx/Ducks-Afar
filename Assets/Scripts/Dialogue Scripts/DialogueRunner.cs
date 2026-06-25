@@ -44,9 +44,11 @@ public sealed class DialogueRunner : MonoBehaviour
     private Coroutine typingRoutine;
     private Coroutine panelFadeRoutine;
     private Coroutine lineTransitionRoutine;
+    private Coroutine glitchRoutine;
     private bool isTyping;
     private bool isExamining;
     private bool isTransitioningLine;
+    private string displayedRawText = string.Empty;
 
     public bool IsRunning { get; private set; }
 
@@ -144,6 +146,7 @@ public sealed class DialogueRunner : MonoBehaviour
         typingRoutine = null;
         panelFadeRoutine = null;
         lineTransitionRoutine = null;
+        glitchRoutine = null;
         isTransitioningLine = false;
 
         currentEncounter = encounter;
@@ -181,6 +184,8 @@ public sealed class DialogueRunner : MonoBehaviour
             lineTransitionRoutine = null;
         }
 
+        StopGlitchedText();
+
         currentEncounter = null;
         currentLineIndex = 0;
         currentLineCompleted = false;
@@ -202,8 +207,7 @@ public sealed class DialogueRunner : MonoBehaviour
             ResizeNameBoxToText();
         }
 
-        if (dialogueText != null)
-            dialogueText.text = string.Empty;
+        SetDialogueText(string.Empty);
 
         if (nextIndicator != null)
             nextIndicator.gameObject.SetActive(false);
@@ -290,7 +294,7 @@ public sealed class DialogueRunner : MonoBehaviour
         }
 
         var line = currentEncounter.lines[currentLineIndex];
-        dialogueText.text = line.text;
+        SetDialogueText(line.text);
 
         isTyping = false;
         nextIndicator.gameObject.SetActive(true);
@@ -336,7 +340,7 @@ public sealed class DialogueRunner : MonoBehaviour
         }
 
         ResizeNameBoxToText();
-        dialogueText.text = string.Empty;
+        SetDialogueText(string.Empty);
         nextIndicator.gameObject.SetActive(false);
 
         // Optional line-start audio
@@ -360,7 +364,7 @@ public sealed class DialogueRunner : MonoBehaviour
     private void ShowLineInstantly(DialogueEncounter.Line line)
     {
         isTyping = false;
-        dialogueText.text = line.text;
+        SetDialogueText(line.text);
         nextIndicator.gameObject.SetActive(true);
         MarkLineCompleted(line);
     }
@@ -409,7 +413,7 @@ public sealed class DialogueRunner : MonoBehaviour
         for (int i = 0; i < text.Length; i++)
         {
             char c = text[i];
-            dialogueText.text += c;
+            AppendDialogueCharacter(c);
 
             // Per-character audio
             if (line.speaker != null && line.speaker.typingCue != null)
@@ -429,6 +433,114 @@ public sealed class DialogueRunner : MonoBehaviour
 
         MarkLineCompleted(line);
         typingRoutine = null;
+    }
+
+    private void SetDialogueText(string rawText)
+    {
+        displayedRawText = rawText ?? string.Empty;
+        RenderDialogueText();
+        RefreshGlitchedText();
+    }
+
+    private void AppendDialogueCharacter(char c)
+    {
+        displayedRawText += c;
+        RenderDialogueText();
+        RefreshGlitchedText();
+    }
+
+    private void RefreshGlitchedText()
+    {
+        if (glitchRoutine != null)
+        {
+            StopCoroutine(glitchRoutine);
+            glitchRoutine = null;
+        }
+
+        if (ShouldRenderGlitchedText())
+            glitchRoutine = StartCoroutine(GlitchTextRoutine());
+    }
+
+    private void StopGlitchedText()
+    {
+        if (glitchRoutine != null)
+        {
+            StopCoroutine(glitchRoutine);
+            glitchRoutine = null;
+        }
+
+        displayedRawText = string.Empty;
+    }
+
+    private IEnumerator GlitchTextRoutine()
+    {
+        while (IsRunning && ShouldRenderGlitchedText())
+        {
+            RenderDialogueText();
+
+            float refreshesPerSecond = currentEncounter != null
+                ? Mathf.Max(1f, currentEncounter.glitchRefreshesPerSecond)
+                : 24f;
+
+            yield return new WaitForSecondsRealtime(1f / refreshesPerSecond);
+        }
+
+        glitchRoutine = null;
+    }
+
+    private void RenderDialogueText()
+    {
+        if (dialogueText == null)
+            return;
+
+        if (!ShouldRenderGlitchedText())
+        {
+            dialogueText.text = displayedRawText;
+            return;
+        }
+
+        char marker = GetGlitchMarker();
+        string pool = GetGlitchCharacterPool();
+        char[] characters = displayedRawText.ToCharArray();
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (characters[i] == marker)
+                characters[i] = pool[Random.Range(0, pool.Length)];
+        }
+
+        dialogueText.text = new string(characters);
+    }
+
+    private bool ShouldRenderGlitchedText()
+    {
+        if (currentEncounter == null || !currentEncounter.enableGlitchedText)
+            return false;
+
+        if (string.IsNullOrEmpty(displayedRawText))
+            return false;
+
+        string marker = currentEncounter.glitchMarker;
+        if (string.IsNullOrEmpty(marker))
+            return false;
+
+        return displayedRawText.IndexOf(marker[0]) >= 0
+            && !string.IsNullOrEmpty(GetGlitchCharacterPool());
+    }
+
+    private char GetGlitchMarker()
+    {
+        string marker = currentEncounter != null ? currentEncounter.glitchMarker : null;
+        return string.IsNullOrEmpty(marker) ? '§' : marker[0];
+    }
+
+    private string GetGlitchCharacterPool()
+    {
+        const string fallbackPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&*+-=<>/\\[]{}";
+        if (currentEncounter == null || string.IsNullOrEmpty(currentEncounter.glitchCharacterPool))
+            return fallbackPool;
+
+        return currentEncounter.glitchCharacterPool;
     }
 
 
