@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{0CBA4B47-3B91-4251-9C00-E080BFE424C8}",
     "Language": "SFX",
-    "Hash": "{822DD75E-BEF1-DFA7-E9C9-6FD185772041}",
+    "Hash": "{B054E883-0161-CAE2-B533-03A09966183A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\General",
     "ShortName": "General",
     "Path": "General.bnk",
@@ -334,6 +334,14 @@
       "Location": "Memory",
       "ShortName": "Tofu-Gabble-D.wav",
       "CachePath": "B3/{B3D8B8D9-0CE7-58F6-C647-D027C345CCB0}.wem"
+     },
+     {
+      "Id": "287834858",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HGDS_RainDoctor-JS-LV1_BaseLayer-90-v.wav",
+      "CachePath": "EC/{EC62005E-BCFB-2C14-4FA8-ABD1F92B3703}.wem"
      },
      {
       "Id": "290861898",
@@ -2964,6 +2972,18 @@
       ]
      },
      {
+      "Id": "4173304251",
+      "Name": "Play_TheFieldsTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Play_TheFieldsTheme",
+      "GUID": "{FBD9704B-C07D-43E0-902F-69A1D97B5503}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "287834858"
+       }
+      ]
+     },
+     {
       "Id": "1339931719",
       "Name": "Play_TofuGabble",
       "ObjectPath": "\\Events\\Default Work Unit\\WORLD\\Play_TofuGabble",
@@ -3308,6 +3328,16 @@
       "DurationType": "OneShot",
       "DurationMin": "0",
       "DurationMax": "0"
+     },
+     {
+      "Id": "2400062441",
+      "Name": "Stop_TheFieldsTheme",
+      "ObjectPath": "\\Events\\Default Work Unit\\MUS\\Stop_TheFieldsTheme",
+      "GUID": "{70E9A040-C298-43F3-B20E-E921400FCBCB}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "GameParameters": [
@@ -3414,6 +3444,6 @@
     ]
    }
   ],
-  "FileHash": "{7AB6731D-3D74-288E-270A-6F406CACAE24}"
+  "FileHash": "{09B7B9CC-7BC3-772C-3C44-3D281C72F913}"
  }
 }

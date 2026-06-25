@@ -714,6 +714,33 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_TheFieldsTheme" ID="{FBD9704B-C07D-43E0-902F-69A1D97B5503}">
+							<ChildrenList>
+								<Action Name="" ID="{D1DFB00E-52D3-4EC2-BCE5-5C64278E1E4B}" ShortID="231824381">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_TheFields_Playlist" ID="{6D6C78C5-EDC1-4755-B3A4-A7B86A4FE334}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_TheFieldsTheme" ID="{70E9A040-C298-43F3-B20E-E921400FCBCB}">
+							<ChildrenList>
+								<Action Name="" ID="{E44ED5E7-B197-43EA-BEC0-513AE9532463}" ShortID="831120830">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="7"/>
+										<Property Name="FadeTime" Type="Real64" Value="3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MX_TheFields_Playlist" ID="{6D6C78C5-EDC1-4755-B3A4-A7B86A4FE334}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="HALFTIME" ID="{3473BA29-C629-4BF3-90D0-D1B523B5F4B1}" ShortID="452026174">

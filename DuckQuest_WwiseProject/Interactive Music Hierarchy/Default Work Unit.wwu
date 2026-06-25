@@ -138,6 +138,10 @@
 													</PropertyList>
 												</CustomState>
 											</CustomState>
+											<CustomState>
+												<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+												<CustomState Name="" ID="{F6F7B519-5E3E-4506-AC59-0D5A20B8B5D9}" ShortID="933747041"/>
+											</CustomState>
 										</CustomStateList>
 									</StateInfo>
 									<ObjectLists>
@@ -295,6 +299,10 @@
 													</PropertyList>
 												</CustomState>
 											</CustomState>
+											<CustomState>
+												<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+												<CustomState Name="" ID="{B74EC911-5B13-45F9-BE5D-AF02D101B508}" ShortID="1011402553"/>
+											</CustomState>
 										</CustomStateList>
 									</StateInfo>
 									<ObjectLists>
@@ -451,6 +459,10 @@
 														<Property Name="Volume" Type="Real64" Value="-108"/>
 													</PropertyList>
 												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+												<CustomState Name="" ID="{F97FEE7F-B2E9-4949-9FA7-CF0A51B73E0F}" ShortID="434897433"/>
 											</CustomState>
 										</CustomStateList>
 									</StateInfo>
@@ -610,6 +622,10 @@
 													</PropertyList>
 												</CustomState>
 											</CustomState>
+											<CustomState>
+												<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+												<CustomState Name="" ID="{1545FADE-EE09-468B-A3E7-CF10D59D7B0D}" ShortID="420053215"/>
+											</CustomState>
 										</CustomStateList>
 									</StateInfo>
 									<ObjectLists>
@@ -767,6 +783,10 @@
 											<CustomState>
 												<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
 												<CustomState Name="" ID="{29655737-34C8-4750-9862-F93E038D44D6}" ShortID="227417448"/>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+												<CustomState Name="" ID="{CFCC93F0-0B8D-439B-9338-619C725FC784}" ShortID="890434951"/>
 											</CustomState>
 										</CustomStateList>
 									</StateInfo>
@@ -1639,6 +1659,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{A20F04C5-E0A7-4E6E-98B4-BEDBD524DA0F}" ShortID="605831731"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -1735,6 +1759,10 @@
 																<Property Name="Volume" Type="Real64" Value="-108"/>
 															</PropertyList>
 														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{CA6A8238-6F8F-4BC7-9EEF-131E3608C25D}" ShortID="1070313295"/>
 													</CustomState>
 												</CustomStateList>
 											</StateInfo>
@@ -1833,6 +1861,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{3DD31159-C586-4676-A0E7-26955E8FAD1A}" ShortID="183678494"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -1930,6 +1962,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{F7051398-F139-4CF7-A448-49B6DD1F6531}" ShortID="228385492"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -2026,6 +2062,10 @@
 													<CustomState>
 														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
 														<CustomState Name="" ID="{95252E25-20C7-453D-B466-BDDBFFF3DA18}" ShortID="566655708"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{6F4DB05C-46ED-4011-A2CC-4F4CD43D2981}" ShortID="969125592"/>
 													</CustomState>
 												</CustomStateList>
 											</StateInfo>
@@ -2248,6 +2288,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{46D0868F-0707-421B-AF05-9CE9053E0EA8}" ShortID="264439199"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -2344,6 +2388,10 @@
 																<Property Name="Volume" Type="Real64" Value="-108"/>
 															</PropertyList>
 														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{D98AAE1D-5788-4A2E-A382-2396C1E6DD05}" ShortID="458025576"/>
 													</CustomState>
 												</CustomStateList>
 											</StateInfo>
@@ -2442,6 +2490,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{2207CE3B-FA94-4681-83F9-5C986C93D963}" ShortID="360532395"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -2539,6 +2591,10 @@
 														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
 														<CustomState Name="" ID="{A141ACD8-4A55-4D26-8C4A-001EEA23C026}" ShortID="649432369"/>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{BF743E4F-B3B6-44E9-9EF2-D87330DA219C}" ShortID="183776051"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -2635,6 +2691,10 @@
 																<Property Name="Volume" Type="Real64" Value="-108"/>
 															</PropertyList>
 														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{5078A646-49F9-477D-83A4-79B68900FB1C}" ShortID="62645716"/>
 													</CustomState>
 												</CustomStateList>
 											</StateInfo>
@@ -2963,6 +3023,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{6214EE96-0906-42DB-800D-C742E20B2EAF}" ShortID="557762030"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -3059,6 +3123,10 @@
 																<Property Name="Volume" Type="Real64" Value="-108"/>
 															</PropertyList>
 														</CustomState>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{11EE0597-D9D4-44F8-9529-1F8A327FFF7A}" ShortID="26780264"/>
 													</CustomState>
 												</CustomStateList>
 											</StateInfo>
@@ -3157,6 +3225,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{2F7574AA-5B9D-47C4-AA40-10C78D85D292}" ShortID="1014406003"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -3254,6 +3326,10 @@
 															</PropertyList>
 														</CustomState>
 													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{BD411932-ADF6-4FD3-8F09-A9DF3EE398A9}" ShortID="702105801"/>
+													</CustomState>
 												</CustomStateList>
 											</StateInfo>
 											<ObjectLists>
@@ -3350,6 +3426,10 @@
 													<CustomState>
 														<StateRef Name="G" ID="{BE07741A-ACD2-4AE0-82F9-962E0C780D4C}"/>
 														<CustomState Name="" ID="{B050157B-A552-4D9B-8111-45266DE4CB54}" ShortID="172686679"/>
+													</CustomState>
+													<CustomState>
+														<StateRef Name="None" ID="{9DEC0BEA-9977-4FD5-A662-B5E9F23BA1C7}"/>
+														<CustomState Name="" ID="{95CB9DD7-ADD5-41E4-876A-8F3307044BC8}" ShortID="375392967"/>
 													</CustomState>
 												</CustomStateList>
 											</StateInfo>
@@ -3706,6 +3786,140 @@
 												<PropertyList>
 													<Property Name="CueType" Type="int16" Value="1"/>
 													<Property Name="TimeMs" Type="Real64" Value="7687.5"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+				<MusicPlaylistContainer Name="MX_TheFields_Playlist" ID="{6D6C78C5-EDC1-4755-B3A4-A7B86A4FE334}" ShortID="30576214">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{F391DD2C-F0CF-4B7F-B6A2-4229386F952F}" ShortID="738745390">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{34887B53-7FAD-4BCD-9D0D-54F279C08D55}" ShortID="525267290">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="HGDS_RainDoctor-JS-LV1_BaseLayer-90-v" ID="{2A06D08F-EFD2-4B65-8DBD-C45CA5F8B1FE}" WorkUnitID="{BC964D87-8BE7-4ABC-BB20-3D7F2495946D}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{1E364931-FFC2-467F-B37B-80C59D780B3B}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{98B4B89D-3558-4770-86F2-C4081BB1FCD2}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="HGDS_RainDoctor-JS-LV1_BaseLayer-90-v" ID="{2A06D08F-EFD2-4B65-8DBD-C45CA5F8B1FE}" ShortID="13080262">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="125400"/>
+								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
+								<Property Name="Tempo" Type="Real64" Value="90"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{50C115F1-0A1D-4D6D-AE9A-545CE7E85E31}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="HGDS_RainDoctor-JS-LV1_BaseLayer-90-v" ID="{2D9F429C-7754-41A6-B39A-5A0E63682286}" ShortID="449548053">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{AF5F283B-B1A3-4330-963F-7BAA8242BCFD}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{88300400-7B4C-424B-9116-36E9DB440ABE}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="HGDS_RainDoctor-JS-LV1_BaseLayer-90-v" ID="{E216D371-19B9-4DE1-BAC9-FF8C003758CC}">
+											<Language>SFX</Language>
+											<AudioFile>HGDS_RainDoctor-JS-LV1_BaseLayer-90-v.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="287834858"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{801B3190-F92F-4848-80F2-E4F13AB11B24}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="HGDS_RainDoctor-JS-LV1_BaseLayer-90-v" ID="{5A2C7F3D-8D14-4539-BEA8-264BCCA12F2F}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="125400"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="HGDS_RainDoctor-JS-LV1_BaseLayer-90-v" ID="{E216D371-19B9-4DE1-BAC9-FF8C003758CC}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{D40ED412-CEDC-406C-BABD-8A74AEE563A4}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{40DCFF09-F3A3-4E73-9B5D-29608916B588}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="117333.333333333"/>
 												</PropertyList>
 											</MusicCue>
 										</Local>

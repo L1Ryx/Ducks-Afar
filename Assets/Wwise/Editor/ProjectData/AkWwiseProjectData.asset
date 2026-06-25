@@ -242,7 +242,7 @@ MonoBehaviour:
     ParentPath: Events/Default Work Unit
     guid: ff29494c16c08c4bb9f506dd1beab568
     GuidInternal: 
-    m_lastTime: -8584192626476634756
+    m_lastTime: -8584192109174670231
     List:
     - name: AMBIENCE
       guid: 48c35fd5762956438c1cf171a3fe1b0c
@@ -1815,6 +1815,26 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_TheFieldsTheme
+      guid: 4b70d9fb7dc0e043902f69a1d97b5503
+      id: 4173304251
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Play_TheFieldsTheme
+        ObjectType: 3
+        guid: 4b70d9fb7dc0e043902f69a1d97b5503
+      Path: Events/Default Work Unit/MUS/Play_TheFieldsTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_TofuGabble
       guid: 66f36dd65afa1648be2cdfb06b746875
       id: 1339931719
@@ -2227,6 +2247,26 @@ MonoBehaviour:
         ObjectType: 3
         guid: 5e9c1b99147e2d4a89ad315234bac114
       Path: Events/Default Work Unit/MUS/Stop_ReunionTheme
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_TheFieldsTheme
+      guid: 40a0e97098c2f343b20ee921400fcbcb
+      id: 2400062441
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: ff29494c16c08c4bb9f506dd1beab568
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 383387e9486de54296205dd6617aaaad
+      - ElementName: Stop_TheFieldsTheme
+        ObjectType: 3
+        guid: 40a0e97098c2f343b20ee921400fcbcb
+      Path: Events/Default Work Unit/MUS/Stop_TheFieldsTheme
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1

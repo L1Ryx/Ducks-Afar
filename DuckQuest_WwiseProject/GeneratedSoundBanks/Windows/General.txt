@@ -54,6 +54,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2262856512	Play_FP			\Default Work Unit\HALFTIME\Play_FP	
 	2345769801	Play_ReunionTheme			\Default Work Unit\MUS\Play_ReunionTheme	
 	2386972776	Play_WoodenClick			\Default Work Unit\UI\Play_WoodenClick	
+	2400062441	Stop_TheFieldsTheme			\Default Work Unit\MUS\Stop_TheFieldsTheme	
 	2406302514	Play_HighClick			\Default Work Unit\UI\Play_HighClick	
 	2423616176	Stop_HP			\Default Work Unit\HALFTIME\Stop_HP	
 	2435079182	Play_AsterGabble			\Default Work Unit\WORLD\Play_AsterGabble	
@@ -86,6 +87,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3948445156	Play_CreepyRing			\Default Work Unit\WORLD\Play_CreepyRing	
 	3963294118	Play_SingleTing			\Default Work Unit\WORLD\Play_SingleTing	
 	4104431215	Play_KeyUnlock			\Default Work Unit\WORLD\Play_KeyUnlock	
+	4173304251	Play_TheFieldsTheme			\Default Work Unit\MUS\Play_TheFieldsTheme	
 	4235903127	Stop_CutsceneTheme			\Default Work Unit\MUS\Stop_CutsceneTheme	
 	4250796764	Stop_DarkAmbience			\Default Work Unit\AMBIENCE\Stop_DarkAmbience	
 
@@ -179,6 +181,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	257541056	HP-G	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B3\{B3F26C69-2B34-17C0-5923-75983557CAF2}.wem		\Interactive Music Hierarchy\Default Work Unit\HalfTime\MX_HP_Playlist\MX_HP_Segment\HP-G		14720144
 	260191167	raven-flyby	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B4\{B45D100F-42FD-A9E8-7624-3B464F33C227}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_RavenFlyby\raven-flyby		355860
 	271830612	Tofu-Gabble-D	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B3\{B3D8B8D9-0CE7-58F6-C647-D027C345CCB0}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_TofuGabble_Random\Tofu-Gabble-D		155496
+	287834858	HGDS_RainDoctor-JS-LV1_BaseLayer-90-v	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\EC\{EC62005E-BCFB-2C14-4FA8-ABD1F92B3703}.wem		\Interactive Music Hierarchy\Default Work Unit\MX_TheFields_Playlist\HGDS_RainDoctor-JS-LV1_BaseLayer-90-v\HGDS_RainDoctor-JS-LV1_BaseLayer-90-v		24076896
 	290861898	VH-4	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\7C\{7C4AB9BB-4BED-7A2F-98E9-28D75D74B3EA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\HALFTIME\SFX_VL_AM\VH-4		1280192
 	294326928	Add-C-5	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\B2\{B231BE4C-5DD8-A94D-64ED-7CF70168485D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\WORLD\SFX_HardwormPianoCadence_AM\Add_C_Blend\Add-C-5		1152144
 	307388510	PGPH-2	Y:\Sunny\Repos\Ducks-Afar\DuckQuest_WwiseProject\.cache\04\{0457C24F-9576-09C2-C99C-B9C2A7957248}.wem		\Actor-Mixer Hierarchy\Default Work Unit\HALFTIME\SFX_PGPH_AM\PGPH-2		1920144
