@@ -35,5 +35,13 @@ MonoBehaviour:
   fadeBetweenLines: 1
   lineFadeOutSeconds: 0.24
   lineFadeInSeconds: 0.24
+  enableGlitchedText: 1
+  glitchMarker: "\xA7"
+  glitchCharacterPool: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%
+  glitchRefreshesPerSecond: 24
+  lockGlitchedCharacterWidth: 1
+  glitchedCharacterWidth: 0.65em
+  preferVisuallyWideGlitchCharacters: 1
+  visuallyWideGlitchCharacterPool: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%
   nextEncounter: {fileID: 0}
   onEncounterEnd: {fileID: 0}

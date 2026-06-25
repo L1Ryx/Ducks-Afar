@@ -60,6 +60,12 @@ public sealed class DialogueEncounter : ScriptableObject
     public string glitchMarker = "§";
     public string glitchCharacterPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&*+-=<>/\\[]{}";
     [Min(1f)] public float glitchRefreshesPerSecond = 24f;
+    public bool lockGlitchedCharacterWidth = true;
+    [Tooltip("TMP <mspace> width used for each scrambled character slot. Try values like 0.55em, 0.65em, or 16.")]
+    public string glitchedCharacterWidth = "0.65em";
+    [Tooltip("When width locking is on, this avoids skinny punctuation that makes the visible text appear to grow/shrink.")]
+    public bool preferVisuallyWideGlitchCharacters = true;
+    public string visuallyWideGlitchCharacterPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789MW#@%&$";
 
     [Header("Encounter flow")]
     [Tooltip("Optional: next encounter to start automatically after this one ends.")]

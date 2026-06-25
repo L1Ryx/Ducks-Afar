@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -499,17 +500,69 @@ public sealed class DialogueRunner : MonoBehaviour
             return;
         }
 
+        dialogueText.text = BuildGlitchedText();
+    }
+
+    private string BuildGlitchedText()
+    {
         char marker = GetGlitchMarker();
         string pool = GetGlitchCharacterPool();
-        char[] characters = displayedRawText.ToCharArray();
+        StringBuilder builder = new StringBuilder(displayedRawText.Length);
 
-        for (int i = 0; i < characters.Length; i++)
+        for (int i = 0; i < displayedRawText.Length; i++)
         {
-            if (characters[i] == marker)
-                characters[i] = pool[Random.Range(0, pool.Length)];
+            char c = displayedRawText[i];
+            if (c != marker)
+            {
+                builder.Append(c);
+                continue;
+            }
+
+            AppendRandomGlitchCharacter(builder, pool);
         }
 
-        dialogueText.text = new string(characters);
+        return builder.ToString();
+    }
+
+    private void AppendRandomGlitchCharacter(StringBuilder builder, string pool)
+    {
+        bool lockWidth = currentEncounter == null || currentEncounter.lockGlitchedCharacterWidth;
+        if (lockWidth && ShouldPreferVisuallyWideGlitchCharacters())
+            pool = GetVisuallyWideGlitchCharacterPool();
+
+        char randomCharacter = pool[Random.Range(0, pool.Length)];
+        string width = currentEncounter != null ? currentEncounter.glitchedCharacterWidth : "0.65em";
+
+        if (lockWidth && !string.IsNullOrWhiteSpace(width))
+        {
+            builder.Append("<mspace=");
+            builder.Append(width.Trim());
+            builder.Append(">");
+            AppendTmpSafeCharacter(builder, randomCharacter);
+            builder.Append("</mspace>");
+            return;
+        }
+
+        AppendTmpSafeCharacter(builder, randomCharacter);
+    }
+
+    private static void AppendTmpSafeCharacter(StringBuilder builder, char c)
+    {
+        switch (c)
+        {
+            case '<':
+                builder.Append("&lt;");
+                break;
+            case '>':
+                builder.Append("&gt;");
+                break;
+            case '&':
+                builder.Append("&amp;");
+                break;
+            default:
+                builder.Append(c);
+                break;
+        }
     }
 
     private bool ShouldRenderGlitchedText()
@@ -541,6 +594,20 @@ public sealed class DialogueRunner : MonoBehaviour
             return fallbackPool;
 
         return currentEncounter.glitchCharacterPool;
+    }
+
+    private bool ShouldPreferVisuallyWideGlitchCharacters()
+    {
+        return currentEncounter == null || currentEncounter.preferVisuallyWideGlitchCharacters;
+    }
+
+    private string GetVisuallyWideGlitchCharacterPool()
+    {
+        const string fallbackPool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789MW#@%&$";
+        if (currentEncounter == null || string.IsNullOrEmpty(currentEncounter.visuallyWideGlitchCharacterPool))
+            return fallbackPool;
+
+        return currentEncounter.visuallyWideGlitchCharacterPool;
     }
 
 

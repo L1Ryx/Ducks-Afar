@@ -71,5 +71,20 @@ MonoBehaviour:
     examineWidth: 1000
     lineCue: {fileID: 0}
     afterLineEvent: {fileID: 0}
+  textRevealMode: 0
+  fadePanel: 0
+  fadeInSeconds: 0.12
+  fadeOutSeconds: 0.12
+  fadeBetweenLines: 0
+  lineFadeOutSeconds: 0.08
+  lineFadeInSeconds: 0.08
+  enableGlitchedText: 1
+  glitchMarker: "\xA7"
+  glitchCharacterPool: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%
+  glitchRefreshesPerSecond: 24
+  lockGlitchedCharacterWidth: 1
+  glitchedCharacterWidth: 0.65em
+  preferVisuallyWideGlitchCharacters: 1
+  visuallyWideGlitchCharacterPool: ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%
   nextEncounter: {fileID: 0}
   onEncounterEnd: {fileID: 11400000, guid: 5a45fd032b91145a4b0f36ed3c08da75, type: 2}
