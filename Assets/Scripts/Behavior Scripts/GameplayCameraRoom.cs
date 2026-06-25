@@ -44,7 +44,17 @@ public sealed class GameplayCameraRoom : MonoBehaviour
     [SerializeField] private GameplayCameraRoomAlternateMusicMode alternateMusicMode = GameplayCameraRoomAlternateMusicMode.SameAsPrimary;
     [SerializeField] private AudioCue alternateMusicCue;
 
+    [Header("Title Card Subtitle")]
+    [SerializeField] private bool showTitleCardSubtitle;
+    [TextArea(1, 3)]
+    [SerializeField] private string titleCardSubtitle;
+    [Tooltip("If false, this only plays when the player enters the room after startup/respawn camera placement.")]
+    [SerializeField] private bool showTitleCardSubtitleOnInitialFocus;
+    [SerializeField] private bool showTitleCardSubtitleOncePerSceneLoad = true;
+    [SerializeField] private TitleCardSequencer titleCardSequencer;
+
     private BoxCollider2D roomTrigger;
+    private bool hasShownTitleCardSubtitle;
 
     public string RoomId => string.IsNullOrWhiteSpace(roomId) ? name : roomId;
     public float CreepyVignettePercent => creepyVignette;
@@ -122,6 +132,33 @@ public sealed class GameplayCameraRoom : MonoBehaviour
         return mode == GameplayCameraRoomMusicMode.PlayCue && musicCue != null && musicCue.HasPlayEvent;
     }
 
+    public void TryShowTitleCardSubtitle(bool immediate)
+    {
+        if (!Application.isPlaying || !showTitleCardSubtitle)
+            return;
+
+        if (immediate && !showTitleCardSubtitleOnInitialFocus)
+            return;
+
+        if (showTitleCardSubtitleOncePerSceneLoad && hasShownTitleCardSubtitle)
+            return;
+
+        if (string.IsNullOrWhiteSpace(titleCardSubtitle))
+            return;
+
+        TitleCardSequencer sequencer = ResolveTitleCardSequencer();
+        if (sequencer == null)
+        {
+            Debug.LogWarning(
+                $"{nameof(GameplayCameraRoom)} '{name}' could not show a title-card subtitle because no {nameof(TitleCardSequencer)} was found.",
+                this);
+            return;
+        }
+
+        hasShownTitleCardSubtitle = true;
+        sequencer.StartSubtitleOnlySequence(titleCardSubtitle);
+    }
+
     public float DistanceSquaredTo(Vector2 worldPoint)
     {
         Bounds bounds = Bounds;
@@ -157,6 +194,28 @@ public sealed class GameplayCameraRoom : MonoBehaviour
             return;
 
         controller = Object.FindAnyObjectByType<GameplayCameraAnchorController>();
+    }
+
+    private TitleCardSequencer ResolveTitleCardSequencer()
+    {
+        if (titleCardSequencer != null)
+            return titleCardSequencer;
+
+        TitleCardSequencer[] sequencers = Object.FindObjectsByType<TitleCardSequencer>(FindObjectsInactive.Include);
+        for (int i = 0; i < sequencers.Length; i++)
+        {
+            TitleCardSequencer sequencer = sequencers[i];
+            if (sequencer != null && sequencer.gameObject.scene == gameObject.scene)
+                return titleCardSequencer = sequencer;
+        }
+
+        for (int i = 0; i < sequencers.Length; i++)
+        {
+            if (sequencers[i] != null)
+                return titleCardSequencer = sequencers[i];
+        }
+
+        return null;
     }
 
     private GameplayCameraRoomMusicMode GetMusicMode(DimensionGridState dimension)

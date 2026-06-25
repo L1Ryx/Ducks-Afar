@@ -30,6 +30,7 @@ public class TitleCardSequencer : MonoBehaviour
 
     [Tooltip("Optional explicit order. If empty, all TMP_Text children will be used in hierarchy order.")]
     [SerializeField] private List<TitleCardLine> lines = new List<TitleCardLine>();
+    [SerializeField] private TMP_Text subtitleText;
 
     [Header("Timing")]
     [Tooltip("Seconds to wait after a line finishes typing before starting the next line.")]
@@ -105,6 +106,7 @@ public class TitleCardSequencer : MonoBehaviour
             canvasGroup = GetComponent<CanvasGroup>();
 
         CacheLinesAndTexts();
+        ResolveSubtitleText();
         HardResetVisuals();
     }
 
@@ -145,6 +147,26 @@ public class TitleCardSequencer : MonoBehaviour
             gameObject.SetActive(false);
     }
 
+    public void StartSubtitleOnlySequence(string subtitle)
+    {
+        if (string.IsNullOrWhiteSpace(subtitle))
+            return;
+
+        CacheLinesAndTexts();
+        ResolveSubtitleText();
+
+        if (subtitleText == null)
+        {
+            Debug.LogWarning($"{nameof(TitleCardSequencer)} on '{name}' has no subtitle text assigned.", this);
+            return;
+        }
+
+        if (_sequenceCo != null)
+            StopCoroutine(_sequenceCo);
+
+        _sequenceCo = StartCoroutine(SubtitleOnlyRoutine(subtitle));
+    }
+
     private IEnumerator StartWhenReadyRoutine()
     {
         if (waitForSceneLoadComplete && Game.IsReady && Game.Ctx?.SceneLoader != null)
@@ -172,6 +194,22 @@ public class TitleCardSequencer : MonoBehaviour
         {
             if (line.text == null) continue;
             _fullTexts[line.text] = line.text.text ?? string.Empty;
+        }
+    }
+
+    private void ResolveSubtitleText()
+    {
+        if (subtitleText != null)
+            return;
+
+        TMP_Text[] texts = GetComponentsInChildren<TMP_Text>(includeInactive: true);
+        for (int i = 0; i < texts.Length; i++)
+        {
+            if (texts[i] != null && texts[i].name == "Subtitle Text")
+            {
+                subtitleText = texts[i];
+                return;
+            }
         }
     }
 
@@ -247,6 +285,61 @@ public class TitleCardSequencer : MonoBehaviour
 
         if (fadeOutAtEnd)
             yield return FadeOutRoutine();
+
+        if (disableOnFinish)
+            gameObject.SetActive(false);
+
+        _sequenceCo = null;
+    }
+
+    private IEnumerator SubtitleOnlyRoutine(string subtitle)
+    {
+        if (disableOnFinish && !gameObject.activeSelf)
+            gameObject.SetActive(true);
+
+        if (canvasGroup != null)
+            canvasGroup.alpha = 1f;
+
+        string originalSubtitle = subtitleText.text ?? string.Empty;
+
+        foreach (var line in lines)
+        {
+            if (line.text == null)
+                continue;
+
+            line.text.text = _fullTexts.TryGetValue(line.text, out string full) ? full : line.text.text;
+            line.text.ForceMeshUpdate();
+            line.text.maxVisibleCharacters = 0;
+        }
+
+        subtitleText.text = subtitle;
+        subtitleText.ForceMeshUpdate();
+        subtitleText.maxVisibleCharacters = 0;
+
+        int totalChars = subtitleText.textInfo.characterCount;
+        if (totalChars == 0 && subtitleText.text.Length > 0)
+        {
+            yield return null;
+            subtitleText.ForceMeshUpdate();
+            totalChars = subtitleText.textInfo.characterCount;
+        }
+
+        if (delayBeforeFirstLine > 0f)
+            yield return StartCoroutine(WaitRoutine(delayBeforeFirstLine));
+
+        yield return TypeTextRoutine(subtitleText, totalChars);
+
+        if (delayAfterLastLine > 0f)
+            yield return StartCoroutine(WaitRoutine(delayAfterLastLine));
+
+        if (fadeOutAtEnd)
+            yield return FadeOutRoutine();
+
+        subtitleText.text = _fullTexts.TryGetValue(subtitleText, out string cachedSubtitle)
+            ? cachedSubtitle
+            : originalSubtitle;
+        subtitleText.ForceMeshUpdate();
+        subtitleText.maxVisibleCharacters = 0;
 
         if (disableOnFinish)
             gameObject.SetActive(false);

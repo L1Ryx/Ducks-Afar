@@ -85,6 +85,7 @@ public sealed class GameplayCameraAnchorController : MonoBehaviour
         currentRoom = room;
         ApplyRoomPostProcessing(room);
         ApplyRoomMusic(room);
+        room.TryShowTitleCardSubtitle(immediate);
 
         panTween?.Kill();
 
