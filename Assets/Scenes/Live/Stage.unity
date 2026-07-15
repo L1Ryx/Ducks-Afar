@@ -16213,7 +16213,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 550359136750149019, guid: d6c3b48297bc34a71a29f7dff238b962, type: 3}
       propertyPath: orthographic size
-      value: 9.382022
+      value: 9.380282
       objectReference: {fileID: 0}
     - target: {fileID: 5712985367674649403, guid: d6c3b48297bc34a71a29f7dff238b962, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19146,6 +19146,10 @@ PrefabInstance:
       propertyPath: 'completeLevels.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 0b7f47660f65647049747401f0023e17, type: 2}
+    - target: {fileID: 5500639405277745619, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5841787701623105294, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
       propertyPath: m_Size.y
       value: 93
@@ -114654,6 +114658,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[306].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 8548531344356075514, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8852657108731996585, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
       propertyPath: m_Tiles.Array.size
       value: 59
@@ -115325,6 +115333,10 @@ PrefabInstance:
     - target: {fileID: 8852657108731996585, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
       propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
       value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036059247340662580, guid: 054ffa40712564a0a9ab5fad22ac0599, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

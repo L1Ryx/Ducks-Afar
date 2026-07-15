@@ -125,7 +125,6 @@ public class FieldTelescopeHoverPanel : MonoBehaviour, IHoverInfoUI
             view.symbolImage.sprite = active ? symbolActive : symbolInactive;
 
         float targetAlpha = active ? activeAlpha : inactiveAlpha;
-
         if (!isVisible)
         {
             isVisible = true;
