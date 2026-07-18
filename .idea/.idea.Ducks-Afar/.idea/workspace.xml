@@ -5,9 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Ducks-Afar/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Stage.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Stage.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/FieldTelescopeHoverPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/FieldTelescopeHoverPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTall.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTallest.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTallest.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Jumanis-Tileset.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Jumanis-Tileset.aseprite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-1.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-1.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-2.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-2.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-3.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-3.aseprite" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +143,7 @@
       <workItem from="1780935079382" duration="1285000" />
       <workItem from="1782082430220" duration="629000" />
       <workItem from="1783862119174" duration="2826000" />
+      <workItem from="1784350816383" duration="301000" />
     </task>
     <servers />
   </component>
