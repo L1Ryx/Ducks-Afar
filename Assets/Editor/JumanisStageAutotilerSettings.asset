@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06656b322023446ea20ede3e24db050, type: 3}
+  m_Name: JumanisStageAutotilerSettings
+  m_EditorClassIdentifier: Assembly-CSharp-Editor::JumanisStageAutotilerSettings
+  flowers:
+    prefabs:
+    - {fileID: 4723011083499283704, guid: 1d11909ead4e54e2d83c0d509a3f9236, type: 3}
+    - {fileID: 1232160448097340327, guid: d029f4f5f3a814386ba2614aa0656c29, type: 3}
+    - {fileID: 1780808434971548332, guid: be2b930a961af458fb852aefd9163912, type: 3}
+    seed: 9173
+    spread: 2.35
+    density: 1.2
+    minimumDistance: 1.35
+    edgePadding: 0.42
+    cellJitter: 0.34
+    noiseScale: 0.18
+    noiseInfluence: 0.25
+    maxGenerated: 0
+    avoidSceneSpriteBounds: 1
+    objectAvoidancePadding: 0.25
+  grassSpots:
+    prefabs:
+    - {fileID: 218379763199055923, guid: 9d01746e93e8d4f248747d247c2c497a, type: 3}
+    - {fileID: 7473661287133789347, guid: efe3e2582324147b58223c23db59cdda, type: 3}
+    - {fileID: 7426716926367985958, guid: d670583d2218243969987e03cfaf3000, type: 3}
+    seed: 14891
+    spread: 1.4
+    density: 0.875
+    minimumDistance: 0.7
+    edgePadding: 0.42
+    cellJitter: 0.34
+    noiseScale: 0.18
+    noiseInfluence: 0.25
+    maxGenerated: 0
+    avoidSceneSpriteBounds: 1
+    objectAvoidancePadding: 0.25

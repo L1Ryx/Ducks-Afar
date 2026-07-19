@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e618c0-6547-431e-8de9-6ffa56c3f00b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisBush2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/eridisTree2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush1.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisBush2.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTall.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTall.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTallest.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Carly/jumanisTreeTallest.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Jumanis-Tileset.aseprite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Jumanis-Tileset.aseprite.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-1.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-1.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-2.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-2.aseprite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-3.aseprite" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/One Shot Tiles/Bright-Grass-3.aseprite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/World/World Grid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/World/World Grid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Live/Jumanis-1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Live/Jumanis-1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
