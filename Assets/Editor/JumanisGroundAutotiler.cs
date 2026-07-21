@@ -10,12 +10,15 @@ public static class JumanisGroundAutotiler
     private const string JumanisScenePath = "Assets/Scenes/Live/Jumanis-1.unity";
     private const string SettingsAssetPath = "Assets/Editor/JumanisStageAutotilerSettings.asset";
     private const string GroundTilemapName = "Ground (NC)";
+    private const string DirtTilemapName = "Dirt (NC)";
     private const string TileFolder = "Assets/Art/Tilemaps/Palettes/Jumanis Tiles";
     private const string TilePrefix = "Jumanis-Tileset";
     private const string DecorationsParentName = "Decorations";
     private const string GeneratedFlowersParentName = "Generated Jumanis Flowers";
     private const string GeneratedGrassSpotsParentName = "Generated Jumanis Grass Spots";
+    private const string GeneratedSandPatchesParentName = "Generated Jumanis Sand Patches";
     private const int CenterTileIndex = 7;
+    private const int SandCenterTileIndex = 10;
 
     private static readonly string[] DefaultJumanisFlowerPrefabPaths =
     {
@@ -31,11 +34,42 @@ public static class JumanisGroundAutotiler
         "Assets/Prefabs/Environment/Jumanis-Grass-3.prefab",
     };
 
-    private static readonly int[] RequiredTileIndices =
+    private static readonly string[] DefaultJumanisSandPatchPrefabPaths =
+    {
+        "Assets/Prefabs/Environment/Jumanis-Sand-1.prefab",
+        "Assets/Prefabs/Environment/Jumanis-Sand-2.prefab",
+        "Assets/Prefabs/Environment/Jumanis-Sand-3.prefab",
+    };
+
+    private static readonly int[] GrassTileIndices =
     {
         0, 1, 2,
         6, 7, 8,
         12, 13, 14,
+        22, 23, 24, 25,
+        26, 27, 28, 29,
+        30, 31, 32, 33,
+        34, 35, 36, 37,
+    };
+
+    private static readonly int[] SandTileIndices =
+    {
+        3, 4, 5,
+        9, 10, 11,
+        15, 16, 17,
+        18, 19,
+        20, 21,
+    };
+
+    private static readonly int[] RequiredTileIndices =
+    {
+        0, 1, 2,
+        3, 4, 5,
+        6, 7, 8,
+        9, 10, 11,
+        12, 13, 14,
+        15, 16, 17,
+        18, 19, 20, 21,
         22, 23, 24, 25,
         26, 27, 28, 29,
         30, 31, 32, 33,
@@ -90,10 +124,13 @@ public static class JumanisGroundAutotiler
 
         Transform flowersParent = FindChildByName(decorationsParent, GeneratedFlowersParentName);
         Transform grassParent = FindChildByName(decorationsParent, GeneratedGrassSpotsParentName);
+        Transform sandParent = FindChildByName(decorationsParent, GeneratedSandPatchesParentName);
         if (flowersParent != null)
             removed += ClearChildren(flowersParent);
         if (grassParent != null)
             removed += ClearChildren(grassParent);
+        if (sandParent != null)
+            removed += ClearChildren(sandParent);
 
         EditorSceneManager.MarkSceneDirty(activeScene);
         Undo.CollapseUndoOperations(undoGroup);
@@ -123,47 +160,80 @@ public static class JumanisGroundAutotiler
             return;
         }
 
+        Tilemap dirt = FindTilemap(activeScene, DirtTilemapName);
+        if (dirt == null)
+        {
+            Debug.LogError($"JumanisGroundAutotiler: could not find tilemap '{DirtTilemapName}' in {JumanisScenePath}.");
+            return;
+        }
+
         Dictionary<int, TileBase> tiles = LoadRequiredTiles();
         if (tiles == null)
             return;
 
-        int groundReplacements = AutotileGround(ground, tiles, out int centerTilesKept);
+        HashSet<TileBase> grassTiles = BuildTileSet(tiles, GrassTileIndices);
+        HashSet<TileBase> sandTiles = BuildTileSet(tiles, SandTileIndices);
+
+        int migratedSandTiles = MigrateSandTilesToDirt(ground, dirt, tiles, sandTiles);
+        int grassReplacements = AutotileGrass(ground, tiles, grassTiles, out int grassCenterTilesKept);
+        int sandReplacements = AutotileSand(dirt, tiles, sandTiles, out int sandCenterTilesKept);
         DecorationPlacementResult flowerResult = RegenerateDecorations(
             activeScene,
             ground,
+            dirt,
+            sandTiles,
             settings.Flowers,
             LoadPrefabs(settings.Flowers, DefaultJumanisFlowerPrefabPaths),
             GeneratedFlowersParentName,
             "Jumanis-Flower",
             "Create Generated Jumanis Flower",
-            new List<Vector3>());
+            new List<Vector3>(),
+            grassTiles);
 
         List<Vector3> flowerPositions = CollectDecorationPositions(activeScene, "Jumanis-Flower", null);
         DecorationPlacementResult grassResult = RegenerateDecorations(
             activeScene,
             ground,
+            dirt,
+            sandTiles,
             settings.GrassSpots,
             LoadPrefabs(settings.GrassSpots, DefaultJumanisGrassSpotPrefabPaths),
             GeneratedGrassSpotsParentName,
             "Jumanis-Grass",
             "Create Generated Jumanis Grass Spot",
-            flowerPositions);
+            flowerPositions,
+            grassTiles);
 
-        if (groundReplacements == 0 && flowerResult.Created == 0 && flowerResult.Removed == 0 && grassResult.Created == 0 && grassResult.Removed == 0)
+        DecorationPlacementResult sandResult = RegenerateDecorations(
+            activeScene,
+            dirt,
+            null,
+            null,
+            settings.SandPatches,
+            LoadPrefabs(settings.SandPatches, DefaultJumanisSandPatchPrefabPaths),
+            GeneratedSandPatchesParentName,
+            "Jumanis-Sand",
+            "Create Generated Jumanis Sand Patch",
+            new List<Vector3>(),
+            sandTiles);
+
+        if (migratedSandTiles == 0 && grassReplacements == 0 && sandReplacements == 0 && flowerResult.Created == 0 && flowerResult.Removed == 0 && grassResult.Created == 0 && grassResult.Removed == 0 && sandResult.Created == 0 && sandResult.Removed == 0)
         {
-            Debug.Log($"JumanisGroundAutotiler: no Jumanis tile changes needed. Kept {centerTilesKept} ground center tile(s).");
+            Debug.Log($"JumanisGroundAutotiler: no Jumanis tile changes needed. Kept {grassCenterTilesKept} grass center tile(s) and {sandCenterTilesKept} sand center tile(s).");
             return;
         }
 
         EditorSceneManager.MarkSceneDirty(activeScene);
 
         Debug.Log(
-            $"JumanisGroundAutotiler: replaced {groundReplacements} ground center tile(s), kept {centerTilesKept} ground center tile(s), " +
+            $"JumanisGroundAutotiler: replaced {grassReplacements} grass center tile(s), kept {grassCenterTilesKept} grass center tile(s), " +
+            $"migrated {migratedSandTiles} sand tile(s) to Dirt (NC), replaced {sandReplacements} sand center tile(s), kept {sandCenterTilesKept} sand center tile(s), " +
             $"generated {flowerResult.Created} Jumanis Flower object(s), removed {flowerResult.Removed} previous generated flower(s), " +
-            $"generated {grassResult.Created} Jumanis Grass Spot object(s), removed {grassResult.Removed} previous generated grass spot(s).");
+            $"generated {grassResult.Created} Jumanis Grass Spot object(s), removed {grassResult.Removed} previous generated grass spot(s), " +
+            $"generated {sandResult.Created} Jumanis Sand Patch object(s), removed {sandResult.Removed} previous generated sand patch(es).");
     }
 
-    private static int AutotileGround(Tilemap ground, Dictionary<int, TileBase> tiles, out int centerTilesKept)
+    private static int AutotileGrass(Tilemap ground, Dictionary<int, TileBase> tiles, HashSet<TileBase> grassTiles, out int centerTilesKept)
     {
         TileBase centerTile = tiles[CenterTileIndex];
         var replacements = new List<TileReplacement>();
@@ -175,8 +245,8 @@ public static class JumanisGroundAutotiler
             if (currentTile != centerTile)
                 continue;
 
-            int targetIndex = PickTargetTileIndex(ground, position);
-            if (targetIndex == CenterTileIndex)
+            int targetIndex = PickGrassTargetTileIndex(ground, position, grassTiles);
+            if (tiles[targetIndex] == currentTile)
             {
                 centerTilesKept++;
                 continue;
@@ -197,15 +267,85 @@ public static class JumanisGroundAutotiler
         return replacements.Count;
     }
 
+    private static int MigrateSandTilesToDirt(Tilemap ground, Tilemap dirt, Dictionary<int, TileBase> tiles, HashSet<TileBase> sandTiles)
+    {
+        var migrations = new List<TileReplacement>();
+        foreach (Vector3Int position in ground.cellBounds.allPositionsWithin)
+        {
+            TileBase currentTile = ground.GetTile(position);
+            if (currentTile == null || !sandTiles.Contains(currentTile))
+                continue;
+
+            migrations.Add(new TileReplacement(position, currentTile));
+        }
+
+        if (migrations.Count == 0)
+            return 0;
+
+        Undo.RegisterCompleteObjectUndo(ground, "Move Jumanis Sand Off Ground");
+        Undo.RegisterCompleteObjectUndo(dirt, "Move Jumanis Sand To Dirt");
+
+        TileBase grassCenterTile = tiles[CenterTileIndex];
+        for (int i = 0; i < migrations.Count; i++)
+        {
+            Vector3Int position = migrations[i].Position;
+            if (!dirt.HasTile(position))
+                dirt.SetTile(position, migrations[i].Tile);
+
+            ground.SetTile(position, grassCenterTile);
+        }
+
+        EditorUtility.SetDirty(ground);
+        EditorUtility.SetDirty(dirt);
+        return migrations.Count;
+    }
+
+    private static int AutotileSand(Tilemap dirt, Dictionary<int, TileBase> tiles, HashSet<TileBase> sandTiles, out int centerTilesKept)
+    {
+        TileBase sandCenterTile = tiles[SandCenterTileIndex];
+        var replacements = new List<TileReplacement>();
+        centerTilesKept = 0;
+
+        foreach (Vector3Int position in dirt.cellBounds.allPositionsWithin)
+        {
+            TileBase currentTile = dirt.GetTile(position);
+            if (currentTile != sandCenterTile)
+                continue;
+
+            int targetIndex = PickSandTargetTileIndex(dirt, position, sandTiles);
+            if (tiles[targetIndex] == currentTile)
+            {
+                centerTilesKept++;
+                continue;
+            }
+
+            replacements.Add(new TileReplacement(position, tiles[targetIndex]));
+        }
+
+        if (replacements.Count == 0)
+            return 0;
+
+        Undo.RegisterCompleteObjectUndo(dirt, "Autotile Jumanis Sand");
+
+        for (int i = 0; i < replacements.Count; i++)
+            dirt.SetTile(replacements[i].Position, replacements[i].Tile);
+
+        EditorUtility.SetDirty(dirt);
+        return replacements.Count;
+    }
+
     private static DecorationPlacementResult RegenerateDecorations(
         Scene scene,
-        Tilemap ground,
+        Tilemap tilemap,
+        Tilemap blockedTilemap,
+        HashSet<TileBase> blockedTiles,
         JumanisStageAutotilerSettings.DecorationSettings settings,
         GameObject[] prefabs,
         string generatedParentName,
         string decorationNamePrefix,
         string createUndoName,
-        List<Vector3> occupiedPositions)
+        List<Vector3> occupiedPositions,
+        HashSet<TileBase> allowedTiles)
     {
         if (prefabs.Length == 0)
         {
@@ -222,7 +362,7 @@ public static class JumanisGroundAutotiler
             ? CollectSceneSpriteAvoidanceBounds(scene, generatedParent, settings.ObjectAvoidancePadding)
             : new List<Bounds>();
 
-        List<DecorationCandidate> candidates = BuildDecorationCandidates(ground, settings, prefabs.Length, occupied, avoidBounds);
+        List<DecorationCandidate> candidates = BuildDecorationCandidates(tilemap, blockedTilemap, blockedTiles, settings, prefabs.Length, occupied, avoidBounds, allowedTiles);
         int removed = ClearChildren(generatedParent);
         int created = 0;
 
@@ -249,20 +389,26 @@ public static class JumanisGroundAutotiler
     }
 
     private static List<DecorationCandidate> BuildDecorationCandidates(
-        Tilemap ground,
+        Tilemap tilemap,
+        Tilemap blockedTilemap,
+        HashSet<TileBase> blockedTiles,
         JumanisStageAutotilerSettings.DecorationSettings settings,
         int prefabCount,
         List<Vector3> occupiedPositions,
-        List<Bounds> avoidBounds)
+        List<Bounds> avoidBounds,
+        HashSet<TileBase> allowedTiles)
     {
         var candidates = new List<DecorationCandidate>();
         var acceptedPositions = new List<Vector3>(occupiedPositions);
         float minimumDistanceSqr = settings.MinimumDistance * settings.MinimumDistance;
         float placementChance = Mathf.Clamp01(settings.Density / (settings.Spread * settings.Spread));
 
-        foreach (Vector3Int cell in ground.cellBounds.allPositionsWithin)
+        foreach (Vector3Int cell in tilemap.cellBounds.allPositionsWithin)
         {
-            if (!ground.HasTile(cell))
+            if (!IsAllowedTile(tilemap.GetTile(cell), allowedTiles))
+                continue;
+
+            if (IsBlockedTile(blockedTilemap, blockedTiles, cell))
                 continue;
 
             float randomGate = Hash01(cell.x, cell.y, settings.Seed, 11);
@@ -273,12 +419,15 @@ public static class JumanisGroundAutotiler
             if (gate > placementChance)
                 continue;
 
-            Vector3 center = ground.GetCellCenterWorld(cell);
+            Vector3 center = tilemap.GetCellCenterWorld(cell);
             float jitterX = (Hash01(cell.x, cell.y, settings.Seed, 23) - 0.5f) * settings.CellJitter * 2f;
             float jitterY = (Hash01(cell.x, cell.y, settings.Seed, 37) - 0.5f) * settings.CellJitter * 2f;
             var position = new Vector3(center.x + jitterX, center.y + jitterY, center.z);
 
-            if (!HasGroundPadding(ground, position, settings.EdgePadding))
+            if (!HasGroundPadding(tilemap, position, settings.EdgePadding, allowedTiles))
+                continue;
+
+            if (HasBlockedPadding(blockedTilemap, blockedTiles, position, 0f))
                 continue;
 
             if (IsInsideAvoidanceBounds(avoidBounds, position))
@@ -300,22 +449,53 @@ public static class JumanisGroundAutotiler
         return candidates;
     }
 
-    private static bool HasGroundPadding(Tilemap ground, Vector3 position, float padding)
+    private static bool HasGroundPadding(Tilemap ground, Vector3 position, float padding, HashSet<TileBase> allowedTiles)
     {
         if (padding <= 0f)
-            return ground.HasTile(ground.WorldToCell(position));
+            return IsAllowedTile(ground.GetTile(ground.WorldToCell(position)), allowedTiles);
 
-        if (!ground.HasTile(ground.WorldToCell(position)))
+        if (!IsAllowedTile(ground.GetTile(ground.WorldToCell(position)), allowedTiles))
             return false;
 
-        return ground.HasTile(ground.WorldToCell(position + new Vector3(padding, 0f, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(-padding, 0f, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(0f, padding, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(0f, -padding, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(padding, padding, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(padding, -padding, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(-padding, padding, 0f)))
-            && ground.HasTile(ground.WorldToCell(position + new Vector3(-padding, -padding, 0f)));
+        return IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(padding, 0f, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(-padding, 0f, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(0f, padding, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(0f, -padding, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(padding, padding, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(padding, -padding, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(-padding, padding, 0f))), allowedTiles)
+            && IsAllowedTile(ground.GetTile(ground.WorldToCell(position + new Vector3(-padding, -padding, 0f))), allowedTiles);
+    }
+
+    private static bool IsAllowedTile(TileBase tile, HashSet<TileBase> allowedTiles)
+    {
+        return tile != null && (allowedTiles == null || allowedTiles.Contains(tile));
+    }
+
+    private static bool IsBlockedTile(Tilemap tilemap, HashSet<TileBase> blockedTiles, Vector3Int cell)
+    {
+        return tilemap != null
+            && blockedTiles != null
+            && blockedTiles.Contains(tilemap.GetTile(cell));
+    }
+
+    private static bool HasBlockedPadding(Tilemap tilemap, HashSet<TileBase> blockedTiles, Vector3 position, float padding)
+    {
+        if (tilemap == null || blockedTiles == null)
+            return false;
+
+        if (padding <= 0f)
+            return IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position));
+
+        return IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(padding, 0f, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(-padding, 0f, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(0f, padding, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(0f, -padding, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(padding, padding, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(padding, -padding, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(-padding, padding, 0f)))
+            || IsBlockedTile(tilemap, blockedTiles, tilemap.WorldToCell(position + new Vector3(-padding, -padding, 0f)));
     }
 
     private static bool IsTooClose(Vector3 position, List<Vector3> occupiedPositions, float minimumDistanceSqr)
@@ -441,7 +621,7 @@ public static class JumanisGroundAutotiler
             if (generatedParent != null && renderer.transform.IsChildOf(generatedParent))
                 continue;
 
-            if (renderer.transform.name.StartsWith("Jumanis-Flower") || renderer.transform.name.StartsWith("Jumanis-Grass"))
+            if (renderer.transform.name.StartsWith("Jumanis-Flower") || renderer.transform.name.StartsWith("Jumanis-Grass") || renderer.transform.name.StartsWith("Jumanis-Sand"))
                 continue;
 
             Bounds rendererBounds = renderer.bounds;
@@ -480,13 +660,13 @@ public static class JumanisGroundAutotiler
         JumanisStageAutotilerSettings settings = AssetDatabase.LoadAssetAtPath<JumanisStageAutotilerSettings>(SettingsAssetPath);
         if (settings != null)
         {
-            settings.EnsureDefaults(DefaultJumanisFlowerPrefabPaths, DefaultJumanisGrassSpotPrefabPaths);
+            settings.EnsureDefaults(DefaultJumanisFlowerPrefabPaths, DefaultJumanisGrassSpotPrefabPaths, DefaultJumanisSandPatchPrefabPaths);
             return settings;
         }
 
         settings = ScriptableObject.CreateInstance<JumanisStageAutotilerSettings>();
         settings.ApplyInitialDefaults();
-        settings.EnsureDefaults(DefaultJumanisFlowerPrefabPaths, DefaultJumanisGrassSpotPrefabPaths);
+        settings.EnsureDefaults(DefaultJumanisFlowerPrefabPaths, DefaultJumanisGrassSpotPrefabPaths, DefaultJumanisSandPatchPrefabPaths);
         AssetDatabase.CreateAsset(settings, SettingsAssetPath);
         AssetDatabase.SaveAssets();
         return settings;
@@ -527,16 +707,28 @@ public static class JumanisGroundAutotiler
         return tiles;
     }
 
-    private static int PickTargetTileIndex(Tilemap tilemap, Vector3Int position)
+    private static HashSet<TileBase> BuildTileSet(Dictionary<int, TileBase> tiles, int[] tileIndices)
     {
-        bool north = HasTile(tilemap, position, 0, 1);
-        bool east = HasTile(tilemap, position, 1, 0);
-        bool south = HasTile(tilemap, position, 0, -1);
-        bool west = HasTile(tilemap, position, -1, 0);
-        bool northEast = HasTile(tilemap, position, 1, 1);
-        bool southEast = HasTile(tilemap, position, 1, -1);
-        bool southWest = HasTile(tilemap, position, -1, -1);
-        bool northWest = HasTile(tilemap, position, -1, 1);
+        var tileSet = new HashSet<TileBase>();
+        for (int i = 0; i < tileIndices.Length; i++)
+        {
+            if (tiles.TryGetValue(tileIndices[i], out TileBase tile) && tile != null)
+                tileSet.Add(tile);
+        }
+
+        return tileSet;
+    }
+
+    private static int PickGrassTargetTileIndex(Tilemap tilemap, Vector3Int position, HashSet<TileBase> grassTiles)
+    {
+        bool north = HasTerrainTile(tilemap, position, 0, 1, grassTiles);
+        bool east = HasTerrainTile(tilemap, position, 1, 0, grassTiles);
+        bool south = HasTerrainTile(tilemap, position, 0, -1, grassTiles);
+        bool west = HasTerrainTile(tilemap, position, -1, 0, grassTiles);
+        bool northEast = HasTerrainTile(tilemap, position, 1, 1, grassTiles);
+        bool southEast = HasTerrainTile(tilemap, position, 1, -1, grassTiles);
+        bool southWest = HasTerrainTile(tilemap, position, -1, -1, grassTiles);
+        bool northWest = HasTerrainTile(tilemap, position, -1, 1, grassTiles);
 
         int missingCardinals = CountMissing(north, east, south, west);
 
@@ -582,9 +774,65 @@ public static class JumanisGroundAutotiler
         return CenterTileIndex;
     }
 
-    private static bool HasTile(Tilemap tilemap, Vector3Int position, int xOffset, int yOffset)
+    private static int PickSandTargetTileIndex(Tilemap tilemap, Vector3Int position, HashSet<TileBase> sandTiles)
     {
-        return tilemap.HasTile(new Vector3Int(position.x + xOffset, position.y + yOffset, position.z));
+        bool north = HasTerrainTile(tilemap, position, 0, 1, sandTiles);
+        bool east = HasTerrainTile(tilemap, position, 1, 0, sandTiles);
+        bool south = HasTerrainTile(tilemap, position, 0, -1, sandTiles);
+        bool west = HasTerrainTile(tilemap, position, -1, 0, sandTiles);
+        bool northEast = HasTerrainTile(tilemap, position, 1, 1, sandTiles);
+        bool southEast = HasTerrainTile(tilemap, position, 1, -1, sandTiles);
+        bool southWest = HasTerrainTile(tilemap, position, -1, -1, sandTiles);
+        bool northWest = HasTerrainTile(tilemap, position, -1, 1, sandTiles);
+
+        int missingCardinals = CountMissing(north, east, south, west);
+
+        if (missingCardinals == 0)
+        {
+            return PickSingleMissingCorner(
+                !southEast, 18,
+                !southWest, 19,
+                !northEast, 20,
+                !northWest, 21,
+                SandCenterTileIndex);
+        }
+
+        if (missingCardinals == 1)
+        {
+            if (!north)
+                return 4;
+
+            if (!east)
+                return 11;
+
+            if (!south)
+                return 16;
+
+            return 9;
+        }
+
+        if (missingCardinals == 2)
+        {
+            if (!north && !west && east && south)
+                return 3;
+
+            if (!north && !east && west && south)
+                return 5;
+
+            if (!south && !west && east && north)
+                return 15;
+
+            if (!south && !east && west && north)
+                return 17;
+        }
+
+        return SandCenterTileIndex;
+    }
+
+    private static bool HasTerrainTile(Tilemap tilemap, Vector3Int position, int xOffset, int yOffset, HashSet<TileBase> terrainTiles)
+    {
+        TileBase tile = tilemap.GetTile(new Vector3Int(position.x + xOffset, position.y + yOffset, position.z));
+        return tile != null && terrainTiles.Contains(tile);
     }
 
     private static int CountMissing(bool north, bool east, bool south, bool west)

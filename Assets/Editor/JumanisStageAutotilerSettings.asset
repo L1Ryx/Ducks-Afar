@@ -17,9 +17,9 @@ MonoBehaviour:
     - {fileID: 4723011083499283704, guid: 1d11909ead4e54e2d83c0d509a3f9236, type: 3}
     - {fileID: 1232160448097340327, guid: d029f4f5f3a814386ba2614aa0656c29, type: 3}
     - {fileID: 1780808434971548332, guid: be2b930a961af458fb852aefd9163912, type: 3}
-    seed: 9173
-    spread: 2.35
-    density: 1.2
+    seed: 9172
+    spread: 2
+    density: 1.5
     minimumDistance: 1.35
     edgePadding: 0.42
     cellJitter: 0.34
@@ -33,14 +33,30 @@ MonoBehaviour:
     - {fileID: 218379763199055923, guid: 9d01746e93e8d4f248747d247c2c497a, type: 3}
     - {fileID: 7473661287133789347, guid: efe3e2582324147b58223c23db59cdda, type: 3}
     - {fileID: 7426716926367985958, guid: d670583d2218243969987e03cfaf3000, type: 3}
-    seed: 14891
-    spread: 1.4
-    density: 0.875
-    minimumDistance: 0.7
-    edgePadding: 0.42
+    seed: 45
+    spread: 1
+    density: 1.5
+    minimumDistance: 0.25
+    edgePadding: 0.8
     cellJitter: 0.34
     noiseScale: 0.18
     noiseInfluence: 0.25
     maxGenerated: 0
-    avoidSceneSpriteBounds: 1
-    objectAvoidancePadding: 0.25
+    avoidSceneSpriteBounds: 0
+    objectAvoidancePadding: 0.05
+  sandPatches:
+    prefabs:
+    - {fileID: 3130363564843337609, guid: c038e09b16a7043249f20848d6d9bb33, type: 3}
+    - {fileID: 8302823148693901104, guid: af60a9d416bb64f76a5de109484dc701, type: 3}
+    - {fileID: 4044412464119523031, guid: 90e81d62f737847ab9a93f61cb5ff97f, type: 3}
+    seed: 23731
+    spread: 0.7
+    density: 1.5
+    minimumDistance: 0.7
+    edgePadding: 0.8
+    cellJitter: 0.34
+    noiseScale: 0.22
+    noiseInfluence: 0.25
+    maxGenerated: 0
+    avoidSceneSpriteBounds: 0
+    objectAvoidancePadding: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class TitleCardLine
@@ -93,6 +94,7 @@ public class TitleCardSequencer : MonoBehaviour
     [Header("Audio")] [SerializeField] private AudioCue ac;
 
     private readonly Dictionary<TMP_Text, string> _fullTexts = new();
+    private readonly Dictionary<TMP_Text, string> _defaultTexts = new();
     private Coroutine _sequenceCo;
 
     private void Reset()
@@ -122,6 +124,8 @@ public class TitleCardSequencer : MonoBehaviour
         }
 
         hasStarted = true;
+        CacheLinesAndTexts();
+        ApplyActiveSceneTitleCardText();
         CacheLinesAndTexts();
 
         if (_sequenceCo != null)
@@ -193,8 +197,78 @@ public class TitleCardSequencer : MonoBehaviour
         foreach (var line in lines)
         {
             if (line.text == null) continue;
+            if (!_defaultTexts.ContainsKey(line.text))
+                _defaultTexts[line.text] = line.text.text ?? string.Empty;
+
             _fullTexts[line.text] = line.text.text ?? string.Empty;
         }
+    }
+
+    private void ApplyActiveSceneTitleCardText()
+    {
+        SceneSettings settings = FindActiveSceneSettings();
+        if (settings == null)
+            return;
+
+        TMP_Text titleText = FindLineText("Title Text");
+        TMP_Text subtitleLineText = subtitleText != null ? subtitleText : FindLineText("Subtitle Text");
+
+        ApplyTextOverride(titleText, settings.LevelTitleCardTitle);
+        ApplyTextOverride(subtitleLineText, settings.LevelTitleCardSubtitle);
+    }
+
+    private TMP_Text FindLineText(string textObjectName)
+    {
+        if (string.IsNullOrEmpty(textObjectName))
+            return null;
+
+        foreach (TitleCardLine line in lines)
+        {
+            TMP_Text candidate = line?.text;
+            if (candidate != null && candidate.name == textObjectName)
+                return candidate;
+        }
+
+        TMP_Text[] texts = GetComponentsInChildren<TMP_Text>(includeInactive: true);
+        for (int i = 0; i < texts.Length; i++)
+        {
+            if (texts[i] != null && texts[i].name == textObjectName)
+                return texts[i];
+        }
+
+        return null;
+    }
+
+    private void ApplyTextOverride(TMP_Text text, string overrideValue)
+    {
+        if (text == null)
+            return;
+
+        if (!string.IsNullOrWhiteSpace(overrideValue))
+        {
+            text.text = overrideValue;
+            return;
+        }
+
+        if (_defaultTexts.TryGetValue(text, out string defaultText))
+            text.text = defaultText;
+    }
+
+    private static SceneSettings FindActiveSceneSettings()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneSettings[] settings = UnityEngine.Object.FindObjectsByType<SceneSettings>(
+            FindObjectsInactive.Include,
+            FindObjectsSortMode.None);
+
+        for (int i = 0; i < settings.Length; i++)
+        {
+            SceneSettings candidate = settings[i];
+            if (candidate != null && candidate.gameObject.scene == activeScene)
+                return candidate;
+        }
+
+        return null;
     }
 
     private void ResolveSubtitleText()

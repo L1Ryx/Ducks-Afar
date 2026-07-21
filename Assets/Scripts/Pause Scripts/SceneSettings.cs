@@ -10,10 +10,16 @@ public sealed class SceneSettings : MonoBehaviour
     [Header("Currency UI")]
     [SerializeField] private bool allowGoldwormCurrencyUI = false;
 
+    [Header("Title Card")]
+    [SerializeField] private string levelTitleCardTitle;
+    [SerializeField] private string levelTitleCardSubtitle;
+
     public bool IsPausable => isPausable;
     public bool AllowHoldToRestart => allowHoldToRestart;
     public string Reason => reason;
     public bool AllowGoldwormCurrencyUI => allowGoldwormCurrencyUI;
+    public string LevelTitleCardTitle => levelTitleCardTitle;
+    public string LevelTitleCardSubtitle => levelTitleCardSubtitle;
 
     private void OnEnable()
     {

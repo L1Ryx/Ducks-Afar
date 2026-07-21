@@ -55,12 +55,26 @@ public sealed class JumanisStageAutotilerSettings : ScriptableObject
                 prefabs[i] = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPaths[i]);
         }
 
-        public void SetDefaults(int defaultSeed, float defaultSpread, float defaultDensity, float defaultMinimumDistance)
+        public void SetDefaults(
+            int defaultSeed,
+            float defaultSpread,
+            float defaultDensity,
+            float defaultMinimumDistance,
+            float defaultEdgePadding = 0.42f,
+            float defaultNoiseScale = 0.18f,
+            float defaultNoiseInfluence = 0.25f,
+            float defaultObjectAvoidancePadding = 0.25f,
+            bool defaultAvoidSceneSpriteBounds = true)
         {
             seed = defaultSeed;
             spread = Mathf.Max(0.5f, defaultSpread);
             density = Mathf.Max(0f, defaultDensity);
             minimumDistance = Mathf.Max(0f, defaultMinimumDistance);
+            edgePadding = Mathf.Max(0f, defaultEdgePadding);
+            noiseScale = Mathf.Max(0f, defaultNoiseScale);
+            noiseInfluence = Mathf.Clamp01(defaultNoiseInfluence);
+            objectAvoidancePadding = Mathf.Max(0f, defaultObjectAvoidancePadding);
+            avoidSceneSpriteBounds = defaultAvoidSceneSpriteBounds;
         }
 
         public void Validate()
@@ -83,30 +97,39 @@ public sealed class JumanisStageAutotilerSettings : ScriptableObject
     [Header("Jumanis Grass Spots")]
     [SerializeField] private DecorationSettings grassSpots = new();
 
+    [Header("Jumanis Sand Patches")]
+    [SerializeField] private DecorationSettings sandPatches = new();
+
     public DecorationSettings Flowers => flowers;
     public DecorationSettings GrassSpots => grassSpots;
+    public DecorationSettings SandPatches => sandPatches;
 
-    public void EnsureDefaults(string[] flowerPrefabPaths, string[] grassSpotPrefabPaths)
+    public void EnsureDefaults(string[] flowerPrefabPaths, string[] grassSpotPrefabPaths, string[] sandPatchPrefabPaths)
     {
         flowers ??= new DecorationSettings();
         grassSpots ??= new DecorationSettings();
+        sandPatches ??= new DecorationSettings();
 
         flowers.EnsureDefaultPrefabs(flowerPrefabPaths);
         grassSpots.EnsureDefaultPrefabs(grassSpotPrefabPaths);
+        sandPatches.EnsureDefaultPrefabs(sandPatchPrefabPaths);
     }
 
     public void ApplyInitialDefaults()
     {
         flowers ??= new DecorationSettings();
         grassSpots ??= new DecorationSettings();
+        sandPatches ??= new DecorationSettings();
 
         flowers.SetDefaults(9173, 2.35f, 1.2f, 1.35f);
         grassSpots.SetDefaults(14891, 1.4f, 0.875f, 0.45f);
+        sandPatches.SetDefaults(23731, 2f, 1.35f, 0.7f, 0.8f, 0.22f, 0.25f, 0f, false);
     }
 
     private void OnValidate()
     {
         flowers?.Validate();
         grassSpots?.Validate();
+        sandPatches?.Validate();
     }
 }

@@ -20,7 +20,7 @@ MonoBehaviour:
   spread: 2
   density: 1
   minimumDistance: 1.35
-  edgePadding: 0.42
+  edgePadding: 0.6
   cellJitter: 0.34
   noiseScale: 0.18
   noiseInfluence: 0.25

@@ -49,6 +49,8 @@ MonoBehaviour:
   allowHoldToRestart: 0
   reason: 
   allowGoldwormCurrencyUI: 0
+  levelTitleCardTitle: ''
+  levelTitleCardSubtitle: ''
 --- !u!114 &8578644592380159241
 MonoBehaviour:
   m_ObjectHideFlags: 0

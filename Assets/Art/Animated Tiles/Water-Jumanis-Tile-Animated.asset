@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83f10afde5e548e0b9953a5d9d6dbd0b, type: 3}
+  m_Name: Water-Jumanis-Tile-Animated
+  m_EditorClassIdentifier: Assembly-CSharp::EditModePausedAnimatedTile
+  m_AnimatedSprites:
+  - {fileID: -2755904989793568215, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: -8464798796480850089, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: 6796350037951201979, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: 4436006397046735976, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: -8152022145563343816, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: -3765799387357065215, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: 4398607475120841033, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  - {fileID: 5716881518764845838, guid: d246e2917e4d34e12ae4003a1e8dd151, type: 3}
+  m_MinSpeed: 4
+  m_MaxSpeed: 4
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
