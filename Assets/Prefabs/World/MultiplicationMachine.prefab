@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 1599675149115131111, guid: f83038c62b5924b04956765e1c63d94b, type: 3}
     - target: {fileID: 3971470671513581922, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
       propertyPath: description
-      value: Claim multiplied hardworms.
+      value: Claim your hardworms.
       objectReference: {fileID: 0}
     - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
       propertyPath: m_LocalPosition.x

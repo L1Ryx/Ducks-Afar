@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 7425277617632638227}
   - component: {fileID: 5012433733421740805}
   - component: {fileID: 6084216732251259666}
-  - component: {fileID: 6812717985086268326}
   m_Layer: 10
   m_Name: Jumanis-Tree-Tallest
   m_TagString: Untagged
@@ -187,15 +186,3 @@ MonoBehaviour:
   sortPoint: {fileID: 3262303286694553555}
   orderPrecision: 100
   orderOffset: 0
---- !u!114 &6812717985086268326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7428622708192037905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa5a82f5854564cca89f459ffd7be313, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FieldTelescopeRevealTarget
