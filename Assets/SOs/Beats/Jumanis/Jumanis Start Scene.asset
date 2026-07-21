@@ -16,9 +16,11 @@ MonoBehaviour:
   description: Stage-style level intro. Locks interactions, fades into the level, shows the title card, and starts scene audio.
   onEnterEvents:
   - {fileID: 11400000, guid: deff3e0959c374c71bbd31f7b2dd0843, type: 2}
+  - {fileID: 11400000, guid: c5be6b9fc70d8472c9e2b84eea9388df, type: 2}
   - {fileID: 11400000, guid: 896c5de8b819443c8bd44fc0c620048d, type: 2}
   - {fileID: 11400000, guid: 32ceaf05c9498470da5f8d9ac655f4fd, type: 2}
   - {fileID: 11400000, guid: 47ef5143e7bd944d086032aace2fa8f8, type: 2}
+  - {fileID: 11400000, guid: a72983a4130c044238fcb140167db17e, type: 2}
   - {fileID: 11400000, guid: 44f77ac799bdb4a71994aa79928825da, type: 2}
   checkpoint: {fileID: 0}
   markCheckpointOnEnter: 0

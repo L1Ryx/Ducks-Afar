@@ -11,6 +11,8 @@ public static class JumanisGroundAutotiler
     private const string SettingsAssetPath = "Assets/Editor/JumanisStageAutotilerSettings.asset";
     private const string GroundTilemapName = "Ground (NC)";
     private const string DirtTilemapName = "Dirt (NC)";
+    private const string OceanTilemapName = "Ocean (NC)";
+    private const string ShorelineTilemapName = "Shoreline (C)";
     private const string TileFolder = "Assets/Art/Tilemaps/Palettes/Jumanis Tiles";
     private const string TilePrefix = "Jumanis-Tileset";
     private const string DecorationsParentName = "Decorations";
@@ -19,6 +21,7 @@ public static class JumanisGroundAutotiler
     private const string GeneratedSandPatchesParentName = "Generated Jumanis Sand Patches";
     private const int CenterTileIndex = 7;
     private const int SandCenterTileIndex = 10;
+    private const int ShorelineFillTileIndex = SandCenterTileIndex;
 
     private static readonly string[] DefaultJumanisFlowerPrefabPaths =
     {
@@ -74,6 +77,18 @@ public static class JumanisGroundAutotiler
         26, 27, 28, 29,
         30, 31, 32, 33,
         34, 35, 36, 37,
+    };
+
+    private static readonly Vector3Int[] NeighborOffsets =
+    {
+        new Vector3Int(-1, -1, 0),
+        new Vector3Int(0, -1, 0),
+        new Vector3Int(1, -1, 0),
+        new Vector3Int(-1, 0, 0),
+        new Vector3Int(1, 0, 0),
+        new Vector3Int(-1, 1, 0),
+        new Vector3Int(0, 1, 0),
+        new Vector3Int(1, 1, 0),
     };
 
     [MenuItem("Ducks Afar/Tilemaps/Autotile Jumanis #p")]
@@ -167,6 +182,20 @@ public static class JumanisGroundAutotiler
             return;
         }
 
+        Tilemap ocean = FindTilemap(activeScene, OceanTilemapName);
+        if (ocean == null)
+        {
+            Debug.LogError($"JumanisGroundAutotiler: could not find tilemap '{OceanTilemapName}' in {JumanisScenePath}.");
+            return;
+        }
+
+        Tilemap shoreline = FindTilemap(activeScene, ShorelineTilemapName);
+        if (shoreline == null)
+        {
+            Debug.LogError($"JumanisGroundAutotiler: could not find tilemap '{ShorelineTilemapName}' in {JumanisScenePath}.");
+            return;
+        }
+
         Dictionary<int, TileBase> tiles = LoadRequiredTiles();
         if (tiles == null)
             return;
@@ -177,6 +206,7 @@ public static class JumanisGroundAutotiler
         int migratedSandTiles = MigrateSandTilesToDirt(ground, dirt, tiles, sandTiles);
         int grassReplacements = AutotileGrass(ground, tiles, grassTiles, out int grassCenterTilesKept);
         int sandReplacements = AutotileSand(dirt, tiles, sandTiles, out int sandCenterTilesKept);
+        ShorelineSyncResult shorelineResult = SyncShoreline(ground, ocean, shoreline, tiles[ShorelineFillTileIndex]);
         DecorationPlacementResult flowerResult = RegenerateDecorations(
             activeScene,
             ground,
@@ -217,9 +247,9 @@ public static class JumanisGroundAutotiler
             new List<Vector3>(),
             sandTiles);
 
-        if (migratedSandTiles == 0 && grassReplacements == 0 && sandReplacements == 0 && flowerResult.Created == 0 && flowerResult.Removed == 0 && grassResult.Created == 0 && grassResult.Removed == 0 && sandResult.Created == 0 && sandResult.Removed == 0)
+        if (migratedSandTiles == 0 && grassReplacements == 0 && sandReplacements == 0 && shorelineResult.Added == 0 && shorelineResult.Removed == 0 && flowerResult.Created == 0 && flowerResult.Removed == 0 && grassResult.Created == 0 && grassResult.Removed == 0 && sandResult.Created == 0 && sandResult.Removed == 0)
         {
-            Debug.Log($"JumanisGroundAutotiler: no Jumanis tile changes needed. Kept {grassCenterTilesKept} grass center tile(s) and {sandCenterTilesKept} sand center tile(s).");
+            Debug.Log($"JumanisGroundAutotiler: no Jumanis tile changes needed. Kept {grassCenterTilesKept} grass center tile(s), {sandCenterTilesKept} sand center tile(s), and {shorelineResult.Kept} shoreline tile(s).");
             return;
         }
 
@@ -228,6 +258,7 @@ public static class JumanisGroundAutotiler
         Debug.Log(
             $"JumanisGroundAutotiler: replaced {grassReplacements} grass center tile(s), kept {grassCenterTilesKept} grass center tile(s), " +
             $"migrated {migratedSandTiles} sand tile(s) to Dirt (NC), replaced {sandReplacements} sand center tile(s), kept {sandCenterTilesKept} sand center tile(s), " +
+            $"added {shorelineResult.Added} shoreline tile(s), removed {shorelineResult.Removed} stale shoreline tile(s), kept {shorelineResult.Kept} shoreline tile(s), " +
             $"generated {flowerResult.Created} Jumanis Flower object(s), removed {flowerResult.Removed} previous generated flower(s), " +
             $"generated {grassResult.Created} Jumanis Grass Spot object(s), removed {grassResult.Removed} previous generated grass spot(s), " +
             $"generated {sandResult.Created} Jumanis Sand Patch object(s), removed {sandResult.Removed} previous generated sand patch(es).");
@@ -332,6 +363,60 @@ public static class JumanisGroundAutotiler
 
         EditorUtility.SetDirty(dirt);
         return replacements.Count;
+    }
+
+    private static ShorelineSyncResult SyncShoreline(Tilemap ground, Tilemap ocean, Tilemap shoreline, TileBase shorelineTile)
+    {
+        var expectedPositions = new HashSet<Vector3Int>();
+        foreach (Vector3Int groundPosition in ground.cellBounds.allPositionsWithin)
+        {
+            if (!ground.HasTile(groundPosition))
+                continue;
+
+            for (int i = 0; i < NeighborOffsets.Length; i++)
+            {
+                Vector3Int shorelinePosition = groundPosition + NeighborOffsets[i];
+                if (!ground.HasTile(shorelinePosition) && ocean.HasTile(shorelinePosition))
+                    expectedPositions.Add(shorelinePosition);
+            }
+        }
+
+        var stalePositions = new List<Vector3Int>();
+        foreach (Vector3Int position in shoreline.cellBounds.allPositionsWithin)
+        {
+            if (shoreline.HasTile(position) && !expectedPositions.Contains(position))
+                stalePositions.Add(position);
+        }
+
+        int added = 0;
+        int kept = 0;
+        foreach (Vector3Int position in expectedPositions)
+        {
+            if (shoreline.HasTile(position))
+            {
+                kept++;
+                continue;
+            }
+
+            added++;
+        }
+
+        if (added == 0 && stalePositions.Count == 0)
+            return new ShorelineSyncResult(0, 0, kept);
+
+        Undo.RegisterCompleteObjectUndo(shoreline, "Sync Jumanis Shoreline");
+
+        foreach (Vector3Int position in expectedPositions)
+        {
+            if (!shoreline.HasTile(position))
+                shoreline.SetTile(position, shorelineTile);
+        }
+
+        for (int i = 0; i < stalePositions.Count; i++)
+            shoreline.SetTile(stalePositions[i], null);
+
+        EditorUtility.SetDirty(shoreline);
+        return new ShorelineSyncResult(added, stalePositions.Count, kept);
     }
 
     private static DecorationPlacementResult RegenerateDecorations(
@@ -915,6 +1000,20 @@ public static class JumanisGroundAutotiler
         {
             Created = created;
             Removed = removed;
+        }
+    }
+
+    private readonly struct ShorelineSyncResult
+    {
+        public readonly int Added;
+        public readonly int Removed;
+        public readonly int Kept;
+
+        public ShorelineSyncResult(int added, int removed, int kept)
+        {
+            Added = added;
+            Removed = removed;
+            Kept = kept;
         }
     }
 

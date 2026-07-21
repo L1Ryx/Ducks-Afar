@@ -17,6 +17,7 @@ MonoBehaviour:
   onEnterEvents:
   - {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
   - {fileID: 11400000, guid: f751737a3be1c406abc841072408341d, type: 2}
+  - {fileID: 11400000, guid: 481df9094e5434d7f81fc81f748257e6, type: 2}
   checkpoint: {fileID: 0}
   markCheckpointOnEnter: 0
   advanceEvent: {fileID: 11400000, guid: 428b6e7338e044818c7c7a73ee859e24, type: 2}
