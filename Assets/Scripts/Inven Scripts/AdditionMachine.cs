@@ -2,21 +2,33 @@ using UnityEngine;
 
 public class AdditionMachine : MonoBehaviour
 {
+    public enum MathOperation
+    {
+        Addition = 0,
+        Subtraction = 1,
+        Multiplication = 2,
+    }
+
     [Header("Slots")]
     [SerializeField] private AdditionSlot slotA;
     [SerializeField] private AdditionSlot slotB;
 
     [Header("Mode")]
-    [Tooltip("If true, machine computes A - B. If false, computes A + B.")]
+    [SerializeField] private MathOperation operation = MathOperation.Addition;
+
+    [HideInInspector]
     [SerializeField] private bool isSubtractionMachine = false;
 
-    [Tooltip("Optional clarity flag. Keep this true unless you intentionally want a subtraction machine.")]
+    [HideInInspector]
     [SerializeField] private bool isAdditionMachine = true;
 
     public bool HasBothInputs => slotA != null && slotB != null && slotA.HasValue && slotB.HasValue;
 
-    public bool IsSubtractionMachine => isSubtractionMachine;
-    public bool IsAdditionMachine => isAdditionMachine && !isSubtractionMachine;
+    public MathOperation Operation => ResolveOperation();
+    public bool IsSubtractionMachine => Operation == MathOperation.Subtraction;
+    public bool IsAdditionMachine => Operation == MathOperation.Addition;
+    public bool IsMultiplicationMachine => Operation == MathOperation.Multiplication;
+    public string OperationName => Operation.ToString();
 
     public int Sum => (slotA != null ? slotA.Value : 0) + (slotB != null ? slotB.Value : 0);
 
@@ -24,17 +36,18 @@ public class AdditionMachine : MonoBehaviour
     {
         get
         {
-            
             int a = (slotA != null ? slotA.Value : 0);
             int b = (slotB != null ? slotB.Value : 0);
+            MathOperation resolvedOperation = Operation;
+            int result = resolvedOperation switch
+            {
+                MathOperation.Subtraction => a - b,
+                MathOperation.Multiplication => a * b,
+                _ => a + b,
+            };
 
-            Debug.Log($"[{name}] sub={isSubtractionMachine} add={isAdditionMachine} a={a} b={b} => {(isSubtractionMachine ? a-b : a+b)}");
-
-            // Subtraction takes precedence if enabled.
-            if (isSubtractionMachine)
-                return a - b;
-
-            return a + b;
+            Debug.Log($"[{name}] operation={resolvedOperation} a={a} b={b} => {result}");
+            return result;
         }
     }
 
@@ -64,15 +77,18 @@ public class AdditionMachine : MonoBehaviour
 
     private void OnValidate()
     {
-        // If subtraction is enabled, "addition" should not also be true.
-        // This avoids ambiguous inspector states.
-        if (isSubtractionMachine)
-            isAdditionMachine = false;
+        if (operation == MathOperation.Addition && isSubtractionMachine)
+            operation = MathOperation.Subtraction;
 
-        // If neither is checked, default back to addition to prevent a "dead" machine.
-        if (!isSubtractionMachine && !isAdditionMachine)
-            isAdditionMachine = true;
+        isSubtractionMachine = operation == MathOperation.Subtraction;
+        isAdditionMachine = operation == MathOperation.Addition;
     }
 
-    // Optional: if you want “take back” behavior later, slots already support it.
+    private MathOperation ResolveOperation()
+    {
+        if (operation == MathOperation.Addition && isSubtractionMachine)
+            return MathOperation.Subtraction;
+
+        return operation;
+    }
 }

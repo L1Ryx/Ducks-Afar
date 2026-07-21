@@ -18,13 +18,13 @@ public class AdditionOutputSlot : MonoBehaviour, IInteractable
         if (!Game.IsReady || Game.Ctx.Inventory == null || Game.Ctx.ItemDb == null)
             return;
 
-        Debug.Log($"[{name}] OutputSlot using machine '{machine.name}' sub={machine.IsSubtractionMachine}");
-
         if (machine == null)
         {
             Debug.LogError($"{name}: Output slot missing machine reference.");
             return;
         }
+
+        Debug.Log($"[{name}] OutputSlot using machine '{machine.name}' operation={machine.OperationName}");
 
         if (!machine.HasBothInputs)
         {
@@ -68,7 +68,6 @@ public class AdditionOutputSlot : MonoBehaviour, IInteractable
 
         onOutputSlotChanged?.Invoke();
 
-        string op = machine.IsSubtractionMachine ? "Subtraction" : "Addition";
-        Debug.Log($"{op} result: {result} hardworms -> +1 {outDef.displayName}");
+        Debug.Log($"{machine.OperationName} result: {result} hardworms -> +1 {outDef.displayName}");
     }
 }

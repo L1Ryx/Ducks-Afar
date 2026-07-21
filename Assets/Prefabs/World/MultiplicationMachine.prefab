@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4990951342332925209
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 592796147172956437, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_Name
+      value: Mult-Symbol
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997353880563926428, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: operation
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997353880563926428, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: isAdditionMachine
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2311199919409808922, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 196337425780795537, guid: 2ec3d908142cd4823b2e36190792b458, type: 3}
+    - target: {fileID: 2563328396909398335, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1599675149115131111, guid: f83038c62b5924b04956765e1c63d94b, type: 3}
+    - target: {fileID: 3971470671513581922, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: description
+      value: Claim multiplied hardworms.
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4012431538570168111, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5961758174670443250, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: description
+      value: Multiply hardworm packs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545721043422158489, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4466277076218738031, guid: 1fc09d143f2334a22b7970616b31326e, type: 3}
+    - target: {fileID: 7397275829913828482, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_Name
+      value: MultiplicationMachine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993024825214094086, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 196337425780795537, guid: 2ec3d908142cd4823b2e36190792b458, type: 3}
+    - target: {fileID: 8630614708897926682, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
+      propertyPath: description
+      value: Multiply hardworm packs.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9311c7048add4d8dbadd03a097a909f, type: 3}
